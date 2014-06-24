@@ -45,3 +45,10 @@ App::singleton('names',function()
 		'Nemesis',
 	);
 });
+
+App::singleton('iconographic', function()
+{
+	return DB::table('exhibition_types')
+				->get()
+				->lists('name','id');
+});
