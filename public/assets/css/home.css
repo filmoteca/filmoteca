@@ -1,0 +1,516 @@
+/* 
+    Document   : inicio
+    Created on : Dec 5, 2013, 6:01:42 PM
+    Author     : victor
+    Description:
+        Hoja de estilo para que afectan unicamente la pagina de inicio.
+*/
+
+/*********************/
+/** Recomendaciones **/
+/*********************/
+
+.banner{
+    width: 100%;
+    margin-bottom: 10px;
+    box-shadow:1px 1px 3px #555555;
+    padding-left: 5px;
+}
+
+.banner-filmografia-nacional{
+    width: 100%;
+    margin-bottom: 10px;
+    box-shadow:1px 1px 3px #555555;
+    padding-left: 5px;
+}
+
+.banner-cine-en-linea a:hover{
+    opacity: .7;
+}
+
+.banner-filmografia-nacional a:hover{
+    opacity: .7;
+}
+
+.banner-muvac a:hover{
+    opacity: .7;
+}
+
+.banner-revolucion a:hover{
+    opacity: .7;
+}
+
+.block{
+    margin-bottom: 10px;
+    box-shadow:1px 1px 3px #555555
+}
+
+.blocks a:hover{
+    opacity: .7;
+}
+.suggestions{
+    margin-top: -44px;
+}
+
+.suggestions h3,
+.que-estamos-haciendo h3,
+.noticias_h3 h3{
+    background-color: rgba(0,168,177, 0.43);
+    border-radius: 10px 10px 0 0;
+    color: #ffffff;
+    margin-bottom: 3px;
+    padding:4px;
+   /* margin-top: 0;*/
+}
+
+/*.que-estamos-haciendo h3,
+.news h3{
+    background-color: #00A8B1;
+    border-radius: 10px 10px 0 0;
+    color: #3c3c3c;
+    margin-bottom: 0px;
+}*/
+/*
+.que-estamos-haciendo h3,
+.noticias_h3{
+    background-color: #00A8B1;
+    border-radius: 10px 10px 0 0;
+    color: #3c3c3c;
+    margin-bottom: 3px;
+    padding: 8px;
+}*/
+
+.news div{
+    height: 430px;
+    overflow-y: scroll;
+    box-shadow:1px 1px 3px #555555;
+}
+
+/*.news li{
+    list-style: none;
+    padding: 15px;
+    border-bottom: dotted thin black;
+}*/
+
+
+/*********************/
+/** Noticias **/
+/*********************/
+.news_content{
+    height: 430px;
+    overflow-y: scroll;
+    box-shadow:1px 1px 3px #555555;
+}
+
+.last_news_element{
+    margin-top: 0px;
+    height: 100px;
+    overflow: hidden;
+    width: 100%;
+    line-height: 1 !important;
+}
+
+.last_news_img{
+    float: left;
+    height: 80px;
+    padding-left: 5px;
+    padding-top: 10px;
+    position: relative;
+    width: 90px;
+}
+
+.last_news_foto_over{
+    background-image: url();
+    background-position: left top;
+    background-repeat: no-repeat;
+    display: block;
+    height: 80px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 119px;
+}
+
+.last_news_content{
+    float: left;
+    height: 72px;
+    padding: 2px;
+    width: 213px;
+}
+
+.last_news_titulo a{
+    color: #A03B92;
+    font-weight: bold;
+    margin-bottom: 5px;
+    max-height: 26px;
+    font-size: 12px;
+   /* overflow: hidden;*/
+}
+
+.last_news_data{
+    color: #A2A2A2;
+    font-size: 11px;
+}
+
+.last_news_data div {
+    margin-bottom: 5px;
+}
+
+.clearer {
+    clear: both !important;
+}
+
+.last_news_text {
+    height: 42px;
+    line-height: 1;
+    font-size: 11px;
+    /*overflow: hidden;*/
+}
+.mas_info{
+    float: right;
+    font-size: 10px;
+    color:  #A2A2A2;
+}
+
+.cursos h3,
+.convocatorias h3,
+.avisos h3{
+    background-color:rgba(255,176,61, 0.25);
+    border-radius: 10px 10px 0 0;
+    box-shadow:1px 1px 3px #555555;
+    margin-bottom: 3px;
+    color: #3c3c3c;
+    padding:4px;
+}
+
+.cursos-body a:hover{
+    opacity: .7;
+}
+.avisos-body a:hover{
+    opacity: .7;
+}
+
+.convocatorias-body a:hover{
+    opacity: .7;
+}
+
+.convocatorias-body a:hover{
+    opacity: .7;
+}
+/*.block .convocatorias-body,
+{
+    box-shadow:1px 1px 3px #555555;
+
+}*/
+
+/***************/
+/** Billboard **/
+/***************/
+
+.wrapper-billboard{
+    width: 100%;
+    padding: 20px 20px 20px;
+    padding-left: 0px;
+}
+
+.billboard{
+/*    background-color: #966698;*/
+    border: 2px solid #bcbab9;
+    border-radius:15px;
+    box-shadow:1px 1px 3px #555555;
+    width: 100%;
+    height:511px;
+    margin-left: 10px;
+}
+
+.billboard .screen{
+    background-image: url('imgs/fondo_prog.png');
+    background-size: 100%;
+    background-position: 0px 0px;
+}
+
+.billboard img{
+    margin: 20px auto 0px auto;
+    width: 80%;
+    height: 300px;
+    display: block;
+}
+
+.billboard-date{
+    text-align: center;
+    width: 100%;
+    display: block;
+    margin-bottom: 35px;
+}
+
+.billboard-date, .billboard-title{
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#billboard .next{
+    background-image: url('imgs/button-next.png');
+    top: -35px;
+}
+
+#billboard .next:hover{
+    background-image: url('imgs/button-next-hover.png');
+}
+
+#billboard .prev{
+    background-image: url('imgs/button-prev.png');
+    bottom: -35px;
+    display: none;
+}
+
+#billboard .prev:hover{
+    background-image: url('imgs/button-prev-hover.png');
+}
+
+#billboard .next,
+#billboard .prev{
+    position: absolute;
+    left:40%;
+    width: 47px;
+    height: 32px;
+    cursor: pointer;
+}
+
+.col-md-4 .banner-consulta-cartelera{
+    margin-top: -24px;
+}
+
+/********************/
+/** Redes Sociales **/
+/********************/
+
+/********************/
+/** Sitios Amigos **/
+/********************/
+
+.col-md-12 h4{
+    margin-bottom: 0px;
+}
+
+.friends-sites-pane{
+    background-color:#F1F1F1;
+    display: none;
+}
+.friends-sites-pane .row{
+    width: 100%;
+    margin-left: 5px;
+}
+.friends-sites-pane .row col-md-4{
+    width: 33%;
+}
+
+.friends-sites-button{
+    background-image:url('imgs/button-sitios-amigos.png');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    height: 32px;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    border-bottom: 10px none;
+    text-align: center;
+}
+
+.friends-sites-button:hover{
+    opacity: .7;
+    cursor: pointer;
+}
+
+.friends-sites-button h5{
+    color: #333333;
+}
+
+.footer_links{
+    list-style: none;
+    text-decoration: none;
+}
+.footer_links a{
+    list-style: none;
+    text-decoration: none;
+    font-size: .85em;
+    color: #333333;
+}
+
+/************/
+/* Portada. **/
+/************/
+
+.presentation{
+	position: relative;
+	margin-top: 10px;
+}
+
+.presentation .controls:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.presentation .controls{
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: rgba(98,168,192,0);
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 1;
+    width: 10%;
+    height: 264px;
+    overflow-y: scroll;
+    margin-right: 10px;
+    padding-right: 10px;
+}
+
+.presentation .controls a{
+    cursor: pointer;
+    display: block;
+    height: 60px;
+    width: 100%;
+	margin-top: 5px;
+    border: solid thin black;
+    background-color: #ABABAB;
+}
+
+.presentation .controls a:hover,
+.presentation .controls a.selected{
+    background-color: #A03B92;
+}
+
+.presentation .controls a img{
+	width: 100%;
+	height: 100%;
+}
+
+.presentation .info{
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 40%;
+    height: 100%;
+    background-color: rgba(98,168,192,.7);
+    position: absolute;
+    bottom: 0px;
+    right: 12%;
+    padding-top:40px;
+    right: 12%;
+    padding-top:27px;
+    padding-bottom: 50px;
+    display:none;
+}
+
+.presentation .info h1,
+.presentation .info h2,
+.presentation .info h3,
+.presentation .info h4,
+.presentation .info h5{
+    text-align: center;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.presentation .info .font-purple{
+    text-align: center; 
+}
+
+.presentation ul img{
+	width: 88%;
+}
+
+.font-purple{
+    color: #A03B92;
+}
+
+.font-white{
+    color: white;
+}
+
+.presentation h2{
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0 5px;
+}
+
+.presentation p{
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.5em;
+    color: #ffffff;
+}
+
+
+/** Facebook **/
+.comentarios-facebook{
+    width: 100%;
+    margin-top: 10px;
+}
+
+.comentarios-facebook span{
+    width: 100%;
+}
+
+.comentarios-facebook h4{
+    margin-bottom: 10px;
+}
+
+.ver-mas a{
+    color: black;
+}
+
+.ver-mas{
+    margin-top: 10px;
+    padding-right: 40px;
+    text-align: right;
+}
+
+
+.link-salas{
+    text-align: center;
+    margin:10px;
+    display: block;
+}
+
+
+.sinopsis{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.ver-mas a{
+    color: #993399;
+    text-decoration: none;
+}
+
+
+/*****************************/
+/** Calendario Responsivo ****/
+/*****************************/
+
+.calendar{
+    text-align: center;
+}
+
+.ui-datepicker{
+    position: absolute;
+    z-index: 99;
+}
+
+/*.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight{
+	background-color: transparent !important;
+	border: 1px solid #CCCCCC !important;
+	color: #1C94C4 !important;
+}*/
+
+
+
+/*****************************/
+/** video****/
+/*****************************/
+/*video {
+    margin-top: 8px;
+    margin-left: 10px;
+
+}*/

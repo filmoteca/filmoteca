@@ -1,0 +1,895 @@
+/* 
+    Document   : filmoteca
+    Created on : Oct 9, 2013, 7:54:08 PM
+    Author     : Victor Aguilar
+    Description:
+*/
+
+@font-face
+{
+    font-family: "Helvetica Neue";
+    /*src: url('imgs/HelveticaNeue.ttf');*/
+} 
+
+/**
+ * Clases para modificar el hover de los elementos del
+ * accordión.
+ */
+.ui-widget-content .ui-state-hover, 
+.ui-state-focus
+{  
+    background: red; 
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    border: none;
+}
+
+body{
+    font-family: "Helvetica Neue";
+}
+
+h2, h3{
+	text-align:center;
+}
+
+.wrapper{
+    width: 100%;
+    max-width: 1024px;
+    min-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.body .left-column,
+.body .right-column,
+.body .center-column{
+    float:left;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    /*	width: 33%;
+            min-width: 341px;*/
+    padding: 10px;
+}
+
+.body .left-column,
+.body .right-column{
+    width: 341px;
+}
+
+.thumbnail{
+    max-width: 150px;
+}
+
+/***********/
+/* Comunes */
+/***********/
+
+.contact-menu:after,
+.main-menu > ul:after,
+.contact-menu:after,
+.items:after,
+.higher-links ul:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/**************/
+/* Encabezado */
+/**************/
+
+header{
+    width: 100%;
+}
+
+.higher-links ul{
+    padding: 3px;
+    list-style: none;
+    margin-bottom: 0px;
+}
+
+.higher-links li{
+    float: right;
+    margin-left: 10px;
+}
+.higher-links li a{
+    color: black;
+    text-decoration: none;
+	font-size:12px;
+}
+
+.banner-filmoteca{
+    background-color: #9A0982;
+    width: 100%;
+    height:100px;
+    background-size: 1024px 100px;
+    background-color: #993399;
+    background-image: url('imgs/background-header.jpg');
+    background-repeat: no-repeat;
+}
+
+.banner-filmoteca .logo-unam{
+    background-image: url('imgs/logo-unam.png');
+    width: 72px;
+    height: 75px;
+    margin: 10px 10px;
+    float: left;
+    display:block;
+}
+
+.banner-filmoteca .logo-filmoteca{
+    background-image: url('imgs/logo-filmoteca.png');
+    width: 122px;
+    height: 70px;
+    margin: 10px 10px;
+    float: right;
+    display: block;
+}
+
+.banner-filmoteca .definicion{
+    display: inline;
+    height: 100%;
+    line-height: 100px;
+    color: white;
+    float: right;
+}
+
+.banner-filmoteca .unam{
+    float:left;
+}
+
+.banner-filmoteca .definicion span{
+    text-align: right;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+}
+
+.icon-print, 
+.icon-accessibility{
+    width: 32px;
+    height: 32px;
+    display:block;
+}
+
+.icon-print{
+    background-image: url('imgs/icon-print.png');
+}
+
+.icon-accessibility{
+    background-image: url('imgs/icon-accessibility.png');
+}
+
+/*****************/
+/* Pie de Pagina */
+/*****************/
+footer{
+    background-color: #9A0982;
+    color: white;
+    padding: 10px;
+	margin-top: 20px;
+
+}
+
+footer:after{
+    content:'';
+    display: block;
+    clear:both;
+}
+
+footer .copyright{
+    width: 80%;
+    text-align: center;
+    float:left;
+    font-size: .75em;
+}
+
+footer .fiaf{
+    width: 20%;
+    float:right;
+}
+footer .fiaf > div{
+    float: left;
+}
+
+footer .fiaf .logo{
+    width: 50px;
+    height: 50px;
+    background-image: url('imgs/logofiaf.png');
+    background-size: 50px 50px;
+}
+
+footer .fiaf .definicion{
+    padding-left: 10px;
+    text-align: right;
+    font-size: .65em;
+}
+
+
+
+.contact-menu li{
+    list-style: none;
+    float: right;
+    margin-right: 20px;
+}
+
+.toolbar:after{
+    content:'';
+    display: block;
+    clear:both;
+}
+
+.breadcrumb{
+    float:left;
+}
+
+/*************/
+/* Buscador */
+/*************/
+.search{
+    background-color: #fff;
+    border: 2px solid #DDDDDD;
+    border-radius: 30px;
+    box-shadow: 1px 1px 3px #555555;
+    cursor: pointer;
+    float: right;
+    height: 45px;
+    margin: 10px;
+    overflow: hidden;
+    position: relative;
+    width:325px;
+    background: url("imgs/find.png") no-repeat scroll 5px 5px #FFFFFF;
+    background-size: 30px 30px;
+}
+
+.search input{
+    border: 1px solid #CCCCCC;
+    float: right;
+    margin: 5px;
+    padding: 1px;
+    width: 259px;
+    height: 31px;
+    border-radius: 30px;
+    font-size:12px;
+    background-color:#F0F0F0;
+}
+
+
+/*******************/
+/* Menu principal*/
+/******************/
+.main-menu{
+    position: relative;
+    width: 100%;
+    margin-top: 3px;
+    background: none repeat scroll 0 0 #9A0982;
+    box-shadow: 1px 5px 10px 1px #808080;
+}
+
+.main-menu ul li{
+    border-left: 0.5px solid #FFFFFF;
+    display: block;    
+    float: left;
+    line-height: 45px;
+    list-style: none;
+    width: 11.1%;
+}
+
+.main-menu ul li:hover{
+     background: #640354;
+}
+
+
+.main-menu ul li a{
+    color: #FFF;
+    display: inline-block;
+    font-size: .85em;
+    line-height: normal;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+   font-weight: normal;
+}
+
+.main-menu > ul{
+    width: 100%;
+}
+
+.main-menu > ul > li{
+    position: relative;
+}
+
+.main-menu > ul > li > ul{
+    width: 120%;
+    display:none;
+    position: absolute;
+    top: 46px;
+    z-index: 10;
+}
+
+.main-menu > ul > li > ul > li{
+    width: 205%;
+    background-color: #640354;
+    line-height: 37px; 
+    border-bottom: 1px dotted #232323;
+    color: #181818; 
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;*/
+}
+
+.main-menu > ul > li > ul > li a{
+    font-size: .85em;
+    text-align: left;
+    margin-left: 10px;
+    font-weight: 300;
+    letter-spacing: 0.4px;
+    /*background-image: url('../css/imgs/arrow.png') no-repeat 7px center rgba(0, 0, 0, 0) !important;
+    transition: all 0.3s ease-in-out 0s;*/
+    }
+    
+.main-menu > ul > li > ul > li:hover{
+    background: #842d76;
+    }
+
+.main-menu > ul > li:hover ul{
+    display: block;
+
+}
+
+/***************************************************/
+/* Objetos de tiendita*/
+/***************************************************/
+
+.wrapper-items{
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 77%;
+    padding: 10px;
+    float: left;
+    margin-top: 10px;
+}
+
+.wrapper-items .items .item {
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    float: left;
+    height: 100%;
+    margin-bottom: 20px;
+    min-width: 140px;
+    padding: 10px;
+    position: relative;
+    width: 25%; 
+}
+
+.items{
+    list-style: none;
+}
+
+.items .item{
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    width: 25%;
+    padding: 10px;
+    min-width: 140px;
+    height: 340px;
+}
+
+.items .item img{
+    width: 100%;
+}
+
+.wrapper-items .wrapper-price p{
+text-align: center;
+line-height: 1;
+
+}
+.wrapper-items .wrapper-name-item h5{
+    color: #9A0982;
+    height: 45px;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+}
+.wrapper-items .wrapper-price .btn-comprar{
+    background-color: #9A0982;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    margin-bottom: 0;
+    padding: 6px 12px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.items .item .slayer{
+    text-decoration: none;
+    padding: 10px;
+    color: white;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: none;
+    width: 100%;
+    height: 232px;
+    z-index: 1;
+    background-color: rgba(0,0,0,.5);   
+}
+
+.items .item .slayer h2{
+    font-size: 12pt;
+    color: white;
+    margin-left: 10px;
+}
+
+.items .item .slayer a{
+    position: absolute;
+    bottom: 30px;
+    margin-left: 10px;
+    color: white;
+}
+
+.items .item:hover{
+}
+
+.items .item:hover .slayer{
+    display: block;
+}
+
+.slayer .name{
+
+}
+.slayer .details{
+    position: absolute;
+    bottom: 0;
+    right:0; 
+}
+
+/*********************************/
+/** Objetos de exhibiciones      */
+/*********************************/
+
+.item-exhibition
+{
+    height: 350px;
+}
+
+/*******************/
+/* Galeria eventos */
+/*******************/
+.content_event{
+    float: left;
+    position: relative;
+    display: block;
+    min-width: 145px;
+    width: 25%
+    max-height: 260px;
+    
+}
+.content_event .title_ext h5{
+    width: 45%;
+    color: #9A0982;
+    overflow: hidden;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-left: 10px;
+}
+.content_event .title h5{
+    
+}
+
+.without-results{
+    display: none;
+}
+
+/************************/
+/* Detalles de Pelicula */
+/************************/
+
+.timetable th{
+    padding-right: 70px;
+}
+
+.details{
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 30px;
+}
+.details h2{
+    text-align: center;
+}
+
+.details .cartel{
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.details .cartel img{
+    width: 100%;
+    display: block;
+}
+
+.details .trailer,
+.details .map{
+    position:relative;
+    width: 100%;
+    min-height: 100px;
+    max-height: 600px;
+}
+
+.details .trailer img,
+.details .map img{
+    width: 100%;
+}
+
+.details .wrapper-iframe{
+    position: absolute;
+    top:0px;
+    height: 100%;
+    width: 100%;
+}
+.details iframe{
+    width: 100%;
+    height: 100%;
+}
+
+.details video{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.closed-button{
+    width: 10px;
+    height: 10px;
+    margin-left: 10px;
+}
+
+/******* Formularios ******/
+.input,
+.textarea,
+.field-input,
+.file-upload{
+    padding: 10px;
+}
+
+.input input, .textarea textarea,
+.field-input input,
+.field-input textarea{
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: solid thin purple;
+    width: 80%;
+}
+.input label, .textarea label,
+.field-input label,
+.file-upload label{
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 20%;
+    display: inline-block;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.file-upload input{
+    border: none;
+}
+
+#cart,
+#cart .shopping{
+    display: none;
+}
+
+table{
+    border: solid thin purple;
+    border-collapse: collapse;
+}
+
+table td,
+table th{
+	border: solid thin purple;
+    border-collapse: collapse;
+    padding: 5px;
+}
+
+.message{
+	font-size: 16px;
+	text-align: center;
+	color: green;
+	font-weight: bold;
+}
+
+select.form-control {
+    width:20%;
+    display: inline-block;
+}
+
+label{
+    margin-right: 10px;
+}
+
+/*****************/
+/** Calendar    **/
+/*****************/
+
+#calendar{
+    display:none;
+}
+/* Para no resaltar el día de hoy*/
+.ui-state-highlight{
+    background-color: #DFEFFC !important;
+	background-image: none !important;
+    border: 1px solid #CCCCCC !important;
+    color: #1C94C4 !important;
+}
+
+.total{
+	text-align: right;
+}
+
+
+/*************************/
+/** menu paginas internas  **/
+/*************************/
+
+.sidebar{
+    width: 23%;
+    position: relative;
+    min-height: 800px;
+    margin-top: 25px;
+    padding: 7px 10px 7px 0px;
+    float: left;
+    border-right: 2px ridge #DDDDDD;
+}
+
+
+/*************************/
+/** contenido paginas internas  **/
+/*************************/
+.content {
+    float: left;
+    width: 70%;
+    min-height: 380px;
+    padding: 0 20px 20px 20px;
+    position: relative;
+}
+.content blockquote{
+    font-size: 1em;
+    border: none;
+}
+.content p {
+    font-size: 1em;
+    color: #232322;
+    text-align: justify;
+}
+
+.content h2 iframe {
+    height: 400px;
+    width: 640px;
+    border-top-color: #900;
+    border-right-color: #900;
+    border-bottom-color: #900;
+    border-left-color: #900;
+}
+.content h2 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #850871;
+    text-align: left;
+    margin-left: 15px;
+}
+
+.documento-icono{
+    float: left;
+    margin: 25px;
+}
+.documento-icono li{
+    list-style: none;
+    margin-left: 10px
+}
+.documento-icono li img{
+    text-align: left;
+    margin-right: 10px
+}
+.multimed {
+    float: left;
+    position: relative;
+   margin-left: 45px;
+}
+
+.video_controls{
+    float: left;
+    position: relative;
+    width: 70%;
+    height: 100%;
+    text-align: center;
+}
+
+.memoria_pdf{
+    position: absolute;
+    text-align: left;
+    margin-left: 250px;
+    margin-top: 234px;
+}
+
+.informacion_form{
+    float: left;
+    border: 2px solid #DDDDDD;
+    background-color: #F2F2F2;
+    border-radius: 10px;
+    margin-left: 10px;
+    width: 100%;
+    padding: 10px;
+}
+
+/********************************/
+/** Captura de la Programación **/
+/********************************/
+
+.films-list ul{
+    list-style: none;
+    margin-left: 20%;
+}
+
+.films-list a{
+    cursor: pointer;
+    display: block;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+    border: solid thin black;
+    margin-top: 5px;
+    text-decoration: none;
+}
+
+.films-list a:hover{
+    opacity: .7;
+}
+
+.films-list a:nth-child(n){
+    background-color: #C35AB7;
+}
+
+.films-list a:nth-child(2n){
+    background-color: #FF3397;
+}
+
+.selected-film{
+    background-color: #C35AB7;
+    border-radius: 10px;
+    min-width: 90px;
+    border: solid thin white;
+    color: white;
+    padding: 10px;  
+    display: inline-block;
+}
+
+.remove{
+    background-image: url('imgs/closed-button.png');
+    background-size: 20px;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    float: right;
+    cursor:pointer;
+}
+
+.remove:hover{
+    opacity: .7;
+}
+
+.film-add-link{
+    margin-left: 20%;
+    display: block;
+ }
+
+/*********************/
+/* Directorio*/
+/*********************/
+
+.informacion{
+    float: left;
+    border: 2px solid #DDDDDD;
+    background-color: #F2F2F2;
+    border-radius: 10px;
+    margin-left: 10px;
+    width: 100%;
+}
+.informacion ul > h3{
+    margin-left: 15px;
+}
+.informacion ul > li{
+    font-size: .9em;
+    list-style: none;
+    margin-left: 15px;
+}
+.informacion li .nombre{
+    color: #9A0982;
+    font-weight: bold;
+}
+.informacion li .cargo{
+    color: #640354;
+    font-weight: 500;
+}
+.datos{
+    color: #706d6f;
+    font-weight: 400;
+
+}
+
+/****************/
+/** registro newsletter **/
+/****************/
+.contetn-subscription .subscription #subscription-billboard{
+    float: left;
+    border: 2px solid #DDDDDD;
+    background-color: #F2F2F2;
+     border-radius: 0 0 10px 10px;
+    margin-left: 10px;
+    width: 50%;
+    padding: 10px;
+}
+
+.contetn-subscription .subscription #title{
+    border: 2px solid #DDDDDD;
+    background-color: #9A0982;
+    border-radius: 10px 10px 0 0;
+    margin-left: 10px;
+    width: 50%;
+    text-align: center;
+    color: #DDDDDD;
+}
+
+/****************/
+/** Admin Zone **/
+/****************/
+
+label.error{
+    color: red;
+}
+
+table.admin-index {
+    margin: 15px 0px;
+}
+
+h2,h3{
+    text-align:center;
+}
+
+.admin-cell-thumbnail img{
+    width: 120px;
+}
+
+.admin-a-timetable{
+    border: solid purple 1px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display:block;
+}
+
+.admin-a-timetable:nth-child(odd){
+    background-color: gray;
+}

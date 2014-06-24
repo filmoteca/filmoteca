@@ -1,0 +1,33 @@
+{
+  "name": "filmoteca",
+  "version": "1.0.0",
+  "authors": [
+    "Victor Aguilar <victor.aguilar@ciencias.unam.mx>"
+  ],
+  "description": "Página y sistema web para la filmoteca de la UNAM",
+  "keywords": [
+    "filmoteca",
+    "cinematografia"
+  ],
+  "license": "MIT",
+  "homepage": "www.filmoteca.unam.mx",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "1.9.*",
+    "bootstrap": "3.1.*",
+    "jquery-form": "3.*",
+    "jquery-validate": "1.12.*",
+    "fancybox": "2.1.*",
+    "jquery.scrollTo": "1.4.*",
+    "jquery.serialScroll": "1.2.4",
+    "jqueryui": "1.9.*",
+    "original-hover-effects": "1.0.*",
+    "jquery.nicescroll": "*"
+  }
+}
