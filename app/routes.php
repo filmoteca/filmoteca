@@ -10,8 +10,23 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
+Route::get(
+	'/home',
+	array(
+		'as' => 'home',
+		'uses' => 'ExhibitionController@index')
+	);
 
-Route::get('/', function()
-{
-	dd(App::environment());
-});
+Route::get(
+	'/exhibition/index',
+	array(
+		'as' => 'exhibition.index',
+		'uses' => 'ExhibitionController@index')
+	);
+
+Route::get('/exhibition/search',
+	'/exhibition/index',
+	array(
+		'as' => 'exhibition.search',
+		'uses' => 'ExhibitionController@search')
+	);
