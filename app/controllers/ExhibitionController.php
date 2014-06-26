@@ -6,6 +6,8 @@ use Filmoteca\Repository\ExhibitionsSearcher;
 
 use Response;
 
+use Carbon\Carbon;
+
 class ExhibitionController extends BaseController
 {
 	public function __construct(ExhibitionsRepository $exhibitionRepository)
@@ -15,7 +17,23 @@ class ExhibitionController extends BaseController
 
 	public function index()
 	{
-		return View::make('exhibitions.index');
+		$today = Carbon::now();
+
+		$interval = array(
+				Carbon::createFromDate(
+					$today->year,
+					$today->month,
+					1)->toDateString(),
+				Carbon::createFromDate(
+					$today->year,
+					$today->month,
+					$today->daysInMonth)->toDateString()
+			);
+
+		$exhibitions = $this->exhibitionRepository
+			->search('date',$interval);
+
+		return View::make('exhibitions.index', compact('exhibitions'));
 	}
 
 	public function search($by)
