@@ -14,7 +14,7 @@ class AddTypeIdToExhibitionsTable extends Migration {
 	{
 		Schema::table('exhibitions', function(Blueprint $table)
 		{
-			$table->integer('type')->unsigned();
+			$table->integer('type_id')->unsigned();
 		});
 	}
 
@@ -27,7 +27,7 @@ class AddTypeIdToExhibitionsTable extends Migration {
 	{
 		Schema::table('exhibitions', function(Blueprint $table)
 		{
-			$table->dropColumn('type');
+			$table->dropColumn('type_id');
 		});
 	}
 
