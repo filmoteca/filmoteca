@@ -10,6 +10,7 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
+
 Route::get(
 	'/home',
 	array(
@@ -25,8 +26,12 @@ Route::get(
 	);
 
 Route::get('/exhibition/search',
-	'/exhibition/index',
 	array(
 		'as' => 'exhibition.search',
 		'uses' => 'ExhibitionController@search')
 	);
+
+Route::get('/exhibition/{id}/detail/',
+	array(
+		'as' => 'exhibition.detail',
+		'uses' => 'ExhibitionController@detail'));
