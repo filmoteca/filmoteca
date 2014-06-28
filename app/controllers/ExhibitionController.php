@@ -2,17 +2,21 @@
 
 use Filmoteca\Repository\ExhibitionsRepository;
 
-use Filmoteca\Repository\ExhibitionsSearcher;
+use Filmoteca\Models\Exhibitions\Auditorium;
 
-use Response;
+use Filmoteca\ExhibitionsManager;
 
 use Carbon\Carbon;
 
 class ExhibitionController extends BaseController
 {
-	public function __construct(ExhibitionsRepository $exhibitionRepository)
+	public function __construct(
+		ExhibitionsRepository $exhibitionRepository,
+		ExhibitionsManager $exhibitionsManager)
 	{
-		$this->exhibitionRepository = $exhibitionRepository;
+		$this->repository = $exhibitionRepository;
+
+		$this->manager = $exhibitionsManager;
 	}
 
 	public function index()
@@ -30,16 +34,27 @@ class ExhibitionController extends BaseController
 					$today->daysInMonth)->toDateString()
 			);
 
-		$exhibitions = $this->exhibitionRepository
+		$exhibitions = $this->repository
 			->search('date',$interval);
+		
+		$auditoriums = Auditorium::all(array('id','name'));
 
-		return View::make('exhibitions.index', compact('exhibitions'));
+		$icons = $this->manager->getIcons($exhibitions);
+
+		$weeks = array();
+
+		return View::make(
+			'exhibitions.index', 
+			compact(
+				'exhibitions',
+				'auditoriums',
+				'icons',
+				'weeks'));
 	}
 
 	public function search($by)
 	{
-
-		$exhbitions = $this->exhibitionRepository
+		$exhbitions = $this->repository
 			->search($by, Input::get('value'));
 
 		return View::make('exhibitions.search-result', $exhibitions);
