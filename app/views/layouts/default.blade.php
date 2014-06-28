@@ -5,10 +5,6 @@
 
 		@yield('metas')
 
-		@yield('styles')
-
-		@yield('scripts')
-
 		@if (App::isLocal() )
 
 		{{ HTML::styles(
@@ -44,6 +40,11 @@
 				--}}
 				{{ HTML::style('/assets/css/filmoteca.min') }}
 		@endif
+
+		@yield('styles')
+
+		@yield('scripts')
+
 		<title>Filmoteca UNAM</title>
 	</head>
 
