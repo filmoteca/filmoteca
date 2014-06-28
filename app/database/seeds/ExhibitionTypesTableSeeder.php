@@ -7,13 +7,16 @@ class ExhibitionTypesTableSeeder extends Seeder {
     	$types = array(
             array(
                 'name' => 'Función Especial',
-                'icon' =>'icono1.jpg'),
+                'icon' =>'/imgs/exhibition_types/icono1.jpg'),
             array(
                 'name' => 'Feria',
-                'icon' =>'icono1.jpg'),
+                'icon' =>'/imgs/exhibition_types/icono1.jpg'),
             array(
                 'name' => 'Festival',
-                'icon' =>'icono1.jpg'),
+                'icon' =>'/imgs/exhibition_types/icono1.jpg'),
+            array(
+                'name' => 'Circulo de cine',
+                'icon' =>'/imgs/exhibition_types/icono1.jpg'),
             );
 
         DB::table('exhibition_types')->truncate();

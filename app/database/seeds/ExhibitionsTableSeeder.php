@@ -10,6 +10,7 @@ class ExhibitionsTableSeeder extends Seeder {
         {
             $exhibition = array(
                 'exhibition_film_id' => $i + 1,
+                'type_id' => rand(1,2),
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
                 );
