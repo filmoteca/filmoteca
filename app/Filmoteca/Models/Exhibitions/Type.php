@@ -8,6 +8,6 @@ class Type extends Eloquent
 	
 	public function exhibition()
 	{
-		return $this->hasOne('Filmoteca\Models\Exhibitions\Exhibition');
+		return $this->hasMany('Filmoteca\Models\Exhibitions\Exhibition');
 	}
 }
