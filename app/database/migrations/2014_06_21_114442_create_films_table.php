@@ -45,6 +45,10 @@ class CreateFilmsTable extends Migration {
 			$table->text('synopsis');
 
 			$table->text('trailer');
+
+			$table->string('thumbnail_image',255)->default('/assets/imgs/no-photo.jpg');
+
+			$table->string('full_image',255)->default('/assets/imgs/no-photo.jpg');
 		});
 	}
 
