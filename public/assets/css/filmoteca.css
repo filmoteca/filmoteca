@@ -350,7 +350,7 @@ footer .fiaf .definicion{
 .wrapper-items{
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    width: 77%;
+    width:100%;
     padding: 10px;
     float: left;
     margin-top: 10px;
@@ -363,7 +363,7 @@ footer .fiaf .definicion{
     box-sizing: border-box;
     display: block;
     float: left;
-    height: 100%;
+    height: 200px;
     margin-bottom: 20px;
     min-width: 140px;
     padding: 10px;
@@ -503,7 +503,7 @@ line-height: 1;
 }
 
 /************************/
-/* Detalles de Pelicula */
+/* Detalles en Popup*/
 /************************/
 
 .timetable th{
@@ -519,31 +519,31 @@ line-height: 1;
     text-align: center;
 }
 
-.details .cartel{
+.details-poster{
     max-width: 300px;
     width: 100%;
-    margin: 0 auto;
+    margin: 15px;
 }
 
-.details .cartel img{
+.details-poster img{
     width: 100%;
     display: block;
 }
 
-.details .trailer,
-.details .map{
+.details-trailer,
+.details-map{
     position:relative;
     width: 100%;
     min-height: 100px;
     max-height: 600px;
 }
 
-.details .trailer img,
-.details .map img{
+.details-trailer img,
+.details-map img{
     width: 100%;
 }
 
-.details .wrapper-iframe{
+.details-wrapper-iframe{
     position: absolute;
     top:0px;
     height: 100%;
@@ -633,6 +633,10 @@ label{
 /*****************/
 /** Calendar    **/
 /*****************/
+
+.datepicker{
+    background-color: white;
+}
 
 #calendar{
     display:none;
