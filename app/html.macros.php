@@ -18,7 +18,6 @@ HTML::macro('styles', function($styles = array())
 	return HTML::resource('style', $styles);
 });
 
-
 HTML::macro('resource', function($type, $list = array())
 {
 	if( $type != 'script' && $type != 'style') return '';
@@ -42,4 +41,9 @@ HTML::macro('resource', function($type, $list = array())
 	}
 
 	return $html;
+});
+
+HTML::macro('metatags', function( $metas )
+{
+	return '';
 });
