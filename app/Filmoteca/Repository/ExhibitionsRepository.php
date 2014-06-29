@@ -25,11 +25,17 @@ class ExhibitionsRepository
 	 * @param  Mixed $value El valor con el cual se  quiere que coincida la búsqueda
 	 * y depende el tipo de búsqueda.
 	 * @return Collection 	Collección de exhibiciones
+	 * @throws NotFoundException Si la exhibición no existe al realizar una búsquda por id.
 	 */
 	public function search($by, $value)
 	{
 		switch($by)
 		{
+			case('id'):
+
+				$exhibitions = $this->exhibition->findOrFail($value);
+				
+				break;
 			case('title'):
 
 				$exhibitions = $this->searchByTitle( $value );
