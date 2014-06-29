@@ -59,4 +59,25 @@ class ExhibitionController extends BaseController
 
 		return View::make('exhibitions.search-result', $exhibitions);
 	}
+
+	/**
+	 * Esta acción crea una vista con los detalles de una exhibición,
+	 * estableciendo un layout para peticiones ajax y otro para peticiones
+	 * no-ajax.
+	 * @param  Integer $id Id de un entero
+	 * @return view Una vista que depende de la solicitud (ajax o )
+	 */
+	public function detail($id)
+	{
+		$exhibition = $this->repository->search('id',$id);
+
+		if(Request::ajax() )
+		{
+			$layout = 'layouts.ajax';
+		}else{
+			$layout = "layouts.default";
+		}
+
+		return View::make('exhibitions.details', compact('exhibition','layout') );
+	}
 }
