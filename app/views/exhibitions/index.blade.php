@@ -3,18 +3,20 @@
 @section('scripts')
 	{{ HTML::scripts(
 		array(
-			'bower_components/bootstrap-datepicker/js/bootstrap-datepicker.js',
-			'bower_components/bootstrap-datepicker/js/locales/bootstrap-datepicker.es.js',
-			'/assets/js/Exhibitions.js')) }}
+			'/bower_components/domready/ready.min.js',
+			'/bower_components/angular/angular.js',
+			'/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
+			'/apps/services/ExhibitionService.js',
+			'/apps/controllers/ExhibitionController.js',
+			'/apps/ExhibitionsApp.js')) }}
 @stop
 
 @section('styles')
 	{{ HTML::styles(
-		array(
-			'bower_components/bootstrap-datepicker/css/datepicker3.css')) }}
+		array()) }}
 @stop
 
-@section('breadcrumb')
+@section('breadcrumbs')
 	<li class="active">
 		Programación
 	</li>
@@ -48,7 +50,7 @@
 					<ul>
 						@foreach($auditoriums as $auditorium )
 							<li class="last">
-								<a>
+								<a ng-click="filter('auditorium','{{$auditorium->name}}')">
 									<span>{{$auditorium->name}}</span>
 								</a>
 							</li>
@@ -126,7 +128,7 @@
 
 	<div class="content">
 
-		<h3>Programación de la semana actual</h3>
+		<h3>Programación del mes</h3>
 
 		<div class="wrapper-items" id="wrapper-items">
 
@@ -137,9 +139,11 @@
 
 			<ul class="items" id="items">
 
-				@foreach( $exhibitions as $exhibition )
+				@foreach( $exhibitions as $index => $exhibition )
 
-					<li class="thumbnail item">
+					<li class="thumbnail item"
+						ng-hide="exhibitions[{{ $index }}].hidden">
+
 						<img src="{{ $exhibition->exhibition_film->film->thumbnail_image }}"
 							alt="{{ $exhibition->exhibition_film->film->title }}">
 						{{ 
@@ -149,7 +153,12 @@
 								$exhibition->exhibition_film->film->title,
 								20),
 							array( $exhibition->id ),
-							array('title' => 'Ver detalles')) 
+							array(
+								'title' => 'Ver detalles',
+								'ng-click' => 
+									'openDetails("' . 
+										URL::action("ExhibitionController@detail") .
+										'")')) 
 						}}
 					</li>
 

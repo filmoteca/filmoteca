@@ -16,5 +16,6 @@ Thumbs.db
 
 !/public/assets
 !/public/bower.json
+!/public/apps
 
 /notes.md

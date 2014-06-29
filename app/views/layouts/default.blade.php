@@ -65,7 +65,7 @@
 					<div>
 						<ul class="breadcrumb">
 							<li>{{ HTML::linkRoute('home','Página de inicio') }}</li>
-							@yield('breadcrumb')
+							@yield('breadcrumbs')
 						</ul>
 					</div>
 
