@@ -35,3 +35,18 @@ Route::get('/exhibition/{id}/detail/',
 	array(
 		'as' => 'exhibition.detail',
 		'uses' => 'ExhibitionController@detail'));
+
+Route::get('/pages/{dir_or_page}/{page_name?}',
+	function($dir_or_page = null, $page_name = null)
+{
+	$view = 'pages';
+
+	if( !is_null($page_name) ) //Se proporciono un subdirectorio
+	{
+		$view .= '.' . $dir_or_page . '.' . $page_name;
+	}else{
+		$view .=  '.' .$dir_or_page;
+	}
+
+	return View::make( $view );
+});
