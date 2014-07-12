@@ -12,6 +12,9 @@ Thumbs.db
 *.zip
 *.tar
 
+
+*.vagrant/
+
 /public/*
 
 !/public/assets
