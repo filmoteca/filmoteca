@@ -85,3 +85,5 @@ require app_path() . '/constants.php';
 require app_path() . '/form.macros.php';
 
 require app_path() . '/html.macros.php';
+
+require app_path() . '/functions.php';
