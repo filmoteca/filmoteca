@@ -1,5 +1,4 @@
 <?php
-
 $menu = array(
 
 	array('Misión y Visión', '/pages/quienes-somos/mision-y-vision'),
@@ -17,5 +16,6 @@ $menu = array(
 	array('Medalla Filmoteca', '/pages/quienes-somos/medalla-filmoteca'),
 
 	array('Directorio', '/pages/quienes-somos/directorio'));
+?>
 
-echo $this->element('menus/static-pages', compact('menu','selected'));
+@include('elements.menus.static-pages', compact('menu','selected'))
