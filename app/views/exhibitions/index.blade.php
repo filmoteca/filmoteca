@@ -5,15 +5,23 @@
 		array(
 			'/bower_components/domready/ready.min.js',
 			'/bower_components/angular/angular.js',
-			'/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
+			'/bower_components/angular-bootstrap/ui-bootstrap.js',
+			'/bower_components/moment/min/moment.min.js',
+			'/bower_components/angular-moment/angular-moment.min.js',
+			'/apps/directives/ExhibitionsDatepicker.js',
 			'/apps/services/ExhibitionService.js',
 			'/apps/controllers/ExhibitionController.js',
 			'/apps/ExhibitionsApp.js')) }}
+
+	<script>
+		
+		window.exhibitions = {{$exhibitions->toJson() }}
+
+	</script>
 @stop
 
 @section('styles')
-	{{ HTML::styles(
-		array()) }}
+	{{ HTML::styles(array('/assets/css/exhibitions-datepicker.css')) }}
 @stop
 
 @section('breadcrumbs')
@@ -39,6 +47,22 @@
 	<div class="clearfix"></div>
 
 	<div class="sidebar">
+
+		<div class="exhibition-datepicker" style="display:inline-block; min-height:200px;">
+			<h3>Consultar Programación</h3>
+
+			<datepicker 
+				ng-model="dt"
+				min-date="minDate" 
+				max-date="maxDate"
+				datepicker-mode="'day-or-week'"
+				min-mode="day-or-week"
+				max-mode="day-or-week"
+				show-weeks="true" 
+				class="well well-sm">
+			</datepicker>
+		</div>
+
 		<div class="static-pages-menu">
 			<ul>
 				<li class="has-sub">
@@ -65,45 +89,13 @@
 					<ul>
 						@foreach($icons as $icon)
 							<li class="last">
-								<a>
+								<a ng-click="filter('icon','{{$icon->name}}')">
 									<span>
 										{{ HTML::image($icon->icon, $icon->name) }}
 									</span>
 								</a>
 							</li>
 						@endforeach
-					</ul>
-				</li>
-
-				<li class="has-sub">
-					<a>
-						<span>Consultar programación</span>
-					</a>
-					<ul>
-						<li class="has-sub">
-							<a><span>por día</span></a>
-							<ul>
-								<li>
-									<div id="datepicker"></div>
-								</li>
-							</ul>
-						</li>
-
-						<li class="has-sub">
-							<a id="by-week">
-								<span>de la semana</span>
-							</a>
-								<ul>
-								{{-- Poner 4 entradas de la semana --}}
-								</ul>
-						</li>
-
-						<li class="last">
-							<a>
-								<span>del mes</span>
-							</a>
-						</li>
-
 					</ul>
 				</li>
 			</ul>

@@ -6,7 +6,8 @@
 	{
 		requirejs([
 			'angular',
-			'services/ExhibitionService'
+			'services/ExhibitionService',
+			'ui-bootstrap'
 			],
 			factory);
 	}else{
@@ -25,6 +26,14 @@
 	function($scope, exhibitions, $modal)
 	{	
 		var allExhibitions = exhibitions;
+
+		$scope.day = new Date();
+
+		$scope.week = new Date();
+
+		$scope.minDate = '2014-07-02';
+
+		$scope.maxDate = '2014-07-31';
 
 		$scope.exhibitions = allExhibitions;
 
@@ -52,7 +61,6 @@
 			};
 
 			$modal.open(option);
-
 		}
 		
 	}]);

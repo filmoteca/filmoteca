@@ -19,6 +19,6 @@
 
 	app.factory('Exhibition',[function()
 	{
-		return {};
+		return window.exhibitions;
 	}])
 });

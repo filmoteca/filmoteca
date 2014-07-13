@@ -1,0 +1,26 @@
+
+.exhibition-datepicker table td,
+.exhibition-datepicker table th
+{
+	border: none;
+	padding: 0px;
+}
+
+.exhibition-datepicker table{
+	border: none;
+}
+
+.exhibition-datepicker-week-row:hover
+{
+	background-color:red;
+}
+
+.exhibition-datepicker-week-row:hover button
+{
+	background-color: blue;
+}
+
+.exhibition-datepicker-week-row:hover button:hover
+{
+	background-color: yellow;
+}
