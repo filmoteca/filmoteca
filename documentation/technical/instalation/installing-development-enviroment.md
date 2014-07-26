@@ -87,7 +87,7 @@ Estando en la carpeta donde se desea almacenar el proyecto ejecutar
  git clone git@github.com:pollin14/filmoteca.git 
 ```
 
-Este comando creara una carpeta llamada __filmoteca__ la cual contendrá todo el código necesario para hacer andar el proyecto.
+Este comando creará una carpeta llamada __filmoteca__ la cual contendrá todo el código necesario para hacer andar el proyecto.
 
 Después entramos a la carpeta __filmoteca__ y ejecutar
 
@@ -99,9 +99,7 @@ Este comando creará y configurará la máquina virtual donde correrá el proyec
 
 Cuando el comando termine, tenemos que apagar y reiniciar la máquina virtual (esto se tiene que hacer cada vez que se apague o encienda la máquina real). Para lograr esto usamos ```vagrant halt``` y ```vagrant up``` parara apagarla y encenderla respectivamente.
 
-Una vez que la máquina virtual esté iniciada se podrán ver los archivos de servidor poniendo la **IP 192.168.33.11** en el navegador. Así para poder ver el sitio, tenemos que entrar a la dirección **192.168.33.11/filmoteca/public**. No obstante, deseamos tener poder ver ésta última ubicación escribiendo en **filmoteca.dev** en el navegador (*dev* es la abreviación de desarrollo en inglés, es decir, la abreviación de _development_).
-
-Para lograr esto debemos correr el primer comando si usamos *linux* y el segundo si usamos *mac*
+Una vez que la máquina virtual esté iniciada se podrán ver los archivos de servidor poniendo la IP **192.168.33.11** en el navegador. Podremos ver el sitio entrando a **192.168.33.11/filmoteca/public**. No obstante, deseamos entrar al sitio escribiendo en el navegador **filmoteca.dev** (dev es la abreviación de *development*, desarrollo en español). Para lograr esto debemos correr el primer comando si usamos *linux* y el segundo si usamos *mac*
 
 ```
 sudo echo '192.168.33.11 filmoteca.dev' >> /etc/hosts
