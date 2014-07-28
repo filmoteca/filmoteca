@@ -1,6 +1,8 @@
 Instalando ambiente de desarrollo
 =================================
 
+##Indice
+
 * Software requerido.
 
 * Configuración de Github.
