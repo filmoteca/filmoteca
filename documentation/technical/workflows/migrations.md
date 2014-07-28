@@ -1,12 +1,13 @@
 Migraciones
 ===========
 
+## Indice
+
 * Introducción
-* Flujo de trabajo
-    * Creando una migración
-    * Corriendo las migraciones
-    * Deshaciendo la ultima migración ejecutada
-    * Resumen del flujo de trabajo
+* Creando una migración
+* Corriendo las migraciones
+* Deshaciendo la ultima migración ejecutada
+* Resumen del flujo de trabajo
 
 Introducción
 ------------
@@ -17,10 +18,7 @@ La principal función de las *migraciones* es poder versionar el desarrollo de l
 
 La creación de migraciones es un proceso monótono, debido a que hay que copiar el esqueleto una migración y a partir de ahí agregar el código para crear o modificar la base de datos. Es similar a tener que copiar el esqueleto de un archivo **html** y a partir de ahí generar las peculiaridades de la página. Por tal motivo se utiliza la terminal para crear este esqueleto y nosotros solamente tendremos que agregar lo que realmente importa.
 
-Flujo de trabajo
-----------------
-
-Esta sección describe un ejemplo de un caso de uso completo en la elaboración de migraciones.
+En las siguiente secciones se describe un ejemplo de un caso de uso completo en la elaboración de migraciones.
 
 ### Creación de migraciones
 
