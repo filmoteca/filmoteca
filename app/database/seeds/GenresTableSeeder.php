@@ -10,7 +10,7 @@ class GenresTableSeeder extends Seeder {
 
     	$namesLen = count($names) - 1;
 
-        for( $i = 0; $i < 6; $i++)
+        for( $i = 0; $i < 10; $i++)
         {
             $genre = array(
                 'name' => $names[$i],
