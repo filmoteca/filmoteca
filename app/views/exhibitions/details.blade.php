@@ -2,11 +2,15 @@
 
 @section('breadcrumbs')
 	<li>
-		{{ HTML::linkAction('ExhibitionController@index','Programación') }}
+		{{ HTML::linkRoute('exhibition.index','Programación') }}
 	</li>
 	<li class="active">
 		{{ str_limit( $exhibition->exhibition_film->film->title, 10 ) }}
 	</li>
+@stop
+
+@section('title')
+	{{ $exhibition->exhibition_film->film->title }}
 @stop
 
 @section('meta')
@@ -33,7 +37,7 @@
 					 data-show-faces="true" 
 					 data-share="true">
 				</div>
-				<h1>{{ $exhibition->exhibition_film->film->title }}</h1>
+				
 				<div class="tecnical-card">
 					
 					@foreach($exhibition->getTechnicalCard() as $title => $value)
@@ -73,7 +77,7 @@
 
 		<div class="row">
 			<div class="col-lg-12">
-				<div class="details-tailer">
+				<div class="details-trailer">
 				 	{{
 				 		HTML::image(
 				 			'/assets/imgs/background-trailer.jpg',

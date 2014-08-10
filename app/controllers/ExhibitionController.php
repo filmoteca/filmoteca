@@ -71,12 +71,10 @@ class ExhibitionController extends BaseController
 	{
 		$exhibition = $this->repository->search('id',$id);
 
-		if(Request::ajax() )
-		{
-			$layout = 'layouts.ajax';
-		}else{
-			$layout = "layouts.default";
-		}
+		//Extend Request;
+		$isJson = stristr(Request::header('Accept'), 'application/json' );
+
+		$layout = ( Request::ajax() || $isJson )? 'layouts.modal': "layouts.default";
 
 		return View::make('exhibitions.details', compact('exhibition','layout') );
 	}
