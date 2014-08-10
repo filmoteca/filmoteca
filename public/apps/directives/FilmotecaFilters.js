@@ -50,11 +50,11 @@
 
 				element.on('click', function()
 				{	
-					console.log('I am a directive and can listen the click event');
-
-					console.log('value: ', $scope.value);
-
-					console.log('filter: ', $scope.filter);
+					/**
+					 * Angular (o firefox) le pone comillas dobles a value, aunque ya 
+					 * tenga comillas dobles.
+					 */
+					$scope.value = $scope.value.replace('"','','gim');
 
 					var filter = config.filters.default;
 
