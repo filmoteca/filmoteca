@@ -5,17 +5,19 @@
 		array(
 			'/bower_components/domready/ready.min.js',
 			'/bower_components/angular/angular.js',
-			'/bower_components/angular-bootstrap/ui-bootstrap.js',
+			'/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
 			'/bower_components/moment/min/moment.min.js',
 			'/bower_components/angular-moment/angular-moment.min.js',
+			'/bower_components/angular-i18n/angular-locale_es-mx.js',
 			'/apps/directives/ExhibitionsDatepicker.js',
+			'/apps/directives/FilmotecaFilters.js',
 			'/apps/services/ExhibitionService.js',
 			'/apps/controllers/ExhibitionController.js',
 			'/apps/ExhibitionsApp.js')) }}
 
 	<script>
 		
-		window.exhibitions = {{$exhibitions->toJson() }}
+		window.exhibitions = {{ $exhibitions->toJson() }}
 
 	</script>
 @stop
@@ -72,9 +74,16 @@
 						</span>
 					</a>
 					<ul>
+						<li class="last">
+							<a flm-filters filter="auditorium" value="0" 
+								class="btn">
+								<span>Cualquiera</span>
+							</a>
+						</li>
 						@foreach($auditoriums as $auditorium )
 							<li class="last">
-								<a ng-click="filter('auditorium','{{$auditorium->name}}')">
+								<a flm-filters filter="auditorium" value="{{$auditorium->id}}"
+									class="btn">
 									<span>{{$auditorium->name}}</span>
 								</a>
 							</li>
@@ -89,7 +98,8 @@
 					<ul>
 						@foreach($icons as $icon)
 							<li class="last">
-								<a ng-click="filter('icon','{{$icon->name}}')">
+								<a flm-filters filter="icon" value="{{$icon->id}}"
+									class="btn">
 									<span>
 										{{ HTML::image($icon->icon, $icon->name) }}
 									</span>
@@ -134,7 +144,7 @@
 				@foreach( $exhibitions as $index => $exhibition )
 
 					<li class="thumbnail item"
-						ng-hide="exhibitions[{{ $index }}].hidden">
+						id="{{ $exhibition->id }}">
 
 						<img src="{{ $exhibition->exhibition_film->film->thumbnail_image }}"
 							alt="{{ $exhibition->exhibition_film->film->title }}">
@@ -149,8 +159,9 @@
 								'title' => 'Ver detalles',
 								'ng-click' => 
 									'openDetails("' . 
-										URL::action("ExhibitionController@detail") .
-										'")')) 
+										URL::action("ExhibitionController@detail", $exhibition->id) .
+										'")',
+								'onclick' => 'return false')) 
 						}}
 					</li>
 
