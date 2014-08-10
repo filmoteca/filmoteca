@@ -30,7 +30,7 @@
     </tr>
     <tr>
       <th colspan="{{7 + showWeeks}}">
-        <lable class="btn btn-default btn-sm" style="width:100%" ng-click="f()">{{title}}</lable>
+        <lable class="btn btn-default btn-sm" style="width:100%" flm-filters filter="month" value="la-funcion-filtro-es-la-responsable">{{title}}</lable>
       </th>
     </tr>
     <tr>
@@ -42,7 +42,7 @@
     <tr ng-repeat="row in rows track by $index" ng-class="{ 'exhibition-datepicker-week-row': selectWeek }">
       <td ng-show="showWeeks" class="text-center h6"><em>{{ weekNumbers[$index] }}</em></td>
       <td ng-repeat="dt in row track by dt.date" class="text-center" role="gridcell" id="{{dt.uid}}" aria-disabled="{{!!dt.disabled}}">
-        <button type="button" style="width:100%;" class="btn btn-default btn-sm" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}">{{dt.label}}</span></button>
+        <button type="button" style="width:100%;" class="btn btn-default btn-sm" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" flm-filters filter="{{filter}}" value="{{dt.date}}"ng-disabled="dt.disabled" tabindex="-1"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}">{{dt.label}}</span></button>
       </td>
     </tr>
   </tbody>

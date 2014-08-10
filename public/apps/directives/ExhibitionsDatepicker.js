@@ -19,6 +19,7 @@
 		define(
 			[
 			'angular',
+			'FilmotecaFilters',
 			'ui.bootstrap',
 			],
 			factory);
@@ -29,7 +30,7 @@
 {
 	'use strict';
 
-	var app = angular.module('ExhibitionsDatepicker',['ui.bootstrap']);
+	var app = angular.module('ExhibitionsDatepicker',['ui.bootstrap', 'FilmotecaFilters']);
 
 	app.directive('dayorweekpicker', ['dateFilter', function (dateFilter) {
 	  return {
@@ -140,12 +141,34 @@
 
 			ctrl.refreshView();
 
-			//heredar
+			/**
+			 * Estas variables y la funcion selectBy, son usadas para filtrar
+			 * las exhibiciones usando la directiva FilmotecaFilters.
+			 */
+			
+			/**
+			 * Indica si o no se debe selecionar una semana entera.
+			 * @type {Boolean}
+			 */
 			scope.selectWeek = false;
+
+			/**
+			 * Guarda el nombre de la función filtro que se usará para filtrar
+			 * las exhibiciones. Valores: day | week.
+			 * @type {String}
+			 */
+			scope.filter = 'day';
 
 			scope.selectBy = function( by )
 			{
-				scope.selectWeek = by == 'week';
+				if( by == 'week')
+				{
+					scope.selectWeek = true;
+					scope.filter = 'week';
+				}else{
+					scope.selectWeek = false;
+					scope.filter = 'day';
+				}
 			};
 	    }
 	  };

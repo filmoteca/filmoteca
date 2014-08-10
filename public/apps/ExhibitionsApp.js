@@ -6,15 +6,16 @@
 	{
 		requirejs(
 			[
-			'jquery',
 			'angular',
+			'domready',
 			'ExhibitionsDatepicker',
+			'FilmotecaFilters'
 			],
 			factory);
 	}else{
-		factory($,angular);
+		factory(angular,domready);
 	}
-})(function($,angular)
+})(function(angular, domready)
 {
 	'use strict';
 
