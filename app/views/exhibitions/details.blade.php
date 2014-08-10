@@ -46,6 +46,31 @@
 			</div>
 		</div>
 
+		<div class="panel panel-default">
+			<div class="panel-heading"> Salas </div>
+			<div class="panel-body">
+				<table class="table table-bordered">					
+					@foreach( $exhibition->schedules as $schedule )
+						<tr>
+							<td>{{ $schedule->auditorium->id }}</td>
+							<td>{{ $schedule->auditorium->name }}</td>
+							<td>{{ $schedule->entry }}</td>
+						</tr>
+					@endforeach
+				</table>
+			</div>
+			<div class="panel-footer">
+				<p>
+					<span>
+						{{ HTML::image(
+							$exhibition->type->icon, 
+							$exhibition->type->name) }}
+					</span>
+					{{ $exhibition->type->name }}
+				<p>
+			</div>
+		</div>
+
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="details-tailer">
