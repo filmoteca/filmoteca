@@ -40,7 +40,7 @@ App::singleton('names',function()
 		'Tony',
 		'Stark',
 		'Steve',
-		'Calor',
+		'Carlos',
 		'Olivera',
 		'Nemesis',
 	);
