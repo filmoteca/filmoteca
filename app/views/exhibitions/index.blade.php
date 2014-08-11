@@ -76,6 +76,7 @@
 					<ul>
 						<li class="last">
 							<a flm-filters filter="auditorium" value="0" 
+								ng-click="setUsedFilter('')"
 								class="btn">
 								<span>Cualquiera</span>
 							</a>
@@ -83,7 +84,8 @@
 						@foreach($auditoriums as $auditorium )
 							<li class="last">
 								<a flm-filters filter="auditorium" value="{{$auditorium->id}}"
-									class="btn">
+									class="btn"
+									ng-click="setUsedFilter('auditorium','{{$auditorium->name}}')">
 									<span>{{$auditorium->name}}</span>
 								</a>
 							</li>
@@ -96,10 +98,18 @@
 						<span>Funciones Especiales</span>
 					</a>
 					<ul>
+						<li class="last">
+							<a flm-filters filter="icon" value="0" 
+								ng-click="setUsedFilter('')"
+								class="btn">
+								<span>Cualquiera</span>
+							</a>
+						</li>
 						@foreach($icons as $icon)
 							<li class="last">
 								<a flm-filters filter="icon" value="{{$icon->id}}"
-									class="btn">
+									class="btn"
+									ng-click="setUsedFilter('icon', '{{ $icon->name }}')">
 									<span>
 										{{ HTML::image($icon->icon, $icon->name) }}
 									</span>
@@ -130,7 +140,28 @@
 
 	<div class="content">
 
-		<h3>Programación del mes</h3>
+		<div ng-switch="usedFilter">
+			<h3 ng-switch-when="week">
+				Programación de la semanal del 
+				<b>@{{startDate}}</b> al <b>@{{endDate}}</b> de 
+				<b>@{{ dt | date : 'MMMM'}}</b>
+			</h3>
+			<h3 ng-switch-when="day">
+				Programación del día <b>@{{ dt | date : 'd' }}</b>
+				de <b>@{{ dt | date : 'MMMM'}}</b>
+			</h3>
+			<h3 ng-switch-when="auditorium">
+				Programación de la sala <b>@{{filterValue}}</b> de
+				<b>{{ trans('dates.months.' . date('F') ) }}</b>
+			</h3>
+			<h3 ng-switch-when="icon">
+				Funciones <b>@{{filterValue}}</b> de
+				<b>{{ trans('dates.months.' . date('F') ) }}</b>
+			</h3>
+			<h3 ng-switch-default>
+				Programación del mes de <b>{{ trans('dates.months.' . date('F') ) }}</b>
+			</h3>
+		</div>
 
 		<div class="wrapper-items" id="wrapper-items">
 

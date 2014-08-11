@@ -37,13 +37,17 @@
 
 	function($scope,  $modal)
 	{	
-		$scope.day = new Date();
-
-		$scope.week = new Date();
-
 		$scope.minDate = '2014-08-1';
 
 		$scope.maxDate = '2014-08-30';
+
+		$scope.usedFilter = '';
+
+		$scope.startDay = '';
+
+		$scope.endDay = '';
+
+		$scope.dt = null;
 
 		/**
 		 * Abre un popup para mostrar los detalles de una exhibición.
@@ -56,5 +60,27 @@
 				size: 'lg',
 			});
 		};
+
+		$scope.setUsedFilter = function(name, value)
+		{
+			$scope.usedFilter = name;
+
+			$scope.filterValue = value;
+
+			if(name === 'week')
+			{
+
+			}
+		};
+
+		$scope.$watch('dt', function(value)
+		{
+			$scope.startDay = new Date();
+
+			$scope.endDay = new Date();
+			
+			console.log($scope.dt);
+		});
+
 	}]);
 });

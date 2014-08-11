@@ -37,7 +37,8 @@
 			},
 			'icon' : function(item,value)
 			{
-				return item.type_id == value;
+				return item.type_id === value || 
+					parseInt(value) === 0;
 			},
 			'day': function(item, value)
 			{
