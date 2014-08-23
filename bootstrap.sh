@@ -69,16 +69,6 @@ php5enmod mcrypt
 
 service apache2 restart
 
-######################
-## Setting hostname ##
-######################
-
-rm /etc/hostname
-
-echo "filmoteca-dev" > /etc/hostname
-
-hostname filmoteca-dev
-
 ####################################
 ## Running migrations and seeders ##
 ####################################

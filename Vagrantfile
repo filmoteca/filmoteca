@@ -39,6 +39,9 @@ Vagrant.configure("2") do |config|
     group: "www-data",
     mount_options: ["dmode=775,fmode=664"]
 
+  # The hostname of virtual machine
+  config.vm.hostname = 'filmoteca-dev'
+
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
