@@ -1,53 +1,70 @@
+/**
+ * @author Victor Aguilar
+ *
+ */
+
+/* global define, angular, console, _ */
+
 (function(factory)
 {
 	'use strict';
 
 	if( typeof define == 'function' && define.amd )
 	{
-		requirejs([
+		define([
 			'angular',
+			'underscore',
 			'services/ExhibitionService',
 			'constants/ExhibitionsFilters',
-			'directives/FilmotecaFilters',
-			'ui-bootstrap'
+			'ui-bootstrap',
+			'angular-moment'
 			],
 			factory);
 	}else{
-		factory(angular);
+		factory(angular,_);
 	}
-})(function(angular)
+})(function(angular,_)
 {
 	'use strict';
 
 	var app = angular.module('ExhibitionController',
-		['ExhibitionService', 'ui.bootstrap', 'FilmotecaFilters']);
+		['ExhibitionService', 'ui.bootstrap', 'FilmotecaFilters','angularMoment']);
 
 	/**
 	 * Configuración.
 	 */
-	app.run(['Exhibition', 'flmFiltersConfig', function(Exhibitions,flmFiltersConfig)
+	app.run(['Exhibition', 'flmFiltersConfig', 'datepickerConfig', 'moment',
+		function(Exhibitions,flmFiltersConfig,datepickerConfig, moment)
 	{
 		flmFiltersConfig.items = Exhibitions.all();
+		
+		angular.extend(datepickerConfig, {
+
+			minDate : moment().subtract( moment().date() - 1, 'days').toDate(),
+
+			maxDate : moment( moment().year() + '-' + (moment().month() + 1) + '-' + moment()
+				.daysInMonth(),'YYYY-MM-DD').toDate(),
+
+			minMode : 'day',
+
+			maxMode : 'day',
+
+			showWeek : 'true'
+		});
 
 		angular.extend(flmFiltersConfig.filters, Exhibitions.filters() );
 	}]);
 
 	app.controller('ExhibitionController',[
-	'$scope', 'Exhibition', '$modal',
+	'$scope','$modal','moment','Exhibition',
 
-	function($scope,  $modal)
+	function($scope, $modal, moment, Exhibition)
 	{	
-		$scope.minDate = '2014-08-1';
-
-		$scope.maxDate = '2014-08-30';
-
 		$scope.usedFilter = '';
 
-		$scope.startDay = '';
-
-		$scope.endDay = '';
-
 		$scope.dt = null;
+
+		$scope.filterResults = Exhibition.all().length;
 
 		/**
 		 * Abre un popup para mostrar los detalles de una exhibición.
@@ -61,26 +78,23 @@
 			});
 		};
 
-		$scope.setUsedFilter = function(name, value)
+		$scope.$on('filterSelected', function(event, data)
 		{
-			$scope.usedFilter = name;
-
-			$scope.filterValue = value;
-
-			if(name === 'week')
+			if( data.name === 'week')
 			{
+				var date = moment(data.value, moment.ISO_8601);
 
+				$scope.startDate = date.subtract(date.weekday(), 'days' ).valueOf();
+
+				$scope.endDate = date.add(6, 'days').valueOf();
 			}
-		};
 
-		$scope.$watch('dt', function(value)
-		{
-			$scope.startDay = new Date();
+			$scope.usedFilter = ( _.contains(['0',''], data.value) )?
+				$scope.usedFilter = 'Not one' : data.name;
 
-			$scope.endDay = new Date();
-			
-			console.log($scope.dt);
+			$scope.filterResults = data.results;
+
+			$scope.filterTitle = data.title;
 		});
-
 	}]);
 });

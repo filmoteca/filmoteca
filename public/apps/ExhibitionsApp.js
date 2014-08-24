@@ -1,3 +1,9 @@
+/**
+ * @author : Victor Aguilar
+ *
+ */
+
+/* globals requirejs, define, angular, domready */
 (function(factory)
 {
 	'use strict';
@@ -8,8 +14,9 @@
 			[
 			'angular',
 			'domready',
-			'ExhibitionsDatepicker',
-			'FilmotecaFilters'
+			'directives/ExhibitionsDatepicker',
+			'FilmotecaFilters',
+			'directives/FilmotecaFilters',
 			],
 			factory);
 	}else{
@@ -25,14 +32,22 @@
 		'ExhibitionsDatepicker'
 		]);
 
-	app.run(['$templateCache', function($templateCache)
+	app.run(['$rootScope', function($rootScope)
 	{
-		$templateCache.put(
-			'template/datepicker/datepicker.html',
-			'<div ng-switch="datepickerMode" role="application" ng-keydown="keydown($event)">'+
-				'<dayorweekpicker ng-switch-when="day-or-week" tabindex="0"></dayorweekpicker>' +
-			'</div>'
-			);
+		$rootScope.safeApply = function(fn)
+		{
+			var phase = $rootScope.$phase;
+
+			if( phase === 'digest' || phase === 'apply')
+			{
+				if(typeof fn === 'function')
+				{
+					fn();
+				}
+			}else{
+				$rootScope.$apply(fn);
+			}
+		};
 	}]);
 
 	domready( function()

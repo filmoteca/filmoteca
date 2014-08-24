@@ -20,6 +20,14 @@
 		window.exhibitions = {{ $exhibitions->toJson() }}
 
 	</script>
+
+	{{-- 
+		Este template sobre-escribe al template 
+		templates/datepicker/day.html de anguler-ui datepicker  
+	--}}
+	<script id="template/datepicker/day.html" type="text/ng-template">
+		@include('exhibitions.dayorweekpicker');
+	</script>
 @stop
 
 @section('styles')
@@ -53,39 +61,27 @@
 		<div class="exhibition-datepicker" style="display:inline-block; min-height:200px;">
 			<h3>Consultar Programación</h3>
 
-			<datepicker 
-				ng-model="dt"
-				min-date="minDate" 
-				max-date="maxDate"
-				datepicker-mode="'day-or-week'"
-				min-mode="day-or-week"
-				max-mode="day-or-week"
-				show-weeks="true" 
-				class="well well-sm">
-			</datepicker>
+			<datepicker ng-model="dt" class="well well-sm"></datepicker>
 		</div>
 
 		<div class="static-pages-menu">
 			<ul>
 				<li class="has-sub">
-					<a>
-						<span>
-							Salas
-						</span>
-					</a>
+					<a><span>Salas</span></a>
 					<ul>
 						<li class="last">
-							<a flm-filters filter="auditorium" value="0" 
-								ng-click="setUsedFilter('')"
+							<a flm-filters filter-name="auditorium" filter-value="0"
 								class="btn">
 								<span>Cualquiera</span>
 							</a>
 						</li>
 						@foreach($auditoriums as $auditorium )
 							<li class="last">
-								<a flm-filters filter="auditorium" value="{{$auditorium->id}}"
+								<a flm-filters 
+									filter-name="auditorium" 
+									filter-value="{{ $auditorium->id }}"
+									filter-title="{{ $auditorium->name }}"
 									class="btn"
-									ng-click="setUsedFilter('auditorium','{{$auditorium->name}}')">
 									<span>{{$auditorium->name}}</span>
 								</a>
 							</li>
@@ -94,22 +90,21 @@
 				</li>
 
 				<li class="has-sub">
-					<a>
-						<span>Funciones Especiales</span>
-					</a>
+					<a><span>Funciones Especiales</span></a>
 					<ul>
 						<li class="last">
-							<a flm-filters filter="icon" value="0" 
-								ng-click="setUsedFilter('')"
+							<a flm-filters filter-name="icon" filter-value="0" 
 								class="btn">
 								<span>Cualquiera</span>
 							</a>
 						</li>
 						@foreach($icons as $icon)
 							<li class="last">
-								<a flm-filters filter="icon" value="{{$icon->id}}"
+								<a flm-filters 
+									filter-name="icon" 
+									filter-value="{{ $icon->id }}"
+									filter-title="{{ $icon->name }}"
 									class="btn"
-									ng-click="setUsedFilter('icon', '{{ $icon->name }}')">
 									<span>
 										{{ HTML::image($icon->icon, $icon->name) }}
 									</span>
@@ -139,11 +134,11 @@
 	</div>
 
 	<div class="content">
-
+		<h4>Películas encontradas: @{{ filterResults }} </h4>
 		<div ng-switch="usedFilter">
 			<h3 ng-switch-when="week">
 				Programación de la semanal del 
-				<b>@{{startDate}}</b> al <b>@{{endDate}}</b> de 
+				<b>@{{startDate | date : 'd' }}</b> al <b>@{{endDate | date : 'd'}}</b> de 
 				<b>@{{ dt | date : 'MMMM'}}</b>
 			</h3>
 			<h3 ng-switch-when="day">
@@ -151,11 +146,11 @@
 				de <b>@{{ dt | date : 'MMMM'}}</b>
 			</h3>
 			<h3 ng-switch-when="auditorium">
-				Programación de la sala <b>@{{filterValue}}</b> de
+				Programación de la sala <b>@{{filterTitle}}</b> de
 				<b>{{ trans('dates.months.' . date('F') ) }}</b>
 			</h3>
 			<h3 ng-switch-when="icon">
-				Funciones <b>@{{filterValue}}</b> de
+				Funciones <b>@{{filterTitle}}</b> de
 				<b>{{ trans('dates.months.' . date('F') ) }}</b>
 			</h3>
 			<h3 ng-switch-default>
