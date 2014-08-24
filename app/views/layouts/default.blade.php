@@ -29,6 +29,8 @@
 
 				'/bower_components/bootstrap/dist/js/bootstrap.min.js',
 
+				'/bower_components/underscore/underscore-min.js',
+
 				'/bower_components/fancybox/source/jquery.fancybox.js'))}}
 
 		@else
