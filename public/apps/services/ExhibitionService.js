@@ -4,21 +4,24 @@
  * function.
  */
 
+/* globals angular, define, _ */
+
 (function(factory)
 {
 	'use strict';
 
 	if( typeof define == 'function' && define.amd )
 	{
-		requirejs([
+		define([
 			'angular',
-			'angular-moment'
+			'angular-moment',
+			'underscore'
 			],
 			factory);
 	}else{
-		factory(angular);
+		factory(angular,_);
 	}
-})(function(angular)
+})(function(angular,_)
 {
 	'use strict';
 
@@ -42,28 +45,29 @@
 			},
 			'day': function(item, value)
 			{
-				return item.schedules.reduce(function(accumulator, schedule)
-					{
-						var filmDate = moment(schedule.entry);
+				var foundIt =_.find( item.schedules, function(schedule)
+				{
+					var selectedDate = moment(value);
 
-						var selectedDate = moment(value, moment.ISO_8601);
+					var filmDate = moment(schedule.entry);
 
-						var sameDay = filmDate.date() === selectedDate.date();
+					return selectedDate.date() === filmDate.date();
+				});
 
-						return (accumulator || sameDay);
-					}, false);
+				return angular.isDefined( foundIt );
 			},
 			'week' : function(item, value)
-			{
-				return item.schedules.reduce(function(accumulator, schedule)
-					{
-						var selectedDate = moment(value);
+			{				
+				var foundIt =_.find( item.schedules, function(schedule)
+				{
+					var selectedDate = moment(value);
 
-						var filmDate = moment(schedule.entry);
-						//como romper el ciclo? con una excepción.
-						return (accumulator ||
-							selectedDate.week() == filmDate.week() );
-					}, false);
+					var filmDate = moment(schedule.entry);
+
+					return selectedDate.week() === filmDate.week();
+				});
+
+				return angular.isDefined(foundIt);
 			},
 			'month' : function()
 			{
