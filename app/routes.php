@@ -11,15 +11,13 @@
 |
 */
 
-Route::get(
-	'/home',
+Route::get('/home',
 	array(
 		'as' => 'home',
 		'uses' => 'ExhibitionController@index')
 	);
 
-Route::get(
-	'/exhibition/index',
+Route::get('/exhibition/index',
 	array(
 		'as' => 'exhibition.index',
 		'uses' => 'ExhibitionController@index')
@@ -39,6 +37,8 @@ Route::get('/exhibition/{id}/detail/',
 Route::get('/pages/{dir_or_page}/{page_name?}',
 	function($dir_or_page = null, $page_name = null)
 {
+	View::name('layouts.default', 'default');
+
 	$view = 'pages';
 
 	if( !is_null($page_name) ) //Se proporciono un subdirectorio
@@ -47,6 +47,7 @@ Route::get('/pages/{dir_or_page}/{page_name?}',
 	}else{
 		$view .=  '.' .$dir_or_page;
 	}
-
-	return View::make( $view );
+	
+	//El primer parámetro no entiendo bien que significa.
+	return View::of('default')->nest('content', $view);
 });
