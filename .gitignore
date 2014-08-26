@@ -22,6 +22,8 @@ Thumbs.db
 !/public/assets
 !/public/bower.json
 !/public/apps
+!/public/index.php
+!/public/.htaccess
 
 /notes.md
 /filmoteca.sublime-project
