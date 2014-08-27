@@ -4,13 +4,15 @@
 export DEBIAN_FRONTEND=noninteractive
 
 apt-get update
-apt-get install -y apache2 php5 php5-mysql php-pear php5-dev php5-mcrypt php5-cli curl mysql-client postfix mysql-server vim
+apt-get install -y apache2 php5 php5-mysql php-pear php5-dev php5-mcrypt php5-cli curl mysql-client postfix mysql-server vim nodejs
 
 rm -rf /var/www
 ln -fs /vagrant /var/www
 
 curl -sS https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer
+
+npm install -g bower
 
 ################################
 ## Creating database and user ##
@@ -69,11 +71,25 @@ php5enmod mcrypt
 
 service apache2 restart
 
+########################
+## Installing package ##
+########################
+
+cd /vagrant
+
+composer update
+
+chmod -R a+rwx vendor
+
+cd public
+
+bower update
+
 ####################################
 ## Running migrations and seeders ##
 ####################################
 
-cd /vagrant
+cd ..
 
 php artisan migrate --env=local
 php artisan db:seed --env=local
