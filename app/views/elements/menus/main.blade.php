@@ -1,83 +1,79 @@
 <div class="main-menu">
 	<ul>
 		<li>
-			<a>QUIENES SOMOS</a>
+			<a><span>Quienes somos</span></a>
 			<ul>
 				<li>
-					<?php echo $this->Html->link(
-	        			'Misión y Visión', 
-	        			'/pages/quienes-somos/mision-y-vision')                            
-	        		?>
+					<a href="/pages/quienes-somos/mision-y-vision">
+						<span>Misión y Visión</span>
+					</a>
 				</li>
 				<li>
-					<?php echo $this->Html->link(
-	        			'Objetivos y Funciones', 
-	        			'/pages/quines-somos/objetivos-y-funciones')                            
-	        		?>
+					<a href="/pages/quines-somos/objetivos-y-funciones">
+						<span>Objetivos y Funciones</span>
+					</a>
 				</li>
 				<li>
-					<?php echo $this->Html->link(
-	        			'Organigrama', 
-	        			'/pages/quienes-somos/organigrama')                            
-	        		?>
+					<a href="/pages/quienes-somos/organigrama">
+						<span>Organigrama</span>
+					</a>
 				</li>
 				<li>
-					<?php echo $this->Html->link(
-	        			'Consejo Asesor', 
-	        			'/pages/quienes-somos/consejo-asesor')                            
-	        		?>
+					<a href="/pages/quienes-somos/consejo-asesor">
+						<span>Consejo Asesor</span>
+					</a>
 				</li>
 				<li>
-					<?php echo $this->Html->link(
-	        			'Memoria Filmoteca', 
-	        			'/pages/quienes-somos/memoria-filmoteca')                            
-	        		?>
+					<a href="pages/quienes-somos/memoria-filmoteca">
+						<span>Memoria Filmoteca</span>
+					</a>
 				</li>
 				<li>
-					<?php echo $this->Html->link(
-	        			'Cronología', 
-	        			'/pages/quienes-somos/cronologia')                            
-	        		?>
+					<a href="/pages/quienes-somos/cronologia">
+						<span>Cronología</span>
+					</a>
 				</li>
 				
 	            <li>
-					<?php echo $this->Html->link(
-	        			'Medalla Filmoteca', 
-	        			'/pages/quienes-somos/medalla-filmoteca')                            
-	        		?>
+	            	<a href="/pages/quienes-somos/medalla-filmoteca">
+						<span>Medalla Filmoteca</span>
+					</a>
 				</li>
 				<li>
-					<?php echo $this->Html->link(
-	        			'Directorio', 
-	        			'/pages/quienes-somos/directorio')                            
-	        		?>
+					<a href="/pages/quienes-somos/directorio">
+						<span>Directorio</span>
+					</a>
 				</li>
 			</ul>
 		</li>
 
 		<li>
-			 <?php echo $this->Html->link(
-	        			'ACERVO', 
-	        			'/pages/acervos/index')                            
-	        		?>
+			<a href="pages/acervos/index"><span>ACERVO</span></a>
 	        <ul>
 				<li>
-					<?php echo $this->Html->link(
-	        			'Resguardo y conservación', 
-	        			'/pages/resguardo_y_conservacion')                            
-	        		?>
+					<a href="/pages/resguardo-y-conservacion">
+						<span>Resguardo y conservación</span>
+					</a>
 				</li>
 				<li>
-					<a href="#">Acervo fílmico</a>
+					<a href="#">
+						<span>Acervo fílmico</span>
+					</a>
 				</li>
 				<li>
-					<a href="#">Acervo de aparatos antiguos</a>
+					<a href="/pages/quines-somos/objetivos-y-funciones">
+						<span>Acervo de aparatos antiguos</span>
+					</a>
 				</li>
 				<li>
-					<a href="http://www.filmoteca.unam.mx/MUVAC/">Museo virtual de aparatos cinematográficos</a>
+					<a href="http://www.filmoteca.unam.mx/MUVAC/">
+						<span>Museo virtual de aparatos cinematográficos</span>
+					</a>
 				</li>
 				<li>
-	                <a href="http://www.filmoteca.unam.mx/cinelinea/">Cine en línea</a>
+					<a href="http://www.filmoteca.unam.mx/cinelinea/">
+						<span>Objetivos y Funciones</span>
+					</a>
 	             </li>                    
 	        </ul>
 		</li>
@@ -86,237 +82,210 @@
 			<a href="#">SERVICIOS</a>
 	        <ul>
 				<li>
-					<?php echo $this->Html->link(
-	        			'Lineamientos generales para acceso al material', 
-	        			'/pages/lineamientos_generales_para_acceder_al_material')                            
-	        		?>
+					<a href="/pages/lineamientos-generales-para-acceder-al-material">
+						<span>Lineamientos generales para acceso al material</span>
+					</a>
 				</li>
 				<li>
-					<?php echo $this->Html->link(
-	        			'Banco de imagen', 
-	        			'/pages/banco_de_imagen')                            
-	        		?>
+					<a href="/pages/banco-de-imagen">
+						<span>Banco de imagen</span>
+					</a>
 				</li>
 				<li>
-					<?php echo $this->Html->link(
-	        			'Catalogación', 
-	        			'/pages/departamento_de_catalogacion')                            
-	        		?>
-
+					<a href="'/pages/departamento-de-catalogacion'">
+						<span>Catalogación</span>
+					</a>
 				</li>
 	            <li>
-					<?php echo $this->Html->link(
-	        			'Depósito y resguardo', 
-	        			'/pages/resguardo_y_conservacion')                            
-	        		?>
+					<a href="/pages/resguardo-y-conservacion">
+						<span>epósito y resguardo</span>
+					</a>
 				</li>
 				<li>
-					<?php echo $this->Html->link(
-	        			'Exposiciones', 
-	        			'/pages/museografia')                            
-	        		?>
+					<a href="/pages/museografia">
+						<span>Exposiciones</span>
+					</a>
 				</li>
 				<li>
-	                 <?php echo $this->Html->link(
-	        			'Laboratorio', 
-	        			'/pages/laboratorio')                            
-	        		?>
+					<a href="/pages/laboratorio">
+						<span>Laboratorio</span>
+					</a>
 	             </li>  
 	            <li>
-	            	<?php echo $this->Html->link(
-	        			'Préstamo y alquiler de películas', 
-	        			'/pages/prestamo_y_alquiler_de_peliculas')                            
-	        		?>
+					<a href="/pages/prestamo-y-alquiler-de-peliculas">
+						<span>Préstamo y alquiler de películas</span>
+					</a>                          
+	        		}}
 	            </li>
 	            <li>
-	            <?php echo $this->Html->link(
-	        			'Producción', 
-	        			'/pages/produccion')                            
-	        		?>
+					<a href="/pages/produccion">
+						<span>Producción</span>
+					</a>
 	            </li>
 	            <li>
-	            <?php echo $this->Html->link(
-	        			'Taller de restauración', 
-	        			'/pages/taller_de_restauracion')                            
-	        		?>
+					<a href="/pages/taller-de-restauracion">
+						<span>Taller de restauración</span>
+					</a>
 	           	</li>
 	        </ul>
 		</li>
 		
 		<li>
-			 <?php echo $this->Html->link(
-	        			'CENTRO DE DOCUMENTACIÓN', 
-	        			'/pages/departamento_de_documentacion')                            
-	        		?>
+			<a href="/pages/departamento-de-documentacion">
+				<span>Centro de documentación</span>
+			</a>
 			<ul>
 				<li>
-					<?php echo $this->Html->link(
-	        			'Consulta de material', 
-	        			'/pages/consulta_material')                            
-	        		?>
+					<a href="/pages/consulta-material">
+						<span>Consulta de material</span>
+					</a>
 				</li>
 	            <li>
-					<?php echo $this->Html->link(
-	        			'Libros digitales', 
-	        			'/pages/libros digitales')                            
-	        		?>
+					<a href="/pages/libros digitales">
+						<span>Libros digitales</span>
+					</a>
 				</li>
 				
 				<li>
-					<?php echo $this->Html->link(
-	        			'Colecciones', 
-	        			'/pages/colecciones')                            
-	        		?>
+					<a href="/pages/colecciones">
+						<span>Colecciones</span>
+					</a>
 				</li>
 				<li>
-					<?php echo $this->Html->link(
-	        			'Reglamento', 
-	        			'/pages/reglamento')                            
-	        		?>
+					<a href="/pages/reglamento'">
+						<span>Reglamento</span>
+					</a>
 				</li>
 			</ul>
 		</li>
 
 		<li>
-			<?php echo $this->Html->link(
-	        			'PROGRAMACIÓN', 
-	        			'/exhibitions')                            
-	        		?>
+			<a href="{{ route('exhibitions') }}">
+				<span>Programación</span>
+			</a>
 	        <ul>
 				<li>
-					<?php echo $this->Html->link(
-	        			'Histórico de programación', 
-	        			'/exhibitions/search')                           
-	        		?>
+					<a href="{{ route('exhibitions.history')}}">
+						<span>Histórico de programación</span>
+					</a>
 				</li>
 				<li>
-					<?php echo $this->Html->link(
-	        			'Cartelera digital', 
-	        			'/pages/cartelera_digital')                            
-	        		?>
+					<a href="/pages/cartelera-digital">
+						<span>Cartelera digital</span>
+					</a>
 				</li>
 				<li>
-					<?php echo $this->Html->link(
-	        			'Invitaciones', 
-	        			'/pages/invitaciones')                            
-	        		?>
+					<a href="/pages/invitaciones">
+						<span>Invitaciones</span>
+					</a>
 				</li>
-
-
 			</ul>
 		</li>
 
 		<li>
-			<?php echo $this->Html->link(
-	        			'PRENSA', 
-	        			'/pages/prensa')                            
-	        		?>
+			<a href="/pages/prensa">
+				<span>Prensa</span>
+			</a>
 	        <ul>
 				<li>
-					<?php echo $this->Html->link(
-	        			'Noticias', 
-	        			'/pages/noticias')                            
-	        		?>
+					<a href="/pages/noticias">
+						<span>Noticias</span>
+					</a>
+
 				</li>
 				<li>
-					<?php echo $this->Html->link(
-	        			'Filmoteca en los medios', 
-	        			'/pages/filmoteca_medios')                            
-	        		?>
+					<a href="/pages/filmoteca-medios">
+						<span>Filmoteca en los medios'</span>
+					</a>
 				</li>
 				<li>
-					<?php echo $this->Html->link(
-	        			'Galeria', 
-	        			'/pages/galeria-de-eventos')
-	        		?>
+					<a href="/pages/galeria-de-eventos">
+						<span>Galeria</span>
+					</a>
 				</li>
 				<li>
-					<?php echo $this->Html->link(
-	        			'Entrevistas', 
-	        			'/pages/entrevistas')                            
-	        		?>
+					<a href="/pages/entrevistas">
+						<span>Entrevistas</span>
+					</a>
 				</li>
 				<li>
-					<?php echo $this->Html->link(
-	        			'Atención a medios', 
-	        			array('controller' => 'PressRegisters', 'action' => 'add', 'plugin' => false))                            
-	        		?>
+					<a href="PressRegisters/add">
+						<span>Atención a medios</span>
+					</a>
+					{{ HTML::link(
+						'PressRegisters/add',
+	        			'Atención a medios')
+	        		}}
 				</li>
 	        </ul>
 
 		</li>
 		<li>
-			<a>EXTENSIÓN ACADÉMICA</a>
+			<a href="/pages/quines-somos/objetivos-y-funciones">
+				<span>Extensión académica</span>
+			</a>
 			<ul>
 				<li>
-					<?php echo $this->Html->link(
-	        			'Cursos y talleres', 
-	        			'/pages/cursos_talleres')                            
-	        		?>
+					<a href="/pages/quines-somos/objetivos-y-funciones">
+						<span>Cursos y talleres</span>
+					</a>
 				</li>
 				<li>
-					<?php echo $this->Html->link(
-	        			'Atención a alumnos', 
-	        			'/pages/atencion_alumnos')                            
-	        		?>
+					<a href="//pages/atencion-alumnos">
+						<span>Atención a alumnos</span>
+					</a>
 				</li>
 				<li>
-					<?php echo $this->Html->link(
-	        			'Servicio social', 
-	        			'/pages/servicio_social')                            
-	        		?>
+					<a href="/pages/servicio-social">
+						<span>Servicio social</span>
+					</a>
 				</li> 
 				<li>
-					<?php echo $this->Html->link(
-	        			'Becarios', 
-	        			'/pages/becarios')                            
-	        		?>
+					<a href="pages/becarios">
+						<span>Becarios</span>
+					</a>
 				</li> 
 				<li>
-					<?php echo $this->Html->link(
-	        			'Visitas guiadas', 
-	        			'/pages/visitas_guiadas')                            
-	        		?>
+					<a href="/pages/visitas-guiadas">
+						<span>Visitas guiadas</span>
+					</a>
 				</li> 
 			</ul> 
 		</li>
 
 		<li>
-			<a>CONCURSOS</a>
+			<a href="#">
+				<span>Concursos</span>
+			</a>
 			<ul>
 				<li>
-					<?php echo $this->Html->link(
-	        			'Fósforo', 
-	        			'/pages/alfonso_reyes')                            
-	        		?>
+					<a href="/pages/alfonso-reyes">
+						<span>Fósforo</span>
+					</a>
 				</li>
 				<li>
-					<?php echo $this->Html->link(
-	        			'José Rovirosa', 
-	        			'/pages/rovirosa')                            
-	        		?>
+					<a href="/pages/rovirosa">
+						<span>José Rovirosa</span>
+					</a>
 				</li>
 	            <li>
-					<?php echo $this->Html->link(
-	        			'Corto Móvil', 
-	        			'/pages/corto_movil')                            
-	        		?>
+					<a href="/pages/corto-movil">
+						<span>Corto Móvil</span>
+					</a>
 				</li> 
 				<li>
-					<?php echo $this->Html->link(
-	        			'Convocatorias', 
-	        			'/pages/corto_movil')                            
-	        		?>
+					<a href="/pages/corto-movil">
+						<span>Convocatorias</span>
+					</a>
 				</li> 
 	        </ul> 
 
 		</li>
 
 		<li>
-			<?php echo $this->Html->link(
-	        			'LIBRERÍA Y TIENDA', 
-	        			'/shop')                            
-	        		?>
+			<a href="{{ route('shop')}}">
+				<span>Objetivos y Funciones</span>
+			</a>
 		</li>
 	</ul>
 </div>
