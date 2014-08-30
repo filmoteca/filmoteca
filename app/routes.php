@@ -19,20 +19,25 @@ Route::get('/home',
 
 Route::get('/exhibition/index',
 	array(
-		'as' => 'exhibition.index',
+		'as' => 'exhibitions',
 		'uses' => 'ExhibitionController@index')
 	);
 
-Route::get('/exhibition/search',
+Route::get('/exhibition/history',
 	array(
-		'as' => 'exhibition.search',
-		'uses' => 'ExhibitionController@search')
+		'as' => 'exhibitions.history',
+		'uses' => 'ExhibitionController@history')
 	);
 
 Route::get('/exhibition/{id}/detail/',
 	array(
-		'as' => 'exhibition.detail',
+		'as' => 'exhibitions.detail',
 		'uses' => 'ExhibitionController@detail'));
+
+Route::get('/shop',
+	array(
+		'as' => 'shop',
+		'uses' => 'ExhibitionController@index' ));
 
 Route::get('/pages/{dir_or_page}/{page_name?}',
 	function($dir_or_page = null, $page_name = null)

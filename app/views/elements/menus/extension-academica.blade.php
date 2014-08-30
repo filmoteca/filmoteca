@@ -9,5 +9,6 @@ $menu = array(
 		'Becarios', '/pages/becarios')),
 	2 => array('Visitas guiadas', '/pages/visitas_guiadas')
 	);
+?>
 
-echo $this->element('menus/static-pages', compact('menu','selected'));
+@include('elements.menus.static-pages', compact('menu','selected'))

@@ -19,6 +19,8 @@
 				'/bower_components/original-hover-effects/dist/css/original-hover-effects.min.css',
 
 				'/assets/css/static-pages-menu.css',
+
+				'/assets/css/main-menu.css',
 				
 				'/assets/css/filmoteca.css')) }}
 
@@ -58,7 +60,7 @@
 
 				@yield('presentation')
 
-				{{-- @include('elements.menu.main') --}}
+				@include('elements.menus.main')
 			</header>
 
 			<div class="body">
