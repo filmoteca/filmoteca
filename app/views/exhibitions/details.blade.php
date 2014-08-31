@@ -2,7 +2,7 @@
 
 @section('breadcrumbs')
 	<li>
-		{{ HTML::linkRoute('exhibition.index','Programación') }}
+		{{ HTML::linkRoute('exhibitions.index','Programación') }}
 	</li>
 	<li class="active">
 		{{ str_limit( $exhibition->exhibition_film->film->title, 10 ) }}

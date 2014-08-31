@@ -23,13 +23,19 @@ Route::get('/exhibition/index',
 		'uses' => 'ExhibitionController@index')
 	);
 
+Route::get('/exhibition/index',
+	array(
+		'as' => 'exhibitions.index',
+		'uses' => 'ExhibitionController@index')
+	);
+
 Route::get('/exhibition/history',
 	array(
 		'as' => 'exhibitions.history',
 		'uses' => 'ExhibitionController@history')
 	);
 
-Route::get('/exhibition/{id}/detail/',
+Route::get('/exhibition/{id}/detail',
 	array(
 		'as' => 'exhibitions.detail',
 		'uses' => 'ExhibitionController@detail'));
