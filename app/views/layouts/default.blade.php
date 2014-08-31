@@ -72,8 +72,6 @@
 							@yield('breadcrumbs')
 						</ul>
 					</div>
-
-					<div class="search"><input type="text" placeholder="  Buscador"></div>
 				</div>
 
 				@yield('content')

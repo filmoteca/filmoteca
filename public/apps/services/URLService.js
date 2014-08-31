@@ -23,7 +23,8 @@
 	angular.module('URLService', [])
 
 	.constant( 'ROUTES', {
-		'exhibitions.detail' : '/exhibition/{id}/detail'
+		'exhibitions.detail' : '/exhibition/{id}/detail',
+		'exhibitions.index'  : '/exhibitions/index'
 	})
 
 	.factory('URL', ['ROUTES', function(ROUTES)
@@ -31,6 +32,8 @@
 		return {
 			route : function( routeName, params )
 			{
+				if( angular.isUndefined(params)) return ROUTES[routeName];
+				
 				return _.reduce(params, function(acumulator, value, key)
 				{
 					var regexpr = new RegExp('{' + key + '}', 'gim');

@@ -9,6 +9,7 @@
 			'/bower_components/moment/min/moment.min.js',
 			'/bower_components/angular-moment/angular-moment.min.js',
 			'/bower_components/angular-i18n/angular-locale_es-mx.js',
+			'/bower_components/angular-route/angular-route.min.js',
 			'/bower_components/angucomplete-alt/dist/angucomplete-alt.min.js',
 			'/apps/directives/ExhibitionsDatepicker.js',
 			'/apps/directives/FilmotecaFilters.js',
@@ -30,6 +31,10 @@
 	<script id="template/datepicker/day.html" type="text/ng-template">
 		@include('exhibitions.dayorweekpicker');
 	</script>
+
+	<script id="templates/exhibitions/list.html" type="text/ng-template">
+		@include('exhibitions.list', array('exhibitions', $exhibitions));
+	</script>
 @stop
 
 @section('styles')
@@ -46,7 +51,11 @@
 
 @section('content')
 
-	<div class="col-md-3 col-md-offset-9 exhibition-search">
+	<div class="sidebar">
+
+		<span class="glyphicon glyphicon-search pull-left"></span>
+
+		<div class="search-autocomplete pull-right">
 			<angucomplete-alt id="ex1"
 				place-holder="Search countries"
 				pause="0"
@@ -59,11 +68,9 @@
 				minlength="1"
 				text-searching="Buscando..."
 				text-no-results="Ninguna exhibición encontrada"
-				input-class="form-control form-control-small"/>
-	</div>
-	<div class="clearfix"></div>
-
-	<div class="sidebar">
+				input-class="form-control form-control-small">
+			</angucomplete-alt>
+		</div>
 
 		<div class="exhibition-datepicker" style="display:inline-block; min-height:200px;">
 			<h3>Consultar Programación</h3>
@@ -88,7 +95,7 @@
 									filter-name="auditorium" 
 									filter-value="{{ $auditorium->id }}"
 									filter-title="{{ $auditorium->name }}"
-									class="btn"
+									class="btn">
 									<span>{{$auditorium->name}}</span>
 								</a>
 							</li>
@@ -111,7 +118,7 @@
 									filter-name="icon" 
 									filter-value="{{ $icon->id }}"
 									filter-title="{{ $icon->name }}"
-									class="btn"
+									class="btn">
 									<span>
 										{{ HTML::image($icon->icon, $icon->name) }}
 									</span>
@@ -140,67 +147,6 @@
 		</div>
 	</div>
 
-	<div class="content">
-		<h4>Películas encontradas: @{{ filterResults }} </h4>
-		<div ng-switch="usedFilter">
-			<h3 ng-switch-when="week">
-				Programación de la semanal del 
-				<b>@{{startDate | date : 'd' }}</b> al <b>@{{endDate | date : 'd'}}</b> de 
-				<b>@{{ dt | date : 'MMMM'}}</b>
-			</h3>
-			<h3 ng-switch-when="day">
-				Programación del día <b>@{{ dt | date : 'd' }}</b>
-				de <b>@{{ dt | date : 'MMMM'}}</b>
-			</h3>
-			<h3 ng-switch-when="auditorium">
-				Programación de la sala <b>@{{filterTitle}}</b> de
-				<b>{{ trans('dates.months.' . date('F') ) }}</b>
-			</h3>
-			<h3 ng-switch-when="icon">
-				Funciones <b>@{{filterTitle}}</b> de
-				<b>{{ trans('dates.months.' . date('F') ) }}</b>
-			</h3>
-			<h3 ng-switch-default>
-				Programación del mes de <b>{{ trans('dates.months.' . date('F') ) }}</b>
-			</h3>
-		</div>
-
-		<div class="wrapper-items" id="wrapper-items">
-
-			<div class="without-results" id="without-results">
-				No se encontraron películas con
-				los filtros solicitados
-			</div>
-
-			<ul class="items" id="items">
-
-				@foreach( $exhibitions as $index => $exhibition )
-
-					<li class="thumbnail item"
-						id="{{ $exhibition->id }}">
-
-						<img src="{{ $exhibition->exhibition_film->film->thumbnail_image }}"
-							alt="{{ $exhibition->exhibition_film->film->title }}">
-						{{ 
-							HTML::linkAction(
-							'ExhibitionController@detail',
-							str_limit(
-								$exhibition->exhibition_film->film->title,
-								20),
-							array( $exhibition->id ),
-							array(
-								'title' => 'Ver detalles',
-								'ng-click' => 
-									'openDetails("' . 
-										URL::action("ExhibitionController@detail", $exhibition->id) .
-										'")',
-								'onclick' => 'return false')) 
-						}}
-					</li>
-
-				@endforeach
-			</ul>
-		</div>
-	</div>
+	<div class="content" ng-view></div>
 	
 @stop

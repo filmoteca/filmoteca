@@ -229,32 +229,9 @@ footer .fiaf .definicion{
 /*************/
 /* Buscador */
 /*************/
-.search{
-    background-color: #fff;
-    border: 2px solid #DDDDDD;
-    border-radius: 30px;
-    box-shadow: 1px 1px 3px #555555;
-    cursor: pointer;
-    float: right;
-    height: 45px;
-    margin: 10px;
-    overflow: hidden;
-    position: relative;
-    width:325px;
-    background: url("imgs/find.png") no-repeat scroll 5px 5px #FFFFFF;
-    background-size: 30px 30px;
-}
 
-.search input{
-    border: 1px solid #CCCCCC;
-    float: right;
-    margin: 5px;
-    padding: 1px;
-    width: 259px;
-    height: 31px;
-    border-radius: 30px;
-    font-size:12px;
-    background-color:#F0F0F0;
+.search-autocomplete{
+    width: 86%;
 }
 
 /***************************************************/

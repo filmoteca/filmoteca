@@ -57,9 +57,9 @@
 	}]);
 
 	app.controller('ExhibitionController',[
-	'$scope','$modal','moment','Exhibition','URL',
+	'$scope','$modal','moment','Exhibition','URL','$location',
 
-	function($scope, $modal, moment, Exhibition, URL)
+	function($scope, $modal, moment, Exhibition, URL, $location)
 	{	
 		$scope.usedFilter = '';
 
@@ -73,20 +73,14 @@
 		{	
 			var id = selection.originalObject.id;
 
-			$scope.openDetails( URL.route('exhibitions.detail', {id: id}) );
+			$location.path( URL.route('exhibitions.detail', {id: id}) );
 		};
 
 		/**
 		 * Abre un popup para mostrar los detalles de una exhibición.
 		 * @param  {String} url url de los detalles de la exhibicón
 		 */
-		$scope.openDetails = function(url)
-		{
-			$modal.open({
-				templateUrl : url,
-				size: 'lg',
-			});
-		};
+
 
 		$scope.$on('filterSelected', function(event, data)
 		{

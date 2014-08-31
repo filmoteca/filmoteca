@@ -23,7 +23,7 @@
 {
 	'use strict';
 
-	var app = angular.module('FilmotecaFilters',[]);
+	var app = angular.module('FilmotecaFilters',['URLService']);
 
 	app.constant('flmFiltersConfig',{
 		
@@ -37,12 +37,14 @@
 		}
 	});
 
-	var flmFilters = ['flmFiltersConfig',function (config) 
+	var flmFilters = ['flmFiltersConfig','$location', 'URL', function (config, $location, URL) 
 	{
 		var link = function($scope, $element) 
 		{
 			$element.on('click', function()
 			{	
+				$location.path( URL.route('exhibitions.index'));
+
 				var selectedItems = [];
 
 				var unselectedItems = [];
