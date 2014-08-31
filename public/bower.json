@@ -35,6 +35,6 @@
     "angular-bootstrap": "0.11.*",
     "angular-moment": "0.7.*",
     "angular-i18n": "1.2.*",
-    "underscore": "1.5.2"
+    "lodash": "2.4.*"
   }
 }
