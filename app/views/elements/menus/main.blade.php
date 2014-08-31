@@ -48,7 +48,7 @@
 		</li>
 
 		<li>
-			<a href="pages/acervos/index"><span>ACERVO</span></a>
+			<a href="pages/acervos/index"><span>Acervo</span></a>
 	        <ul>
 				<li>
 					<a href="/pages/resguardo-y-conservacion">
@@ -79,7 +79,7 @@
 		</li>
 
 	      <li>
-			<a href="#">SERVICIOS</a>
+	      	<a href="#"><span>Servicios</span></a>
 	        <ul>
 				<li>
 					<a href="/pages/lineamientos-generales-para-acceder-al-material">
