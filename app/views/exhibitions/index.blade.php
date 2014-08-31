@@ -57,6 +57,8 @@
 				search-fields="title,director"
 				image-field="thumbnail"
 				minlength="1"
+				text-searching="Buscando..."
+				text-no-results="Ninguna exhibición encontrada"
 				input-class="form-control form-control-small"/>
 	</div>
 	<div class="clearfix"></div>
