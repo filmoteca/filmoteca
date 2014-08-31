@@ -35,6 +35,7 @@
     "angular-bootstrap": "0.11.*",
     "angular-moment": "0.7.*",
     "angular-i18n": "1.2.*",
-    "lodash": "2.4.*"
+    "lodash": "2.4.*",
+    "angucomplete-alt": "0.0.18"
   }
 }
