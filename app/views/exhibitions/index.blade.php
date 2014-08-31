@@ -9,9 +9,11 @@
 			'/bower_components/moment/min/moment.min.js',
 			'/bower_components/angular-moment/angular-moment.min.js',
 			'/bower_components/angular-i18n/angular-locale_es-mx.js',
+			'/bower_components/angucomplete-alt/dist/angucomplete-alt.min.js',
 			'/apps/directives/ExhibitionsDatepicker.js',
 			'/apps/directives/FilmotecaFilters.js',
 			'/apps/services/ExhibitionService.js',
+			'/apps/services/URLService.js',
 			'/apps/controllers/ExhibitionController.js',
 			'/apps/ExhibitionsApp.js')) }}
 
@@ -31,7 +33,9 @@
 @stop
 
 @section('styles')
-	{{ HTML::styles(array('/assets/css/exhibitions-datepicker.css')) }}
+	{{ HTML::styles(array(
+		'/bower_components/angucomplete-alt/angucomplete-alt.css',
+		'/assets/css/exhibitions-datepicker.css')) }}
 @stop
 
 @section('breadcrumbs')
@@ -42,17 +46,18 @@
 
 @section('content')
 
-	<div class="exhibition_search">
-		<div>
-			<form class="form-inline">
-				<div class="form-group pull-right">
-					<label for="local_search">Busca película de este mes:</label>
-					<input type="text" 
-						placeholder="título o director"
-						class="form-control">
-				</div>
-			</form>
-		</div>
+	<div class="col-md-3 col-md-offset-9 exhibition-search">
+			<angucomplete-alt id="ex1"
+				place-holder="Search countries"
+				pause="0"
+				selected-object="selectedAdvice"
+				local-data="advices"
+				title-field="title"
+				description-field="director"
+				search-fields="title,director"
+				image-field="thumbnail"
+				minlength="1"
+				input-class="form-control form-control-small"/>
 	</div>
 	<div class="clearfix"></div>
 

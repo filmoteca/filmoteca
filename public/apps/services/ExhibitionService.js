@@ -28,7 +28,7 @@
 	var app = angular.module('ExhibitionService',['angularMoment']);
 
 	app.factory('Exhibition',['$window', 'moment', function($window, moment)
-	{	
+	{
 		var filters = {
 
 			'auditorium': function(item,value)
@@ -72,11 +72,20 @@
 			'month' : function()
 			{
 				return true;
+			},
+			title_or_director: function(item, value)
+			{
+				if( angular.isUndefined(value) || value === '') return true;
+				
+				var title = item.exhibition_film.film.title;
+
+				var director = item.exhibition_film.film.director;
+
+				return _.contains( title, value) || _.contains( director, value);
 			}
 		};
 
-		var exhibitions = 
-		{
+		return {
 			all : function()
 			{
 				return  $window.exhibitions;
@@ -84,8 +93,34 @@
 			filters : function()
 			{
 				return filters;
+			},
+			directors: function()
+			{
+				return _.map( $window.exhibitions, function(exhibition)
+				{
+					return exhibition.exhibition_film.film.director;
+				});
+			},
+			titles : function()
+			{
+				return _.map( $window.exhibitions, function(exhibition)
+				{
+					return exhibition.exhibition_film.film.title;
+				});
+			},
+
+			titlesAndDirectories  : function()
+			{
+				return _.map( $window.exhibitions, function(exhibition)
+				{
+					return { 
+						id 		 : exhibition.id,
+						title 	 : exhibition.exhibition_film.film.title,
+						director : exhibition.exhibition_film.film.director,
+						thumbnail: exhibition.exhibition_film.film.thumbnail_image
+					};
+				});
 			}
 		};
-		return exhibitions;
 	}]);
 });

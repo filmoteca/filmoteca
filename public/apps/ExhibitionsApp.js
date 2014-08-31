@@ -15,6 +15,7 @@
 			'angular',
 			'domready',
 			'directives/ExhibitionsDatepicker',
+			'angucomplete-alt',
 			'FilmotecaFilters',
 			'directives/FilmotecaFilters',
 			],
@@ -29,7 +30,8 @@
 	var app = angular.module('ExhibitionsApp',
 		[
 		'ExhibitionController',
-		'ExhibitionsDatepicker'
+		'ExhibitionsDatepicker',
+		'angucomplete-alt'
 		]);
 
 	app.run(['$rootScope', function($rootScope)

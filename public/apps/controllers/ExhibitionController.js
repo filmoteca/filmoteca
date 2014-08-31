@@ -3,7 +3,7 @@
  *
  */
 
-/* global define, angular, console, _ */
+/* global define, angular, _ */
 
 (function(factory)
 {
@@ -13,8 +13,9 @@
 	{
 		define([
 			'angular',
-			'underscore',
+			'lodash',
 			'services/ExhibitionService',
+			'services/URLService',
 			'constants/ExhibitionsFilters',
 			'ui-bootstrap',
 			'angular-moment'
@@ -28,7 +29,7 @@
 	'use strict';
 
 	var app = angular.module('ExhibitionController',
-		['ExhibitionService', 'ui.bootstrap', 'FilmotecaFilters','angularMoment']);
+		['ExhibitionService', 'ui.bootstrap', 'FilmotecaFilters','angularMoment', 'URLService']);
 
 	/**
 	 * Configuración.
@@ -56,15 +57,24 @@
 	}]);
 
 	app.controller('ExhibitionController',[
-	'$scope','$modal','moment','Exhibition',
+	'$scope','$modal','moment','Exhibition','URL',
 
-	function($scope, $modal, moment, Exhibition)
+	function($scope, $modal, moment, Exhibition, URL)
 	{	
 		$scope.usedFilter = '';
 
 		$scope.dt = null;
 
 		$scope.filterResults = Exhibition.all().length;
+
+		$scope.advices = Exhibition.titlesAndDirectories();
+
+		$scope.selectedAdvice = function(selection)
+		{	
+			var id = selection.originalObject.id;
+
+			$scope.openDetails( URL.route('exhibitions.detail', {id: id}) );
+		};
 
 		/**
 		 * Abre un popup para mostrar los detalles de una exhibición.

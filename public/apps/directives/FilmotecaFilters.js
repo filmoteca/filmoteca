@@ -39,9 +39,9 @@
 
 	var flmFilters = ['flmFiltersConfig',function (config) 
 	{
-		var link = function($scope, element) 
+		var link = function($scope, $element) 
 		{
-			element.on('click', function()
+			$element.on('click', function()
 			{	
 				var selectedItems = [];
 
@@ -96,10 +96,12 @@
 		
 		return {
 			restrict: 'A',
+			priority: 0,
 			scope: {
 				filter 	: '@filterName',
 				value 	: '@filterValue',
-				title 	: '@filterTitle'
+				title 	: '@filterTitle',
+				events	: '@filterEvents' // Jquery's events that trigget the filter
 			},
 			link: link
 		};

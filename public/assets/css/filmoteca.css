@@ -811,3 +811,20 @@ h2,h3{
 .admin-a-timetable:nth-child(odd){
     background-color: gray;
 }
+
+/**
+ * ## Personalización del autocomplete de exhibiciones.
+ */
+
+.angucomplete-description {
+    font-style: italic;
+    margin-top: 5px;
+}
+
+.angucomplete-title {
+    font-weight: bold;
+}
+
+div.angucomplete-dropdown{
+    width: 100%;
+}
