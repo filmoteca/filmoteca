@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddTypeIdToExhibitionsTable extends Migration {
+class CreateBooksTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,9 +12,11 @@ class AddTypeIdToExhibitionsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('exhibitions', function(Blueprint $table)
+		Schema::create('books', function(Blueprint $table)
 		{
-			$table->integer('type_id')->unsigned();
+			$table->increments('id');
+//                        titulo del libro
+                        $table->string('title');
 		});
 	}
 
@@ -25,10 +27,7 @@ class AddTypeIdToExhibitionsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('exhibitions', function(Blueprint $table)
-		{
-			$table->dropColumn('type_id');
-		});
+		Schema::drop('books');
 	}
 
 }
