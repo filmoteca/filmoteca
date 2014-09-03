@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddForeignkeyToShopFilmTable extends Migration {
+class AddForeignkeyToExhibitionFilmsTable extends Migration {
 
     /**
      * Run the migrations.
@@ -11,8 +11,8 @@ class AddForeignkeyToShopFilmTable extends Migration {
      * @return void
      */
     public function up() {
-        Schema::table('shop_film', function(Blueprint $table) {
-            //se crea la clave foranea de shop films a films
+        Schema::table('exhibition_films', function(Blueprint $table) {
+//            se agrega clave foranea de exhibition_films a films
             $table->foreign('film_id')
                     ->references('id')->on('films')
                     ->onDelete('cascade');
@@ -25,9 +25,10 @@ class AddForeignkeyToShopFilmTable extends Migration {
      * @return void
      */
     public function down() {
-        Schema::table('shop_film', function(Blueprint $table) {
-            //
-//            $table->dropForeign('shop_film_film_id_foreign');
+        Schema::table('exhibition_films', function(Blueprint $table) {
+//            se borran las claves foraneas
+//            de exhibition_films a films
+            $table->dropForeign('exhibition_films_film_id_foreign');
         });
     }
 

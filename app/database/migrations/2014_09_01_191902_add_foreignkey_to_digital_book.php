@@ -30,7 +30,11 @@ class AddForeignkeyToDigitalBook extends Migration {
      */
     public function down() {
         Schema::table('digital_book', function(Blueprint $table) {
-            //
+//            Se eliminan las claves foraneas
+//            de digital_book a books
+            $table->dropForeign('digital_book_book_id_foreign');
+//            de digital book a shop_book
+            $table->dropForeign('digital_book_shop_book_id_foreign');
         });
     }
 

@@ -5,35 +5,32 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateSchedulesTable extends Migration {
 
-	/**
-	 * Run the migrations.
-	 *
-	 * @return void
-	 */
-	public function up()
-	{
-		Schema::create('schedules', function(Blueprint $table)
-		{
-			$table->increments('id');
-			
-			$table->timestamps();
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up() {
+        Schema::create('schedules', function(Blueprint $table) {
+            $table->increments('id');
 
-			$table->bigInteger('exhibition_id')->nullable(false);
+            $table->timestamps();
 
-			$table->integer('auditorium_id')->nullable(false);
+            $table->bigInteger('exhibition_id')->nullable(false)->unsigned();
 
-			$table->timestamp('entry')->nullable(false);
-		});
-	}
+            $table->integer('auditorium_id')->nullable(false)->unsigned();
 
-	/**
-	 * Reverse the migrations.
-	 *
-	 * @return void
-	 */
-	public function down()
-	{
-		Schema::drop('schedules');
-	}
+            $table->timestamp('entry')->nullable(false);
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down() {
+        Schema::drop('schedules');
+    }
 
 }
