@@ -12,11 +12,11 @@ class CreateSouvenirTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('souvenir', function(Blueprint $table)
+		Schema::create('souvenirs', function(Blueprint $table)
 		{
 			$table->increments('id');
-//                        nombre o descripcion del souvenir
-                        $table->string('name')->nullable(false);
+			
+			$table->string('name')->nullable(false);
 		});
 	}
 

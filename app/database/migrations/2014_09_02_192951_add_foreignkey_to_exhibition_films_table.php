@@ -10,12 +10,12 @@ class AddForeignkeyToExhibitionFilmsTable extends Migration {
      *
      * @return void
      */
-    public function up() {
-        Schema::table('exhibition_films', function(Blueprint $table) {
-//            se agrega clave foranea de exhibition_films a films
-            $table->foreign('film_id')
-                    ->references('id')->on('films')
-                    ->onDelete('cascade');
+    public function up() 
+    {
+        Schema::table('exhibition_films', function(Blueprint $table) 
+        {
+            $table->foreign('film_id')->references('id')->on('films')
+                ->onDelete('cascade');
         });
     }
 
@@ -24,10 +24,10 @@ class AddForeignkeyToExhibitionFilmsTable extends Migration {
      *
      * @return void
      */
-    public function down() {
-        Schema::table('exhibition_films', function(Blueprint $table) {
-//            se borran las claves foraneas
-//            de exhibition_films a films
+    public function down() 
+    {
+        Schema::table('exhibition_films', function(Blueprint $table) 
+        {
             $table->dropForeign('exhibition_films_film_id_foreign');
         });
     }

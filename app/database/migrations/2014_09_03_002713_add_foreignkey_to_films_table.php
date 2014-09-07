@@ -10,15 +10,14 @@ class AddForeignkeyToFilmsTable extends Migration {
      *
      * @return void
      */
-    public function up() {
-        Schema::table('films', function(Blueprint $table) {
-//            se agregan claves foraneas
-//            de films a genres
+    public function up() 
+    {
+        Schema::table('films', function(Blueprint $table) 
+        {
             $table->foreign('genre_id')
-                    ->references('id')->on('genres');
-//            de films a country
+                ->references('id')->on('genres');
             $table->foreign('country_id')
-                    ->references('id')->on('country');
+                ->references('id')->on('country');
         });
     }
 
@@ -27,12 +26,12 @@ class AddForeignkeyToFilmsTable extends Migration {
      *
      * @return void
      */
-    public function down() {
-        Schema::table('films', function(Blueprint $table) {
-//            se borran las claves foraneas
-//            de films a genres
+    public function down() 
+    {
+        Schema::table('films', function(Blueprint $table) 
+        {
             $table->dropForeign('films_genre_id_foreign');
-//            de films a country
+            
             $table->dropForeign('films_country_id_foreign');
         });
     }

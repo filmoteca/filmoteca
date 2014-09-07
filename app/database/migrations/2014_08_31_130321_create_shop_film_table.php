@@ -10,13 +10,13 @@ class CreateShopFilmTable extends Migration {
      *
      * @return void
      */
-    public function up() {
-        Schema::create('shop_film', function(Blueprint $table) {
+    public function up() 
+    {
+        Schema::create('shop_films', function(Blueprint $table) 
+        {
             $table->increments('id');
-//            numero de identificacion del film en la tabla films
+            
             $table->integer('film_id')->unsigned()->nullable(false);
-//            titulo del film
-            $table->string('title');
         });
     }
 

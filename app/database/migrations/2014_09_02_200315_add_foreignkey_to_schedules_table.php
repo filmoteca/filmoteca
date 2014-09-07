@@ -10,16 +10,17 @@ class AddForeignkeyToSchedulesTable extends Migration {
      *
      * @return void
      */
-    public function up() {
-        Schema::table('schedules', function(Blueprint $table) {
-//            se agrega clave foranea de schedules a auditorium
+    public function up() 
+    {
+        Schema::table('schedules', function(Blueprint $table) 
+        {
             $table->foreign('auditorium_id')
-                    ->references('id')->on('auditoriums')
-                    ->onDelete('cascade');
-//            se agrega clave foranea de schedules a exhibitions
+                ->references('id')->on('auditoriums')
+                ->onDelete('cascade');
+
             $table->foreign('exhibition_id')
-                    ->references('id')->on('exhibitions')
-                    ->onDelete('cascade');
+                ->references('id')->on('exhibitions')
+                ->onDelete('cascade');
         });
     }
 
@@ -28,12 +29,12 @@ class AddForeignkeyToSchedulesTable extends Migration {
      *
      * @return void
      */
-    public function down() {
-        Schema::table('schedules', function(Blueprint $table) {
-//            se borran las claves foraneas
-//            de schedules a auditorium
+    public function down() 
+    {
+        Schema::table('schedules', function(Blueprint $table) 
+        {
             $table->dropForeign('schedules_auditorium_id_foreign');
-//            de schedules a exhibitions
+            
             $table->dropForeign('schedules_exhibition_id_foreign');
         });
     }

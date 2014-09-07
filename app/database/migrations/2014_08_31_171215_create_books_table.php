@@ -15,8 +15,8 @@ class CreateBooksTable extends Migration {
 		Schema::create('books', function(Blueprint $table)
 		{
 			$table->increments('id');
-//                        titulo del libro
-                        $table->string('title');
+			
+            $table->string('title');            
 		});
 	}
 

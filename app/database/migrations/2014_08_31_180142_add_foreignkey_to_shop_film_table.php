@@ -10,12 +10,12 @@ class AddForeignkeyToShopFilmTable extends Migration {
      *
      * @return void
      */
-    public function up() {
-        Schema::table('shop_film', function(Blueprint $table) {
-            //se crea la clave foranea de shop films a films
-            $table->foreign('film_id')
-                    ->references('id')->on('films')
-                    ->onDelete('cascade');
+    public function up() 
+    {
+        Schema::table('shop_films', function(Blueprint $table) 
+        {
+            $table->foreign('film_id')->references('id')->on('films')
+                ->onDelete('cascade');
         });
     }
 
@@ -25,7 +25,8 @@ class AddForeignkeyToShopFilmTable extends Migration {
      * @return void
      */
     public function down() {
-        Schema::table('shop_film', function(Blueprint $table) {
+        Schema::table('shop_films', function(Blueprint $table) 
+        {
             //
 //            $table->dropForeign('shop_film_film_id_foreign');
         });

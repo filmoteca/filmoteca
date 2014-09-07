@@ -10,15 +10,15 @@ class CreateShopBookTable extends Migration {
      *
      * @return void
      */
-    public function up() {
-        Schema::create('shop_book', function(Blueprint $table) {
+    public function up() 
+    {
+        Schema::create('shop_books', function(Blueprint $table) 
+        {
             $table->increments('id');
-//            id del libro en tabla libros
-            $table->integer('book_id')->nullable(false)->unsigned();
-//            id del libro en table libros digitales
-            $table->integer('digital_book_id')->nullable(false)->unsigned();
-//            titulo del libro
-            $table->string('title');
+
+            $table->integer('book_id')->nullable(true)->unsigned();
+
+            $table->integer('digital_book_id')->nullable(true)->unsigned();
         });
     }
 

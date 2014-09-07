@@ -10,15 +10,17 @@ class CreateShopItemsTable extends Migration {
      *
      * @return void
      */
-    public function up() {
-        Schema::create('shop_items', function(Blueprint $table) {
+    public function up() 
+    {
+        Schema::create('shop_items', function(Blueprint $table) 
+        {
             $table->increments('id');
-//            tipo de objeto a vender en la tienda
+            
+            //tipo de objeto a vender en la tienda
             $table->string('type')->nullable(false);
-//            numero de identificacion del objeto en la tienda
+            
+            //numero de identificacion del objeto en la tienda
             $table->integer('type_id')->unsigned()->nullable(false);
-//            nombre o descripcion del objeto
-            $table->string('name')->nullable(false);
         });
     }
 

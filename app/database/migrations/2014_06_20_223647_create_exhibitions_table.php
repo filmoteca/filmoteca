@@ -10,8 +10,10 @@ class CreateExhibitionsTable extends Migration {
      *
      * @return void
      */
-    public function up() {
-        Schema::create('exhibitions', function(Blueprint $table) {
+    public function up() 
+    {
+        Schema::create('exhibitions', function(Blueprint $table) 
+        {
             $table->bigIncrements('id');
 
             $table->timestamps();
