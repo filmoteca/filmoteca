@@ -10,8 +10,7 @@ class AddForeignkeyToDigitalBook extends Migration {
      *
      * @return void
      */
-    public function up() 
-    {
+    public function up() {
         Schema::table('digital_books', function(Blueprint $table) {
 
             $table->foreign('book_id')->references('id')->on('books')
@@ -27,13 +26,12 @@ class AddForeignkeyToDigitalBook extends Migration {
      *
      * @return void
      */
-    public function down() 
-    {
-        Schema::table('digital_books', function(Blueprint $table) 
-        {
-            $table->dropForeign('digital_book_book_id_foreign');
-            
-            $table->dropForeign('digital_book_shop_book_id_foreign');
+    public function down() {
+        Schema::table('digital_books', function(Blueprint $table) {
+
+            $table->dropForeign('digital_books_book_id_foreign');
+
+            $table->dropForeign('digital_books_shop_book_id_foreign');
         });
     }
 

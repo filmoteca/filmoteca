@@ -10,12 +10,10 @@ class CreateShopFilmTable extends Migration {
      *
      * @return void
      */
-    public function up() 
-    {
-        Schema::create('shop_films', function(Blueprint $table) 
-        {
+    public function up() {
+        Schema::create('shop_films', function(Blueprint $table) {
             $table->increments('id');
-            
+
             $table->integer('film_id')->unsigned()->nullable(false);
         });
     }
@@ -26,7 +24,7 @@ class CreateShopFilmTable extends Migration {
      * @return void
      */
     public function down() {
-        Schema::drop('shop_film');
+        Schema::drop('shop_films');
     }
 
 }

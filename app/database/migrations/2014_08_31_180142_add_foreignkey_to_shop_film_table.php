@@ -10,12 +10,10 @@ class AddForeignkeyToShopFilmTable extends Migration {
      *
      * @return void
      */
-    public function up() 
-    {
-        Schema::table('shop_films', function(Blueprint $table) 
-        {
+    public function up() {
+        Schema::table('shop_films', function(Blueprint $table) {
             $table->foreign('film_id')->references('id')->on('films')
-                ->onDelete('cascade');
+                    ->onDelete('cascade');
         });
     }
 
@@ -25,10 +23,9 @@ class AddForeignkeyToShopFilmTable extends Migration {
      * @return void
      */
     public function down() {
-        Schema::table('shop_films', function(Blueprint $table) 
-        {
-            //
-//            $table->dropForeign('shop_film_film_id_foreign');
+        Schema::table('shop_films', function(Blueprint $table) {
+
+            $table->dropForeign('shop_films_film_id_foreign');
         });
     }
 

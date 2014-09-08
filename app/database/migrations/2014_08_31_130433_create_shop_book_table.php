@@ -10,15 +10,13 @@ class CreateShopBookTable extends Migration {
      *
      * @return void
      */
-    public function up() 
-    {
-        Schema::create('shop_books', function(Blueprint $table) 
-        {
+    public function up() {
+        Schema::create('shop_books', function(Blueprint $table) {
             $table->increments('id');
 
             $table->integer('book_id')->nullable(true)->unsigned();
 
-            $table->integer('digital_book_id')->nullable(true)->unsigned();
+            $table->integer('digital_book_id')->unsigned();
         });
     }
 
@@ -28,7 +26,7 @@ class CreateShopBookTable extends Migration {
      * @return void
      */
     public function down() {
-        Schema::drop('shop_book');
+        Schema::drop('shop_books');
     }
 
 }

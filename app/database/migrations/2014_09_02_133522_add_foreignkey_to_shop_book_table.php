@@ -1,4 +1,4 @@
-<?php* Corregir el nombre de las migraciones y
+<?php
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -10,16 +10,14 @@ class AddForeignkeyToShopBookTable extends Migration {
      *
      * @return void
      */
-    public function up() 
-    {
-        Schema::table('shop_books', function(Blueprint $table) 
-        {
+    public function up() {
+        Schema::table('shop_books', function(Blueprint $table) {
             $table->foreign('book_id')->references('id')->on('books')
-                ->onDelete('cascade');
+                    ->onDelete('cascade');
 
             $table->foreign('digital_book_id')
-                ->references('id')->on('digital_book')
-                ->onDelete('cascade');
+                    ->references('id')->on('digital_books')
+                    ->onDelete('cascade');
         });
     }
 
@@ -28,13 +26,11 @@ class AddForeignkeyToShopBookTable extends Migration {
      *
      * @return void
      */
-    public function down() 
-    {
-        Schema::table('shop_book', function(Blueprint $table) 
-        {
-            $table->dropForeign('shop_book_book_id_foreign');
+    public function down() {
+        Schema::table('shop_books', function(Blueprint $table) {
+            $table->dropForeign('shop_books_book_id_foreign');
 
-            $table->dropForeign('shop_book_digital_book_id_foreign');
+            $table->dropForeign('shop_books_digital_book_id_foreign');
         });
     }
 
