@@ -57,30 +57,48 @@
 	}]);
 
 	app.controller('ExhibitionController',[
-	'$scope','$modal','moment','Exhibition','URL','$location',
+	'$scope','$modal','moment','Exhibition','URL',
 
-	function($scope, $modal, moment, Exhibition, URL, $location)
+	function($scope, $modal, moment, Exhibition, URL)
 	{	
 		$scope.usedFilter = '';
-
-		$scope.dt = null;
 
 		$scope.filterResults = Exhibition.all().length;
 
 		$scope.advices = Exhibition.titlesAndDirectories();
 
+		$scope.urlToDetails = '';
+
+		$scope.loading = false;
+
+
+
+		/**********************/
+		/* ## SCOPE'S METHODS */
+		/**********************/
+
 		$scope.selectedAdvice = function(selection)
 		{	
 			var id = selection.originalObject.id;
 
-			$location.path( URL.route('exhibitions.detail', {id: id}) );
+			$scope.urlToDetails = URL.route('exhibitions.detail', {id: id});
 		};
 
-		/**
-		 * Abre un popup para mostrar los detalles de una exhibición.
-		 * @param  {String} url url de los detalles de la exhibicón
-		 */
+		$scope.showDetails = function( url )
+		{
+			$scope.urlToDetails = url;
+		};
 
+		$scope.showExhibitions = function()
+		{
+			$scope.urlToDetails = '';
+		};
+
+
+
+		/**********************/
+		/* ## LISTENERS */
+		/**********************/
 
 		$scope.$on('filterSelected', function(event, data)
 		{
@@ -93,12 +111,37 @@
 				$scope.endDate = date.add(6, 'days').valueOf();
 			}
 
-			$scope.usedFilter = ( _.contains(['0',''], data.value) )?
-				$scope.usedFilter = 'Not one' : data.name;
+			if( data.name === 'day' )
+			{
+				$scope.selectedDay = data.value;
+			}
+
+			$scope.usedFilter = ( _.contains(['0',''], data.value) )? 'No one' : data.name;
 
 			$scope.filterResults = data.results;
 
 			$scope.filterTitle = data.title;
 		});
+
+		$scope.$on('$includeContentRequested', function()
+		{
+			$scope.safeApply(function()
+			{
+				$scope.loading = true;
+			})
+				
+		});
+
+		$scope.$on('$includeContentLoaded', function()
+		{
+			$scope.loading = false;
+		});
+
+		$scope.$on('$includeContentError',function()
+		{
+			$scope.loading = false;
+			$scope.urlToDetails = '';
+		});
+
 	}]);
 });

@@ -37,36 +37,31 @@
 		}
 	});
 
-	var flmFilters = ['flmFiltersConfig','$location', 'URL', function (config, $location, URL) 
-	{
-		var link = function($scope, $element) 
-		{
-			$element.on('click', function()
-			{	
-				$location.path( URL.route('exhibitions.index'));
+	app.directive('flmFilters', 
+		['flmFiltersConfig', 
 
+	function (config) 
+	{
+		var controller = function($scope)
+		{
+			this.applyFilter = function(name, value, title)
+			{
 				var selectedItems = [];
 
 				var unselectedItems = [];
 
-				/**
-				 * Angular (o firefox) le pone comillas dobles a value, aunque ya 
-				 * tenga comillas dobles.
-				 */
-				$scope.value = $scope.value.replace('"','','gim');
-
 				var filter = config.filters.default;
 
-				if( typeof config.filters[$scope.filter] === 'function' ) 
+				if( typeof config.filters[name] === 'function' ) 
 				{
-					filter = config.filters[$scope.filter];
+					filter = config.filters[name];
 				}
 
 				var items = config.items;
 
 				angular.forEach(items, function(item)
 				{
-					if( filter(item, $scope.value) )
+					if( filter(item, value) )
 					{
 						selectedItems.push( '#' + item.id );
 					}else
@@ -79,35 +74,48 @@
 				
 				angular.element( unselectedItems.join(',') ).hide();
 
-				var title = (angular.isDefined($scope.title))? 
-											$scope.title : $scope.filterValue;
-
 				var data = {
-					name 	: $scope.filter,
-					value 	: $scope.value,
-					title 	: title,
+					name 	: name,
+					value 	: value,
+					title 	: (angular.isDefined(title))? title : value,
 					results : selectedItems.length
 				};
 
 				$scope.$root.safeApply( function()
 				{
-					$scope.$emit('filterSelected', data );
+					$scope.$root.$broadcast('filterSelected', data );
 				});
+			};
+		};
+
+		var link = function($scope, $element, $attr, ctrl) 
+		{	
+			if( $scope.onlyController ) return;
+
+			$element.on('click', function()
+			{	
+				/**
+				 * Angular (o firefox) le pone comillas dobles a value, aunque ya 
+				 * tenga comillas dobles.
+				 */
+				var value = $scope.value.replace('"','','gim');
+
+				ctrl.applyFilter($scope.filter, value, $scope.title);
 			});
 		};
 		
 		return {
 			restrict: 'A',
 			priority: 0,
+			require: 'flmFilters',
 			scope: {
 				filter 	: '@filterName',
 				value 	: '@filterValue',
 				title 	: '@filterTitle',
-				events	: '@filterEvents' // Jquery's events that trigget the filter
+				onlyController : '=flmFilters' //Si es true, entonces, solo se quiere utilziar el controlador.
 			},
+			controller: controller,
 			link: link
 		};
-	}];
-
-	app.directive('flmFilters', flmFilters);
+	}]);
 });

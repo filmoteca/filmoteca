@@ -16,7 +16,7 @@
 
 @section('content')
 	
-	<a href="#/exhibition/index">
+	<a class="btn" ng-click="showExhibitions()">
 		<span class="glyphicon glyphicon-chevron-left"></span>
 		Regresar
 	</a>

@@ -7,8 +7,8 @@
 		<b>@{{ dt | date : 'MMMM'}}</b>
 	</h3>
 	<h3 ng-switch-when="day">
-		Programación del día <b>@{{ dt | date : 'd' }}</b>
-		de <b>@{{ dt | date : 'MMMM'}}</b>
+		Programación del día <b>@{{ selectedDay | date : 'd' }}</b>
+		de <b>@{{ selectedDay | date : 'MMMM'}}</b>
 	</h3>
 	<h3 ng-switch-when="auditorium">
 		Programación de la sala <b>@{{filterTitle}}</b> de
@@ -41,19 +41,19 @@
 					alt="{{ $exhibition->exhibition_film->film->title }}">
 				{{ 
 					HTML::link(
-					'#/exhibition/' . $exhibition->id . '/detail',
+					'exhibition/' . $exhibition->id . '/detail',
 					str_limit(
 						$exhibition->exhibition_film->film->title,
 						20),
-					array( $exhibition->id ),
 					array(
 						'title' => 'Ver detalles',
-						// 'ng-click' => 
-						// 	'openDetails("' . 
-						// 		URL::action("ExhibitionController@detail", $exhibition->id) .
-						// 		'")',
-						// 'onclick' => 'return false'
-						)) 
+						'ng-click' => 
+							'showDetails("' . 
+								URL::action("ExhibitionController@detail", $exhibition->id) .
+								'")',
+						'onclick' => 'return false'
+						)
+					) 
 				}}
 			</li>
 

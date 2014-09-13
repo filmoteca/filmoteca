@@ -75,7 +75,7 @@
 		<div class="exhibition-datepicker" style="display:inline-block; min-height:200px;">
 			<h3>Consultar Programación</h3>
 
-			<datepicker ng-model="dt" class="well well-sm"></datepicker>
+			<datepicker ng-model="dphone" class="well well-sm"></datepicker>
 		</div>
 
 		<div class="static-pages-menu">
@@ -147,6 +147,16 @@
 		</div>
 	</div>
 
-	<div class="content" ng-view></div>
+	<div class="content">
+		<div class="exhibition-list" ng-show="!urlToDetails">
+			@include('exhibitions.list', array('exhibitions', $exhibitions))
+		</div>
+
+		<div class="loading" ng-show="loading"></div>
+
+		<div class="exhibition-detail" data-ng-include="urlToDetails" ng-show="urlToDetails">
+
+		</div>
+	</div>
 	
 @stop

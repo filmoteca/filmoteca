@@ -28,50 +28,73 @@
 {
 	'use strict';
 
-	var app = angular.module('ExhibitionsDatepicker',['ui.bootstrap', 'angularMoment']);
+	angular.module('ExhibitionsDatepicker',['ui.bootstrap', 'angularMoment','FilmotecaFilters'])
 
-	app.directive('dayorweekpicker', ['moment',function( moment ) {
+	.directive('dayorweekpicker', ['moment',function( moment ) {
 	  return {
 	    restrict: 'A',
-	    require: '^datepicker',
-	    link: function(scope) 
+	    require: ['^datepicker', 'flmFilters'],
+	    link: function($scope, $element, attr, controllers) 
 	    {
-				scope.filter = 'day';
+	    	var flmFilters = controllers[1];
 
-				//Indica si esta en modo semana.
-				scope.selectedWeek = false;
+			$scope.filter = 'month';
 
-				scope.selectBy = function( by )
+			$scope.selectedDate = moment().toDate();
+
+			/**
+			 * $scope.select is defined in datepicker of angular, but this
+			 * directive need defined its. So, we have to save the 
+			 * $scope.select to can continue to use.
+			 */
+			$scope.selectDay = $scope.select;
+
+			/**********************/
+			/* ## SCOPE'S METHODS */
+			/**********************/
+			$scope.selectBy = function( by )
+			{
+				switch( by )
 				{
-					if( by == 'week')
-					{
-						scope.selectedWeek = true;
-						scope.filter = 'week';
-					}else{
-						scope.selectedWeek = false;
-						scope.filter = 'day';
-					}
-				};
+					case('day'):
+						$scope.filter = 'day';
+						break;
+					case('week'):
+						$scope.filter = 'week';
+						break;
+					default: //month
+						$scope.filter = 'month';
+				}
 
+				flmFilters.applyFilter($scope.filter, $scope.selectedDate);
+			};
 
-				scope.selectedDate = null;
+			$scope.select = function(date)
+			{
+				$scope.selectDay(date);
 
-				//override
-				scope.selectDay = scope.select;
+				$scope.selectedDate = date;
 
-				scope.select = function(date)
-				{
-					scope.selectDay(date);
+				$scope.selectBy( $scope.filter );
+			};
+			
+			$scope.isActiveWeek = function(date)
+			{
+				if( $scope.filter !== 'week' || $scope.selectedDate === null) return;
 
-					scope.selectedDate = date;
-				};
-				
-				scope.isActiveWeek = function(date)
-				{
-					if(!scope.selectedWeek || scope.selectedDate === null) return;
+				return moment(date).week() === moment($scope.selectedDate).week();
+			};
 
-					return moment(date).week() === moment(scope.selectedDate).week();
-				};
+			/***************/
+			/** ## EVENTS **/
+			/***************/
+
+			$scope.$on('filterSelected', function(event, data)
+			{
+				if (_.contains(['day','week','month'], data.name)) return;
+
+				$scope.filter = 'month';
+			});
 	    }
 	  };
 	}]);
