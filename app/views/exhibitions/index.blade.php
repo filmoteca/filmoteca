@@ -29,11 +29,11 @@
 		templates/datepicker/day.html de anguler-ui datepicker  
 	--}}
 	<script id="template/datepicker/day.html" type="text/ng-template">
-		@include('exhibitions.dayorweekpicker');
+		@include('exhibitions.dayorweekpicker')
 	</script>
 
 	<script id="templates/exhibitions/list.html" type="text/ng-template">
-		@include('exhibitions.list', array('exhibitions', $exhibitions));
+		@include('exhibitions.list', array('exhibitions', $exhibitions))
 	</script>
 @stop
 
