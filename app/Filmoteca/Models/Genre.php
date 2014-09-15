@@ -1,4 +1,4 @@
-<?php namespace Filmoteca;
+<?php namespace Filmoteca\Models;
 
 use Eloquent;
 
