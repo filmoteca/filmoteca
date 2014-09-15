@@ -62,3 +62,25 @@ Route::get('/pages/{dir_or_page}/{page_name?}',
 	//El primer parámetro no entiendo bien que significa.
 	return View::of('default')->nest('content', $view);
 });
+
+/*
+|----------------------------------------------------------------------------
+| API ROUTES. Rutas para llamadas ajax.
+|----------------------------------------------------------------------------
+ */
+
+Route::group(array('prefix' => 'admin'), function()
+{
+	/*
+	|---------------------------------------------------------------------
+	| RECURSOS. Lo que pueden ser creados, editados, borrados y listados.
+	|---------------------------------------------------------------------
+	 */
+	$resources = array('film', 'filmotecaMedal', 'billboard','professor');
+
+	array_map(function($resource)
+	{
+		Route::resource($resource, sprintf('Resources\%sController', ucfirst($resource) ) );
+	}, $resources );
+});
+
