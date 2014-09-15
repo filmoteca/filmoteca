@@ -74,7 +74,7 @@ class ExhibitionController extends BaseController
 		//Extend Request;
 		$isJson = stristr(Request::header('Accept'), 'application/json' );
 
-		$layout = ( Request::ajax() || $isJson )? 'layouts.modal': "layouts.default";
+		$layout = ( Request::ajax() || $isJson )? 'layouts.modal': 'layouts.default';
 
 		return View::make('exhibitions.details', compact('exhibition','layout') );
 	}

@@ -21,12 +21,6 @@
     background: red; 
 }
 
-*{
-    margin: 0px;
-    padding: 0px;
-    border: none;
-}
-
 body{
     font-family: "Helvetica Neue";
 }
@@ -503,22 +497,6 @@ table th{
 	border: solid thin purple;
     border-collapse: collapse;
     padding: 5px;
-}
-
-.message{
-	font-size: 16px;
-	text-align: center;
-	color: green;
-	font-weight: bold;
-}
-
-select.form-control {
-    width:20%;
-    display: inline-block;
-}
-
-label{
-    margin-right: 10px;
 }
 
 /*****************/
