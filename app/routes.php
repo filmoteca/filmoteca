@@ -69,18 +69,27 @@ Route::get('/pages/{dir_or_page}/{page_name?}',
 |----------------------------------------------------------------------------
  */
 
+/*
+|----------------------------------------------------------------------------
+| RECURSOS. Lo que pueden ser creados, editados, borrados y listados.
+|----------------------------------------------------------------------------
+ */
 Route::group(array('prefix' => 'admin'), function()
 {
-	/*
-	|---------------------------------------------------------------------
-	| RECURSOS. Lo que pueden ser creados, editados, borrados y listados.
-	|---------------------------------------------------------------------
-	 */
-	$resources = array('film', 'filmotecaMedal', 'billboard','professor');
+	
+	$resources = array('film', 'filmotecaMedal', 'billboard','professor', 
+		'exhibition', 'auditorium','news');
 
+	/**
+	 * El nombre de las rutas tienen el prefijo admin. (incluyendo el punto)
+	 */
 	array_map(function($resource)
 	{
 		Route::resource($resource, sprintf('Resources\%sController', ucfirst($resource) ) );
 	}, $resources );
-});
 
+	Route::get('billboard/send',
+		array(
+			'as'=> 'admin.billboard.send', 
+			'uses' => 'Resources\BillboardConstroller@Send'));
+});
