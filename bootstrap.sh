@@ -4,7 +4,7 @@
 export DEBIAN_FRONTEND=noninteractive
 
 apt-get update
-apt-get install -y apache2 php5 php5-mysql php-pear php5-dev php5-mcrypt php5-cli php5-gd curl mysql-client postfix mysql-server vim nodejs
+apt-get install -y apache2 php5 php5-mysql php-pear php5-dev php5-mcrypt php5-cli php5-gd php5-xdebug curl mysql-client postfix mysql-server vim nodejs
 
 rm -rf /var/www
 ln -fs /vagrant /var/www
