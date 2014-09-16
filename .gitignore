@@ -24,6 +24,9 @@ Thumbs.db
 !/public/apps
 !/public/index.php
 !/public/.htaccess
+!/public/resources/.gitkeep
+
+
 
 /notes.md
 /filmoteca.sublime-project
