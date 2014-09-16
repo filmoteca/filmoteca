@@ -16,13 +16,15 @@
 	{{ Form::formGroup('text','title','Título', 'film_form',
 				array('ng-required' => 'true')) }}
 
-	{{ Form::years() }}
+	{{ Form::formGroup('text','title','Título', 'film_form') }}
 
-	{{ Form::countries() }}
+	{{ Form::formGroup('year', 'year', 'Año', 'film_form') }}
 
-	{{ Form::formGroup('text','duration','Duración', 'film_form')}}
+	{{ Form::formGroup('country', 'country_id', 'País', 'film_form') }}
 
-	{{ Form::genres() }}
+	{{ Form::formGroup('text','duration','Duración','film_form')}}
+
+	{{ Form::formGroup('genre', 'genre_id', 'Genero', 'film_form') }}
 
 	{{ Form::formGroup('text','director','Director', 'film_form')}}
 
@@ -39,6 +41,10 @@
 	{{ Form::formGroup('text','cast','Reparto', 'film_form')}}
 
 	{{ Form::formGroup('text','synopsis','Sinopsis', 'film_form')}}
+
+	{{ Form::formGroup('file','image', 'Portada', 'film_form')}}
+
+	<p>Portada actual (miníatura) <img src="{{ $resource->image->url('thumbnail') }}" class="image thumbnail"></p>
 
 	</div>
 

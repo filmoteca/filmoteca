@@ -1,11 +1,12 @@
 @section('content')
 
 {{ Form::open( 
-	array(
+	[
 		'route' => 'admin.film.store', 
 		'files' => true,
-		'method'=> 'post',
-		'class' => 'form-horizontal panel panel-default'))}}
+		'method'=> 'POST',
+		'class' => 'form-horizontal panel panel-default'
+	])}}
 
 	<div class="panel-heading">
 		<h2>Agregar película</h2>
@@ -13,16 +14,15 @@
 	
 	<div class="panel-body">
 
-	{{ Form::formGroup('text','title','Título', 'film_form',
-				array('ng-required' => 'true')) }}
+	{{ Form::formGroup('text','title','Título', 'film_form') }}
 
-	{{ Form::years() }}
+	{{ Form::formGroup('year', 'year', 'Año', 'film_form') }}
 
-	{{ Form::countries() }}
+	{{ Form::formGroup('country', 'country_id', 'País', 'film_form') }}
 
-	{{ Form::formGroup('text','duration','Duración', 'film_form')}}
+	{{ Form::formGroup('text','duration','Duración','film_form')}}
 
-	{{ Form::genres() }}
+	{{ Form::formGroup('genre', 'genre_id', 'Genero', 'film_form') }}
 
 	{{ Form::formGroup('text','director','Director', 'film_form')}}
 
@@ -38,7 +38,9 @@
 
 	{{ Form::formGroup('text','cast','Reparto', 'film_form')}}
 
-	{{ Form::formGroup('text','synopsis','Sinopsis', 'film_form')}}
+	{{ Form::formGroup('textarea','synopsis','Sinopsis', 'film_form')}}
+
+	{{ Form::formGroup('file','image', 'Portada', 'film_form')}}
 
 	</div>
 

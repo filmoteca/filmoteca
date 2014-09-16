@@ -26,11 +26,11 @@ class FilmsRepository
 		return $this->film->paginate($amount);
 	}
 
-	public function update(array $data = null)
+	public function update($id,array $data = null)
 	{
 		if( empty( $data ) ) throw new Excpetion('Empty data');
 
-		return $this->film->fill($data)->save();
+		return $this->film->findOrFail($id)->fill($data)->save();
 	}
 
 	public function destroy($id)

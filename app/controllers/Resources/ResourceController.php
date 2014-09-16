@@ -42,7 +42,7 @@ class ResourceController extends BaseController
 	public function store()
 	{
 		$data = Input::except('_token');
-		
+
 		$resource = $this->repository->store($data);
 
 		$this->show($resource->id);
@@ -51,10 +51,10 @@ class ResourceController extends BaseController
 	public function update($id)
 	{
 		$data = Input::except('_token');
-		
-		$resource = $this->repository->update($data);
 
-		$this->show($resource->id);
+		$this->repository->update($id,$data);
+
+		$this->show($id);
 	}
 
 	public function edit($id)
