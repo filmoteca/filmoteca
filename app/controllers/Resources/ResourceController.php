@@ -80,7 +80,7 @@ class ResourceController extends BaseController
 
 		return Redirect::route('admin.' . $this->resourceName . '.index')
 				->with('message', $message)
-				->with('type', $tpe);
+				->with('type', $type);
 
 		
 	}
