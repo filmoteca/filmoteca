@@ -56,7 +56,7 @@ Form::macro('fileFormGroup', function($name,$title, $formname, $attributes)
 	'<div class="form-group">' . "\n" .
 	'	<label for="' . $name . '" class="col-sm-2 control-label text-right">' . $title . '</label>' . "\n" .
 	'	<div class="col-sm-10">' . "\n" .
-	'	' . Form::file('image') . "\n" .
+	'	' . Form::file($name) . "\n" .
 	'	</div>' . "\n" .
 	'	<p class="help-block">' . $title . '	</p>' . "\n" .
 	'</div>'  . "\n";
