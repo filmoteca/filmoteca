@@ -94,4 +94,19 @@
 		</ul>
 	</div>
 
+	<div class="btn-group">
+		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			Cartelera Digital
+			<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu">
+			<li>
+				{{ HTML::linkRoute('admin.catalog.index', 'Ver historial de catálogos') }}
+			</li>
+			<li>
+				{{ HTML::linkRoute('admin.catalog.create', 'Agregar catálogo') }}
+			</li>
+		</ul>
+	</div>
+
 </div>
