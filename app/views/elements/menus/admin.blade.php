@@ -38,7 +38,7 @@
 		</button>
 		<ul class="dropdown-menu">
 			<li>
-				{{ HTML::linkRoute('admin.auditorium.index', 'Ver toda las salas') }}
+				{{ HTML::linkRoute('admin.auditorium.index', 'Ver todas las salas') }}
 			</li>
 			<li>
 				{{ HTML::linkRoute('admin.auditorium.create', 'Agregar salas') }}
@@ -53,7 +53,7 @@
 		</button>
 		<ul class="dropdown-menu">
 			<li>
-				{{ HTML::linkRoute('admin.auditorium.index', 'Ver toda los ganadores') }}
+				{{ HTML::linkRoute('admin.auditorium.index', 'Ver todos los ganadores') }}
 			</li>
 			<li>
 				{{ HTML::linkRoute('admin.auditorium.create', 'Agregar ganador') }}
@@ -68,7 +68,7 @@
 		</button>
 		<ul class="dropdown-menu">
 			<li>
-				{{ HTML::linkRoute('admin.news.index', 'Ver toda las noticias') }}
+				{{ HTML::linkRoute('admin.news.index', 'Ver todas las noticias') }}
 			</li>
 			<li>
 				{{ HTML::linkRoute('admin.news.create', 'Agregar noticia') }}
@@ -83,7 +83,7 @@
 		</button>
 		<ul class="dropdown-menu">
 			<li>
-				{{ HTML::linkRoute('admin.billboard.index', 'Ver toda las carteleras') }}
+				{{ HTML::linkRoute('admin.billboard.index', 'Ver todas las carteleras') }}
 			</li>
 			<li>
 				{{ HTML::linkRoute('admin.billboard.create', 'Agregar cartelera') }}
