@@ -25,6 +25,12 @@ Form::macro('formGroup',
 		case('genre'):
 			return Form::genreFormGroup($name, $title, $formname, $attributes);
 
+		case('textarea'):
+			return Form::textareaFormGroup($name, $title,$formname, $attributes);
+
+		case('auditorium'):
+			return Form::auditoriumFormGroup($name, $title, $formname, $attributes);
+
 		default:
 			return "\n" .
 			'<div class="form-group"' . "\n" .
@@ -82,6 +88,20 @@ Form::macro('yearFormGroup', function($name, $title, $formname, $attributes)
 	return Form::selectFormGroup($name, array_combine($options, $options),$title, $formname, $attributes);
 });
 
+Form::macro('auditoriumFormGroup', function($name, $title, $formname, $attributes)
+{
+	$tmp = Filmoteca\Models\Exhibitions\Auditorium::all(['id','name'])->lists('name','id');
+
+	$options = [0 => 'Ninguna'];
+
+	foreach($tmp as $key => $value)
+	{
+		$options[$key] = $value;
+	}
+
+	return Form::selectFormGroup($name, $options,$title,$formname,$attributes);
+});
+
 Form::macro('selectFormGroup', function($name, $options, $title, $formname, $attributes)
 {
 	return "\n" .
@@ -99,3 +119,21 @@ Form::macro('selectFormGroup', function($name, $options, $title, $formname, $att
 		'	</div>' ."\n".
 		'</div>' . "\n";
 });
+
+Form::macro('textareaFormGroup', function($name, $title, $formname, $attributes)
+{
+	return "\n" .
+		'<div class="form-group"' . "\n" .
+		'	ng-class="{\'has-error\' : film_form.' . $name . '.$invalid }">' . "\n" .
+		'	<label for="' . $name . '" class="col-sm-2 control-label text-right">' . $title . '</label>' . "\n" .
+		'	<div class="col-sm-10">' . "\n" .
+		
+		Form::textarea($name, null,[
+				'formname' => $formname, 
+				'class'=> 'form-control'
+				]) .
+
+		'	</div>' ."\n".
+		'</div>' . "\n";
+});
+
