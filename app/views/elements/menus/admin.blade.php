@@ -96,7 +96,7 @@
 
 	<div class="btn-group">
 		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-			Cartelera Digital
+			Catálogo de la Tienda
 			<span class="caret"></span>
 		</button>
 		<ul class="dropdown-menu">
