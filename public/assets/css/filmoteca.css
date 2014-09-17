@@ -379,13 +379,6 @@ line-height: 1;
     font-size: 12px;
     margin-left: 10px;
 }
-.content_event .title h5{
-    
-}
-
-.without-results{
-    display: none;
-}
 
 /************************/
 /* Detalles en Popup*/
@@ -449,54 +442,6 @@ line-height: 1;
     width: 10px;
     height: 10px;
     margin-left: 10px;
-}
-
-/******* Formularios ******/
-.input,
-.textarea,
-.field-input,
-.file-upload{
-    padding: 10px;
-}
-
-.input input, .textarea textarea,
-.field-input input,
-.field-input textarea{
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    border: solid thin purple;
-    width: 80%;
-}
-.input label, .textarea label,
-.field-input label,
-.file-upload label{
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    width: 20%;
-    display: inline-block;
-    text-align: right;
-    padding-right: 10px;
-}
-
-.file-upload input{
-    border: none;
-}
-
-#cart,
-#cart .shopping{
-    display: none;
-}
-
-table{
-    border: solid thin purple;
-    border-collapse: collapse;
-}
-
-table td,
-table th{
-	border: solid thin purple;
-    border-collapse: collapse;
-    padding: 5px;
 }
 
 /*****************/
