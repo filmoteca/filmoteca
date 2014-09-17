@@ -12,7 +12,7 @@ class Film extends Eloquent implements StaplerableInterface
 {
 	use EloquentTrait;
 
-	protected $guarded = array();
+	protected $guarded = [];
 
 	public function __construct(array $attributes = array())
 	{
