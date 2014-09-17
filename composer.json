@@ -5,7 +5,8 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.2.*",
-		"codesleeve/laravel-stapler": "dev-master#2cf9bda21c12bf45a6c8b49d5f2b0c65b7337e82"
+		"codesleeve/laravel-stapler": "dev-master#2cf9bda21c12bf45a6c8b49d5f2b0c65b7337e82",
+		"doctrine/dbal": "2.5.*@dev"
 	},
 	"autoload": {
 		"classmap": [
