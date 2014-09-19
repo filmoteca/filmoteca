@@ -17,6 +17,11 @@ Route::get('/home',
 		'uses' => 'ExhibitionController@index')
 	);
 
+Route::get('/', function()
+{
+	return View::make('pages.home');
+});
+
 Route::get('/exhibition/index',
 	array(
 		'as' => 'exhibitions',
@@ -76,6 +81,10 @@ Route::get('/pages/{dir_or_page}/{page_name?}',
  */
 Route::group(array('prefix' => 'admin'), function()
 {
+	Route::get('/', function()
+	{
+		return Redirect::route('admin.film.index');
+	});
 	
 	$resources = array('film', 'filmotecaMedal', 'billboard','professor', 
 		'exhibition', 'auditorium','news', 'catalog');
