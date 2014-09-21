@@ -87,7 +87,7 @@ Route::group(array('prefix' => 'admin'), function()
 	});
 	
 	$resources = array('film', 'filmotecaMedal', 'billboard','professor', 
-		'exhibition', 'auditorium','news', 'catalog');
+		'exhibition', 'auditorium','news', 'catalog', 'interview');
 
 	/**
 	 * El nombre de las rutas tienen el prefijo admin. (incluyendo el punto)
