@@ -109,4 +109,19 @@
 		</ul>
 	</div>
 
+	<div class="btn-group">
+		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			Entrevistas
+			<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu">
+			<li>
+				{{ HTML::linkRoute('admin.interview.index', 'Ver lista de entrevistas') }}
+			</li>
+			<li>
+				{{ HTML::linkRoute('admin.interview.create', 'Agregar entrevista') }}
+			</li>
+		</ul>
+	</div>
+
 </div>
