@@ -20,7 +20,6 @@ class CreateExhibitionsTable extends Migration {
 
             $table->integer('exhibition_film_id')->unsigned()->nullable(false);
 
-            $table->integer('type_id')->unsigned();
         });
     }
 
