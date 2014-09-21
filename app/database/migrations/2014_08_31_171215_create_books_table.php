@@ -15,12 +15,12 @@ class CreateBooksTable extends Migration {
 			$table->increments('id');
 			$table->text('title');
 			$table->string('subtitle', 45);
-			$table->text('autor');
+			$table->text('author');
 			$table->integer('country_id')->unsigned();
 			$table->string('year');
-			$table->string('editorial');
+			$table->string('publisher');
 			$table->string('isbn');
-			$table->text('sinopsis');
+			$table->text('synopsis');
 		});
 	}
 
