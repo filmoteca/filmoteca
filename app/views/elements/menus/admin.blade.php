@@ -53,10 +53,10 @@
 		</button>
 		<ul class="dropdown-menu">
 			<li>
-				{{ HTML::linkRoute('admin.auditorium.index', 'Ver todos los ganadores') }}
+				{{ HTML::linkRoute('admin.filmotecaMedal.index', 'Ver todos los ganadores') }}
 			</li>
 			<li>
-				{{ HTML::linkRoute('admin.auditorium.create', 'Agregar ganador') }}
+				{{ HTML::linkRoute('admin.filmotecaMedal.create', 'Agregar ganador') }}
 			</li>
 		</ul>
 	</div>
