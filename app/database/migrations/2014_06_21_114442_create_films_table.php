@@ -1,4 +1,4 @@
-<?php
+g<?php
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -10,10 +10,8 @@ class CreateFilmsTable extends Migration {
 	 *
 	 * @return void
 	 */
-	public function up()
-	{
-		Schema::create('films', function(Blueprint $table)
-		{
+	public function up() {
+		Schema::create('films', function(Blueprint $table) {
 			$table->increments('id');
 
 			$table->timestamps();
@@ -46,9 +44,9 @@ class CreateFilmsTable extends Migration {
 
 			$table->text('trailer');
 
-			$table->string('thumbnail_image',255)->default('/assets/imgs/no-photo.jpg');
+			$table->string('thumbnail_image', 255)->default('/assets/imgs/no-photo.jpg');
 
-			$table->string('full_image',255)->default('/assets/imgs/no-photo.jpg');
+			$table->string('full_image', 255)->default('/assets/imgs/no-photo.jpg');
 		});
 	}
 
@@ -57,8 +55,7 @@ class CreateFilmsTable extends Migration {
 	 *
 	 * @return void
 	 */
-	public function down()
-	{
+	public function down() {
 		Schema::drop('films');
 	}
 
