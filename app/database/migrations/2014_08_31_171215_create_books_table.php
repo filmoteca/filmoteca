@@ -17,7 +17,7 @@ class CreateBooksTable extends Migration {
 			$table->string('subtitle', 45);
 			$table->text('author');
 			$table->integer('country_id')->unsigned();
-			$table->string('year');
+			$table->date('year');
 			$table->string('publisher');
 			$table->string('isbn');
 			$table->text('synopsis');
