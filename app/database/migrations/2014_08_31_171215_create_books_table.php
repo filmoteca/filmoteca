@@ -10,13 +10,17 @@ class CreateBooksTable extends Migration {
 	 *
 	 * @return void
 	 */
-	public function up()
-	{
-		Schema::create('books', function(Blueprint $table)
-		{
+	public function up() {
+		Schema::create('books', function(Blueprint $table) {
 			$table->increments('id');
-			
-            $table->string('title');            
+			$table->text('title');
+			$table->string('subtitle', 45);
+			$table->text('autor');
+			$table->integer('country_id')->unsigned();
+			$table->string('year');
+			$table->string('editorial');
+			$table->string('isbn');
+			$table->text('sinopsis');
 		});
 	}
 
@@ -25,8 +29,7 @@ class CreateBooksTable extends Migration {
 	 *
 	 * @return void
 	 */
-	public function down()
-	{
+	public function down() {
 		Schema::drop('books');
 	}
 
