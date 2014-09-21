@@ -14,7 +14,7 @@ class CreateSubscribersTable extends Migration {
 		Schema::create('subscribers', function(Blueprint $table) {
 			$table->increments('id');
 			$table->string('email', 255);
-			$table->smallInteger('estado');
+			$table->smallInteger('status');
 		});
 	}
 
