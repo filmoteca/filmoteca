@@ -32,7 +32,7 @@
 				<div class="col-lg-12">
 					<div class="details-poster image pull-left">
 
-						<img src="{{ $exhibition->exhibition_film->film->full_image }}"
+						<img src="{{ $exhibition->exhibition_film->film->image->url('normal') }}"
 						alt="{{ $exhibition->exhibition_film->film->title }}" >
 
 					</div>

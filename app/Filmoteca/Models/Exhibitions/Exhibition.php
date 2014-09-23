@@ -2,7 +2,7 @@
 
 use Eloquent;
 
-use Filmoteca\Genre;
+use Filmoteca\Models\Genre;
 
 class Exhibition extends Eloquent
 {

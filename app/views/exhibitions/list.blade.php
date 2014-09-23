@@ -37,7 +37,7 @@
 			<li class="thumbnail item"
 				id="{{ $exhibition->id }}">
 
-				<img src="{{ $exhibition->exhibition_film->film->thumbnail_image }}"
+				<img src="{{ $exhibition->exhibition_film->film->image->url('thumbnail') }}"
 					alt="{{ $exhibition->exhibition_film->film->title }}">
 				{{ 
 					HTML::link(
