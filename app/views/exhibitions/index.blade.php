@@ -132,18 +132,17 @@
 
 		<div class="subscribe-box">
 			
-			<p>Si deseas recibir cada mes la cartelera digital en tu correo electronico escribelo 
-			la siguiente caja de texto.</p>
+			<p>Recibe la cartelera digital directo a tu correo electrónico.</p>
 
 			<div class="input-group input-group-sm">
 				<input type="email" 
 					name="email" 
-					placeholder="Tu correo electronico"
+					placeholder="Ingresa tu correo electrónico"
 					class="form-control">
 				<span class="input-group-addon">@</span>
 			</div>
 
-			<button type="button" class="btn btn-success">Suscribirse</button>
+			<button type="button" class="btn btn-success">Registrarse</button>
 		</div>
 	</div>
 
