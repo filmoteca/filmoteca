@@ -4,7 +4,7 @@
 	<h3 ng-switch-when="week">
 		Programación de la semanal del 
 		<b>@{{startDate | date : 'd' }}</b> al <b>@{{endDate | date : 'd'}}</b> de 
-		<b>@{{ dt | date : 'MMMM'}}</b>
+		<b>@{{ startDate | date : 'MMMM'}}</b>
 	</h3>
 	<h3 ng-switch-when="day">
 		Programación del día <b>@{{ selectedDay | date : 'd' }}</b>
@@ -24,11 +24,6 @@
 </div>
 
 <div class="wrapper-items" id="wrapper-items">
-
-	<div class="without-results" id="without-results">
-		No se encontraron películas con
-		los filtros solicitados
-	</div>
 
 	<ul class="items" id="items">
 
