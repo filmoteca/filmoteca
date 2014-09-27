@@ -49,7 +49,7 @@
 						
 						@foreach($exhibition->getTechnicalCard() as $title => $value)
 							<p>
-								<b>{{mb_strtoupper($title)}}</b>
+								<b>{{mb_strtoupper($title)}}: </b>
 								{{ $value }}
 							</p>
 						@endforeach
