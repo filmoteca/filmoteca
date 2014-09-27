@@ -10,17 +10,16 @@
 		{{ HTML::styles(
 			array(
 
+				'/bower_components/angular/angular-csp.css',
 				'/bower_components/bootstrap/dist/css/bootstrap-theme.min.css',
 			
 				'/bower_components/bootstrap/dist/css/bootstrap.min.css',
 				
 				'/assets/css/filmoteca.css')) }}
+	
+		{{ HTML::script('/apps/require.config.js') }}
 
-		{{ HTML::scripts(
-			array(
-				'/bower_components/jquery/jquery.min.js',
-
-				'/bower_components/bootstrap/dist/js/bootstrap.min.js')) }}
+		@yield('scripts')
 
 		@else
 			{{--
@@ -31,11 +30,6 @@
 				--}}
 				{{ HTML::style('/assets/css/filmoteca.min.css') }}
 		@endif
-
-		@yield('styles')
-
-		@yield('scripts')
-
 		<title>Filmoteca UNAM</title>
 	</head>
 
@@ -65,7 +59,7 @@
 
 				<div class="menu menu-admin">
 					@include('elements.menus.admin')
-				<div>
+				</div>
 
 				@yield('content')
 
