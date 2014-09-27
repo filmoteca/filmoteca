@@ -21,12 +21,13 @@
 {
 	'use strict';
 
-	angular.module('ExhibitionAdminController', ['ExhibitionService'])
+	angular.module('admin.exhibition.controllers.RootController', [
+		'admin.exhibition.services.ExhibitionService'])
 
-	.controller('ExhibitionAdminController', [
+	.controller('RootController', [
 		'$scope','ExhibitionService', function($scope, Exhibition)
 	{
-		$scope.exhibtion = Exhibtion.make();
+		$scope.exhibition = Exhibition.make();
 
 		$scope.wasFilmSelected = function()
 		{

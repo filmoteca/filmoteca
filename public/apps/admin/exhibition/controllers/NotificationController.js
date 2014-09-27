@@ -20,7 +20,7 @@
 {
 	'use strict';
 
-	angular.module('NotificationController', [])
+	angular.module('admin.exhibition.controllers.NotificationController', [])
 
 	.controller('NotificationController', ['$scope', function($scope)
 	{

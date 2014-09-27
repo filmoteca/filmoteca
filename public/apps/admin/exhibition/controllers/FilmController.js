@@ -13,7 +13,7 @@
 
 	if( typeof define === 'function' && define.amd )
 	{
-		define(['angular'], factory);
+		define(['angular', 'ui.bootstrap'], factory);
 	}else{
 		factory(angular);
 	}
@@ -21,7 +21,7 @@
 {
 	'use strict';
 
-	angular.module('FilmController', ['bootstrap.ui'])
+	angular.module('admin.exhibition.controllers.FilmController', ['ui.bootstrap'])
 
 	.controller('FilmController', ['$scope','$modal', function($scope, $modal)
 	{
@@ -38,9 +38,15 @@
 			});
 		};
 
-		$scope.filmSelected = function(selection.originalObject.id)
+		$scope.filmSelected = function(selection)
 		{
-			angular.extend($scope.film, selection.originalObject.id);
+			if( angular.isDefined(selection))
+			{
+				angular.extend($scope.film, selection.originalObject);
+			}else{
+				//So, we do the film invalid.
+				delete $scope.film.id;
+			}
 		};
 	}]);
 });

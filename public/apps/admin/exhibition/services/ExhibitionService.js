@@ -21,7 +21,7 @@
 {
 	'use strict';
 
-	angular.module('ExhibitionService',[])
+	angular.module('admin.exhibition.services.ExhibitionService',[])
 
 	.service('ExhibitionService', [function()
 	{

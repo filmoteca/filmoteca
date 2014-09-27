@@ -5,7 +5,7 @@
  |
  */
 
-/* global define, agular */
+/* global define, angular */
 
 (function(factory)
 {
@@ -21,10 +21,10 @@
 {
 	'use strict';
 
-	angular.module('IconographicService',[])
+	angular.module('admin.exhibition.services.IconographicService',[])
 
 	.service('IconographicService', [function()
 	{
 		
-	}])
+	}]);
 });

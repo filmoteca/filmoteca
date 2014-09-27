@@ -5,7 +5,7 @@
  * Dependencies:
  */
 
-/* global define,requirejs, angular,domready */
+/* global define,require, angular,domready */
 
 (function(factory)
 {
@@ -13,7 +13,20 @@
 
 	if( typeof define === 'function' && define.amd )
 	{
-		requirejs(['angular','domready','angucomplete-alt'], factory);
+		require([
+			'angular',
+			'domready',
+			'angucomplete-alt',
+
+			'admin.exhibition.controllers/RootController',
+			'admin.exhibition.controllers/FilmController',
+			'admin.exhibition.controllers/ResourceController',
+			'admin.exhibition.controllers/NotificationController',
+
+			'admin.exhibition.services/IconographicService',
+			'admin.exhibition.services/ExhibitionService'
+			], 
+			factory);
 	}else{
 		factory(angular, domready);
 	}
@@ -22,14 +35,21 @@
 	'use strict';
 
 	angular.module('App',[
-		'RootController','ExhibitionController','FilmController',
-		'IconographicController', 'NotificationController',
 
-		'IconographicService','ExhibitionService']);
+		'angucomplete-alt',
+
+		'admin.exhibition.controllers.RootController',
+		'admin.exhibition.controllers.ResourceController',
+		'admin.exhibition.controllers.FilmController', 
+		'admin.exhibition.controllers.NotificationController',
+
+		'admin.exhibition.services.IconographicService',
+		'admin.exhibition.services.ExhibitionService'
+		]);
 
 	domready( function()
 	{
-		angular.element('body').attr('ng-controller','RootController');
+		document.getElementsByTagName('body')[0].setAttribute('data-ng-controller','RootController')
 		angular.bootstrap(document,['App']);
 	});
 

@@ -21,7 +21,7 @@
 {
 	'use strict';
 
-	angular.module('ResourceController', [])
+	angular.module('admin.exhibition.controllers.ResourceController', [])
 
 	.controller('ResourceController', ['$scope', function($scope)
 	{

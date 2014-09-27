@@ -21,9 +21,9 @@
 {
 	'use strict';
 
-	angular.module('ExhibitionAdminController', [])
+	angular.module('ExhibitionController', [])
 
-	.controller('ExhibitionAdminController', ['$scope', function($scope)
+	.controller('ExhibitionController', ['$scope', function($scope)
 	{
 		/**
 		 * Structure basic of a list of exhibitons of a film.
