@@ -6,7 +6,7 @@ use Filmoteca\Models\Exhibitions\ExhibitionFilm;
 
 use Filmoteca\Models\Film;
 
-class ExhibitionsRepository
+class ExhibitionsRepository extends ResourcesRepository
 {
 	public function __construct(
 		Exhibition $exhibition,
@@ -15,6 +15,7 @@ class ExhibitionsRepository
 	{
 		$this->exhibition = $exhibition;
 		$this->exhibitionFilm = $exhibitionFilm;
+		$this->repository = $exhibition; // ## REFACTOR
 		$this->film = $film;
 	}
 
