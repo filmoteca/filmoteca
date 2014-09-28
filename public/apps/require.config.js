@@ -33,7 +33,8 @@ var require = {
 		"angular" : "angular/angular",
 		"domready" : "domready/ready.min",
 		"ui.bootstrap" : "angular-bootstrap/ui-bootstrap-tpls.min",
-		"angucomplete-alt" : "angucomplete-alt/dist/angucomplete-alt.min"
+		"angucomplete-alt" : "angucomplete-alt/dist/angucomplete-alt.min",
+		"lodash" : "lodash/dist/lodash.min"
 	},
 	"shim" : {
 		/*
