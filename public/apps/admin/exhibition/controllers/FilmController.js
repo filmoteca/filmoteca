@@ -23,9 +23,10 @@
 
 	angular.module('admin.exhibition.controllers.FilmController', ['ui.bootstrap'])
 
-	.controller('FilmController', ['$scope','$modal', function($scope, $modal)
+	.controller('FilmController', ['$scope','$modal', 'ExhibitionService', 
+		function($scope, $modal, Exhibition)
 	{
-		$scope.film = $scope.exhibition.exhibition_film.film;
+		$scope.film = Exhibition.film();
 
 		$scope.add = function()
 		{
@@ -34,7 +35,10 @@
 			})
 			.result.then(function(film)
 			{
-				angular.extend($scope.film, film);
+				/**
+				 * It sets the film of the exhibition.
+				 */
+				Exhibition.film( film );
 			});
 		};
 
@@ -42,7 +46,7 @@
 		{
 			if( angular.isDefined(selection))
 			{
-				angular.extend($scope.film, selection.originalObject);
+				Exhibition.film( selection.originalObject );
 			}else{
 				//So, we do the film invalid.
 				delete $scope.film.id;

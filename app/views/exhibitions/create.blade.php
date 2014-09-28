@@ -55,9 +55,11 @@
 
 <br>
 
-<div ng-controller="ResourceController" class="row">
+<div ng-controller="ScheduleController" class="row">
 	<div class="panel panel-default">
-		<div class="panel-heading">Horario</div>
+		<div class="panel-heading">Horario 
+			<span class="glyphicon glyphicon-plus btn" ng-click="add()" title="Agregar"></span>
+		</div>
 		<table class="table table-collapsed table-bordered ng-cloak">
 			<tr>
 				<th>Sala</th>
@@ -65,34 +67,83 @@
 				<th>Fecha</th>
 				<th>Acciones</th>
 			</tr>
-			<tr ng-repeat="schedule in resources">
-				<td>@{{schedule.auditorium.name}}</td>
-				<td>@{{schedule.entry | date : 'd/M/yyyy' }}</td>
-				<td>@{{schedule.entry | date : 'hh:mm:' }}</td>
+			<!--- Los horarios de exhibicion -->
+			<tr ng-repeat="schedule in schedules">
 				<td>
-					<button class="btn btn-info" ng-click="edit($index)">Editar</button>
-					<button class="btn btn-danget" ng-click="destroy($index)">Borrar</button>
+					<div ng-hide="editing && editedIndex == $index">
+						@{{schedule.auditorium.name}}
+					</div>
+					<div ng-show="editing && editedIndex == $index">
+						<select ng-model="schedule.auditorium" 
+							ng-options="auditorium.name for auditorium in auditoriums"></select>
+					</div>
+				</td>
+				<td>
+					<div ng-hide="editing && editedIndex == $index">
+						@{{schedule.date | date : 'd/M/yyyy' }}
+					</div>
+					<div ng-show="editing && editedIndex == $index">
+						<input type="text" ng-model="schedule.date" class="form-control">
+					</div>
+				</td>
+				<td>
+					<div ng-hide="editing && editedIndex == $index">
+						@{{schedule.time | date : 'hh:mm' }}
+					</div>
+					<div ng-show="editing && editedIndex == $index">
+						<input type="text" ng-model="schedule.time" class="form-control">
+					</div>
+				</td>
+				<td>
+					<span ng-click="ready()" 
+						class="glyphicon glyphicon-ok btn" 
+						ng-show="editing && editedIndex == $index"
+						title="Listo!"></span>
+					<span ng-click="edit($index)" 
+						class="glyphicon glyphicon-pencil btn"
+						title="Editar"></span>
+					<span ng-click="destroy($index)" 
+						class="glyphicon glyphicon-remove btn"
+						title="Borrar"></span>
 				</td>
 			</tr>
 		</table>
 	</div>
 </div>
 
-<div ng-controller="ResourceController" class="row">
+<div ng-controller="IconographicController"class="row">
 	<div class="panel panel-default">
-		<div class="panel-heading">Iconografía</div>
+		<div class="panel-heading">Iconografía 
+			<span class="glyphicon glyphicon-plus btn" ng-click="add()" title="Agregar"></span>
+			<div class="btn btn-info pull-right" ng-click="create()">Crear nuevo icono</div>
+		</div>
 		<table class="table table-collapsed table-bordered ng-cloak">
 			<tr>
 				<th>Nombre</th>
 				<th>Icono</th>
 				<th>Acciones</th>
 			</tr>
-			<tr ng-repeat="icon in resources">
+			<tr ng-repeat="icon in icons">
 				<td>@{{icon.name}}</td>
-				<td><img ng-src="@{{icon.image.url}}" class="thumbnail"></td>
 				<td>
-					<button class="btn btn-info" ng-click="edit($index)">Editar</button>
-					<button class="btn btn-danget" ng-click="destroy($index)">Borrar</button>
+					<div ng-hide="editing && editedIndex == $index">
+						<img ng-src="@{{icon.icon}}" class="thumbnail">
+					</div>
+					<div ng-show="editing && editedIndex == $index">
+						<select ng-model="icon" ng-options="_icon.name for _icon in iconsAvailable "></select>
+					</div>
+				</td>
+				<td>
+					<span ng-click="ready()" 
+						class="glyphicon glyphicon-ok btn" 
+						ng-show="editing && editedIndex == $index"
+						title="Listo!"></span>
+					<span ng-click="edit($index)" 
+						class="glyphicon glyphicon-pencil btn"
+						title="Editar"></span>
+					<span ng-click="destroy($index)" 
+						class="glyphicon glyphicon-remove btn"
+						title="Borrar"></span>
 				</td>
 			</tr>
 		</table>

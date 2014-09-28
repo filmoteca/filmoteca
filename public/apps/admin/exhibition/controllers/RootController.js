@@ -27,34 +27,20 @@
 	.controller('RootController', [
 		'$scope','ExhibitionService', function($scope, Exhibition)
 	{
-		$scope.exhibition = Exhibition.make();
-
 		$scope.wasFilmSelected = function()
 		{
-			return angular.isDefined( $scope.exhibition.exhibition_film.film.id );
-		}
+			return angular.isDefined( Exhibition.film().id );
+		};
 
 		$scope.store = function()
 		{
-			$http.post('api/admin/film/store', $socpe.exhibition)
-				.success(function(event, data)
-				{
-					$scope.$broadcast('callbackFinished',{
-						type: 'success',
-						message: 'Exhibiciones guardada.'
-					});
-
-					$scope.exhibtion = Exhibition.make();
-				})
-				.error(function(event, data)
-				{
-					$scope.$broadcast('callbackFinished',{
-						type: 'error',
-						message: 'Error al guardar las exhibiciones.'
-					});
-
-					console.log('Error al guardar la exhibición.', data);
-				});
-		}
+			if( !$scope.wasFilmSelected() )
+			{
+				$scope.$broadcast('Para guardar la exhibición hay que ' +
+					'elegir una película.');
+			}else{
+				Exhibition.store();
+			}
+		};
 	}]);
 });

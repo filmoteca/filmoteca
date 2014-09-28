@@ -1,7 +1,14 @@
 /**
  | Author: Victor Aguilar
  |
- | RESUMEN:
+ | NOTA IMPORTANTE! : El código del controlador es una copia de ExhibitionController
+ | dentro de este mismo namespace. Hay que encontrar una forma de que el scope
+ | de ambos controladores hereden las funciones comunes.
+ |
+ | Posiblemente se puede crear una directiva que tenga las funciones del scope
+ | y herede algunas constantes como auditoriums y icons desde el controlador
+ | padre, por lo cual, la directiva no debe usar un isoleted scope (scope aislado).
+ |
  |
  */
 
@@ -21,20 +28,43 @@
 {
 	'use strict';
 
-	angular.module('ExhibitionAdminController', [])
+	angular.module('admin.exhibition.controllers.IconographicController', [])
 
-	.controller('ExhibitionAdminController', ['$scope', function($scope)
+	.controller('IconographicController', ['$scope','ExhibitionService','IconographicService', 
+	function($scope, Exhibition, Icon)
 	{
-		/**
-		 * Structure basic of a list of exhibitons of a film.
-		 * @type {Object}
-		 */
-		$scope.exhibition = {
-			exhibition_film : {
-				film : {}
-			},
-			schedules : [],
-			exhibition_types : []
+		$scope.editing = false;
+
+		$scope.iconsAvailable = Icon.all();
+		
+		$scope.icons = [];
+
+		$scope.editedIndex = -1;
+
+		$scope.add = function()
+		{	
+			$scope.icons = Exhibition.addIcon().icons();
+
+			$scope.edit( 0 );
 		};
+
+		$scope.destroy = function(index)
+		{
+			$scope.icons = Exhibition.destroyIcon(index).icons();
+		};
+
+		$scope.edit = function(index)
+		{
+			$scope.editing = true;
+
+			$scope.editedIndex = index;
+		};
+
+		$scope.ready = function()
+		{
+			$scope.editing = false;
+
+			$scope.editedIndex = -1;
+		};		
 	}]);
 });

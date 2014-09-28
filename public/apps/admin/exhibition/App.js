@@ -20,11 +20,13 @@
 
 			'admin.exhibition.controllers/RootController',
 			'admin.exhibition.controllers/FilmController',
-			'admin.exhibition.controllers/ResourceController',
+			'admin.exhibition.controllers/ScheduleController',
+			'admin.exhibition.controllers/IconographicController',
 			'admin.exhibition.controllers/NotificationController',
 
 			'admin.exhibition.services/IconographicService',
-			'admin.exhibition.services/ExhibitionService'
+			'admin.exhibition.services/ExhibitionService',
+			'admin.exhibition.services/AuditoriumService'
 			], 
 			factory);
 	}else{
@@ -39,17 +41,19 @@
 		'angucomplete-alt',
 
 		'admin.exhibition.controllers.RootController',
-		'admin.exhibition.controllers.ResourceController',
+		'admin.exhibition.controllers.ScheduleController',
+		'admin.exhibition.controllers.IconographicController',
 		'admin.exhibition.controllers.FilmController', 
 		'admin.exhibition.controllers.NotificationController',
 
 		'admin.exhibition.services.IconographicService',
-		'admin.exhibition.services.ExhibitionService'
+		'admin.exhibition.services.ExhibitionService',
+		'admin.exhibition.services.AuditoriumService'
 		]);
 
 	domready( function()
 	{
-		document.getElementsByTagName('body')[0].setAttribute('data-ng-controller','RootController')
+		document.getElementsByTagName('body')[0].setAttribute('data-ng-controller','RootController');
 		angular.bootstrap(document,['App']);
 	});
 

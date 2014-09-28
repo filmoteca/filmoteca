@@ -25,6 +25,44 @@
 
 	.service('IconographicService', [function()
 	{
-		
+		var icons = null;
+
+		this.all = function()
+		{
+			icons = [
+			{
+				id : 1,
+				name : 'Funcion especial',
+				icon : '/assets/imgs/no-photo.jpg'
+			},
+			{
+				id : 2,
+				name : 'F extra',
+				icon : '/assets/imgs/no-photo.jpg'
+			},
+			{
+				id : 3,
+				name : 'R20',
+				icon : '/assets/imgs/no-photo.jpg'
+			}
+			];
+
+			return icons;
+		};
+
+		/**
+		 * Regresa una exhibición (en realidad un horario) con valores por 
+		 * default.
+		 * @return {Object} Un horario.
+		 */
+		this.default = function()
+		{
+			if( icons === null )
+			{
+				this.all();
+			}
+			
+			return icons[0];
+		};
 	}]);
 });
