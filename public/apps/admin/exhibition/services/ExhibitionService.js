@@ -69,7 +69,7 @@
 			if( angular.isDefined(film))
 			{
 				exhibition.exhibition_film.film = film;
-				return this;
+				return film;
 			}else{
 				return exhibition.exhibition_film.film;
 			}
