@@ -24,9 +24,12 @@
 			'admin.exhibition.controllers/IconographicController',
 			'admin.exhibition.controllers/NotificationController',
 
-			'admin.exhibition.services/IconographicService',
+			'admin.exhibition.services/FilmService',
 			'admin.exhibition.services/ExhibitionService',
-			'admin.exhibition.services/AuditoriumService'
+			'admin.exhibition.services/AuditoriumService',
+			'admin.exhibition.services/IconographicService',
+
+			'file-model',
 			], 
 			factory);
 	}else{
@@ -46,9 +49,12 @@
 		'admin.exhibition.controllers.FilmController', 
 		'admin.exhibition.controllers.NotificationController',
 
-		'admin.exhibition.services.IconographicService',
+		'admin.exhibition.services.FilmService',
 		'admin.exhibition.services.ExhibitionService',
-		'admin.exhibition.services.AuditoriumService'
+		'admin.exhibition.services.AuditoriumService',
+		'admin.exhibition.services.IconographicService',
+
+		'FileModel'
 		]);
 
 	domready( function()
