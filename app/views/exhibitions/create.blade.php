@@ -5,6 +5,7 @@
 	'/bower_components/requirejs/require.js', 
 	['data-main' =>'/apps/admin/exhibition/App.js'])
 }}
+
 @stop
 
 @section('content')
@@ -19,10 +20,14 @@
 	
 <div ng-controller="FilmController" class="row">
 	<div class="col-md-4">
-		<div class="form-group">
-			<span class="glyphicon glyphicon-search pull-left"></span>
-
-			<div class="search-autocomplete pull-right">
+		<div class="row">
+			<div class="col-md-12">
+				<span class="glyphicon glyphicon-search btn" ng-click="search()" title="Buscar"></span>
+				<span class="glyphicon glyphicon-plus btn" ng-click="add()" title="Agregar"></span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12" ng-show="searching">
 				<angucomplete-alt id="ex1"
 					placeholder="Buscar película por título"
 					pause="400"
@@ -41,8 +46,11 @@
 			</div>
 		</div>
 	</div>
+	<div class="col-md-1">
+		
+	</div>
 
-	<div class="col-md-8">
+	<div class="col-md-7">
 		<div ng-show="wasFilmSelected()" class="panel panel-default ng-cloak">
 			<div class="panel-heading">@{{film.title}}</div>
 			<div class="panel-body">
