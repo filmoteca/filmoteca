@@ -25,6 +25,11 @@ var require = {
 		"pages.exhibition.directives" : 	"/apps/pages/exhibition/directives",
 		"pages.exhibition.controllers" : 	"/apps/pages/exhibition/controllers",
 
+		/*************************
+		| Bibliotecas (no bower) |
+		*************************/
+
+		"file-model" : "/apps/directives/FileModel",
 
 		/*************
 		| Biliotecas |
@@ -34,7 +39,7 @@ var require = {
 		"domready" : "domready/ready.min",
 		"ui.bootstrap" : "angular-bootstrap/ui-bootstrap-tpls.min",
 		"angucomplete-alt" : "angucomplete-alt/dist/angucomplete-alt.min",
-		"lodash" : "lodash/dist/lodash.min"
+		"lodash" : "lodash/dist/lodash.min",
 	},
 	"shim" : {
 		/*
