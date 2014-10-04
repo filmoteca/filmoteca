@@ -12,10 +12,7 @@ Agregar película
 
 <form ng-submit="store()" class="form-horizontal">
 
-	{{-- @include('films.fields')--}}
-
-	título: <input type="text" ng-model="film.title">
-	Imagen: <input type="file" file-model="film.image">
+	@include('films.fields')
 	
 	<button type="submit" class="btn btn-success pull-right">Agregar</button>
 	<div class="clearfix"></div>
@@ -26,5 +23,5 @@ Agregar película
 
 
 @section('footer')
-	<div class="alert alert-danger" ng-show="message != ''">@{{message}}</div>
+	<div class="alert alert-danger text-center" ng-show="message != ''">@{{message}}</div>
 @stop

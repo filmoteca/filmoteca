@@ -22,10 +22,12 @@
 	'use strict';
 
 	angular.module('admin.exhibition.controllers.RootController', [
-		'admin.exhibition.services.ExhibitionService'])
+		'admin.exhibition.services.ExhibitionService',
+		'admin.exhibition.services.NotificationService'])
 
 	.controller('RootController', [
-		'$scope','ExhibitionService', function($scope, Exhibition)
+		'$scope', '$timeout','ExhibitionService', 'NotificationService',
+		 function($scope, $timeout, Exhibition, Notification)
 	{
 		$scope.wasFilmSelected = function()
 		{
@@ -36,11 +38,22 @@
 		{
 			if( !$scope.wasFilmSelected() )
 			{
-				$scope.$broadcast('Para guardar la exhibición hay que ' +
-					'elegir una película.');
+				var message = 'Para guardar la exhibición hay que elegir una película.';
+				Notification.notify(message , 'warning');
 			}else{
 				Exhibition.store();
 			}
 		};
+
+		$scope.$on('notificationRequested', function(event, data)
+		{
+			data.active = true;
+			$scope.notification = data;
+
+			$timeout(function()
+			{
+				$scope.notification.active = false;
+			},5000);
+		});
 	}]);
 });

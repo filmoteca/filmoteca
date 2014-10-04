@@ -22,12 +22,12 @@
 			'admin.exhibition.controllers/FilmController',
 			'admin.exhibition.controllers/ScheduleController',
 			'admin.exhibition.controllers/IconographicController',
-			'admin.exhibition.controllers/NotificationController',
 
 			'admin.exhibition.services/FilmService',
 			'admin.exhibition.services/ExhibitionService',
 			'admin.exhibition.services/AuditoriumService',
 			'admin.exhibition.services/IconographicService',
+			'admin.exhibition.services/NotificationService',
 
 			'file-model',
 			], 
@@ -47,12 +47,12 @@
 		'admin.exhibition.controllers.ScheduleController',
 		'admin.exhibition.controllers.IconographicController',
 		'admin.exhibition.controllers.FilmController', 
-		'admin.exhibition.controllers.NotificationController',
 
 		'admin.exhibition.services.FilmService',
 		'admin.exhibition.services.ExhibitionService',
 		'admin.exhibition.services.AuditoriumService',
 		'admin.exhibition.services.IconographicService',
+		'admin.exhibition.services.NotificationService',
 
 		'FileModel'
 		]);

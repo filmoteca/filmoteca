@@ -10,13 +10,13 @@
 
 @section('content')
 
-<div ng-controller="NotificationController" ng-show="isThereANotification()">
+<h2>Agregar exhibiciones</h2>
+
+<div ng-show="notification.active">
 	<div class="alert alert-@{{notification.type}}" data-ng-cloak>
-		@{{notification-type}}
+		@{{notification.message}}
 	</div>
 </div>
-
-<h2>Agregar exhibiciones</h2>
 	
 <div ng-controller="FilmController" class="row">
 	<div class="col-md-4">
@@ -32,8 +32,8 @@
 					placeholder="Buscar película por título"
 					pause="400"
 					selected-object="filmSelected"
-					remote-url="{{ URL::to('/api/films') }}?title="
-					remote-data-field="films"
+					remote-url="{{ URL::to('/api/film/search') }}?by=title&value="
+					remote-url-data-field="films"
 					title-field="title"
 					description-field="director"
 					search-fields="title"
@@ -54,8 +54,10 @@
 		<div ng-show="wasFilmSelected()" class="panel panel-default ng-cloak">
 			<div class="panel-heading">@{{film.title}}</div>
 			<div class="panel-body">
-				<div class="image pull-left"> <img ng-src="@{{ film.thumbnail }}" class="thumbnail"></div>
-				Lorem ipsum Dolor in Duis veniam voluptate ex deserunt ut consectetur ex sit in exercitation voluptate deserunt sit sed consectetur do in non proident dolore et.
+				<div class="image pull-left"> <img ng-src="@{{ film.images.thumbnail }}" class="thumbnail"></div>
+				<p>Título: @{{film.title}}</p>
+				<p>País: @{{film.country_id}}</p>
+				<p>Sinopsis: @{{film.synopsis}}</p>
 			</div>
 		</div>
 	</div>
@@ -71,8 +73,8 @@
 		<table class="table table-collapsed table-bordered ng-cloak">
 			<tr>
 				<th>Sala</th>
-				<th>Hora</th>
 				<th>Fecha</th>
+				<th>Hora</th>
 				<th>Acciones</th>
 			</tr>
 			<!--- Los horarios de exhibicion -->
@@ -91,15 +93,16 @@
 						@{{schedule.date | date : 'd/M/yyyy' }}
 					</div>
 					<div ng-show="editing && editedIndex == $index">
-						<input type="text" ng-model="schedule.date" class="form-control">
+						<datepicker ng-model="schedule.date"></datepicker>
 					</div>
 				</td>
 				<td>
+					
 					<div ng-hide="editing && editedIndex == $index">
-						@{{schedule.time | date : 'hh:mm' }}
+						@{{schedule.time | date : 'HH:mm' }}
 					</div>
 					<div ng-show="editing && editedIndex == $index">
-						<input type="text" ng-model="schedule.time" class="form-control">
+						<timepicker ng-model="schedule.time" show-meridian="false"></timepicker>
 					</div>
 				</td>
 				<td>
@@ -113,6 +116,10 @@
 					<span ng-click="destroy($index)" 
 						class="glyphicon glyphicon-remove btn"
 						title="Borrar"></span>
+					<br>
+					<div class="alert alert-danger" ng-show="schedule.time == undefined || schedule.date == undefined">
+						La fecha o la hora es invalida.
+					</div>
 				</td>
 			</tr>
 		</table>
@@ -131,7 +138,7 @@
 				<th>Icono</th>
 				<th>Acciones</th>
 			</tr>
-			<tr ng-repeat="icon in icons">
+			<tr ng-repeat="icon in icons track by $index">
 				<td>@{{icon.name}}</td>
 				<td>
 					<div ng-hide="editing && editedIndex == $index">

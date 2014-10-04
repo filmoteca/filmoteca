@@ -101,7 +101,7 @@
 
 		this.store = function()
 		{
-			$http.post('api/admin/film/store', exhibition)
+			$http.post('/admin/api/exhibition/store', exhibition)
 				.success(function()
 				{
 					$rootScope.$broadcast('callbackFinished',{
@@ -111,7 +111,7 @@
 				})
 				.error(function(event, data)
 				{
-					$rootScope.$broadcast('callbackFinished',{
+					$rootScope.$broadcast('notificationRequested',{
 						type: 'error',
 						message: 'Error al guardar las exhibiciones.'
 					});
@@ -129,9 +129,9 @@
 		{
 			return {
 				auditorium : Auditorium.default() ,
-				entry : '',
-				date: '',
-				time: ''
+				entry : new Date(),
+				date: new Date(),
+				time: new Date()
 			};
 		};
 

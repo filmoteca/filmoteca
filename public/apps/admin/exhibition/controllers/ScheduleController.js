@@ -58,6 +58,12 @@
 		{
 			$scope.editing = false;
 
+			var schedule = $scope.schedules[$scope.editedIndex];
+
+			var entry = schedule.date + schedule.time;
+
+			schedule.entry = entry;
+
 			$scope.editedIndex = -1;
 		};
 	}]);

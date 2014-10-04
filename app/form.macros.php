@@ -3,60 +3,59 @@
 Form::macro('formGroup', 
 	function($type, $name, $title, $formname,array $attr = array())
 {
-
-	$attributes = '';
-
-	foreach( $attr as $key => $value )
-	{
-		$attributes .= "\t\t\t" . $key . '="' . $value . '"' ."\n";
-	}
+	$attr['placeholder'] = $title;
+	$attr['formname']	 = $formname;
+	$attr['class']		 = 'form-control';
+	$attr['ng-model']	 = $formname . '.' .$name;
 
 	switch( $type )
 	{
 		case('file'):
-			return Form::fileFormGroup($name, $title, $formname, $attributes);
+			return Form::fileFormGroup($name, $title, $formname, $attr);
 
 		case('year'):
-			return Form::yearFormGroup($name, $title, $formname, $attributes);
+			return Form::yearFormGroup($name, $title, $formname, $attr);
 
 		case('country'):
-			return Form::countryFormGroup($name, $title, $formname, $attributes);
+			return Form::countryFormGroup($name, $title, $formname, $attr);
 
 		case('genre'):
-			return Form::genreFormGroup($name, $title, $formname, $attributes);
+			return Form::genreFormGroup($name, $title, $formname, $attr);
 
 		case('textarea'):
-			return Form::textareaFormGroup($name, $title,$formname, $attributes);
+			return Form::textareaFormGroup($name, $title,$formname, $attr);
 
 		case('auditorium'):
-			return Form::auditoriumFormGroup($name, $title, $formname, $attributes);
+			return Form::auditoriumFormGroup($name, $title, $formname, $attr);
 
 		default:
+
 			return "\n" .
 			'<div class="form-group"' . "\n" .
 			'	ng-class="{\'has-error\' : film_form.' . $name . '.$invalid }">' . "\n" .
 			'	<label for="' . $name . '" class="col-sm-2 control-label text-right">' . $title . '</label>' . "\n" .
 			'	<div class="col-sm-10">' . "\n" .
 			
-			Form::input($type, $name, null, [
-					'placeholder' => $title, 
-					'formname' => $formname, 
-					'class'=> 'form-control'
-					]) .
+			Form::input($type, $name, null, $attr) .
 
 			'	</div>' ."\n".
 			'</div>' . "\n";
 	}
 });
 
-Form::macro('fileFormGroup', function($name,$title, $formname, $attributes)
+Form::macro('fileFormGroup', function($name,$title, $formname, $attr)
 {
+	unset( $attr['class'] );
+
+	$attr['file-model'] = $attr['ng-model'];
+
+	unset( $attr['ng-model']);
 
 	return "\n" .
 	'<div class="form-group">' . "\n" .
 	'	<label for="' . $name . '" class="col-sm-2 control-label text-right">' . $title . '</label>' . "\n" .
 	'	<div class="col-sm-10">' . "\n" .
-	'	' . Form::file($name) . "\n" .
+	'	' . Form::file($name, $attr) . "\n" .
 	'	</div>' . "\n" .
 	'	<p class="help-block">' . $title . '	</p>' . "\n" .
 	'</div>'  . "\n";
@@ -102,7 +101,7 @@ Form::macro('auditoriumFormGroup', function($name, $title, $formname, $attribute
 	return Form::selectFormGroup($name, $options,$title,$formname,$attributes);
 });
 
-Form::macro('selectFormGroup', function($name, $options, $title, $formname, $attributes)
+Form::macro('selectFormGroup', function($name, $options, $title, $formname, $attr)
 {
 	return "\n" .
 		'<div class="form-group"' . "\n" .
@@ -110,17 +109,13 @@ Form::macro('selectFormGroup', function($name, $options, $title, $formname, $att
 		'	<label for="' . $name . '" class="col-sm-2 control-label text-right">' . $title . '</label>' . "\n" .
 		'	<div class="col-sm-10">' . "\n" .
 		
-		Form::select($name, $options, null,[
-				'placeholder' => $title, 
-				'formname' => $formname, 
-				'class'=> 'form-control'
-				]) .
+		Form::select($name, $options, null, $attr) .
 
 		'	</div>' ."\n".
 		'</div>' . "\n";
 });
 
-Form::macro('textareaFormGroup', function($name, $title, $formname, $attributes)
+Form::macro('textareaFormGroup', function($name, $title, $formname, $attr)
 {
 	return "\n" .
 		'<div class="form-group"' . "\n" .
@@ -128,10 +123,7 @@ Form::macro('textareaFormGroup', function($name, $title, $formname, $attributes)
 		'	<label for="' . $name . '" class="col-sm-2 control-label text-right">' . $title . '</label>' . "\n" .
 		'	<div class="col-sm-10">' . "\n" .
 		
-		Form::textarea($name, null,[
-				'formname' => $formname, 
-				'class'=> 'form-control'
-				]) .
+		Form::textarea($name, null,$attr) .
 
 		'	</div>' ."\n".
 		'</div>' . "\n";

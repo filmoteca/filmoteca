@@ -1,10 +1,12 @@
 <?php namespace Filmoteca\Repository;
 
+use Exception;
+
 class ResourcesRepository
 {
 	public function store(array $data = null)
 	{
-		if( empty( $data ) ) throw new Excpetion('Empty data');
+		if( empty( $data ) ) throw new Exception('Empty data');
 
 		return $this->resource->create($data);
 	}
@@ -21,7 +23,7 @@ class ResourcesRepository
 
 	public function update($id,array $data = null)
 	{
-		if( empty( $data ) ) throw new Excpetion('Empty data');
+		if( empty( $data ) ) throw new Exception('Empty data');
 
 		return $this->resource->findOrFail($id)->fill($data)->save();
 	}

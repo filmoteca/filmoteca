@@ -115,4 +115,11 @@ class ExhibitionsRepository extends ResourcesRepository
 
 		return $exhibitions;
 	}
+
+	public function store(array $data = null)
+	{dd($data);
+		$this->repository->create($data);
+
+		return true;
+	}
 }

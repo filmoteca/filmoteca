@@ -70,24 +70,67 @@ Route::get('/pages/{dir_or_page}/{page_name?}',
 
 /*
 |----------------------------------------------------------------------------
-| API ROUTES. Rutas para llamadas ajax.
+| API ROUTES. Rutas para llamadas ajax publicas.
 |----------------------------------------------------------------------------
  */
 
+Route::group(['prefix' => 'api'], function()
+{
+	/**
+	 * Establecemos el layout. Esto es únicamente para las rutas.
+	 * Los controladores definen su propio layout.
+	 */
+	View::name('layouts.modal', 'modal');
+
+	Route::get('film/search', [
+		'as' => 'api.film.search',
+		'uses' => 'Api\FilmController@search']);
+});
+
+
 /*
 |----------------------------------------------------------------------------
-| RECURSOS. Lo que pueden ser creados, editados, borrados y listados.
+| ADMIN ZONE
 |----------------------------------------------------------------------------
  */
-Route::group(array('prefix' => 'admin'), function()
+
+Route::group(['prefix' => 'admin'], function()
 {
 	Route::get('/', function()
 	{
 		return Redirect::route('admin.film.index');
 	});
+
+	/*
+	|--------------------------------------------------------------------------
+	| AJAX.
+	|--------------------------------------------------------------------------
+	 */
 	
-	$resources = array('film', 'filmotecaMedal', 'billboard','professor', 
-		'exhibition', 'auditorium','news', 'catalog', 'interview');
+	Route::group(['prefix' => 'api'], function()
+	{
+		Route::get('film/create', function()
+		{
+			return View::make('api.films.create');
+		});
+
+		Route::post('exhibition/store',[
+			'as' => 'admin.api.exhibition.store',
+			'uses' => 'Api\ExhibitionController@store']);
+	});
+
+	/*
+	|--------------------------------------------------------------------------
+	| RECURSOS. Lo que pueden ser creados, editados, borrados y listados.
+	|--------------------------------------------------------------------------
+	 */
+	
+	/**
+	 * ## ENHANCEMENT: Usar un único controlador para todos estos recursos.
+	 */
+
+	$resources = ['film', 'filmotecaMedal', 'billboard','professor', 
+		'exhibition', 'auditorium','news', 'catalog', 'interview'];
 
 	/**
 	 * El nombre de las rutas tienen el prefijo admin. (incluyendo el punto)
@@ -97,8 +140,9 @@ Route::group(array('prefix' => 'admin'), function()
 		Route::resource($resource, sprintf('Resources\%sController', ucfirst($resource) ) );
 	}, $resources );
 
-	Route::get('billboard/send',
-		array(
+	Route::get('billboard/send',[
 			'as'=> 'admin.billboard.send', 
-			'uses' => 'Resources\BillboardConstroller@Send'));
+			'uses' => 'Resources\BillboardConstroller@Send']);
+
+
 });

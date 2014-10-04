@@ -24,5 +24,10 @@ class AuditoriumsRepository extends ResourcesRepository
 			
 		return $resource;
 	}
+
+	public function list()
+	{
+		return $this->resource->all(['id','name']);
+	}
 }
 

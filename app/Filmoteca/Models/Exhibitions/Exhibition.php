@@ -6,6 +6,8 @@ use Filmoteca\Models\Genre;
 
 class Exhibition extends Eloquent
 {
+	protected $guarded = [];
+	
 	public function exhibitionFilm()
 	{
 		return $this->belongsTo('Filmoteca\Models\Exhibitions\ExhibitionFilm');
