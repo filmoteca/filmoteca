@@ -16,7 +16,11 @@
 				'/bower_components/bootstrap/dist/css/bootstrap.min.css',
 				
 				'/assets/css/filmoteca.css')) }}
-	
+
+		{{ HTML::script('bower_components/jquery/jquery.min.js')}}
+
+		{{ HTML::script('bower_components/bootstrap/dist/js/bootstrap.min.js')}}
+
 		{{ HTML::script('/apps/require.config.js') }}
 
 		@yield('scripts')

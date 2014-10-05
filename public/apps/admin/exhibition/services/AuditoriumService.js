@@ -1,23 +1,16 @@
 /**
  | Author: Victor Aguilar
- |
- | RESUMEN:
- |
  */
 
-/* global define, angular */
+/* global define */
 
 (function(factory)
 {
 	'use strict';
 
-	if( typeof define === 'function' && define.amd )
-	{
-		define(['angular'], factory);
-	}else{
-		factory(angular);
-	}
-})(function(angular)
+	define(['angular', 'json!/api/auditorium/all'], factory);
+
+})(function(angular, auditoriums)
 {
 	'use strict';
 
@@ -25,31 +18,14 @@
 
 	.service('AuditoriumService', [function()
 	{
-		var auditoriums = null;
 
 		this.all = function()
 		{
-			auditoriums =[{
-				id : 1,
-				name : 'Auditorio 1'
-			},{
-				id : 2,
-				name : 'Sala'
-			},{
-				id: 3,
-				name : 'Auditorium'
-			}];
-
 			return auditoriums;
 		};
 
 		this.default = function()
 		{
-			if( auditoriums === null)
-			{
-				this.all();
-			}
-
 			return auditoriums[0];
 		};
 	}]);

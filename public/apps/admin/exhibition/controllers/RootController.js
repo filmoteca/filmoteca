@@ -26,9 +26,19 @@
 		'admin.exhibition.services.NotificationService'])
 
 	.controller('RootController', [
-		'$scope', '$timeout','ExhibitionService', 'NotificationService',
-		 function($scope, $timeout, Exhibition, Notification)
+		'$scope', '$timeout','ExhibitionService', 'NotificationService', 'IconographicService',
+		 function($scope, $timeout, Exhibition, Notification, Icon)
 	{
+		$scope.iconsAvailable = Icon.all();
+
+		$scope.exhibition = Exhibition.get();
+
+		/**
+		 * Si inicializo la propiedad type con el valor por default del  icono
+		 * el binding no funciona correctamente.
+		 */
+		$scope.exhibition.type = Icon.default();
+
 		$scope.wasFilmSelected = function()
 		{
 			return angular.isDefined( Exhibition.film().id );

@@ -1,5 +1,7 @@
 <?php namespace Filmoteca\Repository;
 
+use App;
+
 use Filmoteca\Models\Exhibitions\Exhibition;
 
 use Filmoteca\Models\Exhibitions\ExhibitionFilm;
@@ -116,9 +118,43 @@ class ExhibitionsRepository extends ResourcesRepository
 		return $exhibitions;
 	}
 
+	/**
+	 * El código de esta función quedo muy mal. Yo esperabá que eloquente
+	 * pudiera guardar los datos que en el array $data sin problemas.
+	 * pero te tengo que acomodar cada dato para que coincida con las columnas
+	 * de la base de datos.
+	 *
+	 * Hay que encontrar una mejor forma de hacer esto.
+	 *
+	 * ## ENHANCEMENT
+	 * @param  [type] $data [description]
+	 * @return [type]       [description]
+	 */
 	public function store(array $data = null)
-	{dd($data);
-		$this->repository->create($data);
+	{
+		$d = [];
+		$d['type_id'] = $data['type']['id'];
+		$d['exhibition_film_id'] = $data['exhibition_film']['film']['id'];
+
+		$schedules = [];
+
+		foreach( $data['schedules'] as $value)
+		{
+			$model = App::make('Filmoteca\Models\Exhibitions\Schedule');
+
+			$value['auditorium_id'] = $value['auditorium']['id'];
+			
+			unset( $value['auditorium']);
+			unset( $value['date'] );
+			unset( $value['time'] );
+
+			$model->fill($value);
+
+			array_push( $schedules, $model );
+		}
+
+		$this->repository->create($d)->schedules()
+			->saveMany($schedules);
 
 		return true;
 	}

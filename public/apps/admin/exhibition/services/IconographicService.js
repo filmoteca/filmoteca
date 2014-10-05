@@ -1,8 +1,5 @@
 /**
  | Author: Victor Aguilar
- |
- | RESUMEN:
- |
  */
 
 /* global define, angular */
@@ -11,13 +8,8 @@
 {
 	'use strict';
 
-	if( typeof define === 'function' && define.amd )
-	{
-		define(['angular'], factory);
-	}else{
-		factory(angular);
-	}
-})(function(angular)
+	define(['angular', 'json!/api/iconographic/all'], factory);
+})(function(angular, icons)
 {
 	'use strict';
 
@@ -25,28 +17,8 @@
 
 	.service('IconographicService', [function()
 	{
-		var icons = null;
-
 		this.all = function()
 		{
-			icons = [
-			{
-				id : 1,
-				name : 'Funcion especial',
-				icon : '/assets/imgs/no-photo.jpg'
-			},
-			{
-				id : 2,
-				name : 'F extra',
-				icon : '/assets/imgs/no-photo.jpg'
-			},
-			{
-				id : 3,
-				name : 'R20',
-				icon : '/assets/imgs/no-photo.jpg'
-			}
-			];
-
 			return icons;
 		};
 
@@ -56,12 +28,7 @@
 		 * @return {Object} Un horario.
 		 */
 		this.default = function()
-		{
-			if( icons === null )
-			{
-				this.all();
-			}
-			
+		{	
 			return icons[0];
 		};
 	}]);

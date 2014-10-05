@@ -5,7 +5,6 @@
 	'/bower_components/requirejs/require.js', 
 	['data-main' =>'/apps/admin/exhibition/App.js'])
 }}
-
 @stop
 
 @section('content')
@@ -17,6 +16,8 @@
 		@{{notification.message}}
 	</div>
 </div>
+
+<div class="loading" ng-show="loading"></div>
 	
 <div ng-controller="FilmController" class="row">
 	<div class="col-md-4">
@@ -126,42 +127,26 @@
 	</div>
 </div>
 
-<div ng-controller="IconographicController"class="row">
+<div class="row">
 	<div class="panel panel-default">
-		<div class="panel-heading">Iconografía 
-			<span class="glyphicon glyphicon-plus btn" ng-click="add()" title="Agregar"></span>
+		<div class="panel-heading">
+			Iconografía 
 			<div class="btn btn-info pull-right" ng-click="create()">Crear nuevo icono</div>
+			<div class="clearfix"></div>
 		</div>
-		<table class="table table-collapsed table-bordered ng-cloak">
-			<tr>
-				<th>Nombre</th>
-				<th>Icono</th>
-				<th>Acciones</th>
-			</tr>
-			<tr ng-repeat="icon in icons track by $index">
-				<td>@{{icon.name}}</td>
-				<td>
-					<div ng-hide="editing && editedIndex == $index">
-						<img ng-src="@{{icon.icon}}" class="thumbnail">
+		<div class="panel-body">
+			<form>
+				<div class="form-group">
+					<label class="col-sm-2 control-label text-right">Icono (Tipo de exhibición)</label>
+					<div class="col-sm-6">
+						<select ng-model="exhibition.type" ng-options="icon.name for icon in iconsAvailable "></select>
 					</div>
-					<div ng-show="editing && editedIndex == $index">
-						<select ng-model="icon" ng-options="_icon.name for _icon in iconsAvailable "></select>
+					<div class="col-sm-4">
+						<img ng-src="@{{exhibition.type.icon}}" class="thumbnail image">
 					</div>
-				</td>
-				<td>
-					<span ng-click="ready()" 
-						class="glyphicon glyphicon-ok btn" 
-						ng-show="editing && editedIndex == $index"
-						title="Listo!"></span>
-					<span ng-click="edit($index)" 
-						class="glyphicon glyphicon-pencil btn"
-						title="Editar"></span>
-					<span ng-click="destroy($index)" 
-						class="glyphicon glyphicon-remove btn"
-						title="Borrar"></span>
-				</td>
-			</tr>
-		</table>
+				</div>
+			</form>
+		</div>
 	</div>
 </div>
 

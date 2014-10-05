@@ -1,16 +1,15 @@
 <?php namespace Api;
 
-use Filmoteca\Repository\AuditoriumsRepository;
+use Filmoteca\Repository\IconographicsRepository;
 
 use Response;
 
-class AuditoriumController extends ApiController
+class IconographicController extends ApiController
 {
-	public function __construct(AuditoriumsRepository $repository)
+	public function __construct(IconographicsRepository $repository)
 	{
 		$this->repository = $repository;
 	}
-
 	public function all()
 	{
 		$resources = $this->repository->all();

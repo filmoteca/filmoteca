@@ -10,9 +10,6 @@
 (function(factory)
 {
 	'use strict';
-
-	if( typeof define === 'function' && define.amd )
-	{
 		require([
 			'angular',
 			'domready',
@@ -21,7 +18,6 @@
 			'admin.exhibition.controllers/RootController',
 			'admin.exhibition.controllers/FilmController',
 			'admin.exhibition.controllers/ScheduleController',
-			'admin.exhibition.controllers/IconographicController',
 
 			'admin.exhibition.services/FilmService',
 			'admin.exhibition.services/ExhibitionService',
@@ -29,12 +25,9 @@
 			'admin.exhibition.services/IconographicService',
 			'admin.exhibition.services/NotificationService',
 
-			'file-model',
+			'file-model'
 			], 
 			factory);
-	}else{
-		factory(angular, domready);
-	}
 })(function(angular, domready)
 {
 	'use strict';
@@ -45,7 +38,6 @@
 
 		'admin.exhibition.controllers.RootController',
 		'admin.exhibition.controllers.ScheduleController',
-		'admin.exhibition.controllers.IconographicController',
 		'admin.exhibition.controllers.FilmController', 
 
 		'admin.exhibition.services.FilmService',

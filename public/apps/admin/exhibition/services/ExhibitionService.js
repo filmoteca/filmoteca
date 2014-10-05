@@ -36,9 +36,14 @@
 					film : {}
 				},
 				schedules : [], //El horario es la verdadera exhibición. 
-				exhibition_types : [] //Iconografia.
+				type : {}
 			};
 		};
+
+		this.get = function()
+		{
+			return exhibition;
+		}
 
 		this.addSchedule = function( schedule )
 		{
@@ -47,18 +52,6 @@
 				exhibition.schedules.unshift(schedule);
 			}else{
 				exhibition.schedules.unshift( this.defaultSchedule() );
-			}
-
-			return this;
-		};
-
-		this.addIcon = function( icon)
-		{
-			if( angular.isDefined(icon) )
-			{
-				exhibition.exhibition_types.unshift(icon);
-			}else{
-				exhibition.exhibition_types.unshift( Icon.default());
 			}
 
 			return this;
@@ -80,21 +73,9 @@
 			return exhibition.schedules;
 		};
 
-		this.icons = function()
-		{
-			return exhibition.exhibition_types;
-		};
-
 		this.destroySchedule = function($index)
 		{
 			exhibition.schedules.splice($index,1);
-
-			return this;
-		};
-
-		this.destroyIcon = function($index)
-		{
-			exhibition.exhibition_types.splice($index,1);
 
 			return this;
 		};
@@ -112,7 +93,7 @@
 				.error(function(event, data)
 				{
 					$rootScope.$broadcast('notificationRequested',{
-						type: 'error',
+						type: 'danger',
 						message: 'Error al guardar las exhibiciones.'
 					});
 

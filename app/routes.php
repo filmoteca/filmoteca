@@ -85,6 +85,14 @@ Route::group(['prefix' => 'api'], function()
 	Route::get('film/search', [
 		'as' => 'api.film.search',
 		'uses' => 'Api\FilmController@search']);
+
+	Route::get('auditorium/all', [
+		'as' => 'api.auditorium.all',
+		'uses' => 'Api\AuditoriumController@all']);
+
+	Route::get('iconographic/all', [
+		'as' => 'api.iconographic.all',
+		'uses' => 'Api\IconographicController@all']);
 });
 
 
