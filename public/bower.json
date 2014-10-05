@@ -38,6 +38,8 @@
     "lodash": "2.4.*",
     "angucomplete-alt": "0.0.18",
     "angular-route": "1.2.*",
-    "requirejs": "2.1.*"
+    "requirejs": "2.1.*",
+    "requirejs-plugins": "1.0.*",
+    "text": "2.0.*"
   }
 }
