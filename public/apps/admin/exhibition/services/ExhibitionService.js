@@ -36,7 +36,7 @@
 					film : {}
 				},
 				schedules : [], //El horario es la verdadera exhibición. 
-				type : {}
+				type : Icon.default()
 			};
 		};
 
@@ -92,6 +92,7 @@
 
 		this.store = function()
 		{
+			var self = this;
 			$http.post('/admin/api/exhibition/store', exhibition)
 				.success(function()
 				{
@@ -99,6 +100,8 @@
 						type: 'success',
 						message: 'Exhibiciones guardada.'
 					});
+
+					self.restart();
 				})
 				.error(function(event, data)
 				{
@@ -125,6 +128,13 @@
 				time: new Date()
 			};
 		};
+
+		this.restart = function()
+		{
+			exhibition.exhibition_film.film = {};
+			exhibition.schedules.splice(0, exhibition.schedules.length);
+			exhibition.type = Icon.default();
+		}
 
 		exhibition = this.make();
 	}]);

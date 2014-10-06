@@ -15,6 +15,11 @@ class IconographicController extends ApiController
 	{
 		$resources = $this->repository->all();
 
+		foreach($resources as $resource )
+		{
+			$resource->icon = $resource->image->url('thumbnail');
+		}
+
 		return Response::json($resources,200);
 	}
 

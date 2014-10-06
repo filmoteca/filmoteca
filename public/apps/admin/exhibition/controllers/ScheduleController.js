@@ -31,7 +31,7 @@
 
 		$scope.auditoriums = Auditorium.all();
 
-		$scope.schedules = [];
+		$scope.schedules = Exhibition.schedules();
 
 		$scope.editedIndex = -1;
 

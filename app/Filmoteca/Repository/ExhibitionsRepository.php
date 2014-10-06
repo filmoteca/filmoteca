@@ -134,7 +134,14 @@ class ExhibitionsRepository extends ResourcesRepository
 	{
 		$d = [];
 		$d['type_id'] = $data['type']['id'];
-		$d['exhibition_film_id'] = $data['exhibition_film']['film']['id'];
+
+		$exhibitionFilm = App::make('Filmoteca\Models\Exhibitions\ExhibitionFilm');
+
+		$exhibitionFilm->fill(['film_id' => $data['exhibition_film']['film']['id'] ])
+			->save();
+
+
+		$d['exhibition_film_id'] = $exhibitionFilm->id;
 
 		$schedules = [];
 
