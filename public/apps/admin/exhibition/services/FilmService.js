@@ -28,7 +28,7 @@
 		this.store = function(film)
 		{
 			var fd = new FormData();
-			var url = '/api/films/store';
+			var url = '/admin/api/film/store';
 
 			angular.forEach(film, function(value,key)
 			{

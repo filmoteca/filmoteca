@@ -18,6 +18,7 @@
 			'admin.exhibition.controllers/RootController',
 			'admin.exhibition.controllers/FilmController',
 			'admin.exhibition.controllers/ScheduleController',
+			'admin.exhibition.controllers/IconographicController',
 
 			'admin.exhibition.services/FilmService',
 			'admin.exhibition.services/ExhibitionService',
@@ -37,8 +38,9 @@
 		'angucomplete-alt',
 
 		'admin.exhibition.controllers.RootController',
-		'admin.exhibition.controllers.ScheduleController',
 		'admin.exhibition.controllers.FilmController', 
+		'admin.exhibition.controllers.ScheduleController',
+		'admin.exhibition.controllers.IconographicController',
 
 		'admin.exhibition.services.FilmService',
 		'admin.exhibition.services.ExhibitionService',

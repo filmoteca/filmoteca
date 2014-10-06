@@ -21,16 +21,12 @@
 {
 	'use strict';
 
-	angular.module('admin.exhibition.controllers.RootController', [
-		'admin.exhibition.services.ExhibitionService',
-		'admin.exhibition.services.NotificationService'])
+	angular.module('admin.exhibition.controllers.RootController', [])
 
 	.controller('RootController', [
 		'$scope', '$timeout','ExhibitionService', 'NotificationService', 'IconographicService',
 		 function($scope, $timeout, Exhibition, Notification, Icon)
 	{
-		$scope.iconsAvailable = Icon.all();
-
 		$scope.exhibition = Exhibition.get();
 
 		/**

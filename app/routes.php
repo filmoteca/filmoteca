@@ -104,6 +104,11 @@ Route::group(['prefix' => 'api'], function()
 
 Route::group(['prefix' => 'admin'], function()
 {
+	/*
+	|--------------------------------------------------------------------------
+	| DASHBOARD
+	|--------------------------------------------------------------------------
+	 */
 	Route::get('/', function()
 	{
 		return Redirect::route('admin.film.index');
@@ -117,10 +122,25 @@ Route::group(['prefix' => 'admin'], function()
 	
 	Route::group(['prefix' => 'api'], function()
 	{
+		View::name('layouts.modal', 'modal');
+
 		Route::get('film/create', function()
 		{
 			return View::make('api.films.create');
 		});
+
+		Route::get('iconographic/create', function()
+		{
+			return View::make('api.iconographics.create');
+		});
+
+		Route::post('iconographic/store', [
+			'as' => 'admin.api.iconographic.store',
+			'uses' => 'Api\IconographicController@store']);
+
+		Route::post('film/store',[
+			'as' => 'admin.api.film.store',
+			'uses' => 'Api\FilmController@store']);
 
 		Route::post('exhibition/store',[
 			'as' => 'admin.api.exhibition.store',

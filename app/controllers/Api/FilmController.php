@@ -36,8 +36,6 @@ class FilmController extends ApiController
 
 		$film->images->thumbnail = $film->image->url('thumbnail');
 
-		return Response::json(
-			['film' => $film],
-			200);;
+		return Response::json($film,200);;
 	}
 }

@@ -68,6 +68,16 @@
 			}
 		};
 
+		this.icon = function( icon ){
+			if( angular.isDefined(icon))
+			{
+				exhibition.type = icon;
+				return icon;
+			}else{
+				return exhibition.exhibition_film.icon;
+			}
+		}
+
 		this.schedules = function()
 		{
 			return exhibition.schedules;
@@ -85,7 +95,7 @@
 			$http.post('/admin/api/exhibition/store', exhibition)
 				.success(function()
 				{
-					$rootScope.$broadcast('callbackFinished',{
+					$rootScope.$broadcast('notificationRequested',{
 						type: 'success',
 						message: 'Exhibiciones guardada.'
 					});

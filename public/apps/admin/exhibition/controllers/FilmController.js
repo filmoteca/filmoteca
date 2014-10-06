@@ -36,7 +36,7 @@
 			$scope.searching = false;
 
 			$modal.open({
-				templateUrl: 'admin/api/film/create',
+				templateUrl: '/admin/api/film/create',
 				scope : $scope.$new(),
 				/**
 				 * NOTA: Aquí podría existir un problema cuando se minifique
@@ -54,12 +54,12 @@
 					{
 						Film.store( $scope.film).then(function(response)
 						{
-							$modalInstance.close(response.data.film);
+							$modalInstance.close(response.data);
 						}, function()
 						{
 							$scope.message = 'Ocurrió un problema al guardar.';
 						});
-					}
+					};
 				}
 			})
 			.result.then(function(film)
