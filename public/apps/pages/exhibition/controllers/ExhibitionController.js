@@ -14,11 +14,10 @@
 		define([
 			'angular',
 			'lodash',
-			'services/ExhibitionService',
-			'services/URLService',
-			'constants/ExhibitionsFilters',
-			'ui-bootstrap',
-			'angular-moment'
+			'ui.bootstrap',
+			'angular-moment',
+			'pages.exhibition.services/ExhibitionService',
+			'pages.exhibition.services/URLService'
 			],
 			factory);
 	}else{
@@ -28,8 +27,9 @@
 {
 	'use strict';
 
-	var app = angular.module('ExhibitionController',
-		['ExhibitionService', 'ui.bootstrap', 'FilmotecaFilters','angularMoment', 'URLService']);
+	var app = angular.module('pages.exhibition.controllers.ExhibitionController',
+		['ui.bootstrap', 'angularMoment',
+		'pages.exhibition.services.ExhibitionService', 'FilmotecaFilters','URLService']);
 
 	/**
 	 * Configuración.
@@ -56,7 +56,7 @@
 		angular.extend(flmFiltersConfig.filters, Exhibitions.filters() );
 	}]);
 
-	app.controller('ExhibitionController',[
+	app.controller('pages.exhibition.controllers.ExhibitionController',[
 	'$scope','$modal','moment','Exhibition','URL',
 
 	function($scope, $modal, moment, Exhibition, URL)
@@ -94,8 +94,6 @@
 			$scope.urlToDetails = '';
 		};
 
-
-
 		/**********************/
 		/* ## LISTENERS */
 		/**********************/
@@ -125,11 +123,7 @@
 
 		$scope.$on('$includeContentRequested', function()
 		{
-			$scope.safeApply(function()
-			{
-				$scope.loading = true;
-			})
-				
+			$scope.loading = true;
 		});
 
 		$scope.$on('$includeContentLoaded', function()

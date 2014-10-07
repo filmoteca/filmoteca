@@ -10,12 +10,7 @@
 
 	if( typeof define !== 'undefined' && define.amd )
 	{
-		define(
-			[
-			'jquery',
-			'angular',
-			],
-			factory);
+		define(['jquery','angular'],factory);
 	}else{
 		factory(jQuery,angular);
 	}
@@ -81,10 +76,7 @@
 					results : selectedItems.length
 				};
 
-				$scope.$root.safeApply( function()
-				{
-					$scope.$root.$broadcast('filterSelected', data );
-				});
+				$scope.$root.$broadcast('filterSelected', data );
 			};
 		};
 
@@ -100,7 +92,9 @@
 				 */
 				var value = $scope.value.replace('"','','gim');
 
-				ctrl.applyFilter($scope.filter, value, $scope.title);
+				$scope.$apply(function(){
+					ctrl.applyFilter($scope.filter, value, $scope.title);
+				});
 			});
 		};
 		

@@ -14,8 +14,8 @@
 	{
 		define([
 			'angular',
-			'angular-moment',
-			'underscore'
+			'lodash',
+			'angular-moment'
 			],
 			factory);
 	}else{
@@ -25,7 +25,7 @@
 {
 	'use strict';
 
-	var app = angular.module('ExhibitionService',['angularMoment']);
+	var app = angular.module('pages.exhibition.services.ExhibitionService',['angularMoment']);
 
 	app.factory('Exhibition',['$window', 'moment', function($window, moment)
 	{

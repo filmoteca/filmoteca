@@ -12,15 +12,12 @@ class ExhibitionsManager
 	 */
 	public function getIcons($exhibitions)
 	{
-		$icons = array();
-		
-		foreach( $exhibitions as $exhibition )
+		return $exhibitions->filter(function($exhibition)
 		{
-			$icon_id = $exhibition->type->id;
-
-			$icons[$icon_id] = $exhibition->type;
-		}
-
-		return $icons;
+			return !is_null( $exhibition->type );
+		})->map(function($exhibition)
+		{
+			return $exhibition->type;
+		})->unique();
 	}
 }

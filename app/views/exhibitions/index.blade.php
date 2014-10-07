@@ -1,22 +1,8 @@
 @extends('layouts.default')
 
 @section('scripts')
-	{{ HTML::scripts(
-		array(
-			'/bower_components/domready/ready.min.js',
-			'/bower_components/angular/angular.js',
-			'/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
-			'/bower_components/moment/min/moment.min.js',
-			'/bower_components/angular-moment/angular-moment.min.js',
-			'/bower_components/angular-i18n/angular-locale_es-mx.js',
-			'/bower_components/angular-route/angular-route.min.js',
-			'/bower_components/angucomplete-alt/dist/angucomplete-alt.min.js',
-			'/apps/directives/ExhibitionsDatepicker.js',
-			'/apps/directives/FilmotecaFilters.js',
-			'/apps/services/ExhibitionService.js',
-			'/apps/services/URLService.js',
-			'/apps/controllers/ExhibitionController.js',
-			'/apps/ExhibitionsApp.js')) }}
+
+@section('scripts')
 
 	<script>
 		
@@ -35,6 +21,13 @@
 	<script id="templates/exhibitions/list.html" type="text/ng-template">
 		@include('exhibitions.list', array('exhibitions', $exhibitions))
 	</script>
+	
+{{ HTML::script('/apps/require.config.js')}}
+
+{{ HTML::script(
+	'/bower_components/requirejs/require.js', 
+	['data-main' =>'/apps/pages/exhibition/App.js'])
+}}
 @stop
 
 @section('styles')
@@ -120,7 +113,7 @@
 									filter-title="{{ $icon->name }}"
 									class="btn">
 									<span>
-										{{ HTML::image($icon->icon, $icon->name) }}
+										{{ HTML::image($icon->image->url('thumbnail'), $icon->name) }}
 									</span>
 								</a>
 							</li>

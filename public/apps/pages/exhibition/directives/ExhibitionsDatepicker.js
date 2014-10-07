@@ -19,7 +19,7 @@
 
 	if( typeof define !== 'undefined' && define.amd )
 	{
-		define(['angular','ui.bootstrap','angular-moment'],factory);
+		define(['angular','ui.bootstrap','angular-moment','FilmotecaFilters'],factory);
 
 	}else{
 		factory(angular);
@@ -28,7 +28,8 @@
 {
 	'use strict';
 
-	angular.module('ExhibitionsDatepicker',['ui.bootstrap', 'angularMoment','FilmotecaFilters'])
+	angular.module('pages.exhibition.directives.ExhibitionsDatepicker',[
+		'ui.bootstrap', 'angularMoment','FilmotecaFilters'])
 
 	.directive('dayorweekpicker', ['moment',function( moment ) {
 	  return {

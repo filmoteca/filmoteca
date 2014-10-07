@@ -29,17 +29,22 @@ var require = {
 		| Bibliotecas (no bower) |
 		*************************/
 
-		"file-model" : "/apps/directives/FileModel",
+		"file-model" 		: "/apps/directives/FileModel",
+		"FilmotecaFilters"	: "/apps/directives/FilmotecaFilters",
 
 		/*************
 		| Biliotecas |
 		*************/
 
-		"angular" : "angular/angular",
-		"domready" : "domready/ready.min",
-		"ui.bootstrap" : "angular-bootstrap/ui-bootstrap-tpls.min",
-		"angucomplete-alt" : "angucomplete-alt/dist/angucomplete-alt.min",
-		"lodash" : "lodash/dist/lodash.min",
+		"jquery"			: "jquery/jquery.min",
+		"angular" 			: "angular/angular",
+		"domready" 			: "domready/ready.min",
+		"ui.bootstrap" 		: "angular-bootstrap/ui-bootstrap-tpls.min",
+		"angucomplete-alt" 	: "angucomplete-alt/dist/angucomplete-alt.min",
+		"lodash" 			: "lodash/dist/lodash.min",
+		"moment" 			: "moment/min/moment.min",
+		"angular-moment" 	: "angular-moment/angular-moment.min",
+		"angular-locale-mx"	: "angular-i18n/angular-locale_es-mx",
 
 		/********************
 		| Requirejs Plugins |
@@ -54,7 +59,7 @@ var require = {
 		| The keys of shim object are name of a module.
 		|
 		| exports 	= Name of global variable.
-		| deps		= Files list htat be require by the variable global defined
+		| deps		= Files list that be require by the variable global defined
 		|			in exports option.
 		 */
 
@@ -69,6 +74,9 @@ var require = {
 			"deps" : ["angular"]
 		},
 		"ui.bootstrap" :{
+			"deps" : ["angular"]
+		},
+		"angular-locale-mx" :{
 			"deps" : ["angular"]
 		}
 	}

@@ -66,6 +66,7 @@
 								<td>{{ $schedule->auditorium->id }}</td>
 								<td>
 									<div class="btn btn-default"
+										ng-click="showExhibitions()"
 										flm-filters
 										filter-name="auditorium"
 										filter-value="{{ $schedule->auditorium->id }}"
@@ -79,14 +80,17 @@
 					</table>
 				</div>
 				<div class="panel-footer">
+
+				@if( !is_null($exhibition->type) )
 					<p>
 						<span>
 							{{ HTML::image(
-								$exhibition->type->icon, 
+								$exhibition->type->image->url('thumnail'), 
 								$exhibition->type->name) }}
 						</span>
 						{{ $exhibition->type->name }}
 					<p>
+				@endif
 				</div>
 			</div>
 
