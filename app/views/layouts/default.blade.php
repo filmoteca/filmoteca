@@ -14,8 +14,6 @@
 			
 				'/bower_components/bootstrap/dist/css/bootstrap.min.css',
 
-				'/bower_components/fancybox/source/jquery.fancybox.css',
-
 				'/bower_components/original-hover-effects/dist/css/original-hover-effects.min.css',
 
 				'/assets/css/static-pages-menu.css',
@@ -23,13 +21,6 @@
 				'/assets/css/main-menu.css',
 				
 				'/assets/css/filmoteca.css')) }}
-
-		{{ HTML::scripts(
-			array(
-
-				'/bower_components/jquery/jquery.min.js',
-
-				'/bower_components/bootstrap/dist/js/bootstrap.min.js'))}}
 
 		@else
 			{{--
