@@ -93,6 +93,10 @@ Route::group(['prefix' => 'api'], function()
 	Route::get('iconographic/all', [
 		'as' => 'api.iconographic.all',
 		'uses' => 'Api\IconographicController@all']);
+
+	Route::get('auditorium/{id}/detail',[
+		'as' => 'api.auditorium.detail',
+		'uses' => 'Api\AuditoriumController@detail']);
 });
 
 

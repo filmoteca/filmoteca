@@ -13,11 +13,12 @@
 		require([
 			'angular',
 			'domready',
+			'jquery',
 			'angucomplete-alt',
 			'FilmotecaFilters',
 			'pages.exhibition.directives/ExhibitionsDatepicker',
 			'pages.exhibition.controllers/ExhibitionController',
-			'angular-locale-mx'
+			'angular-locale-mx',
 			],
 			factory);
 	}else{
@@ -26,7 +27,6 @@
 })(function(angular, domready)
 {
 	'use strict';
-
 	angular.module('App',[
 
 		'pages.exhibition.controllers.ExhibitionController',

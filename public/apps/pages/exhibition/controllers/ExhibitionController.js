@@ -94,6 +94,14 @@
 			$scope.urlToDetails = '';
 		};
 
+		$scope.showAuditorium = function(id)
+		{
+			$modal.open({
+				templateUrl : '/api/auditorium/:id/detail'.replace(':id', id)
+			});
+
+		};
+
 		/**********************/
 		/* ## LISTENERS */
 		/**********************/

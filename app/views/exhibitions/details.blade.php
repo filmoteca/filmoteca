@@ -72,7 +72,8 @@
 										filter-value="{{ $schedule->auditorium->id }}"
 										filter-title="{{ $schedule->auditorium->name }}">
 										{{ $schedule->auditorium->name }}
-									<div>
+									</div>
+									<a class="btn-link" ng-click="showAuditorium({{ $schedule->auditorium->id}})" class="text-right">Ver información de la sala</a>
 								</td>
 								<td>{{ $schedule->entry }}</td>
 							</tr>
