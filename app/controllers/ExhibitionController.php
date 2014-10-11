@@ -44,7 +44,7 @@ class ExhibitionController extends BaseController
 		$weeks = array();
 
 		return View::make(
-			'exhibitions.index', 
+			'exhibitions.app', 
 			compact(
 				'exhibitions',
 				'auditoriums',
