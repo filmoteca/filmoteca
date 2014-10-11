@@ -18,7 +18,7 @@ class ResourcesRepository
 
 	public function paginate($amount)
 	{
-		return $this->resource->paginate($amount);
+		return $this->resource->orderBy('id','desc')->paginate($amount);
 	}
 
 	public function update($id,array $data = null)
