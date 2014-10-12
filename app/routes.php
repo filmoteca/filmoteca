@@ -115,8 +115,19 @@ Route::group(['prefix' => 'admin'], function()
 	 */
 	Route::get('/', function()
 	{
-		return Redirect::route('admin.film.index');
+		return Redirect::route('admin.dashboard');
 	});
+
+	Route::get('/dashboard', function()
+	{
+		return Redirect::route('admin.dashboard');
+	});
+
+	Route::get('/index', [
+		'as' => 'admin.dashboard',
+		'uses' => function(){
+			return Redirect::route('admin.film.index');
+		}]);
 
 	/*
 	|--------------------------------------------------------------------------
