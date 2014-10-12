@@ -13,7 +13,7 @@
 
 	if( typeof define === 'function' && define.amd )
 	{
-		define(['angular'], factory);
+		define(['angular','angular-moment'], factory);
 	}else{
 		factory(angular);
 	}
@@ -21,11 +21,11 @@
 {
 	'use strict';
 
-	angular.module('admin.exhibition.services.ExhibitionService',[])
+	angular.module('admin.exhibition.services.ExhibitionService',['angularMoment'])
 
-	.service('ExhibitionService', [ '$rootScope', '$http',
+	.service('ExhibitionService', [ '$rootScope', '$http','moment',
 		'AuditoriumService','IconographicService',
-		function($rootScope, $http,Auditorium, Icon)
+		function($rootScope, $http, moment, Auditorium, Icon)
 	{
 		var exhibition = null;
 
@@ -93,6 +93,19 @@
 		this.store = function()
 		{
 			var self = this;
+
+			/**
+			 * Before to send we parse the dates.
+			 */
+			
+			angular.forEach(exhibition.schedules, function(schedule)
+			{
+				var date = moment(schedule.date).format('YYYY-MM-DD');
+				var time = moment(schedule.time).format('HH:mm:ss');
+
+				schedule.entry = date + ' ' + time;
+			});
+
 			$http.post('/admin/api/exhibition/store', exhibition)
 				.success(function()
 				{

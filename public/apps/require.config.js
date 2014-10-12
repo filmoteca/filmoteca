@@ -46,6 +46,7 @@ var require = {
 		"angular-moment" 	: "angular-moment/angular-moment.min",
 		"angular-locale-mx"	: "angular-i18n/angular-locale_es-mx",
 		"bootstrap"			: "bootstrap/dist/js/bootstrap.min",
+		"angular-moment"	: "angular-moment/angular-moment.min",
 
 		/********************
 		| Requirejs Plugins |
