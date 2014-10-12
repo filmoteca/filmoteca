@@ -18,6 +18,7 @@ class ExhibitionsRepository extends ResourcesRepository
 		$this->exhibition = $exhibition;
 		$this->exhibitionFilm = $exhibitionFilm;
 		$this->repository = $exhibition; // ## REFACTOR
+		$this->resource = $exhibition; //##REFACTOR
 		$this->film = $film;
 	}
 
@@ -164,5 +165,17 @@ class ExhibitionsRepository extends ResourcesRepository
 			->saveMany($schedules);
 
 		return true;
+	}
+
+	public function find($id)
+	{
+		return $this->resource->where('id', $id)
+			->with(
+				'schedules', 
+				'schedules.auditorium',
+				'exhibitionFilm',
+				'exhibitionFilm.film',
+				'type')
+			->first();
 	}
 }

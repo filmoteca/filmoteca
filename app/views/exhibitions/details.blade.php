@@ -7,5 +7,5 @@
 		Regresar
 	</a>
 
-	@include('exhibitions.partial-details', compact('resource'))
+	@include('exhibitions.partial-details')
 @stop

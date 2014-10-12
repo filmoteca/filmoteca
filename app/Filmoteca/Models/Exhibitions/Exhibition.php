@@ -75,4 +75,18 @@ class Exhibition extends Eloquent
 
 		return $technicalCard;
 	}
+
+	public function getAuditoriumsAttribute($value)
+	{
+		return $this->schedules->map(function($schedule){
+			return $schedule->auditorium;
+		})->unique();
+	}
+
+	public function schedulesByAuditorium($id)
+	{
+		return $this->schedules->filter(function($schedule) use ($id){
+			return $schedule->auditorium->id === $id;
+		});
+	}
 }
