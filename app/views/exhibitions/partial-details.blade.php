@@ -41,25 +41,18 @@ Vista parcial
 		<div class="panel panel-default">
 			<div class="panel-heading"> Salas </div>
 			<div class="panel-body">
-				<table class="table table-bordered">					
-					@foreach( $exhibition->schedules as $schedule )
-						<tr>
-							<td>{{ $schedule->auditorium->id }}</td>
-							<td>
-								<div class="btn btn-default"
-									ng-click="showExhibitions()"
-									flm-filters
-									filter-name="auditorium"
-									filter-value="{{ $schedule->auditorium->id }}"
-									filter-title="{{ $schedule->auditorium->name }}">
-									{{ $schedule->auditorium->name }}
-								</div>
-								<a class="btn-link" ng-click="showAuditorium({{ $schedule->auditorium->id}})" class="text-right">Ver información de la sala</a>
-							</td>
-							<td>{{ $schedule->entry }}</td>
-						</tr>
-					@endforeach
-				</table>
+				@foreach( $exhibition->auditoriums as $auditorium)
+					<div class="panel panel-default">
+						<div class="panel-heading">{{ $auditorium->name }}</div>
+						<div class="panel-body">
+							<ul class="list-group">						
+							@foreach( $exhibition->schedulesByAuditorium($auditorium->id) as $schedule)
+								<li class="list-group-item">{{ $schedule->entry }}</li>
+							@endforeach
+							</ul>
+						</div>
+					</div>
+				@endforeach
 			</div>
 			<div class="panel-footer">
 
@@ -67,7 +60,7 @@ Vista parcial
 				<p>
 					<span>
 						{{ HTML::image(
-							$exhibition->type->image->url('thumnail'), 
+							$exhibition->type->image->url('thumbnail'), 
 							$exhibition->type->name) }}
 					</span>
 					{{ $exhibition->type->name }}
