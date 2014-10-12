@@ -1,5 +1,10 @@
 @extends('layouts.admin')
 
+@section('breadcrumbs')
+	<li>{{ HTML::linkRoute('admin.exhibition.index','Lista de exhibiciones') }}</li>
+	<li class="active">Agregar exhibiciones</li>
+@stop
+
 @section('scripts')
 {{ HTML::script(
 	'/bower_components/requirejs/require.js', 

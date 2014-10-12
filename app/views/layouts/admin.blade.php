@@ -48,7 +48,7 @@
 
 					<div>
 						<ul class="breadcrumb">
-							<li>{{ HTML::link('admin.index','Administración') }}</li>
+							<li>{{ HTML::linkRoute('admin.dashboard','Administración') }}</li>
 							@yield('breadcrumbs')
 						</ul>
 					</div>
