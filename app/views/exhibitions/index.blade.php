@@ -48,10 +48,6 @@
 						array($exhibition->id),
 						array('class'=> 'btn btn-success')) }}
 					<br>
-					{{ HTML::linkRoute('admin.exhibition.edit', 'Editar',
-						array($exhibition->id),
-						array('class'=> 'btn btn-info')) }}
-					<br>
 					{{ Form::open(array('route' => array('admin.exhibition.destroy', $exhibition->id), 'method'=> 'DELETE')) }}
 						<button class="btn btn-danger" type="submit">Borrar</button>
 					{{ Form::close()}}
