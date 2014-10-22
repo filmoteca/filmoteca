@@ -8,11 +8,15 @@ $menu = array(
 
 	array('Catalogación', '/pages/servicios/departamento-de-catalogacion'),
 
+	array('Centro de documentación', '/pages/servicios/centro-de-documentacion'),
+
 	array('Depósito y resguardo', '/pages/servicios/deposito-y-resguardo'),
 
-	array('Exposiciones', '/pages/servicios/exposiciones-museografia'),
+	array('Laboratorio cinematográfico', '/pages/servicios/laboratorio-cinematografico'),
 
-	array('Laboratorio', '/pages/servicios/laboratorio'),
+	array('Laboratorio digital', '/pages/servicios/laboratorio-digital'),
+
+	array('Museografía', '/pages/servicios/exposiciones-museografia'),
 
 	array('Préstamo y alquiler de películas', '/pages/servicios/prestamo-y-alquiler-de-peliculas'),
 
