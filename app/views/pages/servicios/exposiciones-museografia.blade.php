@@ -16,7 +16,7 @@
 @section('content')
 
 <div class="sidebar">
-	@include('elements.menus.servicios', array('selected' => 4))
+	@include('elements.menus.servicios', array('selected' => 7))
 </div>
 
 <div class="content">
