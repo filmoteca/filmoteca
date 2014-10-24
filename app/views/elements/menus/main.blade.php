@@ -1,7 +1,7 @@
 <div class="main-menu">
 	<ul>
 		<li>
-			<a><span>Quiénes somos</span></a>
+			<a><span>QUIÉNES SOMOS</span></a>
 			<ul>
 				<li>
 					<a href="/pages/quienes-somos/mision-y-vision">
@@ -9,13 +9,13 @@
 					</a>
 				</li>
 				<li>
-					<a href="/pages/quines-somos/objetivos-y-funciones">
+					<a href="/pages/quienes-somos/objetivos-y-funciones">
 						<span>Objetivos y Funciones</span>
 					</a>
 				</li>
 				<li>
 					<a href="/pages/quienes-somos/organigrama">
-						<span>Organigrama</span>
+						<span>Estructura orgánica</span>
 					</a>
 				</li>
 				<li>
@@ -24,7 +24,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="pages/quienes-somos/memoria-filmoteca">
+					<a href="/pages/quienes-somos/memoria-filmoteca">
 						<span>Memoria Filmoteca</span>
 					</a>
 				</li>
@@ -48,7 +48,7 @@
 		</li>
 
 		<li>
-			<a href="pages/acervos/index"><span>Acervo</span></a>
+			<a href="/pages/acervos/index"><span>ACERVO</span></a>
 	        <ul>
 				<li>
 					<a href="/pages/acervo/resguardo-y-conservacion">
@@ -66,12 +66,12 @@
 					</a>
 				</li>
 				<li>
-					<a href="http://www.filmoteca.unam.mx/MUVAC/">
+					<a href="http://www.filmoteca.unam.mx/MUVAC">
 						<span>Museo virtual de aparatos cinematográficos</span>
 					</a>
 				</li>
 				<li>
-					<a href="http://www.filmoteca.unam.mx/cinelinea/">
+					<a href="http://www.filmoteca.unam.mx/cinelinea">
 						<span>Cine en línea</span>
 					</a>
 	             </li>                    
@@ -79,7 +79,7 @@
 		</li>
 
 	      <li>
-	      	<a href="#"><span>Servicios</span></a>
+	      	<a href="#"><span>SERVICIOS</span></a>
 	        <ul>
 				<li>
 					<a href="/pages/servicios/lineamientos-generales-para-acceder-al-material">
@@ -92,7 +92,12 @@
 					</a>
 				</li>
 				<li>
-					<a href="'/pages/servicios/departamento-de-catalogacion'">
+					<a href="/pages/servicios/centro-de-documentacion">
+						<span>Centro de documentación</span>
+					</a>
+				</li>
+				<li>
+					<a href="/pages/servicios/departamento-de-catalogacion">
 						<span>Catalogación</span>
 					</a>
 				</li>
@@ -103,19 +108,20 @@
 				</li>
 				<li>
 					<a href="/pages/servicios/exposiciones-museografia">
-						<span>Exposiciones</span>
+						<span>Museografía</span>
 					</a>
 				</li>
 				<li>
-					<a href="/pages/servicios/laboratorio-fotoquimico">
-						<span>Laboratorio fotoquímico</span>
-					</a>
-	             </li> 
-	             <li>
-					<a href="/pages/servicios/laboratorio digital">
+					<a href="/pages/servicios/laboratorio-digital">
 						<span>Laboratorio digital</span>
 					</a>
-	             </li>   
+	             </li>  
+				<li>
+					<a href="/pages/servicios/laboratorio-cinematografico">
+						<span>Laboratorio cinematográfico</span>
+					</a>
+	             </li> 
+	             
 	            <li>
 					<a href="/pages/servicios/prestamo-y-alquiler-de-peliculas">
 						<span>Préstamo y alquiler de películas</span>
@@ -134,39 +140,9 @@
 	           	</li>
 	        </ul>
 		</li>
-		
-		<li>
-			<a href="#">
-				<span>Centro de documentación</span>
-			</a>
-			<ul>
-				<li>
-					<a href="/pages/documentacion/consulta-material">
-						<span>Consulta de material</span>
-					</a>
-				</li>
-	            <li>
-					<a href="/pages/documentacion/libros digitales">
-						<span>Libros digitales</span>
-					</a>
-				</li>
-				
-				<li>
-					<a href="/pages/documentacion/colecciones">
-						<span>Colecciones</span>
-					</a>
-				</li>
-				<li>
-					<a href="/pages/documentacion/reglamento'">
-						<span>Reglamento</span>
-					</a>
-				</li>
-			</ul>
-		</li>
-
 		<li>
 			<a href="{{ route('exhibitions') }}">
-				<span>Programación</span>
+				<span>PROGRAMACIÓN</span>
 			</a>
 	        <ul>
 				<li>
@@ -189,7 +165,7 @@
 
 		<li>
 			<a href="/pages/prensa">
-				<span>Prensa</span>
+				<span>PRENSA</span>
 			</a>
 	        <ul>
 				<li>
@@ -200,7 +176,7 @@
 				</li>
 				<li>
 					<a href="/pages/prensa/filmoteca-medios">
-						<span>Filmoteca en los medios'</span>
+						<span>Filmoteca en los medios</span>
 					</a>
 				</li>
 				<li>
@@ -217,17 +193,17 @@
 					<a href="PressRegisters/add">
 						<span>Atención a medios</span>
 					</a>
-					{{ HTML::link(
+					<!-- {{ HTML::link(
 						'PressRegisters/add',
 	        			'Atención a medios')
-	        		}}
+	        		}} -->
 				</li>
 	        </ul>
 
 		</li>
 		<li>
 			<a href="/pages/extension-academica/index">
-				<span>Extensión académica</span>
+				<span>EXTENSIÓN ACADÉMICA</span>
 			</a>
 			<ul>
 				<li>
@@ -236,7 +212,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="/pages/extension-academica/procedimiento-de">
+					<a href="/pages/extension-academica/cursos-y-talleres">
 						<span>Cursos y talleres</span>
 					</a>
 				</li>
@@ -265,7 +241,7 @@
 
 		<li>
 			<a href="#">
-				<span>Concursos</span>
+				<span>CONCURSOS</span>
 			</a>
 			<ul>
 				<li>
@@ -294,7 +270,7 @@
 
 		<li>
 			<a href="{{ route('shop')}}">
-				<span>Librería y Tienda</span>
+				<span>LIBRERÍA Y TIENDA</span>
 			</a>
 		</li>
 	</ul>
