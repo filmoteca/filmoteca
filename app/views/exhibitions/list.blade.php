@@ -1,6 +1,6 @@
-<h4>Películas encontradas: @{{ filterResults }} </h4>
+<h4>Películas encontradas: <span ng-bind="filterResults">0</span></h4>
 
-<div ng-switch="usedFilter">
+<div ng-switch="usedFilter" class="ng-cloak">
 	<h3 ng-switch-when="week">
 		Programación de la semanal del 
 		<b>@{{startDate | date : 'd' }}</b> al <b>@{{endDate | date : 'd'}}</b> de 

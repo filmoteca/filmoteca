@@ -46,7 +46,6 @@ var require = {
 		"angular-moment" 	: "angular-moment/angular-moment.min",
 		"angular-locale-mx"	: "angular-i18n/angular-locale_es-mx",
 		"bootstrap"			: "bootstrap/dist/js/bootstrap.min",
-		"angular-moment"	: "angular-moment/angular-moment.min",
 
 		/********************
 		| Requirejs Plugins |
@@ -58,10 +57,10 @@ var require = {
 	"shim" : {
 		/*
 		|
-		| The keys of shim object are name of a module.
+		| The keys of shim object are module name used in require and define calls.
 		|
 		| exports 	= Name of global variable.
-		| deps		= Files list that be require by the variable global defined
+		| deps		= Files list that be required by the variable global defined
 		|			in exports option.
 		 */
 
@@ -72,7 +71,6 @@ var require = {
 			"exports" : "angular"
 		},
 		"angucomplete-alt" : {
-			"exports" : "angucomplete-alt",
 			"deps" : ["angular"]
 		},
 		"ui.bootstrap" :{
@@ -81,8 +79,6 @@ var require = {
 		"angular-locale-mx" :{
 			"deps" : ["angular"]
 		},
-		"bootstrap" : {
-			"deps" :["jquery"]
-		}
+		"bootstrap" :["jquery"]
 	}
 };

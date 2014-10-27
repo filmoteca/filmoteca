@@ -4,7 +4,6 @@
     Author     : Victor Aguilar
     Description:
 */
-
 @font-face
 {
     font-family: "Helvetica Neue";
@@ -742,4 +741,13 @@ h2,h3{
 
 div.angucomplete-dropdown{
     width: 100%;
+}
+
+/**
+ * When angular is loader with requirejs the blink effect can not be evaded
+ * using ngCloak directive, because it css is embed in the js file. But, this
+ * file is loaded before the page finished load.
+ */
+.ng-cloak{
+    display: none;
 }

@@ -2,8 +2,6 @@
 
 @section('scripts')
 
-@section('scripts')
-
 	<script>
 		
 		window.exhibitions = {{ $exhibitions->toJson() }}
