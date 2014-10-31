@@ -23,25 +23,26 @@
 	<div class="img-servicios">
 		<img src="/assets/imgs/fragmentos.jpg" aling="left">
 	</div>
-	<h1>Banco de imagen*</h1>
+	<h1>Banco de imagen</h1>
 
-	<p>Esta sección apoya principalmente a quienes tienen la intención de incorporar a sus trabajos imágenes en movimiento que no necesariamente forman parte de una ficción y/o ilustran de forma histórica y visual una idea.
+	<p>La Filmoteca de la UNAM tiene entre su acervo películas de ficción, documentales y noticieros cinematográficos que pone a disposición de quiénes buscan incorporar fragmentos de imágenes en movimiento para la realización de un proyecto audiovisual.
 	</p>
 
-	<p>Para proporcionar estos fragmentos la base de datos para el Banco de imágenes se nutre con más de 12 mil registros de material de stock, es decir componentes cinematográficos que no necesariamente fueron editados, así como documentales, noticiero y películas de ficción en que los cambios del país se ven plasmados en imágenes. El acervo es tan variado que es posible encontrar todo tipo de imágenes desde 1896 hasta 1970, época en la que el formato de grabación cambió para dar paso al vídeo.
+	<p>¿Necesita algunos segundos de escenas de la Revolución Mexicana? ¿Imágenes de Xochimilco en los años 20 del siglo pasado? ¿La construcción de la Torre Latinoamericana? ¿El movimiento estudiantil del 68?
 	</p>
 
-	<p>El banco de imágenes es una ventana al acervo de la Filmoteca para que los realizadores e interesados en general puedan acceder a las imágenes y darlas a conocer.</p> 
+	<p>El Banco de imágenes se nutre con más de 12 mil registros de material de stock muy variado, donde es posible encontrar imágenes desde 1896 hasta 1970, época en la que el formato de grabación cambió para dar paso al video.</p> 
 
+	<p>El servicio que ofrece esta área incluye desde que se recibe la solicitud, se realiza la búsqueda, localización y visualización del material y su transferencia al formato de preferencia del solicitante. Dependiendo de la naturaleza del proyecto, se aplican diferentes tarifas.</p>
 
-	<p>Responsable: Nahún Calleros</p> 
-	<p>Teléfono: 56 22 96 30 </p>
+	<p>Contacto: Nahún Calleros</p> 
+	<p>Teléfono: 5622 9630 </p>
 	<p>Correo electrónico: <a href="mailto:carriles@unam.mx">carriles@unam.mx</a></p>
 
-	<p>*Para tener acceso a este departamentos consultar 
+	<p>Si quieres hacer alguna solicitud, consulta los  
 	{{ HTML::link(
-		'/pages/servicios/lineamientos_generales_para_acceder_al_material',
-		'Lineamientos generales para acceso al material' )                            
+		'/pages/servicios/lineamentos-generales-para-solicitar-un-servicio',
+		'requisitos.' )                            
 		}}</p>
 </div>
 

@@ -23,30 +23,30 @@
 
 	<h1>Departamento de Catalogación </h1>
 
-	<p>El departamento de Catalogación depende de la Subdirección de Acervos. Su función principal es:</p> 
+	<p>El Departamento de Catalogación realiza la revisión, catalogación y registro del material cinematográfico del acervo de la Filmoteca de la UNAM y elabora fichas de contenido en las cuales se identifican personajes, épocas, sucesos, acontecimientos históricos, etcétera.</p> 
 
-	<blockquote>
-		<ul>
-			<li>Realizar la revisión y catalogación del material cinematográfico para la elaboración de fichas de contenido en las cuales se identifican personajes, épocas, sucesos, acontecimientos históricos, etcétera. </li>
+	<p>Gracias a la información que se recopila en este departamento es posible facilitar el acceso, de forma organizada, a los investigadores, realizadores e interesados en las colecciones y materiales de los que dispone la Filmoteca.</p>
 
-		<li>Concentrar toda la información catalográfica de cada registro que se realiza.</li>
-		</ul>
-	</blockquote>
-
-	<p>Gracias a la información que se recopila en este departamento es posible facilitar el acceso, de forma organizada, a los investigadores, realizadores e interesados en las colecciones y materiales de los que dispone la Filmoteca. </p>
-
-	 <p>Responsable: Ángel Martínez</p>
-	 <p>Teléfono: 56 22 95 82</p> 
+	 <p>Contacto: Ángel Martínez</p>
+	 <p>Teléfono: 5622 9582</p> 
 	 <p>Correo electrónico: <a href="mailto:amartin@unam.mx">amartin@unam.mx</a></p>
 
-	<h2>Filmografía Nacional</h2>
+	 <p>Si quieres hacer alguna solicitud, consulta los  
+	{{ HTML::link(
+		'/pages/servicios/lineamentos-generales-para-solicitar-un-servicio',
+		'requisitos.' )                            
+		}}</p>
 
-	<p>Es una base de datos que se comenzó a realizar en el área de Catalogación con un proyecto conocido como El índice cronológico del cine mexicano. Actualmente la base de datos se compone por más de 18 mil títulos de películas, cortometrajes, largometrajes, películas de ficción, documentales, noticieros, animaciones y todo tipo de producciones mexicanas, excepto los programas de televisión. Toda la información de estas producciones se ingresa a la base de datos con más de 25 campos de información para poder acceder a información especifica de cada uno de los trabajos cinematográficos.</p>
 
-	<p>El acceso a esta base de datos es totalmente gratuito y para todo público, la única condición es registrarse antes de ingresar a ésta, todo ello vía internet. </p>
+	<h2>Filmografía Mexicana</h2>
 
-	<p>Responsable: Lic. Mario Quezada</p>
-	<br><h5>Visita: <a href="http://www.filmografiamexicana.unam.mx/">Filmografía Nacional</a></h5>
+	<p>Es una base de datos general sobre la producción cinematográfica mexicana. Fue creada en el Departamento de Catalogación y se compone por más de 18 mil títulos que incluye la ficha de películas de ficción, documentales, noticieros, largometrajes, cortometrajes, películas de animación y videohomes.</p>
+
+	<p>El acceso a esta base de datos es totalmente gratuito y para todo público.</p>
+
+	<p>Contacto: Lic. Mario Quezada</p>
+	<p>Teléfono: 5622 9582</p> 
+	<br><h5>Visita: <a href="http://www.filmografiamexicana.unam.mx/">Filmografía Mexicana</a></h5>
 	<br>
 </div>
 

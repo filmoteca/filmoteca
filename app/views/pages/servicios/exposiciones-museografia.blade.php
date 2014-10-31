@@ -5,7 +5,7 @@
 	</a>
 </li>
 <li class="active">
-	Exposiciones
+	Museografía
 </li>
 @stop
 
@@ -24,23 +24,37 @@
 	<div class="img-servicios">
 		<img src="/assets/imgs/exposiciones-museo.jpg" aling="center">
 	</div>  
-	<h1>Museografía*</h1>
+	<h1>Museografía</h1>
 
-	<p> Esta área fue establecida por la necesidad de registrar los instrumentos cinematográficos que fueron creados para hacer cine y difundir otra cara del abundante acervo de la Filmoteca; esta otra cara se compone por stills, pósteres, imágenes, libros y más de 300 aparatos antiguos, lo que convierte a la Filmoteca en uno de los archivos más importantes de América Latina. </p>
+	<p>Entre las funciones de esta área se encuentra el almacenamiento y conservación de la colección de más de 300 aparatos cinematográficos antiguos que pertenecen al acervo de la Filmoteca de la UNAM y que relatan las transiciones tecnológicas del cinematógrafo, sus inicios, antecedentes y progresos.</p>
 
-	<p>La colección de aparatos antiguos está disponible, para su préstamo a instituciones que cuenten con la capacidad de mantenerlos en buenas condiciones y para el público en general a través de las exposiciones que se realizan. 
+	<p>Otra de sus funciones es coordinar la realización de exposiciones donde se presenta nuestro acervo cinematográfico, que compone la colección de aparatos cinematográficos, así como <i>stills</i> (fotografías de filmaciones), posters e imágenes.
 	</p>
 
-	<p>Responsable: Omar Leobardo Marín</p> 
-	<p>Tel: 56 22 48 00 ext: 47488 </p>
+	<p>Estas exposiciones pueden ser:</p>
+
+	<blockquote>
+		<ul>
+		<li><b>Itinerantes:</b> exposiciones que se realizan para la comunidad estudiantil fundamentalmente, y que se llevan a las distintas facultades y escuelas de la Universidad.</li>
+
+		<li><b>Internas:</b> exposiciones coordinadas por el área de Museografía, que se montan dentro de las instalaciones de la Filmoteca.</li>
+		
+		<li><b>Externas:</b> exposiciones realizadas en cooperación con otras instituciones a las que se les facilita el material para llevarlo a distintas sedes.</li>
+
+		</ul>
+	</blockquote>
+
+	<p>La colección de aparatos antiguos está disponible para su préstamo a instituciones que cuenten con la capacidad de mantenerlos en buenas condiciones, y para el público en general a través de las exposiciones.</p>
+
+	<p>Contacto: Omar Leobardo Marín</p> 
+	<p>Teléfono: 5622 4800 ext: 47488 </p>
 	<p>Correo electrónico: <a href="mailto:leobardo_marin@hotmail.com">leobardo_marin@hotmail.com</a></p>
 
-	<p>*Para tener acceso a este departamentos consultar 
-		{{ HTML::link(
-		'/pages/servicios/lineamientos_generales_para_acceder_al_material',
-		'Lineamientos generales para acceso al material' )                            
-		}}
-	</p>
+	<p>Si quieres hacer alguna solicitud, consulta los  
+	{{ HTML::link(
+		'/pages/servicios/lineamentos-generales-para-solicitar-un-servicio',
+		'requisitos.' )                            
+		}}</p>
 </div>
 @stop
 
