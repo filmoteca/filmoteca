@@ -50,6 +50,21 @@ Route::get('/shop',
 		'as' => 'shop',
 		'uses' => 'ExhibitionController@index' ));
 
+Route::get('/press_register',
+	array(
+		'as' => 'press_register.create',
+		'uses' => 'PressRegisterController@create' ));
+
+Route::post('/press_register/store',
+	array(
+		'as' => 'press_register.store',
+		'uses' => 'PressRegisterController@store' ));
+
+/*
+|----------------------------------------------------------------------------
+| PÁGINAS ESTATICAS
+|----------------------------------------------------------------------------
+ */
 Route::get('/pages/{dir_or_page}/{page_name?}',
 	function($dir_or_page = null, $page_name = null)
 {
@@ -187,5 +202,13 @@ Route::group(['prefix' => 'admin'], function()
 			'as'=> 'admin.billboard.send', 
 			'uses' => 'Resources\BillboardConstroller@Send']);
 
+	Route::get('/press_register/index',
+	array(
+		'as' => 'admin.press_register.index',
+		'uses' => 'PressRegisterController@index' ));
 
+	Route::delete('/press_register/destroy/{id}',
+	array(
+		'as' => 'admin.press_register.destroy',
+		'uses' => 'PressRegisterController@destroy' ));
 });
