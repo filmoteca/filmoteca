@@ -7,7 +7,8 @@
 
 		@if (App::isLocal() )
 
-		{{ HTML::styles([
+		{{ HTML::styles(
+			array(
 
 				'/bower_components/bootstrap/dist/css/bootstrap-theme.min.css',
 			
@@ -17,15 +18,7 @@
 
 				'/assets/css/main-menu.css',
 				
-				'/assets/css/filmoteca.css'
-			]) }}
-
-		{{
-			HTML::scripts([
-				'/bower_components/jquery/jquery.min.js',
-				'/bower_components/jqueryui/ui/minified/jquery-ui.min.js'
-				])
-			}}
+				'/assets/css/filmoteca.css')) }}
 
 		@else
 			{{--

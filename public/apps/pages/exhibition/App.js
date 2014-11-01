@@ -32,6 +32,7 @@
 		'pages.exhibition.controllers.ExhibitionController',
 		'pages.exhibition.directives.ExhibitionsDatepicker',
 
+		'ngLocale',
 		'angucomplete-alt',
 		]);
 

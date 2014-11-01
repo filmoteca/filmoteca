@@ -26,8 +26,6 @@ class DatabaseSeeder extends Seeder {
 
 		$this->call('GenresTableSeeder');
 
-		$this->call('ExhibitionTypesTableSeeder');
-
 		DB::statement('SET foreign_key_checks = 1');
 
 	}
