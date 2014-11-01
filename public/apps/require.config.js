@@ -70,15 +70,9 @@ var require = {
 		"angular" : {
 			"exports" : "angular"
 		},
-		"angucomplete-alt" : {
-			"deps" : ["angular"]
-		},
-		"ui.bootstrap" :{
-			"deps" : ["angular"]
-		},
-		"angular-locale-mx" :{
-			"deps" : ["angular"]
-		},
-		"bootstrap" :["jquery"]
+		"angucomplete-alt" : ["angular"],
+		"ui.bootstrap" : ["angular"],
+		"angular-locale-mx" : ["angular"],
+		"bootstrap" :["jquery"],
 	}
 };
