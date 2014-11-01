@@ -124,4 +124,19 @@
 		</ul>
 	</div>
 
+	<div class="btn-group">
+		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			Prensa
+			<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu">
+			<li>
+				{{ HTML::linkRoute('admin.press_register.index', 'Ver registros') }}
+			</li>
+			<li>
+				{{ HTML::linkRoute('press_register.create', 'Agregar registro') }}
+			</li>
+		</ul>
+	</div>
+
 </div>

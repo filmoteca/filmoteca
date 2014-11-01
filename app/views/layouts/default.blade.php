@@ -59,7 +59,14 @@
 							@yield('breadcrumbs')
 						</ul>
 					</div>
+
 				</div>
+
+				@if( Session::has('message') )
+					<div class="alert alert-{{ Session::get('type') }}">
+						{{Session::get('message')}}
+					</div>
+				@endif
 
 				@yield('content')
 

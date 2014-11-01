@@ -28,6 +28,9 @@ Form::macro('formGroup',
 		case('auditorium'):
 			return Form::auditoriumFormGroup($name, $title, $formname, $attr);
 
+		case('theMedia'):
+			return Form::theMediaFormGroup($name, $title, $formname, $attr);			
+
 		default:
 
 			return "\n" .
@@ -97,6 +100,13 @@ Form::macro('auditoriumFormGroup', function($name, $title, $formname, $attribute
 	{
 		$options[$key] = $value;
 	}
+
+	return Form::selectFormGroup($name, $options,$title,$formname,$attributes);
+});
+
+Form::macro('theMediaFormGroup', function($name, $title, $formname, $attributes){
+
+	$options = ['Televisión', 'Preíodico', 'Radio', 'Otro'];
 
 	return Form::selectFormGroup($name, $options,$title,$formname,$attributes);
 });

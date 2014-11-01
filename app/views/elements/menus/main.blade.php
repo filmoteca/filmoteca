@@ -190,13 +190,9 @@
 					</a>
 				</li>
 				<li>
-					<a href="PressRegisters/add">
+					<a href="press_register/create">
 						<span>Atención a medios</span>
 					</a>
-					<!-- {{ HTML::link(
-						'PressRegisters/add',
-	        			'Atención a medios')
-	        		}} -->
 				</li>
 	        </ul>
 
