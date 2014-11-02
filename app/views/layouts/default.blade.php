@@ -12,10 +12,6 @@
 				'/bower_components/bootstrap/dist/css/bootstrap-theme.min.css',
 			
 				'/bower_components/bootstrap/dist/css/bootstrap.min.css',
-
-				'/assets/css/static-pages-menu.css',
-
-				'/assets/css/main-menu.css',
 				
 				'/assets/css/filmoteca.css'
 			]) }}

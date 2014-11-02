@@ -11,6 +11,7 @@ Thumbs.db
 *.sql
 *.zip
 *.tar
+*.map
 
 
 *.vagrant/
@@ -19,7 +20,10 @@ Thumbs.db
 
 /public/*
 
-!/public/assets
+!/public/assets/js
+!/public/assets/imgs
+!/public/assets/css/imgs
+
 !/public/bower.json
 !/public/apps
 !/public/index.php
