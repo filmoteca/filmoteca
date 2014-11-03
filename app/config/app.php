@@ -124,6 +124,7 @@ return array(
 		'Way\Generators\GeneratorsServiceProvider',
 		'Codesleeve\LaravelStapler\LaravelStaplerServiceProvider',
 		'Cartalyst\Sentry\SentryServiceProvider',
+		'Mrjuliuss\Syntara\SyntaraServiceProvider',
 
 	),
 
