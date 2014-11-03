@@ -12,7 +12,7 @@ use View;
 
 class ResourceController extends BaseController
 {
-	protected $layout = 'layouts.admin';
+	protected $layout = 'layouts.dashboard.master';
 
 	public function index()
 	{

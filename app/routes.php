@@ -128,20 +128,11 @@ Route::group(['prefix' => 'admin'], function()
 	| DASHBOARD
 	|--------------------------------------------------------------------------
 	 */
-	Route::get('/', function()
-	{
-		return Redirect::route('admin.dashboard');
-	});
 
-	Route::get('/dashboard', function()
-	{
-		return Redirect::route('admin.dashboard');
-	});
-
-	Route::get('/index', [
+	Route::get('/', [
 		'as' => 'admin.dashboard',
 		'uses' => function(){
-			return Redirect::route('admin.film.index');
+			Redirect::to('/admin/dashboard');
 		}]);
 
 	/*

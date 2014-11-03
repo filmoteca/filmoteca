@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.dashboard.master-app')
 
 @section('breadcrumbs')
 	<li>{{ HTML::linkRoute('admin.exhibition.index','Lista de exhibiciones') }}</li>

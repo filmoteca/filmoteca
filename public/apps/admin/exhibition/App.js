@@ -26,7 +26,9 @@
 			'admin.exhibition.services/IconographicService',
 			'admin.exhibition.services/NotificationService',
 
-			'file-model'
+			'file-model',
+
+			'syntara'
 			], 
 			factory);
 })(function(angular, domready)

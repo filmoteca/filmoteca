@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.dashboard.master')
 @section('content')
 
 <h2>Lista de Noticias</h2>

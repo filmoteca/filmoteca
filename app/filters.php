@@ -88,3 +88,13 @@ Route::filter('csrf', function()
 		throw new Illuminate\Session\TokenMismatchException;
 	}
 });
+
+View::composer('*', function($view)
+{
+    $view->with('siteName', 'Filmoteca UNAM');
+});
+
+View::composer(['layouts.dashboard.master', 'layouts.dashboard.master-app'], function($view){
+
+	$view->with('currentUser', Sentry::getUser());
+});

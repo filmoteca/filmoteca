@@ -47,6 +47,9 @@ var require = {
 		"angular-locale-mx"	: "angular-i18n/angular-locale_es-mx",
 		"bootstrap"			: "bootstrap/dist/js/bootstrap.min",
 
+		//From laravel packages
+		"syntara"			: "/packages/mrjuliuss/syntara/assets/js/dashboard/base",
+
 		/********************
 		| Requirejs Plugins |
 		********************/
@@ -74,5 +77,6 @@ var require = {
 		"ui.bootstrap" : ["angular"],
 		"angular-locale-mx" : ["angular"],
 		"bootstrap" :["jquery"],
+		"syntara" : ["jquery", "bootstrap"]
 	}
 };
