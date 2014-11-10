@@ -19,14 +19,14 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "1.9.*",
+    "jquery": "1.11.*",
     "bootstrap": "3.2.*",
     "jquery-form": "3.*",
     "jquery-validate": "1.12.*",
     "fancybox": "2.1.*",
     "jquery.scrollTo": "1.4.*",
     "jquery.serialScroll": "1.2.4",
-    "jqueryui": "1.9.*",
+    "jqueryui": "1.10.*",
     "original-hover-effects": "1.0.*",
     "jquery.nicescroll": "*",
     "angular": "1.2.*",
@@ -41,6 +41,7 @@
     "requirejs": "2.1.*",
     "requirejs-plugins": "1.0.*",
     "text": "2.0.*",
-    "bourbon": "3.2.*"
+    "bourbon": "3.2.*",
+    "jquery-ui-slider-pips": "1.7.2"
   }
 }
