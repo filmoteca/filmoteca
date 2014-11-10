@@ -25,6 +25,10 @@ var require = {
 		"pages.exhibition.directives" : 	"/apps/pages/exhibition/directives",
 		"pages.exhibition.controllers" : 	"/apps/pages/exhibition/controllers",
 
+		"pages.filmoteca-medal.App" : 		"/apps/pages/filmoteca-medal/App",
+		"pages.filmoteca-medal.controllers" : "/apps/pages/filmoteca-medal/controllers",
+		"pages.filmoteca-medal.directives" : "/apps/pages/filmoteca-medal/directives",
+
 		/*************************
 		| Bibliotecas (no bower) |
 		*************************/
@@ -36,7 +40,13 @@ var require = {
 		| Biliotecas |
 		*************/
 
-		"jquery"			: "jquery/jquery.min",
+		"jquery"			: "jquery/dist/jquery.min",
+		"jquery-ui"			: "jqueryui/ui/minified/jquery-ui.min",
+		"jquery-ui-core"	: "jqueryui/ui/minified/jquery.ui.core.min",
+		"jquery-ui-widget"	: "jqueryui/ui/minified/jquery.ui.widget.min",
+		"jquery-ui-mouse"	: "jqueryui/ui/minified/jquery.ui.mouse.min",
+		"jquery-ui-slider"	: "jqueryui/ui/minified/jquery.ui.slider.min",
+		"jquery-ui-slider-pips"	: "jquery-ui-slider-pips/dist/jquery-ui-slider-pips.min",
 		"angular" 			: "angular/angular",
 		"domready" 			: "domready/ready.min",
 		"ui.bootstrap" 		: "angular-bootstrap/ui-bootstrap-tpls.min",
@@ -77,6 +87,12 @@ var require = {
 		"ui.bootstrap" : ["angular"],
 		"angular-locale-mx" : ["angular"],
 		"bootstrap" :["jquery"],
-		"syntara" : ["jquery", "bootstrap"]
+		"syntara" : ["jquery", "bootstrap"],
+		"jquery-ui" : ["jquery"],
+		"jquery-ui-widget" : ["jquery"],
+		"jquery-ui-core" : ["jquery"],
+		"jquery-ui-mouse" : ["jquery-ui-widget"],
+		"jquery-ui-slider" : ["jquery-ui-core", "jquery-ui-mouse", "jquery-ui-widget"],
+		"jquery-ui-slider-pips" : ["jquery-ui"]
 	}
 };
