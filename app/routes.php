@@ -60,6 +60,12 @@ Route::post('/press_register/store',
 		'as' => 'press_register.store',
 		'uses' => 'PressRegisterController@store' ));
 
+Route::get('/filmoteca-medal/',
+	array(
+		'as' => 'filmoteca-medal/',
+		'uses' => 'FilmotecaMedalController@index')
+	);
+
 /*
 |----------------------------------------------------------------------------
 | PÁGINAS ESTATICAS

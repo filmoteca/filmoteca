@@ -15,4 +15,15 @@ class BaseController extends Controller {
 		}
 	}
 
+	/**
+	 * Inyecta el almacen a cada controlador si la variable repositoryName
+	 * ha sido definida.
+	 */
+	public function __construct(){
+
+		if ( isset( $this->repositoryName ) )
+		{
+			$this->repository = App::make( $this->repositoryName);
+		}
+	}
 }

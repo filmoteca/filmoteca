@@ -34,5 +34,9 @@ class ResourcesRepository
 
 		return is_null( $this->resource->find($id) );
 	}
+
+	public function all(){
+		return $this->resource->all();
+	}
 }
 
