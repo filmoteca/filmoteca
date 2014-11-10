@@ -1,0 +1,43 @@
+//-----------------------------------------------------------------------------
+// 
+// Nombre : filmoteca.scss
+// 
+// Ubicación : /public/assets/scss/filmoteca.scss
+// 
+// Descripción : Hoja de estilo principal del sitio. Este archivo únicamente
+// debe tener directivas @import (bibliotecas y nuestros archivos Sass).
+//
+//-----------------------------------------------------------------------------
+
+
+//------------------------------------------------------------------------------
+// BIBLIOTECAS
+//------------------------------------------------------------------------------
+
+//
+// Documentación en http://bourbon.io/docs/
+//
+@import '../../bower_components/bourbon/dist/bourbon'; 
+
+
+//-----------------------------------------------------------------------------
+// NUESTROS ARCHIVOS SASS
+//-----------------------------------------------------------------------------
+ 
+@import 'mixins';
+
+@import 'home';
+
+@import 'admin';
+
+@import 'exhibitions-datepicker';
+
+@import 'static-pages-menu';
+
+@import 'main-menu';
+
+@import 'mini-billboard';
+// Sera eliminado.
+@import 'tmp-media-queries';
+
+@import 'filmoteca-medal';

@@ -20,9 +20,11 @@ Thumbs.db
 
 /public/*
 
+!/public/assets
 !/public/assets/js
 !/public/assets/imgs
 !/public/assets/css/imgs
+!/public/assets/sass
 
 !/public/bower.json
 !/public/apps

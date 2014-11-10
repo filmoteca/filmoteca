@@ -1,0 +1,49 @@
+/* 
+    Document   : billboard
+    Created on : 9/05/2013, 10:09:01 PM
+    Author     :
+    Description:
+        Simular una cartelera de cine.
+*/
+
+.billboard .screen{
+    position:relative;
+    margin-left: auto;
+    margin-right: auto;
+    width:100%; 
+}
+
+.billboard .screen .sections{
+    overflow: hidden;
+    width: 100%;
+    /* Esta propiedad es importante para el scroll vertical */
+    height: 360px;
+    clear: both;
+}
+.billboard .screen .sections ul,
+.billboard .screen .sections li{
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.billboard .screen .sections ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    /**
+     * Las siguiente propiedades son inciadas en el js según el numero de 
+     * elementos del en la cartelera.
+     *
+     * Si se desea un movimiento horizontal se inicializa la anchura,
+     * Si se desea un movimiento vertial se inicializa la altura.
+     * 
+     */
+    /*width: 10000px;*/
+    /*height:10000px;*/
+}
+
+.billboard .screen .sections li{
+    float:left;
+    position:relative;
+}
