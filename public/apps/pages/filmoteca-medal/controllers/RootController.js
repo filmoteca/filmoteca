@@ -24,6 +24,7 @@
 
 		$scope.loading = false;
 
+		//Preparing the winners list.
 		$scope.winners = _.map(winners, function(winner){
 
 			winner.award_date = moment(winner.award_date).year();
@@ -35,15 +36,25 @@
 
 		$scope.range = [1987,2000];
 
-		$scope.showDetails = function(index){
 
-			var scope = $scope.$new();
-			scope.winner = $scope.winners[index];
+		var openModal = function( winner )
+		{
+			$scope.winner = winner;
 
 			$modal.open({
 				templateUrl: 'filmoteca_medals.modal.html',
-				scope : scope
+				scope : $scope
 			});
+		};
+
+		$scope.selectedAdvice = function( selection ){
+
+			openModal(selection.originalObject);
+		};
+
+		$scope.show = function(index){
+
+			openModal($scope.winners[index]);
 		};
 
 		$scope.$watch('range', function(values){

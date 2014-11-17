@@ -9,7 +9,7 @@
 </div>
 <div class="modal-body">
 
-   <img src="@{{ winner.image_src }}">
+   <img ng-src="@{{ winner.photo }}">
 	@{{ winner.biography }}
 
 </div>

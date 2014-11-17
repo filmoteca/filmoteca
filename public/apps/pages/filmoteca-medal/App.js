@@ -9,9 +9,9 @@
 	'use strict';
 
 	/**
-	 * El configuración global para nuestras app definidas en require.config.js
-	 * se define que angular, no require a jquery, sin embargo en esta app
-	 * es necesario cargar jquery antes que angular. Ya el hacemos uso de.
+	 * La configuración global para nuestras app (require.config.js)
+	 * define que angular, no require a jquery, sin embargo en esta app
+	 * es necesario cargar jquery antes que angular. Ya que hacemos uso del
 	 * plugin jquery-ui-slider-pips.
 	 * @type {Object}
 	 */

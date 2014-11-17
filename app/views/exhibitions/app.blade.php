@@ -47,8 +47,8 @@
 		<span class="glyphicon glyphicon-search pull-left"></span>
 
 		<div class="search-autocomplete pull-right">
-			<angucomplete-alt id="ex1"
-				place-holder="Search countries"
+			<angucomplete-alt
+				place-holder="Buscar por título o director"
 				pause="0"
 				selected-object="selectedAdvice"
 				local-data="advices"

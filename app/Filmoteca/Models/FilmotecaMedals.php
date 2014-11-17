@@ -20,4 +20,9 @@ class FilmotecaMedal extends Eloquent implements StaplerableInterface
 
 		parent::__construct($attributes);
 	}
+
+	public function toArray(){
+
+		return array_merge( parent::toArray(), ['photo' => $this->image->url('thumbnail')]);
+	}
 }

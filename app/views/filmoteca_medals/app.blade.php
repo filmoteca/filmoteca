@@ -62,6 +62,25 @@
 		</div>
 	</div>
 
+	<span class="glyphicon glyphicon-search pull-left"></span>
+
+		<div class="search-autocomplete pull-right">
+			<angucomplete-alt
+				place-holder="SBuscar por nombre"
+				pause="0"
+				selected-object="selectedAdvice"
+				local-data="winners"
+				title-field="name"
+				description-field="award_date"
+				search-fields="name"
+				image-field="photo"
+				minlength="1"
+				text-searching="Buscando..."
+				text-no-results="Ninguna ganador encontrado"
+				input-class="form-control form-control-small">
+			</angucomplete-alt>
+		</div>
+
 	<div class="loading" ng-show="loading"></div>
 
 	<div class="filmoteca-medal-list ng-cloak">
@@ -88,7 +107,7 @@
 							20),
 						array(
 							'title' => 'Ver detalles',
-							'ng-click' => 'showDetails("' . $index . '")',
+							'ng-click' => 'show("' . $index . '")',
 							'onclick' => 'return false'
 							)
 						)
