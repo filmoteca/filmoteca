@@ -29,6 +29,9 @@ var require = {
 		"pages.filmoteca-medal.controllers" : "/apps/pages/filmoteca-medal/controllers",
 		"pages.filmoteca-medal.directives" : "/apps/pages/filmoteca-medal/directives",
 
+		"pages.chronology.App" : 			"/apps/pages/chronology/App",
+		"pages.chronology.controllers" : 	"/apps/pages/chronology/controllers",
+
 		/*************************
 		| Bibliotecas (no bower) |
 		*************************/
