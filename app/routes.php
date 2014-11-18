@@ -66,6 +66,18 @@ Route::get('/filmoteca-medal/',
 		'uses' => 'FilmotecaMedalController@index')
 	);
 
+Route::get('/chronology/',
+	array(
+		'as' => 'chronology',
+		'uses' => 'ChronologyController@index')
+	);
+
+Route::get('/pages/quienes-somos/cronologia',function(){
+
+	return Redirect::route('chronology');
+});
+
+
 /*
 |----------------------------------------------------------------------------
 | PÁGINAS ESTATICAS
@@ -185,7 +197,7 @@ Route::group(['prefix' => 'admin'], function()
 	 */
 
 	$resources = ['film', 'filmotecaMedal', 'billboard','professor', 
-		'exhibition', 'auditorium','news', 'catalog', 'interview'];
+		'exhibition', 'auditorium','news', 'catalog', 'interview', 'chronology'];
 
 	/**
 	 * El nombre de las rutas tienen el prefijo admin. (incluyendo el punto)
