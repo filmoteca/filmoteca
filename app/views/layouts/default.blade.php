@@ -18,7 +18,7 @@
 
 		{{
 			HTML::scripts([
-				'/bower_components/jquery/jquery.min.js',
+				'/bower_components/jquery/dist/jquery.min.js',
 				'/bower_components/jqueryui/ui/minified/jquery-ui.min.js'
 				])
 			}}

@@ -17,7 +17,7 @@
 				
 				'/assets/css/filmoteca.css')) }}
 
-		{{ HTML::script('bower_components/jquery/jquery.min.js')}}
+		{{ HTML::script('bower_components/jquery/dist/jquery.min.js')}}
 
 		{{ HTML::script('bower_components/bootstrap/dist/js/bootstrap.min.js')}}
 
