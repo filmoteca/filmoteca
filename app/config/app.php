@@ -121,7 +121,6 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
-		'Way\Generators\GeneratorsServiceProvider',
 		'Codesleeve\LaravelStapler\LaravelStaplerServiceProvider',
 		'Cartalyst\Sentry\SentryServiceProvider',
 		'Mrjuliuss\Syntara\SyntaraServiceProvider',
