@@ -3,21 +3,6 @@
 	
 	<div class="btn-group">
 		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-			Películas
-			<span class="caret"></span>
-		</button>
-		<ul class="dropdown-menu">
-			<li>
-				{{ HTML::linkRoute('admin.film.index', 'Ver todas las películas') }}
-			</li>
-			<li>
-				{{ HTML::linkRoute('admin.film.create', 'Agregar película') }}
-			</li>
-		</ul>
-	</div>
-
-	<div class="btn-group">
-		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 			Programación
 			<span class="caret"></span>
 		</button>
@@ -26,7 +11,13 @@
 				{{ HTML::linkRoute('admin.exhibition.index', 'Ver toda la programación') }}
 			</li>
 			<li>
-				{{ HTML::linkRoute('admin.exhibition.create', 'Agregar exhibition') }}
+				{{ HTML::linkRoute('admin.exhibition.create', 'Agregar exhibiciones') }}
+			</li>
+			<li>
+				{{ HTML::linkRoute('admin.film.index', 'Ver todas las películas') }}
+			</li>
+			<li>
+				{{ HTML::linkRoute('admin.film.create', 'Agregar película') }}
 			</li>
 		</ul>
 	</div>
