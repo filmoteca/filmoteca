@@ -32,12 +32,17 @@ var require = {
 		"pages.chronology.App" : 			"/apps/pages/chronology/App",
 		"pages.chronology.controllers" : 	"/apps/pages/chronology/controllers",
 
+		"pages.courses.App" : 			"/apps/pages/courses/App",
+		"pages.courses.controllers" : 	"/apps/pages/courses/controllers",
+		"pages.courses.services" : 		"/apps/pages/courses/services",
+
 		/*************************
 		| Bibliotecas (no bower) |
 		*************************/
 
-		"file-model" 		: "/apps/directives/FileModel",
-		"FilmotecaFilters"	: "/apps/directives/FilmotecaFilters",
+		"file-model" 		: "/apps/libs/FileModel",
+		"Notificator"		: "/apps/libs/Notificator",
+		"FilmotecaFilters"	: "/apps/libs/FilmotecaFilters",
 
 		/*************
 		| Biliotecas |
@@ -59,6 +64,7 @@ var require = {
 		"angular-moment" 	: "angular-moment/angular-moment.min",
 		"angular-locale-mx"	: "angular-i18n/angular-locale_es-mx",
 		"bootstrap"			: "bootstrap/dist/js/bootstrap.min",
+		"ngRoute" 			: "angular-route/angular-route.min",
 
 		//From laravel packages
 		"syntara"			: "/packages/mrjuliuss/syntara/assets/js/dashboard/base",
@@ -86,6 +92,7 @@ var require = {
 		"angular" : {
 			"exports" : "angular"
 		},
+		"ngRoute" : ["angular"],
 		"angucomplete-alt" : ["angular"],
 		"ui.bootstrap" : ["angular"],
 		"angular-locale-mx" : ["angular"],

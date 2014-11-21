@@ -1,0 +1,130 @@
+<div>
+	<div class="alert alert-danger"
+		ng-show="formSended && !success" ng-bind="message">
+	</div>
+	<div class="alert alert-info" ng-show="formSended && success">
+		<h2>¡Has sidó registrado exitosamente!</h2>
+
+		<p>Un mensaje a sido enviado a tu correo electronico, con tu contraseña
+			para poder inscribirte a cualquier curso.</p>
+
+		<p><a href="#/">Regresar a la lista de cursos</a></p>
+
+	</div>
+
+	<form class="form" role="form" ng-submit="signup()" name="signup_form" ng-hide="formSended && success">
+		<h1>Formulario de registro para usuarios sin matricula</h1>
+
+		<p>Para poder inscribirte en un curso debes obtener primero una matricula.
+			Para obtenerla llena todos los campos en este formulario.</p>
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="form-group">
+					<label class="control-label" for="name">Nombre</label>
+					<div class="input-group">
+						<input class="form-control" name="name" type="text" 
+							ng-required="true"
+							ng-minlength="3"
+							ng-model="user.name" >
+						<span class="glyphicon glyphicon-ok input-group-addon" ng-show="signup_form.name.$valid"></span>
+						<span class="glyphicon glyphicon-remove input-group-addon" ng-show="signup_form.name.$invalid && !signup_form.name.$pristine"></span>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-4">
+				<div class="form-group">
+					<label class="control-label" for="last_name">Apellido paterno</label>
+					<div class="input-group">
+						<input class="form-control" name="last_name" type="text" 
+							ng-required="true"
+							ng-minlength="3"
+							ng-model="user.last_name" >
+						<span class="glyphicon glyphicon-ok input-group-addon" ng-show="signup_form.last_name.$valid"></span>
+						<span class="glyphicon glyphicon-remove input-group-addon" ng-show="signup_form.last_name.$invalid && !signup_form.last_name.$pristine"></span>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="form-group">
+					<label class="control-label" for="second_last_name">Apellido materno</label>
+					<div class="input-group">
+						<input class="form-control" name="second_last_name" type="text" 
+							ng-required="true"
+							ng-minlength="3"
+							ng-model="user.second_last_name" >
+						<span class="glyphicon glyphicon-ok input-group-addon" ng-show="signup_form.second_last_name.$valid"></span>
+						<span class="glyphicon glyphicon-remove input-group-addon" ng-show="signup_form.second_last_name.$invalid && !signup_form.second_last_name.$pristine"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="form-group">
+					<label class="control-label" for="telephone">Teléfono</label>
+					<div class="input-group">
+						<input class="form-control" name="telephone" type="text" 
+							ng-required="true"
+							ng-minlength="8"
+							ng-model="user.telephone" >
+						<span class="glyphicon glyphicon-ok input-group-addon" ng-show="signup_form.telephone.$valid"></span>
+						<span class="glyphicon glyphicon-remove input-group-addon" ng-show="signup_form.telephone.$invalid && !signup_form.telephone.$pristine"></span>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="form-group">
+					<label class="control-label" for="mobile">Celular</label>
+					<div class="input-group">
+						<input class="form-control" name="mobile" type="text" 
+							ng-required="true"
+							ng-minlength="8"
+							ng-model="user.mobile" >
+						<span class="glyphicon glyphicon-ok input-group-addon" ng-show="signup_form.mobile.$valid"></span>
+						<span class="glyphicon glyphicon-remove input-group-addon" ng-show="signup_form.mobile.$invalid && !signup_form.mobile.$pristine"></span>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="form-group">
+					<label class="control-label" for="email">E-mail</label>
+					<div class="input-group">
+						<input class="form-control" name="email" type="email" 
+							ng-required="true"
+							ng-minlength="3"
+							ng-model="user.email" >
+						<span class="glyphicon glyphicon-ok input-group-addon" ng-show="signup_form.email.$valid"></span>
+						<span class="glyphicon glyphicon-remove input-group-addon" ng-show="signup_form.email.$invalid && !signup_form.email.$pristine"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" ng-model="user.unam_member">Perteneciente a la comnunidad UNAM.
+					</label>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="file">
+					<input file-model="user.photo" type="file" name="photo"> Fotografía.
+					<span class="glyphicon glyphicon-ok" ng-show="user.photo"></span>
+					<span class="glyphicon glyphicon-remove" ng-hide="user.photo"></span>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-sm-2 col-sm-offset-10">
+				<div class="loading loading-small" ng-show="uploading"></div>
+				<button type="submit" class="btn btn-success" ng-disabled="signup_form.$invalid || !user.photo">Registrarse</button>
+			</div>
+		</div>
+
+	</form>
+</div>
