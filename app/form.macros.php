@@ -29,7 +29,16 @@ Form::macro('formGroup',
 			return Form::auditoriumFormGroup($name, $title, $formname, $attr);
 
 		case('theMedia'):
-			return Form::theMediaFormGroup($name, $title, $formname, $attr);			
+			return Form::theMediaFormGroup($name, $title, $formname, $attr);
+
+		case('professor'):
+			return Form::professorFormGroup($name, $title, $formname, $attr);
+
+		case('course'):
+			return Form::courseFormGroup($name, $title, $formname, $attr);
+
+		case('venue'):
+			return Form::venueFormGroup($name, $title, $formname, $attr);
 
 		default:
 
@@ -79,6 +88,27 @@ Form::macro('countryFormGroup', function($name, $title, $formname, $attributes)
 Form::macro('genreFormGroup', function($name, $title, $formname, $attributes)
 {
 	$options = Filmoteca\Models\Genre::all(['id','name'])->lists('name','id');
+
+	return Form::selectFormGroup($name, $options,$title,$formname,$attributes);
+});
+
+Form::macro('courseFormGroup', function($name, $title, $formname, $attributes)
+{
+	$options = Filmoteca\Models\Courses\Course::all(['id','name'])->lists('name','id');
+
+	return Form::selectFormGroup($name, $options,$title,$formname,$attributes);
+});
+
+Form::macro('professorFormGroup', function($name, $title, $formname, $attributes)
+{
+	$options = Filmoteca\Models\Courses\Professor::all(['id','name'])->lists('name','id');
+
+	return Form::selectFormGroup($name, $options,$title,$formname,$attributes);
+});
+
+Form::macro('venueFormGroup', function($name, $title, $formname, $attributes)
+{
+	$options = Filmoteca\Models\Courses\Venue::all(['id','name'])->lists('name','id');
 
 	return Form::selectFormGroup($name, $options,$title,$formname,$attributes);
 });
