@@ -1,6 +1,6 @@
 @section('content')
 
-<h2>Lista de Noticias</h2>
+<h2>Lista de estudiantes</h2>
 
 {{ $resources->links() }}
 
