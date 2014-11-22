@@ -10,7 +10,7 @@
 	])}}
 
 	<div class="panel-heading">
-		<h2>Editar noticia</h2>
+		<h2>Editar ganador</h2>
 	</div>
 	
 	<div class="panel-body">

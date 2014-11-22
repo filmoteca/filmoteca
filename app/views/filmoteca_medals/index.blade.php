@@ -1,6 +1,6 @@
 @section('content')
 
-<h2>Lista de Ganadores</h2>
+<h2>Lista de ganadores</h2>
 
 {{ $resources->links() }}
 

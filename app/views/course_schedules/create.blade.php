@@ -9,7 +9,7 @@
 	])}}
 
 	<div class="panel-heading">
-		<h2>Agregar Horario</h2>
+		<h2>Agregar horario</h2>
 	</div>
 	
 	<div class="panel-body">

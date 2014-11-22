@@ -1,6 +1,6 @@
 @section('content')
 
-<h2>Detalles de noticias</h2>
+<h2>Detalles del ganador</h2>
 
 <div class="text-right">
 {{ Form::open(array('route' => array('admin.filmotecaMedal.destroy', $resource->id), 'method'=> 'DELETE')) }}

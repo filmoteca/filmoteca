@@ -9,7 +9,7 @@
 	])}}
 
 	<div class="panel-heading">
-		<h2>Agregar Noticia</h2>
+		<h2>Agregar profesor</h2>
 	</div>
 	
 	<div class="panel-body">
