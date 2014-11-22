@@ -145,4 +145,37 @@
 		</ul>
 	</div>
 
+	<div class="btn-group">
+		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			Cursos
+			<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu">
+			<li>
+				<a href="/admin/professor/create">Agregar profesor</a>
+			</li>
+			<li>
+				<a href="/admin/course/create">Agregar curso</a>
+			</li>
+			<li>
+				<a href="/admin/venue/create">Agregar sede</a>
+			</li>
+			<li>
+				<a href="/admin/courseSchedule/create">Agregar horario de curso</a>
+			</li>
+			<li>
+				<a href="/admin/professor">Lista de profesores</a>
+			</li>
+			<li>
+				<a href="/admin/course">Lista de cursos</a>
+			</li>
+			<li>
+				<a href="/admin/venue">Lista de sedes</a>
+			</li>
+			<li>
+				<a href="/admin/course">Lista de cursos</a>
+			</li>
+		</ul>
+	</div>
+
 </div>
