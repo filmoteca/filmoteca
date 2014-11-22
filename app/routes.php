@@ -150,7 +150,7 @@ Route::group(['prefix' => 'admin'], function()
 	Route::get('/', [
 		'as' => 'admin.dashboard',
 		'uses' => function(){
-			Redirect::to('/admin/dashboard');
+			Redirect::to('/admin/dashboard/login');
 		}]);
 
 	/*
@@ -186,6 +186,17 @@ Route::group(['prefix' => 'admin'], function()
 			'uses' => 'Api\ExhibitionController@store']);
 	});
 
+
+	/*
+	|--------------------------------------------------------------------------
+	| Aplicación de cursos (ADMIN)
+	|--------------------------------------------------------------------------
+	 */
+	Route::get('course/app', function(){
+
+		return View::make('courses.admin-app');
+	});
+
 	/*
 	|--------------------------------------------------------------------------
 	| RECURSOS. Lo que pueden ser creados, editados, borrados y listados.
@@ -196,7 +207,8 @@ Route::group(['prefix' => 'admin'], function()
 	 * ## ENHANCEMENT: Usar un único controlador para todos estos recursos.
 	 */
 
-	$resources = ['film', 'filmotecaMedal', 'billboard','professor', 
+	$resources = ['film', 'filmotecaMedal', 'billboard',
+		'professor', 'course','venue','courseSchedule', 'student',
 		'exhibition', 'auditorium','news', 'catalog', 'interview', 'chronology'];
 
 	/**
