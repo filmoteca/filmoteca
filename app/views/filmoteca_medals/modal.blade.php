@@ -3,7 +3,7 @@
 		<span class="glyphicon glyphicon-remove pull-right btn-link"
 	 		ng-click="$close()"></span>
 
-		@{{ winner.name }}
+		@{{ winner.name }} (@{{ winner.award_date }})
 
 	</h3>
 </div>
@@ -14,6 +14,4 @@
 
 </div>
 <div class="modal-footer">
-	<button class="btn btn-primary" ng-click="$close()">OK</button>
-	<button class="btn btn-warning" ng-click="$dismiss()">Cancel</button>
 </div>

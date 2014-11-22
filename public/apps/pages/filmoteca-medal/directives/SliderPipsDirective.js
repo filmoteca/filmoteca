@@ -15,13 +15,20 @@
 
 	.directive('sliderPips', ['SLIDER_PIP_CONFIG',function(SLIDER_PIP_CONFIG){
 
-		var link = function($scope, $element, $attr){
+		var link = function($scope, $element){
 
 			$scope.config = (angular.isUndefined($scope.config))? {}: $scope.config;
 
-			var config = angular.extend({}, SLIDER_PIP_CONFIG, $scope.config);
+			//Angular does not support deep copy.
+			var config = {
+				slider : angular.extend({}, SLIDER_PIP_CONFIG.slider, $scope.config.slider),
+				pips   : angular.extend({}, SLIDER_PIP_CONFIG.pips, $scope.config.pips),
+				float  : angular.extend({}, SLIDER_PIP_CONFIG.float, $scope.config.float),
+			};
 
-			config.slider.values = $scope.rangeModel;
+
+
+
 
 			$element.slider(config.slider)
 					.slider('pips', config.pips)
@@ -30,9 +37,14 @@
 			$element.on('slidechange', function(event, ui){
 
 				$scope.$apply(function(){
+					if( angular.isArray( $scope.ngModel )){
 
-					$scope.rangeModel[0] = ui.values[0];
-					$scope.rangeModel[1] = ui.values[1];
+						$scope.ngModel[0] = ui.values[0];
+						$scope.ngModel[1] = ui.values[1];
+					}else{
+
+						$scope.ngModel = ui.value;
+					}
 				});
 			});
 		};
@@ -40,8 +52,8 @@
 		return {
 			restrict : 'A',
 			scope : {
-				config : '&',
-				rangeModel : '='
+				config : '=',
+				ngModel : '='
 			},
 			link: link
 		};
@@ -56,7 +68,8 @@
 			range: true,
 			min : 1985,
 			max: 2015 , 
-			step: 1
+			step: 1,
+			animate: true
 		},
 		pips : {
 			rest: 'label',

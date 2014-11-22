@@ -17,19 +17,19 @@
 }
 
 .filmoteca-medal-slider.ui-slider .ui-slider-range {
-    background: #e74c3c;
+	background: #e74c3c;
 }
 
 .filmoteca-medal-slider .ui-slider-handle {
-    width: 3px;
-    margin-left: -1px;
-    height: 20px;
-    top: 50%;
-    margin-top: -10px;
-    border-radius: 0;
-    border: none;
-    background: #c0392b;
-    border-radius: 2px;
+	width: 3px;
+	margin-left: -1px;
+	height: 20px;
+	top: 50%;
+	margin-top: -10px;
+	border-radius: 0;
+	border: none;
+	background: #c0392b;
+	border-radius: 2px;
 }
 
 .filmoteca-medal-slider .ui-slider-handle:after {
@@ -76,4 +76,11 @@
 	top: 12px;
 	color: #333;
 	font-size: 1em;
+}
+
+.ui-slider-pips .ui-slider-pip-selected-initial,
+.ui-slider-pips .ui-slider-pip-selected-initial-first,
+.ui-slider-pips .ui-slider-pip-selected-initial-second {
+	color: #999 !important;
+	font-weight: normal !important;
 }

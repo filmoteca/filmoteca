@@ -1465,4 +1465,10 @@ div.angucomplete-dropdown {
   color: #333;
   font-size: 1em; }
 
+.ui-slider-pips .ui-slider-pip-selected-initial,
+.ui-slider-pips .ui-slider-pip-selected-initial-first,
+.ui-slider-pips .ui-slider-pip-selected-initial-second {
+  color: #999 !important;
+  font-weight: normal !important; }
+
 /*# sourceMappingURL=filmoteca.css.map */

@@ -24,18 +24,24 @@
 
 		$scope.loading = false;
 
+		$scope.year = 2000;
+
 		//Preparing the winners list.
 		$scope.winners = _.map(winners, function(winner){
 
-			winner.award_date = moment(winner.award_date).year();
+			winner.year = moment(winner.award_date).year();
 
 			winner.visible = true;
 
 			return winner;
 		});
 
-		$scope.range = [1987,2000];
-
+		$scope.sliderConfig = {
+			slider: {
+				range : false,
+				value : $scope.year
+			}
+		};
 
 		var openModal = function( winner )
 		{
@@ -57,12 +63,11 @@
 			openModal($scope.winners[index]);
 		};
 
-		$scope.$watch('range', function(values){
+		$scope.$watch('year', function(value){
 
 			angular.forEach($scope.winners, function(winner){
 
-				winner.visible = winner.award_date >= values[0] &&
-								 winner.award_date <= values[1];
+				winner.visible = winner.year == value;
 			});
 		}, true);
 	}]);

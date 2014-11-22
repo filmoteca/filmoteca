@@ -36,7 +36,7 @@
 
 @section('breadcrumbs')
 	<li>
-		Quienes somos
+		<a href="/pages/quienes-somos">Quienes somos</a>
 	</li>
 	<li class="active">
 		Medalla filmoteca
@@ -58,7 +58,7 @@
 	<div class="filmoteca-medal-slider">
 		<div data-slider-pips
 			config="sliderConfig"
-			range-model="range">
+			ng-model="year">
 		</div>
 	</div>
 
