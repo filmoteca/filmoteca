@@ -1,17 +1,4 @@
 <div>
-	<div class="alert alert-danger"
-		ng-show="formSended && !success" ng-bind="message">
-	</div>
-	<div class="alert alert-info" ng-show="formSended && success">
-		<h2>¡Has sidó registrado exitosamente!</h2>
-
-		<p>Un mensaje a sido enviado a tu correo electronico, con tu contraseña
-			para poder inscribirte a cualquier curso.</p>
-
-		<p><a href="#/">Regresar a la lista de cursos</a></p>
-
-	</div>
-
 	<form class="form" role="form" ng-submit="signup()" name="signup_form" ng-hide="formSended && success">
 		<h1>Formulario de registro para usuarios sin matricula</h1>
 
