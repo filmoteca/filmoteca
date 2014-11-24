@@ -19,7 +19,7 @@
 @section('breadcrumbs')
 <li>
 	<a href="/pages/quienes-somos/index">
-		Quienes somos
+		Quiénes somos
 	</a>
 </li>
 <li class="active">
@@ -34,13 +34,16 @@
 @section('content')
 
 <div class="sidebar">
-	@include('elements.menus.quienes-somos', array('selected' => 7))
+	@include('elements.menus.quienes-somos', array('selected' => 6))
 </div>
 
 
 <div class="content">
 	
 	<h3>Directorio</h3> 
+	<p>La Dirección General de Actividades Cinematográficas - Filmoteca de la UNAM se localiza en Circuito Exterior Mtro. Mario de la Cueva s/n, en Ciudad Universitaria. En sus instalaciones se resguarda y preserva el acervo filmográfico de la UNAM.
+	<p>Esta dependencia universitaria desarrolla sus labores a través de las siguientes áreas:</p>
+</p>
 
 	<div class="informacion">
 		
@@ -60,31 +63,13 @@
 						<span class="datos">E-mail:</span>
 						<a href="mailto:gferrer@unam.mx">gferrer@unam.mx</a>
 					</li>
-					<br>
-					<li>
-						<span class="nombre">Nadina Illescas Villegas</span>
-						<br>
-						<span class="cargo">Departamento de Enlace Interinstitucional</span>
-						<br>
-						<span class="datos">Teléfono: </span> 5622 9589 
-						<br>
-						<span class="datos">E-mail:</span>
-						<a href="mailto:nadina1020@gmail.com">nadina1020@gmail.com</a>
-					</li>
-					<br>
-					<li>
-						<span class="nombre">Edgardo Barona Durán</span>
-						<br>
-						<span class="cargo">Departamento de Análisis y Regularización de la Procedencia del Patrimonio Fílmico de la UNAM</span>
-						<br>
-						<span class="datos">Teléfono: </span> 5622 8222 ext. 47467 
-						<br>
-						<span class="datos">E-mail:</span>
-						<a href="mailto:ebarona@unam.mx">ebarona@unam.mx</a>
-					</li>
 				</div>
 				<h3>Subdirección de Rescate y Restauración</h3>
 				<div>
+					<li>
+						<span class="datos">Coordina las labores relacionadas con el análisis del estado físico de las películas, su reparación y reproducción en materiales contemporáneos para su exhibición; para ello cuenta con el apoyo de las áreas de Laboratorio cinematográfico y Taller de restauración.</span>
+					</li>
+					<br>
 					<li id="rescate_restauracion">
 						<span class="nombre">Albino Álvarez Gómez</span>
 						<br>
@@ -120,6 +105,10 @@
 				</div>
 				<h3>Subdirección de Preservación y Acervos</h3>
 				<div>
+					<li>
+						<span class="datos">Su función principal es el manejo, organización y conservación del acervo filmográfico y de materiales impresos. Coordina las siguientes áreas: Banco de imagen, Bóvedas, Catalogación, Centro de Documentación y Producción.</span>
+					</li>
+					<br>
 					<li id="preservacion_acervos">
 						<span class="nombre">Miguel Ángel Recillas</span>
 						<br>
@@ -140,6 +129,17 @@
 						<br>
 						<span class="datos">E-mail:</span>
 						<a href="mailto:carriles@unam.mx">carriles@unam.mx</a>
+					</li>
+					<br>
+					<li>
+						<span class="nombre">Juan García</span>
+						<br>
+						<span class="cargo">Bóvedas</span>
+						<br>
+						<span class="datos">Teléfono: </span> 5622 9586
+						<br>
+						<span class="datos">E-mail:</span>
+						<a href="mailto:filmbov@unam.mx">filmbov@unam.mx</a>
 					</li>
 					<br>
 					<li>
@@ -165,17 +165,6 @@
 					</li>
 					<br>
 					<li>
-						<span class="nombre">Juan García</span>
-						<br>
-						<span class="cargo">Bóvedas</span>
-						<br>
-						<span class="datos">Teléfono: </span> 5622 9586
-						<br>
-						<span class="datos">E-mail:</span>
-						<a href="mailto:filmbov@unam.mx">filmbov@unam.mx</a>
-					</li>
-					<br>
-					<li>
 						<span class="nombre">Jesús Brito</span>
 						<br>
 						<span class="cargo">Producción</span>
@@ -188,6 +177,10 @@
 				</div>
 				<h3>Subdirección de Difusión</h3>
 				<div>
+					<li>
+						<span class="datos">Su función es difundir las actividades que realiza la Filmoteca, así como organizar las exposiciones, cursos y edición de libros.  A su cargo esta la Coordinación de Comunicación, el Departamento de Vinculación, así como las áreas de Museología, Prensa y la Librería y tienda.</span>
+					</li>
+					<br>
 					<li id="difusion">
 						<span class="nombre">Carmen Carrara </span>
 						<br>
@@ -254,6 +247,10 @@
 				</div>
 				<h3>Unidad de Acceso Interinstitucional</h3>
 				<div>
+					<li>
+						<span class="datos">Se encarga del servicio de préstamo y alquiler de películas del acervo de la Filmoteca, para su exhibición dentro y fuera de la UNAM, así como para el Servicio Exterior Mexicano. Coordina el departamento de Distribución.</span>
+					</li>
+					<br>
 					<li id="acceso_interinstitucional">
 						<span class="nombre">José Manuel García</span>
 						<br>
@@ -278,6 +275,10 @@
 				</div>
 				<h3>Unidad de Programación</h3>
 				<div>
+					<li>
+						<span class="datos">Su principal actividad es organizar y programar funciones, ciclos de cine en las salas Julio Bracho, José Revueltas y Carlos Monsiváis del Centro Cultural Universitario y en el Cinematógrafo del Chopo de la UNAM, también participa con los festivales de cine que se realizan en México y en el extranjero. Se encarga también del registro de cineclubes universitarios.</span>
+					</li>
+					<br>
 					<li id="programacion">
 						<span class="nombre">Ximena Perujo</span>
 						<br>
@@ -291,6 +292,10 @@
 				</div>
 				<h3>Coordinación de Nuevas Tecnologías</h3>
 				<div>
+					<li>
+						<span class="datos">Su función principal es mantener al día en las tecnologías de la información y la comunicación los sistemas y la infraestructura de la red de la Filmoteca, así como administrar las bases de datos y dar soporte técnico a los servidores y a los equipos del personal de la dependencia, además de desarrollar nuevos sistemas para apoyo de áreas específicas. En colaboración con la Subdirección de Difusión, y de Becarios y Servicio social creó el portal de Cine en Línea y el Museo Virtual de Aparatos Cinematográficos con la finalidad de difundir el acervo de la Filmoteca y resaltar su importancia para la cinematografía nacional y mundial.</span>
+					</li>
+					<br>
 					<li id="nuevas_tecnologias">
 						<span class="nombre">Gerardo león Lastra</span>
 						<br>
@@ -315,6 +320,10 @@
 				</div>
 				<h3>Unidad Administrativa</h3>
 				<div>
+					<li>
+						<span class="datos">Cumple con la tarea distribuir y operar los recursos financieros y materiales así como el patrimonio de esta dependencia. Para ello cuenta con el apoyo de los departamentos de Presupuesto, Personal, Bienes y suministros y Servicios Generales.</span>
+					</li>
+					<br>
 					<li id="unidad_Administrativa">
 						<span class="nombre">Alfredo Gallardo Lugo</span>
 						<br>
@@ -368,6 +377,40 @@
 						<br>
 						<span class="datos">E-mail:</span>
 						<a href="mailto:alvairm@unam.mx">alvairm@unam.mx</a>
+					</li>
+				</div>
+					<h3>Enlace y relaciones interinstitucionales</h3>
+				<div>
+					<li>
+						<span class="datos">Su función es organizar, coadyuvar y dar seguimiento a las actividades concernientes a los Cuerpos Colegiados de la DGAC, universitarios y externos, organizar seminarios con instancias académicas y culturales y con invitados internacionales, que se imparten a alumnos y profesores universitarios, coordinar el Programa de Becarios y Servicio Social, así como las Visitas guiadas a las diversas áreas de la dependencia.</span>
+					</li>
+					<br>
+					<li>
+						<span class="nombre">Nadina Illescas Villegas</span>
+						<br>
+						<span class="cargo">Departamento de Enlace y relaciones Interinstitucionales</span>
+						<br>
+						<span class="datos">Teléfono: </span> 5622 9589 
+						<br>
+						<span class="datos">E-mail:</span>
+						<a href="mailto:nadina1020@gmail.com">nadina1020@gmail.com</a>
+					</li>
+				</div>
+					<h3>Departamento de Análisis y Regularización de la Procedencia del Patrimonio Fílmico de la UNAM</h3>
+				<div>
+					<li>
+						<span class="datos">Su principal función es establecer con certeza la titularidad y/o propiedad de derechos morales y patrimoniales de las obras cinematográficas que conforman el acervo de la Filmoteca de la UNAM.</span>
+					</li>
+					<br>
+					<li>
+						<span class="nombre">Edgardo Barona Durán</span>
+						<br>
+						<span class="cargo">Departamento de Análisis y Regularización de la Procedencia del Patrimonio Fílmico de la UNAM</span>
+						<br>
+						<span class="datos">Teléfono: </span> 5622 8222 ext. 47467 
+						<br>
+						<span class="datos">E-mail:</span>
+						<a href="mailto:ebarona@unam.mx">ebarona@unam.mx</a>
 					</li>
 				</div>
 			</div>
