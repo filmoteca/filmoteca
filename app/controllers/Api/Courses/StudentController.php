@@ -43,25 +43,12 @@ class StudentController extends ApiController{
 
 	public function login(){
 
-		$student = $this->repository->findByEmail(Input::get('email'));
+		$student = Sentry::findUserByCredentials([
+			'email' => Input::get('email'),
+			'password' => Input::get('password')]
+			);
 
-		if( empty($student) ){
-
-			return Response::json([
-				'success' => false,
-				'message' => 'No se encontro ningún usuario con ese email.'], 200 );
-		}
-
-		if( Hash::check(Input::get('password'), $student->password ) )
-		{
-			
-			return Response::json([
-				'success' => true]);	
-		}else{
-			return Response::json([
-				'success' => false,
-				'message' => 'La contraseña es incorrecta']);
-		}
+		return Response::json([]);
 	}
 
 	public function signup(){

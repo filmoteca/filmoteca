@@ -46,6 +46,11 @@
 				templateUrl : BASE_URL +  'dashboard.html'
 			})
 
+			.when('/login',{
+				controller : 'pages.courses.controllers.LoginController',
+				templateUrl: '/apps/pages/courses/templates/login.html'
+			})
+
 			/**
 			 * Aquí el usuario podra obtener su matricula para poder 
 			 * inscribirse a un curso.

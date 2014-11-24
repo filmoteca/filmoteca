@@ -10,19 +10,25 @@
 {
 	'use strict';
 
-	angular.module('pages.courses.controllers.LoginController',[])
+	angular.module('pages.courses.controllers.LoginController',['Notificator'])
 
-	.controller('pages.courses.controllers.LoginController', ['$scope', '$http', 
+	.controller('pages.courses.controllers.LoginController', ['$scope', '$http', '$location','Notificator',
 
-	function($scope, $http){
+	function($scope, $http, $location, Notificator){
 
-		var LOGIN_URL = '/courses/login';
+		var LOGIN_URL = '/api/courses/login';
+
+		var RECOVER_PASSWORD_URL = '/api/courses/recovery-password';
+
+		var DASHBOARD_PATH = '/dashboard';
 
 		$scope.message = '';
 
 		$scope.loading = false;
 
-		$scope.signup = function(){
+		$scope.active_form = 'login';
+
+		$scope.login = function(){
 			
 			$http({
 				url : LOGIN_URL,
@@ -33,17 +39,36 @@
 					cache : false
 				}
 			}).then(function( response ){
+				
+				$location.path( DASHBOARD_PATH );
 
-				if( response.data.success ){
-					$scope.$close( response.data );
-				}else{
-					$scope.message = response.data.message;
-				}
 			}, function( response ){
 
-				$scope.message =  response.data.message;
+				Notificator.notify( {
+					style : 'danger',
+					message : 'El usuario (email) o contraseña son incorrectos.'
+				});
 			});
 		};
 
+		$scope.showRecoveryForm = function(){
+
+			$scope.active_form = 'recovery';
+		};
+
+		$scope.showLoginForm = function(){
+
+			$scope.active_form = 'login';
+		};
+
+		$scope.recoverPassword = function(){
+
+			$http.get(RECOVER_PASSWORD_URL, {email : $scope.recovery_email}).then(function(response){
+
+				Notificator.notify( {
+					message : response.data.message
+				});
+			});
+		};
 	}]);
 });
