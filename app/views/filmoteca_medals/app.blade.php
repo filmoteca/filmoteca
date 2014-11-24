@@ -36,10 +36,13 @@
 
 @section('breadcrumbs')
 	<li>
-		<a href="/pages/quienes-somos">Quienes somos</a>
+		Quiénes somos
+	</li>
+	<li>
+		Medalla Filmoteca
 	</li>
 	<li class="active">
-		Medalla filmoteca
+		Galardonados
 	</li>
 @stop
 
@@ -50,7 +53,7 @@
 @section('content')
 	
 <div class="sidebar">
-	Static pages menu
+	@include('elements.menus.quienes-somos', array('selected' => 5))
 </div>
 
 <div class="content">
