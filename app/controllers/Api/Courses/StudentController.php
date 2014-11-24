@@ -5,6 +5,7 @@ use Hash;
 use Input;
 use Filmoteca\Repository\Courses\StudentsRepository;
 use Mail;
+use Redirect;
 use Response;
 use Sentry;
 
@@ -95,7 +96,7 @@ class StudentController extends ApiController{
 
 	public function verify(){
 
-		$user = Sentry::findByActivationCode(Input::get('activation_code'));
+		$user = Sentry::findUserByActivationCode(Input::get('activation_code'));
 
 		$user->activated = true;
 

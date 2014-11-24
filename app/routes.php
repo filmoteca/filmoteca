@@ -77,6 +77,21 @@ Route::get('/pages/quienes-somos/cronologia',function(){
 	return Redirect::route('chronology');
 });
 
+/*
+|------------------------------------------------------------------------------
+| APP de cursos.
+|------------------------------------------------------------------------------
+ */
+
+Route::get('/courses/app', function(){
+
+	return View::make('courses.app');
+});
+
+// No se sí vale la pena tener esto fuera de la API de cursos.
+Route::get('/courses/verification', [
+	'as' => 'courses.verification',
+	'uses' => 'Api\Courses\StudentController@verify']);
 
 /*
 |----------------------------------------------------------------------------
@@ -130,6 +145,25 @@ Route::group(['prefix' => 'api'], function()
 	Route::get('auditorium/{id}/detail',[
 		'as' => 'api.auditorium.detail',
 		'uses' => 'Api\AuditoriumController@detail']);
+
+	/*
+	|------------------------------------------------------------------------------
+	| CURSOS
+	|------------------------------------------------------------------------------
+	 */
+	
+	Route::post('courses/signup',[
+		'as' => 'api.courses.signup',
+		'uses' => 'Api\Courses\StudentController@signup']);
+	
+	Route::post('courses/login',[
+		'as' => 'api.courses.login',
+		'uses' => 'Api\Courses\StudentController@login']);
+	
+	Route::get('courses/recover-password', [
+		'as' => 'api.courses.recover-password',
+		'uses' => 'Api\Courses\StudentController@recoveryPassword']);
+
 });
 
 
