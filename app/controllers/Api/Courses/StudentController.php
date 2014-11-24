@@ -4,6 +4,7 @@ use Api\ApiController;
 use Hash;
 use Input;
 use Filmoteca\Repository\Courses\StudentsRepository;
+use Log;
 use Mail;
 use Redirect;
 use Response;
@@ -18,27 +19,24 @@ class StudentController extends ApiController{
 
 	public function recoverPassword(){
 
+		$user = Sentry::findUserByLogin(Input::get('email'));
+
+		$password = generate_password();
+
+		$user->password = $password;
+
+		$user->save();
+
 		$student = $this->repository->findByEmail(Input::get('email'));
-		
-		if( empty($student) ){
 
-			return Response::json([
-				'success' => false,
-				'message' => 'No se encontro ningún usuario con ese email.'], 200 );
-		}
-
-		$student->password = Hash::make( generate_password() );
-
-		$student->save();
-
-		Mail::queue('email.courses.recover-password', compact('student'), function($message) use ($student){
+		Mail::queue('emails.courses.recover-password', compact('password', 'student'), function($message) use ($user, $student){
 
 			$message->to($student->email, $student->name )
 					->subject('Filmoteca: nueva de contraseña');
 		});
 
 		return Response::json([
-			'message' => 'Nueva contraseña enviada. El correo podría tardar unos minutos en llegar.'],200);
+			'message' => 'Se ah enviado un mensaje a tu correo electronico con la nueva contraseña.']);
 	}
 
 	public function login(){

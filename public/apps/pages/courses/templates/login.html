@@ -43,20 +43,25 @@
 
 <form class="form-horizontal modal-body" role="form" ng-submit="recoverPassword()" name="recover_form" ng-show="active_form == 'recovery'">
 
-	<h3 class="text-center">Entrar</h3>
+	<div class="modal-header text-center">Recuperar contraseña</div>
 	
-	<p>Introduce tu correo electronico para se te envie un nuevo password
-		y puedas volver a entrar.</p>
-	<div class="form-group">
-		<label for="email" class="control-label">Tu correo electronico</label>
-
-		<input class="form-control" type="email" ng-required="true" ng-minlenght="4" ng-model="recovery_email">
+	<div class="modal-body">
+		<p>Introduce tu correo electronico para se te envie una nueva contraseña
+			y puedas volver a entrar.</p>
+		<div class="form-group">
+			<label for="email" class="control-label">Tu correo electronico</label>
+			<input class="form-control" type="email" ng-required="true" ng-minlenght="4" ng-model="recovery_email">
+		</div>
 	</div>
 
-	<div class="form-group">
-		<button type="submit" class="btn btn-warning pull-right" ng-disabled="recover_form.$invalid">Enviar</button>
+	<div class="modal-footer">
+
+		<div class="form-group">
+			<a ng-click="showLoginForm()" class="btn btn-link">Regresar a la pantalla de login</a>
+			<button type="submit" class="btn btn-warning pull-right" ng-disabled="recover_form.$invalid">Enviar</button>
+		</div>
+
 	</div>
 
-	<a ng-click="showLoginForm()" class="btn btn-link">Regresar a la pantalla de login</a>
 
 </form>

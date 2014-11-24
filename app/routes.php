@@ -162,7 +162,7 @@ Route::group(['prefix' => 'api'], function()
 	
 	Route::get('courses/recover-password', [
 		'as' => 'api.courses.recover-password',
-		'uses' => 'Api\Courses\StudentController@recoveryPassword']);
+		'uses' => 'Api\Courses\StudentController@recoverPassword']);
 
 });
 

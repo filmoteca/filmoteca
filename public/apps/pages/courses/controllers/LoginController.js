@@ -18,7 +18,7 @@
 
 		var LOGIN_URL = '/api/courses/login';
 
-		var RECOVER_PASSWORD_URL = '/api/courses/recovery-password';
+		var RECOVER_PASSWORD_URL = '/api/courses/recover-password';
 
 		var DASHBOARD_PATH = '/dashboard';
 
@@ -63,10 +63,17 @@
 
 		$scope.recoverPassword = function(){
 
-			$http.get(RECOVER_PASSWORD_URL, {email : $scope.recovery_email}).then(function(response){
+			$http.get(RECOVER_PASSWORD_URL + '?email='+ $scope.recovery_email)
+			.then(function(response){
 
 				Notificator.notify( {
 					message : response.data.message
+				});
+			}, function(response){
+
+				Notificator.notify( {
+					style: 'danger',
+					message : response.data.error.message
 				});
 			});
 		};
