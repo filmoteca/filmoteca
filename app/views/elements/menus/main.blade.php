@@ -14,11 +14,6 @@
 					</a>
 				</li>
 				<li>
-					<a href="/pages/quienes-somos/organigrama">
-						<span>Estructura orgánica</span>
-					</a>
-				</li>
-				<li>
 					<a href="/pages/quienes-somos/consejo-asesor">
 						<span>Consejo Asesor</span>
 					</a>
