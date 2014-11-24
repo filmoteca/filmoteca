@@ -1,7 +1,7 @@
 @section('breadcrumbs')
 	<li>
 		<a href="/pages/quienes-somos/index">
-			Quienes somos
+			Quiénes somos
 		</a>
 	</li>
 	<li class="active">
@@ -16,7 +16,7 @@
 @section('content')
 
 <div class="sidebar">
-	@include('elements.menus.quienes-somos', array('selected' => 4))
+	@include('elements.menus.quienes-somos', array('selected' => 3))
 </div>
 
 

@@ -1,7 +1,7 @@
 @section('breadcrumbs')
 	<li>
 		<a href="/pages/quienes-somos/index">
-			Quienes somos
+			Quiénes somos
 		</a>
 	</li>
 	<li class="active">
