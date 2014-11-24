@@ -44,7 +44,7 @@
 	</div>
 	<div class="consejeros">
 		<div class="img_consejero">
-			<img src="/img/consejeros/marycarmen_de_lara.jpg">
+			<img src="/imgs/consejeros/marycarmen_de_lara.jpg">
 		</div>
 		<div class="consejero">
 			<span class="nombre">Cineasta María del Carmen De Lara</span>
@@ -57,7 +57,7 @@
 	</div>
 	<div class="consejeros">
 		<div class="img_consejero">
-			<img src="/img/consejeros/carlos_martinez_assad.jpg">
+			<img src="/imgs/consejeros/carlos_martinez_assad.jpg">
 		</div>
 		<div class="consejero">
 			<span class="nombre">Dr. Carlos Martínez Assad</span>
@@ -70,7 +70,7 @@
 	</div>
 	<div class="consejeros">
 		<div class="img_consejero">
-			<img src="/img/consejeros/fernando_macotela.jpg">
+			<img src="/imgs/consejeros/fernando_macotela.jpg">
 		</div>
 		<div class="consejero">
 			<span class="nombre">Lic. Fernando Macotela</span>
@@ -83,7 +83,7 @@
 	</div>
 	<div class="consejeros">
 		<div class="img_consejero">
-			<img src="/img/consejeros/armando_casas.jpg">
+			<img src="/imgs/consejeros/armando_casas.jpg">
 		</div>
 		<div class="consejero">
 			<span class="nombre">Cineasta Armando Casas</span>
@@ -96,7 +96,7 @@
 	</div>
 	<div class="consejeros">
 		<div class="img_consejero">
-			<img src="/img/consejeros/felipe_coria.jpg">
+			<img src="/imgs/consejeros/felipe_coria.jpg">
 		</div>
 		<div class="consejero">
 			<span class="nombre">Cineasta Felipe Coria</span>
@@ -109,7 +109,7 @@
 	</div>
 	<div class="consejeros">
 		<div class="img_consejero">
-			<img src="/img/consejeros/rafael_avina.jpg">
+			<img src="/imgs/consejeros/rafael_avina.jpg">
 		</div>
 		<div class="consejero">
 			<span class="nombre">Lic. Rafael Aviña</span>
@@ -121,7 +121,7 @@
 		</div>
 	</div><div class="consejeros">
 		<div class="img_consejero">
-			<img src="/img/consejeros/nadina_illescas.jpg">
+			<img src="/imgs/consejeros/nadina_illescas.jpg">
 		</div>
 		<div class="consejero">
 			<span class="nombre">Mtra. Nadina Illescas Villegas</span>
@@ -133,7 +133,7 @@
 	</div>
 	<div class="consejeros">
 		<div class="img_consejero">
-			<img src="/img/consejeros/carmen_carrara.jpg">
+			<img src="/imgs/consejeros/carmen_carrara.jpg">
 		</div>
 		<div class="consejero">
 			<span class="nombre">Mtra. Carmen Carrara y García</span>
@@ -145,7 +145,7 @@
 	</div>
 	<div class="consejeros">
 		<div class="img_consejero">
-			<img src="/img/consejeros/albino_alvarez.jpg">
+			<img src="/imgs/consejeros/albino_alvarez.jpg">
 		</div>
 		<div class="consejero">
 			<span class="nombre">Cineasta Albino Álvarez</span>
@@ -157,7 +157,7 @@
 	</div>
 	<div class="consejeros">
 		<div class="img_consejero">
-			<img src="/img/consejeros/miguel_angel_recillas.jpg">
+			<img src="/imgs/consejeros/miguel_angel_recillas.jpg">
 		</div>
 		<div class="consejero">
 			<span class="nombre">Lic. Miguel Ángel Recillas</span>
@@ -169,7 +169,7 @@
 	</div>
 	<div class="consejeros">
 		<div class="img_consejero">
-			<img src="/img/consejeros/jose_manuel_garcia.jpg">
+			<img src="/imgs/consejeros/jose_manuel_garcia.jpg">
 		</div>
 		<div class="consejero">
 			<span class="nombre">José Manuel García</span>
