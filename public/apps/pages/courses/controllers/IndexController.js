@@ -22,22 +22,9 @@
 
 		var DASHBOARD_PATH = '/dashboard';
 
+		var LOGIN_PATH = '/login';
+
 		var SIGNUP_IN_COURSE_URL = '/courses/signup-in-course/';
-
-
-
-		var openLogin = function(){
-			$modal.open({
-				controller : 'pages.courses.controllers.LoginController',
-				templateUrl: '/apps/pages/courses/templates/login.html'
-			}).result.then(function(response){
-
-				if( response.success ){
-
-					$location.path( DASHBOARD_PATH );
-				}
-			});
-		};
 
 		$scope.showDashboard = function(){
 
@@ -46,7 +33,7 @@
 				$location.path( DASHBOARD_PATH );
 			}else{
 
-				openLogin();
+				$location.path( LOGIN_PATH );
 			}
 		};
 
@@ -72,7 +59,7 @@
 					});
 			}else{
 
-				openLogin();
+				$location.path( LOGIN_PATH );
 			}
 
 		};
