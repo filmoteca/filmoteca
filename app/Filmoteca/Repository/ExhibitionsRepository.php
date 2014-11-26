@@ -48,7 +48,6 @@ class ExhibitionsRepository extends ResourcesRepository
 			case('date'):
 
 				$exhibitions = $this->searchByDate($value[0], $value[1]);
-
 				break;
 			default:
 				throw new Exception('Parámetro de búsqueda invalido: ' . $by );

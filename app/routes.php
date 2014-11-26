@@ -39,11 +39,21 @@ Route::get('/exhibition/history',
 		'as' => 'exhibitions.history',
 		'uses' => 'ExhibitionController@history')
 	);
+Route::get('/exhibition/find',
+	array(
+		'as' => 'exhibitions.find',
+		'uses' => 'ExhibitionController@find')
+	);
 
 Route::get('/exhibition/{id}/detail',
 	array(
 		'as' => 'exhibitions.detail',
 		'uses' => 'ExhibitionController@detail'));
+
+Route::get('/exhibition/{id}/detailHistory',
+	array(
+		'as' => 'exhibitions.detailHistory',
+		'uses' => 'ExhibitionController@detailHistory'));
 
 Route::get('/shop',
 	array(

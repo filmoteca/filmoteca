@@ -28,6 +28,11 @@ class Exhibition extends Eloquent
 		return $this->hasManyThrough('Filmoteca\Models\Exhibitions\Auditorium', 'Schedule');
 	}
 
+	public function films(){
+
+		return $this->hasManyThrough('Filmoteca\Models\Film', 'Filmoteca\Models\Exhibitions\ExhibitionFilm');
+	}
+
 	public function getTechnicalCard()
 	{
 		$genresList = Genre::all(array('id','name'))
