@@ -1,3 +1,51 @@
-<div>
-	I am the dashboard.
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-4">
+			<div class="thumbnail btn">
+				<img ng-src="{{student.photo}}" alt="Click para cambiar" ng-click="changeImage()">
+			</div>
+			<div>
+				<ul>
+					<li><button class="btn btn-link" ng-click="changePassword()">Cambiar contraseña</button></li>
+					<li><button class="btn btn-link" ng-click="editProfile()">Editar datos personales</button></li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-md-8">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Mis cursos <span class="badge">{{ courses.length }}</span> <small>cursos a los cuales te has inscrito</small></h3>
+				</div>
+				<table class="table table-striped table-responsiv"e>
+					<thead>
+						<tr>
+							<th>Curso</th>
+							<th>Profesor</th>
+							<th>Sede</th>
+							<th>Fecha de inicio</th>
+							<th>Acciones</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="course in courses">
+							<td>{{course.course.name}}</td>
+							<td>{{course.professor.name}}</td>
+							<td>{{course.venue.name}}</td>
+							<td>{{course.start_date | date : 'd MM yyyy'}}<span class="glyphicon glyphicon-calendar"></span></td>
+							<td>
+								<span class="glyphicon glyphicon-usd btn" ng-click="pay()" title="Pagar"></span>
+								<span class="glyphicon glyphicon-remove btn" ng-click="pay()" title="Darse de baja"></span>
+								<span class="glyphicon glyphicon-align-justify btn" ng-click="pay()" title="Mas detalles del curso"></span>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="panel-footer">
+					<span class="glyphicon glyphicon-usd btn" ng-click="pay()" title="Pagar"></span>Realizar pago
+					<span class="glyphicon glyphicon-remove btn" ng-click="pay()" title="Darse de baja"></span> Darse de baja del curso
+					<span class="glyphicon glyphicon-align-justify btn" ng-click="pay()" title="Mas detalles del curso"></span>Más detalles del curso
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
