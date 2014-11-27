@@ -64,7 +64,8 @@ class StudentController extends ApiController{
 
 		$user = Sentry::register(array(
 			'email'    => Input::get('email'),
-			'password' => $password
+			'password' => $password,
+			'username' => Input::get('name') . '.' + Input::get('last_name') . '.' . Input::get('second_last_name') . '.' . rand(1,10)
 		));
 
 		$student_data = Input::except('photo');
