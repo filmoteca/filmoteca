@@ -33,7 +33,7 @@
 		};
 
 		this.isLogin = function(){
-			return angular.isDefined( $cookies.laravel_session );
+			return angular.isDefined($cookies.logedin);
 		};
 
 		this.signup = function( newUser ){
@@ -73,10 +73,14 @@
 				
 				$location.path('/');
 			});
+
+			delete $cookies.logedin;
 		};
 
 		this.login = function(data){
 			$http.post(LOGIN_URL, data).then(function(){
+				
+				$cookies.logedin = "true";
 				
 				$location.path( DASHBOARD_PATH );
 

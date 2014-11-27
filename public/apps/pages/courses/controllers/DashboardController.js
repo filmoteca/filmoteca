@@ -21,11 +21,15 @@
 		'ui.bootstrap'])
 
 	.controller('pages.courses.controllers.DashboardController', [
-		'$scope','$modal',
+		'$scope','$modal', '$location',
 		'pages.courses.services.CourseService',
 		'pages.courses.services.UserService',
 
-	function($scope, $modal, Course, User){
+	function($scope, $modal, $location, Course, User){
+
+		if( ! User.isLogin() ){
+			$location.path('/login');
+		};
 
 		$scope.student = User.get();
 
