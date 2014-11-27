@@ -4,11 +4,16 @@
 			<div class="thumbnail btn">
 				<img ng-src="{{student.photo}}" alt="Click para cambiar" ng-click="changeImage()">
 			</div>
-			<div>
-				<ul>
-					<li><button class="btn btn-link" ng-click="changePassword()">Cambiar contraseña</button></li>
-					<li><button class="btn btn-link" ng-click="editProfile()">Editar datos personales</button></li>
-				</ul>
+			<div class="list-group">
+				<div class="list-group-item">
+					<a class="btn btn-link" ng-click="changePassword()">Cambiar contraseña</a>
+					</div>
+				<div class="list-group-item">
+					<a class="btn btn-link" ng-click="editProfile()">Editar mis datos</a>
+				</div>
+				<div class="list-group-item">
+					<a class="btn btn-link" ng-click="logout()">Cerrar sesión</a>
+				</div>
 			</div>
 		</div>
 		<div class="col-md-8">
@@ -31,7 +36,7 @@
 							<td>{{course.course.name}}</td>
 							<td>{{course.professor.name}}</td>
 							<td>{{course.venue.name}}</td>
-							<td>{{course.start_date | date : 'd MM yyyy'}}<span class="glyphicon glyphicon-calendar"></span></td>
+							<td>{{course.start_date | date : 'd MM yyyy'}} <span class="glyphicon glyphicon-calendar"></span></td>
 							<td>
 								<span class="glyphicon glyphicon-usd btn" ng-click="pay()" title="Pagar"></span>
 								<span class="glyphicon glyphicon-remove btn" ng-click="pay()" title="Darse de baja"></span>
@@ -41,9 +46,9 @@
 					</tbody>
 				</table>
 				<div class="panel-footer">
-					<span class="glyphicon glyphicon-usd btn" ng-click="pay()" title="Pagar"></span>Realizar pago
-					<span class="glyphicon glyphicon-remove btn" ng-click="pay()" title="Darse de baja"></span> Darse de baja del curso
-					<span class="glyphicon glyphicon-align-justify btn" ng-click="pay()" title="Mas detalles del curso"></span>Más detalles del curso
+					<span class="glyphicon glyphicon-usd" ng-click="pay()" title="Pagar"></span>Realizar pago
+					<span class="glyphicon glyphicon-remove" ng-click="pay()" title="Darse de baja"></span> Darse de baja del curso
+					<span class="glyphicon glyphicon-align-justify" ng-click="pay()" title="Mas detalles del curso"></span>Más detalles del curso
 				</div>
 			</div>
 		</div>

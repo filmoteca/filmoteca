@@ -4,23 +4,19 @@
 {
 	'use strict';
 
-	define(['angular'], factory);
+	define(['angular','pages.courses.services/UserService'], factory);
 
 })(function(angular)
 {
 	'use strict';
 
-	angular.module('pages.courses.controllers.LoginController',['Notificator'])
+	angular.module('pages.courses.controllers.LoginController',[
+		'pages.courses.services.UserService',])
 
-	.controller('pages.courses.controllers.LoginController', ['$scope', '$http', '$location','Notificator',
+	.controller('pages.courses.controllers.LoginController', ['$scope', 
+		'pages.courses.services.UserService',
 
-	function($scope, $http, $location, Notificator){
-
-		var LOGIN_URL = '/api/courses/login';
-
-		var RECOVER_PASSWORD_URL = '/api/courses/recover-password';
-
-		var DASHBOARD_PATH = '/dashboard';
+	function($scope, User){
 
 		$scope.message = '';
 
@@ -30,24 +26,9 @@
 
 		$scope.login = function(){
 			
-			$http({
-				url : LOGIN_URL,
-				method : 'POST',
-				data : {
-					email : $scope.email,
-					password : $scope.password,
-					cache : false
-				}
-			}).then(function( response ){
-				
-				$location.path( DASHBOARD_PATH );
-
-			}, function( response ){
-
-				Notificator.notify( {
-					style : 'danger',
-					message : 'El usuario (email) o contraseña son incorrectos.'
-				});
+			User.login({
+				email : $scope.email,
+				password : $scope.password
 			});
 		};
 
@@ -63,19 +44,7 @@
 
 		$scope.recoverPassword = function(){
 
-			$http.get(RECOVER_PASSWORD_URL + '?email='+ $scope.recovery_email)
-			.then(function(response){
-
-				Notificator.notify( {
-					message : response.data.message
-				});
-			}, function(response){
-
-				Notificator.notify( {
-					style: 'danger',
-					message : response.data.error.message
-				});
-			});
+			User.recoverPassword($scope.recovery_email);
 		};
 	}]);
 });

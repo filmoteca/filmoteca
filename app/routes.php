@@ -169,10 +169,18 @@ Route::group(['prefix' => 'api'], function()
 	Route::post('courses/login',[
 		'as' => 'api.courses.login',
 		'uses' => 'Api\Courses\StudentController@login']);
+
+	Route::get('courses/logout',[
+		'as' => 'api.courses.logout',
+		'uses' => 'Api\Courses\StudentController@logout']);
 	
 	Route::get('courses/recover-password', [
 		'as' => 'api.courses.recover-password',
 		'uses' => 'Api\Courses\StudentController@recoverPassword']);
+
+	Route::post('courses/change-password', [
+		'as' => 'api.courses.change-password',
+		'uses' => 'Api\Courses\StudentController@changePassword']);
 
 });
 

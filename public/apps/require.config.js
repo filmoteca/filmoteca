@@ -65,6 +65,7 @@ var require = {
 		"angular-locale-mx"	: "angular-i18n/angular-locale_es-mx",
 		"bootstrap"			: "bootstrap/dist/js/bootstrap.min",
 		"ngRoute" 			: "angular-route/angular-route.min",
+		"ngCookies"			: "angular-cookies/angular-cookies.min",
 
 		//From laravel packages
 		"syntara"			: "/packages/mrjuliuss/syntara/assets/js/dashboard/base",
@@ -96,6 +97,7 @@ var require = {
 		"angucomplete-alt" : ["angular"],
 		"ui.bootstrap" : ["angular"],
 		"angular-locale-mx" : ["angular"],
+		"ngCookies" : ["angular"],
 		"bootstrap" :["jquery"],
 		"syntara" : ["jquery", "bootstrap"],
 		"jquery-ui" : ["jquery"],

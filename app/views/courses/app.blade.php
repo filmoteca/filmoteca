@@ -29,6 +29,10 @@
 </div>
 
 <div class="content">
+	<div class="alert alert-dismissible ng-cloak" ng-class="'alert-' + messageType" ng-show="message">
+		@{{message}}
+		<button type="button" class="close" ng-click="closeAlert()"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+	</div>
 	<div ng-view>
 		<div class="loading" ng-show="loading"></div>
 	</div>

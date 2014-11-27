@@ -46,7 +46,14 @@ class StudentController extends ApiController{
 			'password' => Input::get('password')]
 			);
 
+		Sentry::login($student, true);
+
 		return Response::json([]);
+	}
+
+	public function logout(){
+
+		Sentry::logout();
 	}
 
 	public function signup(){
@@ -88,5 +95,18 @@ class StudentController extends ApiController{
 		$user->save();
 
 		return Redirect::to('/courses/app')->with('message','Cuenta activada.');
+	}
+
+	public function changePassword(){
+
+		$user = Sentry::getUser();
+
+		Sentry::findUserByCredentials([
+			'email' => $user->email,
+			'password' => Input::get('old_password')]);
+
+		$user->password = Input::get('new_password');
+
+		$user->save();
 	}
 }
