@@ -80,6 +80,8 @@ class InstallCommand extends Command {
 			'password' => $password,
 			'email'    => $email,
 			'group'    => 'Admin']);
+
+		$this->call('migrate');
 	}
 
 	/**
