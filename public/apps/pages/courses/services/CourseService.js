@@ -4,17 +4,19 @@
 {
 	'use strict';
 	
-	define(['angular'], factory);
+	define(['angular', 'pages.courses.services/UserService'], factory);
 
 })(function(angular)
 {
 	'use strict';
 
-	angular.module('pages.courses.services.CourseService', [])
+	angular.module('pages.courses.services.CourseService', ['pages.courses.services.UserService'])
 
-	.service('pages.courses.services.CourseService', [function(){
+	.service('pages.courses.services.CourseService', ['$http','$location', '$rootScope' ,'pages.courses.services.UserService',
 
-		var SIGNUP_IN_COURSE_URL = '/courses/course/signup';
+	function($http, $location, $rootScope, User){
+
+		var SIGNUP_URL = '/api/courses/course/{course_id}/signup';
 
 		var courses = [{
 			course : {
@@ -36,18 +38,18 @@
 
 		this.signup = function( id ){
 
-			$http.post( SIGNUP_IN_COURSE_URL + id, {id : id} )
-				.then(function(response){
+			$http.get( SIGNUP_URL.replace('{course_id}', id) )
+			.then(function(){
 
-					$location.path( DASHBOARD_PATH );
+				$location.path( '/dashboard' );
 
-				}, function(response){
+			}, function(response){
 
-					$rootScope.$broadcast('RequestFinished', {
-						style : 'danger',
-						message : response.data.error.message
-					});
+				$rootScope.$broadcast('RequestFinished', {
+					style : 'danger',
+					message : response.data.error.message
 				});
-		}
+			});
+		};
 	}]);
 });

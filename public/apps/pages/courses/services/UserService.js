@@ -15,12 +15,12 @@
 	.service('pages.courses.services.UserService', ['$cookies','$http','$rootScope','$location',
 		function($cookies, $http, $rootScope, $location){
 
-		var CHANGE_PASSWORD_URL = 	'/api/courses/change-password';	
-		var LOGIN_URL = 			'/api/courses/login';
-		var LOGOUT_URL = 			'/api/courses/logout';	
-		var RECOVER_PASSWORD_URL = 	'/api/courses/recover-password';
-		var SIGNUP_URL = 			'/api/courses/signup';
-		var UPDATE_URL = 			'/api/student/update';
+		var CHANGE_PASSWORD_URL 	= '/api/courses/student/change-password';	
+		var LOGIN_URL 				= '/api/courses/student/login';
+		var LOGOUT_URL 				= '/api/courses/student/logout';	
+		var RECOVER_PASSWORD_URL 	= '/api/courses/student/recover-password';
+		var SIGNUP_URL 				= '/api/courses/student/signup';
+		var UPDATE_URL 				= '/api/courses/student/update';
 
 		var DASHBOARD_PATH = '/dashboard';
 
@@ -31,7 +31,7 @@
 		};
 
 		this.isLogin = function(){
-			return angular.isDefined($cookies.logedin);
+			return angular.isDefined(user.id);
 		};
 
 		this.signup = function( newUser ){

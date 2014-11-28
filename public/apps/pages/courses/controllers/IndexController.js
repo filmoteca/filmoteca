@@ -4,21 +4,24 @@
 {
 	'use strict';
 
-	define(['angular','ui.bootstrap', 'pages.courses.services/UserService', 'Notificator'], factory);
+	define(['angular','ui.bootstrap', 
+		'pages.courses.services/CourseService',
+		'pages.courses.services/UserService',], factory);
 
 })(function(angular)
 {
 	'use strict';
 
 	angular.module('pages.courses.controllers.IndexController', [
-		// 'pages.courses.controllers.LoginController',
-		'ui.bootstrap', 'Notificator', 'pages.courses.services.UserService'])
+		'ui.bootstrap',
+		'pages.courses.services.CourseService',
+		'pages.courses.services.UserService'])
 
 	.controller('pages.courses.controllers.IndexController', ['$scope','$modal', '$location', '$http',
-		'Notificator',
+		'pages.courses.services.CourseService',
 		'pages.courses.services.UserService',
 	
-	function($scope, $modal, $location, $http, Notificator, User){
+	function($scope, $modal, $location, $http, Course, User){
 
 		var DASHBOARD_PATH 	= '/dashboard';
 		var LOGIN_PATH 		= '/login';
