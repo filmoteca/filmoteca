@@ -1,3 +1,4 @@
+/* global define */
 (function(factory){
 
 	'use strict';
@@ -21,12 +22,12 @@
 			$scope.messageType = data.style;
 		});
 
-		$scope.$on('$viewContentLoaded', function(event, data){
+		$scope.$on('$viewContentLoaded', function(){
 			$scope.message = '';
 		});
 
 		$scope.closeAlert = function(){
 			$scope.message = '';
-		}
-	}])
+		};
+	}]);
 });

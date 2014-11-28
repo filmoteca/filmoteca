@@ -182,6 +182,10 @@ Route::group(['prefix' => 'api'], function()
 		'as' => 'api.courses.change-password',
 		'uses' => 'Api\Courses\StudentController@changePassword']);
 
+	Route::post('student/update', [
+		'as' => 'api.student.update',
+		'uses' => 'Api\Courses\StudentController@update']);
+
 });
 
 

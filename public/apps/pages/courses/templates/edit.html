@@ -1,0 +1,96 @@
+<div>
+	<form class="form" role="form" ng-submit="saveProfile()" name="student_edit_form" ng-hide="formSended && success">
+		<h1>Mis datos</h1>
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="form-group">
+					<label class="control-label" for="name">Nombre</label>
+					<div class="input-group">
+						<input class="form-control" name="name" type="text" 
+							ng-required="true"
+							ng-minlength="3"
+							ng-model="user.name" >
+						<span class="glyphicon glyphicon-ok input-group-addon" ng-show="student_edit_form.name.$valid"></span>
+						<span class="glyphicon glyphicon-remove input-group-addon" ng-show="student_edit_form.name.$invalid && !student_edit_form.name.$pristine"></span>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-4">
+				<div class="form-group">
+					<label class="control-label" for="last_name">Apellido paterno</label>
+					<div class="input-group">
+						<input class="form-control" name="last_name" type="text" 
+							ng-required="true"
+							ng-minlength="3"
+							ng-model="user.last_name" >
+						<span class="glyphicon glyphicon-ok input-group-addon" ng-show="student_edit_form.last_name.$valid"></span>
+						<span class="glyphicon glyphicon-remove input-group-addon" ng-show="student_edit_form.last_name.$invalid && !student_edit_form.last_name.$pristine"></span>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="form-group">
+					<label class="control-label" for="second_last_name">Apellido materno</label>
+					<div class="input-group">
+						<input class="form-control" name="second_last_name" type="text" 
+							ng-required="true"
+							ng-minlength="3"
+							ng-model="user.second_last_name" >
+						<span class="glyphicon glyphicon-ok input-group-addon" ng-show="student_edit_form.second_last_name.$valid"></span>
+						<span class="glyphicon glyphicon-remove input-group-addon" ng-show="student_edit_form.second_last_name.$invalid && !student_edit_form.second_last_name.$pristine"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="form-group">
+					<label class="control-label" for="telephone">Teléfono</label>
+					<div class="input-group">
+						<input class="form-control" name="telephone" type="text" 
+							ng-required="true"
+							ng-minlength="8"
+							ng-model="user.telephone" >
+						<span class="glyphicon glyphicon-ok input-group-addon" ng-show="student_edit_form.telephone.$valid"></span>
+						<span class="glyphicon glyphicon-remove input-group-addon" ng-show="student_edit_form.telephone.$invalid && !student_edit_form.telephone.$pristine"></span>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="form-group">
+					<label class="control-label" for="mobile">Celular</label>
+					<div class="input-group">
+						<input class="form-control" name="mobile" type="text" 
+							ng-required="true"
+							ng-minlength="8"
+							ng-model="user.mobile" >
+						<span class="glyphicon glyphicon-ok input-group-addon" ng-show="student_edit_form.mobile.$valid"></span>
+						<span class="glyphicon glyphicon-remove input-group-addon" ng-show="student_edit_form.mobile.$invalid && !student_edit_form.mobile.$pristine"></span>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" ng-model="user.unam_member">Perteneciente a la comnunidad UNAM.
+					</label>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-sm-2 col-sm-offset-10">
+				<div class="loading loading-small" ng-show="uploading"></div>
+				<button type="submit" class="btn btn-success" ng-disabled="student_edit_form.$invalid">Guardar</button>
+			</div>
+		</div>
+
+	</form>
+</div>

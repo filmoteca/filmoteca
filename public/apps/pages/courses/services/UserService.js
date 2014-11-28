@@ -20,13 +20,11 @@
 		var LOGOUT_URL = 			'/api/courses/logout';	
 		var RECOVER_PASSWORD_URL = 	'/api/courses/recover-password';
 		var SIGNUP_URL = 			'/api/courses/signup';
+		var UPDATE_URL = 			'/api/student/update';
 
 		var DASHBOARD_PATH = '/dashboard';
 
-		var user = {
-			name : 'Victor Aguilar',
-			photo : '/imgs/my-photo.png'
-		};
+		var user = {};
 
 		this.get = function(){
 			return user;
@@ -78,10 +76,12 @@
 		};
 
 		this.login = function(data){
-			$http.post(LOGIN_URL, data).then(function(){
+			$http.post(LOGIN_URL, data).then(function(response){
 				
-				$cookies.logedin = "true";
-				
+				$cookies.logedin = 'true';
+
+				angular.extend(user, response.data);
+
 				$location.path( DASHBOARD_PATH );
 
 			}, function(){
@@ -95,7 +95,7 @@
 
 		this.changePassword = function( data ){
 
-			$http.post( CHANGE_PASSWORD_URL, data).then(function(){
+			return $http.post( CHANGE_PASSWORD_URL, data).then(function(){
 
 				$rootScope.$broadcast('RequestFinished',{
 					style : 'success',
@@ -125,6 +125,39 @@
 						message : response.data.error.message
 					});
 				});
+		};
+
+		this.update = function(){
+
+			var fd = new FormData();
+
+			angular.forEach(user, function(value,key)
+			{
+				fd.append(key,value);
+			});
+
+			return $http({
+				method : 'POST',
+				url : UPDATE_URL, 
+				data : fd,
+				transformRequest: angular.identity, // Required to upload file.
+				headers: {'Content-Type': undefined} // Also, it is required to upload file.
+			}).then(function(response){
+
+				angular.extend(user, response.date);
+
+				$rootScope.$broadcast('RequestFinished',{
+					style : 'success',
+					message : 'Información actualizada.'
+				});
+				
+			}, function(response){
+
+				$rootScope.$broadcast('RequestFinished',{
+					style : 'danger',
+					message : response.data.error.message
+				});
+			});
 		};
 
 	}]);

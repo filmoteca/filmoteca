@@ -52,6 +52,15 @@
 			})
 
 			/**
+			 * Ruta improvisada. No me decido en la mejor forma de manjar la 
+			 * edición de un estudiante.
+			 */
+			.when('/student-edit',{
+				controller : 'pages.courses.controllers.DashboardController',
+				templateUrl: '/apps/pages/courses/templates/edit.html'	
+			})
+
+			/**
 			 * Aquí el usuario podra obtener su matricula para poder 
 			 * inscribirse a un curso.
 			 */

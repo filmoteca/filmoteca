@@ -29,9 +29,15 @@
 
 		if( ! User.isLogin() ){
 			$location.path('/login');
-		};
+		}
 
-		$scope.student = User.get();
+		$scope.currentPhoto = User.get().photo;
+
+		$scope.user = User.get();
+
+		if( angular.isUndefined($scope.user.id) ){
+			$location.path('/login');
+		}
 
 		$scope.courses = Course.all();
 
@@ -43,13 +49,37 @@
 			});
 		};
 
-		$scope.editProfile = function(){
+		$scope.saveProfile = function(){
 
+			User.update($scope.user).then(function(){
+
+				$location.path('/dashboard');
+			});
 		};
 
 		$scope.logout = function(){
 			User.logout();
 		};
+
+		$scope.changeImage = function(imageNode){
+			//Crear una directiva para esto.
+			//No se como nombrarla.
+			imageNode.getElementsByTagName('input')[0].click();
+			// document.getElementById('imageUploader').click();
+		};
+
+		$scope.$watch('photo', function(value){
+
+			if( angular.isDefined(value)){
+
+				User.get().photo = value;
+
+				User.update().then(function(){
+					$scope.currentPhoto = User.get().photo;
+				});
+			}
+
+		}, true	);
 
 	}])
 
@@ -72,6 +102,8 @@
 			User.changePassword({
 				new_password : $scope.new_password_a,
 				old_password : $scope.old_password
+			}).then(function(){
+				$scope.$close();
 			});
 		};
 	}]);

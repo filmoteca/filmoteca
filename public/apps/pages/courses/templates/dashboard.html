@@ -2,14 +2,15 @@
 	<div class="row">
 		<div class="col-md-4">
 			<div class="thumbnail btn">
-				<img ng-src="{{student.photo}}" alt="Click para cambiar" ng-click="changeImage()">
+				<img ng-src="{{currentPhoto}}" title="Click para cambiar imagen" ng-click="changeImage(this)">
+				<input type="file" file-model="photo" id="imageUploader" class="ng-hide">
 			</div>
 			<div class="list-group">
 				<div class="list-group-item">
 					<a class="btn btn-link" ng-click="changePassword()">Cambiar contraseña</a>
 					</div>
 				<div class="list-group-item">
-					<a class="btn btn-link" ng-click="editProfile()">Editar mis datos</a>
+					<a class="btn btn-link" href="#/student-edit">Editar mis datos</a>
 				</div>
 				<div class="list-group-item">
 					<a class="btn btn-link" ng-click="logout()">Cerrar sesión</a>

@@ -48,7 +48,7 @@ class StudentController extends ApiController{
 
 		Sentry::login($student, true);
 
-		return Response::json([]);
+		return Response::json( $this->repository->findByEmail(Input::get('email') ) );
 	}
 
 	public function logout(){
@@ -65,24 +65,23 @@ class StudentController extends ApiController{
 		$user = Sentry::register(array(
 			'email'    => Input::get('email'),
 			'password' => $password,
-			'username' => Input::get('name') . '.' + Input::get('last_name') . '.' . Input::get('second_last_name') . '.' . rand(1,10)
+			'username' => Input::get('name') . '.' . Input::get('last_name') . '.' . Input::get('second_last_name') . '.' . rand(1,10)
 		));
 
-		$student_data = Input::except('photo');
+		$student_data = Input::all();
 
 		$student_data['user_id'] = $user->id;
 
-		$student = $this->repository->store( $student_data );
+		$this->repository->store( $student_data );
 
-		Mail::queue('emails.courses.verification', 
-			[
-				'student' => $student, 
+		Mail::queue('emails.courses.verification', [
+				'student' => Input::except('photo'), 
 				'password' => $password,
 				'activation_code' => $user->getActivationCode()
 			], 
-			function($message) use ($student){
+			function($message){
 
-			$message->to($student->email, $student->name )
+			$message->to(Input::get('email'), Input::get('name') )
 					->subject('Filmoteca UNAM: Verificación de email');
 		});
 	}
@@ -109,5 +108,19 @@ class StudentController extends ApiController{
 		$user->password = Input::get('new_password');
 
 		$user->save();
+	}
+
+	public function update(){
+
+		if( Input::file('photo')){
+			$this->repository->update(Input::get('id'), Input::except('id'));
+		}else{
+			$this->repository->update(Input::get('id'), Input::except('id','photo'));
+		}
+
+
+		return Response::json(
+			$this->repository->find(Input::get('id'))
+			);
 	}
 }
