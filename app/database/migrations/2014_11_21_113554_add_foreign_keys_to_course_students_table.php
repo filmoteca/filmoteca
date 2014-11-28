@@ -12,7 +12,7 @@ class AddForeignKeysToCourseStudentsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('course_students', function(Blueprint $table)
+		Schema::table('course_student', function(Blueprint $table)
 		{
 			$table->foreign('student_id')
 					->references('id')
@@ -33,10 +33,10 @@ class AddForeignKeysToCourseStudentsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('course_students', function(Blueprint $table)
+		Schema::table('course_student', function(Blueprint $table)
 		{
-			$table->dropForeign('course_students_student_id_foreign');
-			$table->dropForeign('course_students_course_id_foreign');
+			$table->dropForeign('course_student_student_id_foreign');
+			$table->dropForeign('course_student_course_id_foreign');
 		});
 	}
 
