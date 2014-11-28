@@ -35,7 +35,7 @@ var require = {
 		"pages.courses.App" : 			"/apps/pages/courses/App",
 		"pages.courses.controllers" : 	"/apps/pages/courses/controllers",
 		"pages.courses.services" : 		"/apps/pages/courses/services",
-		"pages.courses.directives" : 		"/apps/pages/courses/directives",
+		"pages.courses.directives" : 	"/apps/pages/courses/directives",
 
 		/*************************
 		| Bibliotecas (no bower) |

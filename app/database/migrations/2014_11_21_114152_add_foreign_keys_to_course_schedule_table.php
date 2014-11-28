@@ -12,11 +12,11 @@ class AddForeignKeysToCourseScheduleTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('course_schedules', function(Blueprint $table)
+		Schema::table('courses', function(Blueprint $table)
 		{
-			$table->foreign('course_id')
+			$table->foreign('subject_id')
 					->references('id')
-					->on('courses');
+					->on('subjects');
 
 			$table->foreign('venue_id')
 					->references('id')
@@ -35,11 +35,11 @@ class AddForeignKeysToCourseScheduleTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('course_schedules', function(Blueprint $table)
+		Schema::table('courses', function(Blueprint $table)
 		{
-			$table->dropForeign('course_schedules_course_id_foreign');
-			$table->dropForeign('course_schedules_venue_id_foreign');
-			$table->dropForeign('course_schedules_professor_id_foreign');
+			$table->dropForeign('courses_subject_id_foreign');
+			$table->dropForeign('courses_venue_id_foreign');
+			$table->dropForeign('courses_professor_id_foreign');
 		});
 	}
 

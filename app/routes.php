@@ -186,6 +186,10 @@ Route::group(['prefix' => 'api'], function()
 		'as' => 'api.student.update',
 		'uses' => 'Api\Courses\StudentController@update']);
 
+	Route::get('courses/course/signup/{id}',[
+		'as' => 'api.courses.course',
+		'uses' => 'Api\Courses\CourseController@signup']);
+
 });
 
 
@@ -264,7 +268,7 @@ Route::group(['prefix' => 'admin'], function()
 	 */
 
 	$resources = ['film', 'filmotecaMedal', 'billboard',
-		'professor', 'course','venue','courseSchedule', 'student',
+		'professor', 'subject','venue','course', 'student',
 		'exhibition', 'auditorium','news', 'catalog', 'interview', 'chronology'];
 
 	/**

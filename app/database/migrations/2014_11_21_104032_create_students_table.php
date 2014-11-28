@@ -23,7 +23,7 @@ class CreateStudentsTable extends Migration {
 			$table->string('mobile', 13)->nullable(false);
 			$table->string('email')->nullable(false);
 			$table->boolean('unam_member')->default(false);
-			$table->enum('status',['active', 'inactive']);
+			$table->integer('user_id')->unsigned();
 			$table->timestamps();
 		});
 	}

@@ -41,6 +41,8 @@ class InstallCommand extends Command {
 	 */
 	public function fire()
 	{
+		$this->call('syntara:install');
+		
 		try{
 
 			$this->info( 'Creating Students group.');
@@ -53,8 +55,6 @@ class InstallCommand extends Command {
 
 			$this->info( 'The group already exists. Do nothing.');
 		}
-
-		$this->call('syntara:install');
 
 
 

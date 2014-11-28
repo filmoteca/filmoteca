@@ -34,8 +34,8 @@ Form::macro('formGroup',
 		case('professor'):
 			return Form::professorFormGroup($name, $title, $formname, $attr);
 
-		case('course'):
-			return Form::courseFormGroup($name, $title, $formname, $attr);
+		case('subject'):
+			return Form::subjectFormGroup($name, $title, $formname, $attr);
 
 		case('venue'):
 			return Form::venueFormGroup($name, $title, $formname, $attr);
@@ -92,9 +92,9 @@ Form::macro('genreFormGroup', function($name, $title, $formname, $attributes)
 	return Form::selectFormGroup($name, $options,$title,$formname,$attributes);
 });
 
-Form::macro('courseFormGroup', function($name, $title, $formname, $attributes)
+Form::macro('subjectFormGroup', function($name, $title, $formname, $attributes)
 {
-	$options = Filmoteca\Models\Courses\Course::all(['id','name'])->lists('name','id');
+	$options = Filmoteca\Models\Courses\Subject::all(['id','name'])->lists('name','id');
 
 	return Form::selectFormGroup($name, $options,$title,$formname,$attributes);
 });

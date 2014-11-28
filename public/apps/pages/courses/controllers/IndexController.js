@@ -20,11 +20,8 @@
 	
 	function($scope, $modal, $location, $http, Notificator, User){
 
-		var DASHBOARD_PATH = '/dashboard';
-
-		var LOGIN_PATH = '/login';
-
-		var SIGNUP_IN_COURSE_URL = '/courses/signup-in-course/';
+		var DASHBOARD_PATH 	= '/dashboard';
+		var LOGIN_PATH 		= '/login';
 
 		$scope.showDashboard = function(){
 
@@ -41,22 +38,7 @@
 
 			if( User.isLogin() ){
 
-				$http.post( SIGNUP_IN_COURSE_URL + id, {id : id} )
-					.then(function(response){
-
-						if( response.data.success ){
-
-							$location.path( DASHBOARD_PATH );
-						}else{
-
-							Notificator.notify({
-								style: 'danger',
-								type: 'alert',
-								message : response.data.message
-							});
-						}
-
-					});
+				Course.signup( id );
 			}else{
 
 				$location.path( LOGIN_PATH );

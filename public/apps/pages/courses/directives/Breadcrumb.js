@@ -38,6 +38,10 @@
 			'/student-edit' : {
 				'title' : 'Mis datos',
 				'parent' : '/dashboard'
+			},
+			'/detail' : {
+				'title' : 'Curso',
+				'parent' : '/courses'
 			}
 		};
 
@@ -71,7 +75,7 @@
 
 	         		var active_element = '<li class="active">{title}</li>'.replace('{title}', breadcrumbs[$location.path()].title);
 
-					$element.append(active_element)
+					$element.append(active_element);
 	         	});
 	        }
 	    };

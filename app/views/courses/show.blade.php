@@ -1,6 +1,6 @@
 @section('content')
 
-<h2>Detalles de cursos</h2>
+<h2>Detalles del curso</h2>
 
 <div class="text-right">
 {{ Form::open(array('route' => array('admin.course.destroy', $resource->id), 'method'=> 'DELETE')) }}
@@ -26,8 +26,40 @@
 			<td>{{$resource->id }}</td>
 		</tr>
 		<tr>
-			<th>Nombre</th>
-			<td>{{$resource->name }}</td>
+			<th>Curso</th>
+			<td>{{$resource->subject->name }}</td>
+		</tr>
+		<tr>
+			<th>Professor</th>
+			<td>{{$resource->professor->name }}</td>
+		</tr>
+		<tr>
+			<th>Venue</th>
+			<td>{{$resource->venue->name }}</td>
+		</tr>
+		<tr>
+			<th>Horas totales</th>
+			<td>{{$resource->total_hours }}</td>
+		</tr>
+		<tr>
+			<th>Horario</th>
+			<td>{{$resource->schedule }}</td>
+		</tr>
+		<tr>
+			<th>Fecha de inicio</th>
+			<td>{{$resource->start_date }}</td>
+		</tr>
+		<tr>
+			<th>Fecha de termino</th>
+			<td>{{$resource->end_date }}</td>
+		</tr>
+		<tr>
+			<th>Precio general</th>
+			<td>{{$resource->general_price }}</td>
+		</tr>
+		<tr>
+			<th>Precio comunidad UNAM</th>
+			<td>{{$resource->unam_member_price }}</td>
 		</tr>
 	</tbody>
 </table>

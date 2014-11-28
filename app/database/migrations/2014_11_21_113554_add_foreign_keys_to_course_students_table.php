@@ -19,9 +19,9 @@ class AddForeignKeysToCourseStudentsTable extends Migration {
 					->on('students')
 					->onDelete('cascade');
 
-			$table->foreign('course_schedule_id')
+			$table->foreign('course_id')
 					->references('id')
-					->on('course_schedules')
+					->on('courses')
 					->onDelete('cascade');
 		});
 	}
@@ -36,7 +36,7 @@ class AddForeignKeysToCourseStudentsTable extends Migration {
 		Schema::table('course_students', function(Blueprint $table)
 		{
 			$table->dropForeign('course_students_student_id_foreign');
-			$table->dropForeign('course_students_course_schedule_id_foreign');
+			$table->dropForeign('course_students_course_id_foreign');
 		});
 	}
 

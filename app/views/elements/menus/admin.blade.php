@@ -155,19 +155,19 @@
 				<a href="/admin/professor/create">Agregar profesor</a>
 			</li>
 			<li>
-				<a href="/admin/course/create">Agregar curso</a>
+				<a href="/admin/subject/create">Agregar asignatura</a>
 			</li>
 			<li>
 				<a href="/admin/venue/create">Agregar sede</a>
 			</li>
 			<li>
-				<a href="/admin/courseSchedule/create">Agregar horario de curso</a>
+				<a href="/admin/course/create">Agregar curso</a>
 			</li>
 			<li>
 				<a href="/admin/professor">Lista de profesores</a>
 			</li>
 			<li>
-				<a href="/admin/course">Lista de cursos</a>
+				<a href="/admin/subject">Lista de asignaturas</a>
 			</li>
 			<li>
 				<a href="/admin/venue">Lista de sedes</a>

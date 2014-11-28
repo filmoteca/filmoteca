@@ -16,7 +16,7 @@ class CreateCourseStudentsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->integer('student_id')->unsigned();
-			$table->integer('course_schedule_id')->unsigned();
+			$table->integer('course_id')->unsigned();
 			$table->enum('payment_status', ['not_paid', 'pending', 'confirmed'])
 					->default('pending');
 			$table->timestamps();

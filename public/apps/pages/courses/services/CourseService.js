@@ -14,6 +14,8 @@
 
 	.service('pages.courses.services.CourseService', [function(){
 
+		var SIGNUP_IN_COURSE_URL = '/courses/course/signup';
+
 		var courses = [{
 			course : {
 				name : 'Limpieza de armas.'
@@ -31,5 +33,21 @@
 
 			return courses;
 		};
+
+		this.signup = function( id ){
+
+			$http.post( SIGNUP_IN_COURSE_URL + id, {id : id} )
+				.then(function(response){
+
+					$location.path( DASHBOARD_PATH );
+
+				}, function(response){
+
+					$rootScope.$broadcast('RequestFinished', {
+						style : 'danger',
+						message : response.data.error.message
+					});
+				});
+		}
 	}]);
 });

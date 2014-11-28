@@ -5,7 +5,6 @@ use Filmoteca\Repository\ResourcesRepository;
 
 class CoursesRepository extends ResourcesRepository
 {
-
 	public function __construct(Course $model){
 
 		$this->resource = $model;

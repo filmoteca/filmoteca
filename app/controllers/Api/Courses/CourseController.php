@@ -4,5 +4,5 @@ use Api\ApiController;
 
 class CourseController extends ApiController{
 
-
+	
 }
