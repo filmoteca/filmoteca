@@ -84,6 +84,8 @@ class InstallCommand extends Command {
 		$this->call('migrate');
 
 		$this->call('db:seed', ['--class', 'GenresTableSeeder']);
+
+		$this->call('db:seed', ['--class', 'CountriesTableSeeder']);
 	}
 
 	/**
