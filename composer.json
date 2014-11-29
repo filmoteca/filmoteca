@@ -27,13 +27,11 @@
 	"scripts": {
 		"post-install-cmd": [
 			"php artisan clear-compiled",
-			"php artisan optimize",
-			"php artisan syntara:update"
+			"php artisan optimize"
 		],
 		"post-update-cmd": [
 			"php artisan clear-compiled",
-			"php artisan optimize",
-			"php artisan syntara:update"
+			"php artisan optimize"
 		],
 		"post-create-project-cmd": [
 			"php artisan key:generate"
@@ -45,6 +43,7 @@
 	"minimum-stability": "stable",
 
 	"require-dev": {
-    	"way/generators": "~2.0"
+    	"way/generators": "~2.0",
+    	"monarobase/country-list": "1.2.*"
 	}
 }
