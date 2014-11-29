@@ -73,6 +73,10 @@
 				templateUrl : BASE_URL + 'signup.html'
 			})
 
+			.when('/show',{
+				templateUrl : BASE_URL + 'show.html'
+			})
+
 			.otherwise('/');
 	}]);
 

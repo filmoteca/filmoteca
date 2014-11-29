@@ -26,6 +26,8 @@
 		var DASHBOARD_PATH 	= '/dashboard';
 		var LOGIN_PATH 		= '/login';
 
+		$scope.courses = Course.all();
+
 		$scope.showDashboard = function(){
 
 			if( User.isLogin() ){
@@ -46,7 +48,11 @@
 
 				$location.path( LOGIN_PATH );
 			}
-
 		};
+
+		$scope.showCourse = function( id ){
+
+			Course.show(id);
+		}
 	}]);
 });

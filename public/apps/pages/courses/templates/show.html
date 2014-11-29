@@ -1,0 +1,33 @@
+<div class="modal-header">
+	<h3 class="modal-title">
+		<button type="button" class="close" ng-click="$close()"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+	
+	{{ course.subject.name }}
+	</h3>
+</div>
+<div class="modal-body">
+    <div class="thumbnail">
+		<img ng-src="{{course.subject.image}}">
+	</div>
+
+	<p><b>Profesor</b> : {{course.professor.name}}</p>
+
+	<p><b>Sede</b> : {{course.venue.name}}</p>
+
+	<p><b>Inicio</b>: {{course.start_date}}</p>
+
+	<p><b>Termino</b>: {{course.end_date}}</p>
+
+	<p><b>Horas totales</b>: {{course.total_hours}}</p>
+
+	<p><b>Horario</b>: {{course.schedule}}</p>
+
+	<p><b>Precio general</b>: {{course.general_price}}</p>
+
+	<p><b>Precio UNAM</b>: {{course.unam_member_price}}</p>
+
+
+</div>
+<div class="modal-footer">
+	
+</div>

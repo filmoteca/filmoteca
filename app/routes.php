@@ -191,6 +191,10 @@ Route::group(['prefix' => 'api'], function()
 		'uses' => 'Api\Courses\CourseController@signup']);
 
 	Route::get('courses/student/courses','Api\Courses\StudentController@courses');
+
+	Route::get('courses/course', 'Api\Courses\CourseController@index');
+
+	Route::get('courses/course/{id}','Api\Courses\CourseController@show');
 });
 
 

@@ -3,23 +3,10 @@
 </div>
 
 <div class="items">
-	<div class="item">
-		<div class="image">
-			<img src="Usgin routes">		
+	<div class="item" ng-repeat="course in courses">
+		<div class="thumbnail">			
+			<a class="btn btn-link" ng-click="showCourse(course.id)" title="{{course.subject.name}}"><img src="{{ course.subject.image }}"></a>
+			<button class="btn btn-link" ng-click="signupInCourse(course.id)">Inscribirse</button>	
 		</div>
-
-		<button class="btn btn-link" ng-click="signupInCourse(1)">Inscribirse</button>
-	</div>
-</div>
-
-<div class="items">
-	<div class="item">
-		<div class="image">
-			<img src="Usgin routes">
-		</div>
-
-		<p>Curso lleno</p>
-
-		<button class="btn btn-link" ng-click="signupInCourse(2)">Inscribirse</button>
 	</div>
 </div>
