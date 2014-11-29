@@ -82,6 +82,8 @@ class InstallCommand extends Command {
 			'group'    => 'Admin']);
 
 		$this->call('migrate');
+
+		$this->call('db:seed', ['--class', 'GenresTableSeeder']);
 	}
 
 	/**
