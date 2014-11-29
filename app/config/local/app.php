@@ -18,6 +18,11 @@ return array(
 	'providers' => array(
 		
 		'Way\Generators\GeneratorsServiceProvider',
+		'Monarobase\CountryList\CountryListServiceProvider'
 	),
+
+	'aliases' => array(
+		'Countries' => 'Monarobase\CountryList\CountryListFacade',
+	)
 
 );

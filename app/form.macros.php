@@ -75,12 +75,7 @@ Form::macro('fileFormGroup', function($name,$title, $formname, $attr)
 
 Form::macro('countryFormGroup', function($name, $title, $formname, $attributes)
 {
-	$options = [
-		0 => 'No disponible',
-		1 => 'México',
-		2 => 'Francia',
-		3 => 'Italia'
-	];
+	$options = DB::table('countries')->lists('name', 'id');
 
 	return Form::selectFormGroup($name, $options,$title,$formname,$attributes);
 });
@@ -115,7 +110,7 @@ Form::macro('venueFormGroup', function($name, $title, $formname, $attributes)
 
 Form::macro('yearFormGroup', function($name, $title, $formname, $attributes)
 {
-	$options = range(1985, intval(date('Y') + 2));
+	$options = range(1965, intval(date('Y') + 2));
 
 	return Form::selectFormGroup($name, array_combine($options, $options),$title, $formname, $attributes);
 });
