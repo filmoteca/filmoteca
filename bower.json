@@ -43,6 +43,7 @@
     "text": "2.0.*",
     "bourbon": "3.2.*",
     "jquery-ui-slider-pips": "1.7.2",
-    "angular-cookies": "1.2.*"
+    "angular-cookies": "1.2.*",
+    "bootstrap-datepicker" : "1.3.*"
   }
 }
