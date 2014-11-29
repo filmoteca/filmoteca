@@ -9,6 +9,7 @@
 		'domready',
 		'ngRoute',
 		'file-model',
+		'pages.courses.directives/InputFileImage',
 		'pages.courses.directives/Breadcrumb',
 		'pages.courses.controllers/RootController',
 		'pages.courses.controllers/IndexController',
@@ -24,6 +25,7 @@
 	angular.module('App',[
 		'ngRoute',
 		'FileModel',
+		'pages.courses.directives.InputFileImage',
 		'pages.courses.directives.Breadcrumb',
 		'pages.courses.controllers.RootController',
 		'pages.courses.controllers.IndexController',

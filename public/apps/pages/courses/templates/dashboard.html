@@ -2,8 +2,7 @@
 	<div class="row">
 		<div class="col-md-4">
 			<div class="thumbnail btn">
-				<img ng-src="{{currentPhoto}}" title="Click para cambiar imagen" ng-click="changeImage(this)">
-				<input type="file" file-model="photo" id="imageUploader" class="ng-hide">
+				<img ng-src="{{currentPhoto}}" title="Click para cambiar imagen" input-file-image>
 			</div>
 			<div class="list-group">
 				<div class="list-group-item">
@@ -28,16 +27,16 @@
 							<th>Curso</th>
 							<th>Profesor</th>
 							<th>Sede</th>
-							<th>Fecha de inicio</th>
+							<th>Inicio</th>
 							<th>Acciones</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr ng-repeat="course in courses">
-							<td>{{course.course.name}}</td>
+							<td>{{course.subject.name}}</td>
 							<td>{{course.professor.name}}</td>
 							<td>{{course.venue.name}}</td>
-							<td>{{course.start_date | date : 'd MM yyyy'}} <span class="glyphicon glyphicon-calendar"></span></td>
+							<td>{{course.start_date | date : 'd/MM/yyyy'}} <span class="glyphicon glyphicon-calendar"></span></td>
 							<td>
 								<span class="glyphicon glyphicon-usd btn" ng-click="pay()" title="Pagar"></span>
 								<span class="glyphicon glyphicon-remove btn" ng-click="pay()" title="Darse de baja"></span>

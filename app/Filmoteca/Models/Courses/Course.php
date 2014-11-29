@@ -23,6 +23,6 @@ class Course extends Eloquent
 
 	public function students(){
 
-		return $this->belongsToMany('\Filmoteca\Models\Courses\Student');
+		return $this->belongsToMany('\Filmoteca\Models\Courses\Student')->withPivot('paymnet_status');
 	}
 }

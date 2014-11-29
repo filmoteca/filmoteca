@@ -25,7 +25,7 @@ class Student extends Eloquent implements StaplerableInterface
 
 	public function courses(){
 
-		return $this->belognsToMany('\Filmoteca\Models\Courses\Course');
+		return $this->belongsToMany('\Filmoteca\Models\Courses\Course')->withPivot('payment_status');
 	}
 
 	public function toArray(){

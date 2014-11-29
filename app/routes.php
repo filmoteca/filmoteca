@@ -162,34 +162,35 @@ Route::group(['prefix' => 'api'], function()
 	|------------------------------------------------------------------------------
 	 */
 	
-	Route::post('courses/signup',[
-		'as' => 'api.courses.signup',
+	Route::post('courses/student/signup',[
+		'as' => 'api.courses.student.signup',
 		'uses' => 'Api\Courses\StudentController@signup']);
 	
-	Route::post('courses/login',[
-		'as' => 'api.courses.login',
+	Route::post('courses/student/login',[
+		'as' => 'api.courses.student.login',
 		'uses' => 'Api\Courses\StudentController@login']);
 
-	Route::get('courses/logout',[
-		'as' => 'api.courses.logout',
+	Route::get('courses/student/logout',[
+		'as' => 'api.courses.student.logout',
 		'uses' => 'Api\Courses\StudentController@logout']);
 	
-	Route::get('courses/recover-password', [
-		'as' => 'api.courses.recover-password',
+	Route::get('courses/student/recover-password', [
+		'as' => 'api.courses.student.recover-password',
 		'uses' => 'Api\Courses\StudentController@recoverPassword']);
 
-	Route::post('courses/change-password', [
-		'as' => 'api.courses.change-password',
+	Route::post('courses/student/change-password', [
+		'as' => 'api.courses.student.change-password',
 		'uses' => 'Api\Courses\StudentController@changePassword']);
 
-	Route::post('student/update', [
-		'as' => 'api.student.update',
+	Route::post('courses/student/update', [
+		'as' => 'api.courses.student.update',
 		'uses' => 'Api\Courses\StudentController@update']);
 
-	Route::get('courses/course/signup/{id}',[
+	Route::get('courses/course/{id}/signup',[
 		'as' => 'api.courses.course',
 		'uses' => 'Api\Courses\CourseController@signup']);
 
+	Route::get('courses/student/courses','Api\Courses\StudentController@courses');
 });
 
 

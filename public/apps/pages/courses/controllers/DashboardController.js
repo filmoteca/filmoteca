@@ -39,7 +39,7 @@
 			$location.path('/login');
 		}
 
-		$scope.courses = Course.all();
+		$scope.courses = User.courses();
 
 		$scope.changePassword = function(){
 
@@ -61,13 +61,6 @@
 			User.logout();
 		};
 
-		$scope.changeImage = function(imageNode){
-			//Crear una directiva para esto.
-			//No se como nombrarla.
-			imageNode.getElementsByTagName('input')[0].click();
-			// document.getElementById('imageUploader').click();
-		};
-
 		$scope.$watch('photo', function(value){
 
 			if( angular.isDefined(value)){
@@ -75,6 +68,7 @@
 				User.get().photo = value;
 
 				User.update().then(function(){
+					console.log(User.get().photo)
 					$scope.currentPhoto = User.get().photo;
 				});
 			}

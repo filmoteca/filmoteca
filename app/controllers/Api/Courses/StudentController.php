@@ -4,6 +4,7 @@ use Api\ApiController;
 use Hash;
 use Input;
 use Filmoteca\Repository\Courses\StudentsRepository;
+use Filmoteca\Models\Courses\Student;
 use Log;
 use Mail;
 use Redirect;
@@ -122,5 +123,25 @@ class StudentController extends ApiController{
 		return Response::json(
 			$this->repository->find(Input::get('id'))
 			);
+	}
+
+	public function courses(){
+
+		$user = Sentry::getUser();
+
+		$student = Student::where('email', $user->email)->first();
+
+		if( empty($student) ){
+
+			throw new Exception('Estudiante no encontrado.');
+		}
+
+		$courses = $student->courses()
+			->with('professor')
+			->with('venue')
+			->with('subject')
+			->get();
+
+		return Response::json($courses);
 	}
 }

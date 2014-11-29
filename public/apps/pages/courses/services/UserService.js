@@ -22,12 +22,31 @@
 		var SIGNUP_URL 				= '/api/courses/student/signup';
 		var UPDATE_URL 				= '/api/courses/student/update';
 
+		var COURSES_URL	 			= '/api/courses/student/courses';
+
 		var DASHBOARD_PATH = '/dashboard';
 
 		var user = {};
 
+		var courses = [];
+
 		this.get = function(){
 			return user;
+		};
+
+		this.courses = function(){
+
+			$http.get(COURSES_URL,{cache: false})
+			.then(function(response){
+				
+				courses.splice(0, courses.length);
+
+				angular.forEach(response.data, function(value){
+					courses.push(value);
+				});
+			});
+
+			return courses;
 		};
 
 		this.isLogin = function(){
@@ -70,6 +89,8 @@
 			$http.get(LOGOUT_URL).then(function(){
 				
 				$location.path('/');
+
+				user = {};
 			});
 
 			delete $cookies.logedin;
@@ -144,7 +165,7 @@
 				headers: {'Content-Type': undefined} // Also, it is required to upload file.
 			}).then(function(response){
 
-				angular.extend(user, response.date);
+				angular.extend(user, response.data);
 
 				$rootScope.$broadcast('RequestFinished',{
 					style : 'success',

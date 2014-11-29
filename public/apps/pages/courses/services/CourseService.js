@@ -16,25 +16,7 @@
 
 	function($http, $location, $rootScope, User){
 
-		var SIGNUP_URL = '/api/courses/course/{course_id}/signup';
-
-		var courses = [{
-			course : {
-				name : 'Limpieza de armas.'
-			},
-			professor :{
-				name : 'Berry Burton'
-			},
-			venue : {
-				name : 'RPD'
-			},
-			start_date : new Date()
-		}];
-
-		this.all = function(){
-
-			return courses;
-		};
+		var SIGNUP_URL 	= '/api/courses/course/{course_id}/signup';
 
 		this.signup = function( id ){
 

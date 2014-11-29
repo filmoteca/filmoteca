@@ -4,7 +4,9 @@ use Api\ApiController;
 use Sentry;
 use Filmoteca\Models\Courses\Student;
 use Filmoteca\Models\Courses\Course;
+use Filmoteca\Models\Courses\StudentIsAlreadySignupException;
 use Exception;
+use Illuminate\Database\QueryException;
 
 class CourseController extends ApiController{
 
@@ -21,6 +23,11 @@ class CourseController extends ApiController{
 
 		$course = Course::findOrFail($course_id);
 
-		$course->students()->attach($student->id, ['payment_status'=>'not_paid']);
+		try{
+			$course->students()->attach($student->id, ['payment_status'=>'not_paid']);
+		}catch(QueryException $e){
+			throw new StudentIsAlreadySignupException("Ya estás registrado en este curso");
+			
+		}
 	}
 }

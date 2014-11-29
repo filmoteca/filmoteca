@@ -22,10 +22,6 @@
 			$scope.messageType = data.style;
 		});
 
-		$scope.$on('$viewContentLoaded', function(){
-			$scope.message = '';
-		});
-
 		$scope.closeAlert = function(){
 			$scope.message = '';
 		};
