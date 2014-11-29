@@ -15,14 +15,14 @@ return array(
 
 	'debug' => true,
 
-	'providers' => array(
+	'providers' => append_config(array(
 		
 		'Way\Generators\GeneratorsServiceProvider',
 		'Monarobase\CountryList\CountryListServiceProvider'
-	),
+	)),
 
-	'aliases' => array(
+	'aliases' => append_config(array(
 		'Countries' => 'Monarobase\CountryList\CountryListFacade',
-	)
+	))
 
 );
