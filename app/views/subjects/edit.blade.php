@@ -16,6 +16,10 @@
 	<div class="panel-body">
 
 	{{ Form::formGroup('text','name','Nombre', 'course_form') }}
+
+	{{ Form::formGroup('file','image', 'Portada', 'course_fomr')}}
+
+	<p>Portada actual (miníatura) <img src="{{ $resource->image->url('thumbnail') }}" class="image thumbnail"></p>
 	
 	</div>
 

@@ -9,6 +9,7 @@
 		<tr>
 			<th>ID</th>
 			<th>Nombre</th>
+			<th>Portada</th>
 			<th>Acciones</th>
 		</tr>
 	</thead>
@@ -18,6 +19,10 @@
 			<tr>
 				<td>{{ $course->id }}</td>
 				<td>{{ $course->name }}</td>
+				<td>
+					<img src="{{ $course->image->url('thumbnail') }}" alt="{{ $course->title }}" class="image thumbnail">
+				</td>
+
 				<td>
 					{{ HTML::linkRoute('admin.subject.show', 'Ver',
 						array($course->id),

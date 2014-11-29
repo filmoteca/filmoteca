@@ -43,4 +43,8 @@
 {{ Form::close()}}
 </div>
 
+<p>Image (thumbnail): <img src="{{ $resource->image->url('thumbnail')}}"></p>
+<p>Image (mediana): <img src="{{ $resource->image->url('medium')}}"></p>
+<p>Image (original): <img src="{{ $resource->image->url()}}"></p>
+
 @stop

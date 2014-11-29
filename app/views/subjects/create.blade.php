@@ -16,6 +16,8 @@
 
 	{{ Form::formGroup('text','name','Nombre', 'course_form') }}
 
+	{{ Form::formGroup('file','image', 'Portada', 'course_form')}}
+
 	</div>
 
 	<div class="panel-footer">
