@@ -2,9 +2,9 @@
 <html>
     <head>
         <link rel="stylesheet" href="{{ asset('/bower_components/bootstrap/dist/css/bootstrap.min.css')}}" />
-        <link rel="stylesheet" href="{{ asset('/assets/css/filmoteca.css')}}" />
         <link rel="stylesheet" href="{{ asset('packages/mrjuliuss/syntara/assets/css/toggle-switch.css') }}" />
         <link rel="stylesheet" href="{{ asset('packages/mrjuliuss/syntara/assets/css/base.css') }}" media="all">
+        <link rel="stylesheet" href="{{ asset('/assets/css/filmoteca.css')}}" />
 
         @yield('styles');
 
@@ -18,7 +18,7 @@
     asdfasdfasd
         @include(Config::get('syntara::views.header'))
         {{ isset($breadcrumb) ? Breadcrumbs::create($breadcrumb) : ''; }}
-        <div id="content">
+        <div class="container">
             @yield('content')
         </div>
     </body>

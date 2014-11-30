@@ -17,7 +17,7 @@
 <h2>Agregar exhibiciones</h2>
 
 <div ng-show="notification.active">
-	<div class="alert alert-@{{notification.type}}" data-ng-cloak>
+	<div class="alert alert-@{{notification.type}} ng-cloak">
 		@{{notification.message}}
 	</div>
 </div>
@@ -28,8 +28,10 @@
 	<div class="col-md-4">
 		<div class="row">
 			<div class="col-md-12">
+				
 				<span class="glyphicon glyphicon-search btn" ng-click="search()" title="Buscar"></span>
 				<span class="glyphicon glyphicon-plus btn" ng-click="add()" title="Agregar"></span>
+				<div>.</div> <!-- Fix separation -->
 			</div>
 		</div>
 		<div class="row">
