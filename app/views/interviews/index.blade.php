@@ -11,7 +11,7 @@
 			<th>Título</th>
 			<th>Link video</th>
 			<th>Link audio</th>
-			<th>Text</th>
+			<th>Fotográfia</th>
 			<th>Acciones</th>
 		</tr>
 	</thead>
@@ -33,9 +33,9 @@
 				@else
 					<td>Sin audio</td>
 				@endif
-				<td>
 
 				<td><img src="{{ $interview->image->url('thumbnail') }}" alt="{{ $interview->title }}" class="image thumbnail"></td>
+
 				<td>
 					{{ HTML::linkRoute('admin.interview.show', 'Ver',
 						array($interview->id),

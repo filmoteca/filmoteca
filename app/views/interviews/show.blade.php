@@ -1,6 +1,6 @@
 @section('content')
 
-<h2>Detalles de películas</h2>
+<h2>Detalles de entrevista</h2>
 
 <div class="text-right">
 {{ Form::open(array('route' => array('admin.interview.destroy', $resource->id), 'method'=> 'DELETE')) }}
@@ -27,7 +27,7 @@
 		</tr>
 		<tr>
 			<th>Nombre</th>
-			<td>{{$resource->tile }}</td>
+			<td>{{$resource->title }}</td>
 		</tr>
 		<tr>
 			<th>Contenido</th>
