@@ -40,6 +40,9 @@ Form::macro('formGroup',
 		case('venue'):
 			return Form::venueFormGroup($name, $title, $formname, $attr);
 
+		case('date'):
+			return Form::dateFormGroup($name, $title, $formname, $attr);
+
 		default:
 
 			return "\n" .
@@ -53,6 +56,20 @@ Form::macro('formGroup',
 			'	</div>' ."\n".
 			'</div>' . "\n";
 	}
+});
+
+Form::macro('dateFormGroup', function($name,$title, $formname, $attr){
+
+	return 
+	'<div class="form-group">' .
+	'	<label for="' . $name . '" class="col-sm-2 control-label text-right">' . $title . '</label>' .
+	'	<div class="cl-sm-10">' .
+	'		<div class="input-group date">' . 
+	'			<span class="input-group-addon btn"><i class="glyphicon glyphicon-th"></i></span>' .
+				Form::input('text', $name, null, $attr) .
+	'		</div>' .
+	'	</div>' .
+	'</div>';
 });
 
 Form::macro('fileFormGroup', function($name,$title, $formname, $attr)
