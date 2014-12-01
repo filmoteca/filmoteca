@@ -78,7 +78,7 @@
 	        <ul>
 				<li>
 					<a href="/pages/servicios/lineamientos-generales-para-acceder-al-material">
-						<span>Lineamientos generales para acceso al material</span>
+						<span>Lineamientos para acceso al material</span>
 					</a>
 				</li>
 				<li>
@@ -87,36 +87,36 @@
 					</a>
 				</li>
 				<li>
-					<a href="/pages/servicios/centro-de-documentacion">
-						<span>Centro de documentación</span>
-					</a>
-				</li>
-				<li>
 					<a href="/pages/servicios/departamento-de-catalogacion">
 						<span>Catalogación</span>
 					</a>
 				</li>
+				<li>
+					<a href="/pages/servicios/centro-de-documentacion">
+						<span>Centro de documentación</span>
+					</a>
+				</li>
+				
 	            <li>
 					<a href="/pages/servicios/deposito-y-resguardo">
 						<span>Depósito y resguardo</span>
 					</a>
 				</li>
 				<li>
+					<a href="/pages/servicios/laboratorio-cinematografico">
+						<span>Laboratorio cinematográfico</span>
+					</a>
+	            </li>
+	            <li>
+					<a href="/pages/servicios/laboratorio-digital">
+						<span>Laboratorio digital</span>
+					</a>
+	             </li>
+				<li>
 					<a href="/pages/servicios/exposiciones-museografia">
 						<span>Museografía</span>
 					</a>
 				</li>
-				<li>
-					<a href="/pages/servicios/laboratorio-digital">
-						<span>Laboratorio digital</span>
-					</a>
-	             </li>  
-				<li>
-					<a href="/pages/servicios/laboratorio-cinematografico">
-						<span>Laboratorio cinematográfico</span>
-					</a>
-	             </li> 
-	             
 	            <li>
 					<a href="/pages/servicios/prestamo-y-alquiler-de-peliculas">
 						<span>Préstamo y alquiler de películas</span>
