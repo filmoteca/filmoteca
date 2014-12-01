@@ -50,7 +50,7 @@
 <p>Si quieres hacer alguna solicitud, consulta los  
 	{{ HTML::link(
 		'/pages/servicios/lineamentos-generales-para-solicitar-un-servicio',
-		'requisitos.' )                            
+		'Lineamientos para acceso al material.' )                            
 		}}</p>
 
 </div>

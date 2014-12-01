@@ -5,7 +5,7 @@
 	</a>
 </li>
 <li class="active">
-	Banco de imagen
+	Laboratorio digital
 </li>
 @stop
 
@@ -23,7 +23,7 @@
 	<div class="img-servicios">
 		<img src="/assets/imgs/fragmentos.jpg" aling="left">
 	</div>
-	<h1>Banco de imagen*</h1>
+	<h1>Laboratoro digital</h1>
 
 	<p>Esta sección apoya principalmente a quienes tienen la intención de incorporar a sus trabajos imágenes en movimiento que no necesariamente forman parte de una ficción y/o ilustran de forma histórica y visual una idea.
 	</p>
@@ -41,7 +41,7 @@
 	<p>*Para tener acceso a este departamentos consultar 
 	{{ HTML::link(
 		'/pages/servicios/lineamientos_generales_para_acceder_al_material',
-		'Lineamientos generales para acceso al material' )                            
+		'Lineamientos para acceso al material.' )                            
 		}}</p>
 </div>
 

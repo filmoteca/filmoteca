@@ -36,7 +36,7 @@
 	<p>*Para tener acceso a este departamentos consultar 
 	{{ HTML::link(
 		'/pages/servicios/lineamientos_generales_para_acceder_al_material',
-		'Lineamientos generales para acceso al material' )                            
+		'Lineamientos para acceso al material.' )                            
 		}}</p>
 </div>
 

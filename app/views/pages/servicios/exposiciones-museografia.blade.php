@@ -52,7 +52,7 @@
 
 	<p>Si quieres hacer alguna solicitud, consulta los  
 	{{ HTML::link(
-		'/pages/servicios/lineamentos-generales-para-solicitar-un-servicio',
+		'/pages/servicios/Lineamientos para acceso al material.',
 		'requisitos.' )                            
 		}}</p>
 </div>

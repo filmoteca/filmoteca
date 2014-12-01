@@ -5,7 +5,7 @@
 	</a>
 </li>
 <li class="active">
-	Lineamientos generales
+	Lineamientos para acceso al material
 </li>
 @stop
 
@@ -21,7 +21,7 @@
 
 
 <div class="content">
-	<h1>Lineamentos Generales para acceder al material </h1>
+	<h1>Lineamentos para acceso al material</h1>
 
 	<ul>
 		<li>Préstamo y alquiler de películas </li>

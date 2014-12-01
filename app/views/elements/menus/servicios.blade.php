@@ -2,7 +2,7 @@
 
 $menu = array(
 
-	array('Lineamientos generales para acceder al material', '/pages/servicios/lineamientos-generales-para-acceder-al-material'),
+	array('Lineamientos para acceso al material', '/pages/servicios/lineamientos-generales-para-acceder-al-material'),
 
 	array('Banco de imagen', '/pages/servicios/banco-de-imagen'),
 

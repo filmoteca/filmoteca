@@ -24,7 +24,7 @@
 	<div class="img-servicios">
 		<img src="/assets/imgs/taller.jpg" aling="left">
 	</div>
-	<h1>Taller de Restauración </h1>
+	<h1>Taller de restauración </h1>
 
 	<p>Esta área es la encargada de revisar todos los materiales que ingresan a la Filmoteca por diferentes conductos: depósitos, donaciones, compras, intercambios, permisos de copia, etcétera, en formatos de 8mm, súper 8, 9.5mm, 16mm, 35mm, e incluso de 70 mm, ya sean duplicados originales, duplicados negativos, positivos originales o duplicados positivos; en soportes de nitrato, acetato y poliéster. El material de nitrato tiene prioridad, al ser de alto riesgo para el personal debido a ser altamente inflamable, por eso se cuenta con siete bóvedas de nitrato, ubicadas cerca de la Estación General de Bomberos, en donde se albergan casi 16 mil latas clasificadas. </p>
 
