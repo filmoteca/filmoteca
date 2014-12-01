@@ -132,15 +132,15 @@
 
 	<div class="btn-group">
 		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-			Chronología
+			Cronología
 			<span class="caret"></span>
 		</button>
 		<ul class="dropdown-menu">
 			<li>
-				{{ HTML::linkRoute('admin.chronology.index', 'Ver chronología') }}
+				{{ HTML::linkRoute('admin.chronology.index', 'Ver cronología') }}
 			</li>
 			<li>
-				{{ HTML::linkRoute('admin.chronology.create', 'Agregar chronología') }}
+				{{ HTML::linkRoute('admin.chronology.create', 'Agregar cronología') }}
 			</li>
 		</ul>
 	</div>
