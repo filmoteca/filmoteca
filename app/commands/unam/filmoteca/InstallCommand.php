@@ -5,7 +5,7 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 
 use Sentry;
-use
+use DB;
 
 use Cartalyst\Sentry\Groups\GroupExistsException;
 
@@ -42,46 +42,46 @@ class InstallCommand extends Command {
 	 */
 	public function fire()
 	{
-		// $this->call('syntara:install');
+		$this->call('syntara:install');
 		
-		// try{
+		try{
 
-		// 	$this->info( 'Creating Students group.');
+			$this->info( 'Creating Students group.');
 
-		// 	Sentry::createGroup(['name' => 'Students']);
+			Sentry::createGroup(['name' => 'Students']);
 
-		// 	$this->info( '"Student" group created with success.');
+			$this->info( '"Student" group created with success.');
 
-		// }catch(GroupExistsException $e){
+		}catch(GroupExistsException $e){
 
-		// 	$this->info( 'The group already exists. Do nothing.');
-		// }
+			$this->info( 'The group already exists. Do nothing.');
+		}
 
 
-		// $this->line('');
+		$this->line('');
 
-		// $this->info('## Creación del usuario administrador ##');
+		$this->info('## Creación del usuario administrador ##');
 
-		// $user = $this->ask( 'Admin user name: ') ;
+		$user = $this->ask( 'Admin user name: ') ;
 
-		// $password = $this->ask( 'Admin password: ') ;
+		$password = $this->ask( 'Admin password: ') ;
 
-		// $second_password = $this->ask( 'Confirm password: ') ;
+		$second_password = $this->ask( 'Confirm password: ') ;
 
-		// while( $password != $second_password ){
+		while( $password != $second_password ){
 
-		// 	$this->error( 'The passwords are not same. Try again.');
+			$this->error( 'The passwords are not same. Try again.');
 
-		// 	$second_password = $this->ask( 'Confirm password: ');
-		// }
+			$second_password = $this->ask( 'Confirm password: ');
+		}
 
-		// $email = $this->ask( 'Admin email: ');
+		$email = $this->ask( 'Admin email: ');
 
-		// $this->call('create:user', [
-		// 	'username' => $user,
-		// 	'password' => $password,
-		// 	'email'    => $email,
-		// 	'group'    => 'Admin']);
+		$this->call('create:user', [
+			'username' => $user,
+			'password' => $password,
+			'email'    => $email,
+			'group'    => 'Admin']);
 
 		$this->call('migrate');
 
