@@ -20,11 +20,29 @@
 @import '../../bower_components/bourbon/dist/bourbon'; 
 
 
+//
+// Bibliotecas estaticas (CSS)
+//
+@import '../../bower_components/slick.js/slick/slick.css';
+
+@import '../../bower_components/bootstrap/dist/css/bootstrap-theme.min.css';
+
+@import '../../bower_components/bootstrap/dist/css/bootstrap.min.css';
+
+
 //-----------------------------------------------------------------------------
 // NUESTROS ARCHIVOS SASS
 //-----------------------------------------------------------------------------
  
 @import 'mixins';
+
+@import 'icons';
+
+@import 'site';
+
+@import 'header';
+
+@import 'footer';
 
 @import 'home';
 

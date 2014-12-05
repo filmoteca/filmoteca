@@ -1,0 +1,55 @@
+$primary-color: #98147F;
+$secondary-color: '';
+$tertiary-color: '';
+
+$text-color: #646464;
+$active-tab-color: #2D2D2D;
+$link-background-color: #CCCCCC;
+
+body{
+	color: $text-color;
+}
+
+a{
+	color: $primary-color;
+}
+
+.link{
+	background-color: $link-background-color;
+	cursor: pointer;
+	padding: 5px;
+
+	a{
+		text-decoration: none;
+		color: $text-color;
+	}
+	
+	icon{
+
+	}
+}
+
+.container-fluid{
+	max-width:980px;
+}
+
+//Esta regla es necesaria para .see-more.
+.list-group-item:after{
+	content: '';
+	display: block;
+	clear: right;
+}
+
+.see-more{
+	float: right;
+}
+
+.see-more a:after{
+	content: '...';
+}
+
+.see-more a:before{
+	content: '+';
+	margin-right: 4px;
+	display: inline-block;
+}

@@ -1,1271 +1,179 @@
-/* 
-    Document   : inicio
-    Created on : Dec 5, 2013, 6:01:42 PM
-    Author     : victor
-    Description:
-        Hoja de estilo para que afectan unicamente la pagina de inicio.
-*/
+$rectangle-section-height: 185%;
+$square-section-height: 100%;
 
-/*********************/
-/** Recomendaciones **/
-/*********************/
-
-.banner{
-    width: 100%;
-    margin-bottom: 10px;
-    box-shadow:1px 1px 3px #555555;
-    padding-left: 5px;
-}
-
-.banner-filmografia-nacional{
-    width: 100%;
-    margin-bottom: 10px;
-    box-shadow:1px 1px 3px #555555;
-    padding-left: 5px;
-}
-
-.banner-cine-en-linea a:hover{
-    opacity: .7;
-}
-
-.banner-filmografia-nacional a:hover{
-    opacity: .7;
-}
-
-.banner-muvac a:hover{
-    opacity: .7;
-}
-
-.banner-revolucion a:hover{
-    opacity: .7;
-}
-
-.block{
-    margin-bottom: 10px;
-    box-shadow:1px 1px 3px #555555
-}
-
-.blocks a:hover{
-    opacity: .7;
-}
-.suggestions{
-    margin-top: -44px;
-}
-
-.suggestions h3,
-.que-estamos-haciendo h3,
-.noticias_h3 h3{
-    background-color: rgba(0,168,177, 0.43);
-    border-radius: 10px 10px 0 0;
-    color: #ffffff;
-    margin-bottom: 3px;
-    padding:4px;
-   /* margin-top: 0;*/
-}
-
-/*.que-estamos-haciendo h3,
-.news h3{
-    background-color: #00A8B1;
-    border-radius: 10px 10px 0 0;
-    color: #3c3c3c;
-    margin-bottom: 0px;
-}*/
-/*
-.que-estamos-haciendo h3,
-.noticias_h3{
-    background-color: #00A8B1;
-    border-radius: 10px 10px 0 0;
-    color: #3c3c3c;
-    margin-bottom: 3px;
-    padding: 8px;
-}*/
-
-.news div{
-    height: 430px;
-    overflow-y: scroll;
-    box-shadow:1px 1px 3px #555555;
-}
-
-/*.news li{
-    list-style: none;
-    padding: 15px;
-    border-bottom: dotted thin black;
-}*/
+$section-color: #F2F2F2;
 
 
-/*********************/
-/** Noticias **/
-/*********************/
-.news_content{
-    height: 430px;
-    overflow-y: scroll;
-    box-shadow:1px 1px 3px #555555;
-}
+.flm-section{
 
-.last_news_element{
-    margin-top: 0px;
-    height: 100px;
-    overflow: hidden;
-    width: 100%;
-    line-height: 1 !important;
-}
-
-.last_news_img{
-    float: left;
-    height: 80px;
-    padding-left: 5px;
-    padding-top: 10px;
-    position: relative;
-    width: 90px;
-}
-
-.last_news_foto_over{
-    background-image: url();
-    background-position: left top;
-    background-repeat: no-repeat;
-    display: block;
-    height: 80px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 119px;
-}
-
-.last_news_content{
-    float: left;
-    height: 72px;
-    padding: 2px;
-    width: 213px;
-}
-
-.last_news_titulo a{
-    color: #A03B92;
-    font-weight: bold;
-    margin-bottom: 5px;
-    max-height: 26px;
-    font-size: 12px;
-   /* overflow: hidden;*/
-}
-
-.last_news_data{
-    color: #A2A2A2;
-    font-size: 11px;
-}
-
-.last_news_data div {
-    margin-bottom: 5px;
-}
-
-.clearer {
-    clear: both !important;
-}
-
-.last_news_text {
-    height: 42px;
-    line-height: 1;
-    font-size: 11px;
-    /*overflow: hidden;*/
-}
-.mas_info{
-    float: right;
-    font-size: 10px;
-    color:  #A2A2A2;
-}
-
-.cursos h3,
-.convocatorias h3,
-.avisos h3{
-    background-color:rgba(255,176,61, 0.25);
-    border-radius: 10px 10px 0 0;
-    box-shadow:1px 1px 3px #555555;
-    margin-bottom: 3px;
-    color: #3c3c3c;
-    padding:4px;
-}
-
-.cursos-body a:hover{
-    opacity: .7;
-}
-.avisos-body a:hover{
-    opacity: .7;
-}
-
-.convocatorias-body a:hover{
-    opacity: .7;
-}
-
-.convocatorias-body a:hover{
-    opacity: .7;
-}
-/*.block .convocatorias-body,
-{
-    box-shadow:1px 1px 3px #555555;
-
-}*/
-
-/***************/
-/** Billboard **/
-/***************/
-
-.wrapper-billboard{
-    width: 100%;
-    padding: 20px 20px 20px;
-    padding-left: 0px;
-}
-
-.billboard{
-/*    background-color: #966698;*/
-    border: 2px solid #bcbab9;
-    border-radius:15px;
-    box-shadow:1px 1px 3px #555555;
-    width: 100%;
-    height:511px;
-    margin-left: 10px;
-}
-
-.billboard .screen{
-    background-image: url('imgs/fondo_prog.png');
-    background-size: 100%;
-    background-position: 0px 0px;
-}
-
-.billboard img{
-    margin: 20px auto 0px auto;
-    width: 80%;
-    height: 300px;
-    display: block;
-}
-
-.billboard-date{
-    text-align: center;
-    width: 100%;
-    display: block;
-    margin-bottom: 35px;
-}
-
-.billboard-date, .billboard-title{
-    text-transform: uppercase;
-    text-align: center;
-}
-
-#billboard .next{
-    background-image: url('imgs/button-next.png');
-    top: -35px;
-}
-
-#billboard .next:hover{
-    background-image: url('imgs/button-next-hover.png');
-}
-
-#billboard .prev{
-    background-image: url('imgs/button-prev.png');
-    bottom: -35px;
-    display: none;
-}
-
-#billboard .prev:hover{
-    background-image: url('imgs/button-prev-hover.png');
-}
-
-#billboard .next,
-#billboard .prev{
-    position: absolute;
-    left:40%;
-    width: 47px;
-    height: 32px;
-    cursor: pointer;
-}
-
-.col-md-4 .banner-consulta-cartelera{
-    margin-top: -24px;
-}
-
-/********************/
-/** Redes Sociales **/
-/********************/
-
-/********************/
-/** Sitios Amigos **/
-/********************/
-
-.col-md-12 h4{
-    margin-bottom: 0px;
-}
-
-.friends-sites-pane{
-    background-color:#F1F1F1;
-    display: none;
-}
-.friends-sites-pane .row{
-    width: 100%;
-    margin-left: 5px;
-}
-.friends-sites-pane .row col-md-4{
-    width: 33%;
-}
-
-.friends-sites-button{
-    background-image:url('imgs/button-sitios-amigos.png');
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    height: 32px;
-    width: 100%;
-    display: block;
-    margin: 0 auto;
-    border-bottom: 10px none;
-    text-align: center;
-}
-
-.friends-sites-button:hover{
-    opacity: .7;
-    cursor: pointer;
-}
-
-.friends-sites-button h5{
-    color: #333333;
-}
-
-.footer_links{
-    list-style: none;
-    text-decoration: none;
-}
-.footer_links a{
-    list-style: none;
-    text-decoration: none;
-    font-size: .85em;
-    color: #333333;
-}
-
-/************/
-/* Portada. **/
-/************/
-
-.presentation{
+	height: 0px;
 	position: relative;
-	margin-top: 10px;
-}
-
-.presentation .controls:after{
-	content: '';
-	display: block;
-	clear: both;
-}
-
-.presentation .controls{
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    background-color: rgba(98,168,192,0);
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    z-index: 1;
-    width: 10%;
-    height: 264px;
-    overflow-y: scroll;
-    margin-right: 10px;
-    padding-right: 10px;
-}
-
-.presentation .controls a{
-    cursor: pointer;
-    display: block;
-    height: 60px;
-    width: 100%;
-	margin-top: 5px;
-    border: solid thin black;
-    background-color: #ABABAB;
-}
-
-.presentation .controls a:hover,
-.presentation .controls a.selected{
-    background-color: #A03B92;
-}
-
-.presentation .controls a img{
-	width: 100%;
-	height: 100%;
-}
-
-.presentation .info{
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    width: 40%;
-    height: 100%;
-    background-color: rgba(98,168,192,.7);
-    position: absolute;
-    bottom: 0px;
-    right: 12%;
-    padding-top:40px;
-    right: 12%;
-    padding-top:27px;
-    padding-bottom: 50px;
-    display:none;
-}
-
-.presentation .info h1,
-.presentation .info h2,
-.presentation .info h3,
-.presentation .info h4,
-.presentation .info h5{
-    text-align: center;
-    color: #ffffff;
-    font-weight: 600;
-}
-
-.presentation .info .font-purple{
-    text-align: center; 
-}
-
-.presentation ul img{
-	width: 88%;
-}
-
-.font-purple{
-    color: #A03B92;
-}
-
-.font-white{
-    color: white;
-}
-
-.presentation h2{
-    text-transform: uppercase;
-    text-align: center;
-    padding: 0 5px;
-}
-
-.presentation p{
-    text-align: center;
-    font-weight: 500;
-    font-size: 1.5em;
-    color: #ffffff;
-}
-
-
-/** Facebook **/
-.comentarios-facebook{
-    width: 100%;
-    margin-top: 10px;
-}
-
-.comentarios-facebook span{
-    width: 100%;
-}
-
-.comentarios-facebook h4{
-    margin-bottom: 10px;
-}
-
-.ver-mas a{
-    color: black;
-}
-
-.ver-mas{
-    margin-top: 10px;
-    padding-right: 40px;
-    text-align: right;
-}
-
-
-.link-salas{
-    text-align: center;
-    margin:10px;
-    display: block;
-}
-
-
-.sinopsis{
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.ver-mas a{
-    color: #993399;
-    text-decoration: none;
-}
-
-
-/*****************************/
-/** Calendario Responsivo ****/
-/*****************************/
-
-.calendar{
-    text-align: center;
-}
-
-.ui-datepicker{
-    position: absolute;
-    z-index: 99;
-}
-
-/*.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight{
-	background-color: transparent !important;
-	border: 1px solid #CCCCCC !important;
-	color: #1C94C4 !important;
-}*/
-
-
-
-/*****************************/
-/** video****/
-/*****************************/
-/*video {
-    margin-top: 8px;
-    margin-left: 10px;
-
-}*/
-
-
-/* 
-    Document   : filmoteca
-    Created on : Oct 9, 2013, 7:54:08 PM
-    Author     : Victor Aguilar
-    Description:
-*/
-@font-face
-{
-    font-family: "Helvetica Neue";
-    /*src: url('imgs/HelveticaNeue.ttf');*/
-} 
-
-/**
- * Clases para modificar el hover de los elementos del
- * accordión.
- */
-.ui-widget-content .ui-state-hover, 
-.ui-state-focus
-{  
-    background: red; 
-}
-
-body{
-    font-family: "Helvetica Neue";
-}
-
-h2, h3{
-    text-align:center;
-}
-
-.wrapper{
-    width: 100%;
-    max-width: 1024px;
-    min-width: 320px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.body .left-column,
-.body .right-column,
-.body .center-column{
-    float:left;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    /*  width: 33%;
-            min-width: 341px;*/
-    padding: 10px;
-}
-
-.body .left-column,
-.body .right-column{
-    width: 341px;
-}
-
-.thumbnail{
-    max-width: 150px;
-}
-
-/***********/
-/* Comunes */
-/***********/
-
-.contact-menu:after,
-.main-menu > ul:after,
-.contact-menu:after,
-.items:after,
-.higher-links ul:after{
-    content: '';
-    display: block;
-    clear: both;
-}
-
-/**************/
-/* Encabezado */
-/**************/
-
-header{
-    width: 100%;
-}
-
-.higher-links ul{
-    padding: 3px;
-    list-style: none;
-    margin-bottom: 0px;
-}
-
-.higher-links li{
-    float: right;
-    margin-left: 10px;
-}
-.higher-links li a{
-    color: black;
-    text-decoration: none;
-    font-size:12px;
-}
-
-.banner-filmoteca{
-    background-color: #9A0982;
-    width: 100%;
-    height:100px;
-    background-size: 1024px 100px;
-    background-color: #993399;
-    background-image: url('imgs/background-header.jpg');
-    background-repeat: no-repeat;
-}
-
-.banner-filmoteca .logo-unam{
-    background-image: url('imgs/logo-unam.png');
-    width: 72px;
-    height: 75px;
-    margin: 10px 10px;
-    float: left;
-    display:block;
-}
-
-.banner-filmoteca .logo-filmoteca{
-    background-image: url('imgs/logo-filmoteca.png');
-    width: 122px;
-    height: 70px;
-    margin: 10px 10px;
-    float: right;
-    display: block;
-}
-
-.banner-filmoteca .definicion{
-    display: inline;
-    height: 100%;
-    line-height: 100px;
-    color: white;
-    float: right;
-}
-
-.banner-filmoteca .unam{
-    float:left;
-}
-
-.banner-filmoteca .definicion span{
-    text-align: right;
-    display: inline-block;
-    vertical-align: middle;
-    line-height: normal;
-}
-
-.icon-print, 
-.icon-accessibility{
-    width: 32px;
-    height: 32px;
-    display:block;
-}
-
-.icon-print{
-    background-image: url('imgs/icon-print.png');
-}
-
-.icon-accessibility{
-    background-image: url('imgs/icon-accessibility.png');
-}
-
-/*****************/
-/* Pie de Pagina */
-/*****************/
-footer{
-    background-color: #9A0982;
-    color: white;
-    padding: 10px;
-    margin-top: 20px;
-
-}
-
-footer:after{
-    content:'';
-    display: block;
-    clear:both;
-}
-
-footer .copyright{
-    width: 80%;
-    text-align: center;
-    float:left;
-    font-size: .75em;
-}
-
-footer .fiaf{
-    width: 20%;
-    float:right;
-}
-footer .fiaf > div{
-    float: left;
-}
-
-footer .fiaf .logo{
-    width: 50px;
-    height: 50px;
-    background-image: url('imgs/logofiaf.png');
-    background-size: 50px 50px;
-}
-
-footer .fiaf .definicion{
-    padding-left: 10px;
-    text-align: right;
-    font-size: .65em;
-}
-
-
-
-.contact-menu li{
-    list-style: none;
-    float: right;
-    margin-right: 20px;
-}
-
-.toolbar:after{
-    content:'';
-    display: block;
-    clear:both;
-}
-
-.breadcrumb{
-    float:left;
-}
-
-/*************/
-/* Buscador */
-/*************/
-
-.search-autocomplete{
-    width: 86%;
-}
-
-/***************************************************/
-/* Objetos de tiendita*/
-/***************************************************/
-
-.wrapper-items{
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    width:100%;
-    padding: 10px;
-    float: left;
-    margin-top: 10px;
-}
-
-.wrapper-items .items .item {
-    border: 1px solid #DDDDDD;
-    border-radius: 4px;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    float: left;
-    display: block;
-    height: 200px;
-    margin-bottom: 20px;
-    min-width: 140px;
-    padding: 10px;
-    position: relative;
-    width: 25%; 
-}
-
-.items{
-    list-style: none;
-}
-
-.items .item{
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    position: relative;
-    float: left;
-    width: 25%;
-    padding: 10px;
-    min-width: 140px;
-    height: 340px;
-}
-
-.items .item img{
-    width: 100%;
-}
-
-.wrapper-items .wrapper-price p{
-text-align: center;
-line-height: 1;
-
-}
-.wrapper-items .wrapper-name-item h5{
-    color: #9A0982;
-    height: 45px;
-    overflow: hidden;
-    text-align: center;
-    text-overflow: ellipsis;
-    text-transform: uppercase;
-}
-.wrapper-items .wrapper-price .btn-comprar{
-    background-color: #9A0982;
-    border: 1px solid rgba(0, 0, 0, 0);
-    border-radius: 4px;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1;
-    margin-bottom: 0;
-    padding: 6px 12px;
-    text-align: center;
-    vertical-align: middle;
-    white-space: nowrap;
-}
-
-.items .item .slayer{
-    text-decoration: none;
-    padding: 10px;
-    color: white;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    display: none;
-    width: 100%;
-    height: 232px;
-    z-index: 1;
-    background-color: rgba(0,0,0,.5);   
-}
-
-.items .item .slayer h2{
-    font-size: 12pt;
-    color: white;
-    margin-left: 10px;
-}
-
-.items .item .slayer a{
-    position: absolute;
-    bottom: 30px;
-    margin-left: 10px;
-    color: white;
-}
-
-.items .item:hover{
-}
-
-.items .item:hover .slayer{
-    display: block;
-}
-
-.slayer .name{
-
-}
-.slayer .details{
-    position: absolute;
-    bottom: 0;
-    right:0; 
-}
-
-/*********************************/
-/** Objetos de exhibiciones      */
-/*********************************/
-
-.item-exhibition
-{
-    height: 350px;
-}
-
-/*******************/
-/* Galeria eventos */
-/*******************/
-.content_event{
-    float: left;
-    position: relative;
-    display: block;
-    min-width: 145px;
-    width: 25%;
-    max-height: 260px;
-    
-}
-.content_event .title_ext h5{
-    width: 45%;
-    color: #9A0982;
-    overflow: hidden;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 12px;
-    margin-left: 10px;
-}
-
-/************************/
-/* Detalles en Popup*/
-/************************/
+	overflow: hidden;
 
-.timetable th{
-    padding-right: 70px;
-}
-
-.details{
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 30px;
-}
-.details h2{
-    text-align: center;
-}
-
-.details-poster{
-    max-width: 300px;
-    width: 100%;
-    margin: 15px;
-}
-
-.details-poster img{
-    width: 100%;
-    display: block;
-}
-
-.details-trailer,
-.details-map{
-    position:relative;
-    width: 100%;
-    min-height: 100px;
-    max-height: 600px;
-}
-
-.details-trailer img,
-.details-map img{
-    width: 100%;
-}
-
-.details-wrapper-iframe{
-    position: absolute;
-    top:0px;
-    height: 100%;
-    width: 100%;
-}
-.details iframe{
-    width: 100%;
-    height: 100%;
-}
-
-.details video{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
-.closed-button{
-    width: 10px;
-    height: 10px;
-    margin-left: 10px;
-}
+	margin-bottom: 25px;
 
-/*****************/
-/** Calendar    **/
-/*****************/
+	background-color: $section-color;
 
-.datepicker{
-    background-color: white;
-}
-
-#calendar{
-    display:none;
-}
-/* Para no resaltar el día de hoy*/
-.ui-state-highlight{
-    background-color: #DFEFFC !important;
-    background-image: none !important;
-    border: 1px solid #CCCCCC !important;
-    color: #1C94C4 !important;
-}
+	.content{
+		width: 100%;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+	}
 
-.total{
-    text-align: right;
+	h3, h4, h5, h6{
+		text-transform: uppercase;
+		font-weight: bold;
+	}
 }
-
 
-/*************************/
-/** menu paginas internas  **/
-/*************************/
-
-.sidebar{
-    width: 23%;
-    position: relative;
-    min-height: 800px;
-    margin-top: 25px;
-    padding: 7px 10px 7px 0px;
-    float: left;
-    border-right: 2px ridge #DDDDDD;
+.flm-subsection{
+	margin-bottom: 0px;
 }
 
+.flm-section.carousel{
+	padding-top: $square-section-height / 4;
 
-/*************************/
-/** contenido paginas internas  **/
-/*************************/
-.content {
-    float: left;
-    width: 70%;
-    min-height: 380px;
-    padding: 0 20px 20px 20px;
-    position: relative;
-}
-.content blockquote{
-    font-size: 1em;
-    border: none;
-}
-.content p {
-    font-size: 1em;
-    color: #232322;
-    text-align: justify;
-}
+	img{
+		width: 100%;
+		max-height: 250px;
+	}
 
-.content h2 iframe {
-    height: 400px;
-    width: 640px;
-    border-top-color: #900;
-    border-right-color: #900;
-    border-bottom-color: #900;
-    border-left-color: #900;
+	.caption{
+		position: absolute;
+		color: white;
+		top: 50px;
+		left: 80px;
+	}
 }
-.content h2 {
-    font-size: 18px;
-    font-weight: bold;
-    color: #850871;
-    text-align: left;
-    margin-left: 15px;
-}
 
-.documento-icono{
-    float: left;
-    margin: 25px;
-}
-.documento-icono li{
-    list-style: none;
-    margin-left: 10px
-}
-.documento-icono li img{
-    text-align: left;
-    margin-right: 10px
-}
-.multimed {
-    float: left;
-    position: relative;
-   margin-left: 45px;
-}
+.flm-section.social-networks{
+	
+	padding-top: $rectangle-section-height;
 
-.video_controls{
-    float: left;
-    position: relative;
-    width: 70%;
-    height: 100%;
-    text-align: center;
-}
+	.a-network{
 
-.memoria_pdf{
-    position: absolute;
-    text-align: left;
-    margin-left: 250px;
-    margin-top: 234px;
-}
+		padding-top: 50%;
 
-.informacion_form{
-    float: left;
-    border: 2px solid #DDDDDD;
-    background-color: #F2F2F2;
-    border-radius: 10px;
-    margin-left: 10px;
-    width: 100%;
-    padding: 10px;
+		.header{
+			color: white;
+			background-color: black;
+			padding: 5px;
+		}
+	}
 }
-
-/********************************/
-/** Captura de la Programación **/
-/********************************/
 
-.films-list ul{
-    list-style: none;
-    margin-left: 20%;
+.flm-section.expositions{
+	
+	padding-top: 150%;
+	
+	.header{
+		height: 120px;
+	}
 }
 
-.films-list a{
-    cursor: pointer;
-    display: block;
-    padding: 10px;
-    color: white;
-    border-radius: 5px;
-    border: solid thin black;
-    margin-top: 5px;
-    text-decoration: none;
+.flm-section.the-last{
+	padding-top: $rectangle-section-height;
 }
 
-.films-list a:hover{
-    opacity: .7;
+.flm-section.filmoteca-invite{
+	padding-top: $rectangle-section-height;
 }
 
-.films-list a:nth-child(n){
-    background-color: #C35AB7;
-}
+.flm-section.programming{
 
-.films-list a:nth-child(2n){
-    background-color: #FF3397;
-}
+	padding-top: $rectangle-section-height;
+	
+	.carrousel{
+		padding-top: 5/11 * $rectangle-section-height;
+		
+		.header{
+			background-color: $active-tab-color; 
+		}
+		h3{
+			color: #F9D932;
+		}
+		h4{
+			color: white;
+		}
+	}
 
-.selected-film{
-    background-color: #C35AB7;
-    border-radius: 10px;
-    min-width: 90px;
-    border: solid thin white;
-    color: white;
-    padding: 10px;  
-    display: inline-block;
-}
+	.queries{
+		padding-top: 3/11 * $rectangle-section-height;
 
-.remove{
-    background-image: url('imgs/closed-button.png');
-    background-size: 20px;
-    background-repeat: no-repeat;
-    width: 20px;
-    height: 20px;
-    margin-left: 10px;
-    float: right;
-    cursor:pointer;
-}
+		.link{
+			margin-bottom: 5px;
+		}
+	}
 
-.remove:hover{
-    opacity: .7;
-}
+	.digital-billboard{
+		padding-top: 3/11 * $rectangle-section-height;
+	
+		.image{
+			width: 35%;
+		}
+		img{
+			width: 100%;
+		}
 
-.film-add-link{
-    margin-left: 20%;
-    display: block;
- }
-
-/*********************/
-/* Directorio*/
-/*********************/
-
-.informacion{
-    float: left;
-    border: 2px solid #DDDDDD;
-    background-color: #F2F2F2;
-    border-radius: 10px;
-    margin-left: 10px;
-    width: 100%;
-}
-.informacion ul > h3{
-    margin-left: 15px;
-}
-.informacion ul > li{
-    font-size: .9em;
-    list-style: none;
-    margin-left: 15px;
+		.caption{
+			width: 65%;
+			padding: 10px;
+		}
+	}
 }
-.informacion li .nombre{
-    color: #9A0982;
-    font-weight: bold;
-}
-.informacion li .cargo{
-    color: #640354;
-    font-weight: 500;
-}
-.datos{
-    color: #706d6f;
-    font-weight: 400;
 
+.flm-section.other-news{
+	padding-top: $square-section-height;
 }
 
-/****************/
-/** registro newsletter **/
-/****************/
-.contetn-subscription .subscription #subscription-billboard{
-    float: left;
-    border: 2px solid #DDDDDD;
-    background-color: #F2F2F2;
-     border-radius: 0 0 10px 10px;
-    margin-left: 10px;
-    width: 50%;
-    padding: 10px;
-}
+.flm-section.visit{
+	padding-top: $square-section-height/2;
 
-.contetn-subscription .subscription #title{
-    border: 2px solid #DDDDDD;
-    background-color: #9A0982;
-    border-radius: 10px 10px 0 0;
-    margin-left: 10px;
-    width: 50%;
-    text-align: center;
-    color: #DDDDDD;
+	.visit-carousel img{
+		height: 200px;
+	}
 }
 
-/****************/
-/** Admin Zone **/
-/****************/
+.toolbar-fixed{
 
-label.error{
-    color: red;
-}
-
-table.admin-index {
-    margin: 15px 0px;
-}
+	position: fixed;
 
-h2,h3{
-    text-align:center;
-}
+	background-color: $active-tab-color;
+	overflow: hidden;
+	padding: 5px;
 
-.admin-cell-thumbnail img{
-    width: 120px;
-}
+	border-radius: 20px 0px 0px 0px;
 
-.admin-a-timetable{
-    border: solid purple 1px;
-    padding: 10px;
-    margin-bottom: 10px;
-    display:block;
+	.icon{
+		cursor: pointer;
+	}
 }
 
-.admin-a-timetable:nth-child(odd){
-    background-color: gray;
+.social-networks-toolbar{
+	top: 20%;
+	right: 0px;
 }
 
-/**
- * Loading
- */
-
-.loading {
-    background-image : url('../imgs/loading.gif');
-    background-repeat: no-repeat;
-    background-color: transparent;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 128px;
-    height: 128px;
+.ceil-toolbar{
+	top: 50%;
+	right: 0px;
+	position: fixed;
+	text-transform: uppercase;
 }
 
-/**
- * ## Personalización del autocomplete de exhibiciones.
- */
-
-.angucomplete-description {
-    font-style: italic;
-    margin-top: 5px;
-}
+//------------------------------------------------------------------------------
+// Personalización del carrusel.
+//------------------------------------------------------------------------------
 
-.angucomplete-title {
-    font-weight: bold;
+.slick-prev{
+	left: 5px;
 }
 
-div.angucomplete-dropdown{
-    width: 100%;
+.slick-next{
+	right: 5px;
 }
 
-/**
- * When angular is loader with requirejs the blink effect can not be evaded
- * using ngCloak directive, because it css is embed in the js file. But, this
- * file is loaded before the page finished load.
- */
-.ng-cloak{
-    display: none;
+.slick-slide{
+	position: relative;
 }
