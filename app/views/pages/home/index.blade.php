@@ -19,13 +19,13 @@
 	<div class="col-sm-4 col-xs-6">
 		@include('pages.home.partials.filmoteca-invite')
 	</div>
-	<div class="col-sm-4 col-xs-6">
+	<div class="col-sm-4 col-xs-12">
 		@include('pages.home.partials.programming')
 	</div>
 </div>
 
 <div class="row">
-	<div class="col-sm-4 col-xs-6">
+	<div class="col-sm-4 col-xs-12">
 		@include('pages.home.partials.other-news')
 	</div>
 	<div class="col-sm-8 col-xs-12">
@@ -36,7 +36,7 @@
 <div class="row">
 	<div class="col-sm-8">
 		<div class="row">
-			<div class="col-xs-6">
+			<div class="col-xs-12">
 				<div class="flm-section expositions">
 					<div class="content">
 						<div class="header">
@@ -49,7 +49,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-xs-6">
+			<div class="col-xs-12">
 				<div class="flm-section expositions">
 					<div class="content">
 						<div class="header">
