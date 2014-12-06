@@ -9,6 +9,11 @@
 //
 //-----------------------------------------------------------------------------
 
+//------------------------------------------------------------------------------
+// VARIABLES
+//------------------------------------------------------------------------------
+
+@import 'variables';
 
 //------------------------------------------------------------------------------
 // BIBLIOTECAS
@@ -19,15 +24,15 @@
 //
 @import '../../bower_components/bourbon/dist/bourbon'; 
 
+@import '../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap';
+
+@import '../../bower_components/slick.js/slick/slick.scss';
 
 //
 // Bibliotecas estaticas (CSS)
 //
-@import '../../bower_components/slick.js/slick/slick.css';
 
 @import '../../bower_components/bootstrap/dist/css/bootstrap-theme.min.css';
-
-@import '../../bower_components/bootstrap/dist/css/bootstrap.min.css';
 
 
 //-----------------------------------------------------------------------------

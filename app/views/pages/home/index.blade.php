@@ -7,36 +7,48 @@
 @section('content')
 
 <div class="row">
+	<br><br>
 	<div class="col-sm-12">
 		@include('pages.home.partials.carousel')
 	</div>
 </div>
 
 <div class="row">
-	<div class="col-sm-4 col-xs-6">
+	<div class="col-xs-12 col-sm-6 col-md-4">
 		@include('pages.home.partials.the-last')
 	</div>
-	<div class="col-sm-4 col-xs-6">
+	<div class="col-xs-12 col-sm-6 col-md-4">
 		@include('pages.home.partials.filmoteca-invite')
 	</div>
-	<div class="col-sm-4 col-xs-12">
-		@include('pages.home.partials.programming')
+
+	<div class="col-xs-12 col-sm-12 col-md-4">
+		<div class="row">
+			<div class="col-sm-6 col-md-12">
+				@include('pages.home.partials.programming')
+			</div>
+			<div class="col-sm-6 visible-sm">
+				@include('pages.home.partials.other-news')
+			</div>
+			<div class="col-sm-6 visible-sm">
+				@include('pages.home.partials.visit')
+			</div>
+		</div>
 	</div>
 </div>
 
-<div class="row">
-	<div class="col-sm-4 col-xs-12">
+<div class="row hidden-sm">
+	<div class="col-sm-12 col-md-4">
 		@include('pages.home.partials.other-news')
 	</div>
-	<div class="col-sm-8 col-xs-12">
+	<div class="col-sm-12 col-md-8">
 		@include('pages.home.partials.visit')
 	</div>
 </div>
 
 <div class="row">
-	<div class="col-sm-8">
+	<div class="col-xs-12 col-sm-12 col-md-8">
 		<div class="row">
-			<div class="col-xs-12">
+			<div class="col-xs-12 col-sm-6">
 				<div class="flm-section expositions">
 					<div class="content">
 						<div class="header">
@@ -44,12 +56,12 @@
 							<span class="see-more"><a href="">Ver más</a></span>
 						</div>
 						<div class="image">
-							<img src="/imgs/jill.jpg">
+							<img src="/imgs/jill.jpg" class="img-responsive">
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="col-xs-12">
+			<div class="col-xs-12 col-sm-6">
 				<div class="flm-section expositions">
 					<div class="content">
 						<div class="header">
@@ -65,19 +77,19 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-sm-6">
+			<div class="col-xs-12 col-sm-6">
 				<div class="well well-sm">
 					<h4 class="text-center"><a href="#">Tienda en línea</a></h4>
 				</div>
 			</div>
-			<div class="col-sm-6">
+			<div class="col-xs-12 col-sm-6">
 				<div class="well well-sm">
 					<h4 class="text-center"><a href="#">Libros UNAM</a></h4>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="col-sm-4">
+	<div class="col-xs-12 col-sm-12 col-md-4">
 		@include('pages.home.partials.social-networks')
 	</div>
 </div>

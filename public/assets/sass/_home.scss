@@ -6,20 +6,8 @@ $section-color: #F2F2F2;
 
 .flm-section{
 
-	height: 0px;
-	position: relative;
-	overflow: hidden;
-
 	margin-bottom: 25px;
-
 	background-color: $section-color;
-
-	.content{
-		width: 100%;
-		position: absolute;
-		top: 0px;
-		left: 0px;
-	}
 
 	h3, h4, h5, h6{
 		text-transform: uppercase;
@@ -32,7 +20,6 @@ $section-color: #F2F2F2;
 }
 
 .flm-section.carousel{
-	padding-top: $square-section-height / 4;
 
 	img{
 		width: 100%;
@@ -48,12 +35,8 @@ $section-color: #F2F2F2;
 }
 
 .flm-section.social-networks{
-	
-	padding-top: $rectangle-section-height;
 
 	.a-network{
-
-		padding-top: 50%;
 
 		.header{
 			color: white;
@@ -65,27 +48,27 @@ $section-color: #F2F2F2;
 
 .flm-section.expositions{
 	
-	padding-top: 150%;
-	
 	.header{
 		height: 120px;
+	}
+
+	img{
+		width: 100%;
+		height: auto;
 	}
 }
 
 .flm-section.the-last{
-	padding-top: $rectangle-section-height;
+
 }
 
 .flm-section.filmoteca-invite{
-	padding-top: $rectangle-section-height;
+
 }
 
 .flm-section.programming{
-
-	padding-top: $rectangle-section-height;
 	
 	.carrousel{
-		padding-top: 5/11 * $rectangle-section-height;
 		
 		.header{
 			background-color: $active-tab-color; 
@@ -99,7 +82,7 @@ $section-color: #F2F2F2;
 	}
 
 	.queries{
-		padding-top: 3/11 * $rectangle-section-height;
+
 
 		.link{
 			margin-bottom: 5px;
@@ -107,13 +90,12 @@ $section-color: #F2F2F2;
 	}
 
 	.digital-billboard{
-		padding-top: 3/11 * $rectangle-section-height;
 	
 		.image{
 			width: 35%;
 		}
 		img{
-			width: 100%;
+			width: 20px;
 		}
 
 		.caption{
@@ -124,11 +106,10 @@ $section-color: #F2F2F2;
 }
 
 .flm-section.other-news{
-	padding-top: $square-section-height;
+
 }
 
 .flm-section.visit{
-	padding-top: $square-section-height/2;
 
 	.visit-carousel img{
 		height: 200px;
@@ -162,9 +143,6 @@ $section-color: #F2F2F2;
 	text-transform: uppercase;
 }
 
-//------------------------------------------------------------------------------
-// Personalización del carrusel.
-//------------------------------------------------------------------------------
 
 .slick-prev{
 	left: 5px;
