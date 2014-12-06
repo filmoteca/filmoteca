@@ -21,6 +21,11 @@ a{
 	}
 }
 
+.main-header{
+	position: relative;
+	z-index: 1;
+}
+
 .container-fluid{
 	max-width:980px;
 }

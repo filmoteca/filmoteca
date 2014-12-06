@@ -2,7 +2,7 @@
 	<ul>
 		<li>
 			<a><span>QUIÉNES SOMOS</span></a>
-			<ul>
+			<ul class="submenu">
 				<li>
 					<a href="/pages/quienes-somos/mision-y-vision">
 						<span>Misión y Visión</span>
@@ -43,8 +43,8 @@
 		</li>
 
 		<li>
-			<a><span>ACERVO</span></a>
-	        <ul>
+			<a href="/pages/acervos/index"><span>ACERVO</span></a>
+	        <ul class="submenu">
 				<li>
 					<a href="/pages/acervo/resguardo-y-conservacion">
 						<span>Resguardo y conservación</span>
@@ -74,8 +74,8 @@
 		</li>
 
 	      <li>
-	      	<a><span>SERVICIOS</span></a>
-	        <ul>
+	      	<a href="#"><span>SERVICIOS</span></a>
+	        <ul class="submenu">
 				<li>
 					<a href="/pages/servicios/lineamientos-generales-para-acceder-al-material">
 						<span>Lineamientos para acceso al material</span>
@@ -121,7 +121,6 @@
 					<a href="/pages/servicios/prestamo-y-alquiler-de-peliculas">
 						<span>Préstamo y alquiler de películas</span>
 					</a>                          
-	        		}}
 	            </li>
 	            <li>
 					<a href="/pages/servicios/departamento-de-produccion">
@@ -139,7 +138,7 @@
 			<a href="{{ route('exhibitions') }}">
 				<span>PROGRAMACIÓN</span>
 			</a>
-	        <ul>
+	        <ul class="submenu">
 				<li>
 					<a href="{{ route('exhibitions.history')}}">
 						<span>Histórico de programación</span>
@@ -159,8 +158,10 @@
 		</li>
 
 		<li>
-			<a><span>PRENSA</span></a>
-	        <ul>
+			<a href="/pages/prensa">
+				<span>PRENSA</span>
+			</a>
+	        <ul class="submenu">
 				<li>
 					<a href="/pages/prensa/noticias">
 						<span>Noticias</span>
@@ -194,7 +195,7 @@
 			<a href="/pages/extension-academica/index">
 				<span>EXTENSIÓN ACADÉMICA</span>
 			</a>
-			<ul>
+			<ul class="submenu">
 				<li>
 					<a href="/pages/extension-academica/procedimiento-de-inscripcion">
 						<span>Procedimiento de inscripción</span>
@@ -229,10 +230,12 @@
 		</li>
 
 		<li>
-			<a><span>CONCURSOS</span></a>
-			<ul>
+			<a href="#">
+				<span>CONCURSOS</span>
+			</a>
+			<ul class="submenu">
 				<li>
-					<a href="/pages/concursos/alfonso-reyes">
+					<a href="/pages/concursos/alfonsoreyes">
 						<span>Alfonso Reyes "Fósforo"</span>
 					</a>
 				</li>

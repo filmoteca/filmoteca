@@ -23,7 +23,7 @@
 
 						<div class="video-preview">
 							<div class="embed-responsive embed-responsive-4by3">
-									<iframe class="embeb-responsive-item" src="http://www.youtube.com/embed/Lqmf4qC4PA4" frameborder="0" allowfullscreen></iframe>
+									
 							</div>
 						</div>
 					</ul>
