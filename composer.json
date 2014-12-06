@@ -6,9 +6,10 @@
 	"require": {
 		"laravel/framework": "4.2.*",
 		"codesleeve/laravel-stapler": "1.0.*",
-		"doctrine/dbal": "2.5.*@dev",
+		"doctrine/dbal": "2.*",
 		"cartalyst/sentry": "2.1.*",
-		"mrjuliuss/syntara": "1.2.*"
+		"mrjuliuss/syntara": "1.2.*",
+		"fitztrev/laravel-html-minify": "1.*"
 	},
 	"autoload": {
 		"classmap": [

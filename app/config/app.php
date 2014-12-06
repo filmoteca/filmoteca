@@ -124,6 +124,7 @@ return array(
 		'Codesleeve\LaravelStapler\LaravelStaplerServiceProvider',
 		'Cartalyst\Sentry\SentryServiceProvider',
 		'Mrjuliuss\Syntara\SyntaraServiceProvider',
+		'Fitztrev\LaravelHtmlMinify\LaravelHtmlMinifyServiceProvider',
 	),
 
 	/*
