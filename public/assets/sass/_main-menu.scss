@@ -22,6 +22,10 @@
         margin: 0 auto;
         padding: 0;
 
+        @media(max-width: $screen-md){
+            width: 100%;
+        }
+
         li{ 
             float: left;
             height: 100%;
