@@ -1,26 +1,36 @@
 <header class="main-header">
-	<nav class="navbar navbar-default navbar-static-top" role="navigation">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<span>
-					<span class="icon icon-home"></span>
-					Inicio
-				</span>
-				<span>Directorio</span>
-				<span>Mapa del sitio</span>
-				<span>Contacto</span>
-			</div>
+	<div class="upper-navbar">
+		<div class="text-right">
+			<a href="/">
+				<span class="icon-home"></span>Inicio
+			</a>
+			<a href="#">Directorio</a>
+			<a href="#">Mapa del sitio</a>
+			<a href="#">Contacto</a>
+			<a href="#"><span class="icon-accessibility"></span></a>
 		</div>
-	</nav>
+	</div>
 
-	<div class="main-header">
-		<div class="unam">
-			<span class="icon icon-unam"></span>
-			<span>Universidad Nacional Autónoma de Mexico</span>
-		</div>
-		<div class="filmoteca">
-			<span class="icon icon-filmoteca"></span>
-			<span>Dirección General de Actividades Cinematográficas</span>
+	<div class="strip">
+		<div>
+			<div class="pull-left">
+				<div class="pull-left">
+					<span class="icon-logo-unam"></span>
+				</div>
+				<div class="unam-text pull-left">
+					<span>Universidad Nacional</span> <br>
+					<span>Autónoma de Mexico</span>
+				</div>
+			</div>
+			<div class="pull-right">
+				<div class="filmoteca-text pull-left text-right">
+					<span>Dirección General de</span> <br>
+					<span>Actividades Cinematográficas</span>
+				</div>
+				<div class="pull-left">
+					<span class="icon-logo-filmoteca"></span>
+				</div>
+			</div>
 		</div>
 	</div>
 

@@ -132,12 +132,14 @@ $section-color: #F2F2F2;
 }
 
 .social-networks-toolbar{
-	top: 20%;
+	top: 30%;
 	right: 0px;
+	color: $primary-color;
+	font-size: 36px
 }
 
 .ceil-toolbar{
-	top: 50%;
+	bottom: 30%;
 	right: 0px;
 	position: fixed;
 	text-transform: uppercase;

@@ -21,13 +21,55 @@ a{
 	}
 }
 
+.icon-accessibility{
+	color: $icon-accessibility-color;
+}
+
 .main-header{
 	position: relative;
 	z-index: 1;
+	background-color: $primary-color;
+	padding-top: 5px;
+
+	.upper-navbar{
+		width: 100%;
+		background-color: $tertiary-color;
+		
+		> div{
+			max-width: $screen-md;
+		}
+
+		a{			
+			padding: 15px;
+		}
+	}
+
+	.strip{
+		color: white;
+		width: 100%;
+
+		> div{
+			margin: 10px auto;
+			max-width: $screen-md;
+			@include clearfix();
+		}
+
+		.icon-logo-unam{
+			font-size: 72px;
+		}
+
+		.icon-logo-filmoteca{
+			font-size: 72px;
+		}
+
+		.unam-text, .filmoteca-text{
+			margin-top: 22px;
+		}
+	}
 }
 
 .container-fluid{
-	max-width:980px;
+	max-width: $screen-md;
 }
 
 //Esta regla es necesaria para .see-more.
