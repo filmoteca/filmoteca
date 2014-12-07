@@ -43,7 +43,7 @@
 		</li>
 
 		<li>
-			<a href="/pages/acervos/index"><span>ACERVO</span></a>
+			<a><span>ACERVO</span></a>
 	        <ul>
 				<li>
 					<a href="/pages/acervo/resguardo-y-conservacion">
@@ -74,7 +74,7 @@
 		</li>
 
 	      <li>
-	      	<a href="#"><span>SERVICIOS</span></a>
+	      	<a><span>SERVICIOS</span></a>
 	        <ul>
 				<li>
 					<a href="/pages/servicios/lineamientos-generales-para-acceder-al-material">
@@ -159,9 +159,7 @@
 		</li>
 
 		<li>
-			<a href="/pages/prensa">
-				<span>PRENSA</span>
-			</a>
+			<a><span>PRENSA</span></a>
 	        <ul>
 				<li>
 					<a href="/pages/prensa/noticias">
@@ -231,12 +229,10 @@
 		</li>
 
 		<li>
-			<a href="#">
-				<span>CONCURSOS</span>
-			</a>
+			<a><span>CONCURSOS</span></a>
 			<ul>
 				<li>
-					<a href="/pages/concursos/alfonsoreyes">
+					<a href="/pages/concursos/alfonso-reyes">
 						<span>Alfonso Reyes "Fósforo"</span>
 					</a>
 				</li>
