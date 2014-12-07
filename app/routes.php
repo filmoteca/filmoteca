@@ -11,11 +11,11 @@
 |
 */
 
-Route::get('/home',
-	array(
-		'as' => 'home',
-		'uses' => 'ExhibitionController@index')
-	);
+Route::get('/home',[
+	'as' => 'home',
+	'uses' => function(){
+		return Redirect::to('/');
+	}]);
 
 Route::get('/', function()
 {
