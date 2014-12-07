@@ -5563,32 +5563,130 @@ button.close {
       color: black;
       opacity: 0.75; }
 
-.icon {
-  background-image: url("imgs/icons.png");
-  height: 64px;
-  width: 64px;
-  padding: 4px; }
+@font-face {
+  font-family: "fontcustom";
+  src: url("public/assets/sass/fontcustom.eot");
+  src: url("public/assets/sass/fontcustom.eot?#iefix") format("embedded-opentype"), url("public/assets/sass/fontcustom.woff") format("woff"), url("public/assets/sass/fontcustom.ttf") format("truetype"), url("public/assets/sass/fontcustom.svg#fontcustom") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  @font-face {
+    font-family: "fontcustom";
+    src: url("public/assets/sass/fontcustom.svg#fontcustom") format("svg"); } }
+[data-icon]:before {
+  content: attr(data-icon); }
 
-.icon-facebook {
-  background-position: 0px 0px; }
+[data-icon]:before,
+.icon-accessibility:before,
+.icon-arrow-above:before,
+.icon-arrow-friends-sites:before,
+.icon-arrow-left:before,
+.icon-arrow-right:before,
+.icon-ciclos:before,
+.icon-cinemas:before,
+.icon-download:before,
+.icon-facebook:before,
+.icon-google-:before,
+.icon-home:before,
+.icon-location:before,
+.icon-logo-fiaf:before,
+.icon-logo-filmoteca:before,
+.icon-logo-unam:before,
+.icon-mail:before,
+.icon-print:before,
+.icon-register:before,
+.icon-search:before,
+.icon-this-week:before,
+.icon-twitter:before,
+.icon-vimeo:before,
+.icon-youtube:before {
+  display: inline-block;
+  font-family: "fontcustom";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased; }
 
-.icon-twitter {
-  background-position: 0px 0px; }
+.icon-accessibility:before {
+  content: "\f100"; }
 
-.icon-youtube {
-  background-position: 0px 0px; }
+.icon-arrow-above:before {
+  content: "\f101"; }
 
-.icon-google-plus {
-  background-position: 0px 0px; }
+.icon-arrow-friends-sites:before {
+  content: "\f102"; }
 
-.icon-vimeo {
-  background-position: 0px 0px; }
+.icon-arrow-left:before {
+  content: "\f103"; }
+
+.icon-arrow-right:before {
+  content: "\f104"; }
+
+.icon-ciclos:before {
+  content: "\f105"; }
+
+.icon-cinemas:before {
+  content: "\f106"; }
+
+.icon-download:before {
+  content: "\f107"; }
+
+.icon-facebook:before {
+  content: "\f108"; }
+
+.icon-google-:before {
+  content: "\f109"; }
+
+.icon-home:before {
+  content: "\f10a"; }
+
+.icon-location:before {
+  content: "\f10b"; }
+
+.icon-logo-fiaf:before {
+  content: "\f10c"; }
+
+.icon-logo-filmoteca:before {
+  content: "\f10d"; }
+
+.icon-logo-unam:before {
+  content: "\f10e"; }
+
+.icon-mail:before {
+  content: "\f10f"; }
+
+.icon-print:before {
+  content: "\f110"; }
+
+.icon-register:before {
+  content: "\f111"; }
+
+.icon-search:before {
+  content: "\f112"; }
+
+.icon-this-week:before {
+  content: "\f113"; }
+
+.icon-twitter:before {
+  content: "\f114"; }
+
+.icon-vimeo:before {
+  content: "\f115"; }
+
+.icon-youtube:before {
+  content: "\f116"; }
 
 body {
   color: #646464; }
 
 a {
-  color: #98147F; }
+  color: #98157f; }
 
 .link {
   background-color: #CCCCCC;
@@ -5856,9 +5954,16 @@ a {
     width: 992px;
     margin: 0 auto;
     padding: 0; }
+    @media (max-width: 992px) {
+      .main-menu ul {
+        width: 100%; } }
     .main-menu ul li {
       float: left;
       height: 100%; }
+      @media (max-width: 768px) {
+        .main-menu ul li {
+          width: 100%;
+          display: block; } }
       .main-menu ul li a {
         text-transform: uppercase;
         width: 100%;
@@ -5872,11 +5977,12 @@ a {
         border-bottom: 5px solid #2D2D2D;
         background-color: #2D2D2D; }
       .main-menu ul li a:hover {
-        color: #98147F;
+        color: #98157f;
         background-color: white;
-        border-bottom: 5px solid #98147F; }
-    .main-menu ul li:hover .submenu {
-      display: block; }
+        border-bottom: 5px solid #98157f; }
+    @media (min-width: 768px) {
+      .main-menu ul li:hover .submenu {
+        display: block; } }
   .main-menu .submenu {
     margin: 0;
     display: none;
@@ -5930,85 +6036,6 @@ a {
   float: left;
   position: relative; }
 
-@media (max-width: 1023px) {
-  .body .center-column blocks li {
-    width: 280px; } }
-@media (max-width: 754px) {
-  .main-menu > ul > li {
-    width: 25%; }
-
-  .pestaña-menu {
-    display: block; }
-
-  .filters-menu a,
-  .filters-menu span {
-    height: 50px; }
-
-  .filters-menu {
-    width: 100%;
-    min-width: 320px;
-    position: relative;
-    z-index: 1;
-    margin-bottom: 20px; }
-
-  .filters-menu > ul > li {
-    width: 33%;
-    float: left;
-    position: relative;
-    display: block; }
-
-  .filters-menu > ul > li > ul {
-    position: absolute;
-    z-index: 1;
-    top: 48px;
-    left: 0px;
-    width: 100%;
-    display: none; }
-
-  .filters-menu > ul > li > ul > li {
-    width: 100%; }
-
-  	/** Corrección del comprotamiento por
-  defecto del efecto blind de jquery ui **/
-  /**.filters-menu */
-  .filters-menu .ui-effects-wrapper {
-    position: absolute !important;
-    z-index: 1;
-    margin: 0px; }
-
-  .wrapper-items {
-    width: 100%; }
-
-  .banner-filmoteca .filmoteca {
-    display: none; } }
-@media (max-width: 580px) {
-  .items .item {
-    width: 33%; }
-
-  .banner-filmoteca .unam {
-    display: none; } }
-@media (max-width: 480px) {
-  .wrapper {
-    width: 100%;
-    min-width: 320px; }
-
-  .body .main {
-    width: 100%; }
-
-  .block {
-    width: 100%; }
-
-  .wrapper-items {
-    width: 100%; }
-
-  .main-menu > ul > li {
-    width: 50%; }
-
-  .filters-menu > ul > li {
-    width: 50%; } }
-@media (max-width: 440px) {
-  .items .item {
-    width: 50%; } }
 ::-ms-tooltip {
   display: none; }
 
