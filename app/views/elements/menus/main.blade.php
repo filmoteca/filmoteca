@@ -107,11 +107,11 @@
 						<span>Laboratorio cinematográfico</span>
 					</a>
 	            </li>
-	            <li>
+	            <!-- <li>
 					<a href="/pages/servicios/laboratorio-digital">
 						<span>Laboratorio digital</span>
 					</a>
-	             </li>
+	             </li> -->
 				<li>
 					<a href="/pages/servicios/exposiciones-museografia">
 						<span>Museografía</span>

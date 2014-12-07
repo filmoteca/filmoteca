@@ -14,7 +14,8 @@ $menu = array(
 
 	array('Laboratorio cinematográfico', '/pages/servicios/laboratorio-cinematografico'),
 
-	array('Laboratorio digital', '/pages/servicios/laboratorio-digital'),
+	//esta página queda pendiente hasta tener información
+	/*array('Laboratorio digital', '/pages/servicios/laboratorio-digital'),*/
 
 	array('Museografía', '/pages/servicios/exposiciones-museografia'),
 
