@@ -23,8 +23,13 @@
         padding: 0;
 
         li{ 
-        float: left;
-        height: 100%;
+            float: left;
+            height: 100%;
+
+            @media(max-width: $screen-sm){
+                width: 100%;
+                display: block;
+            }
         
             a{
                 text-transform: uppercase;
@@ -49,9 +54,11 @@
         }
 
         li:hover{
-
-            .submenu{
-                display: block;
+            
+            @media(min-width: $screen-sm){
+                .submenu{
+                    display: block;
+                }
             }
         }
     }

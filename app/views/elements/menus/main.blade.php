@@ -1,4 +1,13 @@
-<div class="main-menu">
+<div class="navbar-header">
+	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu">
+		<span class="sr-only">Toggle navigation</span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	</button>
+</div>
+
+<div class="main-menu collapse navbar-collapse" id="main-menu">
 	<ul>
 		<li>
 			<a><span>QUIÉNES SOMOS</span></a>
