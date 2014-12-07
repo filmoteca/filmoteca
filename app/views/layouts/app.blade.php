@@ -7,14 +7,7 @@
 
 		@if (App::isLocal() )
 
-		{{ HTML::styles(
-			array(
-
-				'/bower_components/bootstrap/dist/css/bootstrap-theme.min.css',
-			
-				'/bower_components/bootstrap/dist/css/bootstrap.min.css',
-				
-				'/assets/css/filmoteca.css')) }}
+		{{ HTML::style('/assets/css/filmoteca.css') }}
 
 		@else
 			{{--
@@ -34,40 +27,12 @@
 	</head>
 
 	<body>
-		<div class="wrapper">
-			<header>
 
-				@include('elements.filmoteca-banner')
+	<body>
+		@include('layouts.header')
 
-				@yield('presentation')
+		@include('layouts.content')
 
-				@include('elements.menus.main')
-			</header>
-
-			<div class="body">
-				<div class="toolbar">
-
-					<div>
-						<ul class="breadcrumb">
-							<li>{{ HTML::linkRoute('home','Página de inicio') }}</li>
-							@yield('breadcrumbs')
-						</ul>
-					</div>
-
-				</div>
-
-				@if( Session::has('message') )
-					<div class="alert alert-info }}">
-						{{Session::get('message')}}
-					</div>
-				@endif
-
-				@yield('content')
-
-				<div style="clear:both"></div>
-
-				@include('elements.footer')
-			</div>
-		</div>
+		@include('layouts.footer')
 	</body>
 </html>

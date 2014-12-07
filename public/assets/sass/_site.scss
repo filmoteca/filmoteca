@@ -68,6 +68,11 @@ a{
 	}
 }
 
+.toolbar{
+	margin: 10px auto;
+	max-width: $screen-md;
+}
+
 .container-fluid{
 	max-width: $screen-md;
 }

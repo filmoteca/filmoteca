@@ -34,7 +34,19 @@
 		</div>
 	</div>
 
-	<nav class="navbar navbar-default">
+	<nav>
 		@include('elements.menus.main')
 	</nav>
+
 </header>
+
+<div class="toolbar">
+
+	<div>
+		<ul class="breadcrumb">
+			<li><span class="icon-home"></span>{{ HTML::linkRoute('home','Página de inicio') }}</li>
+			@yield('breadcrumbs')
+		</ul>
+	</div>
+
+</div>

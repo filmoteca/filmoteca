@@ -5725,9 +5725,14 @@ a {
     .main-header .strip .icon-logo-unam {
       font-size: 72px; }
     .main-header .strip .icon-logo-filmoteca {
-      font-size: 82px; }
+      font-size: 72px; }
     .main-header .strip .unam-text, .main-header .strip .filmoteca-text {
       margin-top: 22px; }
+
+.toolbar {
+  background-color: white;
+  margin: 10px auto;
+  max-width: 992px; }
 
 .container-fluid {
   max-width: 992px; }
@@ -5807,11 +5812,13 @@ a {
     cursor: pointer; }
 
 .social-networks-toolbar {
-  top: 20%;
-  right: 0px; }
+  top: 30%;
+  right: 0px;
+  color: #98157f;
+  font-size: 36px; }
 
 .ceil-toolbar {
-  top: 50%;
+  bottom: 30%;
   right: 0px;
   position: fixed;
   text-transform: uppercase; }
