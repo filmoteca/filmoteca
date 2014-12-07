@@ -100,15 +100,15 @@
 
 
 <div class="toolbar-fixed social-networks-toolbar visible-lg">
-	<div class="icon icon-twitter"></div>
-	<div class="icon icon-facebook"></div>
-	<div class="icon icon-youtube"></div>
-	<div class="icon icon-v"></div>
-	<div class="icon icon-google-plus"></div>
+	<a href="#"><span class="icon-twitter"></span></a>
+	<a href="#"><span class="icon-facebook"></span></a>
+	<a href="#"><span class="icon-youtube"></span></a>
+	<a href="#"><span class="icon-vimeo"></span></a>
+	<a href="#"><span class="icon-google-plus"></span></a>
 </div>
 
 <div class="ceil-toolbar toolbar-fixed visible-lg">
-	<div class="icon icon-ceil"></div>
+	<div class="text-center"><a class="icon-arrow-above" href="#main-header"></a></div>
 	<span>arriba</span>
 </div>
 

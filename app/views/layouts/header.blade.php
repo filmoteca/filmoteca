@@ -1,4 +1,4 @@
-<header class="main-header">
+<header class="main-header" id="main-header">
 	<div class="upper-navbar">
 		<div class="text-right">
 			<a href="/">

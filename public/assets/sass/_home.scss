@@ -124,7 +124,7 @@ $section-color: #F2F2F2;
 	overflow: hidden;
 	padding: 5px;
 
-	border-radius: 20px 0px 0px 0px;
+	border-radius: 35px 0px 0px 0px;
 
 	.icon{
 		cursor: pointer;
@@ -134,15 +134,48 @@ $section-color: #F2F2F2;
 .social-networks-toolbar{
 	top: 30%;
 	right: 0px;
-	color: $primary-color;
-	font-size: 36px
+	font-size: 36px;
+
+	a{
+		color: $primary-color;
+		display: block;
+		border-radius: 100%;
+		background-color: white;
+		margin: 10px;
+
+		// Es necesario especificar la anchura y altura explicitamente para lograr
+		// generar un circulo.
+		width: 45px; 
+		height: 45px;
+		text-align: center;
+	}
+
+	a:hover{
+		color: $tertiary-color;
+		background-color: $primary-color;
+	}
 }
 
 .ceil-toolbar{
-	bottom: 30%;
+	bottom: 10%;
 	right: 0px;
 	position: fixed;
 	text-transform: uppercase;
+	color: white;
+	padding: 10px;
+
+	.icon-arrow-above{
+		font-size: 36px;
+	}
+
+	a{
+		color: white;
+		text-decoration: none;
+	}
+
+	a:hover{
+		color: $primary-color;
+	}
 }
 
 
