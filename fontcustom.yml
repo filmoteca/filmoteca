@@ -73,7 +73,7 @@ output:
 templates:
 - scss
 
-preprocessor_path: public/assets/sass
+preprocessor_path: ../fonts
 
 
 # -----------------------------------------------------------------------------
