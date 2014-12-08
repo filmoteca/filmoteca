@@ -1,10 +1,18 @@
-<div class="friends-sites" id="friends-sites">
-		<a class="friends-sites-button" id="friends-sites-button"></a>
-		<div class="friends-sites-pane" id="friends-sites-pane">
-			<div class="row ">
-				<div class="col-md-12">
-					<h4>Sitios Amigos</h4>
-					<div class="col-md-4">
+<div class="friend-sites">
+	<hr>
+	<div class="toggle-button center-block" id="friend-sites-toggle-button">
+		<span>Sitios amigos</span>
+
+		<div class="external-circle center-block">
+			<span class="icon icon-arrow-friends-sites icon-circle" id="friend-sites-button"></span>
+		</div>
+	</div>
+
+
+	<div class="friends-sites-pane collapse">
+		<div class="row ">
+			<div class="col-md-12">
+				<div class="col-md-4">
 					<h5> Sitios UNAM </h5>
 						<ul class="footer_links">
 							<li>
@@ -125,8 +133,8 @@
 							<li><a class="footer_link" href="http://www.cuec.unam.mx/">Centro Universitario de Estudios Cinematográficos</a></li>
 							<li><a class="footer_link" href="http://www.chopo.unam.mx/cartelera_cine.html">Museo Universitario del Chopo – Cine</a></li>
 						</ul>
-					</div>
-			</div>
-			
+				</div>
+			</div>		
 		</div>
 	</div>
+</div>

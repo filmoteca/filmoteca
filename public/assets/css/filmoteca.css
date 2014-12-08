@@ -5572,7 +5572,7 @@ button.close {
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   @font-face {
     font-family: "fontcustom";
-    src: url("public/assets/sass/fontcustom.svg#fontcustom") format("svg"); } }
+    src: url("../fonts/fontcustom.svg#fontcustom") format("svg"); } }
 [data-icon]:before {
   content: attr(data-icon); }
 
@@ -5763,6 +5763,8 @@ footer {
   footer .icon-filmoteca {
     display: block;
     font-size: 72px; }
+  footer ul {
+    list-style: none; }
 
 .flm-section {
   margin-bottom: 25px;
@@ -5826,6 +5828,36 @@ footer {
 .flm-section.visit .visit-carousel img {
   height: 200px; }
 
+.friend-sites hr {
+  margin-top: 60px;
+  height: 0;
+  border: solid 2px #f2f2f2; }
+.friend-sites .external-circle {
+  background-color: white;
+  padding: 10px;
+  display: block;
+  border-radius: 100%;
+  width: 65px;
+  height: 65px;
+  text-align: center; }
+.friend-sites .icon-circle {
+  display: block;
+  border-radius: 100%;
+  width: 45px;
+  height: 45px;
+  text-align: center; }
+.friend-sites .toggle-button {
+  width: 90px;
+  margin-top: -67.5px;
+  cursor: pointer; }
+  .friend-sites .toggle-button .icon-circle {
+    font-size: 36px;
+    color: #98157f;
+    background-color: #f2f2f2; }
+.friend-sites .toggle-button:hover .icon-circle {
+  color: #f2f2f2;
+  background-color: #98157f; }
+
 .toolbar-fixed {
   position: fixed;
   background-color: #2D2D2D;
@@ -5841,10 +5873,10 @@ footer {
   font-size: 36px; }
   .social-networks-toolbar a {
     color: #98157f;
+    margin: 10px;
+    background-color: white;
     display: block;
     border-radius: 100%;
-    background-color: white;
-    margin: 10px;
     width: 45px;
     height: 45px;
     text-align: center; }

@@ -142,6 +142,46 @@ $section-color: #F2F2F2;
 	}
 }
 
+.friend-sites{
+
+	$internal-diameter :45px;
+	
+	hr{
+		margin-top: 60px;
+		height: 0;
+		border: solid 2px $tertiary-color
+	}
+
+	.external-circle{
+		background-color: white;
+		padding: 10px;
+		@include icon-circle($internal-diameter + 20px);
+	}
+
+	.icon-circle{
+		@include icon-circle( $internal-diameter);
+	}
+
+	.toggle-button{
+		width: 90px;
+		margin-top: - ( $internal-diameter + ( $internal-diameter/2) );
+		cursor: pointer;
+		
+		.icon-circle{
+			font-size: 36px;
+			color: $primary-color;
+			background-color: $tertiary-color;			
+		}
+	}
+
+	.toggle-button:hover{
+		.icon-circle{
+			color: $tertiary-color;
+			background-color: $primary-color;	
+		}
+	}
+}
+
 .toolbar-fixed{
 
 	position: fixed;
@@ -164,16 +204,10 @@ $section-color: #F2F2F2;
 
 	a{
 		color: $primary-color;
-		display: block;
-		border-radius: 100%;
-		background-color: white;
 		margin: 10px;
+		background-color: white;
 
-		// Es necesario especificar la anchura y altura explicitamente para lograr
-		// generar un circulo.
-		width: 45px; 
-		height: 45px;
-		text-align: center;
+		@include icon-circle(45px);
 	}
 
 	a:hover{
