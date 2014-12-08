@@ -2,14 +2,14 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4">
-				<span class="icon icon-filmoteca-gray"></span>
+				<span class="icon icon-filmoteca"></span>
 				
 				<p>2014 FILMOTECA UNAM<p>
 
 				<p>Circuito exterior Mtro. Mario de la cueva s/n. 
 					Ciudad Universitaria C.P. 045 México, D.F.</p>
 				
-				<p><a href="#" class="look-map"><span class="icon icon-map-mark"></span>ver mapa</a></p>
+				<p><a href="#" class="look-map"><span class="icon icon-location"></span>ver mapa</a></p>
 
 			</div>
 
@@ -30,13 +30,13 @@
 
 			<div class="col-md-4">
 				<div>
-					<span class="icon icon-twitter"></span>
-					<span class="icon icon-facebook"></span>
-					<span class="icon icon-email"></span>
+					<a href="#"><span class="icon icon-twitter"></span></a>
+					<a href="#"><span class="icon icon-facebook"></span></a>
+					<a href="#"><span class="icon icon-mail"></span></a>
 				</div>
 				<div>
-					<span class="icon icon-fiaf"></span>
-					<span>Miembro de la FIAF</span>
+					<a href="#"><span class="icon icon-fiaf"></span>
+						<span>Miembro de la FIAF</span></a>
 				</div>
 			</div>
 		</div>

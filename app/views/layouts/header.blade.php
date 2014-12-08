@@ -15,7 +15,7 @@
 		<div>
 			<div class="pull-left">
 				<div class="pull-left">
-					<span class="icon-logo-unam"></span>
+					<span class="icon-unam"></span>
 				</div>
 				<div class="unam-text pull-left">
 					<span>Universidad Nacional</span> <br>
@@ -28,7 +28,7 @@
 					<span>Actividades Cinematográficas</span>
 				</div>
 				<div class="pull-left">
-					<span class="icon-logo-filmoteca"></span>
+					<span class="icon-filmoteca"></span>
 				</div>
 			</div>
 		</div>

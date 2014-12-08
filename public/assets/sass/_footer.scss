@@ -1,0 +1,23 @@
+footer{
+	background-color: $tertiary-color;
+	a{
+		color: $text-color;
+	}
+
+	a:hover{
+		color: $primary-color;
+	}
+
+	.icon{
+		font-size: 36px;
+	}
+
+	.icon-filmoteca{
+		display: block;
+		font-size: 72px
+	}
+
+	ul{
+		list-style: none;
+	}
+}

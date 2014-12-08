@@ -6,7 +6,10 @@
 			<div class="col-sm-6 col-md-12">
 				<div class="flm-section a-network">
 					<div class="content">
-						<div class="header"><span class="icon icon-facebook"></span><h3>Facebook</h3></div>
+						<div class="header">
+							<span class="icon icon-facebook"></span>
+							<h3 class="h3">Facebook</h3>
+						</div>
 
 						<div>
 						Lorem ipsum Commodo quis dolor et esse non non nostrud minim officia amet anim dolore Duis Duis ullamco labore quis Excepteur fugiat sit laboris sed reprehenderit eiusmod.

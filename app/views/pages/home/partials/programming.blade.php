@@ -19,15 +19,15 @@
 				<h5>Consulta:</h5>
 	
 				<div class="link">
-					<a href="#esta-semana"><span class="icon icon-film"></span>Esta semana</a>	
+					<a href="#"><span class="icon icon-this-week"></span>Esta semana</a>	
 				</div>
 				
 				<div class="link">
-					<a href="#Ciclos"><span class="icon icon-roll"> Ciclos</span></a>
+					<a href="#"><span class="icon icon-ciclos"></span>Ciclos</a>
 				</div>
 
 				<div class="link">
-					<a href="#salas"><span class="icon icon-auditorium">Salas</span></a>
+					<a href="#"><span class="icon icon-cinemas"></span>Salas</a>
 				</div>
 			</div>
 		</div>
@@ -40,7 +40,7 @@
 				<div class="caption pull-right">
 					<h5>Catelera digital</h5>
 					<small>Diciembre</small>
-					<span class="icon icon-download pull-right"></span>
+					<a href="#"><span class="icon icon-download pull-right"></span></a>
 				</div>	
 			</div>
 		</div>

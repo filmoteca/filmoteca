@@ -5586,18 +5586,18 @@ button.close {
 .icon-cinemas:before,
 .icon-download:before,
 .icon-facebook:before,
+.icon-fiaf:before,
+.icon-filmoteca:before,
 .icon-google-plus:before,
 .icon-home:before,
 .icon-location:before,
-.icon-logo-fiaf:before,
-.icon-logo-filmoteca:before,
-.icon-logo-unam:before,
 .icon-mail:before,
 .icon-print:before,
-.icon-register:before,
 .icon-search:before,
+.icon-signup:before,
 .icon-this-week:before,
 .icon-twitter:before,
+.icon-unam:before,
 .icon-vimeo:before,
 .icon-youtube:before {
   display: inline-block;
@@ -5640,6 +5640,12 @@ button.close {
 .icon-facebook:before {
   content: "\f108"; }
 
+.icon-fiaf:before {
+  content: "\f118"; }
+
+.icon-filmoteca:before {
+  content: "\f119"; }
+
 .icon-google-plus:before {
   content: "\f117"; }
 
@@ -5649,32 +5655,26 @@ button.close {
 .icon-location:before {
   content: "\f10b"; }
 
-.icon-logo-fiaf:before {
-  content: "\f10c"; }
-
-.icon-logo-filmoteca:before {
-  content: "\f10d"; }
-
-.icon-logo-unam:before {
-  content: "\f10e"; }
-
 .icon-mail:before {
   content: "\f10f"; }
 
 .icon-print:before {
   content: "\f110"; }
 
-.icon-register:before {
-  content: "\f111"; }
-
 .icon-search:before {
   content: "\f112"; }
+
+.icon-signup:before {
+  content: "\f11a"; }
 
 .icon-this-week:before {
   content: "\f113"; }
 
 .icon-twitter:before {
   content: "\f114"; }
+
+.icon-unam:before {
+  content: "\f11b"; }
 
 .icon-vimeo:before {
   content: "\f115"; }
@@ -5722,9 +5722,9 @@ a {
         display: table; }
       .main-header .strip > div:after {
         clear: both; }
-    .main-header .strip .icon-logo-unam {
+    .main-header .strip .icon-unam {
       font-size: 72px; }
-    .main-header .strip .icon-logo-filmoteca {
+    .main-header .strip .icon-filmoteca {
       font-size: 72px; }
     .main-header .strip .unam-text, .main-header .strip .filmoteca-text {
       margin-top: 22px; }
@@ -5752,6 +5752,18 @@ a {
   margin-right: 4px;
   display: inline-block; }
 
+footer {
+  background-color: #f2f2f2; }
+  footer a {
+    color: #646464; }
+  footer a:hover {
+    color: #98157f; }
+  footer .icon {
+    font-size: 36px; }
+  footer .icon-filmoteca {
+    display: block;
+    font-size: 72px; }
+
 .flm-section {
   margin-bottom: 25px;
   background-color: #F2F2F2; }
@@ -5775,6 +5787,10 @@ a {
   color: white;
   background-color: black;
   padding: 5px; }
+  .flm-section.social-networks .a-network .header span {
+    font-size: 36px; }
+  .flm-section.social-networks .a-network .header h3 {
+    display: inline; }
 
 .flm-section.expositions .header {
   height: 120px; }
@@ -5788,6 +5804,13 @@ a {
   color: #F9D932; }
 .flm-section.programming .carrousel h4 {
   color: white; }
+.flm-section.programming .queries a {
+  display: block; }
+  .flm-section.programming .queries a span {
+    font-size: 20px;
+    padding: 10px; }
+.flm-section.programming .queries a:hover {
+  color: #98157f; }
 .flm-section.programming .queries .link {
   margin-bottom: 5px; }
 .flm-section.programming .digital-billboard .image {
@@ -5797,6 +5820,8 @@ a {
 .flm-section.programming .digital-billboard .caption {
   width: 65%;
   padding: 10px; }
+.flm-section.programming .digital-billboard .icon-download {
+  font-size: 24px; }
 
 .flm-section.visit .visit-carousel img {
   height: 200px; }
