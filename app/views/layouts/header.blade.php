@@ -4,7 +4,7 @@
 			<a href="/">
 				<span class="icon-home"></span>Inicio
 			</a>
-			<a href="#">Directorio</a>
+			<a href="http://filmoteca.dev/pages/quienes-somos/directorio">Directorio</a>
 			<a href="#">Mapa del sitio</a>
 			<a href="#">Contacto</a>
 			<a href="#"><span class="icon-accessibility"></span></a>
@@ -15,7 +15,7 @@
 		<div>
 			<div class="pull-left">
 				<div class="pull-left">
-					<span class="icon-unam"></span>
+					<a href="http://www.unam.mx/" target="blank"><span class="icon-unam"></span></a>
 				</div>
 				<div class="unam-text pull-left">
 					<span>Universidad Nacional</span> <br>
@@ -28,7 +28,7 @@
 					<span>Actividades Cinematográficas</span>
 				</div>
 				<div class="pull-left">
-					<span class="icon-filmoteca"></span>
+					<a href="/"><span class="icon-filmoteca"></span></a>
 				</div>
 			</div>
 		</div>
