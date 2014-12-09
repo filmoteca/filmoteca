@@ -2,6 +2,8 @@
 
 @section('scripts')
 	{{ HTML::script('/assets/js/home.js')}}
+	{{ HTML::script('/assets/js/facebook.js')}}
+	{{ HTML::script('/assets/js/twitter.js')}}
 @stop
 
 @section('content')
@@ -52,7 +54,7 @@
 				<div class="flm-section expositions">
 					<div class="content">
 						<div class="header">
-							<h3>Centro de documentación</h3><small>Abirto al público en general</small>
+							<h3>Centro de documentación</h3><small>Abierto al público en general</small>
 							<span class="see-more"><a href="">Ver más</a></span>
 						</div>
 						<div class="image">
@@ -100,11 +102,11 @@
 
 
 <div class="toolbar-fixed social-networks-toolbar visible-lg">
-	<a href="#"><span class="icon-twitter"></span></a>
-	<a href="#"><span class="icon-facebook"></span></a>
-	<a href="#"><span class="icon-youtube"></span></a>
-	<a href="#"><span class="icon-vimeo"></span></a>
-	<a href="#"><span class="icon-google-plus"></span></a>
+	<a href="https://twitter.com/ButacaUNAM"><span class="icon-twitter"></span></a>
+	<a href="https://www.facebook.com/FilmotecaUNAM"><span class="icon-facebook"></span></a>
+	<a href="https://www.youtube.com/user/FilmotecaUNAM"><span class="icon-youtube"></span></a>
+	<a href="http://vimeo.com/filmotecaunam/videos"><span class="icon-vimeo"></span></a>
+	<a href="https://plus.google.com/117296642645060485198/posts"><span class="icon-google-plus"></span></a>
 </div>
 
 <div class="ceil-toolbar toolbar-fixed visible-lg">

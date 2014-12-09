@@ -9,7 +9,7 @@
 				</div>
 				
 				<div class="carrousel">
-					carrucel.
+					carrusel.
 				</div>
 			</div>
 		</div>
@@ -19,7 +19,7 @@
 				<h5>Consulta:</h5>
 	
 				<div class="link">
-					<a href="#"><span class="icon icon-this-week"></span>Esta semana</a>	
+					<a href="http://filmoteca.dev/exhibition/index"><span class="icon icon-this-week"></span>Esta semana</a>	
 				</div>
 				
 				<div class="link">

@@ -1,6 +1,6 @@
 <div class="flm-section social-networks">
 	<div class="content">
-		<div class="header"><h3>Siguenos</h3></div>
+		<div class="header"><h3>Síguenos</h3></div>
 
 		<div class="row">
 			<div class="col-sm-6 col-md-12">
@@ -11,9 +11,7 @@
 							<h3 class="h3">Facebook</h3>
 						</div>
 
-						<div>
-						Lorem ipsum Commodo quis dolor et esse non non nostrud minim officia amet anim dolore Duis Duis ullamco labore quis Excepteur fugiat sit laboris sed reprehenderit eiusmod.
-						</div>	
+						<div class="fb-like-box" data-href="https://www.facebook.com/FilmotecaUNAM?ref=ts&amp;fref=ts" data-width="262" data-height="300" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="true" data-show-border="true"></div>
 					</div>
 				</div>
 			</div>
@@ -23,7 +21,7 @@
 						<div class="header"><span class="icon icon-twitter"></span><h3>Twitter</h3></div>
 
 						<div>
-						Lorem ipsum Commodo quis dolor et esse non non nostrud minim officia amet anim dolore Duis Duis ullamco labore quis Excepteur fugiat sit laboris sed reprehenderit eiusmod.
+						<a class="twitter-timeline" data-dnt="true" width="262" height="300" href="https://twitter.com/ButacaUNAM"  data-widget-id="444330226755977216">Tweets por @ButacaUNAM</a>
 						</div>	
 					</div>
 				</div>

@@ -7,7 +7,7 @@
 				<p>2014 FILMOTECA UNAM<p>
 
 				<p>Circuito exterior Mtro. Mario de la cueva s/n. 
-					Ciudad Universitaria C.P. 045 México, D.F.</p>
+					Ciudad Universitaria C.P. 04510 México, D.F.</p>
 				
 				<p><a href="#" class="look-map"><span class="icon icon-location"></span>ver mapa</a></p>
 
@@ -30,19 +30,19 @@
 
 			<div class="col-md-4">
 				<div>
-					<a href="#"><span class="icon icon-twitter"></span></a>
-					<a href="#"><span class="icon icon-facebook"></span></a>
+					<a href="https://twitter.com/ButacaUNAM"><span class="icon icon-twitter"></span></a>
+					<a href="https://www.facebook.com/FilmotecaUNAM"><span class="icon icon-facebook"></span></a>
 					<a href="#"><span class="icon icon-mail"></span></a>
 				</div>
 				<div>
-					<a href="#"><span class="icon icon-fiaf"></span>
+					<a href="http://www.fiafnet.org/es/"><span class="icon icon-fiaf"></span>
 						<span>Miembro de la FIAF</span></a>
 				</div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				Lorem ipsum Dolore qui labore mollit ad mollit consectetur officia culpa sint minim amet ut elit reprehenderit Ut non enim veniam reprehenderit cupidatat reprehenderit ea ex qui proident proident elit sed Excepteur ullamco exercitation est amet cupidatat Ut esse.
+				Hecho en México, 2014, todos los derechos reservados. Ésta página puede ser reproducida con fines no lucrativos, siempre y cuando no se mutile, se cite la fuente completa y su dirección electrónica. De otra forma requiere permiso previo por escrito de la institución.
 			</div>
 		</div>
 	</div>
