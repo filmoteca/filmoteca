@@ -50,7 +50,7 @@ Form::macro('formGroup',
 			'	ng-class="{\'has-error\' : film_form.' . $name . '.$invalid }">' . "\n" .
 			'	<label for="' . $name . '" class="col-sm-2 control-label text-right">' . $title . '</label>' . "\n" .
 			'	<div class="col-sm-10">' . "\n" .
-			
+
 			Form::input($type, $name, null, $attr) .
 
 			'	</div>' ."\n".
@@ -60,11 +60,11 @@ Form::macro('formGroup',
 
 Form::macro('dateFormGroup', function($name,$title, $formname, $attr){
 
-	return 
+	return
 	'<div class="form-group">' .
 	'	<label for="' . $name . '" class="col-sm-2 control-label text-right">' . $title . '</label>' .
 	'	<div class="cl-sm-10">' .
-	'		<div class="input-group date">' . 
+	'		<div class="input-group date">' .
 	'			<span class="input-group-addon btn"><i class="glyphicon glyphicon-th"></i></span>' .
 				Form::input('text', $name, null, $attr) .
 	'		</div>' .

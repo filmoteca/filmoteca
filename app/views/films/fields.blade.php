@@ -30,4 +30,6 @@ Este pedaso de vista es utilizaco por otras vistas.
 
 {{ Form::formGroup('textarea','synopsis','Sinopsis', 'film')}}
 
+{{ Form::formGroup('textarea','trailer', 'Trailer', 'film')}}
+
 {{ Form::formGroup('file','image', 'Portada', 'film')}}
