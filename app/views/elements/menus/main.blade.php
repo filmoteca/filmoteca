@@ -268,7 +268,7 @@
 		</li>
 
 		<li>
-			<a href="{{ route('shop')}}">
+			<a href="http://cineunam.librosdelau.com/">
 				<span>LIBRERÍA Y TIENDA</span>
 			</a>
 		</li>

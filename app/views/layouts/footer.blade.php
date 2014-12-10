@@ -16,15 +16,14 @@
 			<div class="col-md-4">
 				<ul>
 					<li><a href="">Inicio</a></li>
-					<li><a href="">Quiénes Somos</a></li>
+					<li><a href="/pages/quienes-somos/mision-y-vision">Quiénes Somos</a></li>
 					<li><a href="">Acervo</a></li>
-					<li><a href="">Acervo</a></li>
-					<li><a href="">Servicios</a></li>
-					<li><a href="">Programación</a></li>
+					<li><a href="/pages/servicios/lineamientos-generales-para-acceder-al-material">Servicios</a></li>
+					<li><a href="{{ route('exhibitions') }}">Programación</a></li>
 					<li><a href="">Prensa</a></li>
 					<li><a href="">Extensión Académica</a></li>
-					<li><a href="">Concursos</a></li>
-					<li><a href="">Librería y Tienda</a></li>
+					<li><a href="/pages/extension-academica/atencion-a-alumnos">Concursos</a></li>
+					<li><a href="http://cineunam.librosdelau.com/">Tienda en línea</a></li>
 				</ul>
 			</div>
 
@@ -35,7 +34,9 @@
 					<a href="#"><span class="icon icon-mail"></span></a>
 				</div>
 				<div>
-					<a href="http://www.fiafnet.org/es/"><span class="icon icon-fiaf"></span>
+					<a href="http://www.fiafnet.org/es/" target="blank"><!-- <span class="icon icon-fiaf"></span> -->
+					<img 
+                            src="/assets/imgs/fiaf.png" 
 						<span>Miembro de la FIAF</span></a>
 				</div>
 			</div>

@@ -81,12 +81,12 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-6">
 				<div class="well well-sm">
-					<h4 class="text-center"><a href="#">Tienda en línea</a></h4>
+					<h4 class="text-center"><a href="http://cineunam.librosdelau.com/">Tienda en línea</a></h4>
 				</div>
 			</div>
 			<div class="col-xs-12 col-sm-6">
 				<div class="well well-sm">
-					<h4 class="text-center"><a href="#">Libros UNAM</a></h4>
+					<h4 class="text-center"><a href="http://www.libros.unam.mx/">Libros UNAM</a></h4>
 				</div>
 			</div>
 		</div>

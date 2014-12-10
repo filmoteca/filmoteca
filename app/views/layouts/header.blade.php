@@ -15,7 +15,9 @@
 		<div>
 			<div class="pull-left">
 				<div class="pull-left">
-					<a href="http://www.unam.mx/" target="blank"><span class="icon-unam"></span></a>
+					<a href="http://www.unam.mx/" target="blank"><!-- <span class="icon-unam"></span> -->
+					<img 
+                        src="/assets/imgs/unam.png"</a>
 				</div>
 				<div class="unam-text pull-left">
 					<span>Universidad Nacional</span> <br>
@@ -28,7 +30,9 @@
 					<span>Actividades Cinematográficas</span>
 				</div>
 				<div class="pull-left">
-					<a href="/"><span class="icon-filmoteca"></span></a>
+					<a href="/"><!-- <span class="icon-filmoteca"></span> -->
+					<img 
+                        src="/assets/imgs/filmoteca.png"</a>
 				</div>
 			</div>
 		</div>
