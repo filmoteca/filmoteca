@@ -9,5 +9,10 @@
 			language: 'es',
 			autoclose: true
 		}).children('input').prop('readonly', true);
+
+		/**
+		 * We validate all the form in the admin zone.
+		 */
+		$('form').parsley();
 	});
 })(jQuery);

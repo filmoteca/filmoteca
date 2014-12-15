@@ -15,11 +15,11 @@
 	
 	<div class="panel-body">
 
-	{{ Form::formGroup('text','name','Nombre', 'filmoteca_medal_form') }}
+	{{ Form::formGroup('text','name','Nombre', 'filmoteca_medal_form', ['required' => true]) }}
 
 	{{ Form::formGroup('date','award_date','Fecha en la que se le otorgó', 'filmoteca_medal_form') }}
 
-	{{ Form::formGroup('textarea','biography','Biografía', 'filmoteca_medal_form') }}
+	{{ Form::formGroup('textarea','biography','Biografía', 'filmoteca_medal_form', ['required' => true]) }}
 
 	{{ Form::formGroup('file','image', 'Fotografía', 'filmoteca_medal_form')}}
 
