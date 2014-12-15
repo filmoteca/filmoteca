@@ -13,7 +13,7 @@ class AddForeigkeyToBooksTable extends Migration {
 	public function up() {
 		Schema::table('books', function(Blueprint $table) {
 			$table->foreign('country_id')->
-					references('id')->on('country');
+					references('id')->on('countries');
 		});
 	}
 

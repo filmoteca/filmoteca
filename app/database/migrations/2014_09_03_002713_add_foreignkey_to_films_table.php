@@ -15,7 +15,7 @@ class AddForeignkeyToFilmsTable extends Migration {
 			$table->foreign('genre_id')
 					->references('id')->on('genres');
 			$table->foreign('country_id')
-					->references('id')->on('country');
+					->references('id')->on('countries');
 		});
 	}
 
