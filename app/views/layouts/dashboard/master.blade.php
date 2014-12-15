@@ -12,6 +12,8 @@
         <script src="{{ asset('packages/mrjuliuss/syntara/assets/js/dashboard/base.js') }}"></script>
         <script src="{{ asset('bower_components/bootstrap-datepicker/js/bootstrap-datepicker.js') }}"></script>
         <script src="{{ asset('bower_components/bootstrap-datepicker/js/locales/bootstrap-datepicker.es.js') }}"></script>
+        <script src="{{ asset('bower_components/parsleyjs/dist/parsley.min.js') }}"></script>
+        <script src="{{ asset('bower_components/parsleyjs/src/i18n/es.js') }}"></script>
 
         <script src="{{ asset('assets/js/admin.js') }}"></script>
 
