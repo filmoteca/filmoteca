@@ -19,15 +19,6 @@
 			<li>
 				{{ HTML::linkRoute('admin.film.create', 'Agregar película') }}
 			</li>
-		</ul>
-	</div>
-
-	<div class="btn-group">
-		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-			Salas
-			<span class="caret"></span>
-		</button>
-		<ul class="dropdown-menu">
 			<li>
 				{{ HTML::linkRoute('admin.auditorium.index', 'Ver todas las salas') }}
 			</li>
