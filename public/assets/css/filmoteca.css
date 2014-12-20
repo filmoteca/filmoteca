@@ -5758,7 +5758,8 @@ a {
     .main-header .strip .icon-filmoteca {
       font-size: 72px; }
     .main-header .strip .unam-text, .main-header .strip .filmoteca-text {
-      margin-top: 22px; }
+      margin: 22px;
+      color: white; }
 
 .toolbar {
   margin: 10px auto;
