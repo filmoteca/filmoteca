@@ -127,7 +127,7 @@ Form::macro('venueFormGroup', function($name, $title, $formname, $attributes)
 
 Form::macro('yearFormGroup', function($name, $title, $formname, $attributes)
 {
-	$options = range(1960, intval(date('Y') + 2));
+	$options = range(1959, intval(date('Y') + 2));
 
 	return Form::selectFormGroup($name, array_combine($options, $options),$title, $formname, $attributes);
 });
