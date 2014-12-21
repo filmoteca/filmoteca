@@ -5,7 +5,7 @@
 		</a>
 	</li>
 	<li class="active">
-		Objetivos y funciones
+		Objetivos y Funciones
 	</li>
 @stop
 
