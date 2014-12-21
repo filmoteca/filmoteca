@@ -9,17 +9,13 @@
 </li>
 @stop
 
-
+@section('sidebar')
+	@include('elements.menus.servicios', array('selected' => 10))
+@stop
 
 
 
 @section('content')
-
-<div class="sidebar">
-	@include('elements.menus.servicios', array('selected' => 10))
-</div>
-
-<div class="content">
 
 	<div class="img-servicios">
 		<img src="/assets/imgs/taller.jpg" aling="left">
@@ -43,6 +39,5 @@
 	<audio controls>
 		<source src="/filmoteca-master/video/audioPordenone.mp3">
 	</audio>
-</div>
 
 @stop

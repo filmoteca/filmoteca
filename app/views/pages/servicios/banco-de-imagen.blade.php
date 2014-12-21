@@ -9,17 +9,14 @@
 </li>
 @stop
 
-
+@section('sidebar')
+	@include('elements.menus.servicios', array('selected' => 1))
+@stop
 
 
 
 @section('content')
 
-<div class="sidebar">
-	@include('elements.menus.servicios', array('selected' => 1))
-</div>
-
-<div class="content">
 	<div class="img-servicios">
 		<img src="/assets/imgs/fragmentos.jpg" aling="left">
 	</div>
@@ -44,6 +41,5 @@
 		'/pages/servicios/lineamentos-generales-para-solicitar-un-servicio',
 		'Lineamientos para acceso al material.' )                            
 		}}</p>
-</div>
 
 @stop

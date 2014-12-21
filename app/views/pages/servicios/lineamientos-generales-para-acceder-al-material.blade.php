@@ -10,17 +10,13 @@
 @stop
 
 
-
+@section('sidebar')
+	@include('elements.menus.servicios', array('selected' => 0))
+@stop
 
 
 @section('content')
 
-<div class="sidebar">
-	@include('elements.menus.servicios', array('selected' => 0))
-</div>
-
-
-<div class="content">
 	<h1>Lineamentos para acceso al material</h1>
 
 	<ul>
@@ -49,6 +45,5 @@
 	<p>	*** Requerimiento exclusivo del departamento de Banco de imagen. </p>
 
 	<p>Las solicitudes se responden en un lapso de 1 a 4 días hábiles. La Filmoteca cuenta con una lista de precios fija para la utilización de su material, los estudiantes de la UNAM e instituciones afiliadas, así como los proyectos culturales tienen derecho a un descuento.</p>
-</div>
 
 @stop

@@ -9,17 +9,13 @@
 </li>
 @stop
 
-
-
+@section('sidebar')
+	@include('elements.menus.servicios', array('selected' => 4))
+@stop
 
 
 @section('content')
 
-<div class="sidebar">
-	@include('elements.menus.servicios', array('selected' => 4))
-</div>
-
-<div class="content">
 	<div class="img-servicios">
 		<img src="/assets/imgs/bovedas.jpg" aling="left">
 	</div>
@@ -32,8 +28,5 @@
 	<p>Responsable: Juan García</p>
 	<p>Tel: 56 22 95 86 </p>
 	<p>Correo electrónico: <a href="mailto:filmbov@unam.mx">filmbov@unam.mx</a></p>
-
-
-</div>
 
 @stop

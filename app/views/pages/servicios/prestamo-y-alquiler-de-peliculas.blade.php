@@ -9,17 +9,14 @@
 </li>
 @stop
 
-
+@section('sidebar')
+	@include('elements.menus.servicios', array('selected' => 8))
+@stop
 
 
 
 @section('content')
 
-<div class="sidebar">
-	@include('elements.menus.servicios', array('selected' => 8))
-</div>
-
-<div class="content">
 	<h1>Préstamo y alquiler de películas</h1>
 
 
@@ -38,5 +35,4 @@
 		'/pages/servicios/lineamentos-generales-para-solicitar-un-servicio',
 		'Lineamientos para acceso al material.' )                            
 		}}</p>
-</div>
 @stop

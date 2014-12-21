@@ -9,17 +9,14 @@
 </li>
 @stop
 
-
+@section('sidebar')
+	@include('elements.menus.servicios', array('selected' => 9))
+@stop
 
 
 
 @section('content')
 
-<div class="sidebar">
-	@include('elements.menus.servicios', array('selected' => 9))
-</div>
-
-<div class="content">
 	<h1>Producción</h1>
 
 	<p>Esta área tiene la tarea de realizar y editar documentales y películas mexicanas que forman parte de nuestro acervo, así como dar apoyo a directores y productores independientes, egresados de instituciones de educación cinematográfica que cuentan con una trayectoria que respalde su trabajo y compromiso con el crecimiento del cine. Este apoyo consiste en facilitar  equipo técnico de grabación para la realización y edición de las producciones.</p>

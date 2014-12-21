@@ -10,16 +10,13 @@
 @stop
 
 
-
+@section('sidebar')
+	@include('elements.menus.servicios', array('selected' => 5))
+@stop
 
 
 @section('content')
 
-<div class="sidebar">
-	@include('elements.menus.servicios', array('selected' => 5))
-</div>
-
-<div class="content">
 	<div class="img-servicios">
 		<img src="/assets/imgs/laboratorio.jpg" aling="left">
 	</div>
@@ -36,6 +33,4 @@ Durante estos procedimientos la plata que segregan los materiales se adhiere a u
 <p> Tel: 56 22 95 96 </p>
  <p>Correo electrónico: <a href="mailto:pacoramirezv@gmail.com">pacoramirezv@gmail.com</a></p>
 
-
-</div>
 @stop

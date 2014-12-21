@@ -9,17 +9,13 @@
 </li>
 @stop
 
-
+@section('sidebar')
+	@include('elements.menus.servicios', array('selected' => 2))
+@stop
 
 
 
 @section('content')
-
-<div class="sidebar">
-	@include('elements.menus.servicios', array('selected' => 2))
-</div>
-
-<div class="content">
 
 	<h1>Catalogación </h1>
 
@@ -48,6 +44,5 @@
 	<p>Teléfono: 5622 9582</p> 
 	<br><h5>Visita: <a href="http://www.filmografiamexicana.unam.mx/">Filmografía Mexicana</a></h5>
 	<br>
-</div>
 
 @stop
