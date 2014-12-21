@@ -43,9 +43,11 @@
 	<p>Esta dependencia universitaria desarrolla sus labores a través de las siguientes áreas:</p>
 </p>
 
+<ul>
 	<div class="informacion">
-		
+	
 		<div id="accordion-resizer" class="ui-widget-content">
+			
 			<div id="accordion">
 				<h3>Dirección General</h3>
 				<div>
@@ -54,9 +56,9 @@
 						<br>
 						<span class="cargo">Directora General</span>
 						<br>
-						<span class="datos">Teléfono: </span> 5622 9595
+						<span class="datos">Teléfono: 5622 9595</span>
 						<br>
-						<span class="datos">Fax:</span> 5622 9585
+						<span class="datos">Fax: 5622 9585</span>
 						<br>
 						<span class="datos">E-mail:</span>
 						<a href="mailto:gferrer@unam.mx">gferrer@unam.mx</a>
@@ -73,7 +75,7 @@
 						<br>
 						<span class="cargo">Subdirector</span>
 						<br>
-						<span class="datos">Teléfono: </span> 5622 9584
+						<span class="datos">Teléfono: 5622 9584</span>
 						<br>
 						<span class="datos">E-mail:</span>
 						<a href="mailto:algoal57@unam.mx">algoal57@unam.mx</a>
@@ -84,7 +86,7 @@
 						<br>
 						<span class="cargo">Laboratorio Cinematográfico</span>
 						<br>
-						<span class="datos">Teléfono: </span> 5622 9596
+						<span class="datos">Teléfono: 5622 9596</span>
 						<br>
 						<span class="datos">E-mail:</span>
 						<a href="mailto:"></a>
@@ -95,7 +97,7 @@
 						<br>
 						<span class="cargo">Taller de Restauración</span>
 						<br>
-						<span class="datos">Teléfono: </span> 5622 8222 ext. 47495
+						<span class="datos">Teléfono: 5622 8222 ext. 47495</span>
 						<br>
 						<span class="datos">E-mail:</span>
 						<a href="mailto:vallopja@unam.mx">vallopja@unam.mx</a>
@@ -112,10 +114,10 @@
 						<br>
 						<span class="cargo">Subdirector</span>
 						<br>
-						<span class="datos">Teléfono: </span> 5622 9588
+						<span class="datos">Teléfono: 5622 9588</span>
 						<br>
 						<span class="datos">E-mail:</span>
-						<a href="mailto:marh@unam.mx"></a>
+						<a href="mailto:marh@unam.mx">marh@unam.mx</a>
 					</li>
 					<br>
 					<li>
@@ -123,7 +125,7 @@
 						<br>
 						<span class="cargo">Banco de Imagen</span>
 						<br>
-						<span class="datos">Teléfono: </span> 5622 9630
+						<span class="datos">Teléfono: 5622 9630</span>
 						<br>
 						<span class="datos">E-mail:</span>
 						<a href="mailto:carriles@unam.mx">carriles@unam.mx</a>
@@ -134,7 +136,7 @@
 						<br>
 						<span class="cargo">Bóvedas</span>
 						<br>
-						<span class="datos">Teléfono: </span> 5622 9586
+						<span class="datos">Teléfono: 5622 9586</span>
 						<br>
 						<span class="datos">E-mail:</span>
 						<a href="mailto:filmbov@unam.mx">filmbov@unam.mx</a>
@@ -145,7 +147,7 @@
 						<br>
 						<span class="cargo">Catalogación</span>
 						<br>
-						<span class="datos">Teléfono: </span> 5622 9582
+						<span class="datos">Teléfono: 5622 9582</span>
 						<br>
 						<span class="datos">E-mail:</span>
 						<a href="mailto:amartin@unam.mx">amartin@unam.mx</a>
@@ -156,7 +158,7 @@
 						<br>
 						<span class="cargo">Centro de Documentación</span>
 						<br>
-						<span class="datos">Teléfono: </span> 5622 4800 ext. 47490
+						<span class="datos">Teléfono: 5622 4800 ext. 47490</span>
 						<br>
 						<span class="datos">E-mail:</span>
 						<a href="mailto:antonia@unam.mx">antonia@unam.mx</a>
@@ -167,7 +169,7 @@
 						<br>
 						<span class="cargo">Producción</span>
 						<br>
-						<span class="datos">Teléfono: </span> 5622 9587
+						<span class="datos">Teléfono: 5622 9587</span>
 						<br>
 						<span class="datos">E-mail:</span>
 						<a href="mailto:jesusbn@unam.mx">jesusbn@unam.mx</a>
@@ -184,7 +186,7 @@
 						<br>
 						<span class="cargo">Subdirectora</span>
 						<br>
-						<span class="datos">Teléfono: </span> 5622 9374
+						<span class="datos">Teléfono: 5622 9374</span>
 						<br>
 						<span class="datos">E-mail:</span>
 						<a href="mailto:ccarrara@unam.mx">ccarrara@unam.mx</a>
@@ -195,7 +197,7 @@
 						<br>
 						<span class="cargo">Coordinación de Comunicación</span>
 						<br>
-						<span class="datos">Teléfono: </span> 5622 4800 ext. 47485
+						<span class="datos">Teléfono: 5622 4800 ext. 47485</span>
 						<br>
 						<span class="datos">E-mail:</span>
 						<a href="mailto:malisbarnes@gmail.com">malisbarnes@gmail.com</a>
@@ -206,7 +208,7 @@
 						<br>
 						<span class="cargo">Prensa</span>
 						<br>
-						<span class="datos">Teléfono: </span> 5622 4800 ext. 47486
+						<span class="datos">Teléfono: 5622 4800 ext. 47486</span>
 						<br>
 						<span class="datos">E-mail:</span>
 						<a href="mailto:dorixmb@unam.mx">dorixmb@unam.mx</a>
@@ -217,7 +219,7 @@
 						<br>
 						<span class="cargo">Vinculación</span>
 						<br>
-						<span class="datos">Teléfono: </span> 5622 9375
+						<span class="datos">Teléfono: 5622 9375</span>
 						<br>
 						<span class="datos">E-mail:</span>
 						<a href="mailto:alegría.c@hotmail.com">alegría.c@hotmail.com</a>
@@ -228,7 +230,7 @@
 						<br>
 						<span class="cargo">Museografía</span>
 						<br>
-						<span class="datos">Teléfono: </span> 5622 4800 ext. 47488
+						<span class="datos">Teléfono: 5622 4800 ext. 47488</span>
 						<br>
 						<span class="datos">E-mail:</span>
 						<a href="mailto:leobardo_marin@hotmail.com">leobardo_marin@hotmail.com</a>
@@ -239,7 +241,7 @@
 						<br>
 						<span class="cargo">Librería y Tienda</span>
 						<br>
-						<span class="datos">Teléfono: </span> 5622 9496
+						<span class="datos">Teléfono: 5622 9496</span>
 						<br>
 					</li>
 				</div>
@@ -254,7 +256,7 @@
 						<br>
 						<span class="cargo">Jefe de Unidad</span>
 						<br>
-						<span class="datos">Teléfono: </span> 5622 9597
+						<span class="datos">Teléfono: 5622 9597</span>
 						<br>
 						<span class="datos">E-mail:</span>
 						<a href="mailto:jmgar@unam.mx">jmgar@unam.mx</a>
@@ -265,7 +267,7 @@
 						<br>
 						<span class="cargo">Distribución</span>
 						<br>
-						<span class="datos">Teléfono: </span> 5622 9594
+						<span class="datos">Teléfono: 5622 9594</span> 
 						<br>
 						<span class="datos">E-mail:</span>
 						<a href="mailto:distfilm@unam.mx">distfilm@unam.mx</a>
@@ -282,7 +284,7 @@
 						<br>
 						<span class="cargo">Jefa de Unidad</span>
 						<br>
-						<span class="datos">Teléfono: </span> 5622 9371
+						<span class="datos">Teléfono: 5622 9371</span>
 						<br>
 						<span class="datos">E-mail:</span>
 						<a href="mailto:ximena@unam.mx">ximena@unam.mx</a>
@@ -299,7 +301,7 @@
 						<br>
 						<span class="cargo">Coordinador</span>
 						<br>
-						<span class="datos">Teléfono: </span> 5622 4800 ext. 47473
+						<span class="datos">Teléfono: 5622 4800 ext. 47473</span>
 						<br>
 						<span class="datos">E-mail:</span>
 						<a href="mailto:gleonl@unam.mx">gleonl@unam.mx</a>
@@ -310,7 +312,7 @@
 						<br>
 						<span class="cargo">Área Técnica</span>
 						<br>
-						<span class="datos">Teléfono: </span> 5622 4800 ext. 47432
+						<span class="datos">Teléfono: 5622 4800 ext. 47432</span>
 						<br>
 						<span class="datos">E-mail:</span>
 						<a href="mailto:m.comi.x@unam.mx">m.comi.x@unam.mx</a>
@@ -327,7 +329,7 @@
 						<br>
 						<span class="cargo">Jefe de Unidad</span>
 						<br>
-						<span class="datos">Teléfono: </span> 5622 9583
+						<span class="datos">Teléfono: 5622 9583</span>
 						<br>
 						<span class="datos">E-mail:</span>
 						<a href="mailto:emeliagl@unam.mx">emeliagl@unam.mx</a>
@@ -338,7 +340,7 @@
 						<br>
 						<span class="cargo">Presupuesto</span>
 						<br>
-						<span class="datos">Teléfono: </span> 5622 9377
+						<span class="datos">Teléfono: 5622 9377</span>
 						<br>
 						<span class="datos">E-mail:</span>
 						<a href="mailto:pavon_jaqueline@hotmail.com">pavon_jaqueline@hotmail.com</a>
@@ -349,7 +351,7 @@
 						<br>
 						<span class="cargo">Personal</span>
 						<br>
-						<span class="datos">Teléfono: </span> 5622 9372
+						<span class="datos">Teléfono: 5622 9372</span>
 						<br>
 						<span class="datos">E-mail:</span>
 						<a href="mailto:rociocg@unam.mx">rociocg@unam.mx</a>
@@ -360,7 +362,7 @@
 						<br>
 						<span class="cargo">Bienes y suministros</span>
 						<br>
-						<span class="datos">Teléfono: </span> 5622 4800 ext. 47475
+						<span class="datos">Teléfono: 5622 4800 ext. 47475</span>
 						<br>
 						<span class="datos">E-mail:</span>
 						<a href="mailto:mariaera@unam.mx">mariaera@unam.mx</a>
@@ -371,7 +373,7 @@
 						<br>
 						<span class="cargo">Servicios Generales</span>
 						<br>
-						<span class="datos">Teléfono: </span> 5622 4800 ext. 47474
+						<span class="datos">Teléfono: 5622 4800 ext. 47474</span>
 						<br>
 						<span class="datos">E-mail:</span>
 						<a href="mailto:alvairm@unam.mx">alvairm@unam.mx</a>
@@ -388,7 +390,7 @@
 						<br>
 						<span class="cargo">Departamento de Enlace y relaciones Interinstitucionales</span>
 						<br>
-						<span class="datos">Teléfono: </span> 5622 9589 
+						<span class="datos">Teléfono: 5622 9589 </span>
 						<br>
 						<span class="datos">E-mail:</span>
 						<a href="mailto:nadina1020@gmail.com">nadina1020@gmail.com</a>
@@ -405,15 +407,16 @@
 						<br>
 						<span class="cargo">Departamento de Análisis y Regularización de la Procedencia del Patrimonio Fílmico de la UNAM</span>
 						<br>
-						<span class="datos">Teléfono: </span> 5622 8222 ext. 47467 
+						<span class="datos">Teléfono: 5622 8222 ext. 47467</span>  
 						<br>
 						<span class="datos">E-mail:</span>
 						<a href="mailto:ebarona@unam.mx">ebarona@unam.mx</a>
 					</li>
 				</div>
 			</div>
-		</div>
-
-	</ul>
+		
+		</div>	
+	</div>
+</ul>
 
 @stop
