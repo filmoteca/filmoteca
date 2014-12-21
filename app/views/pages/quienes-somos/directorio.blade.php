@@ -31,14 +31,12 @@
 
 
 
-@section('content')
-
-<div class="sidebar">
+@section('sidebar')
 	@include('elements.menus.quienes-somos', array('selected' => 6))
-</div>
+@stop
 
 
-<div class="content">
+@section('content')
 	
 	<h3>Directorio</h3> 
 	<p>La Dirección General de Actividades Cinematográficas - Filmoteca de la UNAM se localiza en Circuito Exterior Mtro. Mario de la Cueva s/n, en Ciudad Universitaria. En sus instalaciones se resguarda y preserva el acervo filmográfico de la UNAM.
@@ -417,6 +415,5 @@
 		</div>
 
 	</ul>
-</div>
 
 @stop

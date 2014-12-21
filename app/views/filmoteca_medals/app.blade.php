@@ -36,10 +36,10 @@
 
 @section('breadcrumbs')
 	<li>
-		Quiénes somos
+		<a href="/pages/quienes-somos/medalla-filmoteca">Quiénes somos</a>
 	</li>
 	<li>
-		Medalla Filmoteca
+		<a href="/pages/quienes-somos/medalla-filmoteca">Medalla Filmoteca</a>
 	</li>
 	<li class="active">
 		Galardonados
@@ -50,76 +50,73 @@
 {{-- Main Content															--}}
 {{----------------------------------------------------------------------------}}
 
-@section('content')
-	
-<div class="sidebar">
+@section('sidebar')
 	@include('elements.menus.quienes-somos', array('selected' => 5))
+@stop
+
+@section('content')
+
+<div class="filmoteca-medal-slider">
+	<div data-slider-pips
+		config="sliderConfig"
+		ng-model="year">
+	</div>
 </div>
 
-<div class="content">
+<div>
+<span class="glyphicon glyphicon-search pull-left ng-cloak"></span>
 
-	<div class="filmoteca-medal-slider">
-		<div data-slider-pips
-			config="sliderConfig"
-			ng-model="year">
-		</div>
+	<div class="search-autocomplete pull-right">
+		<angucomplete-alt
+			place-holder="SBuscar por nombre"
+			pause="0"
+			selected-object="selectedAdvice"
+			local-data="winners"
+			title-field="name"
+			description-field="award_date"
+			search-fields="name"
+			image-field="photo"
+			minlength="1"
+			text-searching="Buscando..."
+			text-no-results="Ninguna ganador encontrado"
+			input-class="form-control form-control-small">
+		</angucomplete-alt>
 	</div>
+	<div class="clearfix"></div>
+</div>
+<div class="loading" ng-show="loading"></div>
 
-	<span class="glyphicon glyphicon-search pull-left"></span>
+<div class="filmoteca-medal-list ng-cloak">
+	<div class="wrapper-items" id="wrapper-items">
 
-		<div class="search-autocomplete pull-right">
-			<angucomplete-alt
-				place-holder="SBuscar por nombre"
-				pause="0"
-				selected-object="selectedAdvice"
-				local-data="winners"
-				title-field="name"
-				description-field="award_date"
-				search-fields="name"
-				image-field="photo"
-				minlength="1"
-				text-searching="Buscando..."
-				text-no-results="Ninguna ganador encontrado"
-				input-class="form-control form-control-small">
-			</angucomplete-alt>
-		</div>
+		<ul class="items" id="items">
+			
+			{{-- No podemos usar ng-repeat porque necesitamos la url de la 
+			imagen y esta solamente esta disponible al llamar una función
+			en el modelo eloquent.--}}
 
-	<div class="loading" ng-show="loading"></div>
+			@foreach( $winners as $index => $winner )
 
-	<div class="filmoteca-medal-list ng-cloak">
-		<div class="wrapper-items" id="wrapper-items">
+			<li class="thumbnail item"
+				ng-show="winners[{{ $index }}].visible">
 
-			<ul class="items" id="items">
-				
-				{{-- No podemos usar ng-repeat porque necesitamos la url de la 
-				imagen y esta solamente esta disponible al llamar una función
-				en el modelo eloquent.--}}
-
-				@foreach( $winners as $index => $winner )
-
-				<li class="thumbnail item"
-					ng-show="winners[{{ $index }}].visible">
-
-					<img src="{{ $winner->image->url('thumbnail') }}"
-						alt="{{ $winner->name }}">
-					{{ 
-						HTML::link(
-						'filmoteca-medal/' . $winner->id . '/detail',
-						str_limit(
-							$winner->name,
-							20),
-						array(
-							'title' => 'Ver detalles',
-							'ng-click' => 'show("' . $index . '")',
-							'onclick' => 'return false'
-							)
+				<img src="{{ $winner->image->url('thumbnail') }}"
+					alt="{{ $winner->name }}">
+				{{ 
+					HTML::link(
+					'filmoteca-medal/' . $winner->id . '/detail',
+					str_limit($winner->name, 20),
+					array(
+						'title' => 'Ver detalles',
+						'ng-click' => 'show("' . $index . '")',
+						'onclick' => 'return false'
 						)
-					}}
-				</li>
+					)
+				}}
+			</li>
 
-				@endforeach
-			</ul>
-		</div>
+			@endforeach
+		</ul>
 	</div>
 </div>
 @stop

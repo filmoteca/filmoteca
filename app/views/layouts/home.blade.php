@@ -2,6 +2,7 @@
 <html lang="es">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		@yield('metas')
 
@@ -9,11 +10,13 @@
 
 		{{ HTML::style('/assets/css/filmoteca.css') }}
 
-		{{-- 
-			This styles are loaded with angular.js however we need them
-			before requirejs load the scripts. 
-		--}}
-		{{ HTML::style('/bower_components/angular/angular-csp.css')}}
+		{{
+			HTML::scripts([
+				'/bower_components/jquery/dist/jquery.min.js',
+				'/bower_components/bootstrap/dist/js/bootstrap.min.js',
+				'/bower_components/slick.js/slick/slick.min.js'
+				])
+			}}
 
 		@else
 			{{--
@@ -33,22 +36,10 @@
 	</head>
 
 	<body>
-
-	<body>
 		@include('layouts.header')
 
 		<div class="container-fluid">
-			<div class="row">
-				
-				<div class="sidebar col-sm-4">
-					@yield('sidebar')
-				</div>
-
-				<div class="content col-sm-8">
-					@yield('content')
-				</div>
-				
-			</div>
+			@yield('content')
 		</div>
 
 		@include('layouts.footer')

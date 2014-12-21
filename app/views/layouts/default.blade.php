@@ -38,7 +38,16 @@
 	<body>
 		@include('layouts.header')
 
-		@include('layouts.content')
+		<div class="container-fluid">
+			<div class="row">
+				<div class="sidebar col-sm-4">
+					@yield('sidebar')
+				</div>
+				<div class="content col-sm-8">
+					@yield('content')
+				</div>
+			</div>
+		</div>
 
 		@include('layouts.footer')
 	</body>

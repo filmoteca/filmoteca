@@ -1,7 +1,9 @@
 <div class="modal-header">
 	<h3 class="modal-title">
-		<span class="glyphicon glyphicon-remove pull-right btn-link"
-	 		ng-click="$close()"></span>
+		<button type="button" class="close" ng-click="$close()">
+			<span aria-hidden="true">&times;</span>
+			<span class="sr-only">Close</span>
+		</button>
 
 		@{{ winner.name }} (@{{ winner.award_date }})
 
