@@ -16,7 +16,8 @@
 {
 	'use strict';
 
-	angular.module('pages.chronology.controllers.RootController', ['angularMoment'])
+	angular.module('pages.chronology.controllers.RootController', ['angularMoment',
+		'pages.filmoteca-medal.directives.SliderPips'])
 
 	.controller('pages.chronology.controllers.RootController',
 		['$scope', 'moment',
@@ -27,22 +28,27 @@
 		//Preparing the winners list.
 		$scope.winners = _.map(winners, function(winner){
 
-			winner.year = moment(winner.year).year();
+			winner.year = parseInt(winner.year);
 
 			winner.visible = true;
 
 			return winner;
 		});
 
-		$scope.range = [1987,2000];
+		$scope.range = [1959,2000];
 
 		$scope.$watch('range', function(values){
 
 			angular.forEach($scope.winners, function(winner){
-
+				
 				winner.visible = winner.year >= values[0] &&
 								 winner.year <= values[1];
 			});
 		}, true);
+	}])
+
+	.config(['SLIDER_PIP_CONFIG', function(SLIDER_PIP_CONFIG){
+		SLIDER_PIP_CONFIG.slider.min = 1959;
+		SLIDER_PIP_CONFIG.pips.step = 10;
 	}]);
 });

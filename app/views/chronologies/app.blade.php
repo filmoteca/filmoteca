@@ -53,7 +53,7 @@
 	<div class="filmoteca-medal-slider">
 		<div data-slider-pips
 			config="sliderConfig"
-			range-model="range">
+			ng-model="range">
 		</div>
 	</div>
 

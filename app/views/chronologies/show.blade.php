@@ -1,6 +1,6 @@
 @section('content')
 
-<h2>Detalles de películas</h2>
+<h2>Detalles de cronología</h2>
 
 <div class="text-right">
 {{ Form::open(array('route' => array('admin.chronology.destroy', $resource->id), 'method'=> 'DELETE')) }}
