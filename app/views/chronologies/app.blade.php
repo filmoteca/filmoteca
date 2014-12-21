@@ -11,8 +11,8 @@
 	
 
 	{{-- 
-		Este modulo local regresara un lista de ganadores de la medalla filmoteca.
-		Definiendo así ganamos dos cosas. La primera, se evita hacer otra 
+		Este modulo local regresara una lista de ganadores de la medalla filmoteca.
+		Definiendolo así ganamos dos cosas. La primera, se evita hacer otra 
 		soliciturd al servidor para recuperar la lista de ganadores. Y la otra,
 		hace que nuestra lista de ganadores sea una variable local en vez de una
 		global.
@@ -40,17 +40,15 @@
 	</li>
 @stop
 
+@section('sidebar')
+	@include('elements.menus.quienes-somos', array('selected' => 4))
+@stop
+
 {{----------------------------------------------------------------------------}}
 {{-- Main Content															--}}
 {{----------------------------------------------------------------------------}}
 
 @section('content')
-	
-<div class="sidebar">
-	@include('elements.menus.quienes-somos', array('selected' => 4))
-</div>
-
-<div class="content">
 
 	<div class="filmoteca-medal-slider">
 		<div data-slider-pips
@@ -81,5 +79,4 @@
 			</ul>
 		</div>
 	</div>
-</div>
 @stop

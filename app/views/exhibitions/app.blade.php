@@ -40,11 +40,8 @@
 	</li>
 @stop
 
-@section('content')
-
-	<div class="sidebar">
-
-		<span class="glyphicon glyphicon-search pull-left"></span>
+@section('sidebar')
+<span class="glyphicon glyphicon-search pull-left"></span>
 
 		<div class="search-autocomplete pull-right">
 			<angucomplete-alt
@@ -135,18 +132,18 @@
 
 			<button type="button" class="btn btn-success">Registrarse</button>
 		</div>
+@stop
+
+@section('content')
+	
+	<div class="exhibition-list" ng-show="!urlToDetails">
+		@include('exhibitions.list', array('exhibitions', $exhibitions))
 	</div>
 
-	<div class="content">
-		<div class="exhibition-list" ng-show="!urlToDetails">
-			@include('exhibitions.list', array('exhibitions', $exhibitions))
-		</div>
+	<div class="loading" ng-show="loading"></div>
 
-		<div class="loading" ng-show="loading"></div>
+	<div class="exhibition-detail" data-ng-include="urlToDetails" ng-show="urlToDetails">
 
-		<div class="exhibition-detail" data-ng-include="urlToDetails" ng-show="urlToDetails">
-
-		</div>
 	</div>
 	
 @stop
