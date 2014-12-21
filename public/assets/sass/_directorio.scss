@@ -1,0 +1,33 @@
+.informacion{
+    float: left;
+    border: 2px solid #DDDDDD;
+    background-color: #F2F2F2;
+    border-radius: 10px;
+    width: 100%;
+    font-size: .9em; 
+}
+.informacion > ul > li{
+    font-size: .9em; 
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    }
+.informacion li .nombre{
+    font-size: .9em; 
+    color: #9A0982;
+    font-weight: bold;
+}
+.informacion li .cargo{
+    font-size: .9em; 
+    color: #640354;
+    font-weight: 500;
+}
+.informacion li a{
+    font-size: .9em; 
+}
+.datos{
+    font-size: .9em; 
+    color: #706d6f;
+    font-weight: 400;
+
+}
