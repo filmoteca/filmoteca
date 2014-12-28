@@ -4,6 +4,4 @@ cd /vagrant
 
 composer install
 
-cd public
-
 bower install
