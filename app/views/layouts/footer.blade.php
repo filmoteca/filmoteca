@@ -6,7 +6,7 @@
 				
 				<p>2014 FILMOTECA UNAM<p>
 
-				<p>Circuito exterior Mtro. Mario de la cueva s/n. 
+				<p>Circuito exterior Mtro. Mario de la Cueva s/n. 
 					Ciudad Universitaria C.P. 04510 México, D.F.</p>
 				
 				<p><a href="#" class="look-map"><span class="icon icon-location"></span>ver mapa</a></p>

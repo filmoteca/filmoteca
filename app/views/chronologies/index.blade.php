@@ -1,6 +1,6 @@
 @section('content')
 
-<h2>Chronología</h2>
+<h2>Cronología</h2>
 
 {{ $resources->links() }}
 

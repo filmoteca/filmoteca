@@ -1,17 +1,17 @@
 @extends('layouts.default')
 
 @section('breadcrumbs')
-	<li class="active">Hitorico de programación</li>
+	<li class="active">Histórico de programación</li>
 @stop
 
 @section('content')
 
 <div class="sidebar">
-	The said bar
+	
 </div>
 
 <div class="content">
-	<h2>Hitorico programación</h2>
+	<h2>Histórico de programación</h2>
 
 	<div class="well">
 		{{ Form::open(['route' => 'exhibitions.find', 'method' => 'GET', 'class' => 'form-horizontal']) }}

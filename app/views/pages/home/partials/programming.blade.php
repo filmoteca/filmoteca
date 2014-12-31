@@ -38,7 +38,7 @@
 					<img src="/imgs/jill.jpg">
 				</div>
 				<div class="caption pull-right">
-					<h5>Catelera digital</h5>
+					<h5>Cartelera digital</h5>
 					<small>Diciembre</small>
 					<a href="#"><span class="icon icon-download pull-right"></span></a>
 				</div>	

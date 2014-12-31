@@ -2,16 +2,16 @@
 
 <div ng-switch="usedFilter" class="ng-cloak">
 	<h3 ng-switch-when="week">
-		Programación de la semanal del 
+		Películas programadas en la semana del 
 		<b>@{{startDate | date : 'd' }}</b> al <b>@{{endDate | date : 'd'}}</b> de 
 		<b>@{{ startDate | date : 'MMMM'}}</b>
 	</h3>
 	<h3 ng-switch-when="day">
-		Programación del día <b>@{{ selectedDay | date : 'd' }}</b>
+		Películas programadas el día <b>@{{ selectedDay | date : 'd' }}</b>
 		de <b>@{{ selectedDay | date : 'MMMM'}}</b>
 	</h3>
 	<h3 ng-switch-when="auditorium">
-		Programación de la sala <b>@{{filterTitle}}</b> de
+		Películas programadas en la sala <b>@{{filterTitle}}</b> de
 		<b>{{ trans('dates.months.' . date('F') ) }}</b>
 	</h3>
 	<h3 ng-switch-when="icon">
@@ -19,7 +19,7 @@
 		<b>{{ trans('dates.months.' . date('F') ) }}</b>
 	</h3>
 	<h3 ng-switch-default>
-		Programación del mes de <b>{{ trans('dates.months.' . date('F') ) }}</b>
+		Películas programadas durante el mes de <b>{{ trans('dates.months.' . date('F') ) }}</b>
 	</h3>
 </div>
 

@@ -17,7 +17,7 @@
 				<a href="{{ URL::route('courses.verification', ['activation_code'=> $activation_code,] , true); }}">Activar</a>
 				para activar tu cuenta.
 
-			<p>Después podras iniciar sesion usando tu email y contraseña (la cual puedes cambiar)
+			<p>Después podrás iniciar sesión usando tu email y contraseña (la cual puedes cambiar)
 			que acompañan este correo.</p>
 
 			<p>email: <b>{{ $student['email']}}</b></p>
