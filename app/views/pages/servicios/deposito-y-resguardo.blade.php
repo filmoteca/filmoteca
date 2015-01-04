@@ -20,13 +20,22 @@
 		<img src="/assets/imgs/bovedas.jpg" aling="left">
 	</div>
 	<h1>Depósito y resguardo </h1>
-	<h3>Bóvedas</h3>
 
-	<p>Cambiar este texto por el bueno---Esta área es la encargada de revisar todos los materiales que ingresan a la Filmoteca por diferentes conductos: depósitos, donaciones, compras, intercambios, permisos de copia, etcétera, en formatos de 8mm, súper 8, 9.5mm, 16mm, 35mm, e incluso de 70 mm, ya sean duplicados originales, duplicados negativos, positivos originales o duplicados positivos; en soportes de nitrato, acetato y poliéster. El material de nitrato tiene prioridad, al ser de alto riesgo para el personal debido a ser altamente inflamable, por eso se cuenta con siete bóvedas de nitrato, ubicadas cerca de la Estación General de Bomberos, en donde se albergan casi 16 mil latas clasificadas. </p>
+	<p>Una de las funciones principales de la Dirección General de Actividades Cinematográficas - Filmoteca de la UNAM, es recibir en depósito y resguardo películas de la producción cinematográfica mexicana y universitaria con el fin de preservar la memoria fílmica del país para el futuro.</p>
 
+	<p>Para ello cuenta con 15 bóvedas con una infraestructura moderna y adecuada donde se resguardan más de 46,000 realizaciones cinematográficas; estas bóvedas están diseñadas para garantizar las condiciones adecuadas de temperatura, humedad y seguridad para conservar el material fílmico. Contamos con ocho bóvedas para almacenar cintas de acetato y siete para el exigente resguardo de las películas de nitrato.</p>
 
-	<p>Responsable: Juan García</p>
-	<p>Tel: 56 22 95 86 </p>
+	<p>A través de la Subdirección de Acervos, la Filmoteca de la UNAM ha tenido un continuo contacto con la comunidad cinematográfica de México, recibiendo una gran cantidad de películas por parte de casas productoras y/o distribuidoras, directores, productores, familias de realizadores y coleccionistas, entre otros.</p>
+	
+	<p>Si estás interesado en realizar algún depósito comunícate.</p>
+	
+	<p>Contacto: Miguel Ángel Recillas, Subdirector de Acervos </p>
+	<p>Tel: 5622 9588 </p>
+	<p>Correo electrónico: <a href="mailto:marh@unam.mx">marh@unam.mx </a></p>
+	<br>
+
+	<p>Contacto: Juan García, Bóvedas</p>
+	<p>Tel: 5622 9586 </p>
 	<p>Correo electrónico: <a href="mailto:filmbov@unam.mx">filmbov@unam.mx</a></p>
 
 @stop

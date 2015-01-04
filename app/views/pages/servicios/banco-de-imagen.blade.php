@@ -22,24 +22,24 @@
 	</div>
 	<h1>Banco de imagen</h1>
 
-	<p>La Filmoteca de la UNAM tiene entre su acervo películas de ficción, documentales y noticieros cinematográficos que pone a disposición de quiénes buscan incorporar fragmentos de imágenes en movimiento para la realización de un proyecto audiovisual.
+	<p>La Filmoteca de la UNAM posee uno de los acervos cinematográficos más importantes en América Latina, el cual está abierto para su consulta, visionado y utilización en proyectos audiovisuales, tanto de perfil histórico como de ficción.
 	</p>
 
-	<p>¿Necesita algunos segundos de escenas de la Revolución Mexicana? ¿Imágenes de Xochimilco en los años 20 del siglo pasado? ¿La construcción de la Torre Latinoamericana? ¿El movimiento estudiantil del 68?
-	</p>
+	<p>A través del Banco de Imagen, se puede acceder a más de 12000 registros de material con una amplia temática, donde es posible encontrar imágenes desde 1896 hasta finales del siglo XX que muestran algunos hechos y personajes de la amplia gama de la iconografía social, política, cultural e histórica de México.</p> 
 
-	<p>El Banco de imágenes se nutre con más de 12 mil registros de material de stock muy variado, donde es posible encontrar imágenes desde 1896 hasta 1970, época en la que el formato de grabación cambió para dar paso al video.</p> 
+	<p>El Banco de imagen es una ventana al acervo de la Filmoteca para que los realizadores, productores, investigadores e interesados en general, puedan acceder a este diverso y nutrido stock para su reempleo en diversos proyectos que requieren la utilización de la imagen en movimiento.</p>
+	
 
-	<p>El servicio que ofrece esta área incluye desde que se recibe la solicitud, se realiza la búsqueda, localización y visualización del material y su transferencia al formato de preferencia del solicitante. Dependiendo de la naturaleza del proyecto, se aplican diferentes tarifas.</p>
+	<p>Si quieres hacer alguna solicitud, consulta los  
+	{{ HTML::link(
+		'/pages/servicios/requisitos-para-solicitar-un-servicio',
+		'Requisitos para solicitar un servicio.' )                            
+		}}</p>
 
 	<p>Contacto: Nahún Calleros</p> 
 	<p>Teléfono: 5622 9630 </p>
 	<p>Correo electrónico: <a href="mailto:carriles@unam.mx">carriles@unam.mx</a></p>
 
-	<p>Si quieres hacer alguna solicitud, consulta los  
-	{{ HTML::link(
-		'/pages/servicios/lineamentos-generales-para-solicitar-un-servicio',
-		'Lineamientos para acceso al material.' )                            
-		}}</p>
+	
 
 @stop

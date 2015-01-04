@@ -22,22 +22,30 @@
 	</div>
 	<h1>Taller de restauración </h1>
 
-	<p>Esta área es la encargada de revisar todos los materiales que ingresan a la Filmoteca por diferentes conductos: depósitos, donaciones, compras, intercambios, permisos de copia, etcétera, en formatos de 8mm, súper 8, 9.5mm, 16mm, 35mm, e incluso de 70 mm, ya sean duplicados originales, duplicados negativos, positivos originales o duplicados positivos; en soportes de nitrato, acetato y poliéster. El material de nitrato tiene prioridad, al ser de alto riesgo para el personal debido a ser altamente inflamable, por eso se cuenta con siete bóvedas de nitrato, ubicadas cerca de la Estación General de Bomberos, en donde se albergan casi 16 mil latas clasificadas. </p>
+	<p>Una de las funciones principales de la Dirección General de Actividades Cinematográficas - Filmoteca de la UNAM, es rescatar y restaurar el patrimonio fílmico de la UNAM con el fin de preservar la memoria fílmica del país para el futuro.</p>
 
-	<p>Cada material que ingresa a la Filmoteca se le registra con una ficha que contiene todos los datos de la cinta, su estado físico, pietaje, metraje y duración. Esto debido a que es importante conocer el material y detectar aquellas latas enfermas con el “síndrome de vinagre” para aislarlas y evitar así una epidemia. Esta enfermedad es la más común y altamente contagiosas entre las cintas, pues provoca la transformación del ácido acético en vinagre y puede llegar a volver inútiles los materiales. Gracias al control que se ha establecido con los materiales que ingresan a las bóvedas de la Filmoteca es uno de los lugares de resguardo que cuenta con los niveles más bajos de esta enfermedad en las cintas. </p>
+	<p>Para ello cuenta con un Taller de restauración, que se encarga de revisar los materiales cinematográficos que ingresan a la Filmoteca de la UNAM, darles mantenimiento e identificar si tienen daños, y si es necesario, restaurarlos. Así mismo, detecta las películas que presentan el “síndrome de vinagre” y evita que el problema se extienda a otros materiales.</p>
 
-	<p>Para un mayor control y conservación del material, el Taller de Restauración cuenta con bóvedas especializadas en las que se controlan los niveles de temperatura y humedad para evitar el deterioro del material. Las bóvedas se dividen de acuerdo al tipo de material que albergan y las características de este. </p>
+	<p>Para un mayor control y conservación del material, el Taller de Restauración almacena el material en las bóvedas especializadas, donde se controlan los niveles de temperatura y humedad para evitar el deterioro del material. </p>
 
-	<p>Las bóvedas cuentan con una temperatura de 15º C y entre 40 y 50% de humedad relativa. La bóveda F cuenta con un dispositivo especial para hacer que la temperatura descienda aún más y controlar en mayor grado la humedad. </p>
+	<p>Como ejemplo de las labores de restauración que la Filmoteca de la UNAM ha realizado, se encuentra la película <i>El puño de hierro</i>, película silente mexicana de 1927, nunca editada, que fue restaurada y preparada dentro del Taller de restauración de la Filmoteca para su exhibición.</p>
 
-	<p>Además de la función de restaurar, el Taller brinda la posibilidad a extranjeros y nacionales de realizar pasantías, durante las cuales se les capacita en el arte de la restauración. </p>
+	<p>Además de la función de restaurar, el Taller brinda la posibilidad a extranjeros y nacionales de realizar pasantías, durante las cuales se les capacita en el arte de la restauración.</p>
 
-	<p>Responsable: José Antonio Valencia</p>
-	<p>Tel: 56 22 95 98 </p>
+	<p>Si estás interesado en nuestros servicios comunícate.</p>
+	
+	<br>
+	<p>Contacto: Albino Álvarez, Subdirector de rescate y restauración </p>
+	<p>Tel: 5622 9584</p>
+	<p>Correo electrónico: <a href="mailto:algoal57@unam.mx">algoal57@unam.mx</a></p>
+	<br>
+
+	<p>Contacto: José Antonio Valencia, Taller de restauración</p>
+	<p>Tel: 5622 9598 </p>
 	<p>Correo electrónico: <a href="mailto:vallopja@unam.mx">vallopja@unam.mx</a></p>
 	
-	<audio controls>
+<!-- 	<audio controls>
 		<source src="/filmoteca-master/video/audioPordenone.mp3">
-	</audio>
+	</audio> -->
 
 @stop

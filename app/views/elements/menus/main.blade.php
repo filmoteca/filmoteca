@@ -86,8 +86,8 @@
 	      	<a href="#"><span>SERVICIOS</span></a>
 	        <ul class="submenu">
 				<li>
-					<a href="/pages/servicios/lineamientos-generales-para-acceder-al-material">
-						<span>Lineamientos para acceso al material</span>
+					<a href="/pages/servicios/requisitos-para-solicitar-un-servicio">
+						<span>Requisitos para solicitar un servicio</span>
 					</a>
 				</li>
 				<li>
