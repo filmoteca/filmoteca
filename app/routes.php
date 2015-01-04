@@ -42,6 +42,10 @@ Route::get('/exhibition/find',
 		'uses' => 'ExhibitionController@find')
 	);
 
+/**
+ * The details routes have to be fixed.
+ */
+
 Route::get('/exhibition/{id}/detail',
 	array(
 		'as' => 'exhibitions.detail',
@@ -51,6 +55,12 @@ Route::get('/exhibition/{id}/detailHistory',
 	array(
 		'as' => 'exhibitions.detailHistory',
 		'uses' => 'ExhibitionController@detailHistory'));
+
+Route::get('/exhibition/{id}/detailHome',
+	array(
+		'as' => 'exhibitions.detailHome',
+		'uses' => 'ExhibitionController@detailHome'));
+
 
 Route::get('/shop',
 	array(
