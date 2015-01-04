@@ -8,6 +8,12 @@ $(document).ready(function(){
 
 	$('.main-carousel').slick();
 
+	$('.programming .carrousel-widget').slick({
+		infinite: false,
+		slidesToShow: 3,
+		slidesToScroll: 1
+	});
+
 	$('#friend-sites-toggle-button').click(function(){
 
 		$(this).siblings('div').slideToggle('slow')
@@ -19,13 +25,4 @@ $(document).ready(function(){
 			}
 		});
 	});
-		
-	// $('#billboard').miniBillboard({
-	// 	fancybox: {
-	// 		type: 'ajax',
-	// 		maxWidth: 1024,
-	// 		minWidth: 240
-	// 	},
-	// 	direction: 'y'
-	// });
 });

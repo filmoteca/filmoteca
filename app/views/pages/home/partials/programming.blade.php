@@ -8,11 +8,22 @@
 					<h4 class="text-center">Hoy se exhibe</h4>
 				</div>
 				
-				<div class="carrousel">
-					carrusel.
+				<div class="carrousel-widget">
+				@foreach( $exhibitions as $exhibition)
+					<div>
+						<a href="{{ URL::route('exhibitions.detailHome', $exhibition->id)}}" 
+							data-toggle="modal" 
+							data-target="#exhibition-modal">
+							<img src="{{ URL::asset( $exhibition->exhibition_film->film->image->url('thumbnail') ) }}" 
+								alt="{{ $exhibition->exhibition_film->film->title }}">
+						</a>
+					</div>
+				@endforeach
 				</div>
 			</div>
 		</div>
+
+		@include('elements.bootstrap-modal')
 
 		<div class="flm-section flm-subsection queries">
 			<div class="content">

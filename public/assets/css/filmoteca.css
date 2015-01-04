@@ -5745,6 +5745,10 @@ footer {
   .flm-section h3, .flm-section h4, .flm-section h5, .flm-section h6 {
     text-transform: uppercase;
     font-weight: bold; }
+  .flm-section .header {
+    padding: 3px 10px 5px 10px; }
+    .flm-section .header .small {
+      margin-left: 10px; }
 
 .flm-subsection {
   margin-bottom: 0px; }
@@ -5773,12 +5777,17 @@ footer {
   width: 100%;
   height: auto; }
 
-.flm-section.programming .carrousel .header {
-  background-color: #2D2D2D; }
-.flm-section.programming .carrousel h3 {
-  color: #F9D932; }
-.flm-section.programming .carrousel h4 {
-  color: white; }
+.flm-section.programming .carrousel {
+  width: 100%; }
+  .flm-section.programming .carrousel .header {
+    background-color: #2D2D2D; }
+  .flm-section.programming .carrousel h3 {
+    color: #F9D932;
+    margin-top: 10px; }
+  .flm-section.programming .carrousel h4 {
+    color: white; }
+  .flm-section.programming .carrousel img {
+    width: 100%; }
 .flm-section.programming .queries a {
   display: block; }
   .flm-section.programming .queries a span {

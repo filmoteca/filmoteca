@@ -13,6 +13,14 @@ $section-color: #F2F2F2;
 		text-transform: uppercase;
 		font-weight: bold;
 	}
+
+	.header{
+		padding: 3px 10px 5px 10px;
+
+		.small{
+			margin-left: 10px;
+		}
+	}
 }
 
 .flm-subsection{
@@ -77,15 +85,23 @@ $section-color: #F2F2F2;
 .flm-section.programming{
 	
 	.carrousel{
+		width: 100%;
 		
 		.header{
-			background-color: $active-tab-color; 
+			background-color: $active-tab-color;
 		}
+
 		h3{
 			color: #F9D932;
+			margin-top: 10px // Overrides bootstrap's rule.
 		}
+
 		h4{
 			color: white;
+		}
+
+		img{
+			width: 100%;
 		}
 	}
 
