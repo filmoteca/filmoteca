@@ -90,6 +90,13 @@ class ExhibitionController extends BaseController
 		return View::make('exhibitions.detail-history', compact('exhibition') );	
 	}
 
+	public function detailHome($id){
+
+		$exhibition = $this->repository->search('id',$id);
+
+		return View::make('exhibitions.partial-details', compact('exhibition') );	
+	}
+
 	public function history(){
 
 		return View::make('exhibitions.history');
