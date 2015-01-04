@@ -1,11 +1,9 @@
 <?php namespace Filmoteca\Repository;
 
 use App;
-
+use Carbon\Carbon;
 use Filmoteca\Models\Exhibitions\Exhibition;
-
 use Filmoteca\Models\Exhibitions\ExhibitionFilm;
-
 use Filmoteca\Models\Film;
 
 class ExhibitionsRepository extends ResourcesRepository
@@ -31,7 +29,7 @@ class ExhibitionsRepository extends ResourcesRepository
 	 * @return Collection 	Collección de exhibiciones
 	 * @throws NotFoundException Si la exhibición no existe al realizar una búsquda por id.
 	 */
-	public function search($by, $value)
+	public function search($by, $value = null)
 	{
 		switch($by)
 		{
@@ -48,6 +46,12 @@ class ExhibitionsRepository extends ResourcesRepository
 			case('date'):
 
 				$exhibitions = $this->searchByDate($value[0], $value[1]);
+				break;
+			case('today'):
+
+				$today = Carbon::now()->toDateString();
+				$exhibitions = $this->searchByDate( $today, $today . ' 23:59:59');
+
 				break;
 			default:
 				throw new Exception('Parámetro de búsqueda invalido: ' . $by );

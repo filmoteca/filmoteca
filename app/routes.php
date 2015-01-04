@@ -17,10 +17,7 @@ Route::get('/home',[
 		return Redirect::to('/');
 	}]);
 
-Route::get('/', function()
-{
-	return View::make('pages.home.index');
-});
+Route::get('/', 'HomeController@index');
 
 Route::get('/exhibition/index',
 	array(
