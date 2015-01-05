@@ -10,14 +10,13 @@
 @stop
 
 
-
+@section('sidebar')
+	@include('elements.menus.extension-academica', array('selected' => 1))
+@stop
 
 
 @section('content')
 
-<div class="sidebar">
-  @include('elements.menus.extension-academica', array('selected' => 1))
-</div>
 
 <h1>Cursos organizados por la DGAC</h1>
 

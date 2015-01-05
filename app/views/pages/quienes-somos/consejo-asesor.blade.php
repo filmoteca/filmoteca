@@ -10,16 +10,12 @@
 @stop
 
 
-
+@section('sidebar')
+	@include('elements.menus.quienes-somos', array('selected' => 2))
+@stop
 
 
 @section('content')
-
-<div class="sidebar">
-	@include('elements.menus.quienes-somos', array('selected' => 2))
-</div>
-
-<div class="content">
 
 	<h1>Consejo Asesor</h1>
 
@@ -222,7 +218,6 @@
 		</div>
 	</div>
 
-</div>
 
 @stop
 

@@ -11,16 +11,14 @@
 
 
 
+@section('sidebar')
+	@include('elements.menus.extension-academica', array('selected' => 1))
+@stop
+
 
 
 @section('content')
 
-<div class="sidebar">
-	@include('elements.menus.extension-academica', array('selected' => 1))
-</div>
-
-
-<div class="content">
 	<h1>Servicio Social</h1>
 
 	<p>En su afán de contribuir al enriquecimiento del mundo cinematográfico y al mismo tiempo ayudar a los miembros de la población estudiantil a poner en práctica los conocimientos obtenidos durante la carrera, la Filmoteca de la UNAM pone a disposición de la comunidad estudiantil el  programa de servicio social, abierto a distintas áreas del conocimiento como son: </p>

@@ -10,16 +10,13 @@
 @stop
 
 
+@section('sidebar')
+	@include('elements.menus.extension-academica', array('selected' => 0))
+@stop
 
 
 
 @section('content')
-
-<div class="sidebar">
-	@include('elements.menus.extension-academica', array('selected' => 0))
-</div>
-
-<div class="content">
 
 	<h1>Procedimiento de inscripción</h1>
 	<ol>

@@ -34,15 +34,15 @@
 
 
 
+@section('sidebar')
+   @include('elements.menus.extension-academica', array('selected' => 1))
+@stop
+
+
+
 
 @section('content')
 
-<div class="sidebar">
-  @include('elements.menus.extension-academica', array('selected' => 1))
-</div>
-
-
-<div class="content">
   <h1>Visitas guiadas </h1>
 
   <div id="back_to_camera">
@@ -101,7 +101,7 @@
 
 <p>Las visitas se realizan cada mes y medio con un cupo de máximo 20 alumnos por grupo y hasta dos profesores y/o responsables del área cultural del plantel.</p>
 
-<p>Responsable: Nadina Illescas</p>
+<p>Contacto: Nadina Illescas</p>
 <p>Teléfono: 5622 9589</p>
 <p>Correo electrónico: <a href="mailto:nadina1020@gmail.com">nadina1020@gmail.com </a></p>
 

@@ -9,18 +9,13 @@
 	</li>
 @stop
 
-
-
+@section('sidebar')
+	@include('elements.menus.quienes-somos', array('selected' => 3))
+@stop
 
 
 @section('content')
 
-<div class="sidebar">
-	@include('elements.menus.quienes-somos', array('selected' => 3))
-</div>
-
-
-<div class="content">
 	
 	<h1>Memoria Filmoteca </h1>
 

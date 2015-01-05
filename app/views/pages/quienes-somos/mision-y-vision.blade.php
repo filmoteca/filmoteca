@@ -9,18 +9,11 @@
 	</li>
 @stop
 
-
-
-
+@section('sidebar')
+	@include('elements.menus.quienes-somos', array('selected' => 0))
+@stop
 
 @section('content')
-
-<div class="sidebar">
-	@include('elements.menus.quienes-somos', array('selected' => 0))
-</div>
-
-<div class="content">
-
 
 	<h1>Misión y Visión </h1>
 	<h2>Misión</h2> 
@@ -40,5 +33,4 @@
 		</video> -->
 	</div>
 
-</div>
 @stop

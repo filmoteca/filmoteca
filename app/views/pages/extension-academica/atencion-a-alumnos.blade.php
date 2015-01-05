@@ -9,17 +9,13 @@
 </li>
 @stop
 
-
-
+@section('sidebar')
+@include('elements.menus.extension-academica', array('selected' => 1))
+@stop
 
 
 @section('content')
 
-<div class="sidebar">
-	@include('elements.menus.extension-academica', array('selected' => 1))
-</div>
-
-<div class="content">
 
    <h1>Atención a alumnos</h1>
 
