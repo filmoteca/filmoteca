@@ -201,25 +201,25 @@
 
 		</li>
 		<li>
-			<a href="/pages/extension-academica/index">
+			<a> 
 				<span>EXTENSIÓN ACADÉMICA</span>
-			</a>
+ 			</a>
 			<ul class="submenu">
-				<li>
+				<!-- <li>
 					<a href="/pages/extension-academica/procedimiento-de-inscripcion">
 						<span>Procedimiento de inscripción</span>
 					</a>
-				</li>
+				</li> -->
 				<li>
 					<a href="/pages/extension-academica/cursos-y-talleres">
 						<span>Cursos y talleres</span>
 					</a>
 				</li>
-				<li>
+				<!-- <li>
 					<a href="/pages/extension-academica/atencion-a-alumnos">
 						<span>Atención a alumnos</span>
 					</a>
-				</li>
+				</li> -->
 				<li>
 					<a href="/pages/extension-academica/servicio-social">
 						<span>Servicio social</span>
