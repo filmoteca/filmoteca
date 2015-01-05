@@ -105,7 +105,5 @@
 <p>Teléfono: 5622 9589</p>
 <p>Correo electrónico: <a href="mailto:nadina1020@gmail.com">nadina1020@gmail.com </a></p>
 
-
-
 </div>
 @stop
