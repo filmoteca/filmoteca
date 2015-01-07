@@ -5,15 +5,11 @@
 		</div>
 
 		<ul class="list-group">
-			<li class="list-group-item">
-				<span class="preview-news">Lorem ipsum Consequat in amet laboris</span> <span class="see-more"><a href="#">Leer más</a></span>
-			</li>
-			<li class="list-group-item">
-				<span class="preview-news">Lorem ipsum Consequat in amet laboris Consequat in amet laboris</span> <span class="see-more"><a href="#">Leer más</a></span>
-			</li>
-			<li class="list-group-item">
-				<span class="preview-news">Lorem ipsum Consequat in amet laboris</span> <span class="see-more"><a href="#">Leer más</a></span>
-			</li>
+			@foreach( $news as $new )
+				<li class="list-group-item">
+					<span class="preview-news">{{ Str::limit($new->body, 80, '') }}</span> <span class="see-more">{{ HTML::linkAction('NewsController@show', 'Leer más', [$new->id]) }}</span>
+				</li>
+			@endforeach
 		</ul>
 	</div>
 </div>

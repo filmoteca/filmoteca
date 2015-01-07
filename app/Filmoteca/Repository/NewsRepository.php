@@ -8,5 +8,13 @@ class NewsRepository extends ResourcesRepository
 	{
 		$this->resource = $_new;
 	}
+
+    public function lastNews( $amount ){
+
+        return $this->resource
+            ->orderBy('created_at', 'desc')
+            ->take( $amount )
+            ->get();
+    }
 }
 

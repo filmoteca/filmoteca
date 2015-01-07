@@ -42,6 +42,7 @@ Route::get('/exhibition/find',
 		'uses' => 'ExhibitionController@find')
 	);
 
+Route::get('/news/show/{id}', 'NewsController@show');
 /**
  * The details routes have to be fixed.
  */
