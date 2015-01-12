@@ -17,6 +17,10 @@
 
 @section('content')
 
+	<div class="img-servicios">
+		<img src="/imgs/servicios/prestamo-alquiler.jpg" aling="left">
+	</div>
+
 	<h1>Préstamo y alquiler de películas</h1>
 
 

@@ -16,9 +16,11 @@
 
 @section('content')
 
+	
 	<div class="img-servicios">
-		<img src="/assets/imgs/bovedas.jpg" aling="left">
+		<img src="/imgs/servicios/bovedas.jpg" aling="left">
 	</div>
+
 	<h1>Depósito y resguardo </h1>
 
 	<p>Una de las funciones principales de la Dirección General de Actividades Cinematográficas - Filmoteca de la UNAM, es recibir en depósito y resguardo películas de la producción cinematográfica mexicana y universitaria con el fin de preservar la memoria fílmica del país para el futuro.</p>

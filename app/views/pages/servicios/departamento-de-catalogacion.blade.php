@@ -17,6 +17,10 @@
 
 @section('content')
 
+	<div class="img-servicios">
+		<img src="/imgs/servicios/catalogacion.jpg" aling="left">
+	</div>
+
 	<h1>Catalogación</h1>
 
 	<p>El departamento de Catalogación realiza la revisión, catalogación y registro del material cinematográfico del acervo de la Filmoteca de la UNAM y elabora fichas de contenido en las cuales se identifican personajes, épocas, sucesos, acontecimientos históricos, etcétera. </p> 

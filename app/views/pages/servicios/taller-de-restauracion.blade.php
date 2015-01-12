@@ -18,8 +18,9 @@
 @section('content')
 
 	<div class="img-servicios">
-		<img src="/assets/imgs/taller.jpg" aling="left">
+		<img src="/imgs/servicios/taller-restauracion.jpg" aling="left">
 	</div>
+
 	<h1>Taller de restauración </h1>
 
 	<p>Una de las funciones principales de la Dirección General de Actividades Cinematográficas - Filmoteca de la UNAM, es rescatar y restaurar el patrimonio fílmico de la UNAM con el fin de preservar la memoria fílmica del país para el futuro.</p>
