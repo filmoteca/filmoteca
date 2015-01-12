@@ -1,3 +1,26 @@
+@section('scripts')
+
+<script type='text/javascript' src='/bower_components/slider-camera/jquery.min.js'></script>
+<script type='text/javascript' src='/bower_components/slider-camera/jquery.mobile.customized.min.js'></script>
+<script type='text/javascript' src='/bower_components/slider-camera/jquery.easing.1.3.js'></script> 
+<script type='text/javascript' src='/bower_components/slider-camera/camera.min.js'></script> 
+
+<script>
+  jQuery(function(){
+
+   jQuery('#camera_wrap_1').camera({
+    thumbnails: true
+  });
+ });
+</script>
+
+@stop
+
+@section('styles')
+  <link rel='stylesheet' id='camera-css'  href='/bower_components/slider-camera/css/camera.css' type='text/css' media='all'> 
+@stop
+
+
 @section('breadcrumbs')
 <li>
 	<a href="/pages/servicios/index">
@@ -16,9 +39,48 @@
 
 @section('content')
 
-	<div class="img-servicios">
-		<img src="/assets/imgs/fragmentos.jpg" aling="left">
-	</div>
+	<div id="back_to_camera">
+       
+   
+    <div class="fluid_container">
+        <h5>Visita el Centro de Documentación - Filmoteca UNAM</h5>
+        <div class="camera_wrap camera_azure_skin" id="camera_wrap_1">
+            <div data-thumb="/imgs/servicios/centro-documentacion/thumbs/documentacion1.jpg" data-src="/imgs/servicios/centro-documentacion/documentacion1.jpg">
+                <div class="camera_caption fadeFromBottom">
+                    Carteles
+                </div>
+            </div>
+            <div data-thumb="/imgs/servicios/centro-documentacion/thumbs/documentacion2.jpg" data-src="/imgs/servicios/centro-documentacion/documentacion2.jpg">
+                <div class="camera_caption fadeFromBottom">
+                    Colecciones
+                </div>
+            </div>
+            <div data-thumb="/imgs/servicios/centro-documentacion/thumbs/documentacion3.jpg" data-src="/imgs/servicios/centro-documentacion/documentacion3.jpg">
+                <div class="camera_caption fadeFromBottom">
+                    <em>Área de consulta. Centro de Documentación DGAC</em>
+                </div>
+            </div>
+            <div data-thumb="/imgs/servicios/centro-documentacion/thumbs/documentacion4.jpg" data-src="/imgs/servicios/centro-documentacion/documentacion4.jpg">
+                <div class="camera_caption fadeFromBottom">
+                    Guiones
+                </div>
+            </div>
+            <div data-thumb="/imgs/servicios/centro-documentacion/thumbs/documentacion5.jpg" data-src="/imgs/servicios/centro-documentacion/documentacion5.jpg">
+                <div class="camera_caption fadeFromBottom">
+                    Conoce nuestro Acervo Bibliográfico
+                </div>
+            </div>
+            <div data-thumb="/imgs/servicios/centro-documentacion/thumbs/documentacion6.jpg" data-src="/imgs/servicios/centro-documentacion/documentacion6.jpg">
+                <div class="camera_caption fadeFromBottom">
+                    Conoce nuestro Acervo Videográfico
+                </div>
+            </div>
+        </div><!-- #camera_wrap_1 -->
+
+    </div><!-- .fluid_container -->   
+
+</div>
+
 	<h1>Centro de documentación</h1>
 
 	<p>El Centro de Documentación de la Filmoteca de la UNAM tiene en custodia varias colecciones documentales originales de época, así como materiales de reciente factura que dan cuenta de la producción, exhibición y distribución del cine en México.  Entre el material que resguarda se encuantran libros, revistas, periódicos, más de 9 mil carteles y 85 mil fotografías, además de stills y recortes hemerográficos, fotomontajes y un buen número de películas en formato DVD. 

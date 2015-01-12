@@ -52,32 +52,32 @@
   <div class="fluid_container">
 
     <div class="camera_wrap camera_azure_skin" id="camera_wrap_1">
-      <div data-thumb="/img/visitas-guiadas/thumbs/visitas1.jpg" data-src="/img/visitas-guiadas/visitas1.jpg">
+      <div data-thumb="/imgs/visitas-guiadas/thumbs/visitas1.jpg" data-src="/imgs/visitas-guiadas/visitas1.jpg">
         <div class="camera_caption fadeFromBottom">
-         Conoce la filmoteca de la UNAM
+         Conoce la Filmoteca de la UNAM
        </div>
      </div>
-     <div data-thumb="/img/visitas-guiadas/thumbs/visitas2.jpg" data-src="/img/visitas-guiadas/visitas2.jpg">
+     <div data-thumb="/imgs/visitas-guiadas/thumbs/visitas2.jpg" data-src="/imgs/visitas-guiadas/visitas2.jpg">
       <div class="camera_caption fadeFromBottom">
         Bóvedas
       </div>
     </div>
-    <div data-thumb="/img/visitas-guiadas/thumbs/visitas3.jpg" data-src="/img/visitas-guiadas/visitas3.jpg">
+    <div data-thumb="/imgs/visitas-guiadas/thumbs/visitas3.jpg" data-src="/imgs/visitas-guiadas/visitas3.jpg">
       <div class="camera_caption fadeFromBottom">
         <em>Taller de restauración</em> 
       </div>
     </div>
-    <div data-thumb="/img/visitas-guiadas/thumbs/visitas4.jpg" data-src="/img/visitas-guiadas/visitas4.jpg">
+    <div data-thumb="/imgs/visitas-guiadas/thumbs/visitas4.jpg" data-src="/imgs/visitas-guiadas/visitas4.jpg">
       <div class="camera_caption fadeFromBottom">
         Laboratorio
       </div>
     </div>
-    <div data-thumb="/img/visitas-guiadas/thumbs/visitas5.jpg" data-src="/img/visitas-guiadas/visitas5.jpg">
+    <div data-thumb="/imgs/visitas-guiadas/thumbs/visitas5.jpg" data-src="/imgs/visitas-guiadas/visitas5.jpg">
       <div class="camera_caption fadeFromBottom">
         Taller de restauración
       </div>
     </div>
-    <div data-thumb="/img/visitas-guiadas/thumbs/visitas6.jpg" data-src="/img/visitas-guiadas/visitas6.jpg">
+    <div data-thumb="/imgs/visitas-guiadas/thumbs/visitas6.jpg" data-src="/imgs/visitas-guiadas/visitas6.jpg">
       <div class="camera_caption fadeFromBottom">
         Laboratorio
       </div>
