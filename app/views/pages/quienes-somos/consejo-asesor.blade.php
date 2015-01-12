@@ -26,7 +26,7 @@
 
 	<div class="row">
 		<div class="col-sm-2">
-			<img src="/assets/imgs/documento-pdf.png">
+			<img src="/imgs/consejo-asesor/guadalupe-ferrer.jpg">
 		</div>
 		<div class="col-sm-5">
 			<span class="nombre">María Guadalupe Ferrer Andrade</span>
@@ -34,13 +34,14 @@
 			<span class="cargo">Directora General y Presidente del Consejo
 			</span>
 			<br>
-			<a href="http://www.planeacion.unam.mx/Memoria/2009/PDF/8.2-DGAC.pdf" target="_blank">Resumen Curricular</a>
+			<img src="/assets/imgs/documento-pdf.png">
+			<a href="http://filmoteca.dev/pdf/Guadalupe-Ferrer.pdf" target="_blank">Resumen curricular</a>
 		</div>
 	</div>
 	<br>
 	<div class="row">
 		<div class="col-sm-2">
-			<img src="/imgs/consejeros/marycarmen_de_lara.jpg">
+			<img src="/imgs/consejo-asesor/marycarmen_de_lara.jpg">
 		</div>
 		<div class="col-sm-5">
 			<span class="nombre">Cineasta María del Carmen De Lara</span>
@@ -49,13 +50,13 @@
 			</span>
 			<br>
 			<img src="/assets/imgs/documento-pdf.png">
-			<a href="/public/pdf/Maria-del-Carmen-de-Lara.pdf">Resumen curricular</a>
+			<a href="http://filmoteca.dev/pdf/Maria-del-Carmen-de-Lara.pdf" target="_blank">Resumen curricular</a>
 		</div>
 	</div>
 	<br>
 	<div class="row">
 		<div class="col-sm-2">
-			<img src="/imgs/consejeros/carlos_martinez_assad.jpg">
+			<img src="/imgs/consejo-asesor/carlos_martinez_assad.jpg">
 		</div>
 		<div class="col-sm-5">
 			<span class="nombre">Dr. Carlos Martínez Assad</span>
@@ -64,13 +65,13 @@
 			</span>
 			<br>
 			<img src="/assets/imgs/documento-pdf.png">
-			<a href="http://www.planeacion.unam.mx/Memoria/2009/PDF/8.2-DGAC.pdf" target="_blank">Resumen Curricular</a>
+			<a href="http://filmoteca.dev/pdf/Carlos-Martinez-Assad.pdf" target="_blank">Resumen curricular</a>
 		</div>
 	</div>
 	<br>
 	<div class="row">
 		<div class="col-sm-2">
-			<img src="/imgs/consejeros/fernando_macotela.jpg">
+			<img src="/imgs/consejo-asesor/fernando_macotela.jpg">
 		</div>
 		<div class="col-sm-5">
 			<span class="nombre">Lic. Fernando Macotela</span>
@@ -79,13 +80,13 @@
 			</span>
 			<br>
 			<img src="/assets/imgs/documento-pdf.png">
-			<a href="http://www.planeacion.unam.mx/Memoria/2009/PDF/8.2-DGAC.pdf" target="_blank">Resumen Curricular</a>
+			<a href="http://filmoteca.dev/pdf/Fernando-Macotela.pdf" target="_blank">Resumen curricular</a>
 		</div>
 	</div>
 	<br>
 	<div class="row">
 		<div class="col-sm-2">
-			<img src="/imgs/consejeros/armando_casas.jpg">
+			<img src="/imgs/consejo-asesor/armando_casas.jpg">
 		</div>
 		<div class="col-sm-5">
 			<span class="nombre">Cineasta Armando Casas</span>
@@ -94,13 +95,13 @@
 			</span>
 			<br>
 			<img src="/assets/imgs/documento-pdf.png">
-			<a href="http://www.planeacion.unam.mx/Memoria/2009/PDF/8.2-DGAC.pdf" target="_blank">Resumen Curricular</a>
+			<a href="http://filmoteca.dev/pdf/Armando-Casas.pdf" target="_blank">Resumen curricular</a>
 		</div>
 	</div>
 	<br>
 	<div class="row">
 		<div class="col-sm-2">
-			<img src="/imgs/consejeros/felipe_coria.jpg">
+			<img src="/imgs/consejo-asesor/felipe_coria.jpg">
 		</div>
 		<div class="col-sm-5">
 			<span class="nombre">Cineasta Felipe Coria</span>
@@ -109,13 +110,13 @@
 			</span>
 			<br>
 			<img src="/assets/imgs/documento-pdf.png">
-			<a href="http://www.planeacion.unam.mx/Memoria/2009/PDF/8.2-DGAC.pdf" target="_blank">Resumen Curricular</a>
+			<a href="http://filmoteca.dev/pdf/Jose-Felipe-Coria.pdf" target="_blank">Resumen curricular</a>
 		</div>
 	</div>
 	<br>
 	<div class="row">
 		<div class="col-sm-2">
-			<img src="/imgs/consejeros/rafael_avina.jpg">
+			<img src="/imgs/consejo-asesor/rafael_avina.jpg">
 		</div>
 		<div class="col-sm-5">
 			<span class="nombre">Lic. Rafael Aviña</span>
@@ -124,13 +125,13 @@
 			</span>
 			<br>
 			<img src="/assets/imgs/documento-pdf.png">
-			<a href="http://www.planeacion.unam.mx/Memoria/2009/PDF/8.2-DGAC.pdf" target="_blank">Resumen Curricular</a>
+			<a href="http://filmoteca.dev/pdf/Rafael-Avina.pdf" target="_blank">Resumen curricular</a>
 		</div>
 	</div>
 	<br>
 	<div class="row">
 		<div class="col-sm-2">
-			<img src="/imgs/consejeros/nadina_illescas.jpg">
+			<img src="/imgs/consejo-asesor/nadina_illescas.jpg">
 		</div>
 		<div class="col-sm-5">
 			<span class="nombre">Mtra. Nadina Illescas Villegas</span>
@@ -143,7 +144,7 @@
 	<br>
 	<div class="row">
 		<div class="col-sm-2">
-			<img src="/imgs/consejeros/carmen_carrara.jpg">
+			<img src="/imgs/consejo-asesor/carmen_carrara.jpg">
 		</div>
 		<div class="col-sm-5">
 			<span class="nombre">Mtra. Carmen Carrara y García</span>
@@ -156,7 +157,7 @@
 	<br>
 	<div class="row">
 		<div class="col-sm-2">
-			<img src="/imgs/consejeros/albino_alvarez.jpg">
+			<img src="/imgs/consejo-asesor/albino_alvarez.jpg">
 		</div>
 		<div class="col-sm-5">
 			<span class="nombre">Cineasta Albino Álvarez</span>
@@ -169,7 +170,7 @@
 	<br>
 	<div class="row">
 		<div class="col-sm-2">
-			<img src="/imgs/consejeros/miguel_angel_recillas.jpg">
+			<img src="/imgs/consejo-asesor/miguel_angel_recillas.jpg">
 		</div>
 		<div class="col-sm-5">
 			<span class="nombre">Lic. Miguel Ángel Recillas</span>
@@ -182,7 +183,7 @@
 	<br>
 	<div class="row">
 		<div class="col-sm-2">
-			<img src="/imgs/consejeros/jose_manuel_garcia.jpg">
+			<img src="/imgs/consejo-asesor/jose_manuel_garcia.jpg">
 		</div>
 		<div class="col-sm-5">
 			<span class="nombre">José Manuel García</span>
