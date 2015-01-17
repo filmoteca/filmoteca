@@ -16,5 +16,10 @@ class NewsRepository extends ResourcesRepository
             ->take( $amount )
             ->get();
     }
+
+    public function findById($id){
+
+        return $this->resource->findOrFail($id);
+    }
 }
 
