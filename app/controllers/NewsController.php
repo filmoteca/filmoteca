@@ -17,7 +17,7 @@ class NewsController extends BaseController{
             ->lastNews(10)
             ->filter(function($news) use ($id){
 
-            return !($news->id === $id);
+            return $news->id !== $id;
         });;
 
 
