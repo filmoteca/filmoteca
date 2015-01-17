@@ -12,6 +12,7 @@ Thumbs.db
 *.zip
 *.tar
 *.map
+.idea
 
 
 *.vagrant/
