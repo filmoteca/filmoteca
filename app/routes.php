@@ -111,6 +111,8 @@ Route::get('/courses/verification', [
 	'as' => 'courses.verification',
 	'uses' => 'Api\Courses\StudentController@verify']);
 
+Route::get('/auditorim/show/{id}', 'AuditoriumController@show');
+
 /*
 |----------------------------------------------------------------------------
 | PÁGINAS ESTATICAS

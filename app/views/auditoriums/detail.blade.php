@@ -1,11 +1,13 @@
-@extends('layouts.modal')
+@extends('layouts.default')
 
-@section('title') 
-
-{{ $auditorium->name }}
-
+@section('breadcrumbs')
+<li>
+    {{ HTML::link('/exhibition/index', 'Programación') }}
+</li>
+<li class="active">
+	Sala: {{ $auditorium->name }}
+</li>
 @stop
-
 
 
 @section('content')
