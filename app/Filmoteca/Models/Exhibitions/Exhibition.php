@@ -35,9 +35,6 @@ class Exhibition extends Eloquent
 
 	public function getTechnicalCard()
 	{
-		$genresList = Genre::all(array('id','name'))
-			->lists('name','id');
-
 		$tc = array(); //tecnicalCard.
 
 		$film = $this->exhibition_film->film;
@@ -50,7 +47,9 @@ class Exhibition extends Eloquent
 
 		$tc['duración'] = $film->duration;
 
-		$tc['género']	= $genresList[$film->genre_id];
+        $tc['género']   = $film->genre->name;
+
+//		$tc['género']	= $genresList[$film->genre_id];
 
 		$tc['director']	= $film->director;
 
