@@ -43,11 +43,19 @@ Vista parcial
 			<div class="panel-body">
 				@foreach( $exhibition->auditoriums as $auditorium)
 					<div class="panel panel-default">
-						<div class="panel-heading">{{ $auditorium->name }}</div>
+						<div class="panel-heading">
+						    {{ $auditorium->name }}
+						    {{ HTML::linkAction('AuditoriumController@show', 'Ver ubicación', ['id' => $auditorium->id]) }}
+						</div>
 						<div class="panel-body">
 							<ul class="list-group">						
 							@foreach( $exhibition->schedulesByAuditorium($auditorium->id) as $schedule)
-								<li class="list-group-item">{{ $schedule->entry }}</li>
+								<li class="list-group-item">
+								{{ ucfirst(trans('dates.days.' . date('l', strtotime($schedule->entry)) )) }}
+								{{ date(' j \d\e ', strtotime($schedule->entry)) }}
+								{{ trans('dates.months.' . date('F', strtotime($schedule->entry)) ) }}
+								{{ date('  / G:i \h\r\s', strtotime($schedule->entry)) }}
+								</li>
 							@endforeach
 							</ul>
 						</div>
