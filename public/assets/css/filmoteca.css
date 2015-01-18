@@ -5742,6 +5742,7 @@ a {
   margin: 10px; }
 
 footer {
+  padding-top: 10px;
   background-color: #f2f2f2; }
   footer a {
     color: #646464; }
@@ -5752,8 +5753,6 @@ footer {
   footer .icon-filmoteca {
     display: block;
     font-size: 72px; }
-  footer ul {
-    list-style: none; }
 
 .flm-section {
   margin-bottom: 25px;

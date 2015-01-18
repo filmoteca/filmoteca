@@ -1,4 +1,6 @@
 footer{
+    padding-top: 10px;
+
 	background-color: $tertiary-color;
 	a{
 		color: $text-color;
@@ -15,9 +17,5 @@ footer{
 	.icon-filmoteca{
 		display: block;
 		font-size: 72px
-	}
-
-	ul{
-		list-style: none;
 	}
 }

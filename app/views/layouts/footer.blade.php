@@ -14,7 +14,7 @@
 			</div>
 
 			<div class="col-md-4">
-				<ul>
+				<ul class="list-unstyled">
 					<li><a href="">Inicio</a></li>
 					<li><a href="/pages/quienes-somos/mision-y-vision">Quiénes Somos</a></li>
 					<li><a href="">Acervo</a></li>
