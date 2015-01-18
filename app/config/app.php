@@ -125,6 +125,7 @@ return array(
 		'Cartalyst\Sentry\SentryServiceProvider',
 		'Mrjuliuss\Syntara\SyntaraServiceProvider',
 		'Fitztrev\LaravelHtmlMinify\LaravelHtmlMinifyServiceProvider',
+        'Fbf\LaravelContactForm\LaravelContactFormServiceProvider',
 	),
 
 	/*
