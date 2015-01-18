@@ -6,7 +6,7 @@
 			</a>
 			<a href="http://filmoteca.dev/pages/quienes-somos/directorio">Directorio</a>
 			<a href="#">Mapa del sitio</a>
-			<a href="#">Contacto</a>
+			<a href="{{ URL::to('contact') }}">Contacto</a>
 			<a href="#"><span class="icon-accessibility"></span></a>
 		</div>
 	</div>
