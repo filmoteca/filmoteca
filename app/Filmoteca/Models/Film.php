@@ -26,8 +26,13 @@ class Film extends Eloquent implements StaplerableInterface
 	
 	public function exhibtionFilm()
 	{
-		return $this->hasOne('Models\Exhibitions\ExhibitionFilm');
+		return $this->hasOne('Filmoteca\Models\Exhibitions\ExhibitionFilm');
 	}
+
+    public function genre()
+    {
+        return $this->belongsTo('Filmoteca\Models\Genre');
+    }
 
 	public function getYearAttribute($value)
 	{
