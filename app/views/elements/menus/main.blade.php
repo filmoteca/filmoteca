@@ -193,7 +193,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="press_register/create">
+					<a href="/press_register/create">
 						<span>Atención a medios</span>
 					</a>
 				</li>
