@@ -38,8 +38,12 @@
 			<td>{{$resource->country_id }}</td>
 		</tr>
 		<tr>
+		    <th>Duración</th>
+		    <td>{{ $resource->duration }}</td>
+		</tr>
+		<tr>
 			<th>Genero</th>
-			<td>{{$resource->genre_id }}</td>
+			<td>{{$resource->genre->name }}</td>
 		</tr>
 		<tr>
 			<th>Director</th>
@@ -48,6 +52,10 @@
 		<tr>
 			<th>Guión</th>
 			<td>{{$resource->script }}</td>
+		</tr>
+		<tr>
+		    <th>Fotográfia</th>
+		    <td>{{ $resource->photographic }}</td>
 		</tr>
 		<tr>
 			<th>Música</th>
@@ -63,16 +71,16 @@
 		</tr>
 		<tr>
 			<th>Reparto</th>
-			<td>{{$resource->reparto }}</td>
+			<td>{{$resource->cast }}</td>
 		</tr>
 		<tr>
 			<th>Sinopsis</th>
-			<td>{{$resource->sinopsis }}</td>
+			<td>{{$resource->synopsis }}</td>
 		</tr>
 		<tr>
-			<th>Director</th>
-			<td>{{$resource->director }}</td>
-		</tr>
+		    <th>Trailer</th>
+		    <td>{{ $resource->trailer }}</td>
+        </tr>
 	</tbody>
 </table>
 
