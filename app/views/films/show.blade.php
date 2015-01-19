@@ -35,7 +35,7 @@
 		</tr>
 		<tr>
 			<th>Páis</th>
-			<td>{{$resource->country_id }}</td>
+			<td>{{ DB::table('countries')->find($resource->country_id)->name; }}</td>
 		</tr>
 		<tr>
 		    <th>Duración</th>

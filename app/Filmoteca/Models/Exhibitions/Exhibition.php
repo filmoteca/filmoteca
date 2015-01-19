@@ -2,7 +2,6 @@
 
 use DB;
 use Eloquent;
-use Filmoteca\Models\Genre;
 
 class Exhibition extends Eloquent
 {
@@ -43,7 +42,7 @@ class Exhibition extends Eloquent
 
 		$tc['año'] 		= $film->year;
 
-		$tc['pais'] 	= DB::table('countries')->find($film->id)->name;
+		$tc['pais'] 	= DB::table('countries')->find($film->country_id)->name;
 
 		$tc['duración'] = $film->duration;
 
