@@ -1,40 +1,42 @@
 {{--
 Vista parcial
 --}}
-
-<div class="panel panel-default">
-
-	<div class="panel-heading">
+<div class="details">
+	<div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
 		<h1>{{ $exhibition->exhibition_film->film->title }}</h1>
 	</div>
 
-	<div class="panel-body">
+	<div class="modal-body">
 		<div class="row">
-			<div class="col-lg-12">
-				<div class="details-poster image pull-left">
+			<div class="col-sm-6 cover">
+				<div>
 
 					<img src="{{ $exhibition->exhibition_film->film->image->url('normal') }}"
 					alt="{{ $exhibition->exhibition_film->film->title }}" >
 
 				</div>
 
-				<div class="fb-like" 
-					 data-href="{{ URL::action('ExhibitionController@detail', array('id' => $exhibition->id ))}}" 
-					 data-layout="standard" 
-					 data-action="like" 
-					 data-show-faces="true" 
+				<div class="fb-like"
+					 data-href="{{ URL::action('ExhibitionController@detail', array('id' => $exhibition->id ))}}"
+					 data-layout="standard"
+					 data-action="like"
+					 data-show-faces="true"
 					 data-share="true">
 				</div>
-				
-				<div class="tecnical-card">
-					
-					@foreach($exhibition->getTechnicalCard() as $title => $value)
-						<p>
-							<b>{{mb_strtoupper($title)}}: </b>
-							{{ $value }}
-						</p>
-					@endforeach
-				</div>
+			</div>
+
+			<div class="col-sm-6">
+			    <div class="tecnical-card">
+                    @foreach($exhibition->getTechnicalCard() as $title => $value)
+                        <p>
+                            <b>{{mb_strtoupper($title)}}: </b>
+                            {{ $value }}
+                        </p>
+                    @endforeach
+                </div>
 			</div>
 		</div>
 

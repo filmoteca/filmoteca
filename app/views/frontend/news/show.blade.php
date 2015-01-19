@@ -26,9 +26,6 @@
         <div class="row">
             <div class="col-sm-6 cover">
                 <img src="{{ asset( $news->image->url('thumbnail')) }}">
-            </div>
-
-            <div class="col-sm-6" class="title">
                 <h1 class="text-center">{{ $news->title }}</h1>
             </div>
         </div>

@@ -134,8 +134,15 @@ a{
     .cover {
 
         img {
-            max-width: 50%;
+            max-width: 100%;
             margin: 10px;
         }
+    }
+}
+
+.exhibition-detail{
+
+    .close{
+        display:none;
     }
 }

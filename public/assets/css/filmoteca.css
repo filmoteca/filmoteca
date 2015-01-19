@@ -5738,8 +5738,11 @@ a {
     margin-left: 10px; }
 
 .details .cover img {
-  max-width: 50%;
+  max-width: 100%;
   margin: 10px; }
+
+.exhibition-detail .close {
+  display: none; }
 
 footer {
   padding-top: 10px;
