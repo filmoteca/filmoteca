@@ -1,6 +1,6 @@
 {{ $resources->links() }}
 
-<table class="table table-striped table-bordered">
+<table class="table table-striped table-bordered table-responsive">
 	<thead>
 		<tr>
 			<th>ID</th>
@@ -34,7 +34,7 @@
 				@endforeach
 				</td>
 
-				<td><img src="{{ $exhibition->exhibition_film->film->image->url('thumbnail') }}" alt="{{ $exhibition->exhibition_film->film->title }}" class="image thumbnail"></td>
+				<td><img src="{{ $exhibition->exhibition_film->film->image->url('thumbnail') }}" alt="{{ $exhibition->exhibition_film->film->title }}" class="image thumbnail cover"></td>
 				<td>
 					@if( !isset($editable))
 						{{ HTML::linkRoute('admin.exhibition.show', 'Ver',
@@ -45,7 +45,7 @@
 							<button class="btn btn-danger" type="submit">Borrar</button>
 						{{ Form::close()}}
 					@else
-						{{ HTML::linkRoute('exhibitions.detailHistory', 'Ver',
+						{{ HTML::linkRoute('exhibition.detail-history', 'Ver',
 							array($exhibition->id),
 							array('class'=> 'btn btn-success')) }}
 					@endif

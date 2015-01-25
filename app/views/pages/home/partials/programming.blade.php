@@ -11,7 +11,7 @@
 				<div class="carrousel-widget">
 				@foreach( $exhibitions as $exhibition)
 					<div>
-						<a href="{{ URL::route('exhibitions.detailHome', $exhibition->id)}}" 
+						<a href="{{ URL::route('exhibition.detail-home', $exhibition->id)}}" 
 							data-toggle="modal" 
 							data-target="#exhibition-modal">
 							<img src="{{ URL::asset( $exhibition->exhibition_film->film->image->url('thumbnail') ) }}" 

@@ -1,6 +1,9 @@
 @extends('layouts.default')
 
 @section('breadcrumbs')
+	<li>
+	    {{ HTML::link('/exhibition', 'Programación') }}
+	</li>
 	<li class="active">Histórico de programación</li>
 @stop
 
@@ -14,7 +17,7 @@
 	<h2>Histórico de programación</h2>
 
 	<div class="well">
-		{{ Form::open(['route' => 'exhibitions.find', 'method' => 'GET', 'class' => 'form-horizontal']) }}
+		{{ Form::open(['route' => 'exhibition.find', 'method' => 'GET', 'class' => 'form-horizontal']) }}
 
 		{{ Form::formGroup('text', 'title', 'Título', 'exhibition_finder')}}
 
@@ -38,7 +41,7 @@
 
 		@if( $resources->count() > 0 )
 
-			@include('exhibitions.tabulator', ['editable' => false]);
+			@include('frontend.exhibitions.partials.tabulator', ['editable' => false]);
 			
 		@endif
 	@endif

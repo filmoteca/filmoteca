@@ -144,12 +144,12 @@
 	        </ul>
 		</li>
 		<li>
-			<a href="{{ route('exhibitions') }}">
+			<a href="{{ URL::to('exhibition/index') }}">
 				<span>PROGRAMACIÓN</span>
 			</a>
 	        <ul class="submenu">
 				<li>
-					<a href="{{ route('exhibitions.history')}}">
+					<a href="{{ URL::to('exhibition/history')}}">
 						<span>Histórico de programación</span>
 					</a>
 				</li>

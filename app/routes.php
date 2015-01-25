@@ -19,51 +19,36 @@ Route::get('/home',[
 
 Route::get('/', 'HomeController@index');
 
-Route::get('/exhibition/index',
-	array(
-		'as' => 'exhibitions',
-		'uses' => 'ExhibitionController@index')
-	);
+/**
+ * Exhibitiones frontend
+ */
+Route::group(['prefix' => 'exhibition'], function(){
 
-Route::get('/exhibition/index',
-	array(
-		'as' => 'exhibitions.index',
-		'uses' => 'ExhibitionController@index')
-	);
+	// app
+	Route::get('',			'ExhibitionController@index');
+	Route::get('history',	'ExhibitionController@history');
+	Route::get('find',[
+		'as'	=> 'exhibition.find',
+		'uses' 	=> 'ExhibitionController@find'
+		]);
 
-Route::get('/exhibition/history',
-	array(
-		'as' => 'exhibitions.history',
-		'uses' => 'ExhibitionController@history')
-	);
-Route::get('/exhibition/find',
-	array(
-		'as' => 'exhibitions.find',
-		'uses' => 'ExhibitionController@find')
-	);
+	Route::get('{id}/show',[
+		'as' 	=> 'exhibition.show',
+		'uses' 	=> 'ExhibitionController@detail'
+		]);
+	Route::get('{id}/detail-history',[
+		'as'	=> 'exhibition.detail-history',
+		'uses' 	=> 'ExhibitionController@detailHistory'
+		]);
+	Route::get('{id}/detail-home',[
+		'as' 	=> 'exhibition.detail-home',
+		'uses' 	=> 'ExhibitionController@detailHome'
+		]);
+});
 
 Route::get('/news/show/{id}', 'NewsController@show');
 
 Route::get('/news/index', 'NewsController@index');
-
-/**
- * The details routes have to be fixed.
- */
-
-Route::get('/exhibition/{id}/detail',
-	array(
-		'as' => 'exhibitions.detail',
-		'uses' => 'ExhibitionController@detail'));
-
-Route::get('/exhibition/{id}/detailHistory',
-	array(
-		'as' => 'exhibitions.detailHistory',
-		'uses' => 'ExhibitionController@detailHistory'));
-
-Route::get('/exhibition/{id}/detailHome',
-	array(
-		'as' => 'exhibitions.detailHome',
-		'uses' => 'ExhibitionController@detailHome'));
 
 
 Route::get('/shop',

@@ -19,7 +19,7 @@
 					<li><a href="/pages/quienes-somos/mision-y-vision">Quiénes Somos</a></li>
 					<li><a href="">Acervo</a></li>
 					<li><a href="/pages/servicios/lineamientos-generales-para-acceder-al-material">Servicios</a></li>
-					<li><a href="{{ route('exhibitions') }}">Programación</a></li>
+					<li><a href="{{ URL::to('exhibition') }}">Programación</a></li>
 					<li><a href="">Prensa</a></li>
 					<li><a href="">Extensión Académica</a></li>
 					<li><a href="/pages/extension-academica/atencion-a-alumnos">Concursos</a></li>

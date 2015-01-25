@@ -48,7 +48,7 @@ class ExhibitionController extends BaseController
 		$weeks = array();
 
 		return View::make(
-			'exhibitions.app', 
+			'frontend.exhibitions.app', 
 			compact(
 				'exhibitions',
 				'auditoriums',
@@ -80,49 +80,52 @@ class ExhibitionController extends BaseController
 
 		$layout = ( Request::ajax() || $isJson )? 'layouts.modal': 'layouts.default';
 
-		return View::make('exhibitions.details', compact('exhibition','layout') );
+		return View::make('frontend.exhibitions.partials.details', compact('exhibition','layout') );
 	}
 
 	public function detailHistory($id){
 
 		$exhibition = $this->repository->search('id',$id);
 
-		return View::make('exhibitions.detail-history', compact('exhibition') );	
+		return View::make('frontend.exhibitions.detail-history', compact('exhibition') );	
 	}
 
 	public function detailHome($id){
 
 		$exhibition = $this->repository->search('id',$id);
 
-		return View::make('exhibitions.partial-details', compact('exhibition') );	
+		return View::make('frontend.exhibitions.partials.details', compact('exhibition') );	
 	}
 
 	public function history(){
 
-		return View::make('exhibitions.history');
+		return View::make('frontend.exhibitions.history');
 	}
 
 	public function find(){
 
 		$q = Film::getQuery();
 
+		array_reduce(['title', 'director'], function(){
+
+		});
+
+
 		if( Input::has('title') && !empty( Input::get('title')) ){
 
 			$q->where('title', 'like' ,'%' . Input::get('title') . '%');
-
-			$next_where_type = 'or';
 		}
 
 		if( Input::has('director') && !empty( Input::get('director'))){
 
-			$q->where('director', 'like', '%' . Input::get('director') . '%', $next_where_type);
+			$q->where('director', 'like', '%' . Input::get('director') . '%');
 		}
 
 		$films_ids = array_map(function($dummyObject){
 			return $dummyObject->id; //The query builder returns an array and does not a collection. I do not know why.
 		}, $q->get(['id']) ) ;
 
-		$view = View::make('exhibitions.history');
+		$view = View::make('frontend.exhibitions.history');
 
 		if( !empty($films_ids) ){
 

@@ -7,5 +7,5 @@
 		Regresar
 	</a>
 
-	@include('exhibitions.partial-details')
+	@include('frontend.exhibitions.partials.details')
 @stop

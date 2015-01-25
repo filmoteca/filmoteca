@@ -13,11 +13,11 @@
 		templates/datepicker/day.html de anguler-ui datepicker  
 	--}}
 	<script id="template/datepicker/day.html" type="text/ng-template">
-		@include('exhibitions.dayorweekpicker')
+		@include('frontend.exhibitions.partials.dayorweekpicker')
 	</script>
 
 	<script id="templates/exhibitions/list.html" type="text/ng-template">
-		@include('exhibitions.list', array('exhibitions', $exhibitions))
+		@include('frontend.exhibitions.partials.list', array('exhibitions', $exhibitions))
 	</script>
 	
 {{ HTML::script('/apps/require.config.js')}}
@@ -30,8 +30,7 @@
 
 @section('styles')
 	{{ HTML::styles(array(
-		'/bower_components/angucomplete-alt/angucomplete-alt.css',
-		'/assets/css/exhibitions-datepicker.css')) }}
+		'/bower_components/angucomplete-alt/angucomplete-alt.css')) }}
 @stop
 
 @section('breadcrumbs')
@@ -62,8 +61,7 @@
 
 		<div class="exhibition-datepicker" style="display:inline-block; min-height:200px;">
 			<h3>Consultar Programación</h3>
-
-			<datepicker ng-model="dphone" class="well well-sm"></datepicker>
+			<datepicker ng-model="dphone" class="well well-sm ng-cloak"></datepicker>
 		</div>
 
 		<div class="static-pages-menu">
@@ -137,7 +135,7 @@
 @section('content')
 	
 	<div class="exhibition-list" ng-show="!urlToDetails">
-		@include('exhibitions.list', array('exhibitions', $exhibitions))
+		@include('frontend.exhibitions.partials.list', array('exhibitions', $exhibitions))
 	</div>
 
 	<div class="loading" ng-show="loading"></div>
