@@ -167,33 +167,33 @@
 		</li>
 
 		<li>
-			<a href="/pages/prensa">
+			<a>
 				<span>PRENSA</span>
 			</a>
 	        <ul class="submenu">
 				<li>
-					<a href="/pages/prensa/noticias">
+					<a href="/news/index">
 						<span>Noticias</span>
 					</a>
 
 				</li>
 				<li>
-					<a href="/pages/prensa/filmoteca-medios">
+					<a href="/pages/press/filmoteca-in-the-media">
 						<span>Filmoteca en los medios</span>
 					</a>
 				</li>
 				<li>
-					<a href="/pages/prensa/galeria-de-eventos">
+					<a href="/pages/press/gallery">
 						<span>Galeria</span>
 					</a>
 				</li>
 				<li>
-					<a href="/pages/prensa/entrevistas">
+					<a href="/pages/press/interview">
 						<span>Entrevistas</span>
 					</a>
 				</li>
 				<li>
-					<a href="/press_register/create">
+					<a href="/press_register">
 						<span>Atención a medios</span>
 					</a>
 				</li>
