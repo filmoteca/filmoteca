@@ -14,7 +14,7 @@ Vista parcial
 			<div class="col-sm-6 cover">
 				<div>
 
-					<img src="{{ $exhibition->exhibition_film->film->image->url('normal') }}"
+					<img src="{{ $exhibition->exhibition_film->film->image->url('medium') }}"
 					alt="{{ $exhibition->exhibition_film->film->title }}" >
 
 				</div>
