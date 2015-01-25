@@ -1,5 +1,20 @@
 @extends('layouts.default')
 
+@section('breadcrumbs')
+<li>
+	<a href="/pages/press/index">
+		Prensa
+	</a>
+</li>
+<li class="active">
+	Atención a medios
+</li>
+@stop
+
+@section('sidebar')
+	@include('elements.menus.press', array('selected' => 4))
+@stop
+
 @section('content')
 
 {{ Form::open( 
