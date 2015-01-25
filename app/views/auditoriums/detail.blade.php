@@ -13,7 +13,7 @@
 @section('content')
 
 	<div>
-		<img src="{{$auditorium->image->url('normal'); }}" alt="sala {{$auditorium->name}}">
+		<img src="{{$auditorium->image->url('medium'); }}" alt="sala {{$auditorium->name}}">
 	</div>
     <div class="dirección">
         <span class="bold"> Dirección:</span> <br> 
