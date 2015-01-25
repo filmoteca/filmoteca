@@ -2,7 +2,7 @@
 
 @section('breadcrumbs')
 <li>
-	<a href="/pages/press/index">
+	<a>
 		Prensa
 	</a>
 </li>
