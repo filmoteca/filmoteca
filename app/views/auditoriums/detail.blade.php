@@ -2,7 +2,7 @@
 
 @section('breadcrumbs')
 <li>
-    {{ HTML::link('/exhibition/index', 'Programación') }}
+    {{ HTML::link('/exhibition', 'Programación') }}
 </li>
 <li class="active">
 	Sala: {{ $auditorium->name }}
