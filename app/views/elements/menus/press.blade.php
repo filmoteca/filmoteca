@@ -1,20 +1,17 @@
 <?php
 $menu = array(
 
-	array('Misión y Visión', '/pages/quienes-somos/mision-y-vision'),
+	array('Noticias', '/news/index'),
 
-	array('Objetivos y Funciones', '/pages/quienes-somos/objetivos-y-funciones'),
+	array('Filmoteca en los medios', '/pages/press/filmoteca-in-the-media'),
 
-	array('Consejo Asesor', '/pages/quienes-somos/consejo-asesor'),
+	array('Galería', '/pages/press/gallery'),
 
-	array('Memoria Filmoteca', '/pages/quienes-somos/memoria-filmoteca'),
+	array('Entrevista', '/pages/press/interview'),
 
-	array('Cronología', '/pages/quienes-somos/cronologia'),
+	array('Atención a medios', '/press_register')
 
-	array('Medalla Filmoteca', '/pages/quienes-somos/medalla-filmoteca', array(
-		'Galardonados', '/filmoteca-medal')),
-
-	array('Directorio', '/pages/quienes-somos/directorio'));
+    );
 ?>
 
 @include('elements.menus.static-pages', compact('menu','selected'))
