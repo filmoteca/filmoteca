@@ -55,10 +55,10 @@
 					<div class="content">
 						<div class="header">
 							<h3>Centro de documentación</h3><small>Abierto al público en general</small>
-							<span class="see-more"><a href="">Ver más</a></span>
+							<span class="see-more"><a href="/pages/servicios/centro-de-documentacion">Ver más</a></span>
 						</div>
 						<div class="image">
-							<img src="/imgs/jill.jpg" class="img-responsive">
+							<img src="/imgs/home/centro-documentacion.jpg" alt="Centro de Documentación Filmoteca UNAM" class="img-responsive">
 						</div>
 					</div>
 				</div>
@@ -72,7 +72,7 @@
 							<span>Sede: Filmoteca UNAM</span><span class="see-more"><a href="">Ver más</a></span>
 						</div>
 						<div class="image">
-							<img src="/imgs/dead-nation.jpg">
+							<img src="/imgs/home/exposiciones.jpg">
 						</div>
 					</div>
 				</div>

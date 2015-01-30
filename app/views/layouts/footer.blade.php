@@ -9,8 +9,9 @@
 				<p>Circuito exterior Mtro. Mario de la Cueva s/n. 
 					Ciudad Universitaria C.P. 04510 México, D.F.</p>
 				
-				<p><a href="#" class="look-map"><span class="icon icon-location"></span>ver mapa</a></p>
 
+
+				<p><a href="https://goo.gl/maps/0gwrN" target="_blank" onclick="window.open(this.href, this.target, 'width=780,height=550, scrollbars=yes,resizable=yes'); return false" class="look-map"><span class="icon icon-location"></span>ver mapa</a></p>
 			</div>
 
 			<div class="col-md-4">
