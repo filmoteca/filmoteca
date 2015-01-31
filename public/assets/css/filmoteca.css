@@ -5744,6 +5744,9 @@ a {
 .exhibition-detail .close {
   display: none; }
 
+h5 {
+  color: #98157f; }
+
 footer {
   padding-top: 10px;
   background-color: #f2f2f2; }
