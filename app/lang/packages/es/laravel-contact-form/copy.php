@@ -6,7 +6,6 @@ return array(
         'name.required' => 'Por favor introduce tu nombre',
         'email.required' => 'Por favor introduce tu dirección de correo electronico',
         'email.email' => 'Por favor introduce una dirección de correo electronico valido',
-        'telephone' => 'Por favor introduce tu teléfono',
         'enquiry.required' => 'Por favor introduce tu comentario',
     ),
     'labels' => array(

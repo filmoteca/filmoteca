@@ -43,8 +43,7 @@ return array(
 		'name' => 'required',
         'name' =>'required',
 		'email' => 'required|email',
-		'enquiry' => 'required',
-        'telephone' => 'required'
+		'enquiry' => 'required'
 	),
 
 	'mail' => array(
