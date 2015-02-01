@@ -30,7 +30,7 @@
 				<h5>Consulta:</h5>
 	
 				<div class="link">
-					<a href="http://filmoteca.dev/exhibition/index"><span class="icon icon-this-week"></span>Esta semana</a>	
+					<a href="http://filmoteca.dev/exhibition"><span class="icon icon-this-week"></span>Este mes</a>	
 				</div>
 				
 				<div class="link">
@@ -46,11 +46,11 @@
 		<div class="flm-section flm-subsection digital-billboard">
 			<div class="content">
 				<div class="image pull-left">
-					<img src="/imgs/jill.jpg">
+					<img src="/imgs/home/cartelera.jpg">
 				</div>
 				<div class="caption pull-right">
 					<h5>Cartelera digital</h5>
-					<small>Diciembre</small>
+					<small>Enero</small>
 					<a href="#"><span class="icon icon-download pull-right"></span></a>
 				</div>	
 			</div>
