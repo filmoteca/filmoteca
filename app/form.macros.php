@@ -148,7 +148,7 @@ Form::macro('auditoriumFormGroup', function($name, $title, $formname, $attribute
 
 Form::macro('theMediaFormGroup', function($name, $title, $formname, $attributes){
 
-	$options = ['Televisión', 'Preíodico', 'Radio', 'Otro'];
+	$options = ['Televisión', 'Periódico', 'Radio', 'Otro'];
 
 	return Form::selectFormGroup($name, $options,$title,$formname,$attributes);
 });
