@@ -16,9 +16,10 @@ $menu = array(
 
 	array('Filmoteca en los medios', '/pages/press/filmoteca-in-the-media'),
 
-	array('La Filmoteca recomienda', '/pages/press/interviews')
+	array('Galería', '/pages/press/gallery'),
 
-	/*array('Galería', '/pages/press/gallery')*/
+	array('Entrevista', '/pages/press/interviews'),
+
 	);
 
 ?>

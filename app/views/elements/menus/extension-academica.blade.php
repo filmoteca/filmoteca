@@ -13,7 +13,7 @@
 
 $menu = array(
 
-	array('Cursos y Talleres', '/pages/extension-academica/cursos-y-talleres'),
+	array('Cursos y Talleres', '/courses/app#/'),
 
 	array('Servicio social', '/pages/extension-academica/servicio-social'),
 
