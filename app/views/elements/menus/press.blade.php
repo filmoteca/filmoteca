@@ -1,19 +1,25 @@
-<?php
-$menu = array(
 
-	array('Noticias', '/news/index'),
+<?php 
+$menu = array(
+	array('Prensa', '/press_register'),
+
+	array('Exposiciones', '/pages/press/exposiciones-museografia'),
+
+	array('Publicaciones','/pages/press/publicaciones', 
+		array(
+		'Libros y revistas', '/pages/press/publicaciones'), 
+		array(
+		'Libros digitales', '/pages/press/publicaciones')),
+	
+		array('Noticias', '/news/index'),
 
 	array('Filmoteca en los medios', '/pages/press/filmoteca-in-the-media'),
 
-	array('Galería', '/pages/press/gallery'),
+	array('Entrevistas', '/pages/press/interviews'),
 
-	array('Entrevista', '/pages/press/interview'),
+	array('Galería', '/pages/press/gallery')
+	);
 
-	array('Atención a medios', '/press_register')
-
-    );
 ?>
 
 @include('elements.menus.static-pages', compact('menu','selected'))
-
-

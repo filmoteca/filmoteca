@@ -1,16 +1,16 @@
 @section('breadcrumbs')
 <li>
 	<a href="/pages/servicios/index">
-		Servicios
+		Difusión
 	</a>
 </li>
 <li class="active">
-	Museografía
+	Exposiciones
 </li>
 @stop
 
 @section('sidebar')
-	@include('elements.menus.servicios', array('selected' => 6))
+	@include('elements.menus.press', array('selected' => 1))
 @stop
 
 
@@ -18,9 +18,9 @@
 @section('content')
 
 	<div class="img-servicios">
-		<img src="/assets/imgs/exposiciones-museo.jpg" aling="center">
+		<img src="/imgs/exposiciones/exposiciones.jpg" aling="center">
 	</div>  
-	<h1>Museografía</h1>
+	<h1>Exposiciones</h1>
 
 	<p>Entre las funciones de esta área se encuentra el almacenamiento y conservación de la colección de más de 300 aparatos cinematográficos antiguos que pertenecen al acervo de la Filmoteca de la UNAM y que relatan las transiciones tecnológicas del cinematógrafo, sus inicios, antecedentes y progresos. Visita nuestro <a href="http://www.filmoteca.unam.mx/MUVAC/">Museo virtual de aparatos cinematográficos.</a></p>
 
