@@ -33,7 +33,7 @@
 @stop
 
 @section('sidebar')
-	@include('elements.menus.servicios', array('selected' => 3))
+	@include('elements.menus.servicios', array('selected' => 2))
 @stop
 
 
