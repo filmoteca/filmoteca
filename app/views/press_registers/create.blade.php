@@ -3,16 +3,16 @@
 @section('breadcrumbs')
 <li>
 	<a>
-		Prensa
+		Difusión
 	</a>
 </li>
 <li class="active">
-	Atención a medios
+	Prensa
 </li>
 @stop
 
 @section('sidebar')
-	@include('elements.menus.press', array('selected' => 4))
+	@include('elements.menus.press', array('selected' => 0))
 @stop
 
 @section('content')
@@ -26,7 +26,7 @@
 	])}}
 
 	<div class="panel-heading">
-		<h2>Sala de Prensa</h2>
+		<h2>Atención a Medios</h2>
 	</div>
 	
 	<div class="panel-body">

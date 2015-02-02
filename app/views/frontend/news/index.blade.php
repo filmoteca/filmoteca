@@ -3,7 +3,7 @@
 @section('breadcrumbs')
 <li>
     <a>
-        Prensa
+        Difusión
     </a>
 </li>
 <li class="active">
@@ -12,7 +12,7 @@
 @stop
 
 @section('sidebar')
-    @include('elements.menus.press', array('selected' => 0))
+    @include('elements.menus.press', array('selected' => 3))
 @stop
 
 @section('content')
