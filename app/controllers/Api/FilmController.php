@@ -19,9 +19,7 @@ class FilmController extends ApiController
 	{
 		$films = $this->repository->search('title', Input::get('value'));
 
-		return Response::json(
-			['films' => $films],
-			200);
+		return Response::json($films,200);
 	}
 
 	public function store()

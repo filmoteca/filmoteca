@@ -144,25 +144,9 @@ class ExhibitionsRepository extends ResourcesRepository
 		$exhibitionFilm->fill(['film_id' => $data['exhibition_film']['film']['id'] ])
 			->save();
 
-
 		$d['exhibition_film_id'] = $exhibitionFilm->id;
 
-		$schedules = [];
-
-		foreach( $data['schedules'] as $value)
-		{
-			$model = App::make('Filmoteca\Models\Exhibitions\Schedule');
-
-			$value['auditorium_id'] = $value['auditorium']['id'];
-			
-			unset( $value['auditorium']);
-			unset( $value['date'] );
-			unset( $value['time'] );
-
-			$model->fill($value);
-
-			array_push( $schedules, $model );
-		}
+		$schedules = $this->makeSchedules($data['schedules']);
 
 		$this->repository->create($d)->schedules()
 			->saveMany($schedules);
@@ -180,5 +164,54 @@ class ExhibitionsRepository extends ResourcesRepository
 				'exhibitionFilm.film',
 				'type')
 			->first();
+	}
+
+	public function paginate($amount)
+	{
+		return $this
+			->resource
+			->orderBy('id','desc')
+			->with('exhibitionFilm','exhibitionFilm.film')
+			->paginate($amount);
+	}
+
+	public function update($id, array $data = null)
+	{
+		$exhibition = $this->resource
+			->findOrFail($data['id'])
+			->fill($data);
+
+		// $schedules = $this->makeSchedules($data['schedules']);
+
+		// App::make('Filmoteca\Models\Exhibitions\Type')
+		// 	->findOrFail($data['type']['id'])
+		// 	->fill($data['type'])
+		// 	->save();
+
+		// $exhibition->schedules()->saveMany($schedules);
+
+		$exhibition->save();
+
+		return true;
+	}
+
+	protected function makeSchedules(array $schedules = null)
+	{
+		return array_map(function($a_schedule){
+
+			if( isset($data['id'])) {
+				$schedule = App::make('Filmoteca\Models\Exhibitions\Schedule')
+					->findOrFail($a_schedule['id'])
+					->fill($a_schedule)
+					->save();
+			} else {
+				$a_schedule['auditorium_id'] = $a_schedule['auditorium']['id'];
+				$schedule = App::make('Filmoteca\Models\Exhibitions\Schedule')
+					->fill($a_schedule)
+					->save();
+			}
+
+			return $schedule;
+		}, $schedules);
 	}
 }

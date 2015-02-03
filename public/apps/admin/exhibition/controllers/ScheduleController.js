@@ -64,7 +64,14 @@
 
 			schedule.entry = entry;
 
+			Exhibition.updateSchedule($scope.editedIndex);
+
 			$scope.editedIndex = -1;
 		};
+
+		$scope.$on('exhibitionLoaded', function(){
+
+			$scope.schedules = Exhibition.schedules();
+		});
 	}]);
 });

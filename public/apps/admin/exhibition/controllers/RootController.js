@@ -24,36 +24,50 @@
 	angular.module('admin.exhibition.controllers.RootController', [])
 
 	.controller('RootController', [
-		'$scope', '$timeout','ExhibitionService', 'NotificationService', 'IconographicService',
-		 function($scope, $timeout, Exhibition, Notification, Icon)
+		'$scope', '$timeout','ExhibitionService', 'NotificationService', 'IconographicService', '$location',
+		 function($scope, $timeout, Exhibition, Notification, Icon, $location)
 	{
-		$scope.exhibition = Exhibition.get();
 
-		$scope.wasFilmSelected = function()
-		{
-			return angular.isDefined( Exhibition.film().id );
-		};
+		// var search = $location.search();
 
-		$scope.store = function()
-		{
-			if( !$scope.wasFilmSelected() )
-			{
-				var message = 'Para guardar la exhibición hay que elegir una película.';
-				Notification.notify(message , 'warning');
-			}else{
-				Exhibition.store();
-			}
-		};
+		// if( angular.isDefined(search.edit))
+		// {
+		// 	$scope.exhibitionEdit = true;
 
-		$scope.$on('notificationRequested', function(event, data)
-		{
-			data.active = true;
-			$scope.notification = data;
+		// 	Exhibition.load(search.edit).then(function(exhibition){
+		// 		$scope.exhibition = exhibition;
+		// 		$scope.$broadcast('exhibitionLoaded', $scope.exhibition);
+		// 	});
+		// }else{
+		// 	$scope.exhibitionEdit = false;
+		// 	$scope.exhibition = Exhibition.make();
+		// }
 
-			$timeout(function()
-			{
-				$scope.notification.active = false;
-			},5000);
-		});
+		// $scope.wasFilmSelected = function()
+		// {
+		// 	return angular.isDefined( Exhibition.film().id );
+		// };
+
+		// $scope.store = function()
+		// {
+		// 	if( !$scope.wasFilmSelected() )
+		// 	{
+		// 		var message = 'Para guardar la exhibición hay que elegir una película.';
+		// 		Notification.notify(message , 'warning');
+		// 	}else{
+		// 		Exhibition.store();
+		// 	}
+		// };
+
+		// $scope.$on('notificationRequested', function(event, data)
+		// {
+		// 	data.active = true;
+		// 	$scope.notification = data;
+
+		// 	$timeout(function()
+		// 	{
+		// 		$scope.notification.active = false;
+		// 	},5000);
+		// });
 	}]);
 });

@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="{{ asset('packages/mrjuliuss/syntara/assets/css/base.css') }}" media="all">
         <link rel="stylesheet" href="{{ asset('/assets/css/filmoteca.css')}}" />
 
-        @yield('styles');
+        @yield('styles')
 
         <script src="{{ asset('apps/require.config.js') }}"></script>
 
@@ -15,9 +15,8 @@
         <title>{{ (!empty($siteName)) ? $siteName : "Syntara"}}</title>
     </head>
     <body>
-    asdfasdfasd
         @include(Config::get('syntara::views.header'))
-        {{ isset($breadcrumb) ? Breadcrumbs::create($breadcrumb) : ''; }}
+        {{ isset($breadcrumb) ? Breadcrumbs::create($breadcrumb) : '' }}
         <div class="container">
             @yield('content')
         </div>

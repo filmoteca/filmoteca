@@ -29,6 +29,54 @@
 	{
 		var exhibition = null;
 
+		var appendTransform = function(defaults, transform) {
+
+			// We can't guarantee that the default transformation is an array
+			defaults = angular.isArray(defaults) ? defaults : [defaults];
+
+			// Append the new transformation to the defaults
+			return defaults.concat(transform);
+		};
+
+		var transformResponseDates = function(exhibition)
+		{
+			angular.forEach(exhibition.schedules, function(schedule){
+
+				var entry = moment(schedule.entry, 'YYYY-MM-DD HH:mm:ss');
+
+				schedule.date = entry.toDate();
+				schedule.time = entry.toDate();
+			});
+
+			return exhibition;
+		};
+
+		var transformRequest = function(exhibition)
+		{
+			angular.forEach(exhibition.schedules, function(schedule)
+			{
+				var date = moment(schedule.date).format('YYYY-MM-DD');
+				var time = moment(schedule.time).format('HH:mm:ss');
+
+				schedule.entry = date + ' ' + time;
+			});
+
+			exhibition.type_id 				= (exhibition.type === null)? 0: exhibition.type.id;
+			exhibition.exhibition_film_id 	= exhibition.exhibition_film.id;
+
+			return exhibition;
+		};
+
+		var HTTP_CONFIG = {
+			transformResponse 	: appendTransform($http.defaults.transformResponse, transformResponseDates),
+			transformRequest 	: [transformRequest].concat($http.defaults.transformRequest)
+		};
+
+		this.paginate = function(){
+
+			return $http.get('/admin/api/exhibition');
+		};
+
 		this.make = function()
 		{
 			return {
@@ -40,10 +88,24 @@
 			};
 		};
 
+		this.load = function(id)
+		{
+			var config = {
+				transformResponse : appendTransform($http.defaults.transformResponse, transformResponseDates)
+			};
+
+			return $http.get('/api/exhibition/' + id, config).then(function(response){
+
+				angular.extend(exhibition, response.data);
+
+				return response.data;
+			});
+		};
+
 		this.get = function()
 		{
 			return exhibition;
-		}
+		};
 
 		this.addSchedule = function( schedule )
 		{
@@ -55,6 +117,25 @@
 			}
 
 			return this;
+		};
+
+		this.updateSchedule = function( index )
+		{
+			var schedule = exhibition.schedules[index];
+
+			var date = moment(schedule.date).format('YYYY-MM-DD');
+			var time = moment(schedule.time).format('HH:mm:ss');
+
+			schedule.entry = date + ' ' + time;
+
+			if (angular.isDefined(schedule.id)){
+				return $http.put('/admin/api/schedule/' + schedule.id, schedule);
+			}
+
+			return $http.post('/admin/api/exhibition/' + exhibition.id + '/schedule', schedule).then(function(response){
+
+				exhibition.schedules[index].id = response.date.id;
+			});
 		};
 
 		this.film = function( film )
@@ -73,10 +154,11 @@
 			{
 				exhibition.type = icon;
 				return icon;
-			}else{
-				return exhibition.exhibition_film.icon;
 			}
-		}
+			
+			return exhibition.type;
+			
+		};
 
 		this.schedules = function()
 		{
@@ -85,7 +167,27 @@
 
 		this.destroySchedule = function($index)
 		{
+			var id = exhibition.schedules[$index].id;
+
 			exhibition.schedules.splice($index,1);
+
+			if (angular.isDefined(id)){
+				
+				$http.delete('/admin/api/schedule/' + id);	
+
+				return this;
+			}
+
+			var unwatch = $rootScope.$watch(function(){
+				return exhibition.schedules[$index].id;
+			}, function(value){
+
+				if (angular.isUnefined(value) ) { return; }
+
+				$http.delete('/admin/api/exhibition/' + exhibition.id + '/schedule/' + id);	
+
+				unwatch();
+			});
 
 			return this;
 		};
@@ -93,38 +195,24 @@
 		this.store = function()
 		{
 			var self = this;
-
-			/**
-			 * Before to send we parse the dates.
-			 */
 			
-			angular.forEach(exhibition.schedules, function(schedule)
-			{
-				var date = moment(schedule.date).format('YYYY-MM-DD');
-				var time = moment(schedule.time).format('HH:mm:ss');
+			// transformRequest(exhibition);
 
-				schedule.entry = date + ' ' + time;
+			return $http.post('/admin/api/exhibition/', exhibition, HTTP_CONFIG).then(function(){
+
+				console.log('I was saved a exhibition for you.');
+				self.restart();
 			});
+		};
 
-			$http.post('/admin/api/exhibition/store', exhibition)
-				.success(function()
-				{
-					$rootScope.$broadcast('notificationRequested',{
-						type: 'success',
-						message: 'Exhibiciones guardada.'
-					});
+		this.destroy = function(id)
+		{
+			return $http.delete('/admin/api/exhibition/' + id);
+		};
 
-					self.restart();
-				})
-				.error(function(event, data)
-				{
-					$rootScope.$broadcast('notificationRequested',{
-						type: 'danger',
-						message: 'Error al guardar las exhibiciones.'
-					});
-
-					console.log('Error al guardar la exhibición.', data);
-				});
+		this.update = function()
+		{
+			return $http.put('/admin/api/exhibition/' + exhibition.id, exhibition, HTTP_CONFIG);
 		};
 
 		/**
@@ -146,8 +234,8 @@
 		{
 			exhibition.exhibition_film.film = {};
 			exhibition.schedules.splice(0, exhibition.schedules.length);
-			exhibition.type = Icon.default();
-		}
+ 			exhibition.type = null;
+		};
 
 		exhibition = this.make();
 	}]);

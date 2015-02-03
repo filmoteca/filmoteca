@@ -26,7 +26,7 @@
     </head>
     <body>
         @include(Config::get('syntara::views.header'))
-        {{ isset($breadcrumb) ? Breadcrumbs::create($breadcrumb) : ''; }}
+        {{ isset($breadcrumb) ? Breadcrumbs::create($breadcrumb) : '' }}
         <div id="content">
             @yield('content')
         </div>

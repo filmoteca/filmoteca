@@ -30,6 +30,24 @@
 
 		$scope.exhibition = Exhibition.get();
 
+		var modalController = function($scope, $modalInstance)
+		{
+			$scope.icon = {};
+
+			$scope.message = '';
+
+			$scope.store = function()
+			{
+				Icon.store( $scope.icon).then(function(response)
+				{
+					$modalInstance.close(response.data);
+				}, function()
+				{
+					$scope.message = 'Ocurrió un problema al guardar.';
+				});
+			};
+		};
+
 		$scope.create = function()
 		{
 			$modal.open({
@@ -41,23 +59,7 @@
 				 * estoy del todo seguro si angular siempre inyecta estos dos
 				 * servicios al controllador.
 				 */
-				controller : function($scope, $modalInstance)
-				{
-					$scope.icon = {};
-
-					$scope.message = '';
-
-					$scope.store = function()
-					{
-						Icon.store( $scope.icon).then(function(response)
-						{
-							$modalInstance.close(response.data);
-						}, function()
-						{
-							$scope.message = 'Ocurrió un problema al guardar.';
-						});
-					};
-				}
+				controller : modalController
 			})
 			.result.then(function(icon)
 			{
@@ -66,5 +68,16 @@
 				$scope.exhibition.type = Exhibition.icon(icon);
 			});
 		};
+
+		$scope.update = function()
+		{
+			Exhibition.icon($scope.exhibition.icon);
+			Exhibition.update();
+		}
+
+		$scope.$on('exhibitionLoaded', function(){
+
+			$scope.exhibition.type = Exhibition.icon();
+		});
 	}]);
 });

@@ -53,11 +53,6 @@ Route::get('/news/show/{id}', 'NewsController@show');
 Route::get('/news/index', 'NewsController@index');
 
 
-Route::get('/shop',
-	array(
-		'as' => 'shop',
-		'uses' => 'ExhibitionController@index' ));
-
 Route::get('/press_register',
 	array(
 		'as' => 'press_register.create',
@@ -144,6 +139,8 @@ Route::group(['prefix' => 'api'], function()
 		'as' => 'api.film.search',
 		'uses' => 'Api\FilmController@search']);
 
+	Route::get('film','Api\FilmController@search');
+
 	Route::get('auditorium/all', [
 		'as' => 'api.auditorium.all',
 		'uses' => 'Api\AuditoriumController@all']);
@@ -155,6 +152,11 @@ Route::group(['prefix' => 'api'], function()
 	Route::get('auditorium/{id}/detail',[
 		'as' => 'api.auditorium.detail',
 		'uses' => 'Api\AuditoriumController@detail']);
+
+	Route::group(['prefix' => 'exhibition'], function(){
+
+		Route::get('/{id}', 'Api\ExhibitionController@show');
+	});
 
 	/*
 	|------------------------------------------------------------------------------
@@ -246,9 +248,24 @@ Route::group(['prefix' => 'admin'], function()
 			'as' => 'admin.api.film.store',
 			'uses' => 'Api\FilmController@store']);
 
-		Route::post('exhibition/store',[
-			'as' => 'admin.api.exhibition.store',
-			'uses' => 'Api\ExhibitionController@store']);
+		/*
+		|--------------------------------------------------------------------------
+		| Exhibitions
+		|--------------------------------------------------------------------------
+		 */
+
+		Route::group(['prefix' => 'exhibition'], function()
+		{
+			Route::get('/', 		'Api\ExhibitionController@index');
+			Route::post('/',		'Api\ExhibitionController@store');
+			Route::put('/{id}', 	'Api\ExhibitionController@update');
+			Route::delete('/{id}', 	'Api\ExhibitionController@destroy');
+			
+			Route::post('/{exhibition_id}/schedule', 	'Api\ScheduleController@store');
+		});
+
+		Route::put('schedule/{id}', 	'Api\ScheduleController@update');
+		Route::delete('schedule/{id}', 	'Api\ScheduleController@destroy');
 	});
 
 
@@ -264,6 +281,18 @@ Route::group(['prefix' => 'admin'], function()
 
 	/*
 	|--------------------------------------------------------------------------
+	| Aplicación de exhibiciones (ADMIN)
+	|--------------------------------------------------------------------------
+	 */
+	Route::get('/exhibition/app', [
+		'as' => 'admin.exhibition.app',
+		'uses' => function(){
+			return View::make('exhibitions.app');
+		}
+	]);
+
+	/*
+	|--------------------------------------------------------------------------
 	| RECURSOS. Lo que pueden ser creados, editados, borrados y listados.
 	|--------------------------------------------------------------------------
 	 */
@@ -274,7 +303,7 @@ Route::group(['prefix' => 'admin'], function()
 
 	$resources = ['film', 'filmotecaMedal', 'billboard',
 		'professor', 'subject','venue','course', 'student',
-		'exhibition', 'auditorium','news', 'catalog', 'interview', 'chronology'];
+		'auditorium','news', 'catalog', 'interview', 'chronology'];
 
 	/**
 	 * El nombre de las rutas tienen el prefijo admin. (incluyendo el punto)

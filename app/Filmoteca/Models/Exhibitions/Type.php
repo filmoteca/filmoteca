@@ -14,6 +14,10 @@ class Type extends Eloquent implements StaplerableInterface
 
 	protected $guarded = [];
 
+	protected $fillable = ['name', 'image_file_name', 'image_file_size', 'image_content_type', 'image_updated_at'];
+
+	protected $appends = ['icon'];
+
 	public function __construct(array $attributes = array())
 	{
 		$this->hasAttachedFile('image',[
@@ -25,5 +29,10 @@ class Type extends Eloquent implements StaplerableInterface
 	public function exhibition()
 	{
 		return $this->hasMany('Filmoteca\Models\Exhibitions\Exhibition');
+	}
+
+	public function getIconAttribute()
+	{
+		return $this->image->url('thumbnail');
 	}
 }

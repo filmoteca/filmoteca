@@ -1,0 +1,17 @@
+
+// Override the base.css of mrjulluss/syntara package.
+
+[class^="glyphicon-"],
+[class*=" glyphicon-"] {
+    display: inline-block;
+    height: inherit;
+    margin-top: 1px;
+    line-height: inherit;
+}
+
+.datepicker table td{
+    font-size: inherit;
+    padding: inherit;
+    border-bottom: inherit;
+    color: inherit;
+}

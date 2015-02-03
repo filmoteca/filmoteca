@@ -5,7 +5,7 @@ use Eloquent;
 
 class Exhibition extends Eloquent
 {
-	protected $guarded = [];
+	protected $fillable = ['exhibition_film_id', 'type_id'];
 	
 	public function exhibitionFilm()
 	{

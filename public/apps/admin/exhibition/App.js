@@ -5,58 +5,149 @@
  * Dependencies:
  */
 
-/* global define,require, angular,domready */
+/* global require */
 
 (function(factory)
 {
-	'use strict';
-		require([
-			'angular',
-			'domready',
-			'angucomplete-alt',
+    'use strict';
+        require([
+            'angular',
+            'domready',
+            'angucomplete-alt',
+            'ngRoute',
+            'ngAnimate',
 
-			'admin.exhibition.controllers/RootController',
-			'admin.exhibition.controllers/FilmController',
-			'admin.exhibition.controllers/ScheduleController',
-			'admin.exhibition.controllers/IconographicController',
+            'admin.exhibition.controllers/FilmController',
+            'admin.exhibition.controllers/ScheduleController',
+            'admin.exhibition.controllers/IconographicController',
 
-			'admin.exhibition.services/FilmService',
-			'admin.exhibition.services/ExhibitionService',
-			'admin.exhibition.services/AuditoriumService',
-			'admin.exhibition.services/IconographicService',
-			'admin.exhibition.services/NotificationService',
+            'admin.exhibition.services/FilmService',
+            'admin.exhibition.services/ExhibitionService',
+            'admin.exhibition.services/AuditoriumService',
+            'admin.exhibition.services/IconographicService',
+            'admin.exhibition.services/NotificationService',
 
-			'file-model',
+            'file-model',
 
-			'syntara'
-			], 
-			factory);
+            'syntara'
+            ], 
+            factory);
 })(function(angular, domready)
 {
-	'use strict';
+    'use strict';
 
-	angular.module('App',[
+    angular.module('App',[
 
-		'angucomplete-alt',
+        'angucomplete-alt',
+        'ngRoute',
+        'ngAnimate',
 
-		'admin.exhibition.controllers.RootController',
-		'admin.exhibition.controllers.FilmController', 
-		'admin.exhibition.controllers.ScheduleController',
-		'admin.exhibition.controllers.IconographicController',
+        'admin.exhibition.controllers.FilmController', 
+        'admin.exhibition.controllers.ScheduleController',
+        'admin.exhibition.controllers.IconographicController',
 
-		'admin.exhibition.services.FilmService',
-		'admin.exhibition.services.ExhibitionService',
-		'admin.exhibition.services.AuditoriumService',
-		'admin.exhibition.services.IconographicService',
-		'admin.exhibition.services.NotificationService',
+        'admin.exhibition.services.FilmService',
+        'admin.exhibition.services.ExhibitionService',
+        'admin.exhibition.services.AuditoriumService',
+        'admin.exhibition.services.IconographicService',
+        'admin.exhibition.services.NotificationService',
 
-		'FileModel'
-		]);
+        'FileModel'
+        ]
+    )
 
-	domready( function()
-	{
-		document.getElementsByTagName('body')[0].setAttribute('data-ng-controller','RootController');
-		angular.bootstrap(document,['App']);
-	});
+    .controller('admin.exhibition.controllers.exhibition',['$scope','ExhibitionService', function($scope, Exhibition){
+
+        $scope.wasFilmSelected = function()
+        {
+            return angular.isDefined( Exhibition.film().id );
+        };
+    }])
+
+    .controller('admin.exhibition.controllers.index',['$scope','ExhibitionService', function($scope, Exhibition){
+
+        Exhibition.paginate().then(function(pagination){
+
+            $scope.exhibitions = pagination.data.data;
+        });
+
+        $scope.destroy = function($index)
+        {
+            Exhibition.destroy( $scope.exhibitions[$index].id ).then(function(){
+
+                $scope.exhibitions.splice($index, 1);
+            });
+        };
+    }])
+
+    .controller('admin.exhibition.controllers.create',['$scope', 'ExhibitionService', function($scope, Exhibition){
+        
+        $scope.exhibitionLoaded = false;
+
+        Exhibition.restart();
+
+        $scope.store = function()
+        {
+            Exhibition.store().then(function(){
+                Exhibition.restart();
+                console.log('stored');
+            });
+        };
+    }])
+
+    .controller('admin.exhibition.controllers.edit',['$scope','ExhibitionService','$routeParams', function($scope, Exhibition, $routeParams){
+
+        $scope.exhibitionLoaded = true;
+
+        Exhibition.load($routeParams.id).then(function(exhibition){
+
+            $scope.exhibition = exhibition;
+
+            $scope.$broadcast('exhibitionLoaded', exhibition);
+        });
+
+        $scope.update = function()
+        {
+            Exhibition.update().then(function(){
+                
+                console.log('I updated a exhibition');
+            });
+        };
+    }])
+
+    .config(['$routeProvider','$httpProvider',function($routeProvider, $httpProvider) {
+            
+        $routeProvider
+            .when('/index', {
+                templateUrl : '/apps/admin/exhibition/templates/index.html',
+                controller: 'admin.exhibition.controllers.index'
+            })
+            .when('/create',{
+                templateUrl : '/apps/admin/exhibition/templates/create.html',
+                controller: 'admin.exhibition.controllers.create'
+            })
+            .when('/edit/:id',{
+                templateUrl : '/apps/admin/exhibition/templates/create.html',
+                controller: 'admin.exhibition.controllers.edit'
+            })
+            .otherwise('/index');
+
+        $httpProvider.interceptors.push(function($q){
+            return {
+                'responseError' : function(rejection) {
+
+                    console.log('Filmoteca error:', rejection.statusText);
+                    
+                    return $q.reject(rejection);
+                }
+            };
+        });
+    }]);
+
+    domready( function()
+    {
+        document.getElementsByTagName('body')[0].setAttribute('data-ng-controller','admin.exhibition.controllers.exhibition');
+        angular.bootstrap(document,['App']);
+    });
 
 });

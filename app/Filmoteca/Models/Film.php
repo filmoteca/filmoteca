@@ -1,11 +1,10 @@
-<?php namespace Filmoteca\Models;
+<?php 
+
+namespace Filmoteca\Models;
 
 use Codesleeve\Stapler\ORM\StaplerableInterface;
-
 use Codesleeve\Stapler\ORM\EloquentTrait;
-
 use Carbon\Carbon;
-
 use Eloquent;
 
 class Film extends Eloquent implements StaplerableInterface
@@ -13,6 +12,8 @@ class Film extends Eloquent implements StaplerableInterface
 	use EloquentTrait;
 
 	protected $guarded = [];
+
+	protected $appends = ['cover_urls'];
 
 	public function __construct(array $attributes = array())
 	{
@@ -42,5 +43,13 @@ class Film extends Eloquent implements StaplerableInterface
 	public function setYearAttribute($value)
 	{
 		$this->attributes['year'] = Carbon::createFromFormat('Y', $value)->format('Y-m-d');
+	}
+
+	public function getCoverUrlsAttribute()
+	{
+		return [
+			'thumbnail' => $this->image->url('thumbnail'),
+			'medium'	=> $this->image->url('medium')
+		];
 	}
 }

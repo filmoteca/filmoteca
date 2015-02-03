@@ -8,10 +8,10 @@
 		</button>
 		<ul class="dropdown-menu">
 			<li>
-				{{ HTML::linkRoute('admin.exhibition.index', 'Ver toda la programación') }}
+				{{ HTML::link('/admin/exhibition/app#/index', 'Ver toda la programación') }}
 			</li>
 			<li>
-				{{ HTML::linkRoute('admin.exhibition.create', 'Agregar exhibiciones') }}
+				{{ HTML::link('/admin/exhibition/app#/create', 'Agregar exhibiciones') }}
 			</li>
 			<li>
 				{{ HTML::linkRoute('admin.film.index', 'Ver todas las películas') }}

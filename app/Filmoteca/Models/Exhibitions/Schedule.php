@@ -4,7 +4,7 @@ use Eloquent;
 
 class Schedule extends Eloquent
 {
-	protected $guarded = [];
+	protected $fillable = ['entry', 'auditorium_id','exhibition_id'];
 	
 	public function exhibitions()
 	{

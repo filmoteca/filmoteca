@@ -49,6 +49,7 @@
     "bootstrapvalidator": "0.5.*",
     "parsleyjs": "2.*",
     "ckeditor": "4.4.*",
-    "ckeditor-youtube-plugin": "https://github.com/pollin14/ckeditor-youtube-plugin.git"
+    "ckeditor-youtube-plugin": "https://github.com/pollin14/ckeditor-youtube-plugin.git",
+    "angular-animate": "1.2"
   }
 }
