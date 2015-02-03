@@ -20,7 +20,7 @@ class AuditoriumsRepository extends ResourcesRepository
 			->first();
 
 		if( empty($resource) )
-			throw new Exception("No encontrado.");
+			throw new \Exception("Sala no encontrada");
 			
 		return $resource;
 	}

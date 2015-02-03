@@ -51,11 +51,11 @@
 		</tr>
 		<tr>
 			<th>Sede</th>
-			<td>{{ $resource->venue->name }}</td>
+			<td>{{ (isset($resource->venue))? $resource->venue->name : 'Ninguna' }}</td>
 		</tr>
 		<tr>
 			<th>Mapa</th>
-			<td><a href="{{ $resource->map }}">Link</a></td>
+			<td>{{ $resource->map }}</td>
 		</tr>
 	</tbody>
 </table>
