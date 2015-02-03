@@ -6065,58 +6065,28 @@ footer {
   background-color: #82076E;
   color: white; }
 
-.main-menu {
-  margin: 20px auto;
-  width: 100%;
-  background-color: #2D2D2D;
-  z-index: 60; }
-  .main-menu ul:after {
-    content: '';
-    display: block;
-    clear: both; }
-  .main-menu ul {
-    position: relative;
-    list-style: none;
-    height: 100%;
-    width: 992px;
-    margin: 0 auto;
-    padding: 0; }
-    @media (max-width: 992px) {
-      .main-menu ul {
-        width: 100%; } }
-    .main-menu ul li {
-      float: left;
-      height: 100%; }
-      @media (max-width: 768px) {
-        .main-menu ul li {
-          width: 100%;
-          display: block; } }
-      .main-menu ul li a {
-        text-transform: uppercase;
-        width: 100%;
-        height: 100%;
-        display: inline-block;
-        text-align: center;
-        cursor: pointer;
-        color: white;
-        text-decoration: none;
-        padding: 4px 8px;
-        border-bottom: 5px solid #2D2D2D;
-        background-color: #2D2D2D; }
-      .main-menu ul li a:hover {
-        color: #98157f;
-        background-color: white;
-        border-bottom: 5px solid #98157f; }
-    @media (min-width: 768px) {
-      .main-menu ul li:hover .submenu {
-        display: block; } }
-  .main-menu .submenu {
-    margin: 0;
-    display: none;
-    position: absolute;
-    left: 0; }
-    .main-menu .submenu li {
-      z-index: 10; }
+.navbar {
+  margin: 0; }
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+  color: #f2f2f2;
+  background-color: #98157f; }
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #c6c6c6; }
+
+.dropdown a:hover {
+  color: #98157f;
+  background-color: white; }
+
+.dropdown-menu li a {
+  padding-bottom: 8px;
+  border-bottom: 2px solid #f2f2f2; }
+
+.dropdown-menu li a:hover {
+  color: #98157f;
+  background-color: white;
+  border-bottom: 3px solid #98157f; }
 
 /* 
     Document   : billboard
