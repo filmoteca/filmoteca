@@ -5,8 +5,6 @@
 
 		@yield('metas')
 
-		@if (App::isLocal() )
-
 		{{ HTML::style('/assets/css/filmoteca.css') }}
 
 		{{-- 
@@ -15,15 +13,7 @@
 		--}}
 		{{ HTML::style('/bower_components/angular/angular-csp.css')}}
 
-		@else
-			{{--
-				La idea de esta sección es cargar, cuando se está en producción,
-				un unico archivo css. Sin embargo hay dudas si se deben
-				concatenar únicamente los archivos propios sin los css de terceros
-				o concatenar todo.
-				--}}
-				{{ HTML::style('/assets/css/filmoteca.min') }}
-		@endif
+		{{ HTML::style('/assets/css/filmoteca.min.css') }}
 
 		@yield('styles')
 
