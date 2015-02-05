@@ -25,7 +25,7 @@
 	</head>
 
 	<body>
-		@include('layouts.header')
+		@include('layouts.header', ['not_breadcrumbs' => true])
 
 		<div class="container-fluid">
 			@yield('content')

@@ -47,10 +47,15 @@
 <div class="toolbar">
 
 	<div>
-		<ul class="breadcrumb">
-			<li><span class="icon-home"></span>{{ HTML::linkRoute('home','Página de inicio') }}</li>
-			@yield('breadcrumbs')
-		</ul>
+		
+		@if( !isset($not_breadcrumbs) )
+			<ul class="breadcrumb">
+				<li><span class="icon-home"></span>{{ HTML::linkRoute('home','Página de inicio') }}</li>
+				@yield('breadcrumbs')
+			</ul>
+		@endif
+
+
 	</div>
 
 </div>
