@@ -4,20 +4,25 @@
 
 <div class="static-pages-menu">
 	<ul>
-	@foreach($menu as $key => $value)
-		<li class="{{ ( isset($value[2]) && !empty($value[2]))? "has-sub": "" }}">
-			<a href="{{ $value[1]}}" class="{{ ($key == $selected)? 'selected': '' }}">
-				<span>{{ $value[0] }}</span>
+	@foreach($menu as $key => $entry)
+		<li class="{{ ( isset($entry[2]) && !empty($entry[2]))? "has-sub": "" }}">
+			<a href="{{ $entry[1]}}" class="{{ ($key == $selected)? 'selected': '' }}">
+				<span>{{ $entry[0] }}</span>
 			</a>
-			@if( isset($value[2]) && !empty($value[2]))
-				<ul>					
-					<li class="last">
-						<a href="{{ $value[2][1] }}">
-							<span>{{ $value[2][0] }}</span>							
-						</a>
-					</li>
+
+			{{-- The submenu is in the thierd position in the array --}}
+			@if( isset($entry[2]) && !empty($entry[2]))
+				<ul>
+					@foreach($entry[2] as $sub_entry)				
+						<li class="last">
+							<a href="{{ $sub_entry[1] }}">
+								<span>{{ $sub_entry[0] }}</span>							
+							</a>
+						</li>
+					@endforeach
 				</ul>
 			@endif
+
 		</li>
 	@endforeach
 	</ul>
