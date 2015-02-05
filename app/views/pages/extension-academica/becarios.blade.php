@@ -28,7 +28,7 @@
 
 
 @section('sidebar')
-@include('elements.menus.extension-academica', array('selected' => 0))
+@include('elements.menus.extension-academica', array('selected' => 2))
 @stop
 
 

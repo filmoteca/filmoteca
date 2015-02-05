@@ -24,7 +24,7 @@
 @stop
 
 @section('sidebar')
-    @include('elements.menus.concursos', array('selected' => 1))
+    @include('elements.menus.concursos', array('selected' => 0))
 @stop
 
 @section('content')

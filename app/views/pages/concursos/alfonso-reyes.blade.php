@@ -25,12 +25,12 @@
 @stop
 
 @section('sidebar')
-	@include('elements.menus.concursos', array('selected' => 0))
+	@include('elements.menus.concursos', array('selected' => 1))
 @stop
 
 @section('content')
 
-	<img src="/imgs/concursos/fosforo/galardon-fosforo.jpg" class="img-responsive" 'Concurso Alfonso Reyes "Fosforo"'></a>
+	<img src="/imgs/concursos/fosforo/fosforo.jpg" class="img-responsive" 'Concurso Alfonso Reyes "Fosforo"'></a>
 
 	<h1>Concurso de crítica cinematográfica <em>Alfonso Reyes "Fósforo"</em></h1>
 
