@@ -15,7 +15,7 @@
 
 @section('content')
 
-	<img src="/imgs/concursos/fosforo/galardon-cortomovil.jpg" class="img-responsive" 'Concurso Corto móvil'></a>
+	<img src="/imgs/concursos/corto-movil/corto-movil.jpg" class="img-responsive" 'Concurso Corto móvil'></a>
 	<h1>Concurso Corto Móvil</h1>
 
 		<p>PREMIO AL MEJOR CORTOMETRAJE REALIZADO CON DISPOSITIVOS MÓVILES</p>
@@ -29,7 +29,7 @@
 
 			<p>Los cortos del ganador y menciones honorificas serán exhibidos en la página web y redes sociales de la Filmoteca UNAM.</p>
 
-			<p>Participa!!  Tienes hasta el viernes 30 de enero de 2015 para presentar tu proyecto.
+			<p>Participa!!  <b>Tienes hasta el viernes 30 de enero de 2015 para presentar tu proyecto</b>.
 			</p>
 
 			<p>Consulta la <a href="/pages/concursos/convocatoria-corto-movil"> Convocatoria.</a></p>
