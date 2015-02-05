@@ -14,6 +14,8 @@ $menu = array(
 	array('Medalla Filmoteca', '/pages/quienes-somos/medalla-filmoteca', array(
 		'Galardonados', '/filmoteca-medal')),
 
+	array('Libro Filmoteca: 50 años', '/pages/quienes-somos/libro-filmoteca50'),
+
 	array('Directorio', '/pages/quienes-somos/directorio'));
 ?>
 

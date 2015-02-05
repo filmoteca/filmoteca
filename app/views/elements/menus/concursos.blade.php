@@ -13,9 +13,9 @@
 
 $menu = array(
 
-	array('Alfonso Reyes "Fósforo"', '/pages/concursos/alfonso-reyes'),
-
 	array('José Rovirosa', '/pages/concursos/jose-rovirosa'),
+
+	array('Alfonso Reyes "Fósforo"', '/pages/concursos/alfonso-reyes'),
 
 	array('Corto móvil', '/pages/concursos/corto-movil'),
 
