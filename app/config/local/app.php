@@ -17,12 +17,7 @@ return array(
 
 	'providers' => append_config(array(
 		
-		'Way\Generators\GeneratorsServiceProvider',
-		'Monarobase\CountryList\CountryListServiceProvider'
-	)),
-
-	'aliases' => append_config(array(
-		'Countries' => 'Monarobase\CountryList\CountryListFacade',
+		'Way\Generators\GeneratorsServiceProvider'
 	))
 
 );

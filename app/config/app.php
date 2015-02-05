@@ -126,6 +126,7 @@ return array(
 		'Mrjuliuss\Syntara\SyntaraServiceProvider',
 		'Fitztrev\LaravelHtmlMinify\LaravelHtmlMinifyServiceProvider',
         'Fbf\LaravelContactForm\LaravelContactFormServiceProvider',
+        'Monarobase\CountryList\CountryListServiceProvider',
 	),
 
 	/*
@@ -193,6 +194,7 @@ return array(
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
 		'Sentry'		  => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
+		'Countries' 	  => 'Monarobase\CountryList\CountryListFacade',
 
 	),
 
