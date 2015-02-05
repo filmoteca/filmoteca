@@ -160,7 +160,7 @@
         <ul class="dropdown-menu">
           <li><a href="#">Catálogo</a></li>
           
-          <li><a href="#">Venta en línea</a></li>
+          <li><a href="http://cine.libros.unam.mx/">Venta en línea</a></li>
           
           <li><a href="#">Otros puntos de venta</a></li>
         </ul>
