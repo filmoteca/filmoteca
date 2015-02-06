@@ -3,7 +3,7 @@
 
 		<div class="header">
 			<h4>Filmoteca invita</h4>
-			<span class="small">Participa con nosotros</span>
+			<span>Participa con nosotros</span>
 		</div>
 
 		<div role="tabpanel">

@@ -54,7 +54,7 @@
 				<div class="flm-section expositions">
 					<div class="content">
 						<div class="header">
-							<h3>Centro de documentación</h3><small>Abierto al público en general</small>
+							<h3>Centro de documentación</h3><span>Abierto al público en general</span>
 							<span class="see-more"><a href="/pages/servicios/centro-de-documentacion">Ver más</a></span>
 						</div>
 						<div class="image">
