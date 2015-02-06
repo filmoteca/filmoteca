@@ -2,8 +2,8 @@
 	<div class="content">
 
 		<div class="header">
-			<h4>NUESTRAS ACTIVIDADES</h4>
-			<span class="small">Rescatar, restaurar, conservar</span>
+			<h4>RESCATE Y RESTAURACIÓN</h4>
+			<span>Conoce nuestras actividades</span>
 		</div>
 
 		<div role="tabpanel">
