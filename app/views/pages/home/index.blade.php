@@ -9,7 +9,7 @@
 @section('content')
 
 <div class="row">
-	<br><br>
+
 	<div class="col-sm-12">
 		@include('pages.home.partials.carousel')
 	</div>
