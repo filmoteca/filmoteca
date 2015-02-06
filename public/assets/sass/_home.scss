@@ -151,6 +151,13 @@ $section-color: #F2F2F2;
 
 }
 
+.list-group-other-news{
+	
+	overflow-y: scroll;
+	height: 210px;
+	padding-left: 0;
+}
+
 .flm-section.visit{
 
 	.visit-carousel img{
@@ -274,9 +281,18 @@ $section-color: #F2F2F2;
         max-width: 75px;
         float: left;
         margin-right: 10px;
+
     }
 
+    font-size: 13px;
+    line-height: 1;
     min-height: 90px;
+
+    h6 {
+    color: #98157f;
+    }
+
+
 }
 
 .more-news {
