@@ -1,4 +1,3 @@
-$rectangle-section-height: 185%;
 $square-section-height: 100%;
 
 $section-color: #F2F2F2;
@@ -106,8 +105,13 @@ $section-color: #F2F2F2;
 	}
 
 	.queries{
+
+		.btn-group{
+			display: block
+		}
 		
 		a{
+			color: $text-color;	
 			display: block;
 
 			span{

@@ -5809,7 +5809,10 @@ footer {
     color: white; }
   .flm-section.programming .carrousel img {
     width: 100%; }
+.flm-section.programming .queries .btn-group {
+  display: block; }
 .flm-section.programming .queries a {
+  color: #646464;
   display: block; }
   .flm-section.programming .queries a span {
     font-size: 20px;
