@@ -33,12 +33,32 @@
 					<a href="http://filmoteca.dev/exhibition"><span class="icon icon-this-week"></span>Este mes</a>	
 				</div>
 				
-				<div class="link">
-					<a href="#"><span class="icon icon-ciclos"></span>Ciclos</a>
+				<div class="btn-group">
+					<div class="dropdown-toggle link" data-toggle="dropdown" aria-expanded="false">
+						<a><span class="icon icon-cinemas"></span>Salas </a>
+					</div>
+					
+					<ul class="dropdown-menu" role="menu">
+						@foreach($auditoriums as $auditorium )
+							<li>
+								{{ HTML::link('/exhibition/auditorium/' . $auditorium->id , $auditorium->name)}}
+							</li>
+						@endforeach
+					 </ul>
 				</div>
 
-				<div class="link">
-					<a href="#"><span class="icon icon-cinemas"></span>Salas</a>
+				<div class="btn-group">
+					<div class="dropdown-toggle link" data-toggle="dropdown" aria-expanded="false">
+						<a><span class="icon icon-ciclos"></span>Ciclos </a>
+					</div>
+					
+					<ul class="dropdown-menu" role="menu">
+						@foreach($icons as $icon )
+							<li>
+								{{ HTML::link('/exhibition/especial-function/' . $icon->id, $icon->name )}}
+							</li>
+						@endforeach
+					  </ul>
 				</div>
 			</div>
 		</div>
