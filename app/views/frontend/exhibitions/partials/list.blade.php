@@ -11,7 +11,7 @@
 		de <b>@{{ selectedDay | date : 'MMMM'}}</b>
 	</h3>
 	<h3 ng-switch-when="auditorium">
-		Películas programadas en la sala <b>@{{filterTitle}}</b> de
+		Películas programadas en la sala <b>@{{filterTitle}}</b> en el mes de
 		<b>{{ trans('dates.months.' . date('F') ) }}</b>
 	</h3>
 	<h3 ng-switch-when="icon">
