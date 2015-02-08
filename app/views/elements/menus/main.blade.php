@@ -111,7 +111,7 @@
         <ul class="dropdown-menu">
           <li><a href="/press_register">Prensa</a></li>
           
-          <li><a href="/pages/press/exposiciones">Exposiciones</a></li>
+          <li><a href="/pages/press/exposiciones-museografia">Exposiciones</a></li>
           
           <li><a href="/pages/press/publicaciones">Publicaciones</a></li>
           
