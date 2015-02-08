@@ -25,7 +25,7 @@
 	<p>El Consejo Asesor de la Dirección General de Actividades Cinematográficas está integrado actualmente de la siguiente manera:</p>
 
 	<div class="row">
-		<div class="col-sm-2">
+		<div class="col-sm-3">
 			<img src="/imgs/consejo-asesor/guadalupe-ferrer.jpg">
 		</div>
 		<div class="col-sm-5">
@@ -40,7 +40,7 @@
 	</div>
 	<br>
 	<div class="row">
-		<div class="col-sm-2">
+		<div class="col-sm-3">
 			<img src="/imgs/consejo-asesor/marycarmen_de_lara.jpg">
 		</div>
 		<div class="col-sm-5">
@@ -55,7 +55,7 @@
 	</div>
 	<br>
 	<div class="row">
-		<div class="col-sm-2">
+		<div class="col-sm-3">
 			<img src="/imgs/consejo-asesor/carlos_martinez_assad.jpg">
 		</div>
 		<div class="col-sm-5">
@@ -70,7 +70,7 @@
 	</div>
 	<br>
 	<div class="row">
-		<div class="col-sm-2">
+		<div class="col-sm-3">
 			<img src="/imgs/consejo-asesor/fernando_macotela.jpg">
 		</div>
 		<div class="col-sm-5">
@@ -85,7 +85,7 @@
 	</div>
 	<br>
 	<div class="row">
-		<div class="col-sm-2">
+		<div class="col-sm-3">
 			<img src="/imgs/consejo-asesor/armando_casas.jpg">
 		</div>
 		<div class="col-sm-5">
@@ -100,7 +100,7 @@
 	</div>
 	<br>
 	<div class="row">
-		<div class="col-sm-2">
+		<div class="col-sm-3">
 			<img src="/imgs/consejo-asesor/felipe_coria.jpg">
 		</div>
 		<div class="col-sm-5">
@@ -115,7 +115,7 @@
 	</div>
 	<br>
 	<div class="row">
-		<div class="col-sm-2">
+		<div class="col-sm-3">
 			<img src="/imgs/consejo-asesor/rafael_avina.jpg">
 		</div>
 		<div class="col-sm-5">
@@ -130,7 +130,7 @@
 	</div>
 	<br>
 	<div class="row">
-		<div class="col-sm-2">
+		<div class="col-sm-3">
 			<img src="/imgs/consejo-asesor/nadina_illescas.jpg">
 		</div>
 		<div class="col-sm-5">
@@ -143,7 +143,7 @@
 	</div>
 	<br>
 	<div class="row">
-		<div class="col-sm-2">
+		<div class="col-sm-3">
 			<img src="/imgs/consejo-asesor/carmen_carrara.jpg">
 		</div>
 		<div class="col-sm-5">
@@ -156,7 +156,7 @@
 	</div>
 	<br>
 	<div class="row">
-		<div class="col-sm-2">
+		<div class="col-sm-3">
 			<img src="/imgs/consejo-asesor/albino_alvarez.jpg">
 		</div>
 		<div class="col-sm-5">
@@ -169,7 +169,7 @@
 	</div>
 	<br>
 	<div class="row">
-		<div class="col-sm-2">
+		<div class="col-sm-3">
 			<img src="/imgs/consejo-asesor/miguel_angel_recillas.jpg">
 		</div>
 		<div class="col-sm-5">
@@ -182,7 +182,7 @@
 	</div>
 	<br>
 	<div class="row">
-		<div class="col-sm-2">
+		<div class="col-sm-3">
 			<img src="/imgs/consejo-asesor/jose_manuel_garcia.jpg">
 		</div>
 		<div class="col-sm-5">
@@ -195,7 +195,7 @@
 	</div>
 	<br>
 	<div class="row">
-		<div class="col-sm-2">
+		<div class="col-sm-3">
 			<img src="/assets/imgs/documento-pdf.png">
 		</div>
 		<div class="col-sm-5">
@@ -208,7 +208,7 @@
 	</div>
 	<br>
 	<div class="row">
-		<div class="col-sm-2">
+		<div class="col-sm-3">
 			<img src="/assets/imgs/documento-pdf.png">
 		</div>
 		<div class="col-sm-5">

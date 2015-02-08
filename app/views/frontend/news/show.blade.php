@@ -12,7 +12,7 @@
 @stop
 
 @section('sidebar')
-	@include('elements.menus.press', array('selected' => 0))
+	@include('elements.menus.press', array('selected' => 3))
 @stop
 
 
@@ -24,7 +24,7 @@
         <h1>Noticias</h1>
 
         <div class="row">
-            <div class="col-sm-6 cover">
+            <div class="col-sm-12 cover">
                 <img src="{{ asset( $news->image->url('thumbnail')) }}">
                 <h1 class="text-center">{{ $news->title }}</h1>
             </div>

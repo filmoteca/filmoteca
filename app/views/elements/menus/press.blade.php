@@ -3,7 +3,10 @@
 $menu = array(
 	array('Prensa', '/press_register'),
 
-	array('Exposiciones', '/pages/press/exposiciones-museografia'),
+	array('Exposiciones', '/pages/press/exposiciones-museografia',
+		array(
+			'Exposiciones realizadas', '/pages/press/exposiciones-realizadas')
+		),
 
 	array('Publicaciones','/pages/press/publicaciones', 
 		array(
@@ -11,7 +14,7 @@ $menu = array(
 		array(
 		'Libros digitales', '/pages/press/publicaciones')),
 	
-		array('Noticias', '/news/index'),
+	array('Noticias', '/news/index'),
 
 	array('Filmoteca en los medios', '/pages/press/filmoteca-in-the-media'),
 

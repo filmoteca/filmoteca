@@ -66,13 +66,16 @@
 		<div class="flm-section flm-subsection digital-billboard">
 			<div class="content">
 				<div class="image pull-left">
-					<img src="/imgs/home/cartelera.jpg">
+					<img src="/imgs/home/cartelera/cartelera-enero2015.jpg">
 				</div>
 				<div class="caption pull-right">
-					<h5>Cartelera digital</h5>
-					<small>Enero</small>
-					<a href="#"><span class="icon icon-download pull-right"></span></a>
+					<h5></h5>
+					<span></span>
+					<a href="">Consulta<span class="icon icon-download pull-right"></span></a>
 				</div>	
+				<div class="caption pull-right">
+					<a href="http://issuu.com/filmotecaunam/docs/carteleradigitalfeb2015" target="_blank">Descarga<span class="icon icon-download pull-right"></span></a>
+				</div>
 			</div>
 		</div>
 
