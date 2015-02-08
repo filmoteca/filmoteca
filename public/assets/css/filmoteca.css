@@ -5824,12 +5824,24 @@ footer {
 .flm-section.programming .digital-billboard .image {
   width: 35%; }
 .flm-section.programming .digital-billboard img {
-  width: 20px; }
+  width: 300px; }
 .flm-section.programming .digital-billboard .caption {
-  width: 65%;
-  padding: 10px; }
+  width: 33%;
+  padding-right: 10px; }
 .flm-section.programming .digital-billboard .icon-download {
-  font-size: 24px; }
+  font-size: 25px; }
+.flm-section.programming .digital-billboard .image pull-left {
+  width: 60px; }
+.flm-section.programming .digital-billboard a {
+  color: white;
+  font-size: 14px; }
+.flm-section.programming .digital-billboard a:hover {
+  color: #98157f; }
+
+.list-group-other-news {
+  overflow-y: scroll;
+  height: 210px;
+  padding-left: 0; }
 
 .flm-section.visit .visit-carousel img {
   height: 200px; }
@@ -5915,11 +5927,15 @@ footer {
     width: 100% !important; }
 
 .preview-news {
+  font-size: 13px;
+  line-height: 1;
   min-height: 90px; }
   .preview-news img {
     max-width: 75px;
     float: left;
     margin-right: 10px; }
+  .preview-news h6 {
+    color: #98157f; }
 
 .more-news {
   margin-top: 30px; }
