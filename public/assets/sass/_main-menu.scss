@@ -6,6 +6,12 @@
         margin: 0;
     }
 
+    .navbar-brand-logo img{
+         padding-top: 4px;
+         padding-bottom: 4px;
+         padding-left: 40px;
+    }
+
     .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus{
         color: $tertiary-color;
         background-color: $primary-color;
@@ -31,4 +37,6 @@
         background-color: white;
         border-bottom: 3px solid $primary-color;
     }
+
+    
 

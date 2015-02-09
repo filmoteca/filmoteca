@@ -15,7 +15,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="#"></a>
+    <a class="navbar-brand-logo" href=""><img src="/assets/imgs/filmo55aniversario.png"></a>
   </div>
 
 <!-- <div class="main-menu collapse navbar-collapse" id="main-menu"> -->
