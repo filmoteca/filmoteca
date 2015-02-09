@@ -1,7 +1,7 @@
 <div class="friend-sites">
 	<hr>
 	<div class="toggle-button center-block" id="friend-sites-toggle-button">
-		<span>Sitios amigos</span>
+		<span>Sitios de interés</span>
 
 		<div class="external-circle center-block">
 			<span class="icon icon-arrow-friends-sites icon-circle" id="friend-sites-button"></span>
