@@ -33,13 +33,17 @@
         
           <li><a href="/pages/quienes-somos/consejo-asesor">Consejo Asesor</a></li>
           
-          <li ><a href="/pages/quienes-somos/memoria-filmoteca">Memoria Filmoteca</a></li>
+          <li><a href="/pages/quienes-somos/memoria-filmoteca">Memoria Filmoteca</a></li>
           
           <li><a href="/pages/quienes-somos/cronologia">Cronología</a></li>
        
-          <li ><a href="/pages/quienes-somos/medalla-filmoteca">Medalla Filmoteca</a></li>
+          <li><a href="/pages/quienes-somos/medalla-filmoteca">Medalla Filmoteca</a>
+          		<ul class="dropdown-submenu">
+          			<li><a href="/filmoteca-medal">Galardonados</a></li>
+          		</ul>
+          </li>
           
-          <li><a href="http://issuu.com/libro_filmo/docs/filmotecaunam_libro50anos">Libro Filmoteca: 50 años</a></li>
+          <li><a href="/pages/quienes-somos/libro-filmoteca50">Libro Filmoteca: 50 años</a></li>
          
           <li><a href="/pages/quienes-somos/directorio">Directorio</a></li>
         </ul>
@@ -98,7 +102,7 @@
           
           <li><a href="/pages/cartelera-digital">Cartelera digital</a></li>
           
-          <li><a href="/pages/invitaciones">Invitaciones</a></li>
+          <li><a href="/pages/invitaciones/invitaciones">Invitaciones</a></li>
           
           <li ><a href="{{ URL::to('exhibition/history')}}">Histórico</a></li>
         </ul>
@@ -119,7 +123,7 @@
           
           <li ><a href="/pages/press/filmoteca-in-the-media">Filmoteca en los medios</a></li>
           
-          <li><a href="/pages/press/interview">Entrevistas</a></li>
+          <li><a href="/pages/press/interviews">Entrevistas</a></li>
         </ul>
       </li>
 
@@ -134,7 +138,7 @@
           
           <li><a href="/pages/extension-academica/becarios">Becarios</a></li>
           
-          <li ><a href="//pages/extension-academica/visitas-guiadas">Visitas guiadas</a></li>
+          <li><a href="/pages/extension-academica/visitas-guiadas">Visitas guiadas</a></li>
         </ul>
       </li>
 
@@ -145,7 +149,7 @@
         <ul class="dropdown-menu">
           <li><a href="/pages/concursos/jose-rovirosa">José Rovirosa</a></li>
           
-          <li><a href="/pages/concursos/alfonsoreyes">Alfonso Reyes "Fósforo</a></li>
+          <li><a href="/pages/concursos/alfonso-reyes">Alfonso Reyes "Fósforo"</a></li>
           
           <li><a href="/pages/concursos/corto-movil">Corto Móvil</a></li>
           
@@ -436,7 +440,7 @@
 						<span>Becarios</span>
 					</a>
 				</li> 
-				<li>
+				<li> 
 					<a href="/pages/extension-academica/visitas-guiadas">
 						<span>Visitas guiadas</span>
 					</a>
