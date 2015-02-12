@@ -10,12 +10,9 @@ $menu = array(
 
 	array('Restauración', '/pages/acervo/restauracion'),
 
-	array('Museo virtual', '/pages/acervo/museo-virtual'),
+	array('Museo virtual', '/pages/quienes-somos/museo-virtual'),
 
-
-	array('cine en línea', '/pages/acervo/cine-en-linea'),
-
-	);
+	array('Cine en línea', '/pages/quienes-somos/cine-en-linea'));
 ?>
 
 @include('elements.menus.static-pages', compact('menu','selected'))
