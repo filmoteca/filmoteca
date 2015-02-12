@@ -56,6 +56,7 @@
 
 @section('content')
 
+<p>Buscar por año</p><br>
 <div class="filmoteca-medal-slider">
 	<div data-slider-pips
 		config="sliderConfig"
@@ -64,24 +65,25 @@
 </div>
 
 <div>
-<span class="glyphicon glyphicon-search pull-left ng-cloak"></span>
-
-	<div class="search-autocomplete pull-right">
-		<angucomplete-alt
-			place-holder="SBuscar por nombre"
-			pause="0"
-			selected-object="selectedAdvice"
-			local-data="winners"
-			title-field="name"
-			description-field="award_date"
-			search-fields="name"
-			image-field="photo"
-			minlength="1"
-			text-searching="Buscando..."
-			text-no-results="Ninguna ganador encontrado"
-			input-class="form-control form-control-small">
-		</angucomplete-alt>
-	</div>
+<p>Buscar por nombre:</p>
+	<span class="glyphicon glyphicon-search pull-left ng-cloak">
+		<div class="search-autocomplete pull-right">
+			<angucomplete-alt
+				place-holder="SBuscar por nombre"
+				pause="0"
+				selected-object="selectedAdvice"
+				local-data="winners"
+				title-field="name"
+				description-field="award_date"
+				search-fields="name"
+				image-field="photo"
+				minlength="1"
+				text-searching="Buscando..."
+				text-no-results="Ninguna ganador encontrado"
+				input-class="form-control form-control-small">
+			</angucomplete-alt>
+		</div>
+	</span>
 	<div class="clearfix"></div>
 </div>
 <div class="loading" ng-show="loading"></div>
