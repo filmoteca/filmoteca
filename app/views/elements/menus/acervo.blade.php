@@ -1,5 +1,4 @@
 <?php
-
 $menu = array(
 
 	array('Fílmico', '/pages/acervo/filmico'),
