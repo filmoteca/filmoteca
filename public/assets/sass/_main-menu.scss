@@ -1,7 +1,19 @@
 //-----------------------------------------------------------------------------
 // Menu principal
 //-----------------------------------------------------------------------------
-    
+
+.main-menu-wrapper{
+
+    background-color:#090909;
+    border-color: #090909;
+    width: 100%;
+}
+
+.main-menu{
+
+    max-width: 1200px;
+    margin: 0px auto;
+
     .navbar{
         margin: 0;
     }
@@ -10,6 +22,10 @@
          padding-top: 4px;
          padding-bottom: 4px;
          padding-left: 40px;
+    }
+
+    .navbar-inverse .navbar-collapse{
+        border-color: none;
     }
 
     .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus{
@@ -38,5 +54,4 @@
         border-bottom: 3px solid $primary-color;
     }
 
-    
-
+}
