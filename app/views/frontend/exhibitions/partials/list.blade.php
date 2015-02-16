@@ -25,7 +25,7 @@
 
 <div class="wrapper-items" id="wrapper-items">
 
-	<ul class="items" id="items">
+	<ul class="items" id="items" flm-filters="true">
 
 		@foreach( $exhibitions as $index => $exhibition )
 

@@ -13,8 +13,6 @@
 		--}}
 		{{ HTML::style('/bower_components/angular/angular-csp.css')}}
 
-		{{ HTML::style('/assets/css/filmoteca.min.css') }}
-
 		@yield('styles')
 
 		@yield('scripts')

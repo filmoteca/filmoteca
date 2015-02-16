@@ -25,8 +25,9 @@ Route::get('/', 'HomeController@index');
 Route::group(['prefix' => 'exhibition'], function(){
 
 	// app
-	Route::get('',			'ExhibitionController@index');
-	Route::get('history',	'ExhibitionController@history');
+	Route::get('',				'ExhibitionController@index');
+	Route::get('{name?}/{id?}/{title?}', 'ExhibitionController@index');
+	Route::get('history',		'ExhibitionController@history');
 	Route::get('find',[
 		'as'	=> 'exhibition.find',
 		'uses' 	=> 'ExhibitionController@find'

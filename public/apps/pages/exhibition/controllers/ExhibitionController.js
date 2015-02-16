@@ -144,6 +144,5 @@
 			$scope.loading = false;
 			$scope.urlToDetails = '';
 		});
-
 	}]);
 });
