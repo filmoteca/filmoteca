@@ -1,7 +1,7 @@
 <div class="flm-section visit">
 	<div class="content">
 		<div class="header">
-			<h3>Visita</h3>
+			<h4>Visita</h4>
 		</div>
 
 		<div class="visit-carousel">

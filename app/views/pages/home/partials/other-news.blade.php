@@ -1,7 +1,7 @@
 <div class="flm-section other-news">
 	<div class="content">
 		<div class="header">
-			<h3>Otras noticias</h3>
+			<h4>Otras noticias</h4>
 		</div>
 
 		<ul class="list-group-other-news">
