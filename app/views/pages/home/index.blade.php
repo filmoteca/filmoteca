@@ -54,7 +54,7 @@
 				<div class="flm-section expositions">
 					<div class="content">
 						<div class="header">
-							<h3>Centro de documentación</h3><span>Abierto al público en general</span>
+							<h4>Centro de documentación</h4><span>Abierto al público en general</span><br>
 							<span class="see-more"><a href="/pages/servicios/centro-de-documentacion">Ver más</a></span>
 						</div>
 						<div class="image">
@@ -67,9 +67,9 @@
 				<div class="flm-section expositions">
 					<div class="content">
 						<div class="header">
-							<h3>Exposiciones</h3>
+							<h4>Exposiciones</h4>
 							<h5>Cine surealismo</h5>
-							<span>Sede: Filmoteca UNAM</span><span class="see-more"><a href="">Ver más</a></span>
+							<span>Sede: Filmoteca UNAM</span><br><span class="see-more"><a href="">Ver más</a></span>
 						</div>
 						<div class="image">
 							<img src="/imgs/home/exposiciones.jpg">
@@ -77,6 +77,10 @@
 					</div>
 				</div>
 			</div>
+		</div>
+
+		<div class="col-sm-12 col-md-12">
+			@include('pages.home.partials.recommendations')
 		</div>
 		<div class="row">
 			<div class="col-xs-12 col-sm-6">
@@ -90,6 +94,7 @@
 				</div>
 			</div>
 		</div>
+
 	</div>
 	<div class="col-xs-12 col-sm-12 col-md-4">
 		@include('pages.home.partials.social-networks')
