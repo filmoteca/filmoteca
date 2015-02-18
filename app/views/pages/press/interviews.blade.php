@@ -7,7 +7,7 @@
 	</a>
 </li>
 <li class="active">
-	Entrevistas
+	La Filmoteca recomienda
 @stop
 
 @section('sidebar')
@@ -18,7 +18,8 @@
 
 
 	<div class="panel-heading">
-		<h2>Entrevistas</h2>
+		<h2>La Filmoteca recomienda la película:</h2>
+		
 	</div>
 	
 	<div class="panel-body">
