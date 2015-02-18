@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4">
-				<span class="icon icon-filmoteca"></span>
+				<a href="/"><span class="icon icon-filmoteca"></span></a>
 				
 				<p>2014 FILMOTECA UNAM<p>
 
@@ -16,15 +16,15 @@
 
 			<div class="col-md-4">
 				<ul class="list-unstyled">
-					<li><a href="">Inicio</a></li>
+					<li><a href="/">Inicio</a></li>
 					<li><a href="/pages/quienes-somos/mision-y-vision">Quiénes Somos</a></li>
-					<li><a href="">Acervo</a></li>
-					<li><a href="/pages/servicios/lineamientos-generales-para-acceder-al-material">Servicios</a></li>
+					<li><a href="/pages/acervo/filmico">Acervo</a></li>
+					<li><a href="/pages/servicios/banco-de-imagen">Servicios</a></li>
 					<li><a href="{{ URL::to('exhibition') }}">Programación</a></li>
-					<li><a href="">Prensa</a></li>
-					<li><a href="">Extensión Académica</a></li>
-					<li><a href="/pages/extension-academica/atencion-a-alumnos">Concursos</a></li>
-					<li><a href="http://cineunam.librosdelau.com/">Tienda en línea</a></li>
+					<li><a href="/press_register">Difusión</a></li>
+					<li><a href="/pages/extension-academica/cursos-y-talleres">Extensión Académica</a></li>
+					<li><a href="/pages/concursos/jose-rovirosa">Concursos</a></li>
+					<li><a href="http://cine.libros.unam.mx/">Tienda en línea</a></li>
 				</ul>
 			</div>
 
@@ -32,13 +32,13 @@
 				<div>
 					<a href="https://twitter.com/ButacaUNAM"><span class="icon icon-twitter"></span></a>
 					<a href="https://www.facebook.com/FilmotecaUNAM"><span class="icon icon-facebook"></span></a>
-					<a href="#"><span class="icon icon-mail"></span></a>
+					<a href="{{ URL::to('contact') }}"><span class="icon icon-mail"></span></a>
 				</div>
 				<div>
 					<a href="http://www.fiafnet.org/es/" target="blank"><!-- <span class="icon icon-fiaf"></span> -->
 					<img 
                             src="/assets/imgs/fiaf.png" 
-						<span>Miembro de la FIAF</span></a>
+						<span>MIEMBRO DE LA FIAF</span></a>
 				</div>
 			</div>
 		</div>
