@@ -58,6 +58,10 @@
 
     .controller('admin.exhibition.controllers.exhibition',['$scope','ExhibitionService', function($scope, Exhibition){
 
+        $scope.$on('alert', function(event, message){
+            $scope.message = message;
+        });
+
         $scope.wasFilmSelected = function()
         {
             return angular.isDefined( Exhibition.film().id );
@@ -80,19 +84,21 @@
         };
     }])
 
-    .controller('admin.exhibition.controllers.create',['$scope', 'ExhibitionService', function($scope, Exhibition){
+    .controller('admin.exhibition.controllers.create',['$scope', '$timeout', 'ExhibitionService', function($scope, $timeout, Exhibition){
         
         $scope.exhibitionLoaded = false;
 
         Exhibition.restart();
 
-        $scope.store = function()
-        {
-            Exhibition.store().then(function(){
-                Exhibition.restart();
-                console.log('stored');
-            });
-        };
+        $scope.$watch($scope.wasFilmSelected, function(newValue){
+
+            if( newValue ){
+
+                Exhibition.store().then(function(){
+                    $scope.$emit('alert', 'Exhibición guardada.');
+                });
+            }
+        });
     }])
 
     .controller('admin.exhibition.controllers.edit',['$scope','ExhibitionService','$routeParams', function($scope, Exhibition, $routeParams){

@@ -134,7 +134,7 @@
 
 			return $http.post('/admin/api/exhibition/' + exhibition.id + '/schedule', schedule).then(function(response){
 
-				exhibition.schedules[index].id = response.date.id;
+				exhibition.schedules[index].id = response.data.id;
 			});
 		};
 
@@ -170,38 +170,19 @@
 			var id = exhibition.schedules[$index].id;
 
 			exhibition.schedules.splice($index,1);
-
-			if (angular.isDefined(id)){
 				
-				$http.delete('/admin/api/schedule/' + id);	
-
-				return this;
-			}
-
-			var unwatch = $rootScope.$watch(function(){
-				return exhibition.schedules[$index].id;
-			}, function(value){
-
-				if (angular.isUnefined(value) ) { return; }
-
-				$http.delete('/admin/api/exhibition/' + exhibition.id + '/schedule/' + id);	
-
-				unwatch();
-			});
+			$http.delete('/admin/api/schedule/' + id);	
 
 			return this;
 		};
 
 		this.store = function()
-		{
-			var self = this;
-			
+		{			
 			// transformRequest(exhibition);
 
-			return $http.post('/admin/api/exhibition/', exhibition, HTTP_CONFIG).then(function(){
+			return $http.post('/admin/api/exhibition', exhibition).then(function(response){
 
-				console.log('I was saved a exhibition for you.');
-				self.restart();
+				angular.extend(exhibition, response.data);
 			});
 		};
 

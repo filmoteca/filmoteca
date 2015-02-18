@@ -146,12 +146,7 @@ class ExhibitionsRepository extends ResourcesRepository
 
 		$d['exhibition_film_id'] = $exhibitionFilm->id;
 
-		$schedules = $this->makeSchedules($data['schedules']);
-
-		$this->repository->create($d)->schedules()
-			->saveMany($schedules);
-
-		return true;
+		return $this->repository->create($d);
 	}
 
 	public function find($id)

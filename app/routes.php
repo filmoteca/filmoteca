@@ -256,8 +256,8 @@ Route::group(['prefix' => 'admin'], function()
 
 		Route::group(['prefix' => 'exhibition'], function()
 		{
-			Route::get('/', 		'Api\ExhibitionController@index');
-			Route::post('/',		'Api\ExhibitionController@store');
+			Route::get('', 		'Api\ExhibitionController@index');
+			Route::post('',		'Api\ExhibitionController@store');
 			Route::put('/{id}', 	'Api\ExhibitionController@update');
 			Route::delete('/{id}', 	'Api\ExhibitionController@destroy');
 			
