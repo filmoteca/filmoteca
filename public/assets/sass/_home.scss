@@ -1,6 +1,6 @@
 $square-section-height: 100%;
 
-$section-color: #F2F2F2;
+$section-color: #E5E5E5;
 
 
 .flm-section{
@@ -10,7 +10,7 @@ $section-color: #F2F2F2;
 
 	h3, h4, h5, h6{
 		text-transform: uppercase;
-		font-weight: bold;
+		font-weight: 600;
 	}
 
 	.header{
@@ -47,7 +47,7 @@ $section-color: #F2F2F2;
 
 		.header{
 			color: white;
-			background-color: black;
+			background-color: $active-tab-color;
 			padding: 5px;
 
 			span{
@@ -111,7 +111,7 @@ $section-color: #F2F2F2;
 		}
 		
 		a{
-			color: $text-color;	
+			color: $tertiary-color;	
 			display: block;
 
 			span{
@@ -122,12 +122,13 @@ $section-color: #F2F2F2;
 
 		a:hover{
 
-			color: $primary-color;
+			color: #f9d932;
 
 		}
 
 		.link{
 			margin-bottom: 5px;
+			background-color: $primary-color;
 		}
 	}
 
@@ -161,7 +162,7 @@ $section-color: #F2F2F2;
 		}
 
 		a:hover{
-		color: $primary-color;
+		color: #f9d932;
 		}
 	}
 }
@@ -182,6 +183,25 @@ $section-color: #F2F2F2;
 	.visit-carousel img{
 		height: 200px;
 	}
+
+	.visit-carousel img:hover{
+	   opacity: 0.6;
+	}
+
+}
+
+.flm-section.recommendations{
+
+	.visit-carousel img{
+		height: 200px;
+		width: 80%;
+	}
+
+	.visit-carousel img:hover{
+	   opacity: 0.6;
+	}
+
+
 }
 
 .friend-sites{
@@ -228,9 +248,9 @@ $section-color: #F2F2F2;
 
 	position: fixed;
 
-	background-color: $active-tab-color;
+	background-color: $tertiary-color;
 	overflow: hidden;
-	padding: 5px;
+	padding: 0px;
 
 	border-radius: 35px 0px 0px 0px;
 
@@ -263,20 +283,21 @@ $section-color: #F2F2F2;
 	right: 0px;
 	position: fixed;
 	text-transform: uppercase;
-	color: white;
-	padding: 10px;
+	color: $secondary-color;
+	padding: 1px 12px 5px 12px;
+	font-size: 11px;
 
 	.icon-arrow-above{
 		font-size: 36px;
 	}
 
 	a{
-		color: white;
+		color: $primary-color;
 		text-decoration: none;
 	}
 
 	a:hover{
-		color: $primary-color;
+		color: $secondary-color;
 	}
 }
 
