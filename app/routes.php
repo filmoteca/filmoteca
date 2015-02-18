@@ -26,7 +26,6 @@ Route::group(['prefix' => 'exhibition'], function(){
 
 	// app
 	Route::get('',				'ExhibitionController@index');
-	Route::get('{name?}/{id?}/{title?}', 'ExhibitionController@index');
 	Route::get('history',		'ExhibitionController@history');
 	Route::get('find',[
 		'as'	=> 'exhibition.find',
@@ -45,6 +44,8 @@ Route::group(['prefix' => 'exhibition'], function(){
 		'as' 	=> 'exhibition.detail-home',
 		'uses' 	=> 'ExhibitionController@detailHome'
 		]);
+
+	Route::get('/filter/{name?}/{id?}/{title?}', 'ExhibitionController@index');
 });
 
 Route::get('/news/show/{id}', 'NewsController@show');

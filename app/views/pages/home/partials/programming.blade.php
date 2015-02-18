@@ -41,7 +41,7 @@
 					<ul class="dropdown-menu" role="menu">
 						@foreach($auditoriums as $auditorium )
 							<li>
-								{{ HTML::link('/exhibition/auditorium/' . $auditorium->id . '/' . rawurlencode($auditorium->name), $auditorium->name)}}
+								{{ HTML::link('/exhibition/filter/auditorium/' . $auditorium->id . '/' . rawurlencode($auditorium->name), $auditorium->name)}}
 							</li>
 						@endforeach
 					 </ul>
@@ -55,7 +55,7 @@
 					<ul class="dropdown-menu" role="menu">
 						@foreach($icons as $icon )
 							<li>
-								{{ HTML::link('/exhibition/especial-function/' . $icon->id . '/' . rawurlencode($icon->name), $icon->name )}}
+								{{ HTML::link('/exhibition/filter/especial-function/' . $icon->id . '/' . rawurlencode($icon->name), $icon->name )}}
 							</li>
 						@endforeach
 					  </ul>
