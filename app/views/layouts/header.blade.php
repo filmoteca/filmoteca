@@ -21,7 +21,7 @@
 				</div>
 				<div class="unam-text pull-left">
 					<span>Universidad Nacional</span> <br>
-					<span>Autónoma de Mexico</span>
+					<span>Autónoma de México</span>
 				</div>
 			</div>
 			<div class="pull-right">
@@ -50,7 +50,7 @@
 		
 		@if( !isset($not_breadcrumbs) )
 			<ul class="breadcrumb">
-				<li><span class="icon-home"></span>{{ HTML::linkRoute('home','Página de inicio') }}</li>
+				<li><span class="icon-home"></span>{{ HTML::linkRoute('home',' Inicio') }}</li>
 				@yield('breadcrumbs')
 			</ul>
 		@endif
