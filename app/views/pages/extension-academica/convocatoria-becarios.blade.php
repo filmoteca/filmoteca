@@ -21,6 +21,7 @@
 	<h1>Programa de Becarios</h1>
 	<h2>Convocatoria</h2>
 
-	<p>La Convocatoria se ha cerrado cerrado.</p>
+	<p>La Convocatoria se ha cerrado.</p>
+	
 
 @stop
