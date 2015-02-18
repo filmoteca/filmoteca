@@ -15,7 +15,7 @@
 		<b>{{ trans('dates.months.' . date('F') ) }}</b>
 	</h3>
 	<h3 ng-switch-when="icon">
-		Funciones <b>@{{filterTitle}}</b> de
+		Ciclo:  <b>@{{filterTitle}}</b> a presentarse en el mes de
 		<b>{{ trans('dates.months.' . date('F') ) }}</b>
 	</h3>
 	<h3 ng-switch-default>

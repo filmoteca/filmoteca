@@ -60,7 +60,7 @@
 		</div>
 
 		<div class="exhibition-datepicker" style="display:inline-block; min-height:200px;">
-			<h3>Consultar Programación</h3>
+			<h3>Consulta la Programación</h3>
 			<datepicker ng-model="dphone" class="well well-sm ng-cloak"></datepicker>
 		</div>
 
@@ -90,7 +90,7 @@
 				</li>
 
 				<li class="has-sub">
-					<a><span>Funciones Especiales</span></a>
+					<a><span>Ciclos</span></a>
 					<ul>
 						<li class="last">
 							<a flm-filters filter-name="icon" filter-value="0" 
@@ -118,7 +118,7 @@
 
 		<div class="subscribe-box">
 			
-			<p>Recibe la cartelera digital directo a tu correo electrónico.</p>
+			<p>Recibe nuestra cartelera digital</p>
 
 			<div class="input-group input-group-sm">
 				<input type="email" 
@@ -128,7 +128,7 @@
 				<span class="input-group-addon">@</span>
 			</div>
 
-			<button type="button" class="btn btn-success">Registrarse</button>
+			<button type="button" class="btn btn-success">Enviar</button>
 		</div>
 @stop
 
