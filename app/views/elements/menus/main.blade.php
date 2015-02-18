@@ -31,9 +31,6 @@
                   <li><a href="/pages/quienes-somos/cronologia">Cronología</a></li>
                
                   <li><a href="/pages/quienes-somos/medalla-filmoteca">Medalla Filmoteca</a>
-                  		<ul class="dropdown-submenu">
-                  			<li><a href="/filmoteca-medal">Galardonados</a></li>
-                  		</ul>
                   </li>
                   
                   <li><a href="/pages/quienes-somos/libro-filmoteca50">Libro Filmoteca: 50 años</a></li>
@@ -75,6 +72,8 @@
                   <li ><a href="/pages/servicios/deposito-y-resguardo">Depósito y resguardo</a></li>
                   
                   <li><a href="/pages/servicios/laboratorio-cinematografico">Laboratorio cinematográfico</a></li>
+
+                  <li><a href="/pages/servicios/laboratorio-digital">Laboratorio digital</a></li>
                   
                   <li><a href="/pages/servicios/prestamo-y-alquiler-de-peliculas">Préstamo y alquiler de películas</a></li>
                   
@@ -116,7 +115,7 @@
                   
                   <li ><a href="/pages/press/filmoteca-in-the-media">Filmoteca en los medios</a></li>
                   
-                  <li><a href="/pages/press/interviews">Entrevistas</a></li>
+                  <li><a href="/pages/press/interviews">La Filmoteca recomienda</a></li>
                 </ul>
               </li>
 
