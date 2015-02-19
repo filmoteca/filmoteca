@@ -5396,7 +5396,7 @@ button.close {
   font-family: "fontcustom";
   font-size: 20px;
   line-height: 1;
-  color: #98157f;
+  color: #810069;
   opacity: 0.75;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
@@ -5627,18 +5627,18 @@ textarea.parsley-error {
   opacity: 1; }
 
 .slick-prev, .slick-next {
-  background-color: #f2f2f2;
-  color: #98157f;
+  background-color: #E5E5E5;
+  color: #810069;
   height: auto;
   width: auto; }
   .slick-prev:focus, .slick-next:focus {
-    background-color: #f2f2f2;
-    color: #98157f; }
+    background-color: #E5E5E5;
+    color: #810069; }
   .slick-prev:hover, .slick-next:hover {
     outline: none;
-    background-color: #98157f; }
+    background-color: #810069; }
     .slick-prev:hover:before, .slick-next:hover:before {
-      color: #f2f2f2;
+      color: #E5E5E5;
       opacity: 1; }
 
 .slick-prev:before, .slick-next:before {
@@ -5648,7 +5648,7 @@ body {
   color: #646464; }
 
 a {
-  color: #98157f; }
+  color: #810069; }
 
 .link {
   background-color: #CCCCCC;
@@ -5664,11 +5664,11 @@ a {
 .main-header {
   position: relative;
   z-index: 1;
-  background-color: #98157f;
+  background-color: #810069;
   padding-top: 5px; }
   .main-header .upper-navbar {
     width: 100%;
-    background-color: #f2f2f2; }
+    background-color: #E5E5E5; }
     .main-header .upper-navbar > div {
       max-width: 992px; }
     .main-header .upper-navbar a {
@@ -5745,15 +5745,20 @@ a {
   display: none; }
 
 h5 {
-  color: #98157f; }
+  color: #810069; }
+
+.thumbnail,
+.thumbnail img {
+  max-width: 60px;
+  display: inline-block; }
 
 footer {
   padding-top: 10px;
-  background-color: #f2f2f2; }
+  background-color: #E5E5E5; }
   footer a {
     color: #646464; }
   footer a:hover {
-    color: #98157f; }
+    color: #810069; }
   footer .icon {
     font-size: 36px; }
   footer .icon-filmoteca {
@@ -5762,10 +5767,10 @@ footer {
 
 .flm-section {
   margin-bottom: 25px;
-  background-color: #F2F2F2; }
+  background-color: #E5E5E5; }
   .flm-section h3, .flm-section h4, .flm-section h5, .flm-section h6 {
     text-transform: uppercase;
-    font-weight: bold; }
+    font-weight: 600; }
   .flm-section .header {
     padding: 3px 10px 5px 10px; }
     .flm-section .header .small {
@@ -5785,7 +5790,7 @@ footer {
 
 .flm-section.social-networks .a-network .header {
   color: white;
-  background-color: black;
+  background-color: #2D2D2D;
   padding: 5px; }
   .flm-section.social-networks .a-network .header span {
     font-size: 36px; }
@@ -5812,15 +5817,16 @@ footer {
 .flm-section.programming .queries .btn-group {
   display: block; }
 .flm-section.programming .queries a {
-  color: #646464;
+  color: #E5E5E5;
   display: block; }
   .flm-section.programming .queries a span {
     font-size: 20px;
     padding: 10px; }
 .flm-section.programming .queries a:hover {
-  color: #98157f; }
+  color: #f9d932; }
 .flm-section.programming .queries .link {
-  margin-bottom: 5px; }
+  margin-bottom: 5px;
+  background-color: #810069; }
 .flm-section.programming .digital-billboard .image {
   width: 35%; }
 .flm-section.programming .digital-billboard img {
@@ -5836,7 +5842,7 @@ footer {
   color: white;
   font-size: 14px; }
 .flm-section.programming .digital-billboard a:hover {
-  color: #98157f; }
+  color: #f9d932; }
 
 .list-group-other-news {
   overflow-y: scroll;
@@ -5845,11 +5851,19 @@ footer {
 
 .flm-section.visit .visit-carousel img {
   height: 200px; }
+.flm-section.visit .visit-carousel img:hover {
+  opacity: 0.6; }
+
+.flm-section.recommendations .visit-carousel img {
+  height: 200px;
+  width: 80%; }
+.flm-section.recommendations .visit-carousel img:hover {
+  opacity: 0.6; }
 
 .friend-sites hr {
   margin-top: 60px;
   height: 0;
-  border: solid 2px #f2f2f2; }
+  border: solid 2px #E5E5E5; }
 .friend-sites .external-circle {
   background-color: white;
   padding: 10px;
@@ -5870,17 +5884,17 @@ footer {
   cursor: pointer; }
   .friend-sites .toggle-button .icon-circle {
     font-size: 36px;
-    color: #98157f;
-    background-color: #f2f2f2; }
+    color: #810069;
+    background-color: #E5E5E5; }
 .friend-sites .toggle-button:hover .icon-circle {
-  color: #f2f2f2;
-  background-color: #98157f; }
+  color: #E5E5E5;
+  background-color: #810069; }
 
 .toolbar-fixed {
   position: fixed;
-  background-color: #2D2D2D;
+  background-color: #E5E5E5;
   overflow: hidden;
-  padding: 5px;
+  padding: 0px;
   border-radius: 35px 0px 0px 0px; }
   .toolbar-fixed .icon {
     cursor: pointer; }
@@ -5890,7 +5904,7 @@ footer {
   right: 0px;
   font-size: 36px; }
   .social-networks-toolbar a {
-    color: #98157f;
+    color: #810069;
     margin: 10px;
     background-color: white;
     display: block;
@@ -5899,23 +5913,24 @@ footer {
     height: 45px;
     text-align: center; }
   .social-networks-toolbar a:hover {
-    color: #f2f2f2;
-    background-color: #98157f; }
+    color: #E5E5E5;
+    background-color: #810069; }
 
 .ceil-toolbar {
   bottom: 10%;
   right: 0px;
   position: fixed;
   text-transform: uppercase;
-  color: white;
-  padding: 10px; }
+  color: #2d2d2d;
+  padding: 1px 12px 5px 12px;
+  font-size: 11px; }
   .ceil-toolbar .icon-arrow-above {
     font-size: 36px; }
   .ceil-toolbar a {
-    color: white;
+    color: #810069;
     text-decoration: none; }
   .ceil-toolbar a:hover {
-    color: #98157f; }
+    color: #2d2d2d; }
 
 .slick-slide {
   position: relative; }
@@ -6101,20 +6116,20 @@ footer {
   .main-menu .navbar-inverse .navbar-collapse {
     border-color: none; }
   .main-menu .navbar-inverse .navbar-nav > .open > a, .main-menu .navbar-inverse .navbar-nav > .open > a:hover, .main-menu .navbar-inverse .navbar-nav > .open > a:focus {
-    color: #f2f2f2;
-    background-color: #98157f; }
+    color: #E5E5E5;
+    background-color: #810069; }
   .main-menu .navbar-inverse .navbar-nav > li > a {
     color: #c6c6c6; }
   .main-menu .dropdown a:hover {
-    color: #98157f;
+    color: #810069;
     background-color: white; }
   .main-menu .dropdown-menu li a {
     padding-bottom: 8px;
-    border-bottom: 2px solid #f2f2f2; }
+    border-bottom: 2px solid #E5E5E5; }
   .main-menu .dropdown-menu li a:hover {
-    color: #98157f;
+    color: #810069;
     background-color: white;
-    border-bottom: 3px solid #98157f; }
+    border-bottom: 3px solid #810069; }
 
 /* 
     Document   : billboard

@@ -66,27 +66,23 @@ Vista parcial
 			</div>
 			<div class="panel-footer">
 
-			@if( !is_null($exhibition->type) )
-				<p>
-					<span>
-						{{ HTML::image(
-							$exhibition->type->image->url('thumbnail'), 
-							$exhibition->type->name) }}
-					</span>
-					{{ $exhibition->type->name }}
-				<p>
-			@endif
+				@if( !is_null($exhibition->type) )
+					<p>
+							{{ HTML::image(
+								$exhibition->type->image->url('thumbnail'), 
+								$exhibition->type->name,
+								['class' => 'thumbnail']
+								) }}
+						{{ $exhibition->type->name }}
+					</p>
+				@endif
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="embed-responsive embed-responsive-16by9">
-					@if (strpos(substr($exhibition->exhibition_film->film->trailer, 0, 30), 'iframe'))
-				 			{{ $exhibition->exhibition_film->film->trailer }}
-			 		@else
-			 			<video src="{{$exhibition->exhibition_film->film->trailer}}">Vídeo no soportado</video>
-			 		@endif
+				 	{{ $exhibition->exhibition_film->film->trailer }}
 			 	</div>
 			</div>
 		</div>

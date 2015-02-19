@@ -150,3 +150,9 @@ a{
 h5{
 	color: $primary-color;
 }
+
+.thumbnail,
+.thumbnail img{
+	max-width: 60px;
+	display: inline-block;
+}
