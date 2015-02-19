@@ -14,6 +14,11 @@
         <script src="{{ asset('bower_components/bootstrap-datepicker/js/locales/bootstrap-datepicker.es.js') }}"></script>
         <script src="{{ asset('bower_components/parsleyjs/dist/parsley.min.js') }}"></script>
         <script src="{{ asset('bower_components/parsleyjs/src/i18n/es.js') }}"></script>
+        <script src="{{ asset('bower_components/ckeditor/ckeditor.js') }}"></script>
+        <script src="{{ asset('bower_components/ckeditor/adapters/jquery.js') }}"></script>
+        <script src="{{ asset('bower_components/ckeditor/lang/es.js') }}"></script>
+        <script src="{{ asset('bower_components/ckeditor-youtube-plugin/youtube/plugin.js') }}"></script>
+        <script src="{{ asset('bower_components/ckeditor-youtube-plugin/youtube/lang/es.js') }}"></script>
 
         <script src="{{ asset('assets/js/admin.js') }}"></script>
 

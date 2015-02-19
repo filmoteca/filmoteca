@@ -14,5 +14,21 @@
 		 * We validate all the form in the admin zone.
 		 */
 		$('form').parsley();
+
+		/**
+		 * CKEditors
+		 */
+		$('.ckeditor-basic').ckeditor({
+			toolbar: [
+				{ 
+					name: 'basic',
+					items: [ 'Bold', 'Italic', 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ]
+				}
+			]
+		});
+
+		$('.ckeditor-full').ckeditor({
+			extraPlugins : 'youtube'
+		});
 	});
 })(jQuery);

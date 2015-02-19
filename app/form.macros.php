@@ -167,15 +167,31 @@ Form::macro('selectFormGroup', function($name, $options, $title, $formname, $att
 		'</div>' . "\n";
 });
 
+/**
+ * By default all the text area inputs have the widget CKEditor.
+ *
+ * If you do not want the CKEditor you must set the $attr['class'] = 'no-ckeditor'.
+ */
 Form::macro('textareaFormGroup', function($name, $title, $formname, $attr)
 {
+	$attr['class'] = isset($attr['class']) ? $attr['class']  : ''; 
+
+	/**
+	 * If it has not a ckeditor class then we add a full editor.
+	 */
+	if( !Str::contains($attr['class'], 'ckeditor') ){
+
+		$attr['class'] .= ' ckeditor-full';
+	}
+	
+
 	return "\n" .
 		'<div class="form-group"' . "\n" .
 		'	ng-class="{\'has-error\' : film_form.' . $name . '.$invalid }">' . "\n" .
 		'	<label for="' . $name . '" class="col-sm-2 control-label text-right">' . $title . '</label>' . "\n" .
 		'	<div class="col-sm-10">' . "\n" .
 		
-		Form::textarea($name, null,$attr) .
+		Form::textarea($name, null, $attr) .
 
 		'	</div>' ."\n".
 		'</div>' . "\n";
