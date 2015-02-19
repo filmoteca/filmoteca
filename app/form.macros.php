@@ -5,7 +5,6 @@ Form::macro('formGroup',
 {
 	$attr['placeholder'] = $title;
 	$attr['formname']	 = $formname;
-	$attr['class']		 = 'form-control';
 	$attr['ng-model']	 = $formname . '.' .$name;
 
 	switch( $type )

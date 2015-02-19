@@ -29,7 +29,7 @@
 
 	{{ Form::formGroup('auditorium', 'venue_id', 'Sede', 'auditorium_form')}}
 
-	{{ Form::formGroup('textarea','map','Mapa', 'auditorium_form') }}
+	{{ Form::formGroup('textarea','map','Mapa', 'auditorium_form', ['class' => 'no-ckeditor']) }}
 
 	{{ Form::formGroup('file','image', 'Portada', 'auditorium_form')}}
 

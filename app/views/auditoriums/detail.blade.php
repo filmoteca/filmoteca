@@ -19,6 +19,7 @@
         <span class="bold"> Dirección:</span> <br> 
 		{{ $auditorium->address}}
     </div>
+    <span class="bold">Sede: </span> {{ (isset($resource->venue))? $resource->venue->name : 'Ninguna' }}<br>
     <span class="bold">Teléfonos: </span> {{ $auditorium->telephone }}<br>
     <span class="bold">Horario: </span> {{ $auditorium->schedule }}<br>
     <span class="bold">Costo General: </span> {{ $auditorium->general_cost }}<br>

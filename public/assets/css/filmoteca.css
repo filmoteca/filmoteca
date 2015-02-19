@@ -5752,6 +5752,9 @@ h5 {
   max-width: 60px;
   display: inline-block; }
 
+.bold {
+  font-weight: bold; }
+
 footer {
   padding-top: 10px;
   background-color: #E5E5E5; }
