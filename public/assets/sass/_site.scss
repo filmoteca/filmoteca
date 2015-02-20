@@ -151,8 +151,7 @@ h5{
 	color: $primary-color;
 }
 
-.thumbnail,
-.thumbnail img{
+.thumbnail-with-limit,{
 	max-width: 60px;
 	display: inline-block;
 }

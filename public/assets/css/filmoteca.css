@@ -5747,8 +5747,7 @@ a {
 h5 {
   color: #810069; }
 
-.thumbnail,
-.thumbnail img {
+.thumbnail-with-limit {
   max-width: 60px;
   display: inline-block; }
 
