@@ -70,5 +70,10 @@
 				winner.visible = winner.year == value;
 			});
 		}, true);
+	}])
+	
+	.config(['SLIDER_PIP_CONFIG', function(SLIDER_PIP_CONFIG){
+		SLIDER_PIP_CONFIG.slider.min = 1957;
+		SLIDER_PIP_CONFIG.pips.step = 10;
 	}]);
 });
