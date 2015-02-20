@@ -106,7 +106,8 @@
 									filter-title="{{ $icon->name }}"
 									class="btn">
 									<span>
-										{{ HTML::image($icon->image->url('thumbnail'), $icon->name) }}
+										{{ HTML::image($icon->image->url('thumbnail'), $icon->name, ['class' => 'image-size-icon']) }}
+										{{ $icon->name }}
 									</span>
 								</a>
 							</li>

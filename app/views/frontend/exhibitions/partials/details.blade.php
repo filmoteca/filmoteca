@@ -81,7 +81,7 @@ Vista parcial
 									{{ HTML::image(
 										$exhibition->type->image->url('thumbnail'), 
 										$exhibition->type->name,
-										['class' => 'thumbnail-with-limit']
+										['class' => 'image-size-icon']
 										) }}
 								{{ $exhibition->type->name }}
 							</p>
