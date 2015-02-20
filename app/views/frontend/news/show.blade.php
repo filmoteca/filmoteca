@@ -21,11 +21,8 @@
 
     <div class="details">
 
-        <h1>Noticias</h1>
-
         <div class="row">
             <div class="col-sm-12 cover">
-                <img src="{{ asset( $news->image->url('thumbnail')) }}">
                 <h1 class="text-center">{{ $news->title }}</h1>
             </div>
         </div>
@@ -34,6 +31,8 @@
             <div class="col-ms-12">
                 {{ $news->body }}
             </div>
+
+             <img src="{{ asset( $news->image->url('original')) }}" class="img-responsive">
          </div>
 
         <div class="row more-news">
@@ -43,7 +42,7 @@
                         <li class="list-group-item preview-news">
 
                             <img src="{{ asset($new->image->url('thumbnail')) }}">
-
+                            <h6>{{ $new->title }}</h6>
                             <span>{{ Str::limit($new->body, 180, '') }}</span> <span class="see-more">{{ HTML::linkAction('NewsController@show', 'Leer más', [$new->id]) }}</span>
                         </li>
                     @endforeach

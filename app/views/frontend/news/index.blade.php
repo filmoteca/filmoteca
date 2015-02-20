@@ -16,7 +16,7 @@
 @stop
 
 @section('content')
-    <h2>Noticias</h2>
+    <h1 class="text-center">Noticias</h1>
 
     <div class="row more-news">
         <div class="col-sm-12">
@@ -25,7 +25,7 @@
                     <li class="list-group-item preview-news">
 
                         <img src="{{ asset($new->image->url('thumbnail')) }}">
-
+                        <h6>{{ $new->title }}</h6>
                         <span>{{ Str::limit($new->body, 180, '') }}</span> <span class="see-more">{{ HTML::linkAction('NewsController@show', 'Leer más', [$new->id]) }}</span>
                     </li>
                 @endforeach
