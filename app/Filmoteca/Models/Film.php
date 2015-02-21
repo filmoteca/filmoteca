@@ -13,7 +13,7 @@ class Film extends Eloquent implements StaplerableInterface
 
 	protected $guarded = [];
 
-	protected $appends = ['cover_urls'];
+	protected $appends = ['cover_urls', 'country'];
 
 	public function __construct(array $attributes = array())
 	{
@@ -51,5 +51,10 @@ class Film extends Eloquent implements StaplerableInterface
 			'thumbnail' => $this->image->url('thumbnail'),
 			'medium'	=> $this->image->url('medium')
 		];
+	}
+
+	public function getCountryAttribute()
+	{
+		return \DB::table('countries')->find($this->country_id)->name;
 	}
 }

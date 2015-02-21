@@ -13,11 +13,11 @@
 
 	if( typeof define === 'function' && define.amd )
 	{
-		define(['angular', 'ui.bootstrap'], factory);
+		define(['angular', 'lodash', 'ui.bootstrap'], factory);
 	}else{
 		factory(angular);
 	}
-})(function(angular)
+})(function(angular, _)
 {
 	'use strict';
 
@@ -29,6 +29,8 @@
 		$scope.iconsAvailable = Icon.all();
 
 		$scope.exhibition = Exhibition.get();
+
+
 
 		var modalController = function($scope, $modalInstance)
 		{
@@ -73,11 +75,15 @@
 		{
 			Exhibition.icon($scope.exhibition.icon);
 			Exhibition.update();
-		}
+		};
 
 		$scope.$on('exhibitionLoaded', function(){
 
-			$scope.exhibition.type = Exhibition.icon();
+			if( $scope.exhibition.type === null) return;
+
+			$scope.exhibition.type = _.find($scope.iconsAvailable, function(icon){
+				return icon.id === Exhibition.icon().id;
+			});
 		});
 	}]);
 });

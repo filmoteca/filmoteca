@@ -92,4 +92,9 @@ class Exhibition extends Eloquent
 			return $schedule->auditorium->id === $id;
 		});
 	}
+
+	protected function setTypeIdAttribute($value)
+	{
+		$this->attributes['type_id'] = ($value === 0)? null: $value;
+	}
 }

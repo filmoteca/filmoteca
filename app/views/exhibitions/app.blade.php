@@ -20,7 +20,7 @@
     position:relative;
 }
 </style>
-<div class="alert alert-success" ng-show="message">
+<div class="alert alert-success ng-cloak" ng-show="message">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     @{{message}}
 </div>

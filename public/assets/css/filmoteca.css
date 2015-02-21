@@ -1,5 +1,6 @@
 @charset "UTF-8";
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
+@import url(../../bower_components/angular/angular-csp.css);
 @import url(../../bower_components/bootstrap/dist/css/bootstrap-theme.min.css);
 html {
   font-family: sans-serif;
@@ -5753,8 +5754,11 @@ h5 {
 .image-size-icon {
   max-width: 60px; }
 
-.thumbnail {
+.image-size-thumbnail {
   max-width: 150px; }
+
+.angucomplete-dropdown img {
+  width: 50px; }
 
 footer {
   padding-top: 10px;
