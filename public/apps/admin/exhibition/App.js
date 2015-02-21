@@ -56,10 +56,17 @@
         ]
     )
 
-    .controller('admin.exhibition.controllers.exhibition',['$scope','ExhibitionService', function($scope, Exhibition){
+    .controller('admin.exhibition.controllers.exhibition',['$scope','$timeout','ExhibitionService', function($scope, $timeout, Exhibition){
+
+        var SECOND = 1000;
+        var TIMEOUT_MESSAGE = 3*SECOND;
 
         $scope.$on('alert', function(event, message){
             $scope.message = message;
+
+            $timeout(function(){
+                $scope.message = '';
+            }, TIMEOUT_MESSAGE);
         });
 
         $scope.wasFilmSelected = function()

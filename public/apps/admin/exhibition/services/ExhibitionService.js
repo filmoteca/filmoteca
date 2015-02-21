@@ -24,8 +24,8 @@
 	angular.module('admin.exhibition.services.ExhibitionService',['angularMoment'])
 
 	.service('ExhibitionService', [ '$rootScope', '$http','moment',
-		'AuditoriumService','IconographicService',
-		function($rootScope, $http, moment, Auditorium, Icon)
+		'AuditoriumService','IconographicService', 'ExhibitionMessages',
+		function($rootScope, $http, moment, Auditorium, Icon, Messages)
 	{
 		var exhibition = null;
 
@@ -178,22 +178,30 @@
 
 		this.store = function()
 		{			
-			// transformRequest(exhibition);
-
 			return $http.post('/admin/api/exhibition', exhibition).then(function(response){
 
 				angular.extend(exhibition, response.data);
+				$rootScope.$broadcast('alert', Messages['exhibition.stored']);
 			});
 		};
 
 		this.destroy = function(id)
 		{
-			return $http.delete('/admin/api/exhibition/' + id);
+			return $http.delete('/admin/api/exhibition/' + id).then(function(response){
+
+				$rootScope.$broadcast('alert', Messages['exhibition.deleted']);
+
+				return response;
+			});
 		};
 
 		this.update = function()
 		{
-			return $http.put('/admin/api/exhibition/' + exhibition.id, exhibition, HTTP_CONFIG);
+			return $http.put('/admin/api/exhibition/' + exhibition.id, exhibition, HTTP_CONFIG).then(function(response){
+
+				$rootScope.$broadcast('alert', Messages['exhibition.updated']);
+				return response;
+			});
 		};
 
 		/**
@@ -219,5 +227,11 @@
 		};
 
 		exhibition = this.make();
-	}]);
+	}])
+
+	.constant('ExhibitionMessages', {
+		'exhibition.updated' : 'Exhibition actualizada.',
+		'exhibition.stored'  : 'Exhibición almacenada.',
+		'exhibition.deleted' : 'Exhibición borrada.'
+	});
 });
