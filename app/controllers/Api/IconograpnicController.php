@@ -28,9 +28,7 @@ class IconographicController extends ApiController
 
 		$resource = $this->repository->store($data);
 
-		$icon = $this->repository->find($resource->id);	
-
-		$icon->icon = $icon->image->url('thumbnail');
+		$icon = $this->repository->find($resource->id);
 
 		return Response::json($icon,200);;
 	}
