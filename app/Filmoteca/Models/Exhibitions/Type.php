@@ -14,7 +14,8 @@ class Type extends Eloquent implements StaplerableInterface
 
 	protected $guarded = [];
 
-	protected $fillable = ['name', 'image_file_name', 'image_file_size', 'image_content_type', 'image_updated_at'];
+	// If I uncomment this part the attachment (the image) will not be stored.
+	// protected $fillable = ['name', 'created_at', 'updated_at', 'image_file_name', 'image_file_size', 'image_content_type', 'image_updated_at'];
 
 	protected $appends = ['icon'];
 
