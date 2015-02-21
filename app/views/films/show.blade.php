@@ -81,6 +81,10 @@
 		    <th>Trailer</th>
 		    <td>{{ $resource->trailer }}</td>
         </tr>
+        <tr>
+		    <th>Notas</th>
+		    <td>{{ $resource->notes }}</td>
+        </tr>
 	</tbody>
 </table>
 

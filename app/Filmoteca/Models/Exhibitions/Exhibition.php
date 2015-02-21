@@ -66,6 +66,8 @@ class Exhibition extends Eloquent
 
 		$tc['sinopsis']	= $film->synopsis;
 
+		$tc['notas'] = $film->notes;
+
 		$technicalCard = array();
 
 		foreach( $tc as $key => $value)

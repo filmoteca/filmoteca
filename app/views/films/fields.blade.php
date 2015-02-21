@@ -6,7 +6,7 @@ Este pedaso de vista es utilizaco por otras vistas.
 
 {{ Form::formGroup('text','title','Título', 'film') }}
 
-{{ Form::formGroup('year', 'year', 'Año', 'film') }}
+{{ Form::formGroup('year', 'year', 'Año', 'film', ['minYear' => 1896]) }}
 
 {{ Form::formGroup('country', 'country_id', 'País', 'film') }}
 
@@ -30,6 +30,8 @@ Este pedaso de vista es utilizaco por otras vistas.
 
 {{ Form::formGroup('textarea','synopsis','Sinopsis', 'film')}}
 
-{{ Form::formGroup('textarea','trailer', 'Trailer', 'film')}}
+{{ Form::formGroup('textarea','trailer', 'Trailer', 'film', ['class' => 'ckeditor-only-youtube'])}}
+
+{{ Form::formGroup('textarea','notes', 'Notas', 'film')}}
 
 {{ Form::formGroup('file','image', 'Portada', 'film')}}
