@@ -2,9 +2,10 @@
 
 namespace Api;
 
+use Filmoteca\Repository\ExhibitionsRepository;
 use Input;
 use Response;
-use Filmoteca\Repository\ExhibitionsRepository;
+use Paginator;
 
 class ExhibitionController extends ApiController
 {
@@ -15,9 +16,11 @@ class ExhibitionController extends ApiController
 
 	public function index()
 	{
-		$resources = $this->repository->paginate(15);
+		$itemsPerPage 	=  15;
+		$page 			= Input::has('page')? Input::get('page') : 1;
+		$exhibitions 			= $this->repository->paginate($page, $itemsPerPage);
 
-		return $resources;
+		return Paginator::make($exhibitions->items, $exhibitions->total, $itemsPerPage);
 	}
 
 	public function store()

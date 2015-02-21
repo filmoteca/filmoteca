@@ -5,6 +5,7 @@ use Carbon\Carbon;
 use Filmoteca\Models\Exhibitions\Exhibition;
 use Filmoteca\Models\Exhibitions\ExhibitionFilm;
 use Filmoteca\Models\Film;
+use StdClass;
 
 class ExhibitionsRepository extends ResourcesRepository
 {
@@ -161,13 +162,24 @@ class ExhibitionsRepository extends ResourcesRepository
 			->first();
 	}
 
-	public function paginate($amount)
+	public function paginate($page = 1, $amount = 15)
 	{
-		return $this
+		$results 				= new StdClass();
+		$results->totalItems 	= 0;
+		$results->itmes 		= array(); 
+
+		$resources = $this
 			->resource
 			->orderBy('id','desc')
+			->skip($amount * ($page - 1))
+			->take($amount)
 			->with('exhibitionFilm','exhibitionFilm.film')
-			->paginate($amount);
+			->get();
+
+		$results->total 	= $this->resource->count();
+		$results->items 	= $resources->all();
+
+		return $results;
 	}
 
 	public function update($id, array $data = null)

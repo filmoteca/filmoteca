@@ -16,6 +16,7 @@
             'angucomplete-alt',
             'ngRoute',
             'ngAnimate',
+            'ui.bootstrap',
 
             'admin.exhibition.controllers/FilmController',
             'admin.exhibition.controllers/ScheduleController',
@@ -77,10 +78,29 @@
 
     .controller('admin.exhibition.controllers.index',['$scope','ExhibitionService', function($scope, Exhibition){
 
-        Exhibition.paginate().then(function(pagination){
+        $scope.pagination = {
+            per_page : 0,
+            total: 0,
+            current_page: 1,
+            last_page: 0,
+            from : 0,
+            to: 0, 
+            // maxSize : 10,
+        };
 
-            $scope.exhibitions = pagination.data.data;
-        });
+        $scope.pageChanged = function(){
+
+            Exhibition.paginate($scope.pagination.current_page).then(function(response){
+
+                angular.extend($scope.pagination, response.data);
+                
+                $scope.exhibitions  = response.data.data;
+
+                $scope.pagination.data.data = null; //we do not save redundate data.
+
+                console.log($scope.pagination);
+            });
+        };
 
         $scope.destroy = function($index)
         {
@@ -89,6 +109,8 @@
                 $scope.exhibitions.splice($index, 1);
             });
         };
+
+        $scope.pageChanged();
     }])
 
     .controller('admin.exhibition.controllers.create',['$scope', '$timeout', 'ExhibitionService', function($scope, $timeout, Exhibition){
