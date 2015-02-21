@@ -19,6 +19,7 @@
 		 * CKEditors
 		 */
 		$('.ckeditor-basic').ckeditor({
+			language: 'es',
 			toolbar: [
 				{ 
 					name: 'basic',
@@ -28,7 +29,17 @@
 		});
 
 		$('.ckeditor-full').ckeditor({
+			language: 'es',
 			extraPlugins : 'youtube'
+		});
+
+		$('.ckeditor-only-youtube').ckeditor({
+			language: 'es',
+			extraPlugins : 'youtube',
+			toolbar: [{
+				name : 'only-youtube',
+				items: ['Youtube']
+			}]
 		});
 	});
 })(jQuery);
