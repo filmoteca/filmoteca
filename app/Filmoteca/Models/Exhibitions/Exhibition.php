@@ -115,6 +115,11 @@ class Exhibition extends Eloquent
 			$groups[$day][] = $time; //push
 		}
 
+		foreach($groups as &$group){
+
+			sort($group, SORT_NATURAL);
+		}
+
 		return $groups;
 	}
 
