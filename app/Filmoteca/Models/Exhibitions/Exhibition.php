@@ -1,5 +1,6 @@
 <?php namespace Filmoteca\Models\Exhibitions;
 
+use Illuminate\Database\Eloquent\Collection;
 use DB;
 use Eloquent;
 
@@ -48,8 +49,6 @@ class Exhibition extends Eloquent
 
         $tc['género']   = $film->genre->name;
 
-//		$tc['género']	= $genresList[$film->genre_id];
-
 		$tc['director']	= $film->director;
 
 		$tc['guión']	= $film->script;
@@ -90,9 +89,33 @@ class Exhibition extends Eloquent
 
 	public function schedulesByAuditorium($id)
 	{
-		return $this->schedules->filter(function($schedule) use ($id){
+		$schedules = $this->schedules->filter(function($schedule) use ($id){
 			return $schedule->auditorium->id === $id;
 		});
+
+		return $this->groupSchedulesByDay($schedules);
+	}
+
+	protected function groupSchedulesByDay(Collection $schedules)
+	{
+		$groups = [];
+
+		foreach($schedules as $schedule){
+
+			$day_time = explode(' ', $schedule->entry);
+
+			$day 	= $day_time[0];
+			$time 	= $day_time[1];
+
+
+			if(!isset($group[$day])){
+				$group[$day] = [];
+			}
+
+			$groups[$day][] = $time; //push
+		}
+
+		return $groups;
 	}
 
 	protected function setTypeIdAttribute($value)

@@ -61,12 +61,15 @@ Vista parcial
 								</div>
 								<div class="panel-body">
 									<ul class="list-group">						
-									@foreach( $exhibition->schedulesByAuditorium($auditorium->id) as $schedule)
+									@foreach( $exhibition->schedulesByAuditorium($auditorium->id) as $date => $hours)
 										<li class="list-group-item">
-										{{ ucfirst(trans('dates.days.' . date('l', strtotime($schedule->entry)) )) }}
-										{{ date(' j \d\e ', strtotime($schedule->entry)) }}
-										{{ trans('dates.months.' . date('F', strtotime($schedule->entry)) ) }}
-										{{ date('  / G:i \h\r\s', strtotime($schedule->entry)) }}
+											{{ ucfirst(trans('dates.days.' . date('l', strtotime($date)) )) }}
+											{{ date(' j \d\e ', strtotime($date)) }}
+											{{ trans('dates.months.' . date('F', strtotime($date)) ) }}
+
+											@foreach($hours as $hour)
+												<span class="label label-default">{{ date('G:i \h\r\s', strtotime($hour)) }}</span>
+											@endforeach
 										</li>
 									@endforeach
 									</ul>

@@ -38,8 +38,12 @@ class ExhibitionController extends BaseController
 					$today->daysInMonth)->toDateString()
 			);
 
-		$exhibitions = $this->repository
-			->search('date',$interval);
+		$exhibitions = $this
+			->repository
+			->search('date',$interval)
+			->sortBy(function($exhibition){
+				return $exhibition->exhibition_film->film->title;
+			});
 		
 		$auditoriums = Auditorium::all(array('id','name'));
 
