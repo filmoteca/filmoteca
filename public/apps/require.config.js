@@ -68,6 +68,7 @@ var require = {
 		"ngRoute" 			: "angular-route/angular-route.min",
 		"ngAnimate" 		: "angular-animate/angular-animate.min",
 		"ngCookies"			: "angular-cookies/angular-cookies.min",
+		"ngSanitize"		: "angular-sanitize/angular-sanitize.min",
 
 		//From laravel packages
 		"syntara"			: "/packages/mrjuliuss/syntara/assets/js/dashboard/base",
@@ -97,10 +98,11 @@ var require = {
 		},
 		"ngRoute" : ["angular"],
 		"ngAnimate" : ["angular"],
+		"ngCookies" : ["angular"],
+		"ngSanitize" : ["angular"],
 		"angucomplete-alt" : ["angular"],
 		"ui.bootstrap" : ["angular"],
 		"angular-locale-mx" : ["angular"],
-		"ngCookies" : ["angular"],
 		"bootstrap" :["jquery"],
 		"syntara" : ["jquery", "bootstrap"],
 		"jquery-ui" : ["jquery"],
