@@ -17,7 +17,8 @@ $menu = array(
 
 	array('Servicio social', '/pages/extension-academica/servicio-social'),
 
-	array('Becarios', '/pages/extension-academica/becarios'), 
+	array('Becarios', '/pages/extension-academica/becarios', array(
+		array('Convocatoria', '/pages/extension-academica/convocatoria-becarios'))),
 
 	array('Visitas guiadas', '/pages/extension-academica/visitas-guiadas'));
 ?>
