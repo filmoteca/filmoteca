@@ -36,7 +36,7 @@
 			</span>
 			<br>
 			<img src="/assets/imgs/descarga-PDF.png">
-			<a href="http://filmoteca.dev/pdf/Guadalupe-Ferrer.pdf" target="_blank">Resumen curricular</a>
+			<a href="http://filmoteca.dev/pdf/guadalupe-ferrer.pdf" target="_blank">Resumen curricular</a>
 		</div>
 	</div>
 	
@@ -52,7 +52,7 @@
 			</span>
 			<br>
 			<img src="/assets/imgs/descarga-PDF.png">
-			<a href="http://filmoteca.dev/pdf/Maricarmen-de-Lara.pdf" target="_blank">Resumen curricular</a>
+			<a href="http://filmoteca.dev/pdf/maricarmen-de-lara.pdf" target="_blank">Resumen curricular</a>
 		</div>
 	</div>
 	<br>
@@ -67,7 +67,7 @@
 			</span>
 			<br>
 			<img src="/assets/imgs/descarga-PDF.png">
-			<a href="http://filmoteca.dev/pdf/Carlos-Martinez-Assad.pdf" target="_blank">Resumen curricular</a>
+			<a href="http://filmoteca.dev/pdf/carlos-martinez-assad.pdf" target="_blank">Resumen curricular</a>
 		</div>
 	</div>
 	<br>
@@ -82,7 +82,7 @@
 			</span>
 			<br>
 			<img src="/assets/imgs/descarga-PDF.png">
-			<a href="http://filmoteca.dev/pdf/Fernando-Macotela.pdf" target="_blank">Resumen curricular</a>
+			<a href="http://filmoteca.dev/pdf/fernando-macotela.pdf" target="_blank">Resumen curricular</a>
 		</div>
 	</div>
 	<br>
@@ -97,7 +97,7 @@
 			</span>
 			<br>
 			<img src="/assets/imgs/descarga-PDF.png">
-			<a href="http://filmoteca.dev/pdf/Armando-Casas.pdf" target="_blank">Resumen curricular</a>
+			<a href="http://filmoteca.dev/pdf/armando-casas.pdf" target="_blank">Resumen curricular</a>
 		</div>
 	</div>
 	<br>
@@ -112,7 +112,7 @@
 			</span>
 			<br>
 			<img src="/assets/imgs/descarga-PDF.png">
-			<a href="http://filmoteca.dev/pdf/Felipe-Coria.pdf" target="_blank">Resumen curricular</a>
+			<a href="http://filmoteca.dev/pdf/felipe-coria.pdf" target="_blank">Resumen curricular</a>
 		</div>
 	</div>
 	<br>
@@ -127,7 +127,7 @@
 			</span>
 			<br>
 			<img src="/assets/imgs/descarga-PDF.png">
-			<a href="http://filmoteca.dev/pdf/Rafa-Avina.pdf" target="_blank">Resumen curricular</a>
+			<a href="http://filmoteca.dev/pdf/rafael-avina.pdf" target="_blank">Resumen curricular</a>
 		</div>
 	</div>
 	<br>
@@ -142,7 +142,7 @@
 			</span>
 			<br>
 			<img src="/assets/imgs/descarga-PDF.png">
-			<a href="http://filmoteca.dev/pdf/Nadina-Illescas.pdf" target="_blank">Resumen curricular</a>
+			<a href="http://filmoteca.dev/pdf/nadina-illescas.pdf" target="_blank">Resumen curricular</a>
 		</div>
 	</div>
 	<br>
@@ -157,7 +157,7 @@
 			</span>
 			<br>
 			<img src="/assets/imgs/descarga-PDF.png">
-			<a href="http://filmoteca.dev/pdf/Carmen-Carrara.pdf" target="_blank">Resumen curricular</a>
+			<a href="http://filmoteca.dev/pdf/carmen-carrara.pdf" target="_blank">Resumen curricular</a>
 		</div>
 	</div>
 	<br>
@@ -172,7 +172,7 @@
 			</span>
 			<br>
 			<img src="/assets/imgs/descarga-PDF.png">
-			<a href="http://filmoteca.dev/pdf/Albino-Alvarez.pdf" target="_blank">Resumen curricular</a>
+			<a href="http://filmoteca.dev/pdf/albino-alvarez.pdf" target="_blank">Resumen curricular</a>
 		</div>
 	</div>
 	<br>
@@ -187,7 +187,7 @@
 			</span>
 			<br>
 			<!-- <img src="/assets/imgs/descarga-PDF.png">
-			<a href="http://filmoteca.dev/pdf/Miguel_Angel_Recillas.pdf" target="_blank">Resumen curricular</a> -->
+			<a href="http://filmoteca.dev/pdf/miguel_angel_recillas.pdf" target="_blank">Resumen curricular</a> -->
 		</div>
 	</div>
 	<br>
@@ -201,8 +201,8 @@
 			<span class="cargo">Jefe de la Unidad de Acceso Interinstitucional
 			</span>
 			<br>
-			<!-- <img src="/assets/imgs/descarga-PDF.png">
-			<a href="http://filmoteca.dev/pdf/Jose-Manuel-Garcia.pdf" target="_blank">Resumen curricular</a> -->
+			<img src="/assets/imgs/descarga-PDF.png">
+			<a href="http://filmoteca.dev/pdf/jose-manuel-garcia.pdf" target="_blank">Resumen curricular</a>
 		</div>
 	</div>
 	<br>
@@ -217,7 +217,7 @@
 			</span>
 			<br>
 			<img src="/assets/imgs/descarga-PDF.png">
-			<a href="http://filmoteca.dev/pdf/Ximena-Perujo.pdf" target="_blank">Resumen curricular</a>
+			<a href="http://filmoteca.dev/pdf/ximena-perujo.pdf" target="_blank">Resumen curricular</a>
 		</div>
 	</div>
 	<br>
@@ -232,7 +232,7 @@
 			</span>
 			<br>
 			<img src="/assets/imgs/descarga-PDF.png">
-			<a href="http://filmoteca.dev/pdf/Gerardo-Leon.pdf" target="_blank">Resumen curricular</a>
+			<a href="http://filmoteca.dev/pdf/gerardo-leon.pdf" target="_blank">Resumen curricular</a>
 		</div>
 	</div>
 
