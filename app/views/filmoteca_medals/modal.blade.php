@@ -5,7 +5,7 @@
 			<span class="sr-only">Close</span>
 		</button>
 
-		@{{ winner.name }} (@{{ winner.award_date }})
+		@{{ winner.name }} (@{{ winner.award_date | date : 'd-M-yyyy'}})
 
 	</h3>
 </div>
