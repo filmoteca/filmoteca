@@ -36,9 +36,9 @@
 				</div>
 				<div>
 					<a href="http://www.fiafnet.org/es/" target="blank"><!-- <span class="icon icon-fiaf"></span> -->
-					<img 
-                            src="/assets/imgs/fiaf.png" 
-						<span>MIEMBRO DE LA FIAF</span></a>
+					    <img src="/assets/imgs/fiaf.png">
+						<span>MIEMBRO DE LA FIAF</span>
+					</a>
 				</div>
 			</div>
 		</div>
