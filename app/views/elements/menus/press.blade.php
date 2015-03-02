@@ -4,7 +4,8 @@ $menu = array(
 	array('Prensa', '/press_register'),
 
 	array('Exposiciones', '/pages/press/exposiciones-museografia', array(
-		array('Exposiciones realizadas', '/pages/press/exposiciones-realizadas')
+		array('Exposiciones recientes', '/pages/press/exposiciones-recientes'),
+			array ('Exposiciones anteriores', '/pages/press/exposiciones-anteriores')
 		)),
 
 	array('Publicaciones','/pages/press/publicaciones', array ( 
