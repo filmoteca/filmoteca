@@ -66,7 +66,7 @@
 						<li>Enviar al correo electrónico <a href="mailto:nadina1020@gmail.com">nadina1020@gmail.com  </a>formato de solicitud para ingresar en el Programa. <br>
 						</li>
 							<img src="/assets/imgs/descarga-PDF.png">
-								<a href="http://filmoteca.dev/pdf/becarios/formato-inscripcion-Becarios.pdf" target="_blank">Formato de solicitud</a>
+								<a href="http://filmoteca.dev/pdf/becarios/formato-inscripcion-becarios.pdf" target="_blank">Formato de solicitud</a>
 					</ol>
 					<br>
 				</div>
