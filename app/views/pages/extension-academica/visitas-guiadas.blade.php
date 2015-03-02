@@ -1,9 +1,10 @@
 @section('scripts')
 
-<script type='text/javascript' src='/bower_components/slider-camera/jquery.min.js'></script>
-<script type='text/javascript' src='/bower_components/slider-camera/jquery.mobile.customized.min.js'></script>
-<script type='text/javascript' src='/bower_components/slider-camera/jquery.easing.1.3.js'></script> 
-<script type='text/javascript' src='/bower_components/slider-camera/camera.min.js'></script> 
+<!-- This plugin requires jquery 1.7 to work. This jQuery's version is packaged with slider-camera plugin. -->
+<script type='text/javascript' src='/bower_components/slider-camera/scripts/jquery.min.js'></script>
+<script type='text/javascript' src='/bower_components/slider-camera/scripts/jquery.easing.1.3.js'></script>
+<script type='text/javascript' src='/bower_components/slider-camera/scripts/jquery.mobile.customized.min.js'></script>
+<script type='text/javascript' src='/bower_components/slider-camera/scripts/camera.min.js'></script> 
 
 <script>
   jQuery(function(){
