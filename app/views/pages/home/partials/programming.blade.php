@@ -71,7 +71,7 @@
 				<div class="caption pull-right">
 					<h5></h5>
 					<span></span>
-					<a href="http://issuu.com/filmotecaunam/docs/carteleradigitalmarzo2015" target="_blank">Consulta<span class="icon icon-download pull-right"></span></a>
+					<a href="http://issuu.com/filmotecaunam/docs/filmotecaunam_carteleradigitalmarzo" target="_blank">Consulta<span class="icon icon-download pull-right"></span></a>
 				</div>	
 				<div class="caption pull-right">
 					<a href="http://filmoteca.dev/pdf/cartelera/carteleradigitalmarzo2015.pdf" target="_blank">Descarga<span class="icon icon-download pull-right"></span></a>
