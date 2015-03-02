@@ -27,7 +27,7 @@ $(document).ready(function(){
 		</a>
 	</li>
 	<li class="active">
-		Exposiciones / Exposiciones realizadas
+		Exposiciones / Exposiciones anteriores
 	</li>
 @stop
 
