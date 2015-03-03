@@ -59,16 +59,29 @@
 
     .controller('admin.exhibition.controllers.exhibition',['$scope','$timeout','ExhibitionService', function($scope, $timeout, Exhibition){
 
-        var SECOND = 1000;
-        var TIMEOUT_MESSAGE = 3*SECOND;
+		var MAX_ALERTS = 5;
+		$scope.alerts = [];
 
-        $scope.$on('alert', function(event, message){
-            $scope.message = message;
+		$scope.$on('alert', function(event, message){
+			$scope.alerts.unshift(message);
 
-            $timeout(function(){
-                $scope.message = '';
-            }, TIMEOUT_MESSAGE);
-        });
+			while( $scope.alerts.length > MAX_ALERTS){
+				//Delete the first element. At the bottom of the stack.
+				$scope.alerts.splice($scope.alerts.length -1, 1);
+			}
+		});
+
+		$scope.closeAlert = function(index){
+			$scope.alerts.splice(index, 1);
+		};
+
+		$scope.$on('dismissAlerts', function(){
+			$scope.alerts.splice(0, $scope.alerts.length);
+		});
+
+		$scope.$on('$viewContentLoaded', function(){
+			$scope.alerts.splice(0, $scope.alerts.length);
+		});
 
         $scope.wasFilmSelected = function()
         {
@@ -84,8 +97,8 @@
             current_page: 1,
             last_page: 0,
             from : 0,
-            to: 0, 
-            // maxSize : 10,
+            to: 0,
+            maxSize : 10
         };
 
         $scope.pageChanged = function(){
@@ -96,9 +109,7 @@
                 
                 $scope.exhibitions  = response.data.data;
 
-                $scope.pagination.data.data = null; //we do not save redundate data.
-
-                console.log($scope.pagination);
+                $scope.pagination.data.data = null; //we do not save redundant data.
             });
         };
 
@@ -113,7 +124,7 @@
         $scope.pageChanged();
     }])
 
-    .controller('admin.exhibition.controllers.create',['$scope', '$timeout', 'ExhibitionService', function($scope, $timeout, Exhibition){
+    .controller('admin.exhibition.controllers.create',['$scope', '$timeout', 'ExhibitionService', 'ExhibitionMessages', function($scope, $timeout, Exhibition, Messages){
         
         $scope.exhibitionLoaded = false;
 
@@ -124,13 +135,14 @@
             if( newValue ){
 
                 Exhibition.store().then(function(){
-                    $scope.$emit('alert', 'Exhibición guardada.');
+                    $scope.$emit('alert', Messages['exhibition.stored']);
                 });
             }
         });
     }])
 
-    .controller('admin.exhibition.controllers.edit',['$scope','ExhibitionService','$routeParams', function($scope, Exhibition, $routeParams){
+    .controller('admin.exhibition.controllers.edit',['$scope','ExhibitionService', 'ExhibitionMessages', '$routeParams',
+			function($scope, Exhibition, Messages, $routeParams){
 
         $scope.exhibitionLoaded = true;
 
@@ -145,7 +157,7 @@
         {
             Exhibition.update().then(function(){
                 
-                console.log('I updated a exhibition');
+                $scope.$emit('alert', Messages['exhibition.updated']);
             });
         };
     }])

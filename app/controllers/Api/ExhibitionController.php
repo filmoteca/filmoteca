@@ -27,10 +27,9 @@ class ExhibitionController extends ApiController
 	{
 		$data = Input::except('_token');
 
-		if( $this->repository->store( $data ))
-		{
-			return Response::json([], 200);
-		}
+		$model = $this->repository->store( $data );
+
+		return Response::json($model, 200);
 	}
 
 	public function destroy($id){

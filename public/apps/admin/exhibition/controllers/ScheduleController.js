@@ -24,22 +24,27 @@
 	angular.module('admin.exhibition.controllers.ScheduleController', [])
 
 	.controller('ScheduleController', [
-		'$scope', 'AuditoriumService', 'ExhibitionService', 
-	function($scope, Auditorium, Exhibition)
+		'$scope', 'AuditoriumService', 'ExhibitionService', 'ExhibitionMessages',
+	function($scope, Auditorium, Exhibition, Messages)
 	{
+		var FIRST_ITEM 	= 0;
+		var NO_ITEM 	= -1;
+
 		$scope.editing = false;
 
 		$scope.auditoriums = Auditorium.all();
 
 		$scope.schedules = Exhibition.schedules();
 
-		$scope.editedIndex = -1;
+		$scope.editedIndex = NO_ITEM;
 
 		$scope.add = function()
-		{	
-			$scope.schedules = Exhibition.addSchedule().schedules();
+		{
+			if($scope.editing){
+				return $scope.saveAndAdd();
+			}
 
-			$scope.edit( 0 );
+			return $scope.onlyAdd();
 		};
 
 		$scope.destroy = function(index)
@@ -62,12 +67,37 @@
 
 			var entry = schedule.date + schedule.time;
 
+			var tmpEditedIndex = $scope.editedIndex;
+
+			$scope.editedIndex = NO_ITEM;
+
 			schedule.entry = entry;
 
-			Exhibition.updateSchedule($scope.editedIndex);
-
-			$scope.editedIndex = -1;
+			return Exhibition.updateSchedule(tmpEditedIndex).then(function() {
+				$scope.$emit('alert', Messages['schedule.updated']);
+			});
 		};
+
+		/**
+		 * It saves the schedule that is currently edited and
+		 * adds a new schedule entry.
+		 */
+		$scope.saveAndAdd = function()
+		{
+			$scope.ready().then(function(){
+				$scope.onlyAdd();
+			});
+		};
+
+		/**
+		 * It only adds a new schedule entry.
+		 */
+		$scope.onlyAdd = function()
+		{
+			$scope.schedules = Exhibition.addSchedule().schedules();
+
+			$scope.edit(FIRST_ITEM);
+		}
 
 		$scope.$on('exhibitionLoaded', function(){
 

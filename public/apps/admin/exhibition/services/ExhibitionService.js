@@ -171,7 +171,9 @@
 
 			exhibition.schedules.splice($index,1);
 				
-			$http.delete('/admin/api/schedule/' + id);	
+			$http.delete('/admin/api/schedule/' + id).then(function(){
+				$rootScope.$broadcast('alert', Messages['exhibition.updated']);
+			});
 
 			return this;
 		};
@@ -230,8 +232,29 @@
 	}])
 
 	.constant('ExhibitionMessages', {
-		'exhibition.updated' : 'Exhibition actualizada.',
-		'exhibition.stored'  : 'Exhibición almacenada.',
-		'exhibition.deleted' : 'Exhibición borrada.'
+		'exhibition.updated' : {
+			type : 'success',
+			msg : 'Exhibition actualizada.'
+		},
+		'exhibition.stored'  : {
+			type: 'success',
+			msg: 'Exhibición almacenada.'
+		},
+		'exhibition.deleted' : {
+			type: 'success',
+			msg: 'Exhibición borrada.'
+		},
+		'schedule.saved' : {
+			type: 'success',
+			msg: 'Horario salvado.'
+		},
+		'schedule.updated' : {
+			type: 'success',
+			msg: 'Horario actualizado.'
+		},
+		'schedule.deleted' : {
+			type: 'success',
+			msg: 'Horario borrado.'
+		}
 	});
 });

@@ -15,15 +15,10 @@
 
 @section('content')
 
-<style>
-.view-animate-container{
-    position:relative;
-}
-</style>
-<div class="alert alert-success ng-cloak" ng-show="message">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    @{{message}}
+<div class="messages-stack ng-cloak">
+     <alert ng-repeat="alert in alerts track by $index" type="@{{alert.type}}" close="closeAlert($index)">@{{alert.msg}}</alert>
 </div>
+
 <div class="view-animate-container">
     <div ng-view class="view-animate"></div>
 </div>

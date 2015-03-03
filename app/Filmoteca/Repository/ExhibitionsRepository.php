@@ -147,7 +147,7 @@ class ExhibitionsRepository extends ResourcesRepository
 
 		$d['exhibition_film_id'] = $exhibitionFilm->id;
 
-		return $this->repository->create($d);
+		return $this->resource->create($d);
 	}
 
 	public function find($id)
