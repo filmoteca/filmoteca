@@ -4,8 +4,8 @@ class GenresTableSeeder extends Seeder {
 
     public function run()
     {
-        $genres = ['Acción', 'Aventura', 'Catástrofe', 'Ciencias Ficción',
-        'Comedia', 'Documental', 'Drama', 'fantasía', 'Musical', 'Suspenso',
+        $genres = ['Acción', 'Aventura', 'Catástrofe', 'Ciencia Ficción',
+        'Comedia', 'Documental', 'Drama', 'Fantasía', 'Musical', 'Suspenso',
         'Pornográfico', 'Animación', 'Cine Mudo', 'Cine Sonoro', 'Cine 2D',
         'Cine 3D'];
 
