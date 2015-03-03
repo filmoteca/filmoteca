@@ -154,11 +154,12 @@
                   LIBRERÍA<b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">Catálogo</a></li>
-                  
+                  <li><a href="/pages/libreria/libreria">Puntos de venta</a></li>
+
                   <li><a href="http://cine.libros.unam.mx/">Venta en línea</a></li>
                   
-                  <li><a href="#">Otros puntos de venta</a></li>
+                 <!--  <li><a href="#">Catálogo</a></li> -->
+                  
                 </ul>
               </li>
 
