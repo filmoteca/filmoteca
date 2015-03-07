@@ -16,22 +16,22 @@
 			<div class="pull-left">
 				<div class="pull-left">
 					<a href="http://www.unam.mx/" target="blank">
-					    <img src="/assets/imgs/unam.png">
+						<img src="/assets/imgs/unam.png" alt="logo UNAM">
 					</a>
 				</div>
 				<div class="unam-text pull-left">
-					<span>Universidad Nacional</span> <br>
+					<span>Universidad Nacional</span><br>
 					<span>Autónoma de México</span>
 				</div>
 			</div>
 			<div class="pull-right">
 				<div class="filmoteca-text pull-left text-right">
-					<span>Dirección General de</span> <br>
+					<span>Dirección General de</span><br>
 					<span>Actividades Cinematográficas</span>
 				</div>
 				<div class="pull-left">
 					<a href="/">
-					    <img src="/assets/imgs/filmoteca.png">
+						<img src="/assets/imgs/filmoteca.png" alt="logo Filmoteca UNAM">
 					</a>
 				</div>
 			</div>
