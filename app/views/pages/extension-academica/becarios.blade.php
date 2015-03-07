@@ -33,7 +33,9 @@
 
 
 @section('content')
-
+	<div class="img-servicios">
+		<img src="/assets/imgs/extension/becarios.jpg" aling="left" class="img-responsive" 'Programa de becarios'>
+	</div>
 	<h1>Programa de Becarios</h1>
 	<p>
 		Con el objetivo de contribuir al desarrollo profesional de los estudiantes universitarios, la Filmoteca de la UNAM pone a su alcance la iniciativa que les permitirá incorporarse dentro de actividades vinculadas con su formación académica. 
@@ -45,6 +47,8 @@
 		}} a través de este medio.
 	</p>
 
+<div class="row">
+
 <ul>
 	<div class="informacion">
 	
@@ -53,7 +57,7 @@
 			<div id="accordion">
 				
 				
-				<h3>Requisitos</h3>
+				<h5>Requisitos</h5>
 				<div>
 					<ol>
 						<li>Ser alumno regular de la UNAM.</li>
@@ -70,7 +74,7 @@
 					</ol>
 					<br>
 				</div>
-				<h3>Carreras</h3>
+				<h5>Carreras</h5>
 				<div>
 					<ul>
 						<li>Bibliotecología y estudios de la información</li>
@@ -86,7 +90,7 @@
 					</ul>
 					<br>
 				</div>
-				<h3>Compromisos</h3>
+				<h5>Compromisos</h5>
 				<div>
 					<ol>
 						<li>El becario deberá cubrir cuatro horas diarias de los días hábiles, en el horario acordado con el responsable del proyecto.</li>
@@ -104,6 +108,7 @@
 		</div>	
 	</div>
 </ul>
+</div>
 
 </div>
 @stop

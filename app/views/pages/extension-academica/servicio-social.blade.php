@@ -34,6 +34,9 @@
 
 @section('content')
 
+	<div class="img-servicios">
+		<img src="/assets/imgs/extension/servicio-social.jpg" aling="left" class="img-responsive" 'Servicio social'>
+	</div>
 	<h1>Servicio Social</h1>
 
 	<p>En su afán de contribuir al enriquecimiento del mundo cinematográfico y al mismo tiempo ayudar a los miembros de la población estudiantil a poner en práctica los conocimientos obtenidos durante la carrera, la Filmoteca de la UNAM pone a disposición de la comunidad estudiantil el  programa de servicio social, abierto a distintas áreas del conocimiento.</p>
@@ -42,6 +45,8 @@
 	<br>
 	<p>Estas son las diferentes áreas en las que puedes participar:</p>
 
+<div class="row">
+
 <ul>
 	<div class="informacion">
 	
@@ -49,7 +54,7 @@
 			
 			<div id="accordion">
 				
-				<h3>Artes Visuales</h3>
+				<h5>Artes Visuales</h5>
 				<div>
 					<ul>
 						<li>Apoyo en la alimentación de aparatos pre cinematográficos y cinematográficos de la colección del acervo del museo virtual.</li> 
@@ -60,7 +65,7 @@
 					</ul>
 					<br>
 				</div>
-				<h3>Bibliotecología y estudios de la información</h3>
+				<h5>Bibliotecología y estudios de la información</h5>
 				<div>
 					<ul>
 						<li>Revisar y organizar la documentación referente al ingreso de material al acervo de la DGAC.</li> 
@@ -70,7 +75,7 @@
 					</ul>
 					<br>
 				</div>
-				<h3>Ciencias de la comunicación</h3>
+				<h5>Ciencias de la comunicación</h5>
 				<div>
 					<ul>
 						<li>Realizar estudios de mercadotécnica para proponer estrategias para promover y difundir la programación.</li> 
@@ -81,7 +86,7 @@
 					</ul>
 					<br>
 				</div>
-				<h3>Composición</h3>
+				<h5>Composición</h5>
 				<div>
 					<ul>
 						<li>Apoyo en la investigación para sincronización de imagen con partitura musical para la programación y exhibición de películas silentes del acervo de la filmoteca de la UNAM.</li> 
@@ -92,7 +97,7 @@
 					</ul>
 					<br>
 				</div>
-				<h3>Derecho</h3>
+				<h5>Derecho</h5>
 				<div>
 					<ul>
 						<li>Indagar, proponer y resolver la situación legal de los materiales cinematográficos que se encuentran en la filmoteca de la UNAM.</li> 
@@ -103,7 +108,7 @@
 					</ul>
 					<br>
 				</div>
-				<h3>Historia</h3>
+				<h5>Historia</h5>
 				<div>
 					<ul>
 						<li>Búsqueda de material cinematográfico en base de datos.</li> 
@@ -115,7 +120,7 @@
 					</ul>
 					<br>
 				</div>
-				<h3>Ingeniería en computación</h3>
+				<h5>Ingeniería en computación</h5>
 				<div>
 					<ul>
 						<li>Desarrollar sistemas en java para aplicaciones y/o servicios web.</li> 
@@ -126,7 +131,7 @@
 					</ul>
 					<br>
 				</div>
-				<h3>Literatura dramática y teatro</h3>
+				<h5>Literatura dramática y teatro</h5>
 				<div>
 					<ul>
 						<li>Investigación para sincronización de imagen con partitura musical para la programación y exhibición de películas silentes del acervo de la filmoteca de la UNAM.</li>  
@@ -137,7 +142,7 @@
 					</ul>
 					<br>
 				</div>
-				<h3>Matemáticas</h3>
+				<h5>Matemáticas</h5>
 				<div>
 					<ul>
 						<li>Apoyar en el desarrollo de algoritmos en javascript para soportar paginas web con animaciones (2d y 3d).</li>  
@@ -149,7 +154,7 @@
 					</ul>
 					<br>
 				</div>
-				<h3>Sociología</h3>
+				<h5>Sociología</h5>
 				<div>
 					<ul>
 						<li>Apoyar con la elaboración de encuestas y/o estudios de mercado para conocer el perfil de los asistentes a las actividades programadas.</li>  
@@ -160,7 +165,7 @@
 					</ul>
 					<br>
 				</div>
-				<h3>Informática</h3>
+				<h5>Informática</h5>
 				<div>
 					<ul>
 						<li>Desarrollar sistemas en java para aplicaciones y 7o servicios web.</li>  
@@ -171,7 +176,7 @@
 					</ul>
 					<br>
 				</div>
-				<h3>Educación musical</h3>
+				<h5>Educación musical</h5>
 				<div>
 					<ul>
 						<li>Apoyo en la investigación para sincronización de imagen con partitura musical para la programación y exhibición de películas silentes del acervo de la filmoteca de la UNAM.</li>  
@@ -182,7 +187,7 @@
 					</ul>
 					<br>
 				</div>
-				<h3>Comunicación y periodismo</h3>
+				<h5>Comunicación y periodismo</h5>
 				<div>
 					<ul>
 						<li>Apoyar en la organización de actividades de difusión, prensa y medios electrónicos. 
@@ -192,7 +197,7 @@
 					</ul>
 					<br>
 				</div>
-				<h3>Diseño y comunicación visual</h3>
+				<h5>Diseño y comunicación visual</h5>
 				<div>
 					<ul>
 						<li>Diseñar y procesar materiales para la producción de impresos.</li>  
@@ -203,7 +208,7 @@
 					</ul>
 					<br>
 				</div>
-				<h3>Ingeniería mecánica</h3>
+				<h5>Ingeniería mecánica</h5>
 				<div>
 					<ul>
 						<li>Restaurar equipos cinematográficos.</li>  
@@ -214,7 +219,7 @@
 					</ul>
 					<br>
 				</div>
-				<h3>Desarrollo y gestión interculturales</h3>
+				<h5>Desarrollo y gestión interculturales</h5>
 				<div>
 					<ul>
 						<li>Utilizar los mecanismos básicos de conservación de los legados culturales, documentales y audiovisuales para el patrimonio fílmico de la UNAM. 
@@ -232,6 +237,8 @@
 		</div>	
 	</div>
 </ul>
+
+</div>
 
 </div>
 @stop
