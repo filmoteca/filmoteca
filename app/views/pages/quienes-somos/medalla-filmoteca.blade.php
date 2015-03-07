@@ -21,7 +21,7 @@
 
 @section('content')
 
-	<h3>Medalla Filmoteca</h3>
+	<h1>Medalla Filmoteca UNAM</h1>
 
 	<div class="image text-center">
 		{{ HTML::image("/imgs/medalla-Filmoteca/medallaFilmoteca.png",'Medalla Filmoteca') }}

@@ -32,7 +32,7 @@
     <img src="/imgs/concursos/jose-rovirosa/galardon-rovirosa.jpg" class="img-responsive" 'Concurso José Rovirosa'></a>
 
     <h1>Premio José Rovirosa</h1>
-        <p>AL MEJOR DOCUMENTAL MEXICANO Y AL MEJOR DOCUMENTAL ESTUDIANTIL</p>
+    <h3>AL MEJOR DOCUMENTAL MEXICANO Y AL MEJOR DOCUMENTAL ESTUDIANTIL</h3>
 
         <p>Con el propósito de rendir homenaje a la obra docente y cinematográfica del maestro José Rovirosa Macías, destacado cineasta universitario y reconocido promotor del género documental en México,
             en julio de 1997, pocos meses después de su muerte, la Dirección General de Actividades Cinematográficas de la UNAM y el Centro Universitario de Estudios Cinematográficos (CUEC) instauraron el Premio anual José Rovirosa al Mejor Documental Mexicano y en el año 2008 se crea la categoría al Mejor Documental Estudiantil Mexicano.
@@ -40,11 +40,12 @@
 
         <p>El Premio José Rovirosa al Mejor Documental Mexicano y Mejor Documental Estudiantil Mexicano pretende estimular la producción del cine documental mexicano, impulsar los trabajos de calidad y ratificar su compromiso con la difusión del cine documental en México, reconocer la labor de quienes han intentado trabajar el campo del documental en nuestro país contra aquellos que nos han hecho creer que el cine es únicamente aquel de ficción y con efectos especiales que se presenta en la mayoría de las salas de exhibición comercial.</p><br>
 
+<div class="row">
     <ul>
         <div class="informacion">
             <div id="accordion-resizer" class="ui-widget-content">  
                 <div id="accordion">    
-                <h3>¿Quién es José Rovirosa</h3>
+                <h5>¿Quién es José Rovirosa</h5>
                         <div>
                             <p>Nació en Orizaba, Veracruz, en 1934. Estudió en el Centro Universitario de Estudios Cinematográficos (CUEC), donde se desempeñó posteriormente como Secretario Administrativo (1970-1978), Director (1978-1985), Secretario Técnico (1991-1993) y miembro del Comité Editorial (1992-1997), además de profesor titular desde 1972, de diferentes materias, tanto en el CUEC como en el Centro de Capacitación Cinematográfica (CCC) y otras escuelas.</p><br>
 
@@ -57,7 +58,7 @@
                             <p>Así mismo, participó en varias instancias e instituciones como la Fundación de Cineastas, la Academia Mexicana de Ciencias y Artes Cinematográficas, entre otras. Y en 1993, José Rovirosa fue distinguido como becario en la categoría de Creadores de Arte en Medios Audiovisuales por el Consejo Nacional para la Cultura y las Artes. En 1997 se instauró en su honor la entrega del <strong>premio José Rovirosa a Mejor documental</strong> y en 2008 se realizó una extensión del premio dando surgimiento al <strong>premio a Mejor Documental Estudiantil</strong>.</p><br>
                         </div>
 
-                <h3>Ganadores 2014</h3>
+                <h5>Ganadores 2014</h5>
                     <div>
                         <ul>
                             <img src="/imgs/concursos/jose-rovirosa/rovirosa-2014.jpg" class="img-responsive" 'concurso José Rovirosa 2014'></a>
@@ -124,7 +125,7 @@
                         </ul>
                     </div>
 
-                <h3>Ganadores 2013</h3>
+                <h5>Ganadores 2013</h5>
                     <div>
                         <ul>
                              <img src="/imgs/concursos/jose-rovirosa/ganadores-rovirosa2013.jpg" class="img-responsive" 'Ganadores premio José Rovirosa 2013'></a>
@@ -204,7 +205,7 @@
                         </ul>
                     </div>
 
-                <h3>Ganadores 2012</h3>
+                <h5>Ganadores 2012</h5>
                     <div>
                         <ul>
                             <img src="/imgs/concursos/jose-rovirosa/ganadora-rovirosa2012.jpg" class="img-responsive" 'Ganadores premio José Rovirosa 2012'></a>
@@ -262,7 +263,7 @@
                         </ul>
                     </div>
 
-                <h3>Ganadores 2011</h3>
+                <h5>Ganadores 2011</h5>
                     <div>
                         <ul>
                             <img src="/imgs/concursos/jose-rovirosa/ganadores-rovirosa2011.jpg" class="img-responsive" 'Ganadores premio José Rovirosa 2011'></a>
@@ -342,7 +343,7 @@
                         </ul>
                     </div>
 
-                <h3>Ganadores 2010</h3>
+                <h5>Ganadores 2010</h5>
                     <div>
                         <ul>
                             <h5><strong>MEJOR DOCUMENTAL MEXICANO</strong></h5>
@@ -387,7 +388,7 @@
                         </ul>
                     </div>
 
-                <h3>Ganadores 2009</h3>
+                <h5>Ganadores 2009</h5>
                     <div>
                         <ul>
                             <h5><strong>MEJOR DOCUMENTAL MEXICANO</strong></h5>
@@ -455,7 +456,7 @@
                         </ul>
                     </div>
 
-                <h3>Ganadores 2008</h3>
+                <h5>Ganadores 2008</h5>
                     <div>
                         <ul>
                             <h5><strong>MEJOR DOCUMENTAL MEXICANO</strong></h5>
@@ -476,7 +477,7 @@
                         </ul>
                     </div>
 
-                <h3>Ganadores 2007-1997</h3>
+                <h5>Ganadores 2007-1997</h5>
                     <div>
                         <ul>
                             <h4>2007</h4>
@@ -581,7 +582,6 @@
         </div>  
     </div>
 </ul>
-
-@stop
+</div>
 
 @stop

@@ -88,6 +88,9 @@
 </div>
 <div class="loading" ng-show="loading"></div>
 
+<h1>Medalla Filmoteca UNAM</h1>
+<h2>GALARDONADOS</h2>
+
 <div class="filmoteca-medal-list ng-cloak">
 	<div class="wrapper-items" id="wrapper-items">
 

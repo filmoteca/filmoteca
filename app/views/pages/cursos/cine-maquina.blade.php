@@ -21,7 +21,9 @@
 		<img src="/imgs/cursos/curso-cine-maquina.jpg" class="img-responsive" 'Seminario de estética cinematográfica cine máquina' aling="left">
 	</div>
 
-	<h2>SEMINARIO DE ESTÉTICA CINEMATOGRÁFICA CINE-MÁQUINA(S): LA OPERACIÓN DE LAS IDEAS-CINE</h2>
+	<h1>Cursos de la Filmoteca de la UNAM</h1>
+  
+  <h2>SEMINARIO DE ESTÉTICA CINEMATOGRÁFICA CINE-MÁQUINA(S): LA OPERACIÓN DE LAS IDEAS-CINE</h2>
    <strong><p>Impartido por Dra. Sonia Rangel Espinosa</p></strong>
    <p><strong>Justificación:</strong></p>
    <p>Siguiendo el planteamiento deleuziano, el seminario pretende explorar las ideas-cine de Godard, Kluge, Tarr, Cronenberg, Herzog, Lynch y otros, conectando y tendiendo puentes  con algunos conceptos e ideas de la filosofía contemporánea de Deleuze, Rancière, Bataille, Blanchot y Trias.</p>

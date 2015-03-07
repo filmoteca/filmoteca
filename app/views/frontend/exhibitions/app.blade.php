@@ -60,7 +60,7 @@
 		</div>
 
 		<div class="exhibition-datepicker" style="display:inline-block; min-height:200px;">
-			<h3>Consulta la Programación</h3>
+			<h4>Consulta la Programación</h4>
 			<datepicker ng-model="dphone" class="well well-sm ng-cloak"></datepicker>
 		</div>
 

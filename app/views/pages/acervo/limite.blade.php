@@ -22,7 +22,8 @@
 		<img src="/imgs/historias-recuperadas/limite.jpg" class="img-responsive" 'Límite' aling="left">
 	</div>
 
-	<h2>LÍMITE</h2>
+	<h1>HISTORIAS RECUPERADAS</h1>
+  <h2>LÍMITE</h2>
 
 	<p>SINOPSIS: Pocas veces tenemos oportunidad de estar ante una obra tan desmesuradamente lírica.  Para 1931, cuando fue rodada esta película, ya existía el sonido impreso ópticamente en la película de una manera técnica y financieramente posible, en nuestros países latinoamericanos. Es evidente que Peixoto no quiso usar el sonido para unos diálogos que probablemente no le permitirían crear el clima emocional, interiorista que concibió para un filme como Límite.  La trama comienza con un bote en el mar donde un hombre y dos mujeres abatidos, abandonados a su suerte, incapaces ya de luchar físicamente para buscar su salvación, rememoran su historia y mediante el recurso cinematográfico del “flash back”, nos dan a conocer los sucesos previos que los han llevado hasta esa situación.</p>
 	<p>Las acciones se sitúan no en la gran ciudad, sino en la provincia, en pueblos pequeños (donde el mar, las aguas de un lago o de los ríos reflejan los árboles, los macizos de flores y arbustos en plena floración). La película nos lleva a un estado de quietud, ensoñación y deseo insatisfecho de imaginar cuál era la intención del director Peixoto ante el universo visual que tenía enfrente y qué podía seleccionar, entre todo ese universo, mediante el cuadro de la cámara.

@@ -18,7 +18,7 @@
 
 
 	<div class="panel-heading">
-		<h2>Filmoteca en los Medios</h2>
+		<h1>Filmoteca en los Medios</h1>
 	</div>
 	
 	<div class="panel-body">
@@ -73,6 +73,7 @@
 				<a href="http://www.sinembargo.mx/02-10-2014/1132083" target="_blank" onclick="window.open(this.href, this.target, 'width=780,height=550'); return false;">La Filmoteca de la UNAM coedita el libro "La fórmula secreta" de Rubén Gámez</a>
 			</li>
 			
+			<a href="http://66.7.195.211/contenido/mostrarContenido.html.php?op=print&id=5130" target="_blank" onclick="window.open(this.href, this.target, 'width=780,height=550'); return false;">Premio Santiaguillo para Filmoteca de la UNAM</a>
 			
 		</ul>
 

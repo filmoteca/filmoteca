@@ -21,7 +21,9 @@
 		<img src="/imgs/cursos/mirada-siniestra.jpg" class="img-responsive" 'La mirada siniestra: el cine según Hitchcock' aling="left">
 	</div>
 
-	<h2>LA MIRADA SINIESTRA: EL CINE SEGÚN  HITCHCOCK (UN ACERCAMIENTO VOUYERISTA)</h2>
+	<h1>Cursos de la Filmoteca de la UNAM</h1>
+
+  <h2>LA MIRADA SINIESTRA: EL CINE SEGÚN  HITCHCOCK (UN ACERCAMIENTO VOUYERISTA)</h2>
    <strong><p>Curso de análisis cinematográfico impartido  por: Juan Santiago Huerta Navarro</p>
 </strong>
 
@@ -156,7 +158,6 @@
 
           <h4>CONSULTA OTROS CURSOS</h4>
 
-          <div class="row">
 
             <div class="row">
 

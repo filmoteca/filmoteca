@@ -16,5 +16,6 @@
 
 @section('content')
 
+	<h1>Cronología</h1>
 
 @stop

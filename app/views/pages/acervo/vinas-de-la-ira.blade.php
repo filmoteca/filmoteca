@@ -22,7 +22,8 @@
 		<img src="/imgs/historias-recuperadas/vinas-de-la-ira.jpg" class="img-responsive" 'Las viñas de la ira' aling="left">
 	</div>
 
-	<h2>LAS VIÑAS DE LA IRA </h2>
+	<h1>HISTORIAS RECUPERADAS</h1>
+  <h2>LAS VIÑAS DE LA IRA </h2>
 
 	<p>SINOPSIS: Libre bajo fianza, Tom Joad se dirige a la casa de sus padres en Oklahoma. Por el camino, encuentra  a Casy  quien ha dejado de ser predicador por haber perdido la fe. La granja familiar está abandonada, la persistente sequía y la especulación financiera los han obligado a abandonar su hogar.  Le informan que toda su familia ha decidido emigrar a California debido a que, en un volante publicitario, han leído que allá hay mucho trabajo. Los encuentra justo a tiempo para partir con ellos.  Después de muchas penalidades, llegan a California para descubrir que los lugares de trabajo son escasos y que la competencia para ocuparlos es feroz. Los dueños recurren a guardias blancas para imponer sus condiciones, llegando incluso a disparar contra los trabajadores. Casy ha recuperado su fe, pero ahora, como organizador de los obreros agrícolas, lucha para que los trabajadores no tengan que sufrir todo tipo de humillaciones por un mísero salario. A causa de esta lucha, lo asesinan. En ese momento, Tom está con él y logra matar a uno de los agresores. Su familia lo esconde, pero la policía está cerca. Tom decide separarse de su familia. Al despedirse de su madre, Tom le dice que espera volverla a encontrar algún día, mientras él se dedicará a organizar a los trabajadores. Así honrará la memoria de su amigo. La familia de Tom se dirige rumbo al norte, su madre ha recuperado la esperanza y se dispone a enfrentar la vida con ánimo renovado. </p>
 	<br>

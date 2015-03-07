@@ -21,55 +21,55 @@
 		<img src="/imgs/cursos/orson-welles.jpg" class="img-responsive" 'La memoria. Historia del cine documental' aling="left">
 	</div>
 
-	<h2>SEMINARIO ORSON WELLES, MÁS ALLÁ DEL CIUDADANO KANE</h2>
+	<h1>Cursos de la Filmoteca de la UNAM</h1>
+
+  <h2>SEMINARIO ORSON WELLES, MÁS ALLÁ DEL CIUDADANO KANE</h2>
    <strong> <p>Imparte: Francisco Ohem</p></strong>
 
-<p><strong>Objetivo:</strong></p>
+    <p><strong>Objetivo:</strong></p>
 
-<p>Analizar, a través de 16 sesiones parte de la obra de quien es considerado uno de los artistas más versátiles del siglo XX en el campo del teatro, la radio y el cine, en los que tuvo excelentes resultados. Alcanzó el éxito a los veintitrés años gracias a la obra radiofónica The War of the Worlds, que causó conmoción en los Estados Unidos cuando muchos oyentes del programa pensaron que se trataba de una retransmisión verdadera de una invasión extraterrestre. Este sensacional debut le valió un contrato para tres películas con el estudio cinematográfico RKO, que le otorgó libertad absoluta en sus realizaciones. A pesar de estos beneficios, sólo uno de sus proyectos previstos pudo ver la luz: Citizen Kane (1941), su película más exitosa.</p>
+    <p>Analizar, a través de 16 sesiones parte de la obra de quien es considerado uno de los artistas más versátiles del siglo XX en el campo del teatro, la radio y el cine, en los que tuvo excelentes resultados. Alcanzó el éxito a los veintitrés años gracias a la obra radiofónica The War of the Worlds, que causó conmoción en los Estados Unidos cuando muchos oyentes del programa pensaron que se trataba de una retransmisión verdadera de una invasión extraterrestre. Este sensacional debut le valió un contrato para tres películas con el estudio cinematográfico RKO, que le otorgó libertad absoluta en sus realizaciones. A pesar de estos beneficios, sólo uno de sus proyectos previstos pudo ver la luz: Citizen Kane (1941), su película más exitosa.</p>
 
-<p><strong>Filmes:</strong></p>
+    <p><strong>Filmes:</strong></p>
 
-<p><strong>Largometrajes terminados</strong></p>
-  <ol>
-    <li>Citizen Kane (El ciudadano Kane) 1941</li>
-    <li>The Magnificent Ambersons (Soberbia) 1942</li>
-    <li> The Stranger (El extraño) 1946</li>
-    <li>The Lady from Shanghai (La dama de Shanghai) 1947</li>
-    <li>Macbeth 1948</li>
-    <li>Othello 1952</li>
-    <li>Mr. Arkadin (Reporte confidencial) 1955</li>
-    <li>Touch of Evil (Sombras del mal) 1958</li>
-    <li>The Trail (El proceso) 1962</li>
-    <li>Chimes at Midnight (Campanadas a medianoche) 1965</li>
-    <li>The Immortal Story (La historia inmortal)1968</li>
-    <li>Vérités et mensonges (Con F de falso) 1974  </li>
-    <li>Filming Othello (Filmando Otelo) 1978 (Codirección sin crédito en la pantalla)</li>
-    <li>Journey into Fear (Jornada de terror) 1943 Norman Foster (Largometraje inconcluso, terminado póstumamente)</li>
-    <li>Don Quijote de Orson Welles 1992 Jesús Franco</li>
-    <li>It's All True (Todo es verdad) 1993 Bill Krohn y Myron Meisel (Narrador)</li>
-    <li>The Spanish Earth (Tierra de España) 1937 Joris Ivens</li>
-    <li>Centinelas del silencio 1971 Robert Amram (en la versión en inglés) (Actor)    </li>
-    <li>Black Magic (Cagliostro) 1949 Gregory Ratoff</li>
-    <li>The Third Man (El tercer hombre) Carol Reed, Reino Unido 1949</li>
-    <li>Moby Dick 1956 John Huston</li>
-    <li>RoGoPaG 1962 Pier Paolo Pasolini (La ricotta)</li>
-    <li>Tepepa 1968 Giulio Petroni</li>
-    <li>Catch 22 (Trampa 22) 1970 Mike Nichols</li>
-    <li>Someone to Love 1985 Henry Jaglom</li>
-    <li>RKO 281 1999 Benjamin Ross</li>
-    <li>Me and Orson Welles (Yo y Orson Welles) 2008 Richard Linklater</li>
-  </ol> 
-<p>Se analizarán diversos cortometrajes, proyectos inconclusos y programas de televisión dirigidos por él mismo y
-    fragmentos de diversos documentales y películas de ficción dedicadas a analizar y apreciar su obra</p>
-   <br><br> 
-  
-  <div class="col-xs-12 col-sm-12">
+    <p><strong>Largometrajes terminados</strong></p>
+      <ol>
+        <li>Citizen Kane (El ciudadano Kane) 1941</li>
+        <li>The Magnificent Ambersons (Soberbia) 1942</li>
+        <li> The Stranger (El extraño) 1946</li>
+        <li>The Lady from Shanghai (La dama de Shanghai) 1947</li>
+        <li>Macbeth 1948</li>
+        <li>Othello 1952</li>
+        <li>Mr. Arkadin (Reporte confidencial) 1955</li>
+        <li>Touch of Evil (Sombras del mal) 1958</li>
+        <li>The Trail (El proceso) 1962</li>
+        <li>Chimes at Midnight (Campanadas a medianoche) 1965</li>
+        <li>The Immortal Story (La historia inmortal)1968</li>
+        <li>Vérités et mensonges (Con F de falso) 1974  </li>
+        <li>Filming Othello (Filmando Otelo) 1978 (Codirección sin crédito en la pantalla)</li>
+        <li>Journey into Fear (Jornada de terror) 1943 Norman Foster (Largometraje inconcluso, terminado póstumamente)</li>
+        <li>Don Quijote de Orson Welles 1992 Jesús Franco</li>
+        <li>It's All True (Todo es verdad) 1993 Bill Krohn y Myron Meisel (Narrador)</li>
+        <li>The Spanish Earth (Tierra de España) 1937 Joris Ivens</li>
+        <li>Centinelas del silencio 1971 Robert Amram (en la versión en inglés) (Actor)    </li>
+        <li>Black Magic (Cagliostro) 1949 Gregory Ratoff</li>
+        <li>The Third Man (El tercer hombre) Carol Reed, Reino Unido 1949</li>
+        <li>Moby Dick 1956 John Huston</li>
+        <li>RoGoPaG 1962 Pier Paolo Pasolini (La ricotta)</li>
+        <li>Tepepa 1968 Giulio Petroni</li>
+        <li>Catch 22 (Trampa 22) 1970 Mike Nichols</li>
+        <li>Someone to Love 1985 Henry Jaglom</li>
+        <li>RKO 281 1999 Benjamin Ross</li>
+        <li>Me and Orson Welles (Yo y Orson Welles) 2008 Richard Linklater</li>
+      </ol> 
+    <p>Se analizarán diversos cortometrajes, proyectos inconclusos y programas de televisión dirigidos por él mismo y
+        fragmentos de diversos documentales y películas de ficción dedicadas a analizar y apreciar su obra</p>
+       <br><br> 
+    
+    <div class="col-xs-12 col-sm-12">
          <h4>CONSULTA OTROS CURSOS</h4>
 
           <div class="row">
-
-            <div class="row">
 
             <div class="col-6 col-sm-6 col-lg-6">
               <h5>SEMINARIO ESTÉTICA CINEMATOGRÁFICA CINE-MÁQUINA(S)</h5>
@@ -112,11 +112,9 @@
               <p>Viernes de 17:00 a 20:00 hrs.</p>
               <p><a class="btn btn-default" href="/pages/cursos/mirada-siniestra" role="button">Ver temario »</a></p>
             </div><!--/span-->
-            
-            
 
           </div><!--/row-->
 
-</div><!--/span-->
+    </div><!--/span-->
 
 @stop

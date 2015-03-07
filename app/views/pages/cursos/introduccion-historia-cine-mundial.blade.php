@@ -21,7 +21,9 @@
 		<img src="/imgs/cursos/cine-mundial.jpg" class="img-responsive" 'Introducción al historia del cine mundial' aling="left">
 	</div>
 
-	<h2>INTRODUCCIÓN A LA HISTORIA DEL CINE MUNDIAL</h2>
+	<h1>Cursos de la Filmoteca de la UNAM</h1>
+  
+  <h2>INTRODUCCIÓN A LA HISTORIA DEL CINE MUNDIAL</h2>
     <strong><p>Imparte el profesor y periodista César Aguilera</p></strong>
     <p>Curso esencial para la Apreciación Cinematográfica. Programa en XII sesiones de 3 horas cada una, sobre los orígenes, corrientes, géneros, escuelas, exponentes y obras trascendentes que inducen al estudio del cine.
     </p>
@@ -78,7 +80,6 @@
 
           <h4>CONSULTA OTROS CURSOS</h4>
 
-          <div class="row">
 
             <div class="row">
 

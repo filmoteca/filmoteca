@@ -22,7 +22,9 @@
 		<img src="/imgs/cursos/historia-documental.jpg" class="img-responsive" 'La memoria. Historia del cine documental' aling="left">
 	</div>
 
-	<h2>LA MEMORIA. HISTORIA DEL DOCUMENTAL</h2>
+	<h1>Cursos de la Filmoteca de la UNAM</h1>
+  <br>
+  <h2>LA MEMORIA. HISTORIA DEL DOCUMENTAL</h2>
    <strong><p>Curso de análisis cinematográfico impartido por: Laura Martínez Díaz</p>
 </strong>
 
@@ -55,12 +57,10 @@
     <br><br>
 
     
-<div class="col-xs-12 col-sm-12">
+      <div class="col-xs-12 col-sm-12">
          
 
-          <h4>CONSULTA OTROS CURSOS</h4>
-
-          <div class="row">
+          <h3>CONSULTA OTROS CURSOS</h3>
 
             <div class="row">
 

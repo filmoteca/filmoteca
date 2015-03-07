@@ -22,7 +22,8 @@
 		<img src="/imgs/historias-recuperadas/la-mancha-de-sangre.jpg" class="img-responsive" 'La mancha de sangre' aling="left">
 	</div>
 
-	<h1>LA MANCHA DE SANGRE</h1>
+	<h1>HISTORIAS RECUPERADAS</h1>
+  <h2>LA MANCHA DE SANGRE</h2>
 
 	<p>SINOPSIS: Una joven se hace cabaretera y es explotada por un padrote celoso y cínico; pero la misma se enamora de un tímido joven fuereño recién llegado a la ciudad. La mancha de sangre es un registro de la vida nocturna en la Ciudad de México, un inventario de los personajes que habitan en el submundo citadino, un desfile de rostros macerados, piernas golpeadas, cuerpos desnudos y miradas libidinosas, es lo que la aguda mirada del pintor y crítico de arte Adolfo Best-Maugard supo plasmar.</p>
 	<br>
