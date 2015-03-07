@@ -46,11 +46,13 @@
 
 		<p>Participa!! Consulta la <a href="/pages/concursos/convocatoria-alfonsoreyes"> Convocatoria.</a></p>
 
+	
+<div class="row">
 	<ul>
 		<div class="informacion">
 			<div id="accordion-resizer" class="ui-widget-content">	
 				<div id="accordion">	
-					<h3>¿Quién fué Alfonso Reyes?</h3>
+					<h5>¿Quién fué Alfonso Reyes?</h5>
 						<div>
 							<p><em>"No hay película mala, siempre existirá un 
 							claroscuro o una imagen que valga la pena"</em>
@@ -78,7 +80,7 @@
 							<br>
 						</div>
 
-					<h3>Ganadores 4º Concurso - 2014</h3>
+					<h5>Ganadores 4º Concurso - 2014</h5>
 						<div>
 							<ul>
 								<h5><strong>CATEGORÍA BACHILLERATO</strong></h5>
@@ -155,7 +157,7 @@
 							</ul>
 						</div>
 
-					<h3>Ganadores 3er. Concurso -2013</h3>
+					<h5>Ganadores 3er. Concurso -2013</h5>
 						<div>
 							<ul>
 								<h5><strong>CATEGORÍA BACHILLERATO</strong></h5>
@@ -263,7 +265,7 @@
 							</ul>
 						</div>
 
-					<h3>Ganadores 2º Concurso - 2012</h3>
+					<h5>Ganadores 2º Concurso - 2012</h5>
 						<div>
 							<ul>
 								<h5><strong>CATEGORÍA BACHILLERATO</strong></h5>
@@ -351,7 +353,7 @@
 							</ul>
 						</div>
 						
-					<h3>Ganadores 1er. Concurso - 2011</h3>
+					<h5>Ganadores 1er. Concurso - 2011</h5>
 						<div>
 							<ul>
 								<h5><strong>CATEGORÍA BACHILLERATO</strong></h5>
@@ -422,7 +424,7 @@
 
 								<li>
 									<br>
-									<span class="datos">El jurado estuvo conformado por: 					</li>
+									<span class="datos">El jurado estuvo conformado por: 					</span></li>
 
 							</ul>
 						</div>
@@ -432,6 +434,6 @@
 			</div>	
 		</div>
 	</ul>
-
+</div>
 
 @stop

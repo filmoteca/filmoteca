@@ -48,7 +48,7 @@
 <p>No te pierdas la oportunidad de inscribirte a los cursos que ofrece la Filmoteca UNAM para ti: </p>
 
 
-	      <div class="col-xs-12 col-sm-12">
+	      
 
           <div class="row">
 
@@ -107,7 +107,7 @@
 
           </div><!--/row-->
 
-        </div><!--/span-->
+        
 	
 
 @stop

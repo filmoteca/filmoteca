@@ -34,10 +34,8 @@
 
 @section('content')
 
-
-      <div class="col-xs-12 col-sm-12">
         
-       <h3>INVITACIONES</h3>
+       <h1>INVITACIONES</h1>
     
          <p>Todos los <strong>miércoles y jueves</strong> hay <strong>ENTRADA LIBRE</strong> en las funciones de las <strong>12:00 hrs.</strong> en las salas del Centro Cultural Universitario (Julio Bracho, José Revueltas y Carlos Monsiváis). Cupo limitado.</p>
      <br>
@@ -47,7 +45,7 @@
         <div class="row">
 
             <div class="col-sm-12">
-              <h4>Febrero 2015</h4>
+              <h3>Febrero 2015</h3>
             </div>
             <br>
               <div class="col-6 col-sm-6 col-lg-6">
@@ -83,6 +81,5 @@
             
         </div><!--/row-->
 
-      </div><!--/span-->
 		
 @stop
