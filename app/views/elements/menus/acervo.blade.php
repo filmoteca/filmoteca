@@ -7,7 +7,8 @@ $menu = array(
 
 	array('Biblioteca', '/pages/acervo/biblioteca'),
 
-	array('Restauración', '/pages/acervo/restauracion'),
+	array('Restauración', '/pages/acervo/restauracion', array(
+		array('Historias recuperadas', '/pages/acervo/historias-recuperadas'))),
 
 	array('Museo virtual', '/pages/quienes-somos/museo-virtual'),
 
