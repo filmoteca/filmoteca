@@ -11,7 +11,7 @@ $menu = array(
 	array('Publicaciones','/pages/press/publicaciones', array ( 
 		/*array('Libros y revistas', '/pages/press/publicaciones'),*/ 
 		array('Libros digitales', '/pages/press/libros-digitales'),
-		array('Artículos', '/pages/press/publicaciones'))),
+		array('Artículos', '/pages/press/articulos'))),
 	
 	array('Noticias', '/news/index'),
 
