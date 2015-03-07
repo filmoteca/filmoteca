@@ -22,7 +22,7 @@
 	<div class="img-servicios">
 		<img src="/imgs/historias-recuperadas/dracula.jpg" class="img-responsive" 'Drácula' aling="left">
 	</div>
-
+  <h1>HISTORIAS RECUPERADAS</h1>
 	<h2>DRÁCULA</h2>
 
 	<p>SINOPSIS: 
