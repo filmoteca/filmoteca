@@ -1,4 +1,4 @@
-<h4>Películas encontradas: <span ng-bind="filterResults">0</span></h4>
+<p>Películas encontradas: <span ng-bind="filterResults">0</span></p>
 
 <div ng-switch="usedFilter" class="ng-cloak">
 	<h3 ng-switch-when="week">
@@ -39,7 +39,7 @@
 					'exhibition/' . $exhibition->id . '/detail',
 					str_limit(
 						$exhibition->exhibition_film->film->title,
-						20),
+						22),
 					array(
 						'title' => 'Ver detalles',
 						'ng-click' => 
