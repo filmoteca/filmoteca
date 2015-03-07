@@ -18,7 +18,7 @@
 
 	
 	<div class="img-servicios">
-		<img src="/imgs/servicios/bovedas.jpg" aling="left">
+		<img src="/imgs/servicios/bovedas.jpg" aling="left" class="img-responsive" 'Bóvedas'>
 	</div>
 
 	<h1>Depósito y resguardo </h1>

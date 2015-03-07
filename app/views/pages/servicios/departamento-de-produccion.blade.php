@@ -18,7 +18,7 @@
 @section('content')
 
 	<div class="img-servicios">
-		<img src="/imgs/servicios/produccion.jpg" aling="left">
+		<img src="/imgs/servicios/produccion.jpg" aling="left" class="img-responsive" 'Producción'>
 	</div>
 
 	<h1>Producción</h1>

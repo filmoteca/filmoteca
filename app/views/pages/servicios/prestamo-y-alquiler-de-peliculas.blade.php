@@ -18,7 +18,7 @@
 @section('content')
 
 	<div class="img-servicios">
-		<img src="/imgs/servicios/prestamo-alquiler.jpg" aling="left">
+		<img src="/imgs/servicios/prestamo-alquiler.jpg" aling="left" class="img-responsive" 'Préstamo y alquiles de películas'>
 	</div>
 
 	<h1>Préstamo y alquiler de películas</h1>

@@ -18,7 +18,7 @@
 @section('content')
 
 	<div class="img-servicios">
-		<img src="/imgs/servicios/banco-imagen.jpg" aling="left">
+		<img src="/imgs/servicios/banco-imagen.jpg" class="img-responsive"  aling="left" 'Banco de imagen'>
 	</div>
 	<h1>Banco de imagen</h1>
 
