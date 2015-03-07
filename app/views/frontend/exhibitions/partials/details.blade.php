@@ -6,9 +6,8 @@ Vista parcial
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
-		<h1>{{ $exhibition->exhibition_film->film->title }}</h1>
-	</div>
-	<div class="panel-footer">
+		
+        <div class="panel-footer">
 		@if( !is_null($exhibition->type) )
 			<p>{{ HTML::image(
 				$exhibition->type->image->url('thumbnail'), 
@@ -18,6 +17,9 @@ Vista parcial
 					{{ $exhibition->type->name }}
 			</p>
 		@endif
+	</div>
+		
+		<h1>{{ $exhibition->exhibition_film->film->title }}</h1>
 	</div>
 
 	<div class="modal-body">
