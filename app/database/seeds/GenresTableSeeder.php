@@ -15,9 +15,13 @@ class GenresTableSeeder extends Seeder {
                      'updated_at' => new DateTime()];
         }, $genres);
 
+        DB::statement('SET foreign_key_checks = 0');
+
         DB::table('genres')->truncate();
 
         DB::table('genres')->insert($rows);
+
+        DB::statement('SET foreign_key_checks = 1');
     }
 
 }
