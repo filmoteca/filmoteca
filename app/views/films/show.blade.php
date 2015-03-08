@@ -31,11 +31,11 @@
 		</tr>
 		<tr>
 			<th>Año</th>
-			<td>{{$resource->year }}</td>
+			<td>{{ implode(',', $resource->years) }}</td>
 		</tr>
 		<tr>
-			<th>Páis</th>
-			<td>{{ DB::table('countries')->find($resource->country_id)->name; }}</td>
+			<th>Países</th>
+			<td>{{ $resource->countries->implode('name', ', ') }}</td>
 		</tr>
 		<tr>
 		    <th>Duración</th>

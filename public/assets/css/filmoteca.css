@@ -5789,7 +5789,7 @@ footer {
 
 .flm-section.carousel img {
   width: 100%;
-  max-height: 250px; }
+  max-height: 200px; }
 .flm-section.carousel .caption {
   position: absolute;
   color: white;
@@ -5989,6 +5989,23 @@ footer {
   padding: inherit;
   border-bottom: inherit;
   color: inherit; }
+
+.view-animate-container {
+  position: relative; }
+
+.messages-stack {
+  position: fixed;
+  z-index: 90;
+  bottom: 25px;
+  left: 50px;
+  max-width: 400px;
+  width: 100%; }
+
+.multicountry {
+  min-width: 100%; }
+
+.multiyear {
+  min-width: 100%; }
 
 .exhibition-datepicker table td,
 .exhibition-datepicker table th {

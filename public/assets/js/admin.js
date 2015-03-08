@@ -10,12 +10,12 @@
 			autoclose: true
 		}).children('input').prop('readonly', true);
 
-		/**
+		/**********************************************
 		 * We validate all the form in the admin zone.
 		 */
 		$('form').parsley();
 
-		/**
+		/***********************************************
 		 * CKEditors
 		 */
 		$('.ckeditor-basic').ckeditor({
@@ -40,6 +40,11 @@
 				name : 'only-youtube',
 				items: ['Youtube']
 			}]
+		});
+
+		$('.multicountry, .multiyear').tokenize({
+			newElements : false,
+			displayDropdownOnFocus : true
 		});
 	});
 })(jQuery);

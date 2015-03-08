@@ -6,9 +6,29 @@ Este pedaso de vista es utilizaco por otras vistas.
 
 {{ Form::formGroup('text','title','Título', 'film') }}
 
-{{ Form::formGroup('year', 'year', 'Año', 'film', ['minYear' => 1896]) }}
+{{-- {{ Form::formGroup('multiYear', 'years[]', 'Año', 'film', ['minYear' => 1896]) }} --}}
 
-{{ Form::formGroup('country', 'country_id', 'País', 'film') }}
+@if( isset($resource) )
+    {{ 
+        Form::multiYear('years[]', 'Año', $resource->years)
+    }}
+@else
+    {{ 
+        Form::multiYear('years[]', 'Año', []);
+    }}
+@endif
+
+@if( isset($resource) )
+    {{ 
+        Form::multiCountry('countries[]', 'Países', $resource->countries->lists('id'))
+    }}
+@else
+    {{ 
+        Form::multiCountry('countries[]', 'Países', []);
+    }}
+@endif
+
+{{-- {{ Form::formGroup('multiCountry', 'countries[]', 'País', 'film') }} --}}
 
 {{ Form::formGroup('text','duration','Duración','film')}}
 
