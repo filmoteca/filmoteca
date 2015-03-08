@@ -20,7 +20,21 @@ class FilmsTableSeeder extends Seeder {
 
     		$film['title'] = $words[rand(0, $wordsLen)] . ' ' . $words[rand(0, $wordsLen)] . ' ' . $words[rand(0,$wordsLen)];
 
-    		$film['year'] = new DateTime(rand(1970,2014) . '-01-01');
+			$dates = [];
+
+
+			$amountDates = rand(1,8);
+
+			for($j = ; $j < $amountDates; $j++ )
+			{
+				$dates[] = new DateTime(rand(1970,2014) . '-01-01');
+			}
+
+			$strDates = array_map(function($_date){
+				return date($_date)->
+			})
+
+    		$film['years'] =
 
     		$film['country_id'] = rand(1,100);
 

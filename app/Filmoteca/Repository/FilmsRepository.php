@@ -9,6 +9,35 @@ class FilmsRepository extends ResourcesRepository
 		$this->resource = $film;
 	}
 
+	public function store(array $data = null)
+	{
+		if( empty( $data ) ) throw new Exception('Empty data');
+
+		$countries_ids = $data['countries'];
+
+		unset($data['countries']);
+
+		$film = $this->resource->create($data);
+		$film->countries()->sync($countries_ids);
+
+		return $film;
+	}
+
+	public function update($id,array $data = null)
+	{
+		if( empty( $data ) ) throw new Exception('Empty data');
+
+		$countries_ids = $data['countries'];
+
+		unset($data['countries']);
+		
+		$film = $this->resource->findOrFail($id);
+		$film->fill($data)->save();
+		$film->countries()->sync($countries_ids);
+
+		return ;
+	}
+
 	/**
 	 * Realiza una búsqueda de una película.
 	 * @param  String $by      

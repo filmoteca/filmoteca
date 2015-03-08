@@ -13,7 +13,7 @@ class Film extends Eloquent implements StaplerableInterface
 
 	protected $guarded = [];
 
-	protected $appends = ['cover_urls', 'country'];
+	protected $appends = ['cover_urls'];
 
 	public function __construct(array $attributes = array())
 	{
@@ -35,15 +35,10 @@ class Film extends Eloquent implements StaplerableInterface
         return $this->belongsTo('Filmoteca\Models\Genre');
     }
 
-	public function getYearAttribute($value)
-	{
-		return Carbon::createFromFormat('Y-m-d', $value)->format('Y');
-	}
+    public function countries(){
 
-	public function setYearAttribute($value)
-	{
-		$this->attributes['year'] = Carbon::createFromFormat('Y', $value)->format('Y-m-d');
-	}
+    	return $this->belongsToMany('Filmoteca\Models\Country');
+    }
 
 	public function getCoverUrlsAttribute()
 	{
@@ -53,8 +48,32 @@ class Film extends Eloquent implements StaplerableInterface
 		];
 	}
 
-	public function getCountryAttribute()
-	{
-		return \DB::table('countries')->find($this->country_id)->name;
-	}
+    public function getYearsAttribute($value)
+    {
+        return explode(',', $value);
+    }
+
+    public function setYearsAttribute($value)
+    {
+        $this->attributes['years'] = implode(',', $value);
+    }
+
+    /**
+     * Remove seconds
+     * @param  [type] $value [description]
+     * @return [type]        [description]
+     */
+    public function getDurationAttribute($value)
+    {
+        return substr($value, 0, strlen($value) -3);
+    }
+
+    /**
+     * Adds the two zeros (seconds).
+     * @param [type] $value [description]
+     */
+    public function setDurationAttribute($value)
+    {
+        $this->attributes['duration'] = $value . ':00';
+    }
 }
