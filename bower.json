@@ -52,6 +52,7 @@
     "ckeditor-youtube-plugin": "https://github.com/pollin14/ckeditor-youtube-plugin.git",
     "angular-animate": "1.2",
     "angular-sanitize": "1.2.*",
-    "slider-camera" : "https://github.com/pixedelic/Camera.git"
+    "slider-camera": "https://github.com/pixedelic/Camera.git",
+    "tokenize" : "https://github.com/zellerda/Tokenize.git"
   }
 }
