@@ -6,10 +6,6 @@ class ExhibitionFilmsTableSeeder extends Seeder {
     {
     	$exhibitionFilms = array();
 
-    	$names = App::make('names');
-
-    	$namesLen = count($names) - 1;
-
         for( $i = 0; $i < 30; $i++)
         {
             $exhibitionFilm = array(
