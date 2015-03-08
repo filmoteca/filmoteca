@@ -39,7 +39,7 @@ class Exhibition extends Eloquent
 
 		$film = $this->exhibition_film->film;
 
-		$tc['título'] 	= $film->title;
+		$tc['título original'] 	= $film->original_title;
 
 		$tc['año'] 		= $film->year;
 

@@ -6,7 +6,7 @@ Este pedaso de vista es utilizaco por otras vistas.
 
 {{ Form::formGroup('text','title','Título', 'film') }}
 
-{{-- {{ Form::formGroup('multiYear', 'years[]', 'Año', 'film', ['minYear' => 1896]) }} --}}
+{{ Form::formGroup('text', 'original_title', 'Título Original', 'film')}}
 
 @if( isset($resource) )
     {{ 

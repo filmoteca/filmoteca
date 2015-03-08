@@ -30,6 +30,10 @@
 			<td>{{$resource->title }}</td>
 		</tr>
 		<tr>
+			<th>Título Original</th>
+			<td>{{$resource->original_title }}</td>
+		</tr>
+		<tr>
 			<th>Año</th>
 			<td>{{ implode(',', $resource->years) }}</td>
 		</tr>
