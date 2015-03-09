@@ -17,7 +17,7 @@
 				<div role="tabpanel" class="tab-pane active" id="video1">
 					<ul class="list-group">
 
-						<li class="list-group-item">La Filmoteca de la UNAM cumple 55 años. Estamos orgullosos de ser el acervo fílmico más grande de Latinoamérica...<span class="see-more"><a href="#">Leer más</a></span></li>
+						<li class="list-group-item">La Filmoteca de la UNAM cumple 55 años. Estamos orgullosos de ser el acervo fílmico más grande de Latinoamérica...<span class="see-more"><a href="/pages/acervo/55-aniversario">Leer más</a></span></li>
 
 						<div class="video-preview">
 							<div class="embed-responsive embed-responsive-4by3">
@@ -29,7 +29,7 @@
 				<div role="tabpanel" class="tab-pane" id="video2">
 					<ul class="list-group">
 
-						<li class="list-group-item">Se realizó la restauración de material de la revolución mexicana, y se presentó en Pordenode Italia, en el marco de...<span class="see-more"><a href="#">Leer más</a></span></li>
+						<li class="list-group-item">Se realizó la restauración de material de la revolución mexicana, y se presentó en Pordenode Italia, en el marco de...<span class="see-more"><a href="/pages/acervo/restauracion-pordenone">Leer más</a></span></li>
 
 						<div class="video-preview">
 							<div class="embed-responsive embed-responsive-4by3">
