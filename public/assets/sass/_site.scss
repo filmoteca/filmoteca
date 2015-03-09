@@ -120,7 +120,7 @@ a{
 
 	.item{
 		float: left;
-		width: 30%;
+		width: 23%;
 		margin-left: 10px;
 	}
 
@@ -156,7 +156,7 @@ h5{
 }
 
 .image-size-icon{
-	max-width: 60px;
+	max-width: 30px;
 }
 
 .image-size-thumbnail{
@@ -166,3 +166,12 @@ h5{
 .angucomplete-dropdown img{
     width: 50px;
 }
+
+
+.panel-footer {
+    background-color: #f5f5f5;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-top: 1px solid #ddd;
+    padding: 4px 15px;
+   }
