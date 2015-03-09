@@ -19,53 +19,31 @@
 @section('content')
 
 
-	<h2>Restauración</h2>
+	<h1>Restauración</h1>
 
-	 <p>Gracias a su trabajo de restauración, la Filmoteca ha logrado mostrar al público en general la riqueza de parte de su archivo, después de haber mejorado notablemente el estado de las copias de películas valiosas para la historia del cine nacional y también de películas restauradas por otros archivos en el extranjero. Esta institución ha capacitado a técnicos de archivos de distintas partes del mundo en su laboratorio y taller; y ha participado en la restauración de materiales de distintas partes de América Latina.</p>
+	 <p>El buen cuidado y preservación de los materiales cinematográficos es una importante función que lleva a cabo la Filmoteca a través de la Subdirección de Rescate y Restauración, que tiene a su cargo todos los servicios relacionados con tal función.</p>
 
-	 <p>La Filmoteca ha restaurdo cintas mundialmente importantes en la historia del cine.</p>
-	
+	<p>Los servicios que presta tanto al acervo como a solicitantes externos se basan en los trabajos que se llevan a cabo en los Departamentos de Talleres y de Laboratorio.</p>
 
-      <div class="col-xs-12 col-sm-12">
-         
-         <h3>HISTORIAS RECUPERADAS</h3>
+	<p>Con ellos es que se revisan y restauran fotomecánicamente materiales antiguos, se realizan transferencias entre una gran diversidad de formatos –desde 9 mm hasta 70 mm- reparación de películas dañadas y se ofrece uno de los ya muy escasos servicios de revelado en blanco y negro que hay en México.</p>
 
-          <div class="row">
+	<p>La Filmoteca de la UNAM ha restaurado, entre otros materiales, los largometrajes de ficción dirigidos por Fernando de Fuentes: El compadre Mendoza (1934), Vámonos con Pancho Villa! (1936) así como la restauración digital (sonido) y fotoquímica (imagen) de El prisionero trece (1933), entre muchas otras más.</p>
 
-            <div class="col-6 col-sm-6 col-lg-6">
-              <h4>LA MANCHA DE SANGRE</h4>
-              <img src="/imgs/historias-recuperadas/la-mancha-de-sangre.jpg" class="img-responsive" 'La mancha de sangre'></a>
-              <p>Filme perdido durante cincuenta años. El negativo original de nitrato de celulosa lo encontramos maltrecho, incompleto y muy rayado.  Los censores, que durante los años treinta secuestraron el filme y lo mutilaron, no solamente lo cortaron sino que lo manipularon de la peor manera:
-              </p>
-              <p><a class="btn btn-default" href="/pages/acervo/mancha-de-sangre" role="button">Leer más »</a></p>
-            </div><!--/span-->
 
-            <div class="col-6 col-sm-6 col-lg-6">
-              <h4>DRÁCULA</h4>
-              <img src="/imgs/historias-recuperadas/dracula.jpg" class="img-responsive" 'Drácula'></a>
-              <p>Como si fueran objetos inservibles y sin valor comercial, los negativos originales de las películas filmadas en todo el mundo se han perdido con pasmosa facilidad.  Así le sucedió a este filme que se consideró desaparecido hasta principios de los años 90; año en que se localizó una copia de nitrato de celulosa de esta película en Cuba.</p>
-              <p><a class="btn btn-default" href="/pages/acervo/dracula" role="button">Leer más »</a></p>
-            </div><!--/span-->
+	<h3>Material de “La Historia en la mirada”</h3>
+		<img src="/imgs/historias-recuperadas/la-historia-en-la-mirada.jpg" class="img-responsive" 'La historia en la mirada'></a>
+		<p>El patrimonio de imágenes en movimiento que preserva la Filmoteca de la UNAM, es de enorme riqueza no solamente universitaria sino nacional; poseemos, entre muchas otras, la más extensa colección de películas testimoniales de la Revolución Mexicana que nos dio pie para hacer la digitalización y restauración de apenas dos horas de las siete que albergamos, con las cuales hicimos el film <i>La Historia en la Mirada</i> que obtuvo el Ariel como el mejor documental de 2010 en la pasada premiación de la Academia de Ciencias y Artes Cinematográficas de México.</p>
+		<a href="http://www.filmoteca.unam.mx/mirada/index.html" target="_blank" >Conoce más detalles de <i>La historia en la mirada</i></a>
 
-            <div class="col-6 col-sm-6 col-lg-6">
-              <h4>LÍMITE</h4>
-              <img src="/imgs/historias-recuperadas/limite.jpg" class="img-responsive" 'Limite'></a>
-				      <p>Varios son los intentos que se han hecho para restaurar este filme. Conocemos, por ejemplo, la versión que fue lanzada en 1978 y exhibida en el Congreso de FIAF en Oaxtepec, Morelos, México, cuyo Simposio llevó como tema “El Cine Olvidado de América Latina”.  Sin embargo, ahora existe otra versión,
-			       </p>
-              <p><a class="btn btn-default" href="/pages/acervo/limite" role="button">Leer más »</a></p>
-            </div><!--/span-->
+	<h3>Redes</h3>
+		<img src="/imgs/historias-recuperadas/redes.jpg" class="img-responsive" 'Redes'></a>
+		<p>Conservamos el único material existente de la cinta hecha en 1934 y dirigida por Fred Zinnemann Redes, que fue aceptada por el Dr. Martin Scorsese del WCF, World Cinema Foundation, y ya restaurada digitalmente se está exhibiendo en diversas partes del mundo.</p>
 
-            <div class="col-6 col-sm-6 col-lg-6">
-              <h4>LAS VIÑAS DE LA IRA</h4>
-              <img src="/imgs/historias-recuperadas/vinas-de-la-ira.jpg" class="img-responsive" 'Las vñas de la ira'></a>
-              <p>Hoy consideramos a John Ford como el mejor director de westerns que ha habido en toda la historia, pero esto no siempre fue así. Desde mediados de los años treinta hasta que los Estados Unidos se involucraron en la Segunda Guerra Mundial, Ford dirigió una serie de dramas sociales que respondían muy puntualmente a la difícil situación por la que atravesaba su país. </p>
-              <p><a class="btn btn-default" href="/pages/acervo/vinas-de-la-ira" role="button">Leer más »</a></p>
-            </div><!--/span-->
+		<p>Gestionó la restauración de la película Redes de Fred Zinnemann (1934) en la Cinemateca de Bolonia, Italia, gracias al apoyo de la World Cinema Foundation dirigida por Martin Scorsese. Este filme fue exhibido en el Festival de Cannes</p>
 
-          </div><!--/row-->
-
-        </div><!--/span-->
- 
+	<h3>Los olvidados</h3>
+		<img src="/imgs/historias-recuperadas/los-olvidados.jpg" class="img-responsive" 'Los olvidados'></a>
+		<p>También conservamos el negativo original del filme dirigido por Luis Buñuel Los olvidados e hicimos la propuesta de registro en el programa Memoria del Mundo de la UNESCO, ahora su fama se ha expandido por diversas partes del mundo.</p>
 
 
 		
