@@ -92,7 +92,7 @@
                 <ul class="dropdown-menu">
                   <li><a href="{{ URL::to('exhibition') }}">Programación del mes</a></li>
                   
-                  <li><a href="/pages/programacion/cartelera-digital">Cartelera digital</a></li>
+                  <li><a href="/billboard">Cartelera digital</a></li>
                   
                   <li><a href="/pages/programacion/invitaciones">Invitaciones</a></li>
                   

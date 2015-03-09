@@ -3,7 +3,7 @@ $menu = array(
 
 	array('Programación', '/exhibition'),
 
-	array('Cartelera', '/pages/programacion/cartelera-digital'),
+	array('Cartelera', '/billboard'),
 
 	array('Invitaciones', '/pages/programacion/invitaciones'),
 
