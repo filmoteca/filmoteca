@@ -42,7 +42,7 @@
             Cartelera de {{ trans('dates.months.' . date('F', strtotime($lastBillboard->created_at))) }}
         </h5>
         <p>
-            <img src="{{ asset( $lastBillboard->image->url('thumbnail')) }}" 
+            <img src="{{ asset( $lastBillboard->image->url('medium')) }}" 
                 class="img-responsive image-size-icon" 
                 title="{{ trans('dates.months.' . date('F', strtotime($lastBillboard->created_at))) }}" 
                 alt="{{ trans('dates.months.' . date('F', strtotime($lastBillboard->created_at))) }}">
