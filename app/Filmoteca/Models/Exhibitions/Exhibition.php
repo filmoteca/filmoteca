@@ -43,7 +43,7 @@ class Exhibition extends Eloquent
 
 		$tc['año'] 		= implode(', ', $film->years);
 
-		$tc['pais'] 	= implode(', ', $film->countries->toArray());
+		$tc['pais'] 	= $film->countries->implode('name', ', ');
 
 		$tc['duración'] = $film->duration;
 

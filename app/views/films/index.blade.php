@@ -19,7 +19,7 @@
 				<td>{{ $film->id }}</td>
 				<td>{{ $film->title }}</td>
 				<td>{{ $film->director }}</td>
-				<td>{{ $film->year }}</td>
+				<td>{{ implode(', ', $film->years) }}</td>
 				<td><img src="{{ $film->image->url('thumbnail') }}" alt="{{ $film->title }}" class="image thumbnail"></td>
 				<td>
 					{{ HTML::linkRoute('admin.film.show', 'Ver',
