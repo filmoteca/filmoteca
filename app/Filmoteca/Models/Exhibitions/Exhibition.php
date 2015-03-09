@@ -41,9 +41,9 @@ class Exhibition extends Eloquent
 
 		$tc['título original'] 	= $film->original_title;
 
-		$tc['año'] 		= $film->year;
+		$tc['año'] 		= implode(', ', $film->years);
 
-		$tc['pais'] 	= DB::table('countries')->find($film->country_id)->name;
+		$tc['pais'] 	= implode(', ', $film->countries->toArray());
 
 		$tc['duración'] = $film->duration;
 
