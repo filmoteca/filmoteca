@@ -41,7 +41,7 @@
         <h5 class="text-uppercase">
             Cartelera de {{ trans('dates.months.' . date('F', strtotime($lastBillboard->created_at))) }}
         </h5>
-        <p>
+        <p class="image-billboard">
             <img src="{{ asset( $lastBillboard->image->url('medium')) }}" 
                 class="img-responsive image-size-icon" 
                 title="{{ trans('dates.months.' . date('F', strtotime($lastBillboard->created_at))) }}" 
@@ -64,7 +64,7 @@
             <h5 class="text-uppercase">
                 {{ trans('dates.months.' . date('F', strtotime($billboard->created_at))) }}
             </h5>
-            <p>
+            <p class="image-billboard">
                 <img src="{{ asset( $billboard->image->url('thumbnail')) }}" 
                     class="img-responsive image-size-icon" 
                     title="{{ trans('dates.months.' . date('F', strtotime($billboard->created_at))) }}" 
