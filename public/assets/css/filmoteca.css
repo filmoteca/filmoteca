@@ -5754,11 +5754,11 @@ h5 {
 .image-size-icon {
   max-width: 30px; }
 
-.col-sm-12 .image-size-icon {
+.col-sm-12 .image-billboard > .image-size-icon {
   max-width: 100%;
   width: 250px; }
 
-.col-sm-3 .image-size-icon {
+.col-sm-3 .image-billboard > .image-size-icon {
   max-width: 150px; }
 
 .image-size-thumbnail {
