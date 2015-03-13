@@ -88,8 +88,8 @@
 						<br>
 						<span class="datos">Teléfono: 5622 9596</span>
 						<br>
-						<span class="datos">E-mail:</span>
-						<a href="mailto:"></a>
+						<span class="datos">E-mail: </span>
+						<a href="mailto: fco_ramirez@unam.mx">fco_ramirez@unam.mx</a>
 					</li>
 					<br>
 					<li>
@@ -103,14 +103,14 @@
 						<a href="mailto:vallopja@unam.mx">vallopja@unam.mx</a>
 					</li>
 				</div>
-				<h5>Subdirección de Preservación y Acervos</h5>
+				<h5>Subdirección de Acervos</h5>
 				<div>
 					<li>
 						<span class="datos">Su función principal es el manejo, organización y conservación del acervo filmográfico y de materiales impresos. Coordina las siguientes áreas: Banco de imagen, Bóvedas, Catalogación, Centro de Documentación y Producción.</span>
 					</li>
 					<br>
 					<li id="preservacion_acervos">
-						<span class="nombre">Miguel Ángel Recillas</span>
+						<span class="nombre">Miguel Ángel Recillas Herrera</span>
 						<br>
 						<span class="cargo">Subdirector</span>
 						<br>
@@ -121,7 +121,7 @@
 					</li>
 					<br>
 					<li>
-						<span class="nombre">Nahún Calleros </span>
+						<span class="nombre">Nahún Calleros Carriles</span>
 						<br>
 						<span class="cargo">Banco de Imagen</span>
 						<br>
@@ -132,7 +132,7 @@
 					</li>
 					<br>
 					<li>
-						<span class="nombre">Juan García</span>
+						<span class="nombre">Juan García Hernández</span>
 						<br>
 						<span class="cargo">Bóvedas</span>
 						<br>
@@ -143,7 +143,7 @@
 					</li>
 					<br>
 					<li>
-						<span class="nombre">Ángel Martínez  </span>
+						<span class="nombre">Ángel Martínez Juárez</span>
 						<br>
 						<span class="cargo">Catalogación</span>
 						<br>
@@ -154,7 +154,7 @@
 					</li>
 					<br>
 					<li>
-						<span class="nombre">Antonia Rojas</span>
+						<span class="nombre">Antonia Rojas Ávila</span>
 						<br>
 						<span class="cargo">Centro de Documentación</span>
 						<br>
@@ -165,7 +165,7 @@
 					</li>
 					<br>
 					<li>
-						<span class="nombre">Jesús Brito</span>
+						<span class="nombre">Jesús Brito Nájera</span>
 						<br>
 						<span class="cargo">Producción</span>
 						<br>
@@ -182,7 +182,7 @@
 					</li>
 					<br>
 					<li id="difusion">
-						<span class="nombre">Carmen Carrara </span>
+						<span class="nombre">Carmen Carrara y García</span>
 						<br>
 						<span class="cargo">Subdirectora</span>
 						<br>
@@ -193,7 +193,7 @@
 					</li>
 					<br>
 					<li>
-						<span class="nombre">María Luisa Barnés</span>
+						<span class="nombre">María Luisa Barnés Regueiro</span>
 						<br>
 						<span class="cargo">Coordinación de Comunicación</span>
 						<br>
@@ -204,7 +204,7 @@
 					</li>
 					<br>
 					<li>
-						<span class="nombre">Doris Morales</span>
+						<span class="nombre">Doris Morales Bautista</span>
 						<br>
 						<span class="cargo">Prensa</span>
 						<br>
@@ -215,7 +215,7 @@
 					</li>
 					<br>
 					<li>
-						<span class="nombre">Carmen Alegría</span>
+						<span class="nombre">Carmen Alegría Pérez</span>
 						<br>
 						<span class="cargo">Vinculación</span>
 						<br>
@@ -226,7 +226,7 @@
 					</li>
 					<br>
 					<li>
-						<span class="nombre">Omar Leobardo Marín</span>
+						<span class="nombre">Omar Leobardo Marín Vergara</span>
 						<br>
 						<span class="cargo">Museografía</span>
 						<br>
@@ -237,7 +237,7 @@
 					</li>
 					<br>
 					<li>
-						<span class="nombre">Rosa María Campos</span>
+						<span class="nombre">Rosa María González Campos</span>
 						<br>
 						<span class="cargo">Librería y Tienda</span>
 						<br>
@@ -252,7 +252,7 @@
 					</li>
 					<br>
 					<li id="acceso_interinstitucional">
-						<span class="nombre">José Manuel García</span>
+						<span class="nombre">José Manuel García Ortega</span>
 						<br>
 						<span class="cargo">Jefe de Unidad</span>
 						<br>
@@ -263,7 +263,7 @@
 					</li>
 					<br>
 					<li>
-						<span class="nombre">Ignacio Molina</span>
+						<span class="nombre">Ignacio Molina Moysen</span>
 						<br>
 						<span class="cargo">Distribución</span>
 						<br>
@@ -271,6 +271,16 @@
 						<br>
 						<span class="datos">E-mail:</span>
 						<a href="mailto:distfilm@unam.mx">distfilm@unam.mx</a>
+					</li>
+					<li>
+						<span class="nombre">Jorge Sánchez González</span>
+						<br>
+						<span class="cargo">Programación</span>
+						<br>
+						<span class="datos">Teléfono: 5622 9497</span> 
+						<br>
+						<span class="datos">E-mail:</span>
+						<a href="mailto:jorceti1@unam.mx">jorceti1@unam.mx</a>
 					</li>
 				</div>
 				<h5>Unidad de Programación</h5>
@@ -280,7 +290,7 @@
 					</li>
 					<br>
 					<li id="programacion">
-						<span class="nombre">Ximena Perujo</span>
+						<span class="nombre">Ximena Perujo Cano</span>
 						<br>
 						<span class="cargo">Jefa de Unidad</span>
 						<br>
@@ -297,7 +307,7 @@
 					</li>
 					<br>
 					<li id="nuevas_tecnologias">
-						<span class="nombre">Gerardo león Lastra</span>
+						<span class="nombre">Gerardo León Lastra</span>
 						<br>
 						<span class="cargo">Coordinador</span>
 						<br>
@@ -308,7 +318,7 @@
 					</li>
 					<br>
 					<li>
-						<span class="nombre">Manuel Comi</span>
+						<span class="nombre">Manuel Comi Xolot</span>
 						<br>
 						<span class="cargo">Área Técnica</span>
 						<br>
@@ -336,7 +346,7 @@
 					</li>
 					<br>
 					<li>
-						<span class="nombre">Jaqueline Rodríguez</span>
+						<span class="nombre">Jaqueline Rodríguez Pavón</span>
 						<br>
 						<span class="cargo">Presupuesto</span>
 						<br>
@@ -347,7 +357,7 @@
 					</li>
 					<br>
 					<li>
-						<span class="nombre">Rocío Chávez</span>
+						<span class="nombre">Rocío Chávez Germán</span>
 						<br>
 						<span class="cargo">Personal</span>
 						<br>
@@ -358,7 +368,7 @@
 					</li>
 					<br>
 					<li>
-						<span class="nombre">María Eugenia Rojas</span>
+						<span class="nombre">María Eugenia Rojas Ávila</span>
 						<br>
 						<span class="cargo">Bienes y suministros</span>
 						<br>
@@ -369,7 +379,7 @@
 					</li>
 					<br>
 					<li>
-						<span class="nombre">Irma Álvarez</span>
+						<span class="nombre">Irma Álvarez Arroyo</span>
 						<br>
 						<span class="cargo">Servicios Generales</span>
 						<br>
@@ -390,7 +400,7 @@
 						<br>
 						<span class="cargo">Departamento de Enlace y relaciones Interinstitucionales</span>
 						<br>
-						<span class="datos">Teléfono: 5622 9589 </span>
+						<span class="datos">Teléfono: 5622 9589</span>
 						<br>
 						<span class="datos">E-mail:</span>
 						<a href="mailto:nadina1020@gmail.com">nadina1020@gmail.com</a>

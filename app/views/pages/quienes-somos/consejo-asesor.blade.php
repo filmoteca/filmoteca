@@ -76,7 +76,7 @@
 			<img src="/imgs/consejo-asesor/fernando_macotela.jpg">
 		</div>
 		<div class="col-sm-6">
-			<span class="nombre">Lic. Fernando Macotela</span>
+			<span class="nombre">Lic. Fernando Macotela Vargas</span>
 			<br>
 			<span class="cargo">Consejero
 			</span>
@@ -91,7 +91,7 @@
 			<img src="/imgs/consejo-asesor/armando_casas.jpg">
 		</div>
 		<div class="col-sm-6">
-			<span class="nombre">Cineasta Armando Casas</span>
+			<span class="nombre">Cineasta Armando Casas Pérez</span>
 			<br>
 			<span class="cargo">Consejero
 			</span>
@@ -106,7 +106,7 @@
 			<img src="/imgs/consejo-asesor/felipe_coria.jpg">
 		</div>
 		<div class="col-sm-6">
-			<span class="nombre">Cineasta Felipe Coria</span>
+			<span class="nombre">Cineasta José Felipe Coria Coral</span>
 			<br>
 			<span class="cargo">Consejero
 			</span>
@@ -181,13 +181,13 @@
 			<img src="/imgs/consejo-asesor/miguel_angel_recillas.jpg">
 		</div>
 		<div class="col-sm-6">
-			<span class="nombre">Lic. Miguel Ángel Recillas</span>
+			<span class="nombre">Lic. Miguel Ángel Recillas Herrera</span>
 			<br>
 			<span class="cargo">Subdirector de Acervos
 			</span>
 			<br>
-			<!-- <img src="/assets/imgs/descarga-PDF.png">
-			<a href="/pdf/miguel_angel_recillas.pdf" target="_blank">Resumen curricular</a> -->
+			<img src="/assets/imgs/descarga-PDF.png">
+			<a href="/pdf/miguel_angel_recillas.pdf" target="_blank">Resumen curricular</a>
 		</div>
 	</div>
 	<br>
@@ -196,7 +196,7 @@
 			<img src="/imgs/consejo-asesor/jose_manuel1.jpg">
 		</div>
 		<div class="col-sm-6">
-			<span class="nombre">José Manuel García</span>
+			<span class="nombre">José Manuel García Ortega</span>
 			<br>
 			<span class="cargo">Jefe de la Unidad de Acceso Interinstitucional
 			</span>
