@@ -127,6 +127,7 @@ return array(
 		'Fitztrev\LaravelHtmlMinify\LaravelHtmlMinifyServiceProvider',
         'Fbf\LaravelContactForm\LaravelContactFormServiceProvider',
         'Monarobase\CountryList\CountryListServiceProvider',
+        'Maatwebsite\Excel\ExcelServiceProvider',
 	),
 
 	/*
@@ -195,6 +196,7 @@ return array(
 		'View'            => 'Illuminate\Support\Facades\View',
 		'Sentry'		  => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
 		'Countries' 	  => 'Monarobase\CountryList\CountryListFacade',
+		'Excel' 		  => 'Maatwebsite\Excel\Facades\Excel',
 
 	),
 

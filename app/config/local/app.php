@@ -20,10 +20,4 @@ return array(
 		'Way\Generators\GeneratorsServiceProvider',
 		'Maatwebsite\Excel\ExcelServiceProvider',
 	)),
-
-	'aliases' => append_config(array(
-		
-		'Excel' => 'Maatwebsite\Excel\Facades\Excel',
-	))
-
 );
