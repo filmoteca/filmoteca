@@ -46,6 +46,7 @@
 
 	"require-dev": {
     	"way/generators": "~2.0",
-    	"monarobase/country-list": "1.2.*"
+    	"monarobase/country-list": "1.2.*",
+		"maatwebsite/excel": "1.3.0"
 	}
 }

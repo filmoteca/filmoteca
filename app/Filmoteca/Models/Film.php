@@ -55,6 +55,20 @@ class Film extends Eloquent implements StaplerableInterface
 
     public function setYearsAttribute($value)
     {
+        if(is_string($value))
+        {
+            $this->attributes['years'] = $value;
+
+            return;
+        }
+
+        if(is_numeric($value))
+        {
+            $this->attributes['years'] = '' . $value;
+
+            return;
+        }
+
         $this->attributes['years'] = implode(',', $value);
     }
 
