@@ -3,7 +3,6 @@
 <table class="table table-striped table-bordered table-responsive">
 	<thead>
 		<tr>
-			<th>ID</th>
 			<th>Título de la película</th>
 			<th>Director</th>
 			<th>Horarios</th>
@@ -15,7 +14,6 @@
 	<tbody>
 		@foreach($resources as $exhibition )
 			<tr>
-				<td>{{ $exhibition->id }}</td>
 				<td>{{ $exhibition->exhibition_film->film->title }}</td>
 				<td>{{ $exhibition->exhibition_film->film->director }}</td>
 				
