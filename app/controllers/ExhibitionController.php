@@ -1,16 +1,9 @@
 <?php
 
-use Filmoteca\Repository\ExhibitionsRepository;
-
-use Filmoteca\Models\Exhibitions\Auditorium;
-
-use Filmoteca\ExhibitionsManager;
-
-use Filmoteca\Models\Film;
-
-use Filmoteca\Models\Exhibitions\Exhibition;
-
 use Carbon\Carbon;
+use Filmoteca\Repository\ExhibitionsRepository;
+use Filmoteca\Models\Exhibitions\Auditorium;
+use Filmoteca\ExhibitionsManager;
 
 class ExhibitionController extends BaseController
 {
@@ -62,7 +55,7 @@ class ExhibitionController extends BaseController
 
 	public function search($by)
 	{
-		$exhbitions = $this->repository
+		$exhibitions = $this->repository
 			->search($by, Input::get('value'));
 
 		return View::make('exhibitions.search-result', $exhibitions);
@@ -108,41 +101,20 @@ class ExhibitionController extends BaseController
 
 	public function find(){
 
-		$q = Film::getQuery();
+        $fields         = [];
+        $fieldsNames    = ['title', 'director'];
 
-		array_reduce(['title', 'director'], function(){
+        foreach($fieldsNames as $name)
+        {
+            if(Input::has($name))
+            {
+                $fields[$name] = Input::get($name);
+            }
+        }
 
-		});
+        $resources = $this->repository->findByTitleDirector($fields);
 
-
-		if( Input::has('title') && !empty( Input::get('title')) ){
-
-			$q->where('title', 'like' ,'%' . Input::get('title') . '%');
-		}
-
-		if( Input::has('director') && !empty( Input::get('director'))){
-
-			$q->where('director', 'like', '%' . Input::get('director') . '%');
-		}
-
-		$films_ids = array_map(function($dummyObject){
-			return $dummyObject->id; //The query builder returns an array and does not a collection. I do not know why.
-		}, $q->get(['id']) ) ;
-
-		$view = View::make('frontend.exhibitions.history');
-
-		if( !empty($films_ids) ){
-
-			$resources = Exhibition::whereHas('exhibitionFilm', function($q) use ($films_ids){
-
-				$q->whereIn('id', $films_ids);
-			})->paginate(15);
-
-			return $view->with('resources', $resources);
-		}else{
-
-			return $view->with('noResults', 0);
-		}
+        return View::make('frontend.exhibitions.history')->with('resources', $resources);
 		
 	}
 }

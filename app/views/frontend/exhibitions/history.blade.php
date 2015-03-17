@@ -1,4 +1,3 @@
-
 @extends('layouts.default')
 
 @section('breadcrumbs')
@@ -36,19 +35,14 @@
 		{{ Form::close()}}
 	</div>
 
-	@if( isset( $noResults ))
-		<div class="alert alert-success">Sín resultados</div>
-	@endif
-
-
 	@if( isset($resources) )
 		
 		<div class="alert alert-success">Resultados {{ $resources->count() }}</div>
 
-		@if( $resources->count() > 0 )
+        @if( $resources->count() > 0 )
 
-			@include('frontend.exhibitions.partials.tabulator', ['editable' => false]);
-			
+			@include('frontend.exhibitions.partials.tabulator', ['editable' => false])
+
 		@endif
 	@endif
 </div>

@@ -6,6 +6,7 @@ use Filmoteca\Models\Exhibitions\Exhibition;
 use Filmoteca\Models\Exhibitions\ExhibitionFilm;
 use Filmoteca\Models\Film;
 use StdClass;
+use Illuminate\Database\Eloquent\Collection;
 
 class ExhibitionsRepository extends ResourcesRepository
 {
@@ -14,11 +15,10 @@ class ExhibitionsRepository extends ResourcesRepository
 		ExhibitionFilm $exhibitionFilm,
 		Film $film)
 	{
-		$this->exhibition = $exhibition;
-		$this->exhibitionFilm = $exhibitionFilm;
-		$this->repository = $exhibition; // ## REFACTOR
-		$this->resource = $exhibition; //##REFACTOR
-		$this->film = $film;
+		$this->exhibition       = $exhibition;
+		$this->exhibitionFilm   = $exhibitionFilm;
+		$this->resource         = $exhibition;
+		$this->film             = $film;
 	}
 
 	/**
@@ -201,6 +201,40 @@ class ExhibitionsRepository extends ResourcesRepository
 
 		return true;
 	}
+
+    public function findByTitleDirector($fields)
+    {
+        $builder    = Film::getQuery();
+        $resources  = Collection::make([]);
+        $limit      = 15;
+
+        foreach($fields as $name => $value)
+        {
+            $builder->where($name, 'like' ,'%' . $value . '%');
+        }
+
+        $results = $builder->get(['id']);
+
+        $filmsIds = array_map(function($dummyObject){
+            return $dummyObject->id; //The query builder returns an array and does not a collection. I do not know why.
+        }, $results );
+
+        if( !empty($filmsIds) ){
+            $resources = Exhibition::whereHas('exhibitionFilm', function($q) use ($filmsIds){
+
+                $q->whereHas('film', function($q) use ($filmsIds) {
+                    $q->whereIn('films.id', $filmsIds);
+                });
+            })->with('schedules',
+                'schedules.auditorium',
+                'exhibitionFilm',
+                'exhibitionFilm.film',
+                'type')
+                ->paginate($limit);
+        }
+
+        return $resources;
+    }
 
 	protected function makeSchedules(array $schedules = null)
 	{

@@ -24,10 +24,19 @@
 					<div class="panel panel-default">
 						<div class="panel-heading">{{ $auditorium->name }}</div>
 						<div class="panel-body">
-							<ul class="list-group">						
-							@foreach( $exhibition->schedulesByAuditorium($auditorium->id) as $schedule)
-								<li class="list-group-item">{{ $schedule->entry }}</li>
-							@endforeach
+							<ul class="list-group">
+                                @foreach( $exhibition->schedulesByAuditorium($auditorium->id) as $date => $hours)
+                                    <li class="list-group-item">
+                                        {{ ucfirst(trans('dates.days.' . date('l', strtotime($date)) )) }}
+                                        {{ date(' j \d\e ', strtotime($date)) }}
+                                        {{ trans('dates.months.' . date('F', strtotime($date)) ) }}
+                                        <br>
+
+                                        @foreach($hours as $hour)
+                                            <span class="label label-default">{{ date('G:i \h\r\s', strtotime($hour)) }}</span>
+                                        @endforeach
+                                    </li>
+                                @endforeach
 							</ul>
 						</div>
 					</div>
