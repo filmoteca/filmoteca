@@ -6010,8 +6010,8 @@ footer {
 .messages-stack {
   position: fixed;
   z-index: 90;
-  bottom: 25px;
-  left: 50px;
+  top: 25px;
+  right: 50px;
   max-width: 400px;
   width: 100%; }
 
