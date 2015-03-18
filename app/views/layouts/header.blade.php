@@ -19,13 +19,13 @@
 						<img src="/assets/imgs/unam.png" alt="logo UNAM">
 					</a>
 				</div>
-				<div class="unam-text pull-left">
+				<div class="unam-text pull-left hidden-xs">
 					<span>Universidad Nacional</span><br>
 					<span>Autónoma de México</span>
 				</div>
 			</div>
 			<div class="pull-right">
-				<div class="filmoteca-text pull-left text-right">
+				<div class="filmoteca-text pull-left text-right hidden-xs">
 					<span>Dirección General de</span><br>
 					<span>Actividades Cinematográficas</span>
 				</div>
