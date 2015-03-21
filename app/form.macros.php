@@ -3,7 +3,7 @@
 Form::macro('formGroup', 
 	function($type, $name, $title, $formname,array $attr = array())
 {
-	$CUSTOM_INPUTS = ['file', 'year', 'country', 'multiCountry', 'multiYear','genre', 
+	$CUSTOM_INPUTS = ['year', 'country', 'multiCountry', 'multiYear','genre',
 	'textarea', 'auditorium', 'theMedia', 'professor', 'subject', 'venue',
 	'date'];
 
@@ -64,17 +64,6 @@ Form::macro('multiCountry', function($name, $title, $selected)
 	$input = Form::select($name, $options, $selected, $attr);
 
 	return Form::wrapperInput($name, $title, $input);
-});
-
-Form::macro('fileFormGroup', function($name,$title, $formname, $attr)
-{
-	unset( $attr['class'] );
-
-	$attr['file-model'] = $attr['ng-model'];
-
-	unset( $attr['ng-model']);
-
-	return Form::wrapperInput($name, $title, Form::file($name, $attr));
 });
 
 Form::macro('countryFormGroup', function($name, $title, $formname, $attributes)
