@@ -44,14 +44,17 @@ class FilmsRepository extends ResourcesRepository
 	 * @param  String | Array 	$data   Valor que se desea buscar.
 	 * @param  Array $options (Opcional)
 	 * @return Collection | Eloquent
+     * @throws Exception
 	 */
 	public function search($by, $data, $options = [])
 	{
+        $limit = 8;
+
 		switch($by)
 		{
 			case( 'title' ):
 
-				return $this->resource->where($by, 'like', '%' . $data . '%')->get();
+				return $this->resource->where($by, 'like', '%' . $data . '%')->take($limit)->get();
 
 			default:
 				throw new Exception("The type of search there is not.");
