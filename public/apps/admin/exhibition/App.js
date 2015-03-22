@@ -60,19 +60,40 @@
     .controller('admin.exhibition.controllers.exhibition',['$scope','$timeout','ExhibitionService', function($scope, $timeout, Exhibition){
 
 		var MAX_ALERTS = 5;
-		$scope.alerts = [];
+        var TIMEOUT_TO_DISMISS_ALERT = 3000;
+        var timer = null;
+
+
+        var removeOldestAlert = function() {
+
+            timer = $timeout(function(){
+                $scope.closeAlert($scope.alerts.length -1);
+            }, TIMEOUT_TO_DISMISS_ALERT);
+        };
+
+        $scope.alerts = [];
 
 		$scope.$on('alert', function(event, message){
-			$scope.alerts.unshift(message);
+
+            $scope.alerts.unshift(message);
 
 			while( $scope.alerts.length > MAX_ALERTS){
 				//Delete the first element. At the bottom of the stack.
-				$scope.alerts.splice($scope.alerts.length -1, 1);
+
+                $scope.closeAlert($scope.alerts.length -1);
 			}
+
+            removeOldestAlert();
 		});
 
 		$scope.closeAlert = function(index){
+
 			$scope.alerts.splice(index, 1);
+
+            if( $scope.alerts.length > 0){
+
+                removeOldestAlert();
+            }
 		};
 
 		$scope.$on('dismissAlerts', function(){
@@ -162,7 +183,7 @@
         };
     }])
 
-    .config(['$routeProvider','$httpProvider',function($routeProvider, $httpProvider) {
+    .config(['$routeProvider','$httpProvider', function($routeProvider, $httpProvider) {
             
         $routeProvider
             .when('/index', {
@@ -183,8 +204,11 @@
             return {
                 'responseError' : function(rejection) {
 
-                    console.log('Filmoteca error:', rejection.statusText);
-                    
+                    if( angular.isDefined(window.console)){
+
+                        window.console.info('Filmoteca error:', rejection.statusText);
+                    }
+
                     return $q.reject(rejection);
                 }
             };

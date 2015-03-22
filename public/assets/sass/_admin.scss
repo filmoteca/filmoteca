@@ -36,3 +36,34 @@
 .multiyear{
   min-width: 100%;
 }
+
+.icons-available{
+
+  .h4{
+    margin-right: 10px;
+  }
+  .icons-list{
+    list-style: none;
+
+    li{
+      width: 25%;
+      float: left;
+      position: relative;
+      padding: 10px;
+      border: thin white solid;
+      background-color: #f9f9f9;
+      height: 180px;
+
+      img{
+        cursor: pointer;
+      }
+    }
+  }
+
+  .icon-name{
+    display: block;
+    word-wrap: break-word;
+    text-align: center;
+  }
+}
+

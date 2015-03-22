@@ -255,6 +255,18 @@
 		'schedule.deleted' : {
 			type: 'success',
 			msg: 'Horario borrado.'
-		}
+		},
+        'icon.not-deleteable' :{
+            type: 'danger',
+            msg : 'No se puede borrar el icono. Posiblemente alguna exhibición está asociado con el.'
+        },
+        'icon.deleted' : {
+            type : 'success',
+            msg : 'Icono borrado.'
+        },
+        'icon.updated' : {
+            type : 'success',
+            msg : 'Icono actualizado.'
+        }
 	});
 });

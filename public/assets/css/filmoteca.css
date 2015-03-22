@@ -5764,6 +5764,9 @@ h5 {
 .image-size-thumbnail {
   max-width: 150px; }
 
+.image-size-max-width {
+  width: 100%; }
+
 .angucomplete-dropdown img {
   width: 50px; }
 
@@ -6020,6 +6023,25 @@ footer {
 
 .multiyear {
   min-width: 100%; }
+
+.icons-available .h4 {
+  margin-right: 10px; }
+.icons-available .icons-list {
+  list-style: none; }
+  .icons-available .icons-list li {
+    width: 25%;
+    float: left;
+    position: relative;
+    padding: 10px;
+    border: thin white solid;
+    background-color: #f9f9f9;
+    height: 180px; }
+    .icons-available .icons-list li img {
+      cursor: pointer; }
+.icons-available .icon-name {
+  display: block;
+  word-wrap: break-word;
+  text-align: center; }
 
 .exhibition-datepicker table td,
 .exhibition-datepicker table th {
