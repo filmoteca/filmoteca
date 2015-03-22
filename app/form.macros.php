@@ -160,7 +160,7 @@ Form::macro('textareaFormGroup', function($name, $title, $formname, $attr)
 	$attr['class'] = isset($attr['class']) ? $attr['class']  : ''; 
 
 	/**
-	 * If it has not a ckeditor class then we add a full editor.
+	 * If it does not has a ckeditor class then we add a full editor.
 	 */
 	if( !Str::contains($attr['class'], 'ckeditor') ){
 
