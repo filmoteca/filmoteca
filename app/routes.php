@@ -249,6 +249,14 @@ Route::group(['prefix' => 'admin'], function()
 			'as' => 'admin.api.iconographic.store',
 			'uses' => 'Api\IconographicController@store']);
 
+        Route::group(['prefix' => 'iconographic'], function()
+        {
+            Route::post('/{id}',     'Api\IconographicController@update');
+//            The PUT verb not work. Someone said to is blame of CSRF protection.
+//            Route::put('/{id}',     'Api\IconographicController@update');
+            Route::delete('/{id}',  'Api\IconographicController@destroy');
+        });
+
 		Route::post('film/store',[
 			'as' => 'admin.api.film.store',
 			'uses' => 'Api\FilmController@store']);
