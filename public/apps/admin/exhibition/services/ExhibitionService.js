@@ -84,7 +84,8 @@
 					film : {}
 				},
 				schedules : [], //El horario es la verdadera exhibición. 
-				type : Icon.default()
+				type : Icon.default(),
+                notes: ''
 			};
 		};
 

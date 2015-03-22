@@ -57,12 +57,12 @@
         ]
     )
 
-    .controller('admin.exhibition.controllers.exhibition',['$scope','$timeout','ExhibitionService', function($scope, $timeout, Exhibition){
+    .controller('admin.exhibition.controllers.exhibition',['$scope','$timeout','ExhibitionService', 'ExhibitionMessages',
+    function($scope, $timeout, Exhibition, Messages){
 
 		var MAX_ALERTS = 5;
         var TIMEOUT_TO_DISMISS_ALERT = 3000;
         var timer = null;
-
 
         var removeOldestAlert = function() {
 
@@ -72,6 +72,8 @@
         };
 
         $scope.alerts = [];
+
+        $scope.exhibition = Exhibition.get();
 
 		$scope.$on('alert', function(event, message){
 
@@ -107,6 +109,14 @@
         $scope.wasFilmSelected = function()
         {
             return angular.isDefined( Exhibition.film().id );
+        };
+
+        $scope.update = function()
+        {
+            Exhibition.update().then(function(){
+
+                $scope.$emit('alert', Messages['exhibition.updated']);
+            });
         };
     }])
 
@@ -173,14 +183,6 @@
 
             $scope.$broadcast('exhibitionLoaded', exhibition);
         });
-
-        $scope.update = function()
-        {
-            Exhibition.update().then(function(){
-                
-                $scope.$emit('alert', Messages['exhibition.updated']);
-            });
-        };
     }])
 
     .config(['$routeProvider','$httpProvider', function($routeProvider, $httpProvider) {

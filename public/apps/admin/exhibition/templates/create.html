@@ -48,6 +48,20 @@
 
 <br>
 
+<div class="row" ng-controller="admin.exhibition.controllers.exhibition">
+    <div class="col-md-12">
+        <div class="panel panel-default" ng-show="wasFilmSelected()">
+            <div class="panel-heading">Notas</div>
+            <div class="panel-body container-fluid">
+                <div class="row">
+                    <textarea ng-model="exhibition.notes" class="col-sm-12"></textarea>
+                </div>
+            </div>
+            <div class="panel-footer"><button class="btn btn-success" ng-click="update()">Guardar notas</button></div>
+        </div>
+    </div>
+</div>
+
 <div ng-controller="ScheduleController" class="row">
     <div class="panel panel-default" ng-show="wasFilmSelected()">
         <div class="panel-heading">Horario 
