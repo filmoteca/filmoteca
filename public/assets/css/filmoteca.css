@@ -5736,7 +5736,8 @@ a {
   .items .item {
     float: left;
     width: 23%;
-    margin-left: 10px; }
+    margin-left: 10px;
+    height: 210px; }
 
 .details .cover img {
   max-width: 100%;
@@ -5994,6 +5995,11 @@ footer {
 .more-news {
   margin-top: 30px; }
 
+.label-filmoteca {
+  background-color: #810069; }
+  .label-filmoteca[href]:hover, .label-filmoteca[href]:focus {
+    background-color: #4e003f; }
+
 [class^="glyphicon-"],
 [class*=" glyphicon-"] {
   display: inline-block;
@@ -6070,6 +6076,9 @@ footer {
   background-color: #810069;
   border-color: #5f0247;
   color: #fff; }
+
+.exhibition-schedules .label {
+  margin-right: 5px; }
 
 .static-pages-menu {
   margin-bottom: 25px; }

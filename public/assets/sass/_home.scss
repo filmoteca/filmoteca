@@ -367,3 +367,7 @@ $h4: 18px;
 .more-news {
     margin-top: 30px;
 }
+
+.label-filmoteca{
+    @include label-variant($primary-color);
+}
