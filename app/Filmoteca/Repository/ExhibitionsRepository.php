@@ -111,14 +111,15 @@ class ExhibitionsRepository extends ResourcesRepository
 			->whereHas('schedules', function($query) use ($interval)
 			{
 				$query->whereBetween('entry', $interval);
-			})
-			->with(
-				'schedules', 
-				'schedules.auditorium',
+			})->with(
+                'schedules',
+                'schedules.auditorium',
 				'exhibitionFilm',
 				'exhibitionFilm.film',
-				'type')
-			->get();
+                'exhibitionFilm.film.genre',
+                'exhibitionFilm.film.countries',
+				'type'
+            )->get();
 
 		return $exhibitions;
 	}
@@ -187,15 +188,6 @@ class ExhibitionsRepository extends ResourcesRepository
 		$exhibition = $this->resource
 			->findOrFail($data['id'])
 			->fill($data);
-
-		// $schedules = $this->makeSchedules($data['schedules']);
-
-		// App::make('Filmoteca\Models\Exhibitions\Type')
-		// 	->findOrFail($data['type']['id'])
-		// 	->fill($data['type'])
-		// 	->save();
-
-		// $exhibition->schedules()->saveMany($schedules);
 
 		$exhibition->save();
 
