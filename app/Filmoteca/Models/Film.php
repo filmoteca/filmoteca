@@ -73,9 +73,9 @@ class Film extends Eloquent implements StaplerableInterface
     }
 
     /**
-     * Remove seconds
-     * @param  [type] $value [description]
-     * @return [type]        [description]
+     * Remove seconds. Format HH:MM
+     * @param  String $value [description]
+     * @return String        [description]
      */
     public function getDurationAttribute($value)
     {
@@ -84,10 +84,20 @@ class Film extends Eloquent implements StaplerableInterface
 
     /**
      * Adds the two zeros (seconds).
-     * @param [type] $value [description]
+     * @param String $value Format HH:MM
      */
     public function setDurationAttribute($value)
     {
         $this->attributes['duration'] = $value . ':00';
+    }
+
+    public function toArray(){
+
+        $relations = [
+            'genre'     => $this->genre,
+            'countries' => $this->countries
+        ];
+
+        return array_merge( parent::toArray(), $relations);
     }
 }
