@@ -40,29 +40,44 @@
         'ngSanitize'
 		])
 
-        .config(['$routeProvider', function($routeProvider){
+        .config(['$routeProvider','routes', function($routeProvider, routes){
 
             $routeProvider
-                .when('/', {
+                .when(routes['exhibition.index'], {
                     templateUrl : '/apps/pages/exhibition/templates/index.html',
                     controller : 'pages.exhibition.list-controller'
                 })
-                .when('/exhibition/:id/show', {
+                .when(routes['exhibition.show'], {
                     templateUrl : '/apps/pages/exhibition/templates/show.html',
                     controller : 'pages.exhibition.show-controller'
                 })
                 .otherwise({
-                    redirectTo : '/'
+                    redirectTo : routes['exhibition.index']
                 })
         }])
 
         .controller('pages.exhibition.controllers.exhibitions-controller', [
-            '$scope', '$location', 'CONFIG',
-            function($scope, $location, CONFIG ){
+            '$scope',
+            '$location',
+            'CONFIG',
+            'pages.exhibition.services.ExhibitionService',
+            'routes',
+            function($scope, $location, CONFIG, Exhibition, routes){
+
+                /*-------------------
+                 * Bindings
+                 -------------------*/
 
                 $scope.filteredExhibitions  = [];
                 $scope.selectedDay          = new Date();
                 $scope.filter               = CONFIG.defaultFilter;
+                $scope.advices              = Exhibition.titlesAndDirectories();
+                $scope.filters              = Exhibition.filters();
+
+
+                /*-------------------
+                 * Methods
+                 -------------------*/
 
                 $scope.updateFilter = function(name, data, title){
 
@@ -74,6 +89,20 @@
 
                     $scope.$root.$broadcast('filterUpdated', $scope.filter);
                 };
+
+                $scope.adviceSelected = function(selection){
+
+                    if(angular.isUndefined(selection)) return;
+
+                    var id = selection.originalObject.id;
+
+                   	$location.url(routes['exhibition.show'].replace(':id', id));
+                };
+
+
+                /*------------------
+                 * Events
+                 *-----------------*/
 
                 $scope.$on('dateSelected', function(event, data)
                 {
@@ -88,7 +117,7 @@
 
                     $scope.selectedDay = data.value;
 
-                    $scope.updateFilter(data.name, data.value, 'Fecha');
+                    $scope.updateFilter(data.name, data.value);
                 });
         }])
 
@@ -163,6 +192,11 @@
                 data : new Date()
             },
             none: 'none'
+        })
+
+        .constant('routes', {
+            'exhibition.show' : '/exhibition/:id/show',
+            'exhibition.index'  : '/'
         })
 
         .run(['datepickerConfig', 'moment',

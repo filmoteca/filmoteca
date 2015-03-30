@@ -95,7 +95,7 @@
 
                 return angular.isDefined(result);
 			},
-			title_or_director: function(item, value)
+			'titleOrDirector': function(item, value)
 			{
 				if( angular.isUndefined(value) || value === '') return true;
 				
@@ -145,7 +145,7 @@
 						id 		 : exhibition.id,
 						title 	 : exhibition.exhibition_film.film.title,
 						director : exhibition.exhibition_film.film.director,
-						thumbnail: exhibition.exhibition_film.film.thumbnail_image
+						thumbnail: exhibition.exhibition_film.film.cover_urls.medium
 					};
 				});
 			},

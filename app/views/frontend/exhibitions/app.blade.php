@@ -46,7 +46,7 @@
 			<angucomplete-alt
 				place-holder="Buscar por título o director"
 				pause="0"
-				selected-object="selectedAdvice"
+				selected-object="adviceSelected"
 				local-data="advices"
 				title-field="title"
 				description-field="director"
@@ -57,6 +57,7 @@
 				text-no-results="Ninguna exhibición encontrada"
 				input-class="form-control form-control-small">
 			</angucomplete-alt>
+
 		</div>
 
 		<div class="exhibition-datepicker" style="display:inline-block; min-height:200px;">
