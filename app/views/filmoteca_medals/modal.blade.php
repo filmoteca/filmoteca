@@ -11,7 +11,7 @@
 </div>
 
 <div class="modal-body">
-    <div><img ng-src="@{{ winner.photo }}" class="center-block thumbnail"></div>
+    <div><img ng-src="@{{ winner.photo }}" class="img-responsive center-block thumbnail"></div>
     <div ng-bind-html="winner.biography"></div>
 </div>
 
