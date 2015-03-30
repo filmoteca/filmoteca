@@ -4,7 +4,7 @@
 
 	<script>
 		
-		window.exhibitions = {{ $exhibitions->toJson() }}
+		window.exhibitions = {{ $exhibitions->toJson() }};
 
 	</script>
 
@@ -70,17 +70,14 @@
 					<a><span>Salas</span></a>
 					<ul>
 						<li class="last">
-							<a flm-filters filter-name="auditorium" filter-value="0"
+							<a ng-click="updateFilter('none')"
 								class="btn">
 								<span>Cualquiera</span>
 							</a>
 						</li>
 						@foreach($auditoriums as $auditorium )
 							<li class="last">
-								<a flm-filters 
-									filter-name="auditorium" 
-									filter-value="{{ $auditorium->id }}"
-									filter-title="{{ $auditorium->name }}"
+								<a ng-click="updateFilter('byAuditorium', '{{ $auditorium->id }}', '{{ $auditorium->name }}')"
 									class="btn">
 									<span>{{$auditorium->name}}</span>
 								</a>
@@ -93,17 +90,14 @@
 					<a><span>Ciclos</span></a>
 					<ul>
 						<li class="last">
-							<a flm-filters filter-name="icon" filter-value="0" 
+							<a ng-click="updateFilter('none')"
 								class="btn">
 								<span>Cualquiera</span>
 							</a>
 						</li>
 						@foreach($icons as $icon)
 							<li class="last">
-								<a flm-filters 
-									filter-name="icon" 
-									filter-value="{{ $icon->id }}"
-									filter-title="{{ $icon->name }}"
+								<a ng-click="updateFilter('byIcon', '{{ $icon->id }}', '{{$icon->name}}')"
 									class="btn">
 									<span>
 										{{ HTML::image($icon->image->url('thumbnail'), $icon->name, ['class' => 'image-size-icon']) }}
@@ -134,15 +128,7 @@
 @stop
 
 @section('content')
-	
-	<div class="exhibition-list" ng-show="!urlToDetails">
-		@include('frontend.exhibitions.partials.list', array('exhibitions', $exhibitions))
-	</div>
 
-	<div class="loading" ng-show="loading"></div>
-
-	<div class="exhibition-detail" data-ng-include="urlToDetails" ng-show="urlToDetails">
-
-	</div>
+    <div ng-view></div>
 	
 @stop
