@@ -1,6 +1,28 @@
-<div>
-    {{ filter.title }} : {{ filteredExhibitions.length }}
+<p>Películas encontradas: <span ng-bind="filteredExhibitions.length"></span></p>
+
+<div ng-switch="filter.name" class="ng-cloak">
+    <h3 ng-switch-when="byWeek">
+        Películas programadas en la semana del
+        <b>{{ startDate | date : 'd' }}</b> al <b>{{endDate | date : 'd' }}</b> de
+        <b>{{ startDate | date : 'MMMM' }}</b>
+    </h3>
+    <h3 ng-switch-when="byDay">
+        Películas programadas el día <b>{{ selectedDay | date : 'd' }}</b>
+        de <b>{{ selectedDay | date : 'MMMM' }}</b>
+    </h3>
+    <h3 ng-switch-when="byAuditorium">
+        Películas programadas en la sala <b>{{ filter.title }}</b> en el mes de
+        <b>{{ selectedDay | date : 'MMMM' }}</b>
+    </h3>
+    <h3 ng-switch-when="byIcon">
+        Ciclo:  <b>{{ filter.title }}</b> a presentarse en el mes de
+        <b>{{ selectedDay | date : 'MMMM' }}</b>
+    </h3>
+    <h3 ng-switch-default>
+        Películas programadas durante el mes de <b>{{ selectedDay | date : 'MMMM' }}</b>
+    </h3>
 </div>
+
 <div class="wrapper-items" id="wrapper-items">
     <ul class="items" id="items">
         <li class="thumbnail item text-center"

@@ -60,9 +60,9 @@
             '$scope', '$location', 'CONFIG',
             function($scope, $location, CONFIG ){
 
-                $scope.filteredExhibitions = [];
-
-                $scope.filter = CONFIG.defaultFilter;
+                $scope.filteredExhibitions  = [];
+                $scope.selectedDay          = new Date();
+                $scope.filter               = CONFIG.defaultFilter;
 
                 $scope.updateFilter = function(name, data, title){
 
@@ -77,7 +77,6 @@
 
                 $scope.$on('dateSelected', function(event, data)
                 {
-                    console.log(data);
                 	if( data.name === 'byWeek')
                 	{
                 		var date = moment(data.value, moment.ISO_8601);
@@ -87,14 +86,9 @@
                 		$scope.endDate = date.add(6, 'days').valueOf();
                 	}
 
-                	if( data.name === 'byDay' )
-                	{
-                		$scope.selectedDay = data.value;
-                	}
+                    $scope.selectedDay = data.value;
 
                     $scope.updateFilter(data.name, data.value, 'Fecha');
-
-                	//$scope.usedFilter = ( _.contains(['0',''], data.value) )? 'No one' : data.name;
                 });
         }])
 
@@ -179,8 +173,7 @@
                 		.daysInMonth(),'YYYY-MM-DD').toDate(),
                 	minMode : 'day',
                 	maxMode : 'day',
-                	showWeek : 'true',
-                    startingDay: 1
+                	showWeek : 'true'
                 });
             }
         ])
