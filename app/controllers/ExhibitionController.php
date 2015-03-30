@@ -33,11 +33,8 @@ class ExhibitionController extends BaseController
 
 		$exhibitions = $this
 			->repository
-			->search('date',$interval)
-			->sortBy(function($exhibition){
-				return $exhibition->exhibition_film->film->title;
-			});
-		
+			->search('date',$interval);
+
 		$auditoriums = Auditorium::all(array('id','name'));
 
 		$icons = $this->manager->getIcons($exhibitions);
