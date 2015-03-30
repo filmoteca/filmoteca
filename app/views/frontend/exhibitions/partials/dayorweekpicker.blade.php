@@ -1,6 +1,5 @@
 <table role="grid" aria-labelledby="@{{uniqueId}}-title" 
     aria-activedescendant="@{{activeDateId}}"
-    flm-filters="true" 
     dayorweekpicker>
   <thead>
     <tr>
@@ -11,8 +10,8 @@
                 aria-atomic="true" 
                 type="button" 
                 class="btn btn-default btn-sm pull-left" 
-                ng-class="{active: filter == 'day'}"
-                ng-click="selectBy('day')"
+                ng-class="{active: filter == 'byDay'}"
+                ng-click="selectBy('byDay')"
                 tabindex="-1" 
                 style="width:40%;">
                 <strong>Por día</strong>
@@ -21,10 +20,10 @@
                 role="heading" 
                 aria-live="assertive" 
                 aria-atomic="true"
-                ng-class="{active: filter == 'week'}"
+                ng-class="{active: filter == 'byWeek'}"
                 type="button" 
                 class="btn btn-default btn-sm pull-right" 
-                ng-click="selectBy('week')"
+                ng-click="selectBy('byWeek')"
                 tabindex="-1" 
                 style="width:60%;">
                 <strong>Por semana</strong>
@@ -35,8 +34,8 @@
       <th colspan="@{{7 + showWeeks}}">
         <lable class="btn btn-default btn-sm" 
         	style="width:100%" 
-            ng-class="{active: filter == 'month'}"
-            ng-click="selectBy('month')">
+            ng-class="{active: filter == 'byMonth'}"
+            ng-click="selectBy('byMonth')">
         	@{{title}}
         </lable>
       </th>
@@ -49,13 +48,13 @@
   <tbody>
     <tr ng-repeat="row in rows track by $index" 
         init
-        ng-class="{ 'exhibition-datepicker-week-row': filter == 'week'}">
+        ng-class="{ 'exhibition-datepicker-week-row': filter == 'byWeek'}">
       <td ng-show="showWeeks" class="text-center h6"><em>@{{ weekNumbers[$index] }}</em></td>
       <td ng-repeat="dt in row track by dt.date" class="text-center" role="gridcell" id="@{{dt.uid}}" aria-disabled="@{{!!dt.disabled}}">
         <button type="button" 
         	style="width:100%;" 
         	class="btn btn-default btn-sm" 
-        	ng-class="{'btn-info': (dt.selected || filter == 'month') && !dt.disabled, active: isActive(dt) || isActiveWeek(dt.date, filter == 'week') }" 
+        	ng-class="{'btn-info': (dt.selected || filter == 'byMonth') && !dt.disabled, active: isActive(dt) || isActiveWeek(dt.date, filter == 'byWeek') }"
             ng-click="select(dt.date)"
         	ng-disabled="dt.disabled" 
         	tabindex="-1">

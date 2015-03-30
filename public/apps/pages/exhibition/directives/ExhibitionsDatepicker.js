@@ -19,7 +19,7 @@
 
 	if( typeof define !== 'undefined' && define.amd )
 	{
-		define(['angular','ui.bootstrap','angular-moment','FilmotecaFilters'],factory);
+		define(['angular','ui.bootstrap','angular-moment'],factory);
 
 	}else{
 		factory(angular);
@@ -28,18 +28,16 @@
 {
 	'use strict';
 
-	angular.module('pages.exhibition.directives.ExhibitionsDatepicker',[
-		'ui.bootstrap', 'angularMoment','FilmotecaFilters'])
+	angular.module('pages.exhibition.directives.ExhibitionsDatepicker', [
+		'ui.bootstrap', 'angularMoment'])
 
 	.directive('dayorweekpicker', ['moment',function( moment ) {
 	  return {
 	    restrict: 'A',
-	    require: ['^datepicker', 'flmFilters'],
-	    link: function($scope, $element, attr, controllers) 
+	    require: ['^datepicker'],
+	    link: function($scope)
 	    {
-	    	var flmFilters = controllers[1];
-
-			$scope.filter = 'month';
+			$scope.filter = 'byMonth';
 
 			$scope.selectedDate = moment().toDate();
 
@@ -55,19 +53,14 @@
 			/**********************/
 			$scope.selectBy = function( by )
 			{
-				switch( by )
-				{
-					case('day'):
-						$scope.filter = 'day';
-						break;
-					case('week'):
-						$scope.filter = 'week';
-						break;
-					default: //month
-						$scope.filter = 'month';
-				}
+				$scope.filter = by;
 
-				flmFilters.applyFilter($scope.filter, $scope.selectedDate);
+                var data = {
+                    name : $scope.filter,
+                    value : $scope.selectedDate
+                };
+
+				$scope.$root.$broadcast('dateSelected', data);
 			};
 
 			$scope.select = function(date)
@@ -81,20 +74,20 @@
 			
 			$scope.isActiveWeek = function(date)
 			{
-				if( $scope.filter !== 'week' || $scope.selectedDate === null) return;
+				if( $scope.filter !== 'byWeek' || $scope.selectedDate === null) return;
 
 				return moment(date).week() === moment($scope.selectedDate).week();
 			};
 
 			/***************/
-			/** ## EVENTS **/
+			/* ## EVENTS   */
 			/***************/
 
-			$scope.$on('filterSelected', function(event, data)
+			$scope.$on('filterUpdated', function(event, data)
 			{
-				if (_.contains(['day','week','month'], data.name)) return;
+				if (_.contains(['byDay','byWeek','byMonth'], data.name)) return;
 
-				$scope.filter = 'month';
+				$scope.filter = 'byMonth';
 			});
 	    }
 	  };

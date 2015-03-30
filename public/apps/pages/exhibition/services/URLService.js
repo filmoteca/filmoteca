@@ -23,7 +23,7 @@
 	angular.module('URLService', [])
 
 	.constant( 'ROUTES', {
-		'exhibitions.detail' : '/exhibition/{id}/detail',
+		'exhibitions.detail' : '/exhibition/{id}/show',
 		'exhibitions.index'  : '/exhibitions/index'
 	})
 

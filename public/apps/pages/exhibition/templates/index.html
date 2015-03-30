@@ -1,0 +1,16 @@
+<div>
+    {{ filter.title }} : {{ filteredExhibitions.length }}
+</div>
+<div class="wrapper-items" id="wrapper-items">
+    <ul class="items" id="items">
+        <li class="thumbnail item text-center"
+            ng-repeat="exhibition in exhibitions | filter: exhibitionFilter | orderBy: 'exhibition_film.film.title' | as: 'filteredExhibitions'">
+            <a ng-href="#/exhibition/{{ exhibition.id }}/show"
+                    title="Ver detalles">
+                {{ exhibition.exhibition_film.film.title | limitTo : 22 }}
+                <img ng-src="{{ exhibition.exhibition_film.film.cover_urls.medium }}"
+                     alt="exhibition.exhibition_film.film.title"/>
+            </a>
+        </li>
+    </ul>
+</div>
