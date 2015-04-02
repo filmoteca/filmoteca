@@ -71,15 +71,15 @@
 					<a><span>Salas</span></a>
 					<ul>
 						<li class="last">
-							<a ng-click="updateFilter('none')"
-								class="btn">
+							<a href="#/" class="btn">
 								<span>Cualquiera</span>
 							</a>
 						</li>
 						@foreach($auditoriums as $auditorium )
 							<li class="last">
-								<a ng-click="updateFilter('byAuditorium', '{{ $auditorium->id }}', '{{ $auditorium->name }}')"
-									class="btn">
+								{{--<a ng-click="updateFilter('byAuditorium', '{{ $auditorium->id }}', '{{ $auditorium->name }}')"--}}
+                                <a href="#/?name=byAuditorium&data={{ $auditorium->id }}&title={{ urlencode($auditorium->name) }}"
+                                        class="btn">
 									<span>{{$auditorium->name}}</span>
 								</a>
 							</li>
@@ -91,14 +91,13 @@
 					<a><span>Ciclos</span></a>
 					<ul>
 						<li class="last">
-							<a ng-click="updateFilter('none')"
-								class="btn">
+							<a href="#/" class="btn">
 								<span>Cualquiera</span>
 							</a>
 						</li>
 						@foreach($icons as $icon)
 							<li class="last">
-								<a ng-click="updateFilter('byIcon', '{{ $icon->id }}', '{{$icon->name}}')"
+								<a  href="#/?name=byIcon&data={{ $icon->id }}&title={{ urlencode($icon->name) }}"
 									class="btn">
 									<span>
 										{{ HTML::image($icon->image->url('thumbnail'), $icon->name, ['class' => 'image-size-icon']) }}

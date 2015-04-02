@@ -30,7 +30,7 @@
 				<h5>Consulta:</h5>
 	
 				<div class="link">
-					<a href="http://filmoteca.dev/exhibition"><span class="icon icon-this-week"></span>Este mes</a>	
+					<a href="exhibition"><span class="icon icon-this-week"></span>Este mes</a>
 				</div>
 				
 				<div class="btn-group">
@@ -41,7 +41,11 @@
 					<ul class="dropdown-menu" role="menu">
 						@foreach($auditoriums as $auditorium )
 							<li>
-								{{ HTML::link('/exhibition/filter/auditorium/' . $auditorium->id . '/' . rawurlencode($auditorium->name), $auditorium->name)}}
+								{{
+								    HTML::link(
+								        '/exhibition#/?name=byAuditorium&data=' . $auditorium->id .'&title=' . $auditorium->name,
+							    	    $auditorium->name )
+							    }}
 							</li>
 						@endforeach
 					 </ul>
@@ -55,7 +59,11 @@
 					<ul class="dropdown-menu" role="menu">
 						@foreach($icons as $icon )
 							<li>
-								{{ HTML::link('/exhibition/filter/especial-function/' . $icon->id . '/' . rawurlencode($icon->name), $icon->name )}}
+								{{
+								    HTML::link(
+								        '/exhibition#/?name=byIcon&data=' . $icon->id . "&title=" . $icon->name,
+								         $icon->name )
+                                }}
 							</li>
 						@endforeach
 					  </ul>

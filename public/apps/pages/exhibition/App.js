@@ -70,25 +70,24 @@
 
                 $scope.filteredExhibitions  = [];
                 $scope.selectedDay          = new Date();
-                $scope.filter               = CONFIG.defaultFilter;
+                $scope.filter               = angular.copy(CONFIG.defaultFilter);
                 $scope.advices              = Exhibition.titlesAndDirectories();
                 $scope.filters              = Exhibition.filters();
 
 
                 /*-------------------
                  * Methods
-                 -------------------*/
+                 *------------------*/
 
-                $scope.updateFilter = function(name, data, title){
-
-                    $scope.filter.name = name;
-                    $scope.filter.data = data;
-                    $scope.filter.title = title;
-
-                    $location.url('/');
-
-                    $scope.$root.$broadcast('filterUpdated', $scope.filter);
-                };
+                //$scope.updateFilter = function(name, data, title){
+                //
+                //    $location.url('/');
+                //    $location.search('name', name);
+                //    $location.search('title', title);
+                //    $location.search('data', encodeURI(data));
+                //
+                //    $scope.$root.$broadcast('filterUpdated', $scope.filter);
+                //};
 
                 $scope.adviceSelected = function(selection){
 
@@ -117,7 +116,26 @@
 
                     $scope.selectedDay = data.value;
 
-                    $scope.updateFilter(data.name, data.value);
+                    $scope.filter.name  = data.name;
+                    $scope.filter.title = ''
+                    $scope.filter.data  = data.data;
+                });
+
+                $scope.$on('$locationChangeSuccess', function(){
+
+                    var filter = $location.search();
+
+                    if( filter.name ){
+
+                        $scope.filter.name  = filter.name
+                        $scope.filter.title = filter.title
+                        $scope.filter.data  = decodeURI( filter.data );
+                    }else{
+
+                        angular.extend($scope.filter, CONFIG.defaultFilter);
+                    }
+
+                    $scope.$root.$broadcast('filterUpdated', $scope.filter);
                 });
         }])
 
@@ -126,9 +144,10 @@
          */
         .controller('pages.exhibition.list-controller', [
             '$scope',
+            '$routeParams',
             'CONFIG',
             'pages.exhibition.services.ExhibitionService',
-            function($scope, CONFIG, Exhibition){
+            function($scope, $rootParams, CONFIG, Exhibition){
 
                 var filters      = Exhibition.filters();
 
@@ -142,8 +161,7 @@
                     }
 
                     return (filters[$scope.filter.name])(exhibition, $scope.filter.data);
-                }
-
+                };
         }])
 
         .controller('pages.exhibition.show-controller', [
