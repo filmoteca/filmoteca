@@ -27,7 +27,29 @@ class AuditoriumsRepository extends ResourcesRepository
 
 	public function all()
 	{
-		return $this->resource->all(['id','name']);
+        return $this->resource->all();
 	}
+
+    public function allVenues(){
+
+        $venues = $this->resource
+            ->where('venue_id', 0)
+            ->get()
+            ->map(function($venue){
+                $venue->auditoriums = $this->auditoriums($venue->id);
+                return $venue;
+            });
+
+        return $venues;
+    }
+
+    protected function auditoriums($venueId){
+
+        $auditoriums = $this->all();
+
+        return $auditoriums->filter(function($auditorium) use ($venueId){
+            return $venueId == $auditorium->venue_id;
+        });
+    }
 }
 

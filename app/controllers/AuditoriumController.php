@@ -17,6 +17,8 @@ class AuditoriumController extends BaseController {
 
         $auditorium = $this->respository->find($id);
 
-        return View::make('auditoriums.detail', compact('auditorium'));
+        $venues = $this->respository->allVenues();
+
+        return View::make('auditoriums.detail', compact('auditorium', 'venues'));
     }
 } 

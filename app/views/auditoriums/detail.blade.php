@@ -9,6 +9,31 @@
 </li>
 @stop
 
+@section('sidebar')
+    <div class="static-pages-menu">
+        <ul>
+            @foreach($venues as $venue)
+                <li class="{{ !$venue->auditoriums->isEmpty()? 'has-sub': '' }}">
+                    <a href="{{ URL::action('AuditoriumController@show', ['id' => $venue->id]) }}">
+                        <span>{{ $venue->name }}</span>
+                    </a>
+                    @if(!$venue->auditoriums->isEmpty())
+                        <ul>
+                            @foreach($venue->auditoriums as $auditorium)
+                                <li class="last">
+                                    <a href="{{ URL::action('AuditoriumController@show', ['id' => $auditorium->id]) }}">
+                                        <span>{{ $auditorium->name }}</span>
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    @endif
+                </li>
+            @endforeach
+        </ul>
+    </div>
+@stop
+
 
 @section('content')
 
