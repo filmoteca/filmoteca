@@ -2,7 +2,7 @@
  * @author : Victor Aguilar
  *
  */
-
+/* jshint browser: treue */
 /* globals require, define, angular, domready */
 (function(factory)
 {
@@ -13,7 +13,6 @@
 		require([
 			'angular',
 			'domready',
-            'lodash',
 			'angucomplete-alt',
 			'pages.exhibition.directives/ExhibitionsDatepicker',
             'pages.exhibition.services/ExhibitionService',
@@ -26,7 +25,7 @@
 	}else{
 		factory(angular,domready);
 	}
-})(function(angular, domready, _)
+})(function(angular, domready)
 {
 	'use strict';
 	angular.module('App',[
@@ -39,6 +38,20 @@
         'ngRoute',
         'ngSanitize'
 		])
+
+        .constant('CONFIG',{
+            defaultFilter : {
+                name : 'byMonth',
+                title : 'Mes',
+                data : new Date()
+            },
+            none: 'none'
+        })
+
+        .constant('routes', {
+            'exhibition.show' : '/exhibition/:id/show',
+            'exhibition.index'  : '/'
+        })
 
         .config(['$routeProvider','routes', function($routeProvider, routes){
 
@@ -55,6 +68,19 @@
                     redirectTo : routes['exhibition.index']
                 })
         }])
+
+        .run(['datepickerConfig', 'moment',
+            function(datepickerConfig, moment) {
+                angular.extend(datepickerConfig, {
+                    minDate : moment().subtract( moment().date() - 1, 'days').toDate(),
+                    maxDate : moment( moment().year() + '-' + (moment().month() + 1) + '-' + moment()
+                        .daysInMonth(),'YYYY-MM-DD').toDate(),
+                    minMode : 'day',
+                    maxMode : 'day',
+                    showWeek : 'true'
+                });
+            }
+        ])
 
         .controller('pages.exhibition.controllers.exhibitions-controller', [
             '$scope',
@@ -75,19 +101,10 @@
                 $scope.filters              = Exhibition.filters();
 
 
+
                 /*-------------------
                  * Methods
                  *------------------*/
-
-                //$scope.updateFilter = function(name, data, title){
-                //
-                //    $location.url('/');
-                //    $location.search('name', name);
-                //    $location.search('title', title);
-                //    $location.search('data', encodeURI(data));
-                //
-                //    $scope.$root.$broadcast('filterUpdated', $scope.filter);
-                //};
 
                 $scope.adviceSelected = function(selection){
 
@@ -97,6 +114,7 @@
 
                    	$location.url(routes['exhibition.show'].replace(':id', id));
                 };
+
 
 
                 /*------------------
@@ -118,8 +136,10 @@
 
                     $scope.filter.name  = data.name;
                     $scope.filter.title = ''
-                    $scope.filter.data  = data.data;
+                    $scope.filter.data  = data.value;
                 });
+
+
 
                 $scope.$on('$locationChangeSuccess', function(){
 
@@ -201,34 +221,7 @@
             return function(collection, expresion) {
                 return $parse(expresion).assign(this, collection);
             };
-        }])
-
-        .constant('CONFIG',{
-            defaultFilter : {
-                name : 'byMonth',
-                title : 'Mes',
-                data : new Date()
-            },
-            none: 'none'
-        })
-
-        .constant('routes', {
-            'exhibition.show' : '/exhibition/:id/show',
-            'exhibition.index'  : '/'
-        })
-
-        .run(['datepickerConfig', 'moment',
-            function(datepickerConfig, moment) {
-                angular.extend(datepickerConfig, {
-                	minDate : moment().subtract( moment().date() - 1, 'days').toDate(),
-                	maxDate : moment( moment().year() + '-' + (moment().month() + 1) + '-' + moment()
-                		.daysInMonth(),'YYYY-MM-DD').toDate(),
-                	minMode : 'day',
-                	maxMode : 'day',
-                	showWeek : 'true'
-                });
-            }
-        ])
+        }]);
 
 	domready( function()
 	{

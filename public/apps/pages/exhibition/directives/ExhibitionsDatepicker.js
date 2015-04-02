@@ -85,7 +85,7 @@
 
 			$scope.$on('filterUpdated', function(event, data)
 			{
-				if (_.contains(['byDay','byWeek','byMonth'], data.name)) return;
+				//if (_.contains(['byDay','byWeek','byMonth'], data.name)) return;
 
 				$scope.filter = 'byMonth';
 			});
