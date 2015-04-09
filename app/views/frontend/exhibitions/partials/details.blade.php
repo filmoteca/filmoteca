@@ -83,6 +83,12 @@ Vista parcial
                         </p>
                     @endforeach
                 </div>
+
+                <div>
+                    <p>
+                        <b>Notas de la Exhibition: </b>{{ $exhibition->notes }}
+                    </p>
+                </div>
 			</div>
 		</div>
 

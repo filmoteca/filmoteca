@@ -227,6 +227,7 @@
 			exhibition.exhibition_film.film = {};
 			exhibition.schedules.splice(0, exhibition.schedules.length);
  			exhibition.type = null;
+            exhibition.notes = '';
 		};
 
 		exhibition = this.make();
