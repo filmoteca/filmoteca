@@ -30,6 +30,7 @@
 				<h5>Consulta:</h5>
 	
 				<div class="link">
+					{{ URL::to('/exhibition') }}
 					<a href="exhibition"><span class="icon icon-this-week"></span>Este mes</a>
 				</div>
 				
