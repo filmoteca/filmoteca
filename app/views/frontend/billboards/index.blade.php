@@ -34,7 +34,7 @@
 
 @section('content')
 
-<h3 class="text-uppercase">Cartelera digital</h3>
+<h1 class="text-uppercase">Cartelera digital</h1>
 
 <div class="row">
     <div class="col-xs-12 col-sm-12">
@@ -58,7 +58,7 @@
 @foreach($earlierBillboards as $year => $billboards)
     
     <div class="row">
-        <h3>Cateleras del año {{$year}}</h3>
+        <h4>Carteleras anteriores {{$year}}</h4>
     @foreach($billboards as $billboard)
         <div class="col-xs-3 col-sm-3">
             <h5 class="text-uppercase">

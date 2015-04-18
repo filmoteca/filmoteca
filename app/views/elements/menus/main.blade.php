@@ -52,9 +52,9 @@
                   
                   <li><a href="/pages/acervo/restauracion">Restauración</a></li>
                   
-                  <li ><a href="http://www.filmoteca.unam.mx/MUVAC">Museo virtual</a></li>
+                  <li ><a href="/pages/acervo/museo-virtual">Museo virtual</a></li>
                   
-                  <li><a href="http://www.filmoteca.unam.mx/cinelinea">Cine en línea</a></li>
+                  <li><a href="/pages/acervo/cine-en-linea">Cine en línea</a></li>
                 </ul>
               </li>
 
