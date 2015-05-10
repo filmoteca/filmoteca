@@ -1,6 +1,6 @@
 @section('content')
 
-<h2>Detalles de películas</h2>
+<h2>Detalles de la sala</h2>
 
 <div class="text-right">
 {{ Form::open(array('route' => array('admin.auditorium.destroy', $resource->id), 'method'=> 'DELETE')) }}
