@@ -3,17 +3,23 @@
 use Filmoteca\Repository\ExhibitionsRepository;
 use Filmoteca\Repository\NewsRepository;
 use Filmoteca\ExhibitionsManager;
+use Filmoteca\Repository\AdvertisementRepository;
+use Filmoteca\Repository\CarouselsRepository;
 
 class HomeController extends BaseController {
 
 	public function __construct(
         ExhibitionsRepository $exhibitionRepository,
         NewsRepository $newsRepository,
-        ExhibitionsManager $exhibitionsManager
+        ExhibitionsManager $exhibitionsManager,
+        AdvertisementRepository $advertisementRepository,
+        CarouselsRepository $carouselRepository
     ) {
-        $this->newsRepository       = $newsRepository;
-		$this->exhibitionRepository = $exhibitionRepository;
-        $this->exhibitionsManager   = $exhibitionsManager;
+        $this->newsRepository           = $newsRepository;
+		$this->exhibitionRepository     = $exhibitionRepository;
+        $this->exhibitionsManager       = $exhibitionsManager;
+        $this->advertisementRepository  = $advertisementRepository;
+        $this->carouselRepository       = $carouselRepository;
 	}
 
 	public function index()
@@ -26,7 +32,12 @@ class HomeController extends BaseController {
 
         $news = $this->newsRepository->lastNews(3);
 
-		return View::make('pages.home.index', compact('exhibitions', 'news', 'icons', 'auditoriums'));
-	}
+        $advertisements = $this->advertisementRepository->all();
 
+        $carousels = $this->carouselRepository->findToHome();
+
+        $viewData = compact('exhibitions', 'news', 'icons', 'auditoriums', 'advertisements', 'carousels');
+
+		return View::make('pages.home.index', $viewData);
+	}
 }

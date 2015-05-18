@@ -10,7 +10,8 @@
 		"cartalyst/sentry": "2.1.*",
 		"mrjuliuss/syntara": "1.2.*",
 		"fitztrev/laravel-html-minify": "1.*",
-		"fbf/laravel-contact-form": "0.1.*"
+		"fbf/laravel-contact-form": "0.1.*",
+        "frozennode/administrator": "4.*"
 	},
 	"autoload": {
 		"classmap": [

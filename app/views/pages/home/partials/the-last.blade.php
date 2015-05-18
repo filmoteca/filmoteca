@@ -7,38 +7,44 @@
 		</div>
 
 		<div role="tabpanel">
+            <ul class="nav nav-tabs" role="tablist">
+                @for ($i=1; $i<=3; $i++)
+                    @if (isset($advertisements['rescate-y-restauracion-' . $i]))
+                        <li role="presentation" class="{{ $i === 1? 'active': '' }}">
+                            <a href="#video-{{ $i  }}"
+                               aria-controls="{{ $advertisements['rescate-y-restauracion-' . $i]->title }}"
+                               role="tab"
+                               data-toggle="tab">
+                                {{ $advertisements['rescate-y-restauracion-' . $i]->title }}
+                            </a>
+                        </li>
+                    @endif
+                @endfor
+            </ul>
 
-			<ul class="nav nav-tabs" role="tablist">
-				<li role="presentation" class="active"><a href="#video1" aria-controls="videos" role="tab" data-toggle="tab">Video 1</a></li>
-				<li role="presentation"><a href="#video2" aria-controls="videos" role="tab" data-toggle="tab">Video 2</a></li>
-			</ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                @for ($j=1; $j<=3; $j++)
+                    @if (isset($advertisements['rescate-y-restauracion-' . $j]))
+                        <div role="tabpanel" class="tab-pane {{ $j === 1? 'active': '' }}" id="video-{{ $j }}">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    {{ Str::limit($advertisements['rescate-y-restauracion-' . $j]->description, 120) }}
+                                    <span class="see-more">
+                                        <a href="{{ $advertisements['rescate-y-restauracion-' . $j]->link }}">Leer más</a>
+                                    </span>
+                                </li>
 
-			<div class="tab-content">
-				<div role="tabpanel" class="tab-pane active" id="video1">
-					<ul class="list-group">
-
-						<li class="list-group-item">La Filmoteca de la UNAM cumple 55 años. Estamos orgullosos de ser el acervo fílmico más grande de Latinoamérica...<span class="see-more"><a href="/pages/acervo/55-aniversario">Leer más</a></span></li>
-
-						<div class="video-preview">
-							<div class="embed-responsive embed-responsive-4by3">
-								<iframe width="420" height="315" src="https://www.youtube-nocookie.com/embed/hZhUqErqGCQ" frameborder="0" allowfullscreen></iframe>	
-							</div>
-						</div>
-					</ul>
-				</div>
-				<div role="tabpanel" class="tab-pane" id="video2">
-					<ul class="list-group">
-
-						<li class="list-group-item">Se realizó la restauración de material de la revolución mexicana, y se presentó en Pordenode Italia, en el marco de...<span class="see-more"><a href="/pages/acervo/restauracion-pordenone">Leer más</a></span></li>
-
-						<div class="video-preview">
-							<div class="embed-responsive embed-responsive-4by3">
-								<iframe width="420" height="315" src="https://www.youtube-nocookie.com/embed/LFu1pfcrDzQ" frameborder="0" allowfullscreen></iframe>
-							</div>
-						</div>
-					</ul>
-				</div>
-			</div>
+                                <div class="video-preview">
+                                    <div class="embed-responsive embed-responsive-4by3">
+                                        {{ $advertisements['rescate-y-restauracion-' . $j]->embed }}
+                                    </div>
+                                </div>
+                            </ul>
+                        </div>
+                    @endif
+                @endfor
+            </div>
 		</div>
 	</div>
 </div>

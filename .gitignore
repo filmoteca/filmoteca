@@ -21,6 +21,7 @@ Thumbs.db
 /others
 
 /public/*
+/workbench
 
 !/public/assets
 !/public/assets/js

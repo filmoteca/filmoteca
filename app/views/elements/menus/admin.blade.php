@@ -169,4 +169,18 @@
 		</ul>
 	</div>
 
+    <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            CMS
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li>
+                <a href="{{ URL::route('admin.cms.page.index') }}">Ver todas las páginas</a>
+            </li>
+            <li>
+                <a href="{{ URL::route('admin.cms.page.create') }}">Crear página</a>
+            </li>
+        </ul>
+    </div>
 </div>

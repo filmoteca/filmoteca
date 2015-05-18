@@ -8,33 +8,38 @@
 
 		<div role="tabpanel">
 
-		<!-- Nav tabs -->
-		<ul class="nav nav-tabs" role="tablist">
-			<li role="presentation" class="active"><a href="#cursos" aria-controls="cursos" role="tab" data-toggle="tab">Cursos</a></li>
-			<li role="presentation"><a href="#convocatorias" aria-controls="convocatorias" role="tab" data-toggle="tab">Convocatorias</a></li>
-			<li role="presentation"><a href="#becarios" aria-controls="becarios" role="tab" data-toggle="tab">Becarios</a></li>
-		</ul>
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                @for ($i=1; $i<=3; $i++)
+                    @if (isset($advertisements['filmoteca-invita-' . $i]))
+                        <li role="presentation" class="{{ $i === 1? 'active': '' }}">
+                            <a href="#filmoteca-invita-{{ $i }}"
+                               aria-controls="{{ $advertisements['filmoteca-invita-' . $i]->title }}"
+                               role="tab"
+                               data-toggle="tab">
+                                {{ $advertisements['filmoteca-invita-' . $i]->title }}
+                            </a>
+                        </li>
+                    @endif
+                @endfor
+            </ul>
 
-		<!-- Tab panes -->
-		<div class="tab-content">
-			<div role="tabpanel" class="tab-pane active" id="cursos">
-				<a href="/courses/app#/">
-					<img src="/imgs/home/filmoteca-invite/curso-cine-maquina.jpg" alt="Curso Cine máquina Filmoteca UNAM" class="img-responsive">
-				</a>
-			</div>
-			<div role="tabpanel" class="tab-pane" id="convocatorias">
-				<a href="/pages/concursos/convocatorias">
-					<img src="/imgs/home/filmoteca-invite/corto-movil.jpg" alt="Convocatoria Corto Móvil" class="img-responsive">
-				</a>
-			</div>
-			<div role="tabpanel" class="tab-pane" id="becarios">
-				<a href="/pages/extension-academica/becarios">
-					<img src="/imgs/home/filmoteca-invite/becarios.jpg" alt="Programa de Becarios Filmoteca UNAM" class="img-responsive">
-					<a href="/pages/extension-academica/becarios">Consulta las bases aquí</a>
-				</a>
-			</div>
-		</div>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                @for ($j=1; $j<=3; $j++)
+                    @if (isset($advertisements['filmoteca-invita-' . $j]))
+                        <div role="tabpanel" class="tab-pane {{ $j === 1? 'active': '' }}" id="filmoteca-invita-{{ $j }}">
+                            <a href="{{ $advertisements['filmoteca-invita-' . $j]->link }}">
+                                <img src="{{ Config::get('administrator::administrator.cms_upload_url') . $advertisements['filmoteca-invita-' . $j]->poster }}"
+                                     alt="{{ $advertisements['filmoteca-invita-' . $j]->description }}"
+                                     title="{{ $advertisements['filmoteca-invita-' . $j]->description }}"
+                                     class="img-responsive">
+                            </a>
+                        </div>
+                    @endif
+                @endfor
+            </div>
 
-	</div>
+	    </div>
 	</div>
 </div>

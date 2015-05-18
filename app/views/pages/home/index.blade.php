@@ -51,31 +51,10 @@
 	<div class="col-xs-12 col-sm-12 col-md-8">
 		<div class="row">
 			<div class="col-xs-12 col-sm-6">
-				<div class="flm-section expositions">
-					<div class="content">
-						<div class="header">
-							<h4>Centro de documentación</h4><span>Abierto al público en general</span><br>
-							<span class="see-more"><a href="/pages/servicios/centro-de-documentacion">Ver más</a></span>
-						</div>
-						<div class="image">
-							<img src="/imgs/home/centro-documentacion.jpg" alt="Centro de Documentación Filmoteca UNAM" class="img-responsive">
-						</div>
-					</div>
-				</div>
+				@include('pages.home.partials.documentation-center')
 			</div>
 			<div class="col-xs-12 col-sm-6">
-				<div class="flm-section expositions">
-					<div class="content">
-						<div class="header">
-							<h4>Exposiciones</h4>
-							<h5>Cine surealismo</h5>
-							<span>Sede: Filmoteca UNAM</span><br><span class="see-more"><a href="/pages/press/exposiciones-museografia">Ver más</a></span>
-						</div>
-						<div class="image">
-							<img src="/imgs/home/exposiciones.jpg">
-						</div>
-					</div>
-				</div>
+				@include('pages.home.partials.expositions')
 			</div>
 		</div>
 
