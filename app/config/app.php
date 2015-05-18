@@ -125,6 +125,11 @@ return array(
 		'Cartalyst\Sentry\SentryServiceProvider',
 		'Mrjuliuss\Syntara\SyntaraServiceProvider',
 		'Fitztrev\LaravelHtmlMinify\LaravelHtmlMinifyServiceProvider',
+        'Fbf\LaravelContactForm\LaravelContactFormServiceProvider',
+        'Monarobase\CountryList\CountryListServiceProvider',
+        'Maatwebsite\Excel\ExcelServiceProvider',
+//        'Filmoteca\Cms\CmsServiceProvider',
+        'Frozennode\Administrator\AdministratorServiceProvider',
 	),
 
 	/*
@@ -192,6 +197,8 @@ return array(
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
 		'Sentry'		  => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
+		'Countries' 	  => 'Monarobase\CountryList\CountryListFacade',
+		'Excel' 		  => 'Maatwebsite\Excel\Facades\Excel',
 
 	),
 

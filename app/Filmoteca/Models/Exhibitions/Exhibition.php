@@ -1,12 +1,12 @@
 <?php namespace Filmoteca\Models\Exhibitions;
 
+use Illuminate\Database\Eloquent\Collection;
 use DB;
 use Eloquent;
-use Filmoteca\Models\Genre;
 
 class Exhibition extends Eloquent
 {
-	protected $guarded = [];
+	protected $fillable = ['exhibition_film_id', 'type_id', 'notes'];
 	
 	public function exhibitionFilm()
 	{
@@ -35,22 +35,19 @@ class Exhibition extends Eloquent
 
 	public function getTechnicalCard()
 	{
-		$genresList = Genre::all(array('id','name'))
-			->lists('name','id');
-
 		$tc = array(); //tecnicalCard.
 
 		$film = $this->exhibition_film->film;
 
-		$tc['título'] 	= $film->title;
+		$tc['título original'] 	= $film->original_title;
 
-		$tc['año'] 		= $film->year;
+		$tc['año'] 		= implode(', ', $film->years);
 
-		$tc['pais'] 	= DB::table('countries')->find($film->id)->name;
+		$tc['pais'] 	= $film->countries->implode('name', ', ');
 
 		$tc['duración'] = $film->duration;
 
-		$tc['género']	= $genresList[$film->genre_id];
+        $tc['género']   = $film->genre->name;
 
 		$tc['director']	= $film->director;
 
@@ -67,6 +64,8 @@ class Exhibition extends Eloquent
 		$tc['reparto']	= $film->cast;
 
 		$tc['sinopsis']	= $film->synopsis;
+
+		$tc['notas'] = $film->notes;
 
 		$technicalCard = array();
 
@@ -90,8 +89,42 @@ class Exhibition extends Eloquent
 
 	public function schedulesByAuditorium($id)
 	{
-		return $this->schedules->filter(function($schedule) use ($id){
+		$schedules = $this->schedules->filter(function($schedule) use ($id){
 			return $schedule->auditorium->id === $id;
 		});
+
+		return $this->groupSchedulesByDay($schedules);
+	}
+
+	protected function groupSchedulesByDay(Collection $schedules)
+	{
+		$groups = [];
+
+		foreach($schedules as $schedule){
+
+			$day_time = explode(' ', $schedule->entry);
+
+			$day 	= $day_time[0];
+			$time 	= $day_time[1];
+
+
+			if(!isset($group[$day])){
+				$group[$day] = [];
+			}
+
+			$groups[$day][] = $time; //push
+		}
+
+		foreach($groups as &$group){
+
+			sort($group, SORT_NATURAL);
+		}
+
+		return $groups;
+	}
+
+	protected function setTypeIdAttribute($value)
+	{
+		$this->attributes['type_id'] = ($value === 0)? null: $value;
 	}
 }

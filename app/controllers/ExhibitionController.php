@@ -1,16 +1,9 @@
 <?php
 
-use Filmoteca\Repository\ExhibitionsRepository;
-
-use Filmoteca\Models\Exhibitions\Auditorium;
-
-use Filmoteca\ExhibitionsManager;
-
-use Filmoteca\Models\Film;
-
-use Filmoteca\Models\Exhibitions\Exhibition;
-
 use Carbon\Carbon;
+use Filmoteca\Repository\ExhibitionsRepository;
+use Filmoteca\Models\Exhibitions\Auditorium;
+use Filmoteca\ExhibitionsManager;
 
 class ExhibitionController extends BaseController
 {
@@ -38,9 +31,10 @@ class ExhibitionController extends BaseController
 					$today->daysInMonth)->toDateString()
 			);
 
-		$exhibitions = $this->repository
+		$exhibitions = $this
+			->repository
 			->search('date',$interval);
-		
+
 		$auditoriums = Auditorium::all(array('id','name'));
 
 		$icons = $this->manager->getIcons($exhibitions);
@@ -48,7 +42,7 @@ class ExhibitionController extends BaseController
 		$weeks = array();
 
 		return View::make(
-			'exhibitions.app', 
+			'frontend.exhibitions.app', 
 			compact(
 				'exhibitions',
 				'auditoriums',
@@ -58,7 +52,7 @@ class ExhibitionController extends BaseController
 
 	public function search($by)
 	{
-		$exhbitions = $this->repository
+		$exhibitions = $this->repository
 			->search($by, Input::get('value'));
 
 		return View::make('exhibitions.search-result', $exhibitions);
@@ -80,55 +74,44 @@ class ExhibitionController extends BaseController
 
 		$layout = ( Request::ajax() || $isJson )? 'layouts.modal': 'layouts.default';
 
-		return View::make('exhibitions.details', compact('exhibition','layout') );
+		return View::make('frontend.exhibitions.partials.details', compact('exhibition','layout') );
 	}
 
 	public function detailHistory($id){
 
 		$exhibition = $this->repository->search('id',$id);
 
-		return View::make('exhibitions.detail-history', compact('exhibition') );	
+		return View::make('frontend.exhibitions.detail-history', compact('exhibition') );	
+	}
+
+	public function detailHome($id){
+
+		$exhibition = $this->repository->search('id',$id);
+
+		return View::make('frontend.exhibitions.partials.details', compact('exhibition') );	
 	}
 
 	public function history(){
 
-		return View::make('exhibitions.history');
+		return View::make('frontend.exhibitions.history');
 	}
 
 	public function find(){
 
-		$q = Film::getQuery();
+        $fields         = [];
+        $fieldsNames    = ['title', 'director'];
 
-		if( Input::has('title') && !empty( Input::get('title')) ){
+        foreach($fieldsNames as $name)
+        {
+            if(Input::has($name))
+            {
+                $fields[$name] = Input::get($name);
+            }
+        }
 
-			$q->where('title', 'like' ,'%' . Input::get('title') . '%');
+        $resources = $this->repository->findByTitleDirector($fields);
 
-			$next_where_type = 'or';
-		}
-
-		if( Input::has('director') && !empty( Input::get('director'))){
-
-			$q->where('director', 'like', '%' . Input::get('director') . '%', $next_where_type);
-		}
-
-		$films_ids = array_map(function($dummyObject){
-			return $dummyObject->id; //The query builder returns an array and does not a collection. I do not know why.
-		}, $q->get(['id']) ) ;
-
-		$view = View::make('exhibitions.history');
-
-		if( !empty($films_ids) ){
-
-			$resources = Exhibition::whereHas('exhibitionFilm', function($q) use ($films_ids){
-
-				$q->whereIn('id', $films_ids);
-			})->paginate(15);
-
-			return $view->with('resources', $resources);
-		}else{
-
-			return $view->with('noResults', 0);
-		}
+        return View::make('frontend.exhibitions.history')->with('resources', $resources);
 		
 	}
 }

@@ -12,7 +12,9 @@ $menu = array(
 	array('Cronología', '/pages/quienes-somos/cronologia'),
 
 	array('Medalla Filmoteca', '/pages/quienes-somos/medalla-filmoteca', array(
-		'Galardonados', '/filmoteca-medal')),
+		array('Galardonados', '/filmoteca-medal'))),
+
+	array('Libro Filmoteca: 50 años', '/pages/quienes-somos/libro-filmoteca50'),
 
 	array('Directorio', '/pages/quienes-somos/directorio'));
 ?>

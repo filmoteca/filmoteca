@@ -5,15 +5,14 @@
 			<span class="sr-only">Close</span>
 		</button>
 
-		@{{ winner.name }} (@{{ winner.award_date }})
+		@{{ winner.name }} (@{{ winner.award_date | date : 'd-M-yyyy'}})
 
 	</h3>
 </div>
+
 <div class="modal-body">
-
-   <img ng-src="@{{ winner.photo }}">
-	@{{ winner.biography }}
-
+    <div><img ng-src="@{{ winner.photo }}" class="img-responsive center-block thumbnail"></div>
+    <div ng-bind-html="winner.biography"></div>
 </div>
-<div class="modal-footer">
-</div>
+
+<div class="modal-footer"></div>

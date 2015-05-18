@@ -8,4 +8,22 @@ class BillboardsRepository extends ResourcesRepository
 	{
 		$this->resource = $resource;
 	}
+
+    public function thisYear()
+    {
+        return $this->byYear(date('Y'));
+    }
+
+    public function previousYear()
+    {
+        return $this->byYear(date('Y') -1);
+    }
+
+    public function byYear($year)
+    {
+        return $this->resource
+            ->whereRaw('YEAR(created_at) = ?', [$year])
+            ->orderBy('created_at','desc')
+            ->get();
+    }
 }

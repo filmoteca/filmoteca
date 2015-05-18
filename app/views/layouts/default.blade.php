@@ -6,27 +6,15 @@
 
 		@yield('metas')
 
-		@if (App::isLocal() )
-
-		{{ HTML::style('/assets/css/filmoteca.css') }}
-
 		{{
 			HTML::scripts([
 				'/bower_components/jquery/dist/jquery.min.js',
 				'/bower_components/bootstrap/dist/js/bootstrap.min.js',
 				'/bower_components/slick.js/slick/slick.min.js'
 				])
-			}}
+		}}
 
-		@else
-			{{--
-				La idea de esta sección es cargar, cuando se está en producción,
-				un unico archivo css. Sin embargo hay dudas si se deben
-				concatenar únicamente los archivos propios sin los css de terceros
-				o concatenar todo.
-				--}}
-				{{ HTML::style('/assets/css/filmoteca.min') }}
-		@endif
+		{{ HTML::style('/assets/css/filmoteca.css') }}
 
 		@yield('styles')
 
@@ -40,10 +28,10 @@
 
 		<div class="container-fluid">
 			<div class="row">
-				<div class="sidebar col-sm-4">
+				<div class="sidebar col-sm-3">
 					@yield('sidebar')
 				</div>
-				<div class="content col-sm-8">
+				<div class="content col-sm-9">
 					@yield('content')
 				</div>
 			</div>

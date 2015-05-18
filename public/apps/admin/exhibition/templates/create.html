@@ -1,0 +1,174 @@
+<h1 ng-hide="exhibitionLoaded" class="text-center">Agregar exhibición</h1>
+<h1 ng-show="exhibitionLoaded" class="text-center">Editar exhibición</h1>
+<div ng-controller="FilmController" class="row">
+    <div class="col-md-4">
+        <div class="row">
+            <div class="col-md-12">
+                <p ng-if="!exhibitionLoaded" class="ng-cloak">
+                    <span class="glyphicon glyphicon-search btn" ng-click="search()" title="Buscar"></span>
+                <p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" ng-show="searching">
+                <angucomplete-alt id="ex1"
+                    placeholder="Buscar película por título"
+                    pause="400"
+                    selected-object="filmSelected"
+                    remote-url="/api/film?by=title&value="
+                    remote-url-data-field=""
+                    title-field="title"
+                    description-field="director"
+                    search-fields="title"
+                    image-field="cover_urls.thumbnail"
+                    minlength="1"
+                    text-searching="Buscando..."
+                    text-no-results="Ninguna película encontrada."
+                    input-class="form-control form-control-small">
+                </angucomplete-alt>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-1">
+        
+    </div>
+
+    <div class="col-md-7">
+        <div ng-show="wasFilmSelected()" class="panel panel-default ng-cloak">
+            <div class="panel-heading">{{film.title}}</div>
+            <div class="panel-body">
+                <div class="image pull-left"><img ng-src="{{ film.cover_urls.thumbnail }}" class="thumbnail"></div>
+                <p>Título: {{film.title}}</p>
+                <p>País: {{film.country}}</p>
+                <p>Sinopsis: {{film.synopsis}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+
+<div class="row" ng-controller="admin.exhibition.controllers.exhibition">
+    <div class="col-md-12">
+        <div class="panel panel-default" ng-show="wasFilmSelected()">
+            <div class="panel-heading">Notas</div>
+            <div class="panel-body container-fluid">
+                <div class="row">
+                    <textarea ng-model="exhibition.notes" class="col-sm-12"></textarea>
+                </div>
+            </div>
+            <div class="panel-footer"><button class="btn btn-success" ng-click="update()">Guardar notas</button></div>
+        </div>
+    </div>
+</div>
+
+<div ng-controller="ScheduleController" class="row">
+    <div class="panel panel-default" ng-show="wasFilmSelected()">
+        <div class="panel-heading">Horario 
+            <span class="glyphicon glyphicon-plus btn" ng-click="add()" title="Agregar"></span>
+        </div>
+        <table class="table table-collapsed table-bordered ng-cloak">
+            <tr>
+                <th>Sala</th>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>Acciones</th>
+            </tr>
+            <!--- Los horarios de exhibicion -->
+            <tr ng-repeat="schedule in schedules">
+                <td>
+                    <div ng-hide="editing && editedIndex == $index">
+                        {{schedule.auditorium.name}}
+                    </div>
+                    <div ng-show="editing && editedIndex == $index">
+                        <select ng-model="schedule.auditorium" 
+                            ng-options="auditorium.name for auditorium in auditoriums"></select>
+                    </div>
+                </td>
+                <td>
+                    <div ng-hide="editing && editedIndex == $index">
+                        {{schedule.date | date : 'd/M/yyyy' }}
+                    </div>
+                    <div ng-show="editing && editedIndex == $index">
+                        <datepicker ng-model="schedule.date" class="datepicker"></datepicker>
+                    </div>
+                </td>
+                <td>
+                    
+                    <div ng-hide="editing && editedIndex == $index">
+                        {{schedule.time | date : 'HH:mm' }}
+                    </div>
+                    <div ng-show="editing && editedIndex == $index">
+                        <timepicker ng-model="schedule.time" show-meridian="false"></timepicker>
+                    </div>
+                </td>
+                <td>
+                    <span ng-click="ready()" 
+                        class="glyphicon glyphicon-ok btn" 
+                        ng-show="editing && editedIndex == $index"
+                        title="Listo!"></span>
+                    <span ng-click="edit($index)" 
+                        class="glyphicon glyphicon-pencil btn"
+                        title="Editar"></span>
+                    <span ng-click="destroy($index)" 
+                        class="glyphicon glyphicon-remove btn"
+                        title="Borrar"></span>
+                    <br>
+                    <div class="alert alert-danger" ng-show="schedule.time == undefined || schedule.date == undefined">
+                        La fecha o la hora es invalida.
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div ng-controller="IconographicController" class="row icons-available">
+
+    <div class="panel panel-default" ng-show="wasFilmSelected()">
+        <div class="panel-heading">
+            <span class="h4">Iconografía</span>
+            <span ng-show="exhibition.type">
+                <img ng-src="{{exhibition.type.icon}}" class="thumbnail image image-size-icon">({{exhibition.type.name}})
+                <span class="btn btn-danger pull-right" ng-click="deleteExhibitionIcon()">Borrar icono</span>
+            </span>
+            <span ng-hide="exhibition.type">
+                <p>Ningún icono seleccionado.</p>
+            </span>
+            <div class="clearfix"></div>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-6">
+                    <span class="h4">Iconos disponibles</span>
+                    <span class="btn btn-success" ng-click="create()">Agregar nuevo icono</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <ul class="icons-list">
+                        <li ng-repeat="icon in iconsAvailable">
+                            <div class="text-center">
+                                <img ng-src="{{icon.icon}}" class="image-size-icon" ng-click="update(icon)">
+                                <span class="icon-name">
+                                    {{ icon.name }}
+                                </span>
+                            </div>
+                            <div>
+                                <a><span class="btn glyphicon glyphicon-remove" ng-click="destroy(icon.id)" title="Eliminar"> Eliminar</span></a>
+                            </div>
+                            <div>
+                                <a><span class="btn glyphicon glyphicon-pencil" ng-click="edit(icon)" title="Editar"> Editar</span></a>
+                            </div>
+                            <div>
+                                <a><span class="btn glyphicon glyphicon-plus" ng-click="update(icon)" title="Agregar a la exhibición"> Usar</span></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a class="btn btn-success" href="#index" ng-show="wasFilmSelected()">Actualizar y regresar al listado.</a>
+</div>

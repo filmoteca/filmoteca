@@ -6,6 +6,6 @@
 
 <h2>Lista de exhibiciones</h2>
 
-@include('exhibitions.tabulator');
+@include('frontend.exhibitions.partials.tabulator');
 
 @stop

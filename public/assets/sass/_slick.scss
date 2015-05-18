@@ -1,0 +1,35 @@
+//-----------------------------------------------------------------------------
+// 
+// Este archivo sobreescribe los estilos por default del plugin slick (carrusel)
+// 
+//-----------------------------------------------------------------------------
+
+
+//
+// Los botones de antes y siguiente
+//
+
+.slick-prev, .slick-next{
+	background-color: $tertiary-color;
+	color: $primary-color;
+	height: auto;
+    width: auto;
+	
+	&:focus{
+		background-color: $tertiary-color;
+		color: $primary-color;
+	}
+
+	&:hover {
+      outline: none;
+      background-color: $primary-color;
+      &:before {
+      	 color: $tertiary-color;
+        opacity: $slick-opacity-on-hover;
+      }
+    }
+}
+
+.slick-prev:before, .slick-next:before {
+	font-size: 30px;
+}

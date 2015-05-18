@@ -18,11 +18,6 @@ return array(
 	'providers' => append_config(array(
 		
 		'Way\Generators\GeneratorsServiceProvider',
-		'Monarobase\CountryList\CountryListServiceProvider'
+		'Maatwebsite\Excel\ExcelServiceProvider',
 	)),
-
-	'aliases' => append_config(array(
-		'Countries' => 'Monarobase\CountryList\CountryListFacade',
-	))
-
 );

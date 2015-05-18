@@ -120,11 +120,81 @@ a{
 
 	.item{
 		float: left;
-		width: 30%;
+		width: 23%;
 		margin-left: 10px;
+        height: 210px;
 	}
 
-	:after{
+    @media only screen and (max-width: 340px) {
+        .item{
+            width: 100%
+        }
+    }
 
-	}
+    @media only screen and (min-width: 341px) and (max-width: 550px) {
+        .item{
+            width: 45%
+        }
+    }
 }
+
+.details {
+
+    .cover {
+
+        img {
+            max-width: 100%;
+            margin: 10px;
+        }
+    }
+}
+
+.exhibition-detail{
+
+    .close{
+        display:none;
+    }
+}
+
+h5{
+	color: $primary-color;
+}
+
+.bold{
+	font-weight: bold;
+}
+
+.image-size-icon{
+	max-width: 30px;
+}
+
+.col-sm-12 .image-billboard > .image-size-icon{
+	max-width: 100%;
+    width: 250px;
+}
+
+.col-sm-3 .image-billboard > .image-size-icon{
+	max-width: 150px;
+}
+
+
+.image-size-thumbnail{
+	max-width: 150px;
+}
+
+.image-size-max-width{
+  width: 100%;
+}
+
+.angucomplete-dropdown img{
+    width: 50px;
+}
+
+
+.panel-footer {
+    background-color: #f5f5f5;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-top: 1px solid #ddd;
+    padding: 4px 15px;
+   }

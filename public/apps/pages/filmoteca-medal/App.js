@@ -28,6 +28,7 @@
 		'angular',
 		'domready',
 		'angucomplete-alt',
+		'ngSanitize',
 		'pages.filmoteca-medal.directives/SliderPipsDirective',
 		'pages.filmoteca-medal.controllers/RootController'
 		],
@@ -37,7 +38,7 @@
 {
 	'use strict';
 	angular.module('App',[
-
+		'ngSanitize',
 		'angucomplete-alt',
 		'pages.filmoteca-medal.directives.SliderPips',
 		'pages.filmoteca-medal.controllers.RootController'

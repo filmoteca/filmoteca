@@ -1,12 +1,12 @@
 <?php namespace Filmoteca\Repository;
 
 use App;
-
+use Carbon\Carbon;
 use Filmoteca\Models\Exhibitions\Exhibition;
-
 use Filmoteca\Models\Exhibitions\ExhibitionFilm;
-
 use Filmoteca\Models\Film;
+use StdClass;
+use Illuminate\Database\Eloquent\Collection;
 
 class ExhibitionsRepository extends ResourcesRepository
 {
@@ -15,11 +15,10 @@ class ExhibitionsRepository extends ResourcesRepository
 		ExhibitionFilm $exhibitionFilm,
 		Film $film)
 	{
-		$this->exhibition = $exhibition;
-		$this->exhibitionFilm = $exhibitionFilm;
-		$this->repository = $exhibition; // ## REFACTOR
-		$this->resource = $exhibition; //##REFACTOR
-		$this->film = $film;
+		$this->exhibition       = $exhibition;
+		$this->exhibitionFilm   = $exhibitionFilm;
+		$this->resource         = $exhibition;
+		$this->film             = $film;
 	}
 
 	/**
@@ -31,7 +30,7 @@ class ExhibitionsRepository extends ResourcesRepository
 	 * @return Collection 	Collección de exhibiciones
 	 * @throws NotFoundException Si la exhibición no existe al realizar una búsquda por id.
 	 */
-	public function search($by, $value)
+	public function search($by, $value = null)
 	{
 		switch($by)
 		{
@@ -48,6 +47,12 @@ class ExhibitionsRepository extends ResourcesRepository
 			case('date'):
 
 				$exhibitions = $this->searchByDate($value[0], $value[1]);
+				break;
+			case('today'):
+
+				$today = Carbon::now()->toDateString();
+				$exhibitions = $this->searchByDate( $today, $today . ' 23:59:59');
+
 				break;
 			default:
 				throw new Exception('Parámetro de búsqueda invalido: ' . $by );
@@ -106,14 +111,15 @@ class ExhibitionsRepository extends ResourcesRepository
 			->whereHas('schedules', function($query) use ($interval)
 			{
 				$query->whereBetween('entry', $interval);
-			})
-			->with(
-				'schedules', 
-				'schedules.auditorium',
+			})->with(
+                'schedules',
+                'schedules.auditorium',
 				'exhibitionFilm',
 				'exhibitionFilm.film',
-				'type')
-			->get();
+                'exhibitionFilm.film.genre',
+                'exhibitionFilm.film.countries',
+				'type'
+            )->get();
 
 		return $exhibitions;
 	}
@@ -140,30 +146,9 @@ class ExhibitionsRepository extends ResourcesRepository
 		$exhibitionFilm->fill(['film_id' => $data['exhibition_film']['film']['id'] ])
 			->save();
 
-
 		$d['exhibition_film_id'] = $exhibitionFilm->id;
 
-		$schedules = [];
-
-		foreach( $data['schedules'] as $value)
-		{
-			$model = App::make('Filmoteca\Models\Exhibitions\Schedule');
-
-			$value['auditorium_id'] = $value['auditorium']['id'];
-			
-			unset( $value['auditorium']);
-			unset( $value['date'] );
-			unset( $value['time'] );
-
-			$model->fill($value);
-
-			array_push( $schedules, $model );
-		}
-
-		$this->repository->create($d)->schedules()
-			->saveMany($schedules);
-
-		return true;
+		return $this->resource->create($d);
 	}
 
 	public function find($id)
@@ -176,5 +161,90 @@ class ExhibitionsRepository extends ResourcesRepository
 				'exhibitionFilm.film',
 				'type')
 			->first();
+	}
+
+	public function paginate($page = 1, $amount = 15)
+	{
+		$results 				= new StdClass();
+		$results->totalItems 	= 0;
+		$results->itmes 		= array(); 
+
+		$resources = $this
+			->resource
+			->orderBy('id','desc')
+			->skip($amount * ($page - 1))
+			->take($amount)
+			->with('exhibitionFilm','exhibitionFilm.film')
+			->get();
+
+		$results->total 	= $this->resource->count();
+		$results->items 	= $resources->all();
+
+		return $results;
+	}
+
+	public function update($id, array $data = null)
+	{
+		$exhibition = $this->resource
+			->findOrFail($data['id'])
+			->fill($data);
+
+		$exhibition->save();
+
+		return true;
+	}
+
+    public function findByTitleDirector($fields)
+    {
+        $builder    = Film::getQuery();
+        $resources  = Collection::make([]);
+        $limit      = 15;
+
+        foreach($fields as $name => $value)
+        {
+            $builder->where($name, 'like' ,'%' . $value . '%');
+        }
+
+        $results = $builder->get(['id']);
+
+        $filmsIds = array_map(function($dummyObject){
+            return $dummyObject->id; //The query builder returns an array and does not a collection. I do not know why.
+        }, $results );
+
+        if( !empty($filmsIds) ){
+            $resources = Exhibition::whereHas('exhibitionFilm', function($q) use ($filmsIds){
+
+                $q->whereHas('film', function($q) use ($filmsIds) {
+                    $q->whereIn('films.id', $filmsIds);
+                });
+            })->with('schedules',
+                'schedules.auditorium',
+                'exhibitionFilm',
+                'exhibitionFilm.film',
+                'type')
+                ->paginate($limit);
+        }
+
+        return $resources;
+    }
+
+	protected function makeSchedules(array $schedules = null)
+	{
+		return array_map(function($a_schedule){
+
+			if( isset($data['id'])) {
+				$schedule = App::make('Filmoteca\Models\Exhibitions\Schedule')
+					->findOrFail($a_schedule['id'])
+					->fill($a_schedule)
+					->save();
+			} else {
+				$a_schedule['auditorium_id'] = $a_schedule['auditorium']['id'];
+				$schedule = App::make('Filmoteca\Models\Exhibitions\Schedule')
+					->fill($a_schedule)
+					->save();
+			}
+
+			return $schedule;
+		}, $schedules);
 	}
 }

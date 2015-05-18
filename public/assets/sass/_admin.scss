@@ -1,0 +1,69 @@
+
+// Override the base.css of mrjulluss/syntara package.
+
+[class^="glyphicon-"],
+[class*=" glyphicon-"] {
+    display: inline-block;
+    height: inherit;
+    margin-top: 1px;
+    line-height: inherit;
+}
+
+.datepicker table td{
+    font-size: inherit;
+    padding: inherit;
+    border-bottom: inherit;
+    color: inherit;
+}
+
+.view-animate-container{
+  position:relative;
+}
+
+.messages-stack{
+  position: fixed;
+  z-index: 90;
+  top: 25px;
+  right: 50px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.multicountry{
+  min-width: 100%;
+}
+
+.multiyear{
+  min-width: 100%;
+}
+
+.icons-available{
+
+  .h4{
+    margin-right: 10px;
+  }
+  .icons-list{
+    list-style: none;
+
+    li{
+      width: 25%;
+      float: left;
+      position: relative;
+      padding: 10px;
+      border: thin white solid;
+      background-color: #f9f9f9;
+      height: 180px;
+
+      img{
+        cursor: pointer;
+      }
+    }
+  }
+
+  .icon-name{
+    display: block;
+    word-wrap: break-word;
+    text-align: center;
+  }
+}
+

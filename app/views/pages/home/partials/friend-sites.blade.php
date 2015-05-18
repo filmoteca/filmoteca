@@ -1,7 +1,7 @@
 <div class="friend-sites">
 	<hr>
 	<div class="toggle-button center-block" id="friend-sites-toggle-button">
-		<span>Sitios amigos</span>
+		<span>Sitios de interés</span>
 
 		<div class="external-circle center-block">
 			<span class="icon icon-arrow-friends-sites icon-circle" id="friend-sites-button"></span>
@@ -14,7 +14,7 @@
 			<div class="col-md-12">
 				<div class="col-md-4">
 					<h5> Sitios UNAM </h5>
-						<ul class="footer_links">
+						<ul class="footer_links list-unstyled">
 							<li>
 								<a class="footer_link" href="http://www.cultura.unam.mx/">
 									Cultura UNAM
@@ -49,7 +49,7 @@
 					</div>
 					<div class="col-md-4">
 						<h5> Festivales de cine </h5>
-						<ul class="footer_links">
+						<ul class="footer_links list-unstyled">
 							<li>
 								<a class="footer_link" href="http://ambulante.com.mx/es">
 								Ambulante Gira de Documentales
@@ -128,7 +128,7 @@
 					</div>
 					<div class="col-md-4">
 						<h5> Instituciones culturales </h5>
-						<ul class="footer_links">
+						<ul class="list-unstyled">
 							<li><a class="footer_link" href="http://www.cultura.unam.mx/">Cultura UNAM</a></li>
 							<li><a class="footer_link" href="http://www.cuec.unam.mx/">Centro Universitario de Estudios Cinematográficos</a></li>
 							<li><a class="footer_link" href="http://www.chopo.unam.mx/cartelera_cine.html">Museo Universitario del Chopo – Cine</a></li>

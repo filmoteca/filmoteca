@@ -1,6 +1,6 @@
 @section('content')
 
-<h2>Detalles de películas</h2>
+<h2>Detalles de la sala</h2>
 
 <div class="text-right">
 {{ Form::open(array('route' => array('admin.auditorium.destroy', $resource->id), 'method'=> 'DELETE')) }}
@@ -51,11 +51,11 @@
 		</tr>
 		<tr>
 			<th>Sede</th>
-			<td>{{ $resource->venue->name }}</td>
+			<td>{{ (isset($resource->venue))? $resource->venue->name : 'Ninguna' }}</td>
 		</tr>
 		<tr>
 			<th>Mapa</th>
-			<td><a href="{{ $resource->map }}">Link</a></td>
+			<td>{{ $resource->map }}</td>
 		</tr>
 	</tbody>
 </table>

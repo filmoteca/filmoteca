@@ -13,7 +13,7 @@ return array(
 	|
 	*/
 
-	'name' => '',
+	'name' => 'filmoteca',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -26,6 +26,6 @@ return array(
 	|
 	*/
 
-	'email' => '',
+	'email' => 'victor.aguilar@ciencias.unam.mx',
 
 );

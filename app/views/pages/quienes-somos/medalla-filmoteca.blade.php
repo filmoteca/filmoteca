@@ -21,10 +21,10 @@
 
 @section('content')
 
-	<h3>Medalla Filmoteca</h3>
+	<h1>Medalla Filmoteca UNAM</h1>
 
 	<div class="image text-center">
-		{{ HTML::image("assets/imgs/medallaFilmoteca.png",'Medalla Filmoteca') }}
+		{{ HTML::image("/imgs/medalla-Filmoteca/medallaFilmoteca.png",'Medalla Filmoteca') }}
 	</div>
 
 	<p>A lo largo de su historia, iniciada en el año de 1960, la Filmoteca de la UNAM se ha dedicado a facilitar el acceso a los archivos fílmicos que los investigadores, docentes, alumnos y público en general requieren para llevar a cabo los más diversos trabajos especializados en el cine. </p>

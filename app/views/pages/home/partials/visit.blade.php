@@ -1,17 +1,20 @@
 <div class="flm-section visit">
 	<div class="content">
 		<div class="header">
-			<h3>Visita</h3>
+			<h4>Visita</h4>
 		</div>
 
 		<div class="visit-carousel">
-			<div><img src="/imgs/michel.jpg" class="img-responsive"></div>
-			<div>
-				<img src="/imgs/jill.jpg" class="img-responsive">
-			</div>
-			<div>
-				<img src="/imgs/dead-nation.jpg" class="img-responsive">
-			</div>
+            @foreach( $carousels['visita']->carousel_images as $image)
+                <div>
+                    <a href="{{ $image->link }}" target="blank">
+                        <img src="{{  Config::get('administrator::administrator.cms_upload_url') . $image->image }}"
+                             alt="{{ $image->title }}"
+                             title="{{ $image->description }}"
+                             class="img-responsive">
+                    </a>
+                </div>
+            @endforeach
 		</div>
 	</div>
 </div>

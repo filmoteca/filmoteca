@@ -3,59 +3,29 @@
 Form::macro('formGroup', 
 	function($type, $name, $title, $formname,array $attr = array())
 {
+	$CUSTOM_INPUTS = ['year', 'country', 'multiCountry', 'multiYear','genre',
+	'textarea', 'auditorium', 'theMedia', 'professor', 'subject', 'venue',
+	'date'];
+
 	$attr['placeholder'] = $title;
 	$attr['formname']	 = $formname;
-	$attr['class']		 = 'form-control';
 	$attr['ng-model']	 = $formname . '.' .$name;
 
-	switch( $type )
-	{
-		case('file'):
-			return Form::fileFormGroup($name, $title, $formname, $attr);
-
-		case('year'):
-			return Form::yearFormGroup($name, $title, $formname, $attr);
-
-		case('country'):
-			return Form::countryFormGroup($name, $title, $formname, $attr);
-
-		case('genre'):
-			return Form::genreFormGroup($name, $title, $formname, $attr);
-
-		case('textarea'):
-			return Form::textareaFormGroup($name, $title,$formname, $attr);
-
-		case('auditorium'):
-			return Form::auditoriumFormGroup($name, $title, $formname, $attr);
-
-		case('theMedia'):
-			return Form::theMediaFormGroup($name, $title, $formname, $attr);
-
-		case('professor'):
-			return Form::professorFormGroup($name, $title, $formname, $attr);
-
-		case('subject'):
-			return Form::subjectFormGroup($name, $title, $formname, $attr);
-
-		case('venue'):
-			return Form::venueFormGroup($name, $title, $formname, $attr);
-
-		case('date'):
-			return Form::dateFormGroup($name, $title, $formname, $attr);
-
-		default:
-
-			return "\n" .
-			'<div class="form-group"' . "\n" .
-			'	ng-class="{\'has-error\' : film_form.' . $name . '.$invalid }">' . "\n" .
-			'	<label for="' . $name . '" class="col-sm-2 control-label text-right">' . $title . '</label>' . "\n" .
-			'	<div class="col-sm-10">' . "\n" .
-
-			Form::input($type, $name, null, $attr) .
-
-			'	</div>' ."\n".
-			'</div>' . "\n";
+	if(array_search($type, $CUSTOM_INPUTS)){
+		$type .= 'FormGroup';
+		return Form::{$type}($name, $title, $formname, $attr);		
 	}
+
+	return "\n" .
+	'<div class="form-group"' . "\n" .
+	'	ng-class="{\'has-error\' : film_form.' . $name . '.$invalid }">' . "\n" .
+	'	<label for="' . $name . '" class="col-sm-2 control-label text-right">' . $title . '</label>' . "\n" .
+	'	<div class="col-sm-10">' . "\n" .
+
+	Form::input($type, $name, null, $attr) .
+
+	'	</div>' ."\n".
+	'</div>' . "\n";
 });
 
 Form::macro('dateFormGroup', function($name,$title, $formname, $attr){
@@ -72,22 +42,28 @@ Form::macro('dateFormGroup', function($name,$title, $formname, $attr){
 	'</div>';
 });
 
-Form::macro('fileFormGroup', function($name,$title, $formname, $attr)
+Form::macro('multiYear', function($name, $title, $selected)
 {
-	unset( $attr['class'] );
+	$minYear = 1954;
 
-	$attr['file-model'] = $attr['ng-model'];
+	$options = range($minYear, intval(date('Y') + 2));
 
-	unset( $attr['ng-model']);
+	$attr = ['class' => 'multiyear', 'multiple' => 'multiple'];
 
-	return "\n" .
-	'<div class="form-group">' . "\n" .
-	'	<label for="' . $name . '" class="col-sm-2 control-label text-right">' . $title . '</label>' . "\n" .
-	'	<div class="col-sm-10">' . "\n" .
-	'	' . Form::file($name, $attr) . "\n" .
-	'	</div>' . "\n" .
-	'	<p class="help-block">' . $title . '	</p>' . "\n" .
-	'</div>'  . "\n";
+	$input = Form::select($name, array_combine($options, $options), $selected, $attr);
+
+	return Form::wrapperInput($name, $title, $input);
+});
+
+Form::macro('multiCountry', function($name, $title, $selected)
+{
+	$options = Filmoteca\Models\Country::all(['id', 'name'])->lists('name', 'id');
+
+	$attr = ['class' => 'multicountry', 'multiple' => 'multiple'];
+
+	$input = Form::select($name, $options, $selected, $attr);
+
+	return Form::wrapperInput($name, $title, $input);
 });
 
 Form::macro('countryFormGroup', function($name, $title, $formname, $attributes)
@@ -127,7 +103,14 @@ Form::macro('venueFormGroup', function($name, $title, $formname, $attributes)
 
 Form::macro('yearFormGroup', function($name, $title, $formname, $attributes)
 {
-	$options = range(1959, intval(date('Y') + 2));
+	$minYear = 1959;
+
+	if(isset($attributes['minYear'])){
+
+		$minYear = $attributes['minYear'];
+	}
+
+	$options = range($minYear, intval(date('Y') + 2));
 
 	return Form::selectFormGroup($name, array_combine($options, $options),$title, $formname, $attributes);
 });
@@ -148,7 +131,7 @@ Form::macro('auditoriumFormGroup', function($name, $title, $formname, $attribute
 
 Form::macro('theMediaFormGroup', function($name, $title, $formname, $attributes){
 
-	$options = ['Televisión', 'Preíodico', 'Radio', 'Otro'];
+	$options = ['Televisión', 'Periódico', 'Radio', 'Otro'];
 
 	return Form::selectFormGroup($name, $options,$title,$formname,$attributes);
 });
@@ -167,17 +150,34 @@ Form::macro('selectFormGroup', function($name, $options, $title, $formname, $att
 		'</div>' . "\n";
 });
 
+/**
+ * By default all the text area inputs have the widget CKEditor.
+ *
+ * If you do not want the CKEditor you must set the $attr['class'] = 'no-ckeditor'.
+ */
 Form::macro('textareaFormGroup', function($name, $title, $formname, $attr)
 {
-	return "\n" .
-		'<div class="form-group"' . "\n" .
-		'	ng-class="{\'has-error\' : film_form.' . $name . '.$invalid }">' . "\n" .
-		'	<label for="' . $name . '" class="col-sm-2 control-label text-right">' . $title . '</label>' . "\n" .
-		'	<div class="col-sm-10">' . "\n" .
-		
-		Form::textarea($name, null,$attr) .
+	$attr['class'] = isset($attr['class']) ? $attr['class']  : ''; 
 
-		'	</div>' ."\n".
-		'</div>' . "\n";
+	/**
+	 * If it does not has a ckeditor class then we add a full editor.
+	 */
+	if( !Str::contains($attr['class'], 'ckeditor') ){
+
+		$attr['class'] .= ' ckeditor-full';
+	}
+	
+	return Form::wrapperInput($name, $title, Form::textarea($name, null, $attr));
+});
+
+Form::macro('wrapperInput', function($name, $title, $input)
+{
+	return "\n" .
+	'<div class="form-group">' . "\n" .
+	'	<label for="' . $name . '" class="col-sm-2 control-label text-right">' . $title . '</label>' . "\n" .
+	'	<div class="col-sm-10">' . "\n" .
+	'	' . $input . "\n" .
+	'	</div>' . "\n" .
+	'</div>'  . "\n";
 });
 

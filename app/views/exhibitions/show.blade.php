@@ -5,5 +5,5 @@
 
 
 @section('content')
-	@include('exhibitions.partial-details', ['exhibition' => $resource])
+	@include('frontend.exhibitions.partials.details', ['exhibition' => $resource])
 @stop

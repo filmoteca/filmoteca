@@ -4,8 +4,8 @@ class GenresTableSeeder extends Seeder {
 
     public function run()
     {
-        $genres = ['Acción', 'Aventura', 'Catástrofe', 'Ciencias Ficción',
-        'Comedia', 'Documental', 'Drama', 'fantasía', 'Musical', 'Suspenso',
+        $genres = ['Acción', 'Aventura', 'Catástrofe', 'Ciencia Ficción',
+        'Comedia', 'Documental', 'Drama', 'Fantasía', 'Musical', 'Suspenso',
         'Pornográfico', 'Animación', 'Cine Mudo', 'Cine Sonoro', 'Cine 2D',
         'Cine 3D'];
 
@@ -15,9 +15,13 @@ class GenresTableSeeder extends Seeder {
                      'updated_at' => new DateTime()];
         }, $genres);
 
+        DB::statement('SET foreign_key_checks = 0');
+
         DB::table('genres')->truncate();
 
         DB::table('genres')->insert($rows);
+
+        DB::statement('SET foreign_key_checks = 1');
     }
 
 }

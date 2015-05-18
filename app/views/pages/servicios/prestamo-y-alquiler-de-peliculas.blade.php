@@ -10,29 +10,33 @@
 @stop
 
 @section('sidebar')
-	@include('elements.menus.servicios', array('selected' => 9))
+	@include('elements.menus.servicios', array('selected' => 6))
 @stop
 
 
 
 @section('content')
 
+	<div class="img-servicios">
+		<img src="/imgs/servicios/prestamo-alquiler.jpg" aling="left" class="img-responsive" 'Préstamo y alquiles de películas'>
+	</div>
+
 	<h1>Préstamo y alquiler de películas</h1>
 
 
-	<p>Muchas de las películas del acervo de la Filmoteca de la UNAM están resguardadas para su conservación como material histórico; es decir, muchas de estas películas son copias únicas, originales o cuyas condiciones no son las adecuadas para permitir su exhibición, ya que podrían sufrir un desgaste irreparable.</p> 
+	<p>Muchas de las películas del acervo de la Filmoteca de la UNAM están disponibles para ser solicitadas en préstamo o alquiler. Es el caso de las películas que son programadas y exhibidas en las diversas salas de la UNAM en sus sedes dentro y fuera de Ciudad Universitaria,  asimismo, de las películas mexicanas que el Servicio Exterior Mexicano solicita regularmente  para exhibirlas a través de los Consulados mexicanos en el extranjero, y de las que continuamente se alquilan para festivales, muestras y ciclos de cine temáticos nacionales e internacionales.</p> 
 	
-	<p>Por otro lado, muchos filmes están disponibles para ser solicitados en préstamo o alquiler. Es el caso de las exhibiciones que permanentemente se programan en las diversas salas de que dispone la UNAM en todas sus sedes dentro y fuera de Ciudad Universitaria. Asimismo, el Servicio Exterior Mexicano solicita regularmente películas mexicanas para exhibirlas a través de los consulados mexicanos en el extranjero. Además, continuamente se alquilan cintas en diversos formatos para festivales, muestras y ciclos temáticos nacionales e internacionales.</p>
-
-	<p>La Unidad de Acceso Interinstitucional (UAI) está a cargo del servicio de préstamo y alquiler. Para obtener materiales, el solicitante debe definir los títulos requeridos, es decir, se deben solicitar los títulos específicos de las películas buscadas. La UAI se encarga de responder si los títulos existen o no en el acervo, los formatos en que están disponibles,  y si lo están para las fechas solicitadas; también informa sobre las tarifas y condiciones bajo las que se deberán manejar los materiales.</p>
-
+	<p>La Unidad de Acceso Interinstitucional (UAI) está a cargo del servicio de préstamo y alquiler. Para obtener materiales, el solicitante debe especificar los títulos de las películas requeridas. La UAI se encarga de responder si los títulos existen o no en el acervo, los formatos en que están disponibles, y si lo están para las fechas solicitadas; también informa sobre las tarifas y condiciones bajo las que se deberán manejar los materiales.</p>
+	
+	<p>Si quieres hacer alguna solicitud, consulta los 
+	{{ HTML::link(
+		'/pages/servicios/requisitos-para-solicitar-un-servicio',
+		'Requisitos para solicitar un servicio.' )                            
+		}}</p>
+		
 	<p>Contacto: José Manuel García </p>
 	<p>Tel: 5622 9597 </p>
 	<p>Correo electrónico: <a href="mailto:mvng@unam.mx">mvng@unam.mx</a></p>
 
-	<p>Si quieres hacer alguna solicitud, consulta los  
-	{{ HTML::link(
-		'/pages/servicios/lineamentos-generales-para-solicitar-un-servicio',
-		'Lineamientos para acceso al material.' )                            
-		}}</p>
+
 @stop

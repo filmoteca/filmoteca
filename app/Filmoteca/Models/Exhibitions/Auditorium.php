@@ -32,7 +32,9 @@ class Auditorium extends Eloquent implements StaplerableInterface
 	public function venue()
 	{
 		return $this->hasOne(
-			'Filmoteca\Models\Exhibitions\Auditorium', 
-			'id', 'venue_id');
+			'Filmoteca\Models\Exhibitions\Auditorium',
+			'id',
+            'venue_id'
+        );
 	}
 }

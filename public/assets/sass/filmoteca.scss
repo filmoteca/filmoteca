@@ -28,6 +28,8 @@
 
 @import '../../bower_components/slick.js/slick/slick.scss';
 
+@import '../../bower_components/angular/angular-csp.css';
+
 //
 // Bibliotecas estaticas (CSS)
 //
@@ -47,6 +49,9 @@
 // Clases para el plugin parsley (validador)
 @import 'parsley';
 
+// Clases para el plugin slick (carrousel)
+@import 'slick';
+
 @import 'site';
 
 @import 'header';
@@ -57,7 +62,7 @@
 
 @import 'admin';
 
-@import 'exhibitions-datepicker';
+@import 'exhibitions';
 
 @import 'static-pages-menu';
 
@@ -68,3 +73,5 @@
 @import 'filmoteca-medal';
 
 @import 'directorio';
+
+@import 'angular-view-animation';

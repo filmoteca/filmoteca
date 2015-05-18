@@ -1,19 +1,18 @@
 <div class="flm-section other-news">
 	<div class="content">
 		<div class="header">
-			<h3>Otras noticias</h3>
+			<h4>Otras noticias</h4>
 		</div>
 
-		<ul class="list-group">
-			<li class="list-group-item">
-				<span class="preview-news">Lorem ipsum Consequat in amet laboris</span> <span class="see-more"><a href="#">Leer más</a></span>
-			</li>
-			<li class="list-group-item">
-				<span class="preview-news">Lorem ipsum Consequat in amet laboris Consequat in amet laboris</span> <span class="see-more"><a href="#">Leer más</a></span>
-			</li>
-			<li class="list-group-item">
-				<span class="preview-news">Lorem ipsum Consequat in amet laboris</span> <span class="see-more"><a href="#">Leer más</a></span>
-			</li>
+		<ul class="list-group-other-news">
+			@foreach( $news as $new )
+				<li class="list-group-item preview-news">
+				    <img src="{{ asset($new->image->url('thumbnail')) }}">
+					
+					<h6>{{ $new->title }}</h6>
+					<span class="preview-news">{{ Str::limit($new->body, 200, '') }}</span> <span class="see-more">{{ HTML::linkAction('NewsController@show', 'Leer más', [$new->id]) }}</span>
+				</li>
+			@endforeach
 		</ul>
 	</div>
 </div>

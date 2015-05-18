@@ -31,6 +31,23 @@
 
 		$scope.searching = true;
 
+		$scope.exhibitionLoaded = false;
+
+		var modalController = function($scope, $modalInstance)
+		{
+			$scope.film = {};
+
+			$scope.message = '';
+
+			$scope.store = function()
+			{
+				Film.store( $scope.film).then(function(response){
+					
+					$modalInstance.close(response.data);
+				});
+			};
+		};
+
 		$scope.add = function()
 		{
 			$scope.searching = false;
@@ -44,23 +61,7 @@
 				 * estoy del todo seguro si angular siempre inyecta estos dos
 				 * servicios al controllador.
 				 */
-				controller : function($scope, $modalInstance)
-				{
-					$scope.film = {};
-
-					$scope.message = '';
-
-					$scope.store = function()
-					{
-						Film.store( $scope.film).then(function(response)
-						{
-							$modalInstance.close(response.data);
-						}, function()
-						{
-							$scope.message = 'Ocurrió un problema al guardar.';
-						});
-					};
-				}
+				controller : modalController
 			})
 			.result.then(function(film)
 			{
@@ -90,5 +91,12 @@
 				delete $scope.film.id;
 			}
 		};
+
+		$scope.$on('exhibitionLoaded', function(){
+
+			$scope.film 			= Exhibition.film();
+			$scope.searching 		= false;
+			$scope.exhibitionLoaded = true;
+		});
 	}]);
 });

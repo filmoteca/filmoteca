@@ -20,9 +20,14 @@ class CountriesTableSeeder extends Seeder {
 			];
 		}
 
+		DB::statement('SET foreign_key_checks = 0');
+
 		DB::table('countries')->truncate();
 
         DB::table('countries')->insert($rows);
+
+        DB::statement('SET foreign_key_checks = 0');
+
 	}
 
 }

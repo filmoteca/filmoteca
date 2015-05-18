@@ -4,7 +4,7 @@ return array(
     /**
      * Default dashboard uri
      */
-    'uri' => 'admin/dashboard',
+    'uri' => 'dashboard',
 
     /**
      * Language direction

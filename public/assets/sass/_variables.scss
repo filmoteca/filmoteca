@@ -1,14 +1,6 @@
-// Bootstrap
-$icon-font-path: 	'../../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/';
-
-// Slick: carrusel.
-$slick-loader-path: '../../bower_components/slick.js/slick/';
-$slick-font-path: 	'../../bower_components/slick.js/slick/fonts/';
-
-
-$primary-color: #98157f;
+$primary-color: #810069;
 $secondary-color: #2d2d2d;
-$tertiary-color: #f2f2f2;
+$tertiary-color: #E5E5E5;
 
 
 $text-color: #646464;
@@ -16,3 +8,22 @@ $active-tab-color: #2D2D2D;
 $link-background-color: #CCCCCC;
 
 $icon-accessibility-color: #003E87;
+
+//titulares
+$h1: 28px;
+$h2: 24px;
+$h3: 22px;
+$h4: 18px;
+$h5: 14px;
+
+
+// Bootstrap
+$icon-font-path: 	'../../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/';
+
+// Slick: carrusel.
+$slick-loader-path: '../../bower_components/slick.js/slick/';
+$slick-font-path: 	'../../bower_components/slick.js/slick/fonts/';
+$slick-font-family: "fontcustom" !default;
+$slick-arrow-color: $primary-color;
+$slick-prev-character: '\f103';
+$slick-next-character: '\f104';

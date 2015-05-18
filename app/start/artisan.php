@@ -12,3 +12,5 @@
 */
 
 Artisan::add(new UNAM\Filmoteca\InstallCommand);
+
+Artisan::add(new UNAM\Filmoteca\ImportFilmsFromExcelCommand);

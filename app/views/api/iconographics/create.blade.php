@@ -2,7 +2,7 @@
 
 @section('title') 
 
-Agregar icono
+Agregar/Editar icono
 
 @stop
 
@@ -10,13 +10,14 @@ Agregar icono
 
 @section('content')
 
-<form ng-submit="store()" class="form-horizontal">
+<form class="form-horizontal" ng-submit="save()">
 
 	{{ Form::formGroup('text','name','Nombre', 'icon') }}
 
-	{{ Form::formGroup('file','image', 'Icon', 'icon')}}
-	
-	<button type="submit" class="btn btn-success pull-right">Agregar</button>
+	{{ Form::wrapperInput('image', 'Icono', Form::file('icon',['file-model' => 'icon.image'])) }}
+
+    <button class="btn btn-success pull-right" ng-show="action=='create'" ng-click="store()">Agregar</button>
+	<button class="btn btn-success pull-right" ng-show="action=='update'" ng-click="update()">Actualizar</button>
 	<div class="clearfix"></div>
 </form>
 

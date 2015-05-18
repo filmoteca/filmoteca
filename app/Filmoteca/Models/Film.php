@@ -1,11 +1,10 @@
-<?php namespace Filmoteca\Models;
+<?php 
+
+namespace Filmoteca\Models;
 
 use Codesleeve\Stapler\ORM\StaplerableInterface;
-
 use Codesleeve\Stapler\ORM\EloquentTrait;
-
 use Carbon\Carbon;
-
 use Eloquent;
 
 class Film extends Eloquent implements StaplerableInterface
@@ -13,6 +12,8 @@ class Film extends Eloquent implements StaplerableInterface
 	use EloquentTrait;
 
 	protected $guarded = [];
+
+	protected $appends = ['cover_urls'];
 
 	public function __construct(array $attributes = array())
 	{
@@ -26,16 +27,77 @@ class Film extends Eloquent implements StaplerableInterface
 	
 	public function exhibtionFilm()
 	{
-		return $this->hasOne('Models\Exhibitions\ExhibitionFilm');
+		return $this->hasOne('Filmoteca\Models\Exhibitions\ExhibitionFilm');
 	}
 
-	public function getYearAttribute($value)
+    public function genre()
+    {
+        return $this->belongsTo('Filmoteca\Models\Genre');
+    }
+
+    public function countries(){
+
+    	return $this->belongsToMany('Filmoteca\Models\Country');
+    }
+
+	public function getCoverUrlsAttribute()
 	{
-		return Carbon::createFromFormat('Y-m-d', $value)->format('Y');
+		return [
+			'thumbnail' => $this->image->url('thumbnail'),
+			'medium'	=> $this->image->url('medium')
+		];
 	}
 
-	public function setYearAttribute($value)
-	{
-		$this->attributes['year'] = Carbon::createFromFormat('Y', $value)->format('Y-m-d');
-	}
+    public function getYearsAttribute($value)
+    {
+        return explode(',', $value);
+    }
+
+    public function setYearsAttribute($value)
+    {
+        if(is_string($value))
+        {
+            $this->attributes['years'] = $value;
+
+            return;
+        }
+
+        if(is_numeric($value))
+        {
+            $this->attributes['years'] = '' . $value;
+
+            return;
+        }
+
+        $this->attributes['years'] = implode(',', $value);
+    }
+
+    /**
+     * Remove seconds. Format HH:MM
+     * @param  String $value [description]
+     * @return String        [description]
+     */
+    public function getDurationAttribute($value)
+    {
+        return substr($value, 0, strlen($value) -3);
+    }
+
+    /**
+     * Adds the two zeros (seconds).
+     * @param String $value Format HH:MM
+     */
+    public function setDurationAttribute($value)
+    {
+        $this->attributes['duration'] = $value . ':00';
+    }
+
+    public function toArray(){
+
+        $relations = [
+            'genre'     => $this->genre,
+            'countries' => $this->countries
+        ];
+
+        return array_merge( parent::toArray(), $relations);
+    }
 }

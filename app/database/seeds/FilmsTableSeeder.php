@@ -20,9 +20,18 @@ class FilmsTableSeeder extends Seeder {
 
     		$film['title'] = $words[rand(0, $wordsLen)] . ' ' . $words[rand(0, $wordsLen)] . ' ' . $words[rand(0,$wordsLen)];
 
-    		$film['year'] = new DateTime(rand(1970,2014) . '-01-01');
+            $film['original_title'] = 'original' . $words[rand(0, $wordsLen)] . ' ' . $words[rand(0, $wordsLen)] . ' ' . $words[rand(0,$wordsLen)];
 
-    		$film['country_id'] = rand(1,100);
+			$dates = [];
+
+			$amountDates = rand(1,8);
+
+			for($j = 0; $j < $amountDates; $j++ )
+			{
+				$dates[] = rand(1970,2014);
+			}
+
+    		$film['years'] = implode(',', $dates);
 
     		$film['duration'] = rand(0,3) . ':' .rand(0, 60) . ':' . rand(0, 60);
 

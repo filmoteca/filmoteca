@@ -13,5 +13,23 @@ class IconographicsRepository extends ResourcesRepository
 	{
 		return $this->resource->all();
 	}
+
+    public function destroy($id)
+    {
+        $resource = $this->resource->findOrFail($id);
+
+        $resource->delete();
+
+        return $resource;
+    }
+
+    public function update($id, array $data = null)
+    {
+        $resource = $this->resource->findOrFail($id);
+
+        $resource->fill($data)->save();
+
+        return $resource;
+    }
 }
 

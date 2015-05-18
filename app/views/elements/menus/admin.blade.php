@@ -8,10 +8,10 @@
 		</button>
 		<ul class="dropdown-menu">
 			<li>
-				{{ HTML::linkRoute('admin.exhibition.index', 'Ver toda la programación') }}
+				{{ HTML::link('/admin/exhibition/app#/index', 'Ver toda la programación') }}
 			</li>
 			<li>
-				{{ HTML::linkRoute('admin.exhibition.create', 'Agregar exhibiciones') }}
+				{{ HTML::link('/admin/exhibition/app#/create', 'Agregar exhibiciones') }}
 			</li>
 			<li>
 				{{ HTML::linkRoute('admin.film.index', 'Ver todas las películas') }}
@@ -169,4 +169,18 @@
 		</ul>
 	</div>
 
+    <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            CMS
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li>
+                <a href="{{ URL::route('admin.cms.page.index') }}">Ver todas las páginas</a>
+            </li>
+            <li>
+                <a href="{{ URL::route('admin.cms.page.create') }}">Crear página</a>
+            </li>
+        </ul>
+    </div>
 </div>

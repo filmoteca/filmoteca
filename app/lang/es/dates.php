@@ -1,7 +1,7 @@
 <?php
 
-return array(
-	'months' => array(
+return [
+	'months' => [
 		'January' 	=> 'enero',
 		'February' 	=> 'febrero',
 		'March' 	=> 'marzo',
@@ -13,4 +13,15 @@ return array(
 		'September' => 'septiembre',
 		'October'	=> 'octubre',
 		'November'	=> 'noviembre',
-		'December' 	=> 'diciembre'));
+		'December' 	=> 'diciembre'
+    ],
+    'days' => [
+        'Monday'    => 'lunes',
+        'Tuesday'   => 'martes',
+        'Wednesday' => 'miércoles',
+        'Thursday'  => 'jueves',
+        'Friday'    => 'viernes',
+        'Saturday'  => 'sábado',
+        'Sunday'    => 'domingo',
+    ]
+];

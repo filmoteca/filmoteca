@@ -33,12 +33,14 @@
 	});
 
 	app.directive('flmFilters', 
-		['flmFiltersConfig', 
+		['flmFiltersConfig', '$timeout',
 
-	function (config) 
+	function (config, $timeout) 
 	{
 		var controller = function($scope)
 		{
+			var ctrl = this;
+
 			this.applyFilter = function(name, value, title)
 			{
 				var selectedItems = [];
@@ -78,6 +80,26 @@
 
 				$scope.$root.$broadcast('filterSelected', data );
 			};
+
+			if($scope.onlyController){
+
+				var parts = document.location.href.split('/');
+				var last = parts.length -1;
+				
+				if( parts[last] === 'exhibition' ) return;
+
+				var name = parts[last -2];
+
+				if(name === 'especial-function'){
+					
+					name = 'icon';	
+				}
+
+				$timeout(function(){
+
+					ctrl.applyFilter(name, parts[last-1], decodeURI(parts[last]));
+				});
+			}
 		};
 
 		var link = function($scope, $element, $attr, ctrl) 

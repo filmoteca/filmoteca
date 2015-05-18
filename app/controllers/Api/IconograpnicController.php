@@ -15,11 +15,6 @@ class IconographicController extends ApiController
 	{
 		$resources = $this->repository->all();
 
-		foreach($resources as $resource )
-		{
-			$resource->icon = $resource->image->url('thumbnail');
-		}
-
 		return Response::json($resources,200);
 	}
 
@@ -33,11 +28,30 @@ class IconographicController extends ApiController
 
 		$resource = $this->repository->store($data);
 
-		$icon = $this->repository->find($resource->id);	
+		$icon = $this->repository->find($resource->id);
 
-		$icon->icon = $icon->image->url('thumbnail');
-
-		return Response::json($icon,200);;
+		return Response::json($icon,200);
 	}
 
+    public function destroy($id)
+    {
+        $icon = $this->repository->destroy($id);
+
+        return Response::json($icon);
+    }
+
+    public function update($id)
+    {
+        $data = [
+            'name' => Input::get('name')
+        ];
+
+        if( Input::hasFile('image')) {
+            $data['image'] = Input::file('image');
+        }
+
+        $icon = $this->repository->update($id, $data);
+
+        return Response::json($icon);
+    }
 }

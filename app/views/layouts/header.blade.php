@@ -4,9 +4,9 @@
 			<a href="/">
 				<span class="icon-home"></span>Inicio
 			</a>
-			<a href="http://filmoteca.dev/pages/quienes-somos/directorio">Directorio</a>
+			<a href="/pages/quienes-somos/directorio">Directorio</a>
 			<a href="#">Mapa del sitio</a>
-			<a href="#">Contacto</a>
+			<a href="{{ URL::to('contact') }}">Contacto</a>
 			<a href="#"><span class="icon-accessibility"></span></a>
 		</div>
 	</div>
@@ -15,24 +15,24 @@
 		<div>
 			<div class="pull-left">
 				<div class="pull-left">
-					<a href="http://www.unam.mx/" target="blank"><!-- <span class="icon-unam"></span> -->
-					<img 
-                        src="/assets/imgs/unam.png"</a>
+					<a href="http://www.unam.mx/" target="blank">
+						<img src="/assets/imgs/unam.png" alt="logo UNAM">
+					</a>
 				</div>
-				<div class="unam-text pull-left">
-					<span>Universidad Nacional</span> <br>
-					<span>Autónoma de Mexico</span>
+				<div class="unam-text pull-left hidden-xs">
+					<span>Universidad Nacional</span><br>
+					<span>Autónoma de México</span>
 				</div>
 			</div>
 			<div class="pull-right">
-				<div class="filmoteca-text pull-left text-right">
-					<span>Dirección General de</span> <br>
+				<div class="filmoteca-text pull-left text-right hidden-xs">
+					<span>Dirección General de</span><br>
 					<span>Actividades Cinematográficas</span>
 				</div>
 				<div class="pull-left">
-					<a href="/"><!-- <span class="icon-filmoteca"></span> -->
-					<img 
-                        src="/assets/imgs/filmoteca.png"</a>
+					<a href="/">
+						<img src="/assets/imgs/filmoteca.png" alt="logo Filmoteca UNAM">
+					</a>
 				</div>
 			</div>
 		</div>
@@ -47,10 +47,15 @@
 <div class="toolbar">
 
 	<div>
-		<ul class="breadcrumb">
-			<li><span class="icon-home"></span>{{ HTML::linkRoute('home','Página de inicio') }}</li>
-			@yield('breadcrumbs')
-		</ul>
+		
+		@if( !isset($not_breadcrumbs) )
+			<ul class="breadcrumb">
+				<li><span class="icon-home"></span>{{ HTML::linkRoute('home',' Inicio') }}</li>
+				@yield('breadcrumbs')
+			</ul>
+		@endif
+
+
 	</div>
 
 </div>
