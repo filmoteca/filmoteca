@@ -303,7 +303,7 @@
 				<h5>Coordinación de Nuevas Tecnologías</h5>
 				<div>
 					<li>
-						<span class="datos">Su función principal es mantener al día en las tecnologías de la información y la comunicación los sistemas y la infraestructura de la red de la Filmoteca, así como administrar las bases de datos y dar soporte técnico a los servidores y a los equipos del personal de la dependencia, además de desarrollar nuevos sistemas para apoyo de áreas específicas. En colaboración con la Subdirección de Difusión, y de Becarios y Servicio social creó el portal de Cine en Línea y el Museo Virtual de Aparatos Cinematográficos con la finalidad de difundir el acervo de la Filmoteca y resaltar su importancia para la cinematografía nacional y mundial.</span>
+						<span class="datos">Su función principal es instaurar procesos apoyados en nuevas tecnologías de información y comunicación mediante la identificación, evaluación y selección de herramientas y sistemas digitales. Dirigir proyectos de integración y/o desarrollo tecnológico enfocados a ofertar nuevos y más eficientes servicios de búsqueda, recuperación, preservación y difusión de los diversos materiales cinematográficos bajo el resguardo de la Filmoteca de la UNAM; así como proyectos de reingeniería de procesos: posproducción, resguardo, preservación, mantenimiento, difusión y movimiento de películas y materiales fotográficos y de imprenta asociados a producciones cinematográficas. Así como implantar alternativas tecnológicas que soporten la digitalización del acervo cinematográfico.</span>
 					</li>
 					<br>
 					<li id="nuevas_tecnologias">
@@ -311,7 +311,7 @@
 						<br>
 						<span class="cargo">Coordinador</span>
 						<br>
-						<span class="datos">Teléfono: 5622 4800 ext. 47473</span>
+						<span class="datos">Teléfono: 5622 9373</span>
 						<br>
 						<span class="datos">E-mail:</span>
 						<a href="mailto:gleonl@unam.mx">gleonl@unam.mx</a>
