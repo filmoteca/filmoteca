@@ -1,13 +1,13 @@
-<?php
+<?php 
 
 return array(
     // layouts
-    'master' => 'syntara::layouts.dashboard.master',
-    'header' => 'syntara::layouts.dashboard.header',
+    'master' => 'layouts.dashboard.master',
+    'header' => 'layouts.dashboard.header',
     'permissions-select' => 'syntara::layouts.dashboard.permissions-select',
 
     // dashboard
-    'dashboard-index' => 'syntara::dashboard.index',
+    'dashboard-index' => 'dashboard.index',
     'login' => 'syntara::dashboard.login',
     'error' => 'syntara::dashboard.error',
 
@@ -31,5 +31,4 @@ return array(
     'permissions-list' => 'syntara::permission.list-permissions',
     'permission-create' => 'syntara::permission.new-permission',
     'permission-edit' => 'syntara::permission.show-permission',
-
 );
