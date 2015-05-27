@@ -35,6 +35,10 @@ Thumbs.db
 !/htdocs/.htaccess
 !/htdocs/resources/.gitkeep
 
+/app/config/prod/*
+!/app/config/prod/.gitkeep
+/app/config/staging/*
+!/app/config/staging/.gitkeep
 
 
 /notes.md

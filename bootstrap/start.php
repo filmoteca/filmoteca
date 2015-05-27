@@ -24,12 +24,9 @@ $app = new Illuminate\Foundation\Application;
 |
 */
 
-$env = $app->detectEnvironment(array(
-
-	'local' => array('filmoteca-dev'),
-
-));
-
+$app['env'] = file_exists(__DIR__.'/../app/config/staging/app.php') ? 'staging' : 'local';
+$app['env'] = file_exists(__DIR__.'/../app/config/prod/app.php') ? 'prod' : 'staging';
+$env = $app['env'];
 /*
 |--------------------------------------------------------------------------
 | Bind Paths
