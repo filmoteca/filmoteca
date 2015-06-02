@@ -25,7 +25,7 @@ $app = new Illuminate\Foundation\Application;
 */
 
 $app['env'] = file_exists(__DIR__.'/../app/config/staging/app.php') ? 'staging' : 'local';
-$app['env'] = file_exists(__DIR__.'/../app/config/prod/app.php') ? 'prod' : 'staging';
+$app['env'] = file_exists(__DIR__.'/../app/config/prod/app.php') ? 'prod' : $app['env'];
 $env = $app['env'];
 /*
 |--------------------------------------------------------------------------
