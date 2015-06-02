@@ -83,29 +83,6 @@ class InstallCommand extends Command {
 			'email'    => $email,
 			'group'    => 'Admin']);
 
-
-
-
-		$this->line('');
-
-		$this->info('Building database scheme...');
-
-		$this->call('migrate');
-
-
-
-
-
-		$this->info('Seeding the tables...');
-
-		DB::statement('SET foreign_key_checks = 0');
-
-		$this->call('db:seed', ['--class' => 'GenresTableSeeder']);
-
-		$this->call('db:seed', ['--class' => 'CountriesTableSeeder']);
-
-		DB::statement('SET foreign_key_checks = 1');
-
 		$this->info('Instalation completed.');
 	}
 
