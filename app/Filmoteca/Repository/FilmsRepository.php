@@ -13,12 +13,16 @@ class FilmsRepository extends ResourcesRepository
 	{
 		if( empty( $data ) ) throw new Exception('Empty data');
 
-		$countries_ids = $data['countries'];
-
-		unset($data['countries']);
+        if (isset($data['countries'])){
+            $countries_ids = $data['countries'];
+            unset($data['countries']);
+        }
 
 		$film = $this->resource->create($data);
-		$film->countries()->sync($countries_ids);
+
+        if (isset($countries_ids)) {
+            $film->countries()->sync($countries_ids);
+        }
 
 		return $film;
 	}
