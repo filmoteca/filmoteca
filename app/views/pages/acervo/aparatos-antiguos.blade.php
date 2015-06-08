@@ -17,17 +17,6 @@
 
 @section('content')
 
-	<div class="img-servicios">
-		<img src="/imgs/acervo/aparatos-antiguos.jpg" aling="left" class="img-responsive" 'Aparatos antiguos'>
-	</div>
-
-	<h1>Aparatos antiguos</h1>
-
-
-	<p>TEXTO PENDIENTE</p>
-
-	
-
-
+    {{ $page->body }}
 
 @stop

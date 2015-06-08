@@ -17,9 +17,6 @@
 
 @section('content')
 
-
-<h1>Invitaciones</h1>
-
-<p>No te pierdas la oportunidad de </p>
+    {{ $page->body }}
 
 @stop
