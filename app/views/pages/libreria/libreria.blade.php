@@ -24,7 +24,7 @@ $(document).ready(function(){
 
 @section('breadcrumbs')
 	<li>
-		<a href="/pages/difusion/index">
+		<a href="/pages/libreria/index">
 			Libreria
 		</a>
 	</li>
