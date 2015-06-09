@@ -15,11 +15,6 @@
 
 @section('content')
 
-<h1>5º Concurso de crítica cinematográfica <em>Alfonso Reyes "Fósforo"</em></h1>
-
-	<p>Consulta aquí las bases y ¡participa!</p>
-	<img src="/imgs/convocatorias/convocatoriaFosforo-2015w.jpg" class="img-responsive" aling="left">
-	<br>	
-	<p>Descarga el pdf de la <a href="http://filmoteca.dev/pdf/convocatorias/convocatoriaFosforo-2015.pdf" target="_blank">Convocatoria</a>
+    {{ $page->body }}
 
 @stop

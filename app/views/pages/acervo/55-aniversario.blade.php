@@ -17,22 +17,6 @@
 
 @section('content')
 
-
-	<h1>55 años de la Filmoteca de la UNAM</h1>
-
-		<p>TEXTO PENDIENTE</p>
-
-
-	<div class="video-preview">
-							<div class="embed-responsive embed-responsive-4by3">
-								<iframe width="420" height="315" src="https://www.youtube-nocookie.com/embed/hZhUqErqGCQ" frameborder="0" allowfullscreen></iframe>	
-							</div>
-						</div>
-
-
-
-	
-
-
+    {{ $page->body }}
 
 @stop
