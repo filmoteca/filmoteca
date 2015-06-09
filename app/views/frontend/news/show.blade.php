@@ -12,7 +12,7 @@
 @stop
 
 @section('sidebar')
-	@include('elements.menus.press', array('selected' => 3))
+	@include('elements.menus.difusion', array('selected' => 3))
 @stop
 
 

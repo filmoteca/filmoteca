@@ -2,16 +2,16 @@
 
 @section('breadcrumbs')
 <li>
-	<a>
+	<a href="/pages/servicios/index">
 		Difusión
 	</a>
 </li>
 <li class="active">
-	Filmoteca en los Medios
+	La Filmoteca recomienda
 @stop
 
 @section('sidebar')
-	@include('elements.menus.press', array('selected' => 4))
+	@include('elements.menus.difusion', array('selected' => 5))
 @stop
 
 

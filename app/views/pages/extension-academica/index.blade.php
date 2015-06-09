@@ -1,9 +1,12 @@
 @section('breadcrumbs')
+
+
 <li>
-	<a class="active">
+		<a href="/pages/extension-academica/index">
 		Extensión Academica
-	</a>
+		</a>
 </li>
+
 @stop
 
 

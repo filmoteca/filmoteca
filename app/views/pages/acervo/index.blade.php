@@ -1,21 +1,18 @@
-
 @section('breadcrumbs')
 	<li>
 		<a href="/pages/acervo/index">
-			Difusión
+			Acervo
 		</a>
 	</li>
-	<li class="active">
-		Exposiciones / Exposiciones anteriores
-	</li>
+	
 @stop
 
-
+<!--
 @section('sidebar')
-	@include('elements.menus.press', array('selected' => 1))
+	@include('elements.menus.acervo', array('selected' => 0))
 @stop
 
-
+-->
 @section('content')
 
     {{ $page->body }}
