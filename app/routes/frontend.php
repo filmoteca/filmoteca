@@ -35,9 +35,9 @@ Route::group(['prefix' => 'exhibition'], function(){
     ]);
 
     Route::get('/filter/{name?}/{id?}/{title?}', 'ExhibitionController@index');
-
-    Route::get('auditorium/{id}', 'AuditoriumController@show');
 });
+
+Route::get('auditorium/{id}', 'AuditoriumController@show');
 
 Route::get('/news/show/{id}', 'NewsController@show');
 
