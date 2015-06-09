@@ -107,15 +107,15 @@
                 <ul class="dropdown-menu">
                   <li><a href="/press_register">Prensa</a></li>
                   
-                  <li><a href="/pages/press/exposiciones-museografia">Exposiciones</a></li>
+                  <li><a href="/pages/difusion/exposiciones-museografia">Exposiciones</a></li>
                   
-                  <li><a href="/pages/press/publicaciones">Publicaciones</a></li>
+                  <li><a href="/pages/difusion/publicaciones">Publicaciones</a></li>
                   
                   <li><a href="/news/index">Noticias</a></li>
                   
-                  <li ><a href="/pages/press/filmoteca-in-the-media">Filmoteca en los medios</a></li>
+                  <li ><a href="/pages/difusion/filmoteca-in-the-media">Filmoteca en los medios</a></li>
                   
-                  <li><a href="/pages/press/interviews">La Filmoteca recomienda</a></li>
+                  <li><a href="/pages/difusion/interviews">La Filmoteca recomienda</a></li>
                 </ul>
               </li>
 

@@ -1,18 +1,18 @@
-@extends('layouts.default')
-
 @section('breadcrumbs')
 <li>
-	<a>
+	<a href="/pages/difusion/index">
 		Difusión
 	</a>
 </li>
 <li class="active">
-	La Filmoteca recomienda
+	Exposiciones
+</li>
 @stop
 
 @section('sidebar')
-	@include('elements.menus.press', array('selected' => 5))
+	@include('elements.menus.difusion', array('selected' => 1))
 @stop
+
 
 
 @section('content')

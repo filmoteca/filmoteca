@@ -1,3 +1,5 @@
+@extends('layouts.default')
+
 @section('breadcrumbs')
 <li>
 	<a href="/pages/servicios/index">
@@ -5,14 +7,12 @@
 	</a>
 </li>
 <li class="active">
-	Exposiciones
-</li>
+	Filmoteca en los Medios
 @stop
 
 @section('sidebar')
-	@include('elements.menus.press', array('selected' => 1))
+	@include('elements.menus.difusion', array('selected' => 4))
 @stop
-
 
 
 @section('content')

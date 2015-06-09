@@ -24,7 +24,7 @@ $(document).ready(function(){
 
 @section('breadcrumbs')
 	<li>
-		<a href="/pages/press/index">
+		<a href="/pages/difusion/index">
 			Difusión
 		</a>
 	</li>
@@ -35,7 +35,7 @@ $(document).ready(function(){
 
 
 @section('sidebar')
-	@include('elements.menus.press', array('selected' => 1))
+	@include('elements.menus.difusion', array('selected' => 1))
 @stop
 
 

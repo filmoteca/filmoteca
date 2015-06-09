@@ -2,9 +2,9 @@
 
 @section('breadcrumbs')
 <li>
-	<a>
-		Difusión
-	</a>
+	<a href="/pages/difusion/index">
+			Difusión
+		</a>
 </li>
 <li class="active">
 	Prensa
@@ -12,7 +12,7 @@
 @stop
 
 @section('sidebar')
-	@include('elements.menus.press', array('selected' => 0))
+	@include('elements.menus.difusion', array('selected' => 0))
 @stop
 
 @section('content')

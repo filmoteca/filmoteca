@@ -1,6 +1,6 @@
 @section('breadcrumbs')
 <li>
-	<a href="/pages/servicios/index">
+	<a href="/pages/difusion/index">
 		Difusión
 	</a>
 </li>
@@ -10,7 +10,7 @@
 @stop
 
 @section('sidebar')
-	@include('elements.menus.press', array('selected' => 2))
+	@include('elements.menus.difusion', array('selected' => 2))
 @stop
 
 
