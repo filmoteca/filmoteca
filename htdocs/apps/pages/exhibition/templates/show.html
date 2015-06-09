@@ -52,7 +52,7 @@
                                             <span>{{ day | date: "d 'de'  MMMM" }}</span>
                                             <br>
                                             <span ng-repeat="schedule in schedules" class="label label-default">
-                                                {{ schedule.entry.replace(' ','T') | date: 'H:m' }}hrs
+                                                {{ schedule.entry.replace(' ','T') | date: 'H:mm' }}hrs
                                             </span>
                                         </li>
                                     </ul>
