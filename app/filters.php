@@ -33,7 +33,7 @@ App::after(function($request, $response)
 |
 */
 
-Route::filter('auth', function()
+Route::filter('validate_admin', function()
 {
 	if (!Sentry::check())
 	{
