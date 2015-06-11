@@ -8,6 +8,7 @@
 </li>
 <li class="active">
 	La Filmoteca recomienda
+</li>
 @stop
 
 @section('sidebar')
