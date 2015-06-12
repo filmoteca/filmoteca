@@ -16,7 +16,7 @@
 
 
 
-section('content')
+@section('content')
 
     {{ $page->body }}
 

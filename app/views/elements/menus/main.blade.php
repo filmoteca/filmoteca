@@ -10,7 +10,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand-logo" href="http://filmoteca.dev/pages/aniversario/index"><img src="/assets/imgs/filmo55aniversario.png" alt="logo 55aniversario"></a>
+            <a class="navbar-brand-logo" href="/pages/aniversario/index"><img src="/assets/imgs/filmo55aniversario.png" alt="logo 55aniversario"></a>
       </div>
 
         <div class="collapse navbar-collapse navbar-ex1-collapse">
