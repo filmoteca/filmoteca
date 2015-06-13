@@ -73,13 +73,17 @@ class Film extends Eloquent implements StaplerableInterface
     }
 
     /**
-     * Remove seconds. Format HH:MM
+     * Convert to minutes.
      * @param  String $value [description]
      * @return String        [description]
      */
     public function getDurationAttribute($value)
     {
-        return substr($value, 0, strlen($value) -3);
+        $parts = explode(':', $value);
+
+        $minutes = ($parts[0] * Carbon::MINUTES_PER_HOUR) + $parts[1];
+
+        return $minutes;
     }
 
     /**

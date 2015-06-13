@@ -249,7 +249,7 @@
         return [
             {
                 label : 'Título',
-                value : film.title
+                value : film.original_title
             },
             {
                 label : 'Género',
@@ -264,8 +264,12 @@
                 value : film.director
             },
             {
-                label : 'Director',
+                label : 'Año',
                 value : film.years.join(', ')
+            },
+            {
+                label : 'Duración',
+                value : film.duration + ' min'
             },
             {
                 label : 'Guión',

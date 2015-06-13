@@ -45,7 +45,7 @@ class Exhibition extends Eloquent
 
 		$tc['pais'] 	= $film->countries->implode('name', ', ');
 
-		$tc['duración'] = $film->duration;
+		$tc['duración'] = $film->duration . ' min';
 
         $tc['género']   = $film->genre->name;
 
