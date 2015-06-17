@@ -3,6 +3,8 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
+        <link href="/assets/imgs/favicon.ico" rel="icon" type="image/x-icon" />
+
 		@yield('metas')
 
 		{{ HTML::style('/assets/css/filmoteca.css') }}

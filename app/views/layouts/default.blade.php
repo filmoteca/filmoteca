@@ -6,6 +6,8 @@
         <meta charset="utf-8">
         <meta name="robots" content="follow, index">
 
+        <link href="/assets/imgs/favicon.ico" rel="icon" type="image/x-icon" />
+
 		@yield('metas')
 
 		{{
