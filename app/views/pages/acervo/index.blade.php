@@ -1,6 +1,6 @@
 @section('breadcrumbs')
 	<li>
-		<a href="/pages/acervo/index">
+		<a href="/pages/acervo/filmico">
 			Acervo
 		</a>
 	</li>

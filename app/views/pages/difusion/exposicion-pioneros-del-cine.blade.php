@@ -23,12 +23,22 @@
 
 @section('breadcrumbs')
 	<li>
-		<a href="/pages/difusion/index">
+		<a href="/press_register">
 			Difusión
 		</a>
 	</li>
+	<li>
+		<a href="/pages/difusion/exposiciones-museografia">
+			Exposiciones
+		</a>
+	</li>
+	<li>
+		<a href="/pages/difusion/exposiciones-recientes">
+			Exposiciones recientes
+		</a>
+	</li>
 	<li class="active">
-		Exposiciones / Exposiciones recientes
+		Pioneros del cine
 	</li>
 @stop
 

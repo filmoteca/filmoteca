@@ -1,11 +1,16 @@
 @section('breadcrumbs')
 <li>
-  <a href="/pages/servicios/index">
+  <a href="/press_register">
     Difusión
   </a>
 </li>
+<li>
+		<a href="/pages/difusion/publicaciones">
+			Publicaciones
+		</a>
+	</li>
 <li class="active">
-  Publicaciones / Libros digitales
+   Libros digitales
 </li>
 @stop
 

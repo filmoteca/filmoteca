@@ -36,7 +36,7 @@
 
 @section('breadcrumbs')
 <li>
-	<a href="/pages/servicios/index">
+	<a href="/pages/servicios/banco-de-imagen">
 		Servicios
 	</a>
 </li>

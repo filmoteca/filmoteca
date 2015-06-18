@@ -24,12 +24,21 @@ $(document).ready(function(){
 
 @section('breadcrumbs')
 	<li>
-		<a href="/pages/difusion/index">
+		<a href="/press_register">
 			Difusión
 		</a>
 	</li>
+	<li>
+		<a href="/pages/difusion/exposiciones-museografia">
+			Exposiciones
+		</a>
+	</li><li>
+		<a href="/pages/difusion/exposiciones-anteriores">
+			Exposiciones anteriores
+		</a>
+	</li>
 	<li class="active">
-		Exposiciones / Exposiciones anteriores
+		Chiapas en la filmografía Mexicana
 	</li>
 @stop
 

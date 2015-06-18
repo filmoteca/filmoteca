@@ -1,6 +1,6 @@
 @section('breadcrumbs')
 <li>
-	<a href="/pages/extencion-academica/index">
+	<a href="/pages/cursos/cursos-y-talleres">
 		Extensión Academica
 	</a>
 </li>

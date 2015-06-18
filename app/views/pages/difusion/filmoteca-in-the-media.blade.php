@@ -2,7 +2,7 @@
 
 @section('breadcrumbs')
 <li>
-	<a href="/pages/servicios/index">
+	<a href="/press_register">
 		Difusión
 	</a>
 </li>
