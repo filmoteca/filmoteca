@@ -1,17 +1,21 @@
 @section('breadcrumbs')
 	<li>
-		<a href="/pages/difusion/index">
+		<a href="/press_register">
 			Difusión
 		</a>
 	</li>
+	<li>
+		<a href="/pages/difusion/publicaciones">
+			Publicaciones
+		</a>
+	</li>
 	<li class="active">
-	 Artículos
+	Artículos
 </li>
 @stop
 
-
 @section('sidebar')
-	@include('elements.menus.quienes-somos', array('selected' => 0))
+  @include('elements.menus.difusion', array('selected' => 2))
 @stop
 
 

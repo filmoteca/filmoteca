@@ -22,9 +22,9 @@
 					<li><a href="/pages/servicios/banco-de-imagen">Servicios</a></li>
 					<li><a href="{{ URL::to('exhibition') }}">Programación</a></li>
 					<li><a href="/press_register">Difusión</a></li>
-					<li><a href="/pages/extension-academica/cursos-y-talleres">Extensión Académica</a></li>
+					<li><a href="/pages/cursos/cursos-y-talleres">Extensión Académica</a></li>
 					<li><a href="/pages/concursos/jose-rovirosa">Concursos</a></li>
-					<li><a href="http://cine.libros.unam.mx/">Tienda en línea</a></li>
+					<li><a href="/pages/libreria/libreria">Libreria</a></li>
 				</ul>
 			</div>
 

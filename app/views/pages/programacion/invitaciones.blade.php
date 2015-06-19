@@ -1,7 +1,7 @@
 
 @section('breadcrumbs')
 	<li>
-		<a href="/pages/cartelera-digital/index">
+		<a href="/exhibition#">
 			Programacion
 		</a>
 	</li>

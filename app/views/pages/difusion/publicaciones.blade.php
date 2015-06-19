@@ -1,6 +1,6 @@
 @section('breadcrumbs')
 <li>
-	<a href="/pages/difusion/index">
+	<a href="/press_register">
 		Difusión
 	</a>
 </li>

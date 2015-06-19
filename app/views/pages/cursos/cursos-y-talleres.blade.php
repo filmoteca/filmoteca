@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 
 @section('scripts')
@@ -12,9 +13,10 @@
 
 @section('styles')
 
+
 @section('breadcrumbs')
 <li>
-  <a href="/pages/extension-academica/index">
+  <a href="/pages/cursos/cursos-y-talleres">
     Extensión Academica
   </a>
 </li>
