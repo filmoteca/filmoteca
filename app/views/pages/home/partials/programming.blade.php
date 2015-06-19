@@ -79,10 +79,10 @@
                 <div class="caption pull-right">
                     <h5></h5>
                     <span></span>
-                    <a href="http://issuu.com/filmotecaunam/docs/carteleradigitaljunio2015/1" target="_blank">Consulta<span class="icon icon-download pull-right"></span></a>
+                    <a href="http://issuu.com/filmotecaunam/docs/carteleradigitaljunio2015/1" title="Consulta" target="_blank">Consulta<span class="icon icon-download pull-right"></span></a>
                 </div>   
                 <div class="caption pull-right">
-                    <a href="/pdf/cartelera/CarteleraDigitalJunio2015.pdf" target="_blank">Descarga<span class="icon icon-download pull-right"></span></a>
+                    <a href="/pdf/cartelera/CarteleraDigitalJunio2015.pdf" title="Descarga" target="_blank">Descarga<span class="icon icon-download pull-right"></span></a>
                 </div>
             </div>
         </div>
