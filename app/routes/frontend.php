@@ -110,6 +110,7 @@ Route::get('/pages/{dir_or_name}/{name?}','PageController@show');
 
 Route::group(['prefix' => 'api'], function()
 {
+
     /**
      * Establecemos el layout. Esto es únicamente para las rutas.
      * Los controladores definen su propio layout.
