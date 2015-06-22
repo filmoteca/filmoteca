@@ -30,19 +30,12 @@
 	"scripts": {
 		"post-install-cmd": [
             "php artisan migrate",
-            "php artisan db:seed --class=GenresTableSeeder",
-            "php artisan db:seed --class=CountriesTableSeeder",
-            "php artisan asset:publish frozennode/administrator",
 			"php artisan clear-compiled",
 			"php artisan optimize",
             "bower install"
 		],
 		"post-update-cmd": [
             "php artisan migrate",
-            "php artisan db:seed --class=GenresTableSeeder",
-            "php artisan db:seed --class=CountriesTableSeeder",
-            "php artisan config:publish frozennode/administrator",
-            "php artisan asset:publish frozennode/administrator",
 			"php artisan clear-compiled",
 			"php artisan optimize",
             "bower update"
