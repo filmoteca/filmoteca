@@ -77,8 +77,6 @@
                     <img src="/imgs/home/cartelera/cartelera-home-junio2015.jpg">
                 </div>
                 <div class="caption pull-right">
-                    <h5></h5>
-                    <span></span>
                     <a href="http://issuu.com/filmotecaunam/docs/carteleradigitaljunio2015/1" title="Consulta" target="_blank">Consulta<span class="icon icon-download pull-right"></span></a>
                 </div>   
                 <div class="caption pull-right">

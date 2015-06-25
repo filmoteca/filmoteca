@@ -4,8 +4,13 @@
 			Concursos
 		</a>
 	</li>
+	<li>
+		<a href="/pages/concursos/corto-movil">
+			Corto Móvil
+		</a>
+	</li>
 	<li class="active">
-		Convocatorias
+		Convocatoria Corto Móvil
 	</li>
 @stop
 
