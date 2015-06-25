@@ -1,11 +1,16 @@
 @section('breadcrumbs')
 <li>
-  <a href="/pages/extension-academica/index">
+  <a href="/pages/cursos/cursos-y-talleres">
     Extensión Academica
   </a>
 </li>
+<li>
+<a href="/pages/cursos/cursos-y-talleres">
+    Cursos y talleres
+  </a>
+</li>
 <li class="active">
-  Cursos y talleres.
+La memoria. Historia del documental
 </li>
 @stop
 

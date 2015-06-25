@@ -1,7 +1,7 @@
 @section('breadcrumbs')
 	<li>
 		<a href="/pages/home/creditos">
-			Creditos
+			Créditos
 		</a>
 	</li>
 	

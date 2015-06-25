@@ -1,11 +1,16 @@
 @section('breadcrumbs')
 <li>
-  <a href="/pages/extension-academica/index">
+  <a href="/pages/cursos/cursos-y-talleres">
     Extensión Academica
   </a>
 </li>
+<li>
+<a href="/pages/cursos/cursos-y-talleres">
+    Cursos y talleres
+  </a>
+</li>
 <li class="active">
-  Cursos y talleres.
+  Seminario cine sin ojo. Del cinematógrafo a la imagen 3D
 </li>
 @stop
 

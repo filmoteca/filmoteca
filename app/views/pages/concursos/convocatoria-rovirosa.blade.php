@@ -4,8 +4,13 @@
 			Concursos
 		</a>
 	</li>
+	<li>
+		<a href="/pages/concursos/jose-rovirosa">
+			Concurso José Rovirosa
+		</a>
+	</li>
 	<li class="active">
-		Convocatorias
+		Convocatoria Premio José Rovirosa
 	</li>
 @stop
 
