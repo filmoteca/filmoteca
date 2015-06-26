@@ -13,14 +13,16 @@
 
 $menu = array(
 
-	array('Cursos y Talleres', '/pages/cursos/cursos-y-talleres', array(
+	array('Cursos y Talleres', '/pages/cursos/cursos-y-talleres',
+	 array(
 		array('Cursos anteriores', '/pages/cursos/cursos-anteriores'),
 		array ('Procedimiento de Inscripción', '/pages/cursos/procedimiento-de-inscripcion')
 		)),
 
 	array('Servicio social', '/pages/extension-academica/servicio-social'),
 
-	array('Becarios', '/pages/extension-academica/becarios', array(
+	array('Becarios', '/pages/extension-academica/becarios',
+	 array(
 		array('Convocatoria', '/pages/extension-academica/convocatoria-becarios'))),
 
 	array('Visitas guiadas', '/pages/extension-academica/visitas-guiadas'));
