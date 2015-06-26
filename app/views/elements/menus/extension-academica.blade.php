@@ -14,7 +14,9 @@
 $menu = array(
 
 	array('Cursos y Talleres', '/pages/cursos/cursos-y-talleres', array(
-		array('Cursos anteriores', '/pages/cursos/cursos-anteriores'))),
+		array('Cursos anteriores', '/pages/cursos/cursos-anteriores'),
+		array ('Procedimiento de Inscripción', '/pages/cursos/procedimiento-de-inscripcion')
+		)),
 
 	array('Servicio social', '/pages/extension-academica/servicio-social'),
 

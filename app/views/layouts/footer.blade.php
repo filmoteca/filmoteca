@@ -25,7 +25,7 @@
 					<li><a href="/pages/cursos/cursos-y-talleres" title="Extensión Académica">Extensión Académica</a></li>
 					<li><a href="/pages/concursos/jose-rovirosa" title="Concursos">Concursos</a></li>
 					<li><a href="/pages/libreria/libreria" title="Libreria">Libreria</a></li>
-					<li><a href="/pages/home/creditos" title="Creditos">Créditos</a></li>
+					<li><a href="/pages/home/creditos" title="Créditos">Créditos</a></li>
 				</ul>
 			</div>
 
