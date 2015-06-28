@@ -104,7 +104,7 @@ class ExhibitionsRepository extends ResourcesRepository
 	 * @param  String $until Fecha de fin. 
 	 * @return Collection        Colección de exhibiciones.
 	 */
-	public function searchByDate( $from, $until)
+	public function searchByDate($from, $until)
 	{
 		$interval = array($from , $until . ' 23:59:59');
 

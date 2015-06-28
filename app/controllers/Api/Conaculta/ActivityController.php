@@ -3,7 +3,7 @@
 namespace Api\Conaculta;
 
 use Api\ApiController;
-use Filmoteca\Repository\ActivititesRepository;
+use Filmoteca\Repository\ActivitiesRepository;
 
 class ActivityController extends ApiController
 {
@@ -20,7 +20,9 @@ class ActivityController extends ApiController
 	 */
 	public function index()
 	{
-		$activities = $this->repository->findByMonth(Input::get('month'));
+		$activities = $this->repository->findByDate(Input::get('start', 'end'));
+
+
 
 		return View::make('conaculta.activities.index', compact('activities'));
 	}
