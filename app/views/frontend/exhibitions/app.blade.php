@@ -65,6 +65,20 @@
 			<datepicker ng-model="dphone" class="well well-sm ng-cloak"></datepicker>
 		</div>
 
+		<div class="subscribe-box visible-xs-block pull-right">
+            <p>Recibe nuestra cartelera digital</p>
+
+            <div class="input-group input-group-sm">
+                <input type="email"
+                    name="email"
+                    placeholder="Ingresa tu correo electrónico"
+                    class="form-control">
+                <span class="input-group-addon">@</span>
+            </div>
+
+            <button type="button" class="btn btn-success">Enviar</button>
+        </div>
+
 		<div class="static-pages-menu">
 			<ul>
 				<li class="has-sub">
@@ -111,7 +125,7 @@
 			</ul>
 		</div>
 
-		<div class="subscribe-box">
+		<div class="subscribe-box hidden-xs">
 			
 			<p>Recibe nuestra cartelera digital</p>
 
