@@ -5736,8 +5736,8 @@ a {
   .items .item {
     float: left;
     width: 23%;
-    margin-left: 10px;
-    height: 210px; }
+    margin-left: 14px;
+    height: 250px; }
   @media only screen and (max-width: 340px) {
     .items .item {
       width: 100%; } }
@@ -6242,7 +6242,7 @@ footer {
   transition: opacity 0.3s ease-in; }
 
 .static-pages-menu > ul ul li a {
-  font-size: 12px; }
+  font-size: 11px; }
 
 /* Showing the submenu when the user is hovering the parent link */
 .static-pages-menu > ul li:hover > ul {
