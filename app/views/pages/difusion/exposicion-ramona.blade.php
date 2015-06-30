@@ -4,7 +4,7 @@
 <script type='text/javascript' src='/bower_components/slider-camera/scripts/jquery.min.js'></script>
 <script type='text/javascript' src='/bower_components/slider-camera/scripts/jquery.easing.1.3.js'></script>
 <script type='text/javascript' src='/bower_components/slider-camera/scripts/jquery.mobile.customized.min.js'></script>
-<script type='text/javascript' src='/bower_components/slider-camera/scripts/camera.min.js'></script> 
+<script type='text/javascript' src='/bower_components/slider-camera/scripts/camera.min.js'></script>
 
 <script>
   jQuery(function(){
@@ -23,18 +23,28 @@
 
 @section('breadcrumbs')
 	<li>
-		<a href="/pages/acervo/filmico">
-			Acervo
+		<a href="/press_register">
+			Difusión
+		</a>
+	</li>
+	<li>
+		<a href="/pages/difusion/exposiciones-museografia">
+			Exposiciones
+		</a>
+	</li>
+	<li>
+		<a href="/pages/difusion/exposiciones-recientes">
+			Exposiciones recientes
 		</a>
 	</li>
 	<li class="active">
-		Restauración
+		Exposición Dolores del Río y Ramona 
 	</li>
 @stop
 
 
 @section('sidebar')
-	@include('elements.menus.acervo', array('selected' => 3))
+	@include('elements.menus.difusion', array('selected' => 1))
 @stop
 
 
