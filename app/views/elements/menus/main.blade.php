@@ -155,8 +155,9 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li><a href="/pages/libreria/libreria">Puntos de venta</a></li>
+                  <li><a href="/pages/libreria/proximamente-venta-linea">Tienda en línea</a></li>
 
-                  <li><a href="http://cine.libros.unam.mx/">Venta en línea</a></li>
+                  <!-- <li><a href="http://cine.libros.unam.mx/">Venta en línea</a></li>-->
                   
                  <!--  <li><a href="#">Catálogo</a></li> -->
                   
