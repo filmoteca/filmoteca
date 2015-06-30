@@ -64,7 +64,7 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-6">
 				<div class="well well-sm">
-					<h4 class="text-center"><a href="http://cineunam.librosdelau.com/" title="Tienda en línea">Tienda en línea</a></h4>
+					<h4 class="text-center"><a href="/pages/libreria/proximamente-venta-linea" title="Próximamente Tienda en línea">Próximamente Tienda en línea</a></h4>
 				</div>
 			</div>
 			<div class="col-xs-12 col-sm-6">
