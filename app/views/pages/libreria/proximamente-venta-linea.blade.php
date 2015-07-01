@@ -5,12 +5,12 @@
 		</a>
 	</li>
 	<li class="active">
-		Venta en línea
+		Tienda en línea
 	</li>
 @stop
 
 @section('sidebar')
-  @include('elements.menus.difusion', array('selected' => 2))
+  @include('elements.menus.libreria', array('selected' => 1))
 @stop
 
 
