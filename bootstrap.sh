@@ -2,6 +2,4 @@
 
 sudo sh /vagrant/provisions.sh
 
-#Install compser and bower package
-
-sh /vagrant/install-packages.sh
+sh /vagrant/project-config.sh
