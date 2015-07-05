@@ -3,7 +3,6 @@
 namespace Filmoteca\Repository;
 
 use Filmoteca\Models\Exhibitions\Schedule;
-use Illuminate\Support\Collection;
 
 /**
  * Class SchedulesRepository
@@ -19,7 +18,7 @@ class SchedulesRepository
     /**
      * @param Schedule $schedule
      */
-    public function _construct(Schedule $schedule)
+    public function __construct(Schedule $schedule)
     {
         $this->schedule = $schedule;
     }
@@ -30,11 +29,13 @@ class SchedulesRepository
      * @param string $order Default Descending. Valid values: DESC | ASC.
      * @return \Illuminate\Support\Collection
      */
-    public function findByDateGroupByAuditorium($from, $until, $order = 'DESC')
+    public function findByDateIntervalGroupByAuditorium($from, $until, $order = 'DESC')
     {
-        $schedules = $this->findByDate($from, $until, $order);
+        $schedules = $this->findByDateInterval($from, $until, $order);
 
-        $groupedSchedules = $this->groupByAuditorium($schedules);
+        $groupedSchedules = $schedules->groupBy(function($schedule) {
+            return $schedule->auditorium->id;
+        });
 
         return $groupedSchedules;
     }
@@ -45,9 +46,9 @@ class SchedulesRepository
      * @param string $order Default Descending. Valid values: DESC | ASC.
      * @return \Illuminate\Support\Collection
      */
-    public function findByDate($from, $until, $order)
+    public function findByDateInterval($from, $until, $order = 'DESC')
     {
-        $interval = array($from, $until . ' 23:59:59');
+        $interval = [$from, $until . ' 23:59:59'];
 
         $schedules = $this->schedule
             ->whereBetween('entry', $interval)
@@ -57,34 +58,11 @@ class SchedulesRepository
                 'exhibition.exhibitionFilm',
                 'exhibition.exhibitionFilm.film',
                 'exhibition.exhibitionFilm.film.genre',
-                'exhibition.exhibitionFilm.film.country',
+                'exhibition.exhibitionFilm.film.countries',
                 'auditorium'
             )
             ->get();
 
         return $schedules;
-    }
-
-    /**
-     * @param Collection $collection
-     * @return \Illuminate\Support\Collection
-     */
-    protected function groupByAuditorium(Collection $collection)
-    {
-        $groupedSchedules = $collection->reduce(function ($accum, $item) {
-
-            $auditoriumId = $item->auditorium->id;
-
-            if (!isset($accum[$auditoriumId])) {
-                $accum[$auditoriumId] = Collection::make([]);
-            }
-
-            $accum[$auditoriumId]->add($item);
-
-            return $accum;
-
-        }, []);
-
-        return Collection::make($groupedSchedules);
     }
 }

@@ -2,9 +2,9 @@
 
 namespace Filmoteca\Repository;
 
-use Filmoteca\Factories\ActivityFactory;
-use Filmoteca\Repository\SchedulesRepository;
 use Illuminate\Support\Collection;
+use Carbon\Carbon;
+use Filmoteca\Factories\ActivityFactory;
 
 /**
  * Class ActivitiesRepository
@@ -19,56 +19,65 @@ class ActivitiesRepository
 
     /**
      * @param \Filmoteca\Repository\SchedulesRepository $repository
+     * @param \Filmoteca\Factories\ActivityFactory
      */
-    public function __construct(SchedulesRepository $repository)
+    public function __construct(SchedulesRepository $repository, ActivityFactory $activityFactory)
     {
-        $this->repository = $repository;
+        $this->repository       = $repository;
+        $this->activityFactory  = $activityFactory;
     }
 
-    /**
-     * @param string $start
-     * @param string $end
-     * @return \Illuminate\Support\Collection
-     */
-    public function findByInterval($start, $end)
+    public function findInCurrentMonth()
     {
-        $auditoriumsSchedules = $this->repository->findByDateGroupByAuditorium($start, $end);
+        $today  = Carbon::today();
+        $from   = Carbon::createFromDate($today->year, $today->month);
+        $until  = Carbon::createFromDate($today->year, $today->month, $today->daysInMonth);
 
-        $activities = $auditoriumsSchedules->reduce(function (Collection $allActivities, Collection $auditoriumSchedules) {
-
-            // List of schedules of a auditorium grouped by films.
-            $schedulesGroupedByFilm = $this->groupByFilm($auditoriumSchedules);
-
-            $activities = ActivityFactory::collection($schedulesGroupedByFilm);
-
-            $allActivities->merge($activities);
-
-            return $allActivities;
-
-        }, Collection::make([]));
+        $activities = $this->findByDateInterval(
+            $from->toDateString(),
+            $until->toDateString()
+        );
 
         return $activities;
     }
 
     /**
-     * @param \Illuminate\Support\Collection $schedules
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @param string $from
+     * @param string $until
+     * @return \Illuminate\Support\Collection
      */
-    protected function groupAuditoriumSchedulesByFilm(Collection $schedules)
+    public function findByDateInterval($from, $until = null)
     {
-        $groupedByFilm = $schedules->reduce(function ($accumulator, $schedule) {
+        if ($until === null) {
+            $today = Carbon::today();
+            $until = Carbon::createFromDate($today->year, $today->month, $today->daysInMonth)->toDateString();
+        }
 
-            $filmId = $schedule->exhibition->exhibition_film->film->id;
+        $schedulesByAuditorium = $this->repository->findByDateIntervalGroupByAuditorium($from, $until);
 
-            if (!isset($accumulator[$filmId])) {
-                $accumulator[$filmId] = Collection::make([]);
-            }
+        $activities = $this->createActivities($schedulesByAuditorium);
 
-            $accumulator[$filmId]->add($schedule);
+        return $activities;
+    }
 
-            return $accumulator;
-        });
+    protected function createActivities(Collection $schedulesByAuditorium)
+    {
+        $activities = $schedulesByAuditorium->reduce(function (Collection $allActivities, $arrayAuditoriumSchedules) {
 
-        return $groupedByFilm;
+            $auditoriumSchedules = Collection::make($arrayAuditoriumSchedules);
+
+            // List of schedules of a auditorium grouped by films.
+            $schedulesByFilm = $auditoriumSchedules->groupBy(function ($item) {
+                return $item->exhibition->exhibition_film->film->id;
+            });
+
+            $activities = $this->activityFactory->collection($schedulesByFilm);
+
+            // merge return a new Collection
+            return $allActivities->merge($activities);
+
+        }, Collection::make([]));
+
+        return $activities;
     }
 }

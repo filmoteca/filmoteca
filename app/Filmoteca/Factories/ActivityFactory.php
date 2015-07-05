@@ -6,6 +6,7 @@ use Illuminate\Support\Collection;
 use Filmoteca\Models\Activity;
 use Filmoteca\Models\Exhibitions\Schedule;
 use Filmoteca\ConacultaFormatter as Formatter;
+use Illuminate\Config\Repository as Config;
 
 /**
  * Class ActivityFactory
@@ -15,11 +16,16 @@ class ActivityFactory
 {
     const CATEGORY = 'CINE';
 
+    public function __construct(Config $config)
+    {
+        $this->config = $config;
+    }
+
     /**
      * @param Collection $schedules
      * @return \Filmoteca\Models\Activity
      */
-    public static function single(Collection $schedules)
+    public function single(Collection $schedules)
     {
         $activity       = new Activity();
         $firstSchedule  = $schedules->first();
@@ -33,12 +39,12 @@ class ActivityFactory
             ->setPublicType('General')
             ->setContact(self::getContact($firstSchedule))
             ->setSchedules(Formatter::toDateTime($schedules))
-            ->setExtraSchedules(Formatetr::toExtraTime($schedules))
+            ->setExtraSchedules(Formatter::toExtraTime($schedules))
             ->setPrices(Formatter::toPrices($schedules))
             ->setDiscounts(Formatter::toDiscounts($schedules))
             ->setCommentaries($firstSchedule->exhibition->notes)
             ->setCategory(self::CATEGORY)
-            ->setImage($firstSchedule->image)
+            ->setImage($film->image)
             ->setReview($firstSchedule->exhibition->exhibition_film->film->synopsis);
 
         return $activity;
@@ -48,19 +54,19 @@ class ActivityFactory
      * @param Collection $collection
      * @return \Illuminate\Support\Collection
      */
-    public static function collection(Collection $collection)
+    public function collection(Collection $collection)
     {
         $activities = $collection->map(function ($item) {
-            return self::single($item);
+            return self::single(Collection::make($item));
         });
 
         return $activities;
     }
 
-    public static function getContact(Schedule $schedule)
+    public function getContact(Schedule $schedule)
     {
         $contact = sprintf('Teléfono de la sala: %s.', $schedule->auditorium->telephone);
-        $contact.= sprintf('\nTeléfono de la filmoteca: %s', Config::get('institute.telephone'));
+        $contact.= sprintf('\nTeléfono de la filmoteca: %s', $this->config->get('institute.telephone'));
 
         return $contact;
     }

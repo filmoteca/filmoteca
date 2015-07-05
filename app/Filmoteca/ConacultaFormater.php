@@ -10,19 +10,24 @@ use Illuminate\Support\Collection;
  */
 class ConacultaFormatter
 {
-    /**
-     * @param Collection $schedules
-     */
+
     public static function toDateTime(Collection $schedules)
     {
-
+        return '';
     }
 
-    /**
-     * @param Collection $schedules
-     */
     public static function toExtraTime(Collection $schedules)
     {
+        return '';
+    }
 
+    public static function toPrices()
+    {
+        return '';
+    }
+
+    public static function toDiscounts()
+    {
+        return '';
     }
 }
