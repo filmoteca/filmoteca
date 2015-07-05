@@ -74,7 +74,7 @@ mkdir /var/log/xdebug
 echo "Changing xdebug log directory owner to www-data"
 chown www-data:www-data /var/log/xdebug
 
-XDEBUG_CONFIG = $(cat <<EOF
+XDEBUG_CONFIG=$(cat <<EOF
 xdebug.default_enable = 1
 xdebug.idekey = "vagrant"
 xdebug.remote_enable = 1
