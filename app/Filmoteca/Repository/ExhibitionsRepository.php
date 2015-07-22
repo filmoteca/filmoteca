@@ -2,6 +2,7 @@
 
 use App;
 use Carbon\Carbon;
+use InvalidArgumentException;
 use Filmoteca\Models\Exhibitions\Exhibition;
 use Filmoteca\Models\Exhibitions\ExhibitionFilm;
 use Filmoteca\Models\Film;
@@ -13,8 +14,8 @@ class ExhibitionsRepository extends ResourcesRepository
 	public function __construct(
 		Exhibition $exhibition,
 		ExhibitionFilm $exhibitionFilm,
-		Film $film)
-	{
+		Film $film
+	) {
 		$this->exhibition       = $exhibition;
 		$this->exhibitionFilm   = $exhibitionFilm;
 		$this->resource         = $exhibition;
@@ -55,7 +56,7 @@ class ExhibitionsRepository extends ResourcesRepository
 
 				break;
 			default:
-				throw new Exception('Parámetro de búsqueda invalido: ' . $by );
+				throw new InvalidArgumentException('Parámetro de búsqueda invalido: ' . $by );
 		}
 
 		return $exhibitions;
@@ -103,7 +104,7 @@ class ExhibitionsRepository extends ResourcesRepository
 	 * @param  String $until Fecha de fin. 
 	 * @return Collection        Colección de exhibiciones.
 	 */
-	public function searchByDate( $from, $until)
+	public function searchByDate($from, $until)
 	{
 		$interval = array($from , $until . ' 23:59:59');
 
@@ -227,6 +228,58 @@ class ExhibitionsRepository extends ResourcesRepository
 
         return $resources;
     }
+
+	/**
+	 * The exhibitions of the current month.
+	 *
+	 * @return Collection
+	 */
+	public function findLast()
+	{
+		$today = Carbon::now();
+
+		$from = Carbon::createFromDate(
+			$today->year,
+			$today->month,
+			1
+		)->toDateString();
+
+		$until = Carbon::createFromDate(
+			$today->year,
+			$today->month,
+			$today->daysInMonth
+		)->toDateString();
+
+		return $this->searchByDate($from, $until);
+	}
+
+	/**
+	 * @param int $month
+	 * @return Collection
+	 */
+	public function findByMonth($month = 0)
+	{
+		if (!is_int($month) || $month < 1 || $month > 12) {
+			return $this->exhibition->findLast();
+		}
+
+		$currentDate = Carbon::now();
+		$currentDate->month = $month;
+
+		$from = Carbon::createFromDate(
+			$currentDate->year,
+			$currentDate->month,
+			1
+		)->toDateString();
+
+		$until = Carbon::createFromDate(
+			$currentDate->year,
+			$currentDate->month,
+			$currentDate->daysInMonth
+		)->toDateString();
+
+		return $this->searchByDate($from, $until);
+	}
 
 	protected function makeSchedules(array $schedules = null)
 	{
