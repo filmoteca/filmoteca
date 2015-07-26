@@ -53,9 +53,10 @@ return array(
 	 */
 	'menu' => array(
         'pages',
-        'Home' => ['advertisements'],
-        'Carousels' => ['carousels', 'carousel_images'],
-        'Exhibitions' => ['countries', 'genres']
+        'Home'          => ['advertisements'],
+        'Carousels'     => ['carousels', 'carousel_images'],
+        'Exhibitions'   => ['countries', 'genres'],
+        'System'        => ['redirects']
     ),
 
 	/**
