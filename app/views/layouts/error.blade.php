@@ -13,6 +13,8 @@
             ])
     }}
 
+    <link href="/assets/imgs/favicon.ico" rel="icon" type="image/x-icon" />
+
     {{ HTML::style('/assets/css/filmoteca.css') }}
 
     <title>@yield('title')</title>
