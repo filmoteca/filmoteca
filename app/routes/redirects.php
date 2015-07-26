@@ -1,8 +1,8 @@
 <?php
 
-foreach (Config::get('redirects') as $redirect) {
+App::missing(function () {
 
-    Route::get($redirect['old'], function () use ($redirect) {
-        return Redirect::to($redirect['new'], 301);
-    });
-}
+    $handler = App::make('Filmoteca\Handlers\ErrorHandler');
+
+    return $handler->missing();
+});
