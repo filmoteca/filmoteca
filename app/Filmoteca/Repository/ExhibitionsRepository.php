@@ -164,14 +164,21 @@ class ExhibitionsRepository extends ResourcesRepository
 			->first();
 	}
 
-	public function paginate($page = 1, $amount = 15)
+    /**
+     * @param int $page
+     * @param string $query
+     * @param int $amount
+     * @return StdClass
+     */
+	public function paginate($page = 1, $query = '', $amount = 15)
 	{
 		$results 				= new StdClass();
 		$results->totalItems 	= 0;
-		$results->itmes 		= array(); 
+		$results->itmes 		= [];
 
 		$resources = $this
 			->resource
+            ->where('exhibitionFilm.film.title', 'like', '%' . $query . '%')
 			->orderBy('id','desc')
 			->skip($amount * ($page - 1))
 			->take($amount)

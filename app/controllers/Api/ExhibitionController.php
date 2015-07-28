@@ -3,26 +3,45 @@
 namespace Api;
 
 use Filmoteca\Repository\ExhibitionsRepository;
-use Input;
-use Response;
-use Paginator;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Response;
+use \Illuminate\Pagination\Factory as Paginator;
 
+/**
+ * Class ExhibitionController
+ * @package Api
+ */
 class ExhibitionController extends ApiController
 {
-	public function __construct(ExhibitionsRepository $repository)
+    const FIRST_PAGE        = 1;
+
+    const ITEMS_PER_PAGE    = 15;
+
+    /**
+     * @param ExhibitionsRepository $repository
+     */
+	public function __construct(ExhibitionsRepository $repository, Paginator $paginator)
 	{
 		$this->repository = $repository;
+        $this->paginator = $paginator;
 	}
 
+    /**
+     * @return \Illuminate\Pagination\Paginator
+     */
 	public function index()
 	{
-		$itemsPerPage 	=  15;
-		$page 			= Input::has('page')? Input::get('page') : 1;
-		$exhibitions 			= $this->repository->paginate($page, $itemsPerPage);
+		$itemsPerPage 	= self::ITEMS_PER_PAGE;
+		$page 			= Input::has('page')? Input::get('page') : self::FIRST_PAGE;
+        $query          = Input::has('query')? Input::get('query') : '';
+		$exhibitions    = $this->repository->paginate($page, $query, $itemsPerPage);
 
-		return Paginator::make($exhibitions->items, $exhibitions->total, $itemsPerPage);
+		return $this->paginator->make($exhibitions->items, $exhibitions->total, $itemsPerPage);
 	}
 
+    /**
+     * @return \Illuminate\Http\JsonResponse
+     */
 	public function store()
 	{
 		$data = Input::except('_token');
@@ -32,8 +51,12 @@ class ExhibitionController extends ApiController
 		return Response::json($model, 200);
 	}
 
-	public function destroy($id){
-
+    /**
+     * @param $id
+     * @return \Illuminate\Http\JsonResponse
+     */
+	public function destroy($id)
+    {
 		$resource = $this->repository->find($id);
 
 		$resource->destroy($id);
@@ -41,6 +64,10 @@ class ExhibitionController extends ApiController
 		return Response::json($resource, 200);
 	}
 
+    /**
+     * @param $id
+     * @return \Illuminate\Http\JsonResponse
+     */
 	public function show($id)
 	{
 		$resource = $this->repository->find($id);
@@ -48,6 +75,10 @@ class ExhibitionController extends ApiController
 		return Response::json($resource, 200);
 	}
 
+    /**
+     * @param $id
+     * @return \Illuminate\Http\JsonResponse
+     */
 	public function update($id)
 	{
 		$data = Input::except('_token');
