@@ -6,7 +6,7 @@ use InvalidArgumentException;
 use Filmoteca\Models\Exhibitions\Exhibition;
 use Filmoteca\Models\Exhibitions\ExhibitionFilm;
 use Filmoteca\Models\Film;
-use StdClass;
+use Filmoteca\Pagination\Results;
 use Illuminate\Database\Eloquent\Collection;
 
 class ExhibitionsRepository extends ResourcesRepository
@@ -168,25 +168,38 @@ class ExhibitionsRepository extends ResourcesRepository
      * @param int $page
      * @param string $query
      * @param int $amount
-     * @return StdClass
+     * @return \Filmoteca\Pagination\Results
      */
 	public function paginate($page = 1, $query = '', $amount = 15)
 	{
-		$results 				= new StdClass();
-		$results->totalItems 	= 0;
-		$results->itmes 		= [];
+		$results 				= Results::make();
 
 		$resources = $this
 			->resource
-            ->where('exhibitionFilm.film.title', 'like', '%' . $query . '%')
+            ->whereHas('exhibitionFilm', function($q) use ($query){
+
+                $q->whereHas('film', function($q) use ($query) {
+                    $q->where('films.title', 'like', '%' . $query . '%');
+                });
+            })
 			->orderBy('id','desc')
 			->skip($amount * ($page - 1))
 			->take($amount)
 			->with('exhibitionFilm','exhibitionFilm.film')
 			->get();
 
-		$results->total 	= $this->resource->count();
-		$results->items 	= $resources->all();
+        $total = $this
+            ->resource
+            ->whereHas('exhibitionFilm', function($q) use ($query){
+
+                $q->whereHas('film', function($q) use ($query) {
+                    $q->where('films.title', 'like', '%' . $query . '%');
+                });
+            })
+            ->count();
+
+		$results->setTotal($total);
+		$results->setItems($resources->all());
 
 		return $results;
 	}

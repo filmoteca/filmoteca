@@ -5,7 +5,7 @@ namespace Api;
 use Filmoteca\Repository\ExhibitionsRepository;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Response;
-use \Illuminate\Pagination\Factory as Paginator;
+use Illuminate\Pagination\Factory as Paginator;
 
 /**
  * Class ExhibitionController
@@ -36,7 +36,7 @@ class ExhibitionController extends ApiController
         $query          = Input::has('query')? Input::get('query') : '';
 		$exhibitions    = $this->repository->paginate($page, $query, $itemsPerPage);
 
-		return $this->paginator->make($exhibitions->items, $exhibitions->total, $itemsPerPage);
+		return $this->paginator->make($exhibitions->getItems(), $exhibitions->getTotal(), $itemsPerPage);
 	}
 
     /**
