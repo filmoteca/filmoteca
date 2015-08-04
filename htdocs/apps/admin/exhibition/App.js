@@ -7,12 +7,15 @@
 
 /* global require */
 
-(function(factory)
-{
+(function (factory) {
+
     'use strict';
-        require([
+
+    require([
             'angular',
             'domready',
+            'admin.exhibition.controllers/searchController',
+            'admin.exhibition.directives/search',
             'angucomplete-alt',
             'ngRoute',
             'ngAnimate',
@@ -31,13 +34,17 @@
             'file-model',
 
             'syntara'
-            ], 
-            factory);
-})(function(angular, domready)
-{
+        ],
+        factory);
+})(function(
+    angular,
+    domready,
+    searchController,
+    search
+) {
     'use strict';
 
-    angular.module('App',[
+    angular.module('admin.exhibition',[
 
         'angucomplete-alt',
         'ngRoute',
@@ -132,7 +139,7 @@
             maxSize : 10
         };
 
-        $scope.pageChanged = function(){
+        $scope.pageChanged = function () {
 
             Exhibition.paginate($scope.query, $scope.pagination.current_page).then(function(response){
 
@@ -144,29 +151,24 @@
             });
         };
 
-        $scope.destroy = function($index)
-        {
+        $scope.destroy = function ($index) {
+
             Exhibition.destroy( $scope.exhibitions[$index].id ).then(function(){
 
                 $scope.exhibitions.splice($index, 1);
             });
         };
 
-        $scope.filter = function () {
-
-            var FIRST_PAGE = 0;
-
-            Exhibition.paginate($scope.query, FIRST_PAGE).then(function(response){
-
-                angular.extend($scope.pagination, response.data);
-
-                $scope.exhibitions  = response.data.data;
-
-                $scope.pagination.data.data = null; //we do not save redundant data.
-            });
-        };
-
         $scope.pageChanged();
+
+        $scope.$on('exhibitionsSearched', function (event, pagination) {
+
+            angular.extend($scope.pagination, pagination);
+
+            $scope.exhibitions  = pagination.data;
+
+            $scope.pagination.data.data = null; //we do not save redundant data.
+        });
     }])
 
     .controller('admin.exhibition.controllers.create',['$scope', '$timeout', 'ExhibitionService', 'ExhibitionMessages', function($scope, $timeout, Exhibition, Messages){
@@ -198,6 +200,10 @@
             $scope.$broadcast('exhibitionLoaded', exhibition);
         });
     }])
+
+    .controller('admin.exhibition.controllers.searchController', searchController)
+
+    .directive('search', search)
 
     .config(['$routeProvider','$httpProvider', function($routeProvider, $httpProvider) {
             
@@ -234,7 +240,7 @@
     domready( function()
     {
         document.getElementsByTagName('body')[0].setAttribute('data-ng-controller','admin.exhibition.controllers.exhibition');
-        angular.bootstrap(document,['App']);
+        angular.bootstrap(document,['admin.exhibition']);
     });
 
 });
