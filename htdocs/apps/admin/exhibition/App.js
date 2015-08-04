@@ -134,7 +134,7 @@
 
         $scope.pageChanged = function(){
 
-            Exhibition.paginate($scope.pagination.current_page).then(function(response){
+            Exhibition.paginate($scope.query, $scope.pagination.current_page).then(function(response){
 
                 angular.extend($scope.pagination, response.data);
                 
@@ -149,6 +149,20 @@
             Exhibition.destroy( $scope.exhibitions[$index].id ).then(function(){
 
                 $scope.exhibitions.splice($index, 1);
+            });
+        };
+
+        $scope.filter = function () {
+
+            var FIRST_PAGE = 0;
+
+            Exhibition.paginate($scope.query, FIRST_PAGE).then(function(response){
+
+                angular.extend($scope.pagination, response.data);
+
+                $scope.exhibitions  = response.data.data;
+
+                $scope.pagination.data.data = null; //we do not save redundant data.
             });
         };
 

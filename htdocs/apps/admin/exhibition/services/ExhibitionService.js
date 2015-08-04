@@ -72,9 +72,16 @@
 			transformRequest 	: [transformRequest].concat($http.defaults.transformRequest)
 		};
 
-		this.paginate = function(page){
+		this.paginate = function($query, page){
 
-			return $http.get('/admin/api/exhibition?page=' + page );
+            var config = {
+                params: {
+                    'query': $query,
+                    'page': page
+                }
+            };
+
+            return $http.get('/admin/api/exhibition', config);
 		};
 
 		this.make = function()

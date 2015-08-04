@@ -1,5 +1,12 @@
 <h1 class="text-center">Lista de exhibiciones</h1>
 
+<div>
+    <input ng-model="query" type="text">
+    <button ng-click="filter()">
+        Filtrar
+    </button>
+</div>
+
 <pagination items-per-page="pagination.per_page" total-items="pagination.total" ng-model="pagination.current_page" ng-change="pageChanged()"></pagination>
 
 <table class="table table-striped table-bordered">
