@@ -5718,14 +5718,6 @@ a {
   margin-right: 4px;
   display: inline-block; }
 
-.loading {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("../../bower_components/slick.js/slick/ajax-loader.gif") center center no-repeat; }
-
 .items {
   padding: 0px; }
   .items:before, .items:after {
@@ -6469,5 +6461,21 @@ footer {
 
 .view-animate.ng-leave.ng-leave-active {
   left: -100%; }
+
+.loading {
+  background: url("../imgs/loading.gif") no-repeat;
+  display: inline-block;
+  vertical-align: middle; }
+
+.loading-sm {
+  background-size: 36px 36px;
+  width: 36px;
+  height: 36px; }
+
+.loading-md {
+  background-size: 72px 72px; }
+
+.loading-lg {
+  background-size: 144px 144px; }
 
 /*# sourceMappingURL=filmoteca.css.map */

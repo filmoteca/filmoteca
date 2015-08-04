@@ -3,9 +3,10 @@
         <input ng-model="query" type="text" class="form-control">
     </div>
     <button ng-click="search()" class="btn btn-default">
-        <span class="glyphiconglyphicon-filter"></span>Buscar
+        <span class="glyphicon glyphicon-search"></span> Buscar
     </button>
     <button ng-click="clear()" class="btn btn-default">
-        <span class="glyphicon glyphicon-erase"></span>Limpiar
+        <span class="glyphicon glyphicon-erase"></span> Limpiar
     </button>
+    <span class="loading loading-sm" ng-show="searching"></span>
 </form>

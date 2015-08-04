@@ -14,13 +14,17 @@
         var FIRST_PAGE = 0;
 
         $scope.query = '';
+        $scope.searching = false;
 
         $scope.search = function () {
 
+            $scope.searching = true;
+            
             Exhibition
                 .paginate($scope.query, FIRST_PAGE)
                 .then(function (response) {
-
+                    
+                    $scope.searching = false;
                     $scope.$emit('exhibitionsSearched', response.data);
                 });
         };
