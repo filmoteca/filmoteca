@@ -1,0 +1,44 @@
+<div class="panel panel-default" data-ng-show="wasFilmSelected()">
+    <div class="panel-heading">
+        <span class="h4">Iconografía</span>
+            <span data-ng-show="exhibition.type">
+                <img data-ng-src="{{exhibition.type.icon}}" class="thumbnail image image-size-icon">({{exhibition.type.name}})
+                <span class="btn btn-danger pull-right" data-ng-click="deleteExhibitionIcon()">Borrar icono</span>
+            </span>
+            <span data-ng-hide="exhibition.type">
+                <p>Ningún icono seleccionado.</p>
+            </span>
+        <div class="clearfix"></div>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-sm-6">
+                <span class="h4">Iconos disponibles</span>
+                <span class="btn btn-success" data-ng-click="create()">Agregar nuevo icono</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <ul class="icons-list">
+                    <li data-ng-repeat="icon in iconsAvailable">
+                        <div class="text-center">
+                            <img data-ng-src="{{icon.icon}}" class="image-size-icon" data-ng-click="update(icon)">
+                                <span class="icon-name">
+                                    {{ icon.name }}
+                                </span>
+                        </div>
+                        <div>
+                            <a><span class="btn glyphicon glyphicon-remove" data-ng-click="destroy(icon.id)" title="Eliminar"> Eliminar</span></a>
+                        </div>
+                        <div>
+                            <a><span class="btn glyphicon glyphicon-pencil" data-ng-click="edit(icon)" title="Editar"> Editar</span></a>
+                        </div>
+                        <div>
+                            <a><span class="btn glyphicon glyphicon-plus" data-ng-click="update(icon)" title="Agregar a la exhibición"> Usar</span></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

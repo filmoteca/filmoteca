@@ -64,52 +64,8 @@
 
 <div data-schedules class="row"></div>
 
-<div ng-controller="IconographicController" class="row icons-available">
+<div data-iconographics class="row icons-available"></div>
 
-    <div class="panel panel-default" ng-show="wasFilmSelected()">
-        <div class="panel-heading">
-            <span class="h4">Iconografía</span>
-            <span ng-show="exhibition.type">
-                <img ng-src="{{exhibition.type.icon}}" class="thumbnail image image-size-icon">({{exhibition.type.name}})
-                <span class="btn btn-danger pull-right" ng-click="deleteExhibitionIcon()">Borrar icono</span>
-            </span>
-            <span ng-hide="exhibition.type">
-                <p>Ningún icono seleccionado.</p>
-            </span>
-            <div class="clearfix"></div>
-        </div>
-        <div class="panel-body">
-            <div class="row">
-                <div class="col-sm-6">
-                    <span class="h4">Iconos disponibles</span>
-                    <span class="btn btn-success" ng-click="create()">Agregar nuevo icono</span>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <ul class="icons-list">
-                        <li ng-repeat="icon in iconsAvailable">
-                            <div class="text-center">
-                                <img ng-src="{{icon.icon}}" class="image-size-icon" ng-click="update(icon)">
-                                <span class="icon-name">
-                                    {{ icon.name }}
-                                </span>
-                            </div>
-                            <div>
-                                <a><span class="btn glyphicon glyphicon-remove" ng-click="destroy(icon.id)" title="Eliminar"> Eliminar</span></a>
-                            </div>
-                            <div>
-                                <a><span class="btn glyphicon glyphicon-pencil" ng-click="edit(icon)" title="Editar"> Editar</span></a>
-                            </div>
-                            <div>
-                                <a><span class="btn glyphicon glyphicon-plus" ng-click="update(icon)" title="Agregar a la exhibición"> Usar</span></a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
+<div class="row">
     <a class="btn btn-success" href="#index" ng-show="wasFilmSelected()">Actualizar y regresar al listado.</a>
 </div>
