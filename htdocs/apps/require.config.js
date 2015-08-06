@@ -20,6 +20,7 @@ var require = {
 		"admin.exhibition.services" : 		"/apps/admin/exhibition/services",
 		"admin.exhibition.controllers" : 	"/apps/admin/exhibition/controllers",
         "admin.exhibition.directives" : 	"/apps/admin/exhibition/directives",
+        "admin.exhibition.configs" : 	    "/apps/admin/exhibition/configs",
 
 		"pages.exhibition.App" : 			"/apps/pages/exhibition/App",
 		"pages.exhibition.services" : 		"/apps/pages/exhibition/services",

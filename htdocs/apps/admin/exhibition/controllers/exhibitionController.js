@@ -5,10 +5,7 @@
     'use strict';
 
     if (typeof define === 'function' && define.amd) {
-        define([
-                'angular',
-                'admin.exhibition.module'
-            ],
+        define(['angular'],
             factory);
     } else {
         factory(angular);
