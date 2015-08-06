@@ -1,0 +1,58 @@
+<div class="panel panel-default" data-ng-show="wasFilmSelected()">
+    <div class="panel-heading">Horario
+        <span class="glyphicon glyphicon-plus btn" data-ng-click="add()" title="Agregar"></span>
+    </div>
+    <table class="table table-collapsed table-bordered data-ng-cloak">
+        <tr>
+            <th>Sala</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Acciones</th>
+        </tr>
+        <!--- Los horarios de exhibicion -->
+        <tr data-data-ng-repeat="schedule in schedules">
+            <td>
+                <div data-ng-hide="editing && editedIndex == $index">
+                    {{schedule.auditorium.name}}
+                </div>
+                <div data-ng-show="editing && editedIndex == $index">
+                    <select data-ng-model="schedule.auditorium"
+                            data-ng-options="auditorium.name for auditorium in auditoriums"></select>
+                </div>
+            </td>
+            <td>
+                <div data-ng-hide="editing && editedIndex == $index">
+                    {{schedule.date | date : 'd/M/yyyy' }}
+                </div>
+                <div data-ng-show="editing && editedIndex == $index">
+                    <datepicker data-ng-model="schedule.date" class="datepicker"></datepicker>
+                </div>
+            </td>
+            <td>
+
+                <div data-ng-hide="editing && editedIndex == $index">
+                    {{schedule.time | date : 'HH:mm' }}
+                </div>
+                <div data-ng-show="editing && editedIndex == $index">
+                    <timepicker data-ng-model="schedule.time" show-meridian="false"></timepicker>
+                </div>
+            </td>
+            <td>
+                <span data-ng-click="ready()"
+                      class="glyphicon glyphicon-ok btn"
+                      data-ng-show="editing && editedIndex == $index"
+                      title="Listo!"></span>
+                <span data-ng-click="edit($index)"
+                      class="glyphicon glyphicon-pencil btn"
+                      title="Editar"></span>
+                <span data-ng-click="destroy($index)"
+                      class="glyphicon glyphicon-remove btn"
+                      title="Borrar"></span>
+                <br>
+                <div class="alert alert-danger" data-ng-show="schedule.time == undefined || schedule.date == undefined">
+                    La fecha o la hora es invalida.
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
