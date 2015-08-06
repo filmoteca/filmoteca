@@ -24,7 +24,7 @@
 	angular.module('admin.exhibition.controllers.FilmController', ['ui.bootstrap'])
 
 	.controller('FilmController', ['$scope','$modal',
-	'ExhibitionService','FilmService',
+	'exhibitionService','FilmService',
 		function($scope, $modal, Exhibition, Film)
 	{
 		$scope.film = Exhibition.film();

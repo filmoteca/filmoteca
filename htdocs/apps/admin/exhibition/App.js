@@ -25,18 +25,22 @@
             'admin.exhibition.directives/search',
             'admin.exhibition.directives/schedules',
             'admin.exhibition.directives/iconographics',
+            'admin.exhibition.services/exhibitionService',
+            'admin.exhibition.factories/exhibition',
+            'admin.exhibition.constants/messages',
             'admin.exhibition.configs/$http',
             'admin.exhibition.configs/$route',
+
             'angucomplete-alt',
             'ngRoute',
             'ngAnimate',
             'ui.bootstrap',
+            'angular-moment',
 
             'admin.exhibition.controllers/FilmController',
             'admin.exhibition.controllers/FilmController',
 
             'admin.exhibition.services/FilmService',
-            'admin.exhibition.services/ExhibitionService',
             'admin.exhibition.services/AuditoriumService',
             'admin.exhibition.services/IconographicService',
             'admin.exhibition.services/NotificationService',
@@ -59,6 +63,9 @@
              search,
              schedules,
              iconographics,
+             exhibitionService,
+             exhibition,
+             messages,
              httpConfig,
              routeConfig) {
 
@@ -69,11 +76,11 @@
             'angucomplete-alt',
             'ngRoute',
             'ngAnimate',
+            'angularMoment',
 
             'admin.exhibition.controllers.FilmController',
 
             'admin.exhibition.services.FilmService',
-            'admin.exhibition.services.ExhibitionService',
             'admin.exhibition.services.AuditoriumService',
             'admin.exhibition.services.IconographicService',
             'admin.exhibition.services.NotificationService',
@@ -93,6 +100,9 @@
         .directive('search', search)
         .directive('schedules', schedules)
         .directive('iconographics', iconographics)
+        .service('exhibitionService', exhibitionService)
+        .factory('exhibition', exhibition)
+        .constant('messages', messages)
         .config(routeConfig)
         .config(httpConfig);
 

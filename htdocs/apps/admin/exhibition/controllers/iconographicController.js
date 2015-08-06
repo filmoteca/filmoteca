@@ -103,8 +103,8 @@
         '$scope',
         '$modal',
         'IconographicService',
-        'ExhibitionService',
-        'ExhibitionMessages'
+        'exhibitionService',
+        'messages'
     ];
 
     return controller;

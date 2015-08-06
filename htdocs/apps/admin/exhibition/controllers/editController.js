@@ -21,7 +21,7 @@
         });
     };
 
-    controller.$inject = ['$scope','ExhibitionService', 'ExhibitionMessages', '$routeParams'];
+    controller.$inject = ['$scope','exhibitionService', 'messages', '$routeParams'];
 
     return controller;
 });

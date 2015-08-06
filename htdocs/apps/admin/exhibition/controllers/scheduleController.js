@@ -92,8 +92,8 @@
     controller.$inject = [
         '$scope',
         'AuditoriumService',
-        'ExhibitionService',
-        'ExhibitionMessages'
+        'exhibitionService',
+        'messages'
     ];
 
 	return controller;

@@ -18,9 +18,11 @@ var require = {
 
 		"admin.exhibition.App" : 			"/apps/admin/exhibition/App",
 		"admin.exhibition.services" : 		"/apps/admin/exhibition/services",
+        "admin.exhibition.factories" : 		"/apps/admin/exhibition/factories",
 		"admin.exhibition.controllers" : 	"/apps/admin/exhibition/controllers",
         "admin.exhibition.directives" : 	"/apps/admin/exhibition/directives",
         "admin.exhibition.configs" : 	    "/apps/admin/exhibition/configs",
+        "admin.exhibition.constants" : 	    "/apps/admin/exhibition/constants",
 
 		"pages.exhibition.App" : 			"/apps/pages/exhibition/App",
 		"pages.exhibition.services" : 		"/apps/pages/exhibition/services",

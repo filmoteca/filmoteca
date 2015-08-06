@@ -25,7 +25,7 @@
         });
     };
 
-    controller.$inject = ['$scope', '$timeout', 'ExhibitionService', 'ExhibitionMessages'];
+    controller.$inject = ['$scope', '$timeout', 'exhibitionService', 'messages'];
 
     return controller;
 });

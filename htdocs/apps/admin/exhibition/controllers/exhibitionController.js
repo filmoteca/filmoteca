@@ -1,21 +1,20 @@
-/* globals require */
+/* globals define */
 
 (function (factory) {
 
     'use strict';
 
-    if (typeof define === 'function' && define.amd) {
-        define(['angular'],
-            factory);
-    } else {
-        factory(angular);
-    }
+    define([
+            'angular'
+        ],
+        factory
+    );
 
 })(function (angular) {
 
     'use strict';
 
-    var controller = function ($scope, $timeout, Exhibition, Messages) {
+    var controller = function ($scope, $timeout, exhibition, exhibitionService, messages) {
 
         var MAX_ALERTS = 5;
         var TIMEOUT_TO_DISMISS_ALERT = 3000;
@@ -30,13 +29,13 @@
 
         $scope.alerts = [];
 
-        $scope.exhibition = Exhibition.get();
+        $scope.exhibition = exhibition;
 
-        $scope.$on('alert', function(event, message) {
+        $scope.$on('alert', function (event, message) {
 
             $scope.alerts.unshift(message);
 
-            while( $scope.alerts.length > MAX_ALERTS) {
+            while ($scope.alerts.length > MAX_ALERTS) {
                 //Delete the first element. At the bottom of the stack.
 
                 $scope.closeAlert($scope.alerts.length -1);
@@ -49,7 +48,7 @@
 
             $scope.alerts.splice(index, 1);
 
-            if( $scope.alerts.length > 0){
+            if ($scope.alerts.length > 0) {
 
                 removeOldestAlert();
             }
@@ -63,16 +62,16 @@
             $scope.alerts.splice(0, $scope.alerts.length);
         });
 
-        $scope.wasFilmSelected = function ()
-        {
-            return angular.isDefined(Exhibition.film().id);
+        $scope.wasFilmSelected = function () {
+
+            return exhibition.hasFilm();
         };
 
-        $scope.update = function ()
-        {
-            Exhibition.update().then(function () {
+        $scope.update = function () {
+            
+            exhibitionService.update().then(function () {
 
-                $scope.$emit('alert', Messages['exhibition.updated']);
+                $scope.$emit('alert', messages['exhibition.updated']);
             });
         };
     };
@@ -80,8 +79,9 @@
     controller.$inject = [
         '$scope',
         '$timeout',
-        'ExhibitionService',
-        'ExhibitionMessages'
+        'exhibition',
+        'exhibitionService',
+        'messages'
     ];
 
     return controller;

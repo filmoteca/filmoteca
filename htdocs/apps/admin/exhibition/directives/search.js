@@ -1,4 +1,4 @@
-/* globals require */
+/* globals define */
 
 (function (factory) {
 

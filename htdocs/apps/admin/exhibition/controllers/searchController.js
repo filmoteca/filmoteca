@@ -34,7 +34,7 @@
         };
     };
 
-    controller.$inject = ['$scope', 'ExhibitionService'];
+    controller.$inject = ['$scope', 'exhibitionService'];
 
     return controller;
 });

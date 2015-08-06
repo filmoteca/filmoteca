@@ -9,7 +9,7 @@
 
     'use strict';
 
-    var controller = function($scope, Exhibition){
+    var controller = function($scope, exhibitionService){
 
         $scope.pagination = {
             per_page : 0,
@@ -23,22 +23,24 @@
 
         $scope.pageChanged = function () {
 
-            Exhibition.paginate($scope.query, $scope.pagination.current_page).then(function (response) {
+            exhibitionService.paginate($scope.query, $scope.pagination.current_page)
+                .then(function (response) {
 
-                angular.extend($scope.pagination, response.data);
+                    angular.extend($scope.pagination, response.data);
 
-                $scope.exhibitions  = response.data.data;
+                    $scope.exhibitions  = response.data.data;
 
-                $scope.pagination.data.data = null; //we do not save redundant data.
+                    $scope.pagination.data.data = null; //we do not save redundant data.
             });
         };
 
         $scope.destroy = function ($index) {
 
-            Exhibition.destroy($scope.exhibitions[$index].id).then(function () {
+            exhibitionService.destroy($scope.exhibitions[$index].id)
+                .then(function () {
 
-                $scope.exhibitions.splice($index, 1);
-            });
+                    $scope.exhibitions.splice($index, 1);
+                });
         };
 
         $scope.pageChanged();
@@ -53,7 +55,7 @@
         });
     };
 
-    controller.$inject = ['$scope', 'ExhibitionService'];
+    controller.$inject = ['$scope', 'exhibitionService'];
 
     return controller;
 });
