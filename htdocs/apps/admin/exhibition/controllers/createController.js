@@ -10,12 +10,14 @@
 
     'use strict';
 
-    var controller = function ($scope, exhibitionFactory, exhibitionService, messages) {
+    var controller = function ($scope, exhibitionFactory, iconographicService) {
 
         $scope.exhibition = exhibitionFactory.make();
+
+        $scope.icons = iconographicService.all();
     };
 
-    controller.$inject = ['$scope', 'exhibitionFactory', 'exhibitionService', 'messages'];
+    controller.$inject = ['$scope', 'exhibitionFactory', 'iconographicService'];
 
     return controller;
 });

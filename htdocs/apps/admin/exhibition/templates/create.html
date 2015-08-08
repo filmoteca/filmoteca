@@ -44,17 +44,31 @@
 
 <br>
 
-<div class="row" ng-controller="admin.exhibition.controllers.exhibition">
-    <div class="col-md-12">
-        <div class="panel panel-default" ng-show="wasFilmSelected()">
-            <div class="panel-heading">Notas</div>
-            <div class="panel-body container-fluid">
-                <div class="row">
-                    <textarea ng-model="exhibition.notes" class="col-sm-12"></textarea>
+<pre>
+    {{ exhibition }}
+</pre>
+
+<div class="row">
+    <div class="col-sm-12">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label class="label-control col-sm-2" for="icon">Icono</label>
+                <div class="col-sm-6">
+                    <select data-ng-options="icon.name for icon in icons" ng-model="exhibition.icon" class="form-control">
+                        <option value="">Ninguno</option>
+                    </select>
+                </div>
+                <div class="col-sm-3">
+                    <div class="thumbnail" data-ng-show="exhibition.icon">
+                        <img data-ng-src="{{ exhibition.icon.icon }}" alt="{{ icon.name }}" title="{{ icon.name }}"/>
+                    </div>
                 </div>
             </div>
-            <div class="panel-footer"><button class="btn btn-success" ng-click="update()">Guardar notas</button></div>
-        </div>
+            <div class="form-group">
+                <label class="label-control col-sm-2" for="notes">Notas</label>
+                <textarea ng-model="exhibition.notes" class="col-sm-9"></textarea>
+            </div>
+        </form>
     </div>
 </div>
 
