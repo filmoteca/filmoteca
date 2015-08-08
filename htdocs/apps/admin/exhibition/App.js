@@ -27,6 +27,7 @@
             'admin.exhibition.directives/iconographics',
             'admin.exhibition.services/exhibitionService',
             'admin.exhibition.services/auditoriumService',
+            'admin.exhibition.services/iconographicService',
             'admin.exhibition.factories/exhibitionFactory',
             'admin.exhibition.factories/scheduleFactory',
             'admin.exhibition.constants/messages',
@@ -43,7 +44,6 @@
             'admin.exhibition.controllers/FilmController',
 
             'admin.exhibition.services/FilmService',
-            'admin.exhibition.services/IconographicService',
             'admin.exhibition.services/NotificationService',
 
             'file-model',
@@ -66,6 +66,7 @@
              iconographics,
              exhibitionService,
              auditoriumService,
+             iconographicService,
              exhibitionFactory,
              scheduleFactory,
              messages,
@@ -84,7 +85,6 @@
             'admin.exhibition.controllers.FilmController',
 
             'admin.exhibition.services.FilmService',
-            'admin.exhibition.services.IconographicService',
             'admin.exhibition.services.NotificationService',
 
             'FileModel'
@@ -104,6 +104,7 @@
         .directive('iconographics', iconographics)
         .service('exhibitionService', exhibitionService)
         .service('auditoriumService', auditoriumService)
+        .service('iconographicService', iconographicService)
         .factory('exhibitionFactory', exhibitionFactory)
         .factory('scheduleFactory', scheduleFactory)
         .constant('messages', messages)

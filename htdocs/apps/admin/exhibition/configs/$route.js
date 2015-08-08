@@ -24,6 +24,10 @@
                 templateUrl : '/apps/admin/exhibition/templates/create.html',
                 controller: 'admin.exhibition.controllers.edit'
             })
+            .when('/iconographics',{
+                templateUrl : '/apps/admin/exhibition/templates/iconographic.html',
+                controller: 'admin.exhibition.controllers.iconographicController'
+            })
             .otherwise('/index');
     };
 

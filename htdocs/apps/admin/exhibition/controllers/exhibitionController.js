@@ -4,13 +4,11 @@
 
     'use strict';
 
-    define([
-            'angular'
-        ],
+    define([],
         factory
     );
 
-})(function (angular) {
+})(function () {
 
     'use strict';
 

@@ -14,6 +14,9 @@
 
         return {
             restrict: 'A',
+            scope: {
+                icon: '=iconographics'
+            },
             templateUrl: '/apps/admin/exhibition/templates/iconographic.html',
             controller: 'admin.exhibition.controllers.iconographicController'
         }

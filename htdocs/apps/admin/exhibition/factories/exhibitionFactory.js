@@ -16,7 +16,7 @@
 
             this.exhibition_film = exhibitionFilm;
             this.schedules = [];
-            this.type = []; // icon
+            this.type = null; // icon
             this.notes = '';
         };
 

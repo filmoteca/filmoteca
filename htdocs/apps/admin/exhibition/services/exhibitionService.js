@@ -13,7 +13,7 @@
 
     'use strict';
 
-    var service = function ($rootScope, $http, moment, Icon, Messages, exhibition) {
+    var service = function ($rootScope, $http, moment, Messages, exhibition) {
 
         //var appendTransform = function(defaults, transform) {
         //
@@ -131,16 +131,6 @@
         //    }
         //};
         //
-        //this.icon = function( icon ){
-        //    if( angular.isDefined(icon))
-        //    {
-        //        exhibition.type = icon;
-        //        return icon;
-        //    }
-        //
-        //    return exhibition.type;
-        //
-        //};
         //
         //this.schedules = function()
         //{
@@ -194,7 +184,6 @@
         '$rootScope',
         '$http',
         'moment',
-        'IconographicService',
         'messages',
         'exhibitionFactory'
     ];

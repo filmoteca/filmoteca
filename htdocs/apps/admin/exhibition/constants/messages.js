@@ -1,12 +1,13 @@
 /* global define, angular */
 
-(function(factory)
-{
+(function(factory) {
+
     'use strict';
 
     define([], factory);
 
 })(function () {
+
     'use strict';
 
     return {

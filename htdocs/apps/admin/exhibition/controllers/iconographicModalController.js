@@ -4,13 +4,13 @@
 
     'use strict';
 
-    define(['angular'], factory);
+    define([], factory);
 
-})( function (angular) {
+})( function () {
 
     'use strict';
 
-    var controller =  function ($scope, $modalInstance, Icon) {
+    var controller =  function ($scope, $modalInstance, iconographicService) {
 
         $scope.icon = {};
 
@@ -18,41 +18,48 @@
 
         $scope.action = 'create';
 
-        if(angular.isDefined($scope.oldIcon)){
+        $scope.saving = false;
+
+        if (typeof $scope.oldIcon !== 'undefined') {
 
             $scope.icon = $scope.oldIcon;
 
             $scope.action = 'update';
         }
 
-        var closeModal = function (response) {
-
-            $modalInstance.close(response.data);
-        };
-
         $scope.save = function () {
 
-            if($scope.action == 'create'){
-                $scope.store();
-                return;
+            $scope.saving = true;
+
+            if ($scope.action == 'create') {
+                return $scope.store();
             }
 
             $scope.update();
         };
 
         $scope.store = function () {
-            Icon.store($scope.icon).then(closeModal);
+
+            iconographicService.store($scope.icon).then(closeModal);
         };
 
         $scope.update = function () {
-            Icon.update($scope.icon).then(closeModal);
-        }
+
+            iconographicService.update($scope.icon).then(closeModal);
+        };
+
+        var closeModal = function (response) {
+
+            $scope.saving = false;
+
+            $modalInstance.close(response.data);
+        };
     };
 
     controller.$inject = [
         '$scope',
         '$modalInstance',
-        'IconographicService'
+        'iconographicService'
     ];
 
     return controller;
