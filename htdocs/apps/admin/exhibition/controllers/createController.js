@@ -1,31 +1,21 @@
-/* globals require */
+/* globals define */
 
 (function (factory) {
 
     'use strict';
 
     define([], factory);
+
 })(function () {
 
     'use strict';
 
-    var controller = function ($scope, $timeout, Exhibition, Messages) {
+    var controller = function ($scope, exhibitionFactory, exhibitionService, messages) {
 
-        $scope.exhibitionLoaded = false;
-
-        Exhibition.restart();
-
-        $scope.$watch($scope.wasFilmSelected, function(newValue) {
-
-            if (newValue) {
-                Exhibition.store().then(function () {
-                    $scope.$emit('alert', Messages['exhibition.stored']);
-                });
-            }
-        });
+        $scope.exhibition = exhibitionFactory.make();
     };
 
-    controller.$inject = ['$scope', '$timeout', 'exhibitionService', 'messages'];
+    controller.$inject = ['$scope', 'exhibitionFactory', 'exhibitionService', 'messages'];
 
     return controller;
 });

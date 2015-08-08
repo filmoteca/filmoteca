@@ -14,6 +14,9 @@
 
         return {
             restrict: 'A',
+            scope: {
+                schedules: '='
+            },
             templateUrl: '/apps/admin/exhibition/templates/schedule.html',
             controller: 'admin.exhibition.controllers.scheduleController'
         }

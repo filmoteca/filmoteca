@@ -1,6 +1,8 @@
-<div class="panel panel-default" data-ng-show="wasFilmSelected()">
-    <div class="panel-heading">Horario
-        <span class="glyphicon glyphicon-plus btn" data-ng-click="add()" title="Agregar"></span>
+<div class="panel panel-default">
+    <div class="panel-heading">Horarios &nbsp;
+        <button data-ng-click="add()" class="btn btn-success">
+            <span class="glyphicon glyphicon-plus" title="Agregar"></span> Agregar
+        </button>
     </div>
     <table class="table table-collapsed table-bordered data-ng-cloak">
         <tr>
@@ -10,7 +12,7 @@
             <th>Acciones</th>
         </tr>
         <!--- Los horarios de exhibicion -->
-        <tr data-data-ng-repeat="schedule in schedules">
+        <tr data-ng-repeat="schedule in schedules">
             <td>
                 <div data-ng-hide="editing && editedIndex == $index">
                     {{schedule.auditorium.name}}

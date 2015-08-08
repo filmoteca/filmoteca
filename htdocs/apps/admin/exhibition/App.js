@@ -26,7 +26,9 @@
             'admin.exhibition.directives/schedules',
             'admin.exhibition.directives/iconographics',
             'admin.exhibition.services/exhibitionService',
-            'admin.exhibition.factories/exhibition',
+            'admin.exhibition.services/auditoriumService',
+            'admin.exhibition.factories/exhibitionFactory',
+            'admin.exhibition.factories/scheduleFactory',
             'admin.exhibition.constants/messages',
             'admin.exhibition.configs/$http',
             'admin.exhibition.configs/$route',
@@ -41,7 +43,6 @@
             'admin.exhibition.controllers/FilmController',
 
             'admin.exhibition.services/FilmService',
-            'admin.exhibition.services/AuditoriumService',
             'admin.exhibition.services/IconographicService',
             'admin.exhibition.services/NotificationService',
 
@@ -64,7 +65,9 @@
              schedules,
              iconographics,
              exhibitionService,
-             exhibition,
+             auditoriumService,
+             exhibitionFactory,
+             scheduleFactory,
              messages,
              httpConfig,
              routeConfig) {
@@ -81,7 +84,6 @@
             'admin.exhibition.controllers.FilmController',
 
             'admin.exhibition.services.FilmService',
-            'admin.exhibition.services.AuditoriumService',
             'admin.exhibition.services.IconographicService',
             'admin.exhibition.services.NotificationService',
 
@@ -101,7 +103,9 @@
         .directive('schedules', schedules)
         .directive('iconographics', iconographics)
         .service('exhibitionService', exhibitionService)
-        .factory('exhibition', exhibition)
+        .service('auditoriumService', auditoriumService)
+        .factory('exhibitionFactory', exhibitionFactory)
+        .factory('scheduleFactory', scheduleFactory)
         .constant('messages', messages)
         .config(routeConfig)
         .config(httpConfig);

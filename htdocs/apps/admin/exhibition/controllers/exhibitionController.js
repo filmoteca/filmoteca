@@ -14,7 +14,7 @@
 
     'use strict';
 
-    var controller = function ($scope, $timeout, exhibition, exhibitionService, messages) {
+    var controller = function ($scope, $timeout, exhibitionFactory, exhibitionService, messages) {
 
         var MAX_ALERTS = 5;
         var TIMEOUT_TO_DISMISS_ALERT = 3000;
@@ -28,8 +28,6 @@
         };
 
         $scope.alerts = [];
-
-        $scope.exhibition = exhibition;
 
         $scope.$on('alert', function (event, message) {
 
@@ -62,13 +60,13 @@
             $scope.alerts.splice(0, $scope.alerts.length);
         });
 
-        $scope.wasFilmSelected = function () {
+/*        $scope.wasFilmSelected = function () {
 
-            return exhibition.hasFilm();
-        };
+            return true;
+        };*/
 
         $scope.update = function () {
-            
+
             exhibitionService.update().then(function () {
 
                 $scope.$emit('alert', messages['exhibition.updated']);
@@ -79,7 +77,7 @@
     controller.$inject = [
         '$scope',
         '$timeout',
-        'exhibition',
+        'exhibitionFactory',
         'exhibitionService',
         'messages'
     ];

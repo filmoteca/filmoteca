@@ -3,14 +3,10 @@
 <div ng-controller="FilmController" class="row">
     <div class="col-md-4">
         <div class="row">
-            <div class="col-md-12">
-                <p ng-if="!exhibitionLoaded" class="ng-cloak">
-                    <span class="glyphicon glyphicon-search btn" ng-click="search()" title="Buscar"></span>
-                <p>
+            <div class="col-xs-1">
+                <span class="glyphicon glyphicon-search btn" ng-click="search()" title="Buscar"></span>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12" ng-show="searching">
+            <div class="col-xs-11">
                 <angucomplete-alt id="ex1"
                     placeholder="Buscar película por título"
                     pause="400"
@@ -64,16 +60,16 @@
 
 <div class="row">
     <div class="col-md-12">
-        <div data-schedules></div>
+        <div data-schedules="exhibition.schedules"></div>
     </div>
 </div>
 
 <div class="row icons-available">
     <div class="col-md-12">
-        <div data-iconographics></div>
+        <div data-iconographics="exhibition.type"></div>
     </div>
 </div>
 
 <div class="row">
-    <a class="btn btn-success" href="#index" ng-show="wasFilmSelected()">Actualizar y regresar al listado.</a>
+    <a class="btn btn-success" data-ng-click="store()">Guardar y regresar al listado</a>
 </div>
