@@ -9,7 +9,7 @@
         <tr>
             <th>Título</th>
             <th>Director</th>
-            <th>Año</th>
+            <th>Años</th>
             <th>Portada</th>
             <th>Creada (Sistema)</th>
             <th>Acciones</th>
@@ -19,7 +19,7 @@
         <tr ng-repeat="exhibition in exhibitions track by $id(exhibition)">
             <td>{{ exhibition.exhibition_film.film.title }}</td>
             <td>{{ exhibition.exhibition_film.film.director }}</td>
-            <td>{{ exhibition.exhibition_film.film.year }}</td>
+            <td>{{ exhibition.exhibition_film.film.years | join: ', ' }}</td>
             <td>
                 <img class="thumbnail img-responseive image-size-thumbnail" ng-src="{{ exhibition.exhibition_film.film.cover_urls.thumbnail }}">
             </td>
