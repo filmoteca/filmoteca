@@ -44,7 +44,7 @@ Form::macro('dateFormGroup', function($name,$title, $formname, $attr){
 
 Form::macro('multiYear', function($name, $title, $selected)
 {
-	$minYear = 1954;
+	$minYear = Config::get('parameters.admin.exhibition.film.min_year');
 
 	$options = range($minYear, intval(date('Y') + 2));
 

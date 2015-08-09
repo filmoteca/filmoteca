@@ -7,4 +7,11 @@ return [
         'telephone' => '21579919',
         'email' => 'contacto@filmoteca.unam.mx'
     ],
+    'admin' => [
+        'exhibition' => [
+            'film' => [
+                'min_year' => 1890
+            ]
+        ]
+    ]
 ];
