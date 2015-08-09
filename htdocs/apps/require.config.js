@@ -73,6 +73,7 @@ var require = {
 		"ngAnimate" 		: "angular-animate/angular-animate.min",
 		"ngCookies"			: "angular-cookies/angular-cookies.min",
 		"ngSanitize"		: "angular-sanitize/angular-sanitize.min",
+        "angular.filter"    : "angular-filter/dist/angular-filter.min",
 
 		//From laravel packages
 		"syntara"			: "/packages/mrjuliuss/syntara/assets/js/dashboard/base",
@@ -105,6 +106,7 @@ var require = {
 		"ngCookies" : ["angular"],
 		"ngSanitize" : ["angular"],
 		"angucomplete-alt" : ["angular"],
+        "angular.filter" : ["angular"],
 		"ui.bootstrap" : ["angular"],
 		"angular-locale-mx" : ["angular"],
 		"bootstrap" :["jquery"],

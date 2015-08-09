@@ -58,11 +58,6 @@
             $scope.alerts.splice(0, $scope.alerts.length);
         });
 
-/*        $scope.wasFilmSelected = function () {
-
-            return true;
-        };*/
-
         $scope.update = function () {
 
             exhibitionService.update().then(function () {

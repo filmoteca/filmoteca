@@ -39,6 +39,7 @@
             'ngAnimate',
             'ui.bootstrap',
             'angular-moment',
+            'angular.filter',
 
             'admin.exhibition.controllers/FilmController',
             'admin.exhibition.controllers/FilmController',
@@ -81,6 +82,7 @@
             'ngRoute',
             'ngAnimate',
             'angularMoment',
+            'angular.filter',
 
             'admin.exhibition.controllers.FilmController',
 

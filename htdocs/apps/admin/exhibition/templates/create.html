@@ -1,48 +1,5 @@
 <h1 ng-hide="exhibitionLoaded" class="text-center">Agregar exhibición</h1>
 <h1 ng-show="exhibitionLoaded" class="text-center">Editar exhibición</h1>
-<div ng-controller="FilmController" class="row">
-    <div class="col-md-4">
-        <div class="row">
-            <div class="col-xs-1">
-                <span class="glyphicon glyphicon-search btn" ng-click="search()" title="Buscar"></span>
-            </div>
-            <div class="col-xs-11">
-                <angucomplete-alt id="ex1"
-                    placeholder="Buscar película por título"
-                    pause="400"
-                    selected-object="filmSelected"
-                    remote-url="/api/film?by=title&value="
-                    remote-url-data-field=""
-                    title-field="title"
-                    description-field="director"
-                    search-fields="title"
-                    image-field="cover_urls.thumbnail"
-                    minlength="1"
-                    text-searching="Buscando..."
-                    text-no-results="Ninguna película encontrada."
-                    input-class="form-control form-control-small">
-                </angucomplete-alt>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-1">
-        
-    </div>
-
-    <div class="col-md-7">
-        <div ng-show="wasFilmSelected()" class="panel panel-default ng-cloak">
-            <div class="panel-heading">{{film.title}}</div>
-            <div class="panel-body">
-                <div class="image pull-left"><img ng-src="{{ film.cover_urls.thumbnail }}" class="thumbnail"></div>
-                <p>Título: {{film.title}}</p>
-                <p>País: {{film.country}}</p>
-                <p>Sinopsis: {{film.synopsis}}</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<br>
 
 <pre>
     {{ exhibition }}
@@ -52,7 +9,51 @@
     <div class="col-sm-12">
         <form class="form-horizontal">
             <div class="form-group">
-                <label class="label-control col-sm-2" for="icon">Icono</label>
+                <label class="col-sm-2 control-label" for="film">
+                    Película
+                </label>
+                <div class="col-sm-10">
+                    <angucomplete-alt
+                            id="ex1"
+                            placeholder="Buscar película por título"
+                            pause="400"
+                            selected-object="filmSelected"
+                            remote-url="/api/film?by=title&value="
+                            remote-url-data-field=""
+                            title-field="title"
+                            description-field="director"
+                            search-fields="title"
+                            image-field="cover_urls.thumbnail"
+                            minlength="1"
+                            text-searching="Buscando..."
+                            text-no-results="Ninguna película encontrada."
+                            input-class="form-control form-control-small">
+                    </angucomplete-alt>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-2">
+                    <div data-ng-show="film" class="panel panel-default ng-cloak">
+                        <div class="panel-heading">{{film.title}}</div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <img ng-src="{{ film.cover_urls.thumbnail }}" class="thumbnail img-responsive">
+                                </div>
+                                <div class="col-sm-8">
+                                    <p><strong>Título</strong>: {{film.title}}</p>
+                                    <p data-ng-show="film.countries"><strong>País</strong>: {{film.countries | map: 'name' | join: ', '}}</p>
+                                    <p data-ng-show="film.years"><strong>Años</strong>: {{ film.years | join: ', '}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="icon">Icono</label>
                 <div class="col-sm-6">
                     <select data-ng-options="icon.name for icon in icons" ng-model="exhibition.icon" class="form-control">
                         <option value="">Ninguno</option>
@@ -64,9 +65,12 @@
                     </div>
                 </div>
             </div>
+
             <div class="form-group">
-                <label class="label-control col-sm-2" for="notes">Notas</label>
-                <textarea ng-model="exhibition.notes" class="col-sm-9"></textarea>
+                <label class="control-label col-sm-2" for="notes">Notas</label>
+                <div class="col-sm-10">
+                    <textarea ng-model="exhibition.notes" class="col-sm-10 form-control"></textarea>
+                </div>
             </div>
         </form>
     </div>
