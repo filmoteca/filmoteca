@@ -41,9 +41,6 @@
             'angular-moment',
             'angular.filter',
 
-            'admin.exhibition.controllers/FilmController',
-            'admin.exhibition.controllers/FilmController',
-
             'admin.exhibition.services/FilmService',
             'admin.exhibition.services/NotificationService',
 
@@ -83,8 +80,6 @@
             'ngAnimate',
             'angularMoment',
             'angular.filter',
-
-            'admin.exhibition.controllers.FilmController',
 
             'admin.exhibition.services.FilmService',
             'admin.exhibition.services.NotificationService',

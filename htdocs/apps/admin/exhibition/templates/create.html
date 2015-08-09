@@ -1,10 +1,6 @@
 <h1 ng-hide="exhibitionLoaded" class="text-center">Agregar exhibición</h1>
 <h1 ng-show="exhibitionLoaded" class="text-center">Editar exhibición</h1>
 
-<pre>
-    {{ exhibition }}
-</pre>
-
 <div class="row">
     <div class="col-sm-12">
         <form class="form-horizontal">
@@ -45,6 +41,7 @@
                                     <p><strong>Título</strong>: {{film.title}}</p>
                                     <p data-ng-show="film.countries"><strong>País</strong>: {{film.countries | map: 'name' | join: ', '}}</p>
                                     <p data-ng-show="film.years"><strong>Años</strong>: {{ film.years | join: ', '}}</p>
+                                    <p data-ng-show="film.synopsis"><strong>Años</strong>: {{ film.synopsis}}</p>
                                 </div>
                             </div>
                         </div>
@@ -83,5 +80,8 @@
 </div>
 
 <div class="row">
-    <a class="btn btn-success" data-ng-click="store()">Guardar y regresar al listado</a>
+    <button class="btn btn-success" data-ng-disabled="!exhibition.exhibition_film.film" data-ng-click="store()">
+        Guardar y regresar al listado
+    </button>
+    <span class="loading loading-sm" data-ng-show="saving"></span>
 </div>

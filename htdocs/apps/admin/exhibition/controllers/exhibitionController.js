@@ -15,7 +15,7 @@
     var controller = function ($scope, $timeout, exhibitionFactory, exhibitionService, messages) {
 
         var MAX_ALERTS = 5;
-        var TIMEOUT_TO_DISMISS_ALERT = 3000;
+        var TIMEOUT_TO_DISMISS_ALERT = 9000;
         var timer = null;
 
         var removeOldestAlert = function () {
@@ -49,14 +49,6 @@
                 removeOldestAlert();
             }
         };
-
-        $scope.$on('dismissAlerts', function () {
-            $scope.alerts.splice(0, $scope.alerts.length);
-        });
-
-        $scope.$on('$viewContentLoaded', function () {
-            $scope.alerts.splice(0, $scope.alerts.length);
-        });
 
         $scope.update = function () {
 

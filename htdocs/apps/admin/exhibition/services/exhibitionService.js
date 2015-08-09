@@ -13,7 +13,7 @@
 
     'use strict';
 
-    var service = function ($rootScope, $http, moment, Messages, exhibition) {
+    var service = function ($rootScope, $http, $q, moment, Messages, exhibition) {
 
         //var appendTransform = function(defaults, transform) {
         //
@@ -84,81 +84,28 @@
         //    });
         //};
 
-        //this.get = function()
-        //{
-        //    return exhibition;
-        //};
+        this.store = function(exhibition) {
 
-        //this.addSchedule = function( schedule )
-        //{
-        //    if(angular.isDefined(schedule))
-        //    {
-        //        exhibition.schedules.unshift(schedule);
-        //    }else{
-        //        exhibition.schedules.unshift( this.defaultSchedule() );
-        //    }
-        //
-        //    return this;
-        //};
-        //
-        //this.updateSchedule = function( index )
-        //{
-        //    var schedule = exhibition.schedules[index];
-        //
-        //    var date = moment(schedule.date).format('YYYY-MM-DD');
-        //    var time = moment(schedule.time).format('HH:mm:ss');
-        //
-        //    schedule.entry = date + ' ' + time;
-        //
-        //    if (angular.isDefined(schedule.id)){
-        //        return $http.put('/admin/api/schedule/' + schedule.id, schedule);
-        //    }
-        //
-        //    return $http.post('/admin/api/exhibition/' + exhibition.id + '/schedule', schedule).then(function(response){
-        //
-        //        exhibition.schedules[index].id = response.data.id;
-        //    });
-        //};
-        //
-        //this.film = function( film )
-        //{
-        //    if( angular.isDefined(film))
-        //    {
-        //        exhibition.exhibition_film.film = film;
-        //        return film;
-        //    }else{
-        //        return exhibition.exhibition_film.film;
-        //    }
-        //};
-        //
-        //
-        //this.schedules = function()
-        //{
-        //    return exhibition.schedules;
-        //};
-        //
-        //this.destroySchedule = function($index)
-        //{
-        //    var id = exhibition.schedules[$index].id;
-        //
-        //    exhibition.schedules.splice($index,1);
-        //
-        //    $http.delete('/admin/api/schedule/' + id).then(function(){
-        //        $rootScope.$broadcast('alert', Messages['exhibition.updated']);
-        //    });
-        //
-        //    return this;
-        //};
-        //
-        //this.store = function()
-        //{
-        //    return $http.post('/admin/api/exhibition', exhibition).then(function(response){
-        //
-        //        angular.extend(exhibition, response.data);
-        //        $rootScope.$broadcast('alert', Messages['exhibition.stored']);
-        //    });
-        //};
-        //
+            angular.forEach(exhibition.schedules, function (schedule) {
+
+                var date = moment(schedule.date).format('YYYY-MM-DD');
+                var time = moment(schedule.time).format('HH:mm:ss');
+
+                schedule.entry = date + ' ' + time;
+            });
+
+            return $http
+                .post('/admin/api/exhibition', exhibition)
+                .then(function(response){
+
+                    return response;
+                }, function() {
+
+                    return $q.reject('');
+                }
+            );
+        };
+
         //this.destroy = function(id)
         //{
         //    return $http.delete('/admin/api/exhibition/' + id).then(function(response){
@@ -183,6 +130,7 @@
     service.$inject = [
         '$rootScope',
         '$http',
+        '$q',
         'moment',
         'messages',
         'exhibitionFactory'
