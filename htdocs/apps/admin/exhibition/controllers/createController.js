@@ -57,6 +57,14 @@
                 });
         };
 
+        $scope.storeAsNew = function () {
+
+            delete $scope.exhibition.id;
+            delete $scope.exhibition.exhibition_film.id;
+
+            $scope.store();
+        };
+
         $scope.$on('$viewContentLoaded', function () {
 
             if (typeof $routeParams.id === 'undefined') {

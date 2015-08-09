@@ -82,7 +82,15 @@
 <div class="row">
     <div class="col-md-12">
         <button class="btn btn-success" data-ng-disabled="!exhibition.exhibition_film.film" data-ng-click="store()">
+            <span class="glyphicon glyphicon-refresh"></span>
             Guardar y regresar al listado
+        </button>
+        <button class="btn btn-info"
+                data-ng-show="exhibition.id"
+                data-ng-disabled="!exhibition.exhibition_film.film"
+                data-ng-click="storeAsNew()">
+            <span class="glyphicon glyphicon-plus"></span>
+            Guardar como nueva.
         </button>
         <span class="loading loading-sm" data-ng-show="saving"></span>
     </div>
