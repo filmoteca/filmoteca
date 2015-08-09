@@ -77,7 +77,10 @@
 
                     angular.extend($scope.exhibition, rawExhibition);
                     $scope.film = $scope.exhibition.exhibition_film.film;
-                    $scope.exhibition.icon = iconographicService.find($scope.exhibition.type.id)
+
+                    if ($scope.exhibition.type !== null) {
+                        $scope.exhibition.icon = iconographicService.find($scope.exhibition.type.id)
+                    }
                 })
         });
     };

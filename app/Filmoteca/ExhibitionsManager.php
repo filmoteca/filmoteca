@@ -62,6 +62,8 @@ class ExhibitionsManager
 
         if (isset($data['icon']['id'])) {
             $exhibition->type_id = $data['icon']['id'];
+        } else {
+            $exhibition->type_id = null;
         }
 
         $exhibition->save();
