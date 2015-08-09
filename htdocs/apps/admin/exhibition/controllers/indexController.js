@@ -36,10 +36,16 @@
 
         $scope.destroy = function ($index) {
 
-            exhibitionService.destroy($scope.exhibitions[$index].id)
+            exhibitionService
+                .destroy($scope.exhibitions[$index].id)
                 .then(function () {
 
                     $scope.exhibitions.splice($index, 1);
+
+                    $scope.$emit('alert', {
+                        type: 'success',
+                        msg: 'Exhibición borrada.'
+                    });
                 });
         };
 

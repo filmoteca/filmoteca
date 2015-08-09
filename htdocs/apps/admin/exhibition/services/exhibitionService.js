@@ -106,16 +106,23 @@
             );
         };
 
-        //this.destroy = function(id)
-        //{
-        //    return $http.delete('/admin/api/exhibition/' + id).then(function(response){
-        //
-        //        $rootScope.$broadcast('alert', Messages['exhibition.deleted']);
-        //
-        //        return response;
-        //    });
-        //};
-        //
+        this.destroy = function (id) {
+
+            return $http
+                .delete('/admin/api/exhibition/' + id)
+                .then(function (response) {
+                    return response;
+                }, function (response) {
+
+                    $rootScope.$broadcast('alert', {
+                        type: 'danger',
+                        msg: 'Error: La exhibición no pudó ser borrada.'
+                    });
+
+                    return $q.reject(response);
+                });
+        };
+
         //this.update = function()
         //{
         //    return $http.put('/admin/api/exhibition/' + exhibition.id, exhibition, HTTP_CONFIG).then(function(response){
