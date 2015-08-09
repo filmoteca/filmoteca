@@ -26,17 +26,11 @@
         };
 
         return {
-            make : function (rawExhibition) {
+            make : function () {
 
-                var exhibition =  new Exhibition(
+                return new Exhibition(
                     new ExhibitionFilm(null)
                 );
-
-                if (angular.isUndefined(rawExhibition)) {
-                    return exhibition;
-                }
-
-                return angular.extend(exhibition, rawExhibition);
             }
         };
     };

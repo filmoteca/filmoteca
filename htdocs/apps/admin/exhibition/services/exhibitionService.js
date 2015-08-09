@@ -15,49 +15,6 @@
 
     var service = function ($rootScope, $http, $q, moment, Messages, exhibition) {
 
-        //var appendTransform = function(defaults, transform) {
-        //
-        //    // We can't guarantee that the default transformation is an array
-        //    defaults = angular.isArray(defaults) ? defaults : [defaults];
-        //
-        //    // Append the new transformation to the defaults
-        //    return defaults.concat(transform);
-        //};
-        //
-        //var transformResponseDates = function(exhibition) {
-        //
-        //    angular.forEach(exhibition.schedules, function(schedule){
-        //
-        //        var entry = moment(schedule.entry, 'YYYY-MM-DD HH:mm:ss');
-        //
-        //        schedule.date = entry.toDate();
-        //        schedule.time = entry.toDate();
-        //    });
-        //
-        //    return exhibition;
-        //};
-        //
-        //var transformRequest = function(exhibition) {
-        //
-        //    angular.forEach(exhibition.schedules, function(schedule)
-        //    {
-        //        var date = moment(schedule.date).format('YYYY-MM-DD');
-        //        var time = moment(schedule.time).format('HH:mm:ss');
-        //
-        //        schedule.entry = date + ' ' + time;
-        //    });
-        //
-        //    exhibition.type_id 				= (exhibition.type === null)? 0: exhibition.type.id;
-        //    exhibition.exhibition_film_id 	= exhibition.exhibition_film.id;
-        //
-        //    return exhibition;
-        //};
-        //
-        //var HTTP_CONFIG = {
-        //    transformResponse 	: appendTransform($http.defaults.transformResponse, transformResponseDates),
-        //    transformRequest 	: [transformRequest].concat($http.defaults.transformRequest)
-        //};
-
         this.paginate = function ($query, page) {
 
             var config = {
@@ -70,19 +27,22 @@
             return $http.get('/admin/api/exhibition', config);
         };
 
-        //this.load = function(id) {
-        //
-        //    var config = {
-        //        transformResponse : appendTransform($http.defaults.transformResponse, transformResponseDates)
-        //    };
-        //
-        //    return $http.get('/api/exhibition/' + id, config).then(function(response){
-        //
-        //        angular.extend(exhibition, response.data);
-        //
-        //        return response.data;
-        //    });
-        //};
+        this.load = function(id) {
+
+            return $http
+                .get('/api/exhibition/' + id)
+                .then(function (response) {
+                    angular.forEach(response.data.schedules, function(schedule){
+
+                        var entry = moment(schedule.entry, 'YYYY-MM-DD HH:mm:ss');
+
+                        schedule.date = entry.toDate();
+                        schedule.time = entry.toDate();
+                    });
+
+                    return response.data;
+                });
+        };
 
         this.store = function(exhibition) {
 
@@ -123,15 +83,24 @@
                 });
         };
 
-        //this.update = function()
-        //{
-        //    return $http.put('/admin/api/exhibition/' + exhibition.id, exhibition, HTTP_CONFIG).then(function(response){
-        //
-        //        $rootScope.$broadcast('alert', Messages['exhibition.updated']);
-        //        return response;
-        //    });
-        //};
-        //
+        this.update = function () {
+
+            angular.forEach(exhibition.schedules, function (schedule) {
+
+                var date = moment(schedule.date).format('YYYY-MM-DD');
+                var time = moment(schedule.time).format('HH:mm:ss');
+
+                schedule.entry = date + ' ' + time;
+            });
+
+            return $http
+                .put('/admin/api/exhibition/' + exhibition.id, exhibition)
+                .then(function (response) {
+
+                    $rootScope.$broadcast('alert', Messages['exhibition.updated']);
+                    return response;
+                });
+        };
     };
 
     service.$inject = [

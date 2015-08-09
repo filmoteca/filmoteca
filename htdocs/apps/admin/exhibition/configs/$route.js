@@ -22,7 +22,7 @@
             })
             .when('/edit/:id',{
                 templateUrl : '/apps/admin/exhibition/templates/create.html',
-                controller: 'admin.exhibition.controllers.edit'
+                controller: 'admin.exhibition.controllers.create'
             })
             .when('/iconographics',{
                 templateUrl : '/apps/admin/exhibition/templates/iconographic.html',

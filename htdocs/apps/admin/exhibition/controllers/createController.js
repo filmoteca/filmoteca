@@ -4,13 +4,13 @@
 
     'use strict';
 
-    define([], factory);
+    define(['angular'], factory);
 
-})(function () {
+})(function (angular) {
 
     'use strict';
 
-    var controller = function ($scope, $location, exhibitionFactory, iconographicService, exhibitionService) {
+    var controller = function ($scope, $location, exhibitionFactory, iconographicService, exhibitionService, $routeParams) {
 
         $scope.exhibition   = exhibitionFactory.make();
         $scope.icons        = iconographicService.all();
@@ -56,9 +56,25 @@
                     });
                 });
         };
+
+        $scope.$on('$viewContentLoaded', function () {
+
+            if (typeof $routeParams.id === 'undefined') {
+                return;
+            }
+
+            exhibitionService
+                .load($routeParams.id)
+                .then(function (rawExhibition) {
+
+                    angular.extend($scope.exhibition, rawExhibition);
+                    $scope.film = $scope.exhibition.exhibition_film.film;
+                    $scope.exhibition.icon = iconographicService.find($scope.exhibition.type.id)
+                })
+        });
     };
 
-    controller.$inject = ['$scope', '$location', 'exhibitionFactory', 'iconographicService', 'exhibitionService'];
+    controller.$inject = ['$scope', '$location', 'exhibitionFactory', 'iconographicService', 'exhibitionService', '$routeParams'];
 
     return controller;
 });

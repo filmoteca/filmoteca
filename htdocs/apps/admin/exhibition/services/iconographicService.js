@@ -45,6 +45,13 @@
             return icons;
         };
 
+        this.find = function (id) {
+
+            return _.find(icons, function (icon) {
+                return icon.id === id
+            });
+        };
+
         this.getDefault = function () {
 
             return icons[0];
