@@ -82,25 +82,6 @@
                     return $q.reject(response);
                 });
         };
-
-        this.update = function () {
-
-            angular.forEach(exhibition.schedules, function (schedule) {
-
-                var date = moment(schedule.date).format('YYYY-MM-DD');
-                var time = moment(schedule.time).format('HH:mm:ss');
-
-                schedule.entry = date + ' ' + time;
-            });
-
-            return $http
-                .put('/admin/api/exhibition/' + exhibition.id, exhibition)
-                .then(function (response) {
-
-                    $rootScope.$broadcast('alert', Messages['exhibition.updated']);
-                    return response;
-                });
-        };
     };
 
     service.$inject = [

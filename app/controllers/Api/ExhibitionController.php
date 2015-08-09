@@ -76,17 +76,4 @@ class ExhibitionController extends ApiController
 
 		return Response::json($resource, 200);
 	}
-
-    /**
-     * @param $id
-     * @return \Illuminate\Http\JsonResponse
-     */
-	public function update($id)
-	{
-		$data = Input::except('_token');
-
-		$this->repository->update($id, $data);
-
-		return Response::json([], 200);
-	}
 }

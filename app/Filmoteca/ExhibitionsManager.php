@@ -51,9 +51,9 @@ class ExhibitionsManager
      */
     public function createAndSave(array $data)
     {
-        $exhibition = new Exhibition();
+        $exhibition = isset($data['id'])? Exhibition::find($data['id']): new Exhibition();
 
-        $exhibitionFilm = new ExhibitionFilm();
+        $exhibitionFilm = isset($data['exhibition_film']['id'])? ExhibitionFilm::find( $data['exhibition_film']['id']): new ExhibitionFilm();
         $exhibitionFilm->film_id = $data['exhibition_film']['film']['id'];
         $exhibitionFilm->save();
         $exhibition->exhibitionFilm()->associate($exhibitionFilm);
@@ -66,9 +66,12 @@ class ExhibitionsManager
 
         $exhibition->save();
 
+        Schedule::where('exhibition_id', $exhibition->id)->delete();
+
         $schedules = array_reduce($data['schedules'], function ($schedules, $rawSchedule) {
 
             $schedule = new Schedule();
+
             $schedule->entry = $rawSchedule['entry'];
             $schedule->auditorium_id = $rawSchedule['auditorium']['id'];
             $schedules[] = $schedule;
