@@ -3,6 +3,7 @@
 namespace Api;
 
 use Filmoteca\Repository\ExhibitionsRepository;
+use Filmoteca\ExhibitionsManager as Manager;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Pagination\Factory as Paginator;
@@ -20,10 +21,11 @@ class ExhibitionController extends ApiController
     /**
      * @param ExhibitionsRepository $repository
      */
-	public function __construct(ExhibitionsRepository $repository, Paginator $paginator)
+	public function __construct(ExhibitionsRepository $repository, Paginator $paginator, Manager $manager)
 	{
 		$this->repository = $repository;
         $this->paginator = $paginator;
+        $this->manager = $manager;
 	}
 
     /**
@@ -46,9 +48,9 @@ class ExhibitionController extends ApiController
 	{
 		$data = Input::except('_token');
 
-		$model = $this->repository->store( $data );
+        $exhibition = $this->manager->createAndSave($data);
 
-		return Response::json($model, 200);
+		return Response::json($exhibition, 200);
 	}
 
     /**
