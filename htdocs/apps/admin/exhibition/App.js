@@ -18,7 +18,6 @@
             'admin.exhibition.controllers/searchController',
             'admin.exhibition.controllers/indexController',
             'admin.exhibition.controllers/createController',
-            'admin.exhibition.controllers/editController',
             'admin.exhibition.controllers/scheduleController',
             'admin.exhibition.controllers/iconographicController',
             'admin.exhibition.controllers/iconographicModalController',
@@ -55,7 +54,6 @@
              searchController,
              indexController,
              createController,
-             editController,
              scheduleController,
              iconographicController,
              iconographicModalController,
@@ -91,7 +89,6 @@
         .controller('admin.exhibition.controllers.exhibition', exhibitionController)
         .controller('admin.exhibition.controllers.index', indexController)
         .controller('admin.exhibition.controllers.create', createController)
-        .controller('admin.exhibition.controllers.edit', editController)
         .controller('admin.exhibition.controllers.searchController', searchController)
         .controller('admin.exhibition.controllers.scheduleController', scheduleController)
         .controller('admin.exhibition.controllers.iconographicController', iconographicController)
