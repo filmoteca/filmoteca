@@ -12,7 +12,7 @@ class AlterTypeIdColumnInExhibitionsTable extends Migration {
 	 */
 	public function up()
 	{
-        DB::statement('ALTER TABLE `filmoteca`.`exhibitions` CHANGE COLUMN `type_id` `type_id` INT(10) UNSIGNED NULL ;');
+        DB::statement('ALTER TABLE `exhibitions` CHANGE COLUMN `type_id` `type_id` INT(10) UNSIGNED NULL ;');
 	}
 
 	/**
@@ -22,7 +22,7 @@ class AlterTypeIdColumnInExhibitionsTable extends Migration {
 	 */
 	public function down()
 	{
-        DB::statement('ALTER TABLE `filmoteca`.`exhibitions` CHANGE COLUMN `type_id` `type_id` INT(10) UNSIGNED NOT NULL ;');
+        DB::statement('ALTER TABLE `exhibitions` CHANGE COLUMN `type_id` `type_id` INT(10) UNSIGNED NOT NULL ;');
 	}
 
 }
