@@ -2,7 +2,7 @@
 @section('breadcrumbs')
 	<li>
 		<a href="/exhibition#">
-			Programacion
+			Programación
 		</a>
 	</li>
 	<li class="active">
