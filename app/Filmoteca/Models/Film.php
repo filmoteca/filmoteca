@@ -87,12 +87,19 @@ class Film extends Eloquent implements StaplerableInterface
     }
 
     /**
-     * Adds the two zeros (seconds).
-     * @param String $value Format HH:MM
+     * @param String $strMinutes
      */
-    public function setDurationAttribute($value)
+    public function setDurationAttribute($strMinutes)
     {
-        $this->attributes['duration'] = $value . ':00';
+        $min        = (int)$strMinutes;
+
+        $minutes    = $min % Carbon::MINUTES_PER_HOUR;
+        $hours      = floor($min / Carbon::MINUTES_PER_HOUR);
+
+        $paddedMinutes  = str_pad($minutes, 2, '0', STR_PAD_LEFT);
+        $paddedHours    = str_pad($hours, 2, '0', STR_PAD_LEFT);
+
+        $this->attributes['duration'] = $paddedHours . ':' . $paddedMinutes  . ':00';
     }
 
     public function toArray(){
