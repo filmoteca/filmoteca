@@ -11,6 +11,8 @@
 
 
 
+
+
 @section('content')
 
     {{ $page->body }}
