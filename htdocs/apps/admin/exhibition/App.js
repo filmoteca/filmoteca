@@ -39,6 +39,7 @@
             'ui.bootstrap',
             'angular-moment',
             'angular.filter',
+            'ngSanitize',
 
             'admin.exhibition.services/FilmService',
             'admin.exhibition.services/NotificationService',
@@ -78,6 +79,7 @@
             'ngAnimate',
             'angularMoment',
             'angular.filter',
+            'ngSanitize',
 
             'admin.exhibition.services.FilmService',
             'admin.exhibition.services.NotificationService',

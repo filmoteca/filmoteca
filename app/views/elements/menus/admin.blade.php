@@ -25,6 +25,9 @@
 			<li>
 				{{ HTML::linkRoute('admin.auditorium.create', 'Agregar salas') }}
 			</li>
+            <li>
+                {{ HTML::link('/admin/exhibition/app#/iconographics', 'Iconos') }}
+            </li>
 		</ul>
 	</div>
 

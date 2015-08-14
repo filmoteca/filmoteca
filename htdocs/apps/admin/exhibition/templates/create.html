@@ -41,7 +41,7 @@
                                     <p><strong>Título</strong>: {{film.title}}</p>
                                     <p data-ng-show="film.countries"><strong>País</strong>: {{film.countries | map: 'name' | join: ', '}}</p>
                                     <p data-ng-show="film.years"><strong>Años</strong>: {{ film.years | join: ', '}}</p>
-                                    <p data-ng-show="film.synopsis"><strong>Años</strong>: {{ film.synopsis}}</p>
+                                    <p data-ng-show="film.synopsis"><strong>Sinopsis</strong>: <span data-ng-bind-html="film.synopsis"></span></p>
                                 </div>
                             </div>
                         </div>
