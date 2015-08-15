@@ -1,8 +1,9 @@
 <?php namespace Filmoteca\Repository;
 
 use Filmoteca\Models\Film;
+use Filmoteca\Pagination\Results;
 
-class FilmsRepository extends ResourcesRepository
+class FilmsRepository extends ResourcesRepository implements PageableRepositoryInterface
 {
 	public function __construct(Film $film)
 	{
@@ -64,5 +65,32 @@ class FilmsRepository extends ResourcesRepository
 				throw new Exception("The type of search there is not.");
 		}
 	}
-}
 
+    /**
+     * @param int $page
+     * @param string $query
+     * @param int $itemsPerPage
+     * @return \Filmoteca\Pagination\Results
+     */
+    public function paginate($page = 1, $query = '', $itemsPerPage = 15)
+    {
+        $results = Results::make();
+
+        $films = $this->resource
+            ->where('title', 'like', '%' . $query . '%')
+            ->whereOr('original_title', 'like', '%' . $query . '%')
+            ->skip(($page - 1) * $itemsPerPage)
+            ->take($itemsPerPage)
+            ->get();
+
+        $totalFilms = $this->resource
+            ->where('title', 'like', '%' . $query . '%')
+            ->whereOr('original_title', 'like', '%' . $query . '%')
+            ->count();
+
+        $results->setItems($films);
+        $results->setTotal($totalFilms);
+
+        return $results;
+    }
+}
