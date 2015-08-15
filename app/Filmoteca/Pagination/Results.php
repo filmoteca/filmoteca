@@ -2,6 +2,8 @@
 
 namespace Filmoteca\Pagination;
 
+use Illuminate\Support\Collection;
+
 class Results
 {
     /**
@@ -31,7 +33,7 @@ class Results
     }
 
     /**
-     * @return array
+     * @return Collection
      */
     public function getItems()
     {
@@ -39,9 +41,9 @@ class Results
     }
 
     /**
-     * @param array $items
+     * @param Collection $items
      */
-    public function setItems($items)
+    public function setItems(Collection $items)
     {
         $this->items = $items;
     }
