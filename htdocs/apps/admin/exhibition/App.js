@@ -43,7 +43,7 @@
 
             'admin.exhibition.services/FilmService',
             'admin.exhibition.services/NotificationService',
-
+            'admin/film/film',
             'file-model',
 
             'syntara'
@@ -83,6 +83,7 @@
 
             'admin.exhibition.services.FilmService',
             'admin.exhibition.services.NotificationService',
+            'admin.film',
 
             'FileModel'
         ]
