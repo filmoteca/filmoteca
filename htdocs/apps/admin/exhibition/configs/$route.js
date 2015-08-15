@@ -28,6 +28,14 @@
                 templateUrl : '/apps/admin/exhibition/templates/iconographic.html',
                 controller: 'admin.exhibition.controllers.iconographicController'
             })
+            .when('/films', {
+                templateUrl : '/apps/admin/film/templates/index.html',
+                controller: 'admin.film.controllers.indexController'
+            })
+            .when('/films/create', {
+                templateUrl : '/apps/admin/films/templates/create.html',
+                controller : 'admin.film.controllers.createController'
+            })
             .otherwise('/index');
     };
 

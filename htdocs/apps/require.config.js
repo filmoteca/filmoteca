@@ -16,6 +16,8 @@ var require = {
 		| Scripts de la aplicación |
 		****************************/
 
+        "admin": "/apps/admin",
+
 		"admin.exhibition.App" : 			"/apps/admin/exhibition/App",
 		"admin.exhibition.services" : 		"/apps/admin/exhibition/services",
         "admin.exhibition.factories" : 		"/apps/admin/exhibition/factories",
