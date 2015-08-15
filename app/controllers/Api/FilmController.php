@@ -1,39 +1,42 @@
 <?php namespace Api;
 
-use Filmoteca\Repository\FilmsRepository;
-
-use stdClass;
-
+use Filmoteca\Services\FilmService;
 use Input;
-
-use Response;
+use Filmoteca\Transformers\FilmTransformer;
+use Illuminate\Pagination\Factory as Paginator;
+use Filmoteca\Repository\PageableRepositoryInterface;
 
 class FilmController extends ApiController
 {
-	public function __construct(FilmsRepository $repository)
+    /**
+     * @param FilmService $filmService
+     * @param Paginator $paginator
+     * @param FilmTransformer $transformer
+     */
+	public function __construct(FilmService $filmService, Paginator $paginator, FilmTransformer $transformer)
 	{
-		$this->repository = $repository;
+		$this->filmService     = $filmService;
+        $this->paginator        = $paginator;
+        $this->transformer      = $transformer;
 	}
 
-	public function search()
-	{
-		$films = $this->repository->search('title', Input::get('value'));
+    /**
+     * @return \Illuminate\Pagination\Paginator
+     */
+    public function index()
+    {
+        $page 			= Input::has('page')? Input::get('page') : PageableRepositoryInterface::FIRST_PAGE;
+        $query          = Input::has('query')? Input::get('query') : '';
+        $results        = $this->filmService->paginate($page, $query);
 
-		return Response::json($films,200);
-	}
+        $transformedItems = $this->transformer->transformCollection($results->getItems());
 
-	public function store()
-	{
-		$data = Input::except('_token');
+        $results->setItems($transformedItems);
 
-		$resource = $this->repository->store($data);
-
-		$film = $this->repository->find($resource->id);	
-
-		$film->images = new stdClass();
-
-		$film->images->thumbnail = $film->image->url('thumbnail');
-
-		return Response::json($film,200);;
-	}
+        return $this->paginator->make(
+            $results->getItems()->toArray(),
+            $results->getTotal(),
+            PageableRepositoryInterface::ITEMS_PER_PAGE
+        );
+    }
 }
