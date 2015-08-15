@@ -9,7 +9,7 @@ use Filmoteca\Models\Film;
 use Filmoteca\Pagination\Results;
 use Illuminate\Database\Eloquent\Collection;
 
-class ExhibitionsRepository extends ResourcesRepository
+class ExhibitionsRepository extends ResourcesRepository implements PageableRepositoryInterface
 {
 	public function __construct(
 		Exhibition $exhibition,
@@ -172,7 +172,7 @@ class ExhibitionsRepository extends ResourcesRepository
      */
 	public function paginate($page = 1, $query = '', $amount = 15)
 	{
-		$results 				= Results::make();
+		$results = Results::make();
 
 		$resources = $this
 			->resource
@@ -199,7 +199,7 @@ class ExhibitionsRepository extends ResourcesRepository
             ->count();
 
 		$results->setTotal($total);
-		$results->setItems($resources->all());
+		$results->setItems($resources);
 
 		return $results;
 	}

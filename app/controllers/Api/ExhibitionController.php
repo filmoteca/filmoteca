@@ -38,7 +38,11 @@ class ExhibitionController extends ApiController
         $query          = Input::has('query')? Input::get('query') : '';
 		$exhibitions    = $this->repository->paginate($page, $query, $itemsPerPage);
 
-		return $this->paginator->make($exhibitions->getItems(), $exhibitions->getTotal(), $itemsPerPage);
+		return $this->paginator->make(
+            $exhibitions->getItems()->toArray(),
+            $exhibitions->getTotal(),
+            $itemsPerPage
+        );
 	}
 
     /**
