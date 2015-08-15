@@ -1,0 +1,51 @@
+<h1 class="text-center">Lista de películas</h1>
+
+<div data-search></div>
+
+<pagination items-per-page="pagination.per_page"
+            total-items="pagination.total"
+            data-ng-model="pagination.current_page"
+            data-ng-change="pageChanged()">
+</pagination>
+
+<table class="table table-striped table-bordered">
+    <thead>
+    <tr>
+        <th>Título</th>
+        <th>Director</th>
+        <th>Años</th>
+        <th>Portada</th>
+        <th>Creada (Sistema)</th>
+        <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr data-ng-repeat="film in films track by $id(film)">
+        <td>{{ film.title }}</td>
+        <td>{{ film.director }}</td>
+        <td>{{ film.years | join: ', ' }}</td>
+        <td>
+            <img class="thumbnail img-responseive image-size-thumbnail"
+                 data-ng-src="{{ film.cover.thumbnail }}">
+        </td>
+        <td>{{ film.created_at }}</td>
+        <td>
+            <a class="btn btn-info navbar-btn" data-ng-href="#edit/{{film.id}}">
+                Editar
+            </a>
+            <a class="btn btn-danger navbar-btn" data-ng-click="destroy($index)">
+                Delete
+            </a>
+            <a class="btn btn-success navbar-btn" data-ng-href="/film/{{film.id}}/detail-history">
+                Detalles
+            </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<pagination items-per-page="pagination.per_page"
+            total-items="pagination.total"
+            data-ng-model="pagination.current_page"
+            data-ng-change="pageChanged()">
+</pagination>
