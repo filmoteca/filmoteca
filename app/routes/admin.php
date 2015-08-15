@@ -22,12 +22,23 @@ Route::group(['prefix' => 'admin', 'before' => 'validate_admin'], function()
 
     /*
     |--------------------------------------------------------------------------
-    | AJAX.
+    | API.
     |--------------------------------------------------------------------------
      */
 
-    Route::group(['prefix' => 'api'], function()
-    {
+    Route::group(['prefix' => 'api'], function () {
+
+        /*
+         |--------------------------------------------------------------------------
+         | FILMS
+         |--------------------------------------------------------------------------
+         */
+
+        Route::group(['prefix' => 'films'], function () {
+
+            Route::get('/', 'Api\FilmController@index');
+        });
+
         View::name('layouts.modal', 'modal');
 
         Route::get('film/create', function()
