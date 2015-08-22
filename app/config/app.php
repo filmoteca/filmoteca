@@ -117,7 +117,7 @@ return array(
 		'Illuminate\Auth\Reminders\ReminderServiceProvider',
 		'Illuminate\Database\SeedServiceProvider',
 		'Illuminate\Session\SessionServiceProvider',
-		'Illuminate\Translation\TranslationServiceProvider',
+        'Devitek\Core\Translation\TranslationServiceProvider',
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',

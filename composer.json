@@ -11,7 +11,8 @@
 		"mrjuliuss/syntara": "1.2.*",
 		"fitztrev/laravel-html-minify": "1.*",
 		"fbf/laravel-contact-form": "0.1.*",
-        "frozennode/administrator": "4.*"
+        "frozennode/administrator": "4.*",
+		"devitek/yaml-translation": "0.1.2"
 	},
 	"autoload": {
 		"classmap": [
