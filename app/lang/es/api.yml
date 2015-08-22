@@ -1,0 +1,6 @@
+films:
+    actions:
+        delete:
+            not-found: La película que se quiere eliminar no existe.
+            success: 'La película :title fue eliminada.'
+    not-found: 'Película no encontrada.'
