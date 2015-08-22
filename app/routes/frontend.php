@@ -111,6 +111,7 @@ Route::get('/pages/{dir_or_name}/{name?}','PageController@show');
 Route::group(['prefix' => 'api'], function () {
 
     Route::get('genres', 'Api\GenreController@index');
+    Route::get('countries', 'Api\CountryController@index');
 
     /**
      * Establecemos el layout. Esto es únicamente para las rutas.
