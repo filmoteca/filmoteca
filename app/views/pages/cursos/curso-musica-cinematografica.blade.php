@@ -10,7 +10,7 @@
   </a>
 </li>
 <li class="active">
-  Seminario: Filosofía del cine
+  La música y el cine
 </li>
 @stop
 
