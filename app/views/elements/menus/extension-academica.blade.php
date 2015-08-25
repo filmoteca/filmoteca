@@ -15,6 +15,7 @@ $menu = array(
 
 	array('Cursos y Talleres', '/pages/cursos/cursos-y-talleres',
 	 array(
+		array('Programa leer cine', '/pages/programa-leer-cine/programa-leer-cine'),
 		array('Cursos anteriores', '/pages/cursos/cursos-anteriores'),
 		array ('Procedimiento de Inscripción', '/pages/cursos/procedimiento-de-inscripcion')
 		)),

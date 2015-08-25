@@ -4,13 +4,8 @@
     Extensión Academica
   </a>
 </li>
-<li>
-<a href="/pages/cursos/cursos-y-talleres">
-    Cursos y talleres
-  </a>
-</li>
 <li class="active">
-Cine Mexicano durante los gobiernos de 1896 a  2015
+Programa leer cine
 </li>
 @stop
 

@@ -5,12 +5,12 @@
   </a>
 </li>
 <li>
-<a href="/pages/cursos/cursos-y-talleres">
-    Cursos y talleres
+<a href="/pages/programa-leer-cine/programa-leer-cine">
+    Programa leer cine
   </a>
 </li>
 <li class="active">
-Cine Mexicano durante los gobiernos de 1896 a  2015
+Leer cine, apreciación del lenguaje cinematográfico
 </li>
 @stop
 

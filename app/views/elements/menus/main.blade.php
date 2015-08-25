@@ -36,6 +36,8 @@
                   <li><a href="/pages/quienes-somos/libro-filmoteca50">Libro Filmoteca: 50 años</a></li>
                  
                   <li><a href="/pages/quienes-somos/directorio">Directorio</a></li>
+
+                  <li><a href="/pages/Aniversario/index">55 Aniversario</a></li>
                 </ul>
               </li>
 
