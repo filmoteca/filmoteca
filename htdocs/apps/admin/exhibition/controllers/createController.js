@@ -81,11 +81,18 @@
                     if ($scope.exhibition.type !== null) {
                         $scope.exhibition.icon = iconographicService.find($scope.exhibition.type.id)
                     }
-                })
+                });
         });
     };
 
-    controller.$inject = ['$scope', '$location', 'exhibitionFactory', 'iconographicService', 'exhibitionService', '$routeParams'];
+    controller.$inject = [
+        '$scope',
+        '$location',
+        'exhibitionFactory',
+        'iconographicService',
+        'exhibitionService',
+        '$routeParams'
+    ];
 
     return controller;
 });

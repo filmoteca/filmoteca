@@ -1,0 +1,297 @@
+<form class="form-horizontal" name="film_form">
+    <div class="col-sm-12">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1 class="text-center">
+                    <span data-ng-show="film.id" class="ng-cloak">Editar película</span>
+                    <span data-ng-hide="film.id" class="ng-cloak">Agregar película</span>
+                    <small><span class="text-danger">*</span> Campos requeridos</small>
+                </h1>
+            </div>
+        </div>
+
+        <div class="form-group" data-ng-class="{'has-error' : film_form.title.$invalid && film_form.title.$dirty }">
+            <label for="title" class="col-sm-2 control-label text-right">
+                Título <span class="text-danger">*</span>
+            </label>
+
+            <div class="col-sm-10">
+                <input placeholder="T&iacute;tulo"
+                       formname="film_form"
+                       data-ng-model="film.title"
+                       data-ng-required="true"
+                       data-ng-max-length="255"
+                       name="title"
+                       type="text"
+                       class="form-control">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="original_title" class="col-sm-2 control-label text-right">
+                Título Original
+            </label>
+
+            <div class="col-sm-10">
+                <input placeholder="T&iacute;tulo Original"
+                       formname="film_form"
+                       data-ng-model="film.original_title"
+                       data-ng-max-length="255"
+                       name="original_title"
+                       type="text"
+                       class="form-control">
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="years" class="col-sm-2 control-label text-right">Año</label>
+
+            <div class="col-sm-10">
+                <tags-input data-ng-model="film.years" add-from-autocomplete-only="true">
+                    <auto-complete source="searchYear($query)" debounce-delay="0" min-length="0">
+                    </auto-complete>
+                </tags-input>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="countries" class="col-sm-2 control-label text-right">Países</label>
+
+            <div class="col-sm-10">
+
+                <tags-input data-ng-model="film.countries" add-from-autocomplete-only="true" display-property="name">
+                    <auto-complete source="searchCountry($query)" debounce-delay="0" min-length="0">
+                    </auto-complete>
+                </tags-input>
+            </div>
+        </div>
+
+
+        <div class="form-group"
+             data-ng-class="{'has-error' : film_form.duration.$invalid && film_form.duration.$dirty}">
+            <label for="duration" class="col-sm-2 control-label text-right">
+                Duración (minutos) <span class="text-danger">*</span>
+            </label>
+
+            <div class="col-sm-10">
+                <input placeholder="Duraci&oacute;n (minutos)"
+                       formname="film_form"
+                       data-ng-model="film.duration"
+                       data-ng-required="true"
+                       name="duration"
+                       type="text"
+                       class="form-control">
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="genre_id" class="col-sm-2 control-label text-right">Genero</label>
+
+            <div class="col-sm-10">
+                <select placeholder="Genero"
+                        formname="film_form"
+                        data-ng-model="film.genre_id"
+                        data-ng-options="genre.id as genre.name for genre in genres"
+                        name="genre_id"
+                        class="form-control">
+                    <option value="">Ninguno</option>
+                </select>
+            </div>
+        </div>
+
+
+        <div class="form-group"
+             data-ng-class="{'has-error' : film_form.director.$invalid &&film_form.director.$dirty }">
+            <label for="director" class="col-sm-2 control-label text-right">
+                Director <span class="text-danger">*</span>
+            </label>
+
+            <div class="col-sm-10">
+                <input placeholder="Director"
+                       formname="film_form"
+                       data-ng-model="film.director"
+                       data-ng-required="true"
+                       name="director"
+                       type="text"
+                       class="form-control">
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="script" class="col-sm-2 control-label text-right">
+                Guión
+            </label>
+
+            <div class="col-sm-10">
+                <input placeholder="Gui&oacute;n"
+                       formname="film_form"
+                       data-ng-model="film.script"
+                       name="script"
+                       type="text"
+                       class="form-control">
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="photographic" class="col-sm-2 control-label text-right">
+                Fotografía
+            </label>
+
+            <div class="col-sm-10">
+                <input placeholder="Fotograf&iacute;a"
+                       formname="film_form"
+                       data-ng-model="film.photographic"
+                       name="photographic"
+                       type="text"
+                       class="form-control">
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="music" class="col-sm-2 control-label text-right">
+                Música
+            </label>
+
+            <div class="col-sm-10">
+                <input placeholder="M&uacute;sica"
+                       formname="film_form"
+                       data-ng-model="film.music"
+                       name="music"
+                       type="text"
+                       class="form-control">
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="edition" class="col-sm-2 control-label text-right">
+                Edición
+            </label>
+
+            <div class="col-sm-10">
+                <input placeholder="Edici&oacute;n"
+                       formname="film_form"
+                       data-ng-model="film.edition"
+                       name="edition"
+                       type="text"
+                       class="form-control">
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="production" class="col-sm-2 control-label text-right">
+                Producción
+            </label>
+
+            <div class="col-sm-10">
+                <input placeholder="Producci&oacute;n"
+                       formname="film_form"
+                       data-ng-model="film.production"
+                       name="production"
+                       type="text"
+                       class="form-control">
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="cast" class="col-sm-2 control-label text-right">
+                Reparto
+            </label>
+
+            <div class="col-sm-10">
+                <input placeholder="Reparto"
+                       formname="film_form"
+                       data-ng-model="film.cast"
+                       name="cast"
+                       type="text"
+                       class="form-control">
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="synopsis" class="col-sm-2 control-label text-right">
+                Sinopsis
+            </label>
+
+            <div class="col-sm-10">
+                <textarea placeholder="Sinopsis"
+                          formname="film_form"
+                          data-ng-model="film.synopsis"
+                          class="ckeditor-full form-control"
+                          name="synopsis"
+                          cols="50"
+                          rows="10">
+                </textarea>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="trailer" class="col-sm-2 control-label text-right">
+                Trailer
+            </label>
+
+            <div class="col-sm-10">
+                <textarea class="ckeditor-only-youtube form-control"
+                          placeholder="Trailer"
+                          formname="film_form"
+                          data-ng-model="film.trailer"
+                          name="trailer"
+                          cols="50"
+                          rows="10">
+                </textarea>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="notes" class="col-sm-2 control-label text-right">
+                Notas
+            </label>
+
+            <div class="col-sm-10">
+                <textarea placeholder="Notas"
+                          formname="film_form"
+                          data-ng-model="film.notes"
+                          class="ckeditor-full form-control"
+                          name="notes"
+                          cols="50"
+                          rows="10">
+                </textarea>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="image" class="col-sm-2 control-label text-right">
+                Portada
+            </label>
+
+            <div class="col-sm-10">
+                <input placeholder="Portada"
+                       formname="film_form"
+                       data-file-model="film.image"
+                       name="image"
+                       type="file">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-6">
+                <button class="btn btn-success" data-ng-click="save()" data-ng-disabled="film_form.$invalid">
+                    <span>Guardar y regresar al listado</span>
+                </button>
+                <span class="loading loading-sm ng-cloak" data-ng-show="saving"></span>
+            </div>
+        </div>
+    </div>
+</form>

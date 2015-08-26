@@ -10,7 +10,6 @@
                 </label>
                 <div class="col-sm-10">
                     <angucomplete-alt
-                            id="ex1"
                             placeholder="Buscar película por título"
                             pause="400"
                             selected-object="filmSelected"
@@ -31,16 +30,16 @@
             <div class="row">
                 <div class="col-sm-10 col-sm-offset-2">
                     <div data-ng-show="film" class="panel panel-default ng-cloak">
-                        <div class="panel-heading">{{film.title}}</div>
+                        <div class="panel-heading">{{ film.title }}</div>
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-sm-4">
-                                    <img ng-src="{{ film.cover_urls.thumbnail }}" class="thumbnail img-responsive">
+                                    <img data-ng-src="{{ film.cover_urls.thumbnail }}" class="thumbnail img-responsive">
                                 </div>
                                 <div class="col-sm-8">
-                                    <p><strong>Título</strong>: {{film.title}}</p>
-                                    <p data-ng-show="film.countries"><strong>País</strong>: {{film.countries | map: 'name' | join: ', '}}</p>
-                                    <p data-ng-show="film.years"><strong>Años</strong>: {{ film.years | join: ', '}}</p>
+                                    <p><strong>Título</strong>: {{ film.title }}</p>
+                                    <p data-ng-show="film.countries"><strong>País</strong>: {{ film.countries | map: 'name' | join: ', ' }}</p>
+                                    <p data-ng-show="film.years"><strong>Años</strong>: {{ film.years | join: ', ' }}</p>
                                     <p data-ng-show="film.synopsis"><strong>Sinopsis</strong>: <span data-ng-bind-html="film.synopsis"></span></p>
                                 </div>
                             </div>

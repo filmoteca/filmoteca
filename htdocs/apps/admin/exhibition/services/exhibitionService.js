@@ -26,7 +26,7 @@
 
             return $http.get('/admin/api/exhibition', config);
         };
-
+        
         this.load = function(id) {
 
             return $http

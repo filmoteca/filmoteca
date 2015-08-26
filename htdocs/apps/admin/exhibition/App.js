@@ -29,6 +29,7 @@
             'admin.exhibition.services/iconographicService',
             'admin.exhibition.factories/exhibitionFactory',
             'admin.exhibition.factories/scheduleFactory',
+            'admin.exhibition.factories/interceptorFactory',
             'admin.exhibition.constants/messages',
             'admin.exhibition.configs/$http',
             'admin.exhibition.configs/$route',
@@ -41,7 +42,6 @@
             'angular.filter',
             'ngSanitize',
 
-            'admin.exhibition.services/FilmService',
             'admin.exhibition.services/NotificationService',
             'admin/film/film',
             'file-model',
@@ -49,26 +49,29 @@
             'syntara'
         ],
         factory);
-})(function (angular,
-             domready,
-             exhibitionController,
-             searchController,
-             indexController,
-             createController,
-             scheduleController,
-             iconographicController,
-             iconographicModalController,
-             search,
-             schedules,
-             iconographics,
-             exhibitionService,
-             auditoriumService,
-             iconographicService,
-             exhibitionFactory,
-             scheduleFactory,
-             messages,
-             httpConfig,
-             routeConfig) {
+})(function (
+    angular,
+    domready,
+    exhibitionController,
+    searchController,
+    indexController,
+    createController,
+    scheduleController,
+    iconographicController,
+    iconographicModalController,
+    search,
+    schedules,
+    iconographics,
+    exhibitionService,
+    auditoriumService,
+    iconographicService,
+    exhibitionFactory,
+    scheduleFactory,
+    interceptorFactory,
+    messages,
+    httpConfig,
+    routeConfig
+) {
 
     'use strict';
 
@@ -79,13 +82,10 @@
             'ngAnimate',
             'angularMoment',
             'angular.filter',
-            'ngSanitize',
+            'FileModel',
 
-            'admin.exhibition.services.FilmService',
-            'admin.exhibition.services.NotificationService',
             'admin.film',
-
-            'FileModel'
+            'admin.exhibition.services.NotificationService'
         ]
     )
 
@@ -104,6 +104,7 @@
         .service('iconographicService', iconographicService)
         .factory('exhibitionFactory', exhibitionFactory)
         .factory('scheduleFactory', scheduleFactory)
+        .factory('interceptorFactory', interceptorFactory)
         .constant('messages', messages)
         .config(routeConfig)
         .config(httpConfig);

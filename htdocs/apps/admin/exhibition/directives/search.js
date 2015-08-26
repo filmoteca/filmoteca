@@ -14,6 +14,10 @@
 
         return {
             restrict: 'A',
+            scope: {
+                url: '=',
+                page: '='
+            },
             templateUrl: '/apps/admin/exhibition/templates/search.html',
             controller: 'admin.exhibition.controllers.searchController'
         }

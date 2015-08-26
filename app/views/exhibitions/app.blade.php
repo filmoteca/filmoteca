@@ -1,6 +1,7 @@
 @extends('layouts.dashboard.master-app')
 
 @section('scripts')
+
 {{ HTML::script(
     '/bower_components/requirejs/require.js', 
     ['data-main' =>'/apps/admin/exhibition/App.js'])
@@ -9,7 +10,12 @@
 
 @section('styles')
 
-{{ HTML::styles(array('/bower_components/angucomplete-alt/angucomplete-alt.css')) }}
+{{ HTML::styles([
+    '/bower_components/angucomplete-alt/angucomplete-alt.css',
+    '/bower_components/ng-tags-input/ng-tags-input.min.css',
+    '/bower_components/textAngular/src/textAngular.css'
+    ])
+}}
 
 @stop
 

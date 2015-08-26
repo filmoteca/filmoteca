@@ -1,4 +1,4 @@
-/* globals require */
+/* globals define */
 
 (function (factory) {
 
@@ -12,31 +12,23 @@
     var config = function ($routeProvider) {
 
         $routeProvider
-            .when('/index', {
+            .when('/exhibitions', {
                 templateUrl : '/apps/admin/exhibition/templates/index.html',
                 controller: 'admin.exhibition.controllers.index'
             })
-            .when('/create',{
+            .when('/exhibitions/create', {
                 templateUrl : '/apps/admin/exhibition/templates/create.html',
                 controller: 'admin.exhibition.controllers.create'
             })
-            .when('/edit/:id',{
+            .when('/exhibitions/edit/:id', {
                 templateUrl : '/apps/admin/exhibition/templates/create.html',
                 controller: 'admin.exhibition.controllers.create'
             })
-            .when('/iconographics',{
+            .when('/iconographics', {
                 templateUrl : '/apps/admin/exhibition/templates/iconographic.html',
                 controller: 'admin.exhibition.controllers.iconographicController'
             })
-            .when('/films', {
-                templateUrl : '/apps/admin/film/templates/index.html',
-                controller: 'admin.film.controllers.indexController'
-            })
-            .when('/films/create', {
-                templateUrl : '/apps/admin/films/templates/create.html',
-                controller : 'admin.film.controllers.createController'
-            })
-            .otherwise('/index');
+            .otherwise('/exhibitions');
     };
 
     config.$inject = ['$routeProvider'];

@@ -33,7 +33,7 @@
 
             var fd = new FormData();
 
-            angular.forEach(data, function(value,key)
+            angular.forEach(data, function(value, key)
             {
                 fd.append(key,value);
             });

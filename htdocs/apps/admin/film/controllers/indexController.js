@@ -12,7 +12,9 @@
 
     var controller = function ($scope, filmService) {
 
-        $scope.pagination = {
+        $scope.films        = [];
+        $scope.searchUrl    = '/admin/api/films';
+        $scope.pagination   = {
             per_page : 0,
             total: 0,
             current_page: 1,
@@ -22,7 +24,7 @@
             maxSize : 10
         };
 
-        $scope.films = [];
+        $scope.query = '';
 
         $scope.pageChanged = function () {
 
@@ -38,7 +40,31 @@
                 });
         };
 
+        $scope.destroy = function ($index) {
+
+            filmService
+                .destroy($scope.films[$index].id)
+                .then(function (film) {
+
+                    $scope.films.splice($index, 1);
+
+                    $scope.$emit('alert', {
+                        msg: 'La película "' + film.title + '" fue eliminada.',
+                        type: 'success'
+                    });
+            });
+        };
+
         $scope.pageChanged();
+
+        $scope.$on('searchFinished', function (event, pagination) {
+
+            angular.extend($scope.pagination, pagination);
+
+            $scope.films  = pagination.data;
+
+            $scope.pagination.data.data = null; //we do not save redundant data.
+        });
     };
 
     controller.$inject = [

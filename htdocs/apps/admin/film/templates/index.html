@@ -1,6 +1,9 @@
 <h1 class="text-center">Lista de películas</h1>
 
-<div data-search></div>
+<div data-search
+     data-page="pagination.page"
+     data-url="searchUrl">
+</div>
 
 <pagination items-per-page="pagination.per_page"
             total-items="pagination.total"
@@ -30,13 +33,13 @@
         </td>
         <td>{{ film.created_at }}</td>
         <td>
-            <a class="btn btn-info navbar-btn" data-ng-href="#edit/{{film.id}}">
+            <a class="btn btn-info navbar-btn" data-ng-href="#/films/{{ film.id }}/edit">
                 Editar
             </a>
             <a class="btn btn-danger navbar-btn" data-ng-click="destroy($index)">
                 Delete
             </a>
-            <a class="btn btn-success navbar-btn" data-ng-href="/film/{{film.id}}/detail-history">
+            <a class="btn btn-success navbar-btn" data-ng-href="#/films/{{ film.id }}">
                 Detalles
             </a>
         </td>

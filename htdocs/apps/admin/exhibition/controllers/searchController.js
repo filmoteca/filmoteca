@@ -9,7 +9,7 @@
 
     'use strict';
 
-    var controller = function ($scope, Exhibition) {
+    var controller = function ($scope, $http) {
 
         var FIRST_PAGE = 0;
 
@@ -19,13 +19,19 @@
         $scope.search = function () {
 
             $scope.searching = true;
-            
-            Exhibition
-                .paginate($scope.query, FIRST_PAGE)
+
+            var config = {
+                params: {
+                    'query': $scope.query,
+                    'page': FIRST_PAGE
+                }
+            };
+
+            $http.get($scope.url, config)
                 .then(function (response) {
-                    
+
                     $scope.searching = false;
-                    $scope.$emit('exhibitionsSearched', response.data);
+                    $scope.$emit('searchFinished', response.data);
                 });
         };
 
@@ -34,7 +40,7 @@
         };
     };
 
-    controller.$inject = ['$scope', 'exhibitionService'];
+    controller.$inject = ['$scope', '$http'];
 
     return controller;
 });

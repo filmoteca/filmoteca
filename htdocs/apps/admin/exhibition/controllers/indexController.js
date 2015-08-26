@@ -21,6 +21,8 @@
             maxSize : 10
         };
 
+        $scope.searchUrl = '/admin/api/exhibition';
+
         $scope.pageChanged = function () {
 
             exhibitionService.paginate($scope.query, $scope.pagination.current_page)
@@ -51,7 +53,7 @@
 
         $scope.pageChanged();
 
-        $scope.$on('exhibitionsSearched', function (event, pagination) {
+        $scope.$on('searchFinished', function (event, pagination) {
 
             angular.extend($scope.pagination, pagination);
 

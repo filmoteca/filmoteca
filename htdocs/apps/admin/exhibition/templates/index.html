@@ -1,8 +1,14 @@
 <h1 class="text-center">Lista de exhibiciones</h1>
 
-<div data-search></div>
+<div data-search
+     data-url="searchUrl">
+</div>
 
-<pagination items-per-page="pagination.per_page" total-items="pagination.total" data-ng-model="pagination.current_page" data-ng-change="pageChanged()"></pagination>
+<pagination items-per-page="pagination.per_page"
+            total-items="pagination.total"
+            data-ng-model="pagination.current_page"
+            data-ng-change="pageChanged()">
+</pagination>
 
 <table class="table table-striped table-bordered">
     <thead>
