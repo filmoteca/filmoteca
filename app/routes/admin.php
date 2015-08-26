@@ -37,6 +37,10 @@ Route::group(['prefix' => 'admin', 'before' => 'validate_admin'], function()
         Route::group(['prefix' => 'films'], function () {
 
             Route::get('/', 'Api\FilmController@index');
+            Route::post('/', 'Api\FilmController@store');
+            Route::get('/{id}', 'Api\FilmController@show');
+            Route::put('/{id}', 'Api\FilmController@update');
+            Route::delete('/{id}', 'Api\FilmController@destroy');
         });
 
         View::name('layouts.modal', 'modal');
@@ -62,10 +66,6 @@ Route::group(['prefix' => 'admin', 'before' => 'validate_admin'], function()
 //            Route::put('/{id}',     'Api\IconographicController@update');
             Route::delete('/{id}',  'Api\IconographicController@destroy');
         });
-
-        Route::post('film/store',[
-            'as' => 'admin.api.film.store',
-            'uses' => 'Api\FilmController@store']);
 
         /*
         |--------------------------------------------------------------------------

@@ -33,4 +33,45 @@ class FilmService
 
         return $results;
     }
+
+    /**
+     * @param $id
+     * @return \Filmoteca\Models\Film
+     */
+    public function findFilm($id)
+    {
+        return $this->repository->find($id);
+    }
+
+    /**
+     * @param array $data
+     * @return \Filmoteca\Models\Film
+     */
+    public function storeFilm(array $data)
+    {
+        return $this->repository->store($data);
+    }
+
+    /**
+     * @param int $id
+     * @return \Filmoteca\Models\Film
+     */
+    public function destroyFilm($id)
+    {
+        $destroyedFilm = $this->repository->destroy($id);
+
+        return $destroyedFilm;
+    }
+
+    /**
+     * @param int $id
+     * @param array $data
+     * @return \Filmoteca\Models\Film
+     */
+    public function updateFilm($id, array $data)
+    {
+        $updatedFilm = $this->repository->update($id, $data);
+
+        return $updatedFilm;
+    }
 }
