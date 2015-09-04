@@ -5,7 +5,7 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.2.*",
-		"codesleeve/laravel-stapler": "1.0.*",
+		"codesleeve/laravel-stapler": "1.0.01",
 		"doctrine/dbal": "2.*",
 		"cartalyst/sentry": "2.1.*",
 		"mrjuliuss/syntara": "1.2.*",
