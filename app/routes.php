@@ -11,6 +11,8 @@
 |
 */
 
+include_once('routes/api.php');
+
 include_once('routes/frontend.php');
 
 include_once('routes/admin.php');

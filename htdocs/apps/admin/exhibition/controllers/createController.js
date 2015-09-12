@@ -10,29 +10,27 @@
 
     'use strict';
 
-    var controller = function ($scope, $location, exhibitionFactory, iconographicService, exhibitionService, $routeParams) {
+    var controller = function ($scope, $location, exhibitionFactory, iconographicService, exhibitionService, filmService, $routeParams) {
 
         $scope.exhibition   = exhibitionFactory.make();
         $scope.icons        = iconographicService.all();
         $scope.film         = null;
         $scope.searching    = false;
         $scope.saving       = false;
+        $scope.select       =
 
-        $scope.search = function () {
-
-        	$scope.searching = true;
+        $scope.searchInitialized = function () {
+            $scope.searching = true;
         };
 
-        $scope.filmSelected = function (selection) {
+        $scope.search = function (query) {
 
-            $scope.searching = false;
+            return filmService.paginate(query).then(function (paginate) {
 
-        	if ( typeof selection === 'undefined') {
-                return;
-        	}
+                $scope.searching = false;
 
-            $scope.exhibition.exhibition_film.film  = selection.originalObject;
-            $scope.film                             = selection.originalObject;
+                return paginate.data.data;
+            });
         };
 
         $scope.store = function () {
@@ -47,7 +45,7 @@
                         type: 'success',
                         msg: 'Exhibición guardada.'
                     });
-                    $location.path('/index');
+                    $location.path('/exhibitions');
                 }, function () {
                     $scope.saving = false;
                     $scope.$emit('alert', {
@@ -83,6 +81,15 @@
                     }
                 });
         });
+
+        /**
+         * I had to use a watch because onSelect of bootstrap-ui's is not fired.
+         */
+        $scope.$watch('select', function (newValue) {
+
+            $scope.exhibition.exhibition_film.film  = newValue;
+            $scope.film                             = newValue;
+        });
     };
 
     controller.$inject = [
@@ -91,6 +98,7 @@
         'exhibitionFactory',
         'iconographicService',
         'exhibitionService',
+        'filmService',
         '$routeParams'
     ];
 

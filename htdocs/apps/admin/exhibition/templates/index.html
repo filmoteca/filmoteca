@@ -27,11 +27,12 @@
             <td>{{ exhibition.exhibition_film.film.director }}</td>
             <td>{{ exhibition.exhibition_film.film.years | join: ', ' }}</td>
             <td>
-                <img class="thumbnail img-responseive image-size-thumbnail" data-ng-src="{{ exhibition.exhibition_film.film.cover_urls.thumbnail }}">
+                <img class="thumbnail img-responseive image-size-thumbnail"
+                     data-ng-src="{{ exhibition.exhibition_film.film.cover_urls.thumbnail }}">
             </td>
             <td>{{ exhibition.created_at }}</td>
             <td>
-                <a class="btn btn-info navbar-btn" data-ng-href="#edit/{{exhibition.id}}">Editar</a>
+                <a class="btn btn-info navbar-btn" data-ng-href="#/exhibitions/edit/{{exhibition.id}}">Editar</a>
                 <a class="btn btn-danger navbar-btn" data-ng-click="destroy($index)">Delete</a>
                 <a class="btn btn-success navbar-btn" data-ng-href="/exhibition/{{exhibition.id}}/detail-history">Detalles</a>
             </td>
@@ -39,4 +40,8 @@
     </tbody>
 </table>
 
-<pagination items-per-page="pagination.per_page" total-items="pagination.total" data-ng-model="pagination.current_page" data-ng-change="pageChanged()"></pagination>
+<pagination items-per-page="pagination.per_page"
+            total-items="pagination.total"
+            data-ng-model="pagination.current_page"
+            data-ng-change="pageChanged()">
+</pagination>
