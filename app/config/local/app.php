@@ -20,4 +20,8 @@ return array(
 		'Way\Generators\GeneratorsServiceProvider',
 		'Maatwebsite\Excel\ExcelServiceProvider',
 	)),
+
+    'gtm' => [
+        'tracking-id' => 'UA-123456789'
+    ]
 );
