@@ -6,24 +6,18 @@
         <form class="form-horizontal">
             <div class="form-group">
                 <label class="col-sm-2 control-label" for="film">
-                    Película
+                    Película <span class="loading loading-sm" data-ng-show="searching"></span>
                 </label>
                 <div class="col-sm-10">
-                    <angucomplete-alt
-                            placeholder="Buscar película por título"
-                            pause="400"
-                            selected-object="filmSelected"
-                            remote-url="/api/film?by=title&value="
-                            remote-url-data-field=""
-                            title-field="title"
-                            description-field="director"
-                            search-fields="title"
-                            image-field="cover_urls.thumbnail"
-                            minlength="1"
-                            text-searching="Buscando..."
-                            text-no-results="Ninguna película encontrada."
-                            input-class="form-control form-control-small">
-                    </angucomplete-alt>
+                    <!-- onSelect not work in angular-bootstrap 1.2.1 -->
+                    <!-- https://github.com/angular-ui/bootstrap/issues/3101 -->
+                    <input type="text"
+                           data-ng-model="select"
+                           data-typeahead="film as film.title for film in search($viewValue)"
+                           data-typeahead-loading="searching"
+                           data-typeahead-no-results="Ninguna película encontrada"
+                           data-typeahead-editable="false"
+                           class="form-control">
                 </div>
             </div>
 
