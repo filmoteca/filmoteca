@@ -32,6 +32,8 @@ class FilmTransformer extends Transformer
                 'title'             => $film->title,
                 'original_title'    => $film->original_title,
                 'years'             => $film->years,
+                'countries'         => $film->countries()->get(),
+                'synopsis'          => $film->synopsis,
                 'director'          => $film->director,
                 'created_at'        => $film->created_at->toDateString(),
                 'cover'             => [
