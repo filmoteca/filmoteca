@@ -53,13 +53,17 @@ class FilmsRepository extends ResourcesRepository implements PageableRepositoryI
             throw new InvalidArgumentException('Empty data');
         }
 
-        $countries_ids = $data['countries'];
-
-        unset($data['countries']);
+        if (isset($data['countries'])) {
+            $countries_ids = $data['countries'];
+            unset($data['countries']);
+        };
 
         $film = $this->resource->findOrFail($id);
         $film->fill($data)->save();
-        $film->countries()->sync($countries_ids);
+        
+        if (isset($countries_ids) && is_array($countries_ids)) {
+            $film->countries()->sync($countries_ids);
+        }
 
         return $film;
     }
