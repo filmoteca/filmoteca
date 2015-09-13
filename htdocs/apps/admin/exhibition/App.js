@@ -107,7 +107,14 @@
         .factory('interceptorFactory', interceptorFactory)
         .constant('messages', messages)
         .config(routeConfig)
-        .config(httpConfig);
+        .config(httpConfig)
+        .run(['$templateCache', function ($templateCache) {
+            $templateCache.put('template/typeahead/typeahead-match.html', '' +
+            '<a>' +
+                '<img data-ng-src="{{ match.model.cover.thumbnail }}" width="32">&nbsp;' +
+                '<span data-bind-html-unsafe="match.label | typeaheadHighlight:query"></span>' +
+            '</a>')
+        }]);
 
     domready(function () {
         document
