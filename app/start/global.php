@@ -49,6 +49,17 @@ Log::useDailyFiles(storage_path().'/logs/laravel.log');
 App::error(function(Exception $exception, $code)
 {
 	Log::error($exception);
+
+    if (App::environment() == 'prod') {
+
+        $data = ['exception' => $exception];
+        Mail::send('emails.error', $data, function ($message) {
+            $message->from(Config::get('mail.from.address'));
+            $message
+                ->to(Config::get('mail.error.address'))
+                ->subject(Config::get('mail.error.subject'));
+        });
+    }
 });
 
 /*
@@ -78,7 +89,7 @@ App::down(function()
 |
 */
 
-require app_path().'/filters.php';
+require app_path() . '/filters.php';
 
 require app_path() . '/constants.php';
 
