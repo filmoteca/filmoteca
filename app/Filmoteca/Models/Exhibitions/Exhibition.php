@@ -1,130 +1,129 @@
-<?php namespace Filmoteca\Models\Exhibitions;
+<?php
 
-use Illuminate\Database\Eloquent\Collection;
+namespace Filmoteca\Models\Exhibitions;
+
 use DB;
-use Eloquent;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Model as Eloquent;
 
 class Exhibition extends Eloquent
 {
-	protected $fillable = ['exhibition_film_id', 'type_id', 'notes'];
-	
-	public function exhibitionFilm()
-	{
-		return $this->belongsTo('Filmoteca\Models\Exhibitions\ExhibitionFilm');
-	}
+    protected $fillable = ['exhibition_film_id', 'type_id', 'notes'];
 
-	public function type()
-	{
-		return $this->belongsTo('Filmoteca\Models\Exhibitions\Type');
-	}
+    public function exhibitionFilm()
+    {
+        return $this->belongsTo('Filmoteca\Models\Exhibitions\ExhibitionFilm');
+    }
 
-	public function schedules()
-	{
-		return $this->hasMany('Filmoteca\Models\Exhibitions\Schedule')->with('auditorium');
-	}
+    public function type()
+    {
+        return $this->belongsTo('Filmoteca\Models\Exhibitions\Type');
+    }
 
-	public function auditoriums()
-	{
-		return $this->hasManyThrough('Filmoteca\Models\Exhibitions\Auditorium', 'Schedule');
-	}
+    public function schedules()
+    {
+        return $this->hasMany('Filmoteca\Models\Exhibitions\Schedule')->with('auditorium');
+    }
 
-	public function films(){
+    public function auditoriums()
+    {
+        return $this->hasManyThrough('Filmoteca\Models\Exhibitions\Auditorium', 'Schedule');
+    }
 
-		return $this->hasManyThrough('Filmoteca\Models\Film', 'Filmoteca\Models\Exhibitions\ExhibitionFilm');
-	}
+    public function films()
+    {
 
-	public function getTechnicalCard()
-	{
-		$tc = array(); //tecnicalCard.
+        return $this->hasManyThrough('Filmoteca\Models\Film', 'Filmoteca\Models\Exhibitions\ExhibitionFilm');
+    }
 
-		$film = $this->exhibition_film->film;
+    public function getTechnicalCard()
+    {
+        $tc = array(); //tecnicalCard.
 
-		$tc['título original'] 	= $film->original_title;
+        $film = $this->exhibition_film->film;
 
-		$tc['año'] 		= implode(', ', $film->years);
+        $tc['título original'] = $film->original_title;
 
-		$tc['pais'] 	= $film->countries->implode('name', ', ');
+        $tc['año'] = implode(', ', $film->years);
 
-		$tc['duración'] = $film->duration . ' min';
+        $tc['pais'] = $film->countries->implode('name', ', ');
 
-        $tc['género']   = $film->genre->name;
+        $tc['duración'] = $film->duration . ' min';
 
-		$tc['director']	= $film->director;
+        $tc['género'] = isset($film->genre)? $film->genre->name: '';
 
-		$tc['guión']	= $film->script;
+        $tc['director'] = $film->director;
 
-		$tc['fotografía'] = $film->photographic;
+        $tc['guión'] = $film->script;
 
-		$tc['música'] 	= $film->music;
+        $tc['fotografía'] = $film->photographic;
 
-		$tc['edición']	= $film->edition;
+        $tc['música'] = $film->music;
 
-		$tc['producción'] = $film->production;
+        $tc['edición'] = $film->edition;
 
-		$tc['reparto']	= $film->cast;
+        $tc['producción'] = $film->production;
 
-		$tc['sinopsis']	= $film->synopsis;
+        $tc['reparto'] = $film->cast;
 
-		$tc['notas'] = $film->notes;
+        $tc['sinopsis'] = $film->synopsis;
 
-		$technicalCard = array();
+        $tc['notas'] = $film->notes;
 
-		foreach( $tc as $key => $value)
-		{
-			if( !empty($value) )
-			{
-				$technicalCard[$key] = $value;
-			}
-		}
+        $technicalCard = array();
 
-		return $technicalCard;
-	}
+        foreach ($tc as $key => $value) {
+            if (!empty($value)) {
+                $technicalCard[$key] = $value;
+            }
+        }
 
-	public function getAuditoriumsAttribute($value)
-	{
-		return $this->schedules->map(function($schedule){
-			return $schedule->auditorium;
-		})->unique();
-	}
+        return $technicalCard;
+    }
 
-	public function schedulesByAuditorium($id)
-	{
-		$schedules = $this->schedules->filter(function($schedule) use ($id){
-			return $schedule->auditorium->id === $id;
-		});
+    public function getAuditoriumsAttribute($value)
+    {
+        return $this->schedules->map(function ($schedule) {
+            return $schedule->auditorium;
+        })->unique();
+    }
 
-		return $this->groupSchedulesByDay($schedules);
-	}
+    public function schedulesByAuditorium($id)
+    {
+        $schedules = $this->schedules->filter(function ($schedule) use ($id) {
+            return $schedule->auditorium->id === $id;
+        });
 
-	protected function groupSchedulesByDay(Collection $schedules)
-	{
-		$groups = [];
+        return $this->groupSchedulesByDay($schedules);
+    }
 
-		foreach($schedules as $schedule){
+    protected function groupSchedulesByDay(Collection $schedules)
+    {
+        $groups = [];
 
-			$day_time = explode(' ', $schedule->entry);
+        foreach ($schedules as $schedule) {
+            $day_time = explode(' ', $schedule->entry);
 
-			$day 	= $day_time[0];
-			$time 	= $day_time[1];
+            $day = $day_time[0];
+            $time = $day_time[1];
 
 
-			if(!isset($group[$day])){
-				$group[$day] = [];
-			}
+            if (!isset($group[$day])) {
+                $group[$day] = [];
+            }
 
-			$groups[$day][] = $time; //push
-		}
+            $groups[$day][] = $time; //push
+        }
 
-		foreach($groups as &$group){
+        foreach ($groups as &$group) {
+            sort($group, SORT_NATURAL);
+        }
 
-			sort($group, SORT_NATURAL);
-		}
+        return $groups;
+    }
 
-		return $groups;
-	}
-
-	protected function setTypeIdAttribute($value)
-	{
-		$this->attributes['type_id'] = ($value === 0)? null: $value;
-	}
+    protected function setTypeIdAttribute($value)
+    {
+        $this->attributes['type_id'] = ($value === 0) ? null : $value;
+    }
 }
