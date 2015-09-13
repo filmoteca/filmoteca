@@ -17,11 +17,6 @@
         $scope.film         = null;
         $scope.searching    = false;
         $scope.saving       = false;
-        $scope.select       =
-
-        $scope.searchInitialized = function () {
-            $scope.searching = true;
-        };
 
         $scope.search = function (query) {
 
