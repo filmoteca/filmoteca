@@ -5,14 +5,14 @@
 	"license": "MIT",
 	"require": {
         "mailgun/mailgun-php": "1.8",
-		"laravel/framework": "4.2.*",
+		"laravel/framework": "4.2.17",
 		"codesleeve/laravel-stapler": "1.0.01",
-		"doctrine/dbal": "2.*",
-		"cartalyst/sentry": "2.1.*",
-		"mrjuliuss/syntara": "1.2.*",
-		"fitztrev/laravel-html-minify": "1.*",
-		"fbf/laravel-contact-form": "0.1.*",
-        "frozennode/administrator": "4.*",
+		"doctrine/dbal": "2.5.1",
+		"cartalyst/sentry": "2.1.5",
+		"mrjuliuss/syntara": "1.2.11",
+		"fitztrev/laravel-html-minify": "1.0.3",
+		"fbf/laravel-contact-form": "0.1.0",
+        "frozennode/administrator": "4.16.7",
 		"devitek/yaml-translation": "0.1.2"
 	},
 	"autoload": {
