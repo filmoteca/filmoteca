@@ -145,7 +145,7 @@
 						id 		 : exhibition.id,
 						title 	 : exhibition.exhibition_film.film.title,
 						director : exhibition.exhibition_film.film.director,
-						thumbnail: exhibition.exhibition_film.film.cover_urls.medium
+						thumbnail: exhibition.exhibition_film.film.cover.medium
 					};
 				});
 			},
