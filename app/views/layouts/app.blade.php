@@ -42,5 +42,6 @@
 		</div>
 
 		@include('layouts.footer')
+        @include('elements.google-tag-manager')
 	</body>
 </html>
