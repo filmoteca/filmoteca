@@ -4,7 +4,7 @@
     <li>
         {{ HTML::link('/exhibition', 'Programación') }}
     </li>
-	<li>{{ HTML::link('exhibition/history','Historico de programación') }}</li>
+	<li>{{ HTML::link('exhibition/history','Histórico de programación') }}</li>
 	<li class="active">Detalle de exhibición</li>
 @stop
 
