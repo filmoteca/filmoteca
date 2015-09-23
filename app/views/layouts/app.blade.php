@@ -22,7 +22,6 @@
 		<title>Filmoteca UNAM</title>
 	</head>
 
-	<body>
 
 	<body>
 		@include('layouts.header')
