@@ -1,13 +1,12 @@
-@extends('layouts.defaul')
+@extends('layouts.default')
 
 @section('scripts')
 
-	{{ HTML::script('/apps/require.config.js')}}
+    <script src="{{ asset('/bower_components/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('/apps/require.config.js') }}"></script>
+    <script src="{{ asset('/bower_components/requirejs/require.js') }}" data-main="/apps/pages/courses/App.js"></script>
 
-	{{ HTML::script(
-		'/bower_components/requirejs/require.js', 
-		['data-main' =>'/apps/pages/courses/App.js'])
-	}}
 @stop
 
 @section('styles')

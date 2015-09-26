@@ -1,4 +1,4 @@
-
+{{-- Required bootstrap.js--}}
 <div class="main-menu-wrapper navbar-inverse">
     <nav class="navbar navbar-inverse main-menu" role="navigation">
         <div class="navbar-header">
