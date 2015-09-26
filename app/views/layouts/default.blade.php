@@ -10,19 +10,16 @@
 
 		@yield('metas')
 
-		{{
-			HTML::scripts([
-				'/bower_components/jquery/dist/jquery.min.js',
-				'/bower_components/bootstrap/dist/js/bootstrap.min.js',
-				'/bower_components/slick.js/slick/slick.min.js'
-				])
-		}}
-
 		{{ HTML::style('/assets/css/filmoteca.css') }}
 
 		@yield('styles')
 
-		@yield('scripts')
+		@yield('scripts', HTML::scripts([
+				'/bower_components/jquery/dist/jquery.min.js',
+				'/bower_components/bootstrap/dist/js/bootstrap.min.js',
+				'/bower_components/slick.js/slick/slick.min.js'
+				])
+            )
 
 		<title>Filmoteca UNAM</title>
 	</head>
