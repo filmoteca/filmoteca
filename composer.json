@@ -7,6 +7,7 @@
         "mailgun/mailgun-php": "1.8",
         "laravel/framework": "4.2.17",
         "codesleeve/laravel-stapler": "1.0.01",
+        "codesleeve/stapler": "1.0.0",
         "doctrine/dbal": "2.5.1",
         "cartalyst/sentry": "2.1.5",
         "mrjuliuss/syntara": "1.2.11",
