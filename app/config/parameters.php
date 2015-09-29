@@ -13,5 +13,8 @@ return [
                 'min_year' => 1890
             ]
         ]
+    ],
+    'gtm'=> [
+        'tracker-id' => 'UI-123456'
     ]
 ];
