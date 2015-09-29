@@ -2,7 +2,7 @@
 export DEBIAN_FRONTEND=noninteractive
 
 apt-get update
-apt-get install -y apache2 php5 php5-mysql php-pear php5-dev php5-mcrypt php5-cli php5-gd php5-xdebug curl mysql-client postfix mysql-server vim npm git
+apt-get install -y apache2 php5 php5-mysql php-pear php5-dev php5-mcrypt php5-cli php5-gd curl mysql-client postfix mysql-server vim npm git
 
 rm -rf /var/www
 ln -fs /vagrant /var/www
@@ -66,14 +66,24 @@ php5enmod mcrypt
 service apache2 restart
 
 ####################################
-## Running migrations and seeders ##
+## Config Xdebug ##
 ####################################
 
-cd ..
+echo "Creating xdebug log directory: /var/log/xdebug"
+mkdir /var/log/xdebug
+echo "Changing xdebug log directory owner to www-data"
+chown www-data:www-data /var/log/xdebug
 
-php artisan migrate --env=local
-php artisan db:seed --env=local
-php artisan syntara:update --env=local
-php artisan asset:publish frozennode/administrator --env=local
-php artisan create:user filmoteca filmoteca@unam.mx filmoteca Admin --env=local
+XDEBUG_CONFIG=$(cat <<EOF
+xdebug.default_enable = 1
+xdebug.idekey = "vagrant"
+xdebug.remote_enable = 1
+xdebug.remote_autostart = 1
+xdebug.remote_port = 9000
+xdebug.remote_handler = dbgp
+xdebug.remote_log = "/var/log/xdebug/xdebug.log"
+xdebug.remote_connect_back = 1
+EOF
+)
 
+echo "${XDEBUG_CONFIG}" >>  /etc/php5/apache2/conf.d/20-xdebug.ini

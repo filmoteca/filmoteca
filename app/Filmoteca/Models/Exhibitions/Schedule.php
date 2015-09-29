@@ -6,7 +6,7 @@ class Schedule extends Eloquent
 {
 	protected $fillable = ['entry', 'auditorium_id','exhibition_id'];
 	
-	public function exhibitions()
+	public function exhibition()
 	{
 		return $this->belongsTo('Filmoteca\Models\Exhibitions\Exhibition');
 	}

@@ -11,6 +11,12 @@
 |
 */
 
+include_once('routes/api.php');
+
 include_once('routes/frontend.php');
 
 include_once('routes/admin.php');
+
+include_once('routes/conaculta.php');
+
+include_once('routes/redirects.php');

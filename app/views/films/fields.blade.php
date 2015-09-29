@@ -30,7 +30,7 @@ Este pedaso de vista es utilizaco por otras vistas.
 
 {{-- {{ Form::formGroup('multiCountry', 'countries[]', 'País', 'film') }} --}}
 
-{{ Form::formGroup('text','duration','Duración','film')}}
+{{ Form::formGroup('text','duration','Duración (minutos)','film')}}
 
 {{ Form::formGroup('genre', 'genre_id', 'Genero', 'film') }}
 

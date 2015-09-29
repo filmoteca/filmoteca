@@ -1,6 +1,9 @@
 <?php namespace Filmoteca;
 
 use Illuminate\Database\Eloquent\Collection;
+use Filmoteca\Models\Exhibitions\Exhibition;
+use Filmoteca\Models\Exhibitions\ExhibitionFilm;
+use Filmoteca\Models\Exhibitions\Schedule;
 
 class ExhibitionsManager
 {
@@ -42,4 +45,44 @@ class ExhibitionsManager
 
 		return $auditoriums;
 	}
+
+    /**
+     * @param array $data
+     */
+    public function createAndSave(array $data)
+    {
+        $exhibition = isset($data['id'])? Exhibition::find($data['id']): new Exhibition();
+
+        $exhibitionFilm = isset($data['exhibition_film']['id'])? ExhibitionFilm::find( $data['exhibition_film']['id']): new ExhibitionFilm();
+        $exhibitionFilm->film_id = $data['exhibition_film']['film']['id'];
+        $exhibitionFilm->save();
+        $exhibition->exhibitionFilm()->associate($exhibitionFilm);
+
+        $exhibition->notes = isset($data['notes'])? $data['notes'] : '';
+
+        if (isset($data['icon']['id'])) {
+            $exhibition->type_id = $data['icon']['id'];
+        } else {
+            $exhibition->type_id = null;
+        }
+
+        $exhibition->save();
+
+        Schedule::where('exhibition_id', $exhibition->id)->delete();
+
+        $schedules = array_reduce($data['schedules'], function ($schedules, $rawSchedule) {
+
+            $schedule = new Schedule();
+
+            $schedule->entry = $rawSchedule['entry'];
+            $schedule->auditorium_id = $rawSchedule['auditorium']['id'];
+            $schedules[] = $schedule;
+
+            return $schedules;
+        }, []);
+
+        $exhibition->schedules()->saveMany($schedules);
+
+        return Exhibition::findOrFail($exhibition->id);
+    }
 }

@@ -1,11 +1,16 @@
 @section('breadcrumbs')
 	<li>
-		<a href="/pages/concursos/index">
+		<a href="/pages/concursos/jose-rovirosa">
 			Concursos
 		</a>
 	</li>
+	<li>
+		<a href="/pages/concursos/alfonso-reyes">
+			 Alfonso Reyes "Fósforo"
+		</a>
+	</li>
 	<li class="active">
-		Convocatorias
+		Convocatoria Concurso de crítica cinematográfica Alonso Reyes "Fosforo"
 	</li>
 @stop
 

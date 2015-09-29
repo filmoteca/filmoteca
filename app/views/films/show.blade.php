@@ -43,7 +43,7 @@
 		</tr>
 		<tr>
 		    <th>Duración</th>
-		    <td>{{ $resource->duration }}</td>
+		    <td>{{ $resource->duration }} min.</td>
 		</tr>
 		<tr>
 			<th>Genero</th>

@@ -41,10 +41,5 @@
 				items: ['Youtube']
 			}]
 		});
-
-		$('.multicountry, .multiyear').tokenize({
-			newElements : false,
-			displayDropdownOnFocus : true
-		});
 	});
 })(jQuery);

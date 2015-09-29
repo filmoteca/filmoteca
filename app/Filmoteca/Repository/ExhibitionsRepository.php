@@ -2,19 +2,20 @@
 
 use App;
 use Carbon\Carbon;
+use InvalidArgumentException;
 use Filmoteca\Models\Exhibitions\Exhibition;
 use Filmoteca\Models\Exhibitions\ExhibitionFilm;
 use Filmoteca\Models\Film;
-use StdClass;
+use Filmoteca\Pagination\Results;
 use Illuminate\Database\Eloquent\Collection;
 
-class ExhibitionsRepository extends ResourcesRepository
+class ExhibitionsRepository extends ResourcesRepository implements PageableRepositoryInterface
 {
 	public function __construct(
 		Exhibition $exhibition,
 		ExhibitionFilm $exhibitionFilm,
-		Film $film)
-	{
+		Film $film
+	) {
 		$this->exhibition       = $exhibition;
 		$this->exhibitionFilm   = $exhibitionFilm;
 		$this->resource         = $exhibition;
@@ -55,7 +56,7 @@ class ExhibitionsRepository extends ResourcesRepository
 
 				break;
 			default:
-				throw new Exception('Parámetro de búsqueda invalido: ' . $by );
+				throw new InvalidArgumentException('Parámetro de búsqueda invalido: ' . $by );
 		}
 
 		return $exhibitions;
@@ -103,7 +104,7 @@ class ExhibitionsRepository extends ResourcesRepository
 	 * @param  String $until Fecha de fin. 
 	 * @return Collection        Colección de exhibiciones.
 	 */
-	public function searchByDate( $from, $until)
+	public function searchByDate($from, $until)
 	{
 		$interval = array($from , $until . ' 23:59:59');
 
@@ -163,22 +164,42 @@ class ExhibitionsRepository extends ResourcesRepository
 			->first();
 	}
 
-	public function paginate($page = 1, $amount = 15)
+    /**
+     * @param int $page
+     * @param string $query
+     * @param int $amount
+     * @return \Filmoteca\Pagination\Results
+     */
+	public function paginate($page = 1, $query = '', $amount = 15)
 	{
-		$results 				= new StdClass();
-		$results->totalItems 	= 0;
-		$results->itmes 		= array(); 
+		$results = Results::make();
 
 		$resources = $this
 			->resource
+            ->whereHas('exhibitionFilm', function($q) use ($query){
+
+                $q->whereHas('film', function($q) use ($query) {
+                    $q->where('films.title', 'like', '%' . $query . '%');
+                });
+            })
 			->orderBy('id','desc')
 			->skip($amount * ($page - 1))
 			->take($amount)
 			->with('exhibitionFilm','exhibitionFilm.film')
 			->get();
 
-		$results->total 	= $this->resource->count();
-		$results->items 	= $resources->all();
+        $total = $this
+            ->resource
+            ->whereHas('exhibitionFilm', function($q) use ($query){
+
+                $q->whereHas('film', function($q) use ($query) {
+                    $q->where('films.title', 'like', '%' . $query . '%');
+                });
+            })
+            ->count();
+
+		$results->setTotal($total);
+		$results->setItems($resources);
 
 		return $results;
 	}
@@ -227,6 +248,58 @@ class ExhibitionsRepository extends ResourcesRepository
 
         return $resources;
     }
+
+	/**
+	 * The exhibitions of the current month.
+	 *
+	 * @return Collection
+	 */
+	public function findLast()
+	{
+		$today = Carbon::now();
+
+		$from = Carbon::createFromDate(
+			$today->year,
+			$today->month,
+			1
+		)->toDateString();
+
+		$until = Carbon::createFromDate(
+			$today->year,
+			$today->month,
+			$today->daysInMonth
+		)->toDateString();
+
+		return $this->searchByDate($from, $until);
+	}
+
+	/**
+	 * @param int $month
+	 * @return Collection
+	 */
+	public function findByMonth($month = 0)
+	{
+		if (!is_int($month) || $month < 1 || $month > 12) {
+			return $this->exhibition->findLast();
+		}
+
+		$currentDate = Carbon::now();
+		$currentDate->month = $month;
+
+		$from = Carbon::createFromDate(
+			$currentDate->year,
+			$currentDate->month,
+			1
+		)->toDateString();
+
+		$until = Carbon::createFromDate(
+			$currentDate->year,
+			$currentDate->month,
+			$currentDate->daysInMonth
+		)->toDateString();
+
+		return $this->searchByDate($from, $until);
+	}
 
 	protected function makeSchedules(array $schedules = null)
 	{

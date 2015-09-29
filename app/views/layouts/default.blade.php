@@ -6,21 +6,20 @@
         <meta charset="utf-8">
         <meta name="robots" content="follow, index">
 
-		@yield('metas')
+        <link href="/assets/imgs/favicon.ico" rel="icon" type="image/x-icon" />
 
-		{{
-			HTML::scripts([
-				'/bower_components/jquery/dist/jquery.min.js',
-				'/bower_components/bootstrap/dist/js/bootstrap.min.js',
-				'/bower_components/slick.js/slick/slick.min.js'
-				])
-		}}
+		@yield('metas')
 
 		{{ HTML::style('/assets/css/filmoteca.css') }}
 
 		@yield('styles')
 
-		@yield('scripts')
+		@yield('scripts', HTML::scripts([
+				'/bower_components/jquery/dist/jquery.min.js',
+				'/bower_components/bootstrap/dist/js/bootstrap.min.js',
+				'/bower_components/slick.js/slick/slick.min.js'
+				])
+            )
 
 		<title>Filmoteca UNAM</title>
 	</head>
@@ -40,5 +39,7 @@
 		</div>
 
 		@include('layouts.footer')
+
+        @include('elements.google-tag-manager')
 	</body>
 </html>

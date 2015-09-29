@@ -1,9 +1,15 @@
 @section('breadcrumbs')
 <li>
-	<a href="/pages/extension-academica/index">
+	<a href="/pages/cursos/cursos-y-talleres">
 		Extensión Académica
 	</a>
 </li>
+<li>
+	<a href="/pages/extension-academica/becarios">
+		Becarios
+	</a>
+</li>
+
 <li class="active">
 	Convocatoria Programa de Becarios
 </li>

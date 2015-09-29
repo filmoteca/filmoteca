@@ -5718,14 +5718,6 @@ a {
   margin-right: 4px;
   display: inline-block; }
 
-.loading {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("../../bower_components/slick.js/slick/ajax-loader.gif") center center no-repeat; }
-
 .items {
   padding: 0px; }
   .items:before, .items:after {
@@ -5736,8 +5728,8 @@ a {
   .items .item {
     float: left;
     width: 23%;
-    margin-left: 10px;
-    height: 210px; }
+    margin-left: 14px;
+    height: 250px; }
   @media only screen and (max-width: 340px) {
     .items .item {
       width: 100%; } }
@@ -6092,6 +6084,9 @@ footer {
 .exhibition-schedules .label {
   margin-right: 5px; }
 
+.subscribe-box.pull-right {
+  margin-top: 65px; }
+
 .static-pages-menu {
   margin-bottom: 25px; }
 
@@ -6239,18 +6234,30 @@ footer {
   transition: opacity 0.3s ease-in; }
 
 .static-pages-menu > ul ul li a {
-  font-size: 12px; }
+  font-size: 11px; }
 
 /* Showing the submenu when the user is hovering the parent link */
 .static-pages-menu > ul li:hover > ul {
   top: 0px;
   opacity: 1;
-  z-index: 1; }
+  z-index: 1;
+  display: block; }
 
 .static-pages-menu a.selected {
   background-color: #82076E;
   color: white; }
 
+@media (max-width: 768px) {
+  .static-pages-menu > ul ul {
+    padding-left: 5px;
+    opacity: 0;
+    -webkit-transition: opacity 0.3s ease-in;
+    -moz-transition: opacity 0.3s ease-in;
+    transition: opacity 0.3s ease-in;
+    width: 100%;
+    height: auto;
+    position: static;
+    display: none; } }
 .main-menu-wrapper {
   background-color: #090909;
   border-color: #090909;
@@ -6454,5 +6461,21 @@ footer {
 
 .view-animate.ng-leave.ng-leave-active {
   left: -100%; }
+
+.loading {
+  background: url("../imgs/loading.gif") no-repeat;
+  display: inline-block;
+  vertical-align: middle; }
+
+.loading-sm {
+  background-size: 36px 36px;
+  width: 36px;
+  height: 36px; }
+
+.loading-md {
+  background-size: 72px 72px; }
+
+.loading-lg {
+  background-size: 144px 144px; }
 
 /*# sourceMappingURL=filmoteca.css.map */

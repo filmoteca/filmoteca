@@ -167,13 +167,14 @@
   transition: opacity 0.3s ease-in;
 }
 .static-pages-menu > ul ul li a {
-  font-size: 12px;
+  font-size: 11px;
 }
 /* Showing the submenu when the user is hovering the parent link */
 .static-pages-menu > ul li:hover > ul {
   top: 0px;
   opacity: 1;
   z-index: 1;
+  display:block;
 }
 
 .static-pages-menu a.selected {
@@ -181,3 +182,20 @@
     color: white;
 }
 
+.static-pages-menu > ul li a span{
+    white-space: normal;
+}
+
+@media (max-width: 768px) {
+  .static-pages-menu > ul ul {
+    padding-left: 5px;
+    opacity: 0;
+    -webkit-transition: opacity 0.3s ease-in;
+    -moz-transition: opacity 0.3s ease-in;
+    transition: opacity 0.3s ease-in;
+    width: 100%;
+    height: auto;
+    position: static;
+    display: none;
+  }
+}

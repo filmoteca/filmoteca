@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.default')
 
 @section('scripts')
 
@@ -31,7 +31,7 @@
 
 @section('breadcrumbs')
 	<li>
-		<a href="/pages/quienes-somos/index">
+		<a href="/pages/quienes-somos/mision-y-vision">
 			Quiénes somos
 		</a>
 	</li>

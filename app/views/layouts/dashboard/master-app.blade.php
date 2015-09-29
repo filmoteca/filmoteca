@@ -3,7 +3,7 @@
     <head>
         <meta name="robots" content="noindex, nofollow">
 
-        <link rel="stylesheet" href="{{ asset('/bower_components/bootstrap/dist/css/bootstrap.min.css')}}" />
+        <link rel="stylesheet" href="{{ asset('/bower_components/font-awesome/css/font-awesome.min.css')}}" />
         <link rel="stylesheet" href="{{ asset('packages/mrjuliuss/syntara/assets/css/toggle-switch.css') }}" />
         <link rel="stylesheet" href="{{ asset('packages/mrjuliuss/syntara/assets/css/base.css') }}" media="all">
         <link rel="stylesheet" href="{{ asset('/assets/css/filmoteca.css')}}" />

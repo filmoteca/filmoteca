@@ -30,7 +30,7 @@
             <a ng-href="#/exhibition/{{ exhibition.id }}/show"
                     title="Ver detalles">
                 {{ exhibition.exhibition_film.film.title | limitTo : 22 }}
-                <img ng-src="{{ exhibition.exhibition_film.film.cover_urls.medium }}"
+                <img ng-src="{{ exhibition.exhibition_film.film.cover.medium }}"
                      alt="exhibition.exhibition_film.film.title"/>
             </a>
         </li>

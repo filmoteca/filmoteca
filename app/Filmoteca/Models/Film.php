@@ -1,52 +1,53 @@
-<?php 
+<?php
 
 namespace Filmoteca\Models;
 
-use Codesleeve\Stapler\ORM\StaplerableInterface;
-use Codesleeve\Stapler\ORM\EloquentTrait;
 use Carbon\Carbon;
-use Eloquent;
+use Codesleeve\Stapler\ORM\EloquentTrait;
+use Codesleeve\Stapler\ORM\StaplerableInterface;
+use Illuminate\Database\Eloquent\Model as Eloquent;
 
 class Film extends Eloquent implements StaplerableInterface
 {
-	use EloquentTrait;
+    use EloquentTrait;
 
-	protected $guarded = [];
+    protected $guarded = [];
 
-	protected $appends = ['cover_urls'];
+    protected $appends = ['cover'];
 
-	public function __construct(array $attributes = array())
-	{
-		$this->hasAttachedFile('image',[
-			'styles' => [
-				'medium' => '300x300',
-				'thumbnail' => '150x150']]);
+    public function __construct(array $attributes = array())
+    {
+        $this->hasAttachedFile('image', [
+            'styles' => [
+                'medium' => '300x300',
+                'thumbnail' => '150x150']]);
 
-		parent::__construct($attributes);
-	}
-	
-	public function exhibtionFilm()
-	{
-		return $this->hasOne('Filmoteca\Models\Exhibitions\ExhibitionFilm');
-	}
+        parent::__construct($attributes);
+    }
+
+    public function exhibtionFilm()
+    {
+        return $this->hasOne('Filmoteca\Models\Exhibitions\ExhibitionFilm');
+    }
 
     public function genre()
     {
         return $this->belongsTo('Filmoteca\Models\Genre');
     }
 
-    public function countries(){
+    public function countries()
+    {
 
-    	return $this->belongsToMany('Filmoteca\Models\Country');
+        return $this->belongsToMany('Filmoteca\Models\Country');
     }
 
-	public function getCoverUrlsAttribute()
-	{
-		return [
-			'thumbnail' => $this->image->url('thumbnail'),
-			'medium'	=> $this->image->url('medium')
-		];
-	}
+    public function getCoverAttribute()
+    {
+        return [
+            'thumbnail' => $this->image->url('thumbnail'),
+            'medium' => $this->image->url('medium')
+        ];
+    }
 
     public function getYearsAttribute($value)
     {
@@ -55,15 +56,13 @@ class Film extends Eloquent implements StaplerableInterface
 
     public function setYearsAttribute($value)
     {
-        if(is_string($value))
-        {
+        if (is_string($value)) {
             $this->attributes['years'] = $value;
 
             return;
         }
 
-        if(is_numeric($value))
-        {
+        if (is_numeric($value)) {
             $this->attributes['years'] = '' . $value;
 
             return;
@@ -73,31 +72,42 @@ class Film extends Eloquent implements StaplerableInterface
     }
 
     /**
-     * Remove seconds. Format HH:MM
+     * Convert to minutes.
      * @param  String $value [description]
      * @return String        [description]
      */
     public function getDurationAttribute($value)
     {
-        return substr($value, 0, strlen($value) -3);
+        $parts = explode(':', $value);
+
+        $minutes = ($parts[0] * Carbon::MINUTES_PER_HOUR) + $parts[1];
+
+        return $minutes;
     }
 
     /**
-     * Adds the two zeros (seconds).
-     * @param String $value Format HH:MM
+     * @param String $strMinutes
      */
-    public function setDurationAttribute($value)
+    public function setDurationAttribute($strMinutes)
     {
-        $this->attributes['duration'] = $value . ':00';
+        $min = (int)$strMinutes;
+
+        $minutes = $min % Carbon::MINUTES_PER_HOUR;
+        $hours = floor($min / Carbon::MINUTES_PER_HOUR);
+
+        $paddedMinutes = str_pad($minutes, 2, '0', STR_PAD_LEFT);
+        $paddedHours = str_pad($hours, 2, '0', STR_PAD_LEFT);
+
+        $this->attributes['duration'] = $paddedHours . ':' . $paddedMinutes . ':00';
     }
 
-    public function toArray(){
-
+    public function toArray()
+    {
         $relations = [
-            'genre'     => $this->genre,
+            'genre' => $this->genre,
             'countries' => $this->countries
         ];
 
-        return array_merge( parent::toArray(), $relations);
+        return array_merge(parent::toArray(), $relations);
     }
 }

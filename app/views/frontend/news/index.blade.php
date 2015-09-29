@@ -2,7 +2,7 @@
 
 @section('breadcrumbs')
 <li>
-    <a>
+    <a href="/press_register">
         Difusión
     </a>
 </li>
@@ -12,7 +12,7 @@
 @stop
 
 @section('sidebar')
-    @include('elements.menus.press', array('selected' => 3))
+    @include('elements.menus.difusion', array('selected' => 3))
 @stop
 
 @section('content')

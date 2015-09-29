@@ -1,0 +1,34 @@
+<div class="row">
+    <div class="col-sm-12">
+        <div data-ng-show="film" class="panel panel-default ng-cloak">
+            <div class="panel-heading">{{film.title}}</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <img data-ng-src="{{ film.cover.thumbnail }}" class="thumbnail img-responsive">
+                    </div>
+                    <div class="col-sm-8">
+                        <p><strong>Título</strong>: {{ film.title }}</p>
+                        <p><strong>Título original</strong>: {{ film.original_title }}</p>
+                        <p><strong>País</strong>: {{ film.countries | map: 'name' | join: ', ' }}</p>
+                        <p><strong>Años</strong>: {{ film.years | map: 'text' | join: ', ' }}</p>
+                        <p><strong>Duración</strong>: {{ film.duration }}min</p>
+                        <p><strong>Generó</strong>: {{ film.genre.name }}</p>
+                        <p><strong>Director</strong>: {{ film.director }}</p>
+                        <p><strong>Guión</strong>: {{ film.script }}</p>
+                        <p><strong>Fotografía</strong>: {{ film.photographic }}</p>
+                        <p><strong>Musica</strong>: {{ film.music }}</p>
+                        <p><strong>Edición</strong>: {{ film.edition }}</p>
+                        <p><strong>Producción</strong>: {{ film.production }}</p>
+                        <p><strong>Reparto</strong>: {{ film.cast }}</p>
+                        <p><strong>Trailer</strong>: <span data-ng-bind-html="film.trailer"></span></p>
+                        <p><strong>Notas</strong>: <span data-ng-bind-html="film.notes"></span></p>
+                        <p><strong>Sinopsis</strong>: <span data-ng-bind-html="film.synopsis"></span></p>
+                        <p><strong>Creada</strong>: {{ film.created_at }}</span></p>
+                        <p><strong>Ultima actualización</strong>: {{ film.updated_at }}</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

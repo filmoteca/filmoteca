@@ -1,0 +1,19 @@
+.loading {
+    background: url('../imgs/loading.gif') no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.loading-sm {
+    background-size: 36px 36px;
+    width: 36px;
+    height: 36px;
+}
+
+.loading-md {
+    background-size: 72px 72px;
+}
+
+.loading-lg {
+    background-size: 144px 144px;
+}

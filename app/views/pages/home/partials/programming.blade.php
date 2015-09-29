@@ -72,20 +72,18 @@
 		</div>
 
 		<div class="flm-section flm-subsection digital-billboard">
-			<div class="content">
-				<div class="image pull-left">
-					<img src="/imgs/home/cartelera/cartelera-marzo.jpg">
-				</div>
-				<div class="caption pull-right">
-					<h5></h5>
-					<span></span>
-					<a href="http://issuu.com/filmotecaunam/docs/filmotecaunam_carteleradigitalmarzo" target="_blank">Consulta<span class="icon icon-download pull-right"></span></a>
-				</div>	
-				<div class="caption pull-right">
-					<a href="http://filmoteca.dev/pdf/cartelera/carteleradigitalmarzo2015.pdf" target="_blank">Descarga<span class="icon icon-download pull-right"></span></a>
-				</div>
-			</div>
-		</div>
+            <div class="content">
+                <div class="image pull-left">
+                    <img src="/imgs/home/cartelera/cartelera-home-septiembre2015.jpg">
+                </div>
+                <div class="caption pull-right">
+                    <a href="http://issuu.com/filmotecaunam/docs/carteleradigitalsept2015" title="Consulta" target="_blank">Consulta<span class="icon icon-download pull-right"></span></a>
+                </div>   
+                <div class="caption pull-right">
+                    <a href="/pdf/cartelera/CarteleraDigitalSept2015.pdf" title="Descarga" target="_blank">Descarga<span class="icon icon-download pull-right"></span></a>
+                </div>
+            </div>
+        </div>
 
 	</div>
 </div>

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.default')
 
 @section('scripts')
 
@@ -19,13 +19,11 @@
 	<script id="templates/exhibitions/list.html" type="text/ng-template">
 		@include('frontend.exhibitions.partials.list', array('exhibitions', $exhibitions))
 	</script>
-	
-{{ HTML::script('/apps/require.config.js')}}
 
-{{ HTML::script(
-	'/bower_components/requirejs/require.js', 
-	['data-main' =>'/apps/pages/exhibition/App.js'])
-}}
+    <script src="{{ asset('/bower_components/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('/apps/require.config.js') }}"></script>
+    <script src="{{ asset('/bower_components/requirejs/require.js') }}" data-main="/apps/pages/exhibition/App.js"></script>
 @stop
 
 @section('styles')
@@ -64,6 +62,20 @@
 			<h4>Consulta la Programación</h4>
 			<datepicker ng-model="dphone" class="well well-sm ng-cloak"></datepicker>
 		</div>
+
+		<div class="subscribe-box visible-xs-block pull-right">
+            <p>Recibe nuestra cartelera digital</p>
+
+            <div class="input-group input-group-sm">
+                <input type="email"
+                    name="email"
+                    placeholder="Ingresa tu correo electrónico"
+                    class="form-control">
+                <span class="input-group-addon">@</span>
+            </div>
+
+            <button type="button" class="btn btn-success">Enviar</button>
+        </div>
 
 		<div class="static-pages-menu">
 			<ul>
@@ -111,7 +123,7 @@
 			</ul>
 		</div>
 
-		<div class="subscribe-box">
+		<div class="subscribe-box hidden-xs">
 			
 			<p>Recibe nuestra cartelera digital</p>
 

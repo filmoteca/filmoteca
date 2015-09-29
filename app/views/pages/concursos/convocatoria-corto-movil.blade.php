@@ -1,11 +1,16 @@
 @section('breadcrumbs')
 	<li>
-		<a href="/pages/concursos/index">
+		<a href="/pages/concursos/jose-rovirosa">
 			Concursos
 		</a>
 	</li>
+	<li>
+		<a href="/pages/concursos/corto-movil">
+			Corto Móvil
+		</a>
+	</li>
 	<li class="active">
-		Convocatorias
+		Convocatoria Corto Móvil
 	</li>
 @stop
 

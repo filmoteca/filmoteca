@@ -1,13 +1,13 @@
 <header class="main-header" id="main-header">
 	<div class="upper-navbar">
 		<div class="text-right">
-			<a href="/">
+			<a href="/" title="Inicio">
 				<span class="icon-home"></span>Inicio
 			</a>
-			<a href="/pages/quienes-somos/directorio">Directorio</a>
-			<a href="#">Mapa del sitio</a>
-			<a href="{{ URL::to('contact') }}">Contacto</a>
-			<a href="#"><span class="icon-accessibility"></span></a>
+			<a href="/pages/quienes-somos/directorio" title="Directorio">Directorio</a>
+			<a href="/pages/home/mapa-del-sitio" title="Mapa del sitio">Mapa del sitio</a>
+			<a href="{{ URL::to('contact') }}" title="Contacto">Contacto</a>
+			<!--<a href="#"><span class="icon-accessibility"></span></a>-->
 		</div>
 	</div>
 
@@ -15,7 +15,7 @@
 		<div>
 			<div class="pull-left">
 				<div class="pull-left">
-					<a href="http://www.unam.mx/" target="blank">
+					<a href="http://www.unam.mx/" title="Universidad Nacional Autónoma de México, UNAM" target="blank">
 						<img src="/assets/imgs/unam.png" alt="logo UNAM">
 					</a>
 				</div>
@@ -30,7 +30,7 @@
 					<span>Actividades Cinematográficas</span>
 				</div>
 				<div class="pull-left">
-					<a href="/">
+					<a href="/" title="Filmoteca UNAM">
 						<img src="/assets/imgs/filmoteca.png" alt="logo Filmoteca UNAM">
 					</a>
 				</div>

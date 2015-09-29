@@ -6,7 +6,10 @@ $(document).ready(function(){
         slidesToScroll: 1
     });
 
-    $('.main-carousel').slick();
+    $('.main-carousel').slick({
+		autoplay: true,
+		autoplaySpeed: 6000
+	});
 
     $('.programming .carrousel-widget').slick({
         infinite: false,

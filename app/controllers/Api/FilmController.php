@@ -1,39 +1,134 @@
-<?php namespace Api;
+<?php
 
-use Filmoteca\Repository\FilmsRepository;
+namespace Api;
 
-use stdClass;
+use Filmoteca\Repository\PageableRepositoryInterface;
+use Filmoteca\Services\FilmService;
+use Filmoteca\Transformers\FilmTransformer;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Pagination\Factory as Paginator;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Response;
+use Illuminate\Translation\Translator;
 
-use Input;
-
-use Response;
-
+/**
+ * Class FilmController
+ * @package Api
+ */
 class FilmController extends ApiController
 {
-	public function __construct(FilmsRepository $repository)
-	{
-		$this->repository = $repository;
-	}
+    /**
+     * @var FilmService
+     */
+    protected $filmService;
 
-	public function search()
-	{
-		$films = $this->repository->search('title', Input::get('value'));
+    /**
+     * @var Paginator
+     */
+    protected $paginator;
 
-		return Response::json($films,200);
-	}
+    /**
+     * @var FilmTransformer
+     */
+    protected $transformer;
 
-	public function store()
-	{
-		$data = Input::except('_token');
+    /**
+     * @var Translator
+     */
+    protected $translator;
 
-		$resource = $this->repository->store($data);
+    /**
+     * @param FilmService $filmService
+     * @param Paginator $paginator
+     * @param FilmTransformer $transformer
+     * @param Translator $translator
+     */
+    public function __construct(
+        FilmService $filmService,
+        Paginator $paginator,
+        FilmTransformer $transformer,
+        Translator $translator
+    ) {
+        $this->filmService  = $filmService;
+        $this->paginator    = $paginator;
+        $this->transformer  = $transformer;
+        $this->lang         = $translator;
+    }
 
-		$film = $this->repository->find($resource->id);	
+    /**
+     * @return \Illuminate\Pagination\Paginator
+     */
+    public function index()
+    {
+        $page       = Input::has('page') ? Input::get('page') : PageableRepositoryInterface::FIRST_PAGE;
+        $query      = Input::has('query') ? Input::get('query') : '';
+        $results    = $this->filmService->paginate($page, $query);
 
-		$film->images = new stdClass();
+        $transformedItems = $this->transformer->transformCollection($results->getItems());
 
-		$film->images->thumbnail = $film->image->url('thumbnail');
+        $results->setItems($transformedItems);
 
-		return Response::json($film,200);;
-	}
+        return $this->paginator->make(
+            $results->getItems()->toArray(),
+            $results->getTotal(),
+            PageableRepositoryInterface::ITEMS_PER_PAGE
+        );
+    }
+
+    /**
+     * @return \Filmoteca\Models\Film
+     */
+    public function store()
+    {
+        $film = $this->filmService->storeFilm(Input::all());
+
+        return $film;
+    }
+
+    /**
+     * @param $id
+     * @return array|\Illuminate\Http\JsonResponse
+     */
+    public function show($id)
+    {
+        try {
+            $film = $this->filmService->findFilm($id);
+        } catch (ModelNotFoundException $e) {
+            return Response::json([
+                'message' => $this->lang->get('api.films.not-found')
+            ], 404);
+        }
+
+        $transformedFilm = $this->transformer->transform($film, true);
+
+        return $transformedFilm;
+    }
+
+    /**
+     * @param int $id
+     * @return \Filmoteca\Models\Film
+     */
+    public function destroy($id)
+    {
+        try {
+            $destroyedFilm = $this->filmService->destroyFilm($id);
+        } catch (ModelNotFoundException $e) {
+            return Response::json([
+                'message' => $this->lang->get('api.films.actions.delete.not-found')
+            ], 404);
+        }
+
+        return $destroyedFilm;
+    }
+
+    /**
+     * @param $id
+     * @return \Filmoteca\Models\Film
+     */
+    public function update($id)
+    {
+        $updatedFilm = $this->filmService->updateFilm($id, Input::all());
+
+        return $updatedFilm;
+    }
 }

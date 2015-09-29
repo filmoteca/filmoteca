@@ -64,12 +64,12 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-6">
 				<div class="well well-sm">
-					<h4 class="text-center"><a href="http://cineunam.librosdelau.com/">Tienda en línea</a></h4>
+					<h4 class="text-center"><a href="/pages/libreria/proximamente-venta-linea" title="Próximamente Tienda en línea">Próximamente Tienda en línea</a></h4>
 				</div>
 			</div>
 			<div class="col-xs-12 col-sm-6">
 				<div class="well well-sm">
-					<h4 class="text-center"><a href="http://www.libros.unam.mx/">Libros UNAM</a></h4>
+					<h4 class="text-center"><a href="http://www.libros.unam.mx/" title="Libros UNAM">Libros UNAM</a></h4>
 				</div>
 			</div>
 		</div>
@@ -86,14 +86,14 @@
 
 
 <div class="toolbar-fixed social-networks-toolbar visible-lg">
-	<a href="https://twitter.com/ButacaUNAM"><span class="icon-twitter"></span></a>
-	<a href="https://www.facebook.com/FilmotecaUNAM" target="blank"><span class="icon-facebook"></span></a>
-	<a href="https://www.youtube.com/user/FilmotecaUNAM" target="blank"><span class="icon-youtube"></span></a>
-	<a href="http://vimeo.com/filmotecaunam/videos" target="blank"><span class="icon-vimeo"></span></a>
-	<a href="https://plus.google.com/117296642645060485198/posts" target="blank"><span class="icon-google-plus"></span></a>
+	<a href="https://twitter.com/ButacaUNAM" title="Twitter ButacaUNAM"><span class="icon-twitter"></span></a>
+	<a href="https://www.facebook.com/FilmotecaUNAM" title="Facebook FilmotecaUNAM" target="blank"><span class="icon-facebook"></span></a>
+	<a href="https://www.youtube.com/user/FilmotecaUNAM" title="Youtube FilmotecaUNAM" target="blank"><span class="icon-youtube"></span></a>
+	<a href="http://vimeo.com/filmotecaunam/videos" title="Vimeo FilmotecaUNAM" target="blank"><span class="icon-vimeo"></span></a>
+	<a href="https://plus.google.com/117296642645060485198/posts" title="Google FilmotecaUNAM" target="blank"><span class="icon-google-plus"></span></a>
 </div>
 
-<div class="ceil-toolbar toolbar-fixed visible-lg">
+<div title="Arriba" class="ceil-toolbar toolbar-fixed visible-lg">
 	<div class="text-center"><a class="icon-arrow-above" href="#main-header"></a></div>
 	<span>arriba</span>
 </div>
