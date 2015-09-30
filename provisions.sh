@@ -15,6 +15,10 @@ npm install -g bower
 ## Repairing npm not found by bower.
 ln -s /usr/bin/nodejs /usr/bin/node
 
+## installing sass
+
+gem install sass
+
 ################################
 ## Creating database and user ##
 ################################
