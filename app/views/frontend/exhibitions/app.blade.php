@@ -20,8 +20,6 @@
 		@include('frontend.exhibitions.partials.list', array('exhibitions', $exhibitions))
 	</script>
 
-    <script src="{{ asset('/bower_components/jquery/dist/jquery.min.js') }}"></script>
-    <script src="{{ asset('/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('/apps/require.config.js') }}"></script>
     <script src="{{ asset('/bower_components/requirejs/require.js') }}" data-main="/apps/pages/exhibition/App.js"></script>
 @stop

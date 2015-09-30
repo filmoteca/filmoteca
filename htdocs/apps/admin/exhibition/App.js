@@ -46,7 +46,9 @@
             'admin/film/film',
             'file-model',
 
-            'syntara'
+            'syntara',
+            'jquery',
+            'bootstrap',
         ],
         factory);
 })(function (
