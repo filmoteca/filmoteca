@@ -37,7 +37,7 @@
                  
                   <li><a href="/pages/quienes-somos/directorio">Directorio</a></li>
 
-                  <li><a href="/pages/Aniversario/index">55 Aniversario</a></li>
+                  <li><a href="/pages/aniversario55/index">55 Aniversario</a></li>
                 </ul>
               </li>
 
