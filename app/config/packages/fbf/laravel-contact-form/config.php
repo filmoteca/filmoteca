@@ -53,7 +53,7 @@ return array(
 		),
 		'to' => array(
 			'name' => 'Contacto Filmoteca',
-			'email' => 'contacto@filmoteca.unam.mx',
+			'email' => 'contacto.filmoteca.unam@gmail.com',
 		),
 		'subject' => 'Website Enquiry',
 	),
