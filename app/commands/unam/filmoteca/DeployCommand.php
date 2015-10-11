@@ -3,6 +3,7 @@
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
 use Symfony\Component\Console\Input\InputOption;
+use Carbon\Carbon;
 use Config;
 
 class DeployCommand extends Command
@@ -55,16 +56,28 @@ class DeployCommand extends Command
      */
     public function fire()
     {
+        $this->tmpDir = $this->option('tmp-dir');
+        $this->tmpProjectDir = $this->tmpDir . '/' . Config::get('parameters.deploy.defaults.project-name') . '/';
+
         $this->createTmpDir($this->option('tmp-dir'));
         $this->info('Created temporal dir.');
         $this->initializeRepository($this->option('repository-url'));
         $this->info('Initialized Repository.');
         $this->checkoutBranch($this->option('branch'));
         $this->info('Switched branch.');
-        $this->prepare();
+        $this->createVersionFile(
+            $this->option('branch'),
+            $this->option('public-dir')
+        );
+        $this->info('Created version file.');
+        $this->prepare($this->option('branch'));
         $this->info('Built.');
-        $this->upload('./', $this->option('server-dir'), $this->option('server'));
-//        $this->install($this->option('branch'));
+        $this->upload(
+            $this->tmpProjectDir,
+            $this->option('server-dir'),
+            $this->option('user'),
+            $this->option('server')
+        );
         $this->info('Ready!!');
     }
 
@@ -89,9 +102,6 @@ class DeployCommand extends Command
             $this->filesystem->makeDirectory($dir, 0755, true);
         }
 
-        $this->tmpDir = $dir;
-        $this->tmpProjectDir = $dir . '/' . Config::get('parameters.deploy.defaults.project-name');
-
         return true;
     }
 
@@ -110,7 +120,12 @@ class DeployCommand extends Command
         $this->exec('git fetch origin');
 
         try {
-            $this->exec(sprintf('git checkout %1$s && git reset --hard origin/%1$s', $branch));
+            $command = sprintf(
+                'git checkout -- . && git checkout %1$s && git reset --hard origin/%1$s',
+                $branch
+            );
+
+            $this->exec($command);
         } catch (\Exception $e) {
             $this->exec(sprintf('git checkout -b %1$s origin/%1$s', $branch));
         }
@@ -118,18 +133,58 @@ class DeployCommand extends Command
         return true;
     }
 
-    private function prepare()
+    private function createVersionFile($branch, $publicDir)
     {
-        return $this->exec('composer update && sass --update htdocs/assets/sass:htdocs/assets/css');
+        $date               = Carbon::now()->toDateTimeString();
+        $versionFileName    = Config::get('parameters.deploy.version.file-name');
+        $versionTemplate    =
+            "Deploy date: %s\n" .
+            "Branch: %s\n" .
+            "Current version: %s\n";
+
+        exec(
+            'cd ' . $this->tmpProjectDir . ' && ' . ' git rev-list HEAD -n 1',
+            $version,
+            $exitCode
+        );
+
+        if ($exitCode !== 0 && !isset($version[0])) {
+            throw new \Exception();
+        };
+
+        $content = sprintf($versionTemplate, $date, $branch, $version[0]);
+
+        file_put_contents($this->tmpProjectDir . '/' . $publicDir . '/' . $versionFileName, $content);
+
+        return true;
     }
 
-    private function upload($origin, $destination, $server)
+    private function prepare()
+    {
+        $this->exec('bower install');
+        $this->exec('composer install --no-scripts');
+        $this->exec('sass --update --force htdocs/assets/sass:htdocs/assets/css');
+
+        $options = ['--env' => $this->option('env')];
+
+        $this->call('migrate', $options);
+        $this->call('clear-compiled', $options);
+        $this->call('optimize', [
+            '--env' => $this->option('env'),
+            '--force' => ''
+        ]);
+
+        return true;
+    }
+
+    private function upload($origin, $destination, $user, $server)
     {
         $command = sprintf(
             'rsync --verbose --compress --rsh=ssh --recursive ' .
             '--times --perms --links --partial --progress ' .
-            '%s %s:%s',
+            '%s %s@%s:%s',
             $origin,
+            $user,
             $server,
             $destination
         );
@@ -137,11 +192,6 @@ class DeployCommand extends Command
         $this->info($command);
 
         return $this->exec($command);
-    }
-
-    private function install($branch)
-    {
-        return $this->exec(sprintf('vendor/bin/envoy run deploy --branch=%s', $branch));
     }
 
     /**
@@ -167,6 +217,13 @@ class DeployCommand extends Command
                 Config::get('parameters.deploy.defaults.tmp-dir')
             ],
             [
+                'public-dir',
+                null,
+                InputOption::VALUE_OPTIONAL,
+                'Name of public dir.',
+                Config::get('parameters.deploy.defaults.public-dir')
+            ],
+            [
                 'repository-url',
                 null,
                 InputOption::VALUE_OPTIONAL,
@@ -186,6 +243,13 @@ class DeployCommand extends Command
                 InputOption::VALUE_OPTIONAL,
                 'Server direction (IP).',
                 Config::get('parameters.deploy.defaults.server')
+            ],
+            [
+                'user',
+                null,
+                InputOption::VALUE_OPTIONAL,
+                'User in the server.',
+                Config::get('parameters.deploy.defaults.user')
             ]
         );
     }

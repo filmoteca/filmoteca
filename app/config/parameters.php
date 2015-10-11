@@ -2,10 +2,10 @@
 
 return [
     'institution' => [
-        'id' => 414,
-        'name' => 'Filmoteca UNAM',
+        'id'        => 414,
+        'name'      => 'Filmoteca UNAM',
         'telephone' => '21579919',
-        'email' => 'contacto@filmoteca.unam.mx'
+        'email'     => 'contacto@filmoteca.unam.mx'
     ],
     'admin' => [
         'exhibition' => [
@@ -19,12 +19,17 @@ return [
     ],
     'deploy' => [
         'defaults' => [
-            'branch' => 'master',
-            'tmp-dir' => '/tmp/deploy',
-            'repository-url' => 'https://github.com/pollin14/filmoteca',
-            'server-dir' => '/vagrant/site',
-            'server' => '192.168.33.12',
-            'proyect-name' => 'filmoteca'
+            'branch'            => 'master',
+            'tmp-dir'           => '/tmp/deploy',
+            'public-dir'        => 'htdocs',
+            'repository-url'    => 'https://github.com/pollin14/filmoteca',
+            'server-dir'        => '/vagrant/site',
+            'server'            => '192.168.33.12',
+            'user'              => 'vagrant',
+            'project-name'      => 'filmoteca'
+        ],
+        'version' => [
+            'file-name' => 'version.txt'
         ]
     ]
 ];
