@@ -59,19 +59,20 @@ class DeployCommand extends Command
         $this->tmpDir = $this->option('tmp-dir');
         $this->tmpProjectDir = $this->tmpDir . '/' . Config::get('parameters.deploy.defaults.project-name') . '/';
 
+        $this->info('Creating temporal dir...');
         $this->createTmpDir($this->option('tmp-dir'));
-        $this->info('Created temporal dir.');
+        $this->info('Initializing Repository...');
         $this->initializeRepository($this->option('repository-url'));
-        $this->info('Initialized Repository.');
+        $this->info('Switching branch');
         $this->checkoutBranch($this->option('branch'));
-        $this->info('Switched branch.');
+        $this->info('Creating version file...');
         $this->createVersionFile(
             $this->option('branch'),
             $this->option('public-dir')
         );
-        $this->info('Created version file.');
+        $this->info('Building...');
         $this->prepare($this->option('branch'));
-        $this->info('Built.');
+        $this->info('Uploading...');
         $this->upload(
             $this->tmpProjectDir,
             $this->option('server-dir'),
