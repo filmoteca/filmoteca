@@ -96,25 +96,24 @@ echo "${XDEBUG_CONFIG}" >>  /etc/php5/apache2/conf.d/20-xdebug.ini
 
 cd /vagrant
 
-composer install
-
-bower install
-
-php artisan migrate --env=local
-php artisan migrate --package="cartalyst/sentry"
-php artisan migrate --package="mrjuliuss/syntara"
-php artisan asset:publish mrjuliuss/syntara
-php artisan db:seed --env=local
-php artisan asset:publish frozennode/administrator --env=local
+sudo -u vagrant \
+composer install &&\
+bower install &&\
+git config --global url."https://".insteadOf git:// &&\
+php artisan migrate --env=local &&\
+php artisan migrate --package="cartalyst/sentry" --env=local &&\
+php artisan migrate --package="mrjuliuss/syntara" --env=local &&\
+php artisan asset:publish mrjuliuss/syntara &&\
+php artisan db:seed --env=local &&\
+php artisan asset:publish frozennode/administrator --env=local  &&\
+php artisan create:group --env=local &&\
 php artisan create:user filmoteca filmoteca@unam.mx filmoteca Admin --env=local
-
-sudo -u filmoteca git config --global url."https://".insteadOf git://
 
 cd ..
 
 chown -R vagrant /vagrant
 usermod -a -G www-data vagrant
-chmod -R g+rw /vagrant/htdocs
-chmod -R g+rw /vagrant/app/storage
+chmod -R 664 /vagrant/htdocs
+chmod -R 664 /vagrant/app/storage
 
 cd /vagrant

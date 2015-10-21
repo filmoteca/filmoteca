@@ -14,3 +14,5 @@
 Artisan::add(new UNAM\Filmoteca\DeployCommand(new \Illuminate\Filesystem\Filesystem()));
 
 Artisan::add(new UNAM\Filmoteca\ImportFilmsFromExcelCommand);
+
+Artisan::add(new UNAM\Filmoteca\CreateGroupCommand);
