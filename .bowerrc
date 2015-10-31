@@ -1,3 +1,4 @@
 {
-	"directory" : "htdocs/bower_components"
+	"directory" : "htdocs/bower_components",
+    "interactive": false
 }

@@ -1,8 +1,6 @@
 @extends('layouts.dashboard.master-app')
 
 @section('scripts')
-    <script src="{{ asset('/bower_components/jquery/dist/jquery.min.js') }}"></script>
-    <script src="{{ asset('/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('/bower_components/requirejs/require.js') }}" data-main="/apps/admin/exhibition/App.js"></script>
 @stop
 

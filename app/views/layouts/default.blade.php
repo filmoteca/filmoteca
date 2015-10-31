@@ -13,14 +13,6 @@
 		{{ HTML::style('/assets/css/filmoteca.css') }}
 
 		@yield('styles')
-
-		@yield('scripts', HTML::scripts([
-				'/bower_components/jquery/dist/jquery.min.js',
-				'/bower_components/bootstrap/dist/js/bootstrap.min.js',
-				'/bower_components/slick.js/slick/slick.min.js'
-				])
-            )
-
 		<title>Filmoteca UNAM</title>
 	</head>
 
@@ -41,5 +33,14 @@
 		@include('layouts.footer')
 
         @include('elements.google-tag-manager')
-	</body>
+
+        @yield('default-scripts', HTML::scripts([
+            '/bower_components/jquery/dist/jquery.min.js',
+            '/bower_components/bootstrap/dist/js/bootstrap.min.js',
+            '/bower_components/slick.js/slick/slick.min.js'
+            ]))
+
+        @yield('scripts')
+
+    </body>
 </html>

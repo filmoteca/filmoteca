@@ -9,7 +9,15 @@
     RewriteRule ^(.*)/$ /$1 [L,R=301]
 
     # Handle Front Controller...
+
+    # Redirect to index.php if other index.php distict to the index.php is requested.
+    RewriteCond %{REQUEST_URI} ((.+)/)+index.php [NC]
+    RewriteRule ^ / [R=301]
+
+    # If the file or directory is not exists, we do a internal redirecto to index.php
+    RewriteCond %{REQUEST_URI} !index.php [NC]
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
+
 </IfModule>
