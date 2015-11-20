@@ -43,7 +43,7 @@
         </h5>
         <p class="image-billboard">
             <img src="{{ asset( $lastBillboard->image->url('medium')) }}" 
-                class="img-responsive image-size-icon" 
+                class="img-responsive" 
                 title="{{ trans('dates.months.' . date('F', strtotime($lastBillboard->created_at))) }}" 
                 alt="{{ trans('dates.months.' . date('F', strtotime($lastBillboard->created_at))) }}">
         </p>
