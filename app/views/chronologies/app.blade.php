@@ -49,6 +49,10 @@
 {{----------------------------------------------------------------------------}}
 
 @section('content')
+
+	<h1>Cronología</h1>
+	<br>
+	<br>
 	<p>Selecciona el rango de los años que deseas consultar</p><br>
 	<div class="filmoteca-medal-slider">
 		<div data-slider-pips
@@ -59,7 +63,7 @@
 
 	<div class="loading" ng-show="loading"></div>
 
-	<h1>Cronología</h1>
+	
 	<div class="filmoteca-medal-list ng-cloak">
 		<div class="wrapper-items" id="wrapper-items">
 
