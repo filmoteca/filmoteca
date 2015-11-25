@@ -11,7 +11,7 @@
 							<h3 class="h4">Facebook</h3>
 						</div>
 						<div class="fb-wrap">
-							<div class="fb-like-box" data-href="https://www.facebook.com/FilmotecaUNAM?ref=ts&amp;fref=ts" data-width="262" data-height="300" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="true" data-show-border="true"></div>
+							<div class="fb-like-box" data-href="https://www.facebook.com/FilmotecaUNAM?ref=ts&amp;fref=ts" data-width="100%" data-height="300" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="true" data-show-border="true"></div>
 						</div>
 					</div>
 				</div>
