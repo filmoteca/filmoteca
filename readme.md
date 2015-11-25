@@ -3,3 +3,35 @@
 
 
 Nueva página de la Filmoteca de la UNAM.
+
+## Instalation
+
+* Clonar el *repository*
+* Entrar al directorio donde se acaba de clonar el proyecto.
+* Ejecutar `vagrant up` para "levantar" (crear) la máquina virtual.
+* Entrar a la máquina virtual usando `vagrant ssh` e ir al directorio **/vagrant**
+* Correr el siguiente comando (no importa que tenga multiples lineas)
+
+```bash
+composer install &&\
+php artisan migrate --env=local &&\
+php artisan migrate --package="cartalyst/sentry" --env=local &&\
+php artisan migrate --package="mrjuliuss/syntara" --env=local &&\
+php artisan asset:publish mrjuliuss/syntara &&\
+php artisan db:seed --env=local &&\
+php artisan asset:publish frozennode/administrator --env=local  &&\
+php artisan create:group --env=local &&\
+php artisan create:user filmoteca filmoteca@unam.mx filmoteca Admin --env=local &&\
+sass --update --force /vagrant/htdocs/assets/sass:/vagrant/htdocs/assets/css
+```
+
+* En la máquina `host` (anfitrion en inglés), aquella que no es la máquina virtual, 
+agregar la siguiente entrada al archivo **hosts** del sistema operativo
+
+```txt
+192.168.33.11    filmoteca.dev
+```
+
+El archivo está en `/private/etc/hosts`, `/etc/hosts` y `c:\Windows\System32\Drivers\etc\hosts` en Mac, Ubuntu y Windows
+respectivamente.
+* Ahora la página es accessible desde `filmoteca.dev`

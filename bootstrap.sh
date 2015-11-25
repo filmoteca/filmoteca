@@ -94,27 +94,11 @@ EOF
 
 echo "${XDEBUG_CONFIG}" >>  /etc/php5/mods-available/xdebug.ini
 
-echo "deploying project"
+echo "deploying project..."
 
 cd /vagrant
 
 git config --global url."https://".insteadOf git://
-
-echo "Building backend"
-composer install --no-scripts &&\
-php artisan migrate --env=local &&\
-php artisan migrate --package="cartalyst/sentry" --env=local &&\
-php artisan migrate --package="mrjuliuss/syntara" --env=local &&\
-php artisan asset:publish mrjuliuss/syntara &&\
-php artisan db:seed --env=local &&\
-php artisan asset:publish frozennode/administrator --env=local  &&\
-php artisan create:group --env=local &&\
-php artisan create:user filmoteca filmoteca@unam.mx filmoteca Admin --env=local
-
-echo "Building frontend"
-bower install --allow-root
-sudo -u vagrant sass --update --force /vagrant/htdocs/assets/sass:/vagrant/htdocs/assets/css
-
 
 echo "Setting right permissions"
 chown -R vagrant:vagrant /vagrant
