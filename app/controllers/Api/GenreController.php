@@ -22,7 +22,7 @@ class GenreController extends ApiController
 
         $genres = DB::table('genres')
             ->select('id', 'name')
-            ->where('name', 'like',  '%' . $partialName . '%')
+            ->where('name', 'like', '%' . $partialName . '%')
             ->get();
 
         return Response::Json($genres);

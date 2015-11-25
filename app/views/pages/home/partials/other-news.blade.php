@@ -1,7 +1,7 @@
 <div class="flm-section other-news">
 	<div class="content">
 		<div class="header">
-			<h4>Otras noticias</h4>
+			<h4>Día a día en la Filmoteca</h4>
 		</div>
 
 		<ul class="list-group-other-news">

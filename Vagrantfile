@@ -58,7 +58,7 @@ Vagrant.configure("2") do |config|
   # information on available options.
    
   config.vm.provider :virtualbox do |vb|  
-    vb.name = "filmoteca-umam"
+    vb.name = "filmoteca-dev"
     # Use VBoxManage to customize the VM. For example to change memory:
     vb.customize ["modifyvm", :id, "--memory", "2048"]
   end

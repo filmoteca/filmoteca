@@ -4,7 +4,7 @@
 export DEBIAN_FRONTEND=noninteractive
 
 apt-get update
-apt-get install -y apache2 php5 php5-mysql php-pear php5-dev php5-mcrypt php5-cli php5-gd curl mysql-client postfix mysql-server vim npm git
+apt-get install -y apache2 php5 php5-mysql php-pear php5-dev php5-mcrypt php5-cli php5-gd php5-xdebug curl mysql-client postfix mysql-server vim npm git
 
 rm -rf /var/www
 ln -fs /vagrant /var/www
@@ -92,28 +92,18 @@ xdebug.remote_connect_back = 1
 EOF
 )
 
-echo "${XDEBUG_CONFIG}" >>  /etc/php5/apache2/conf.d/20-xdebug.ini
+echo "${XDEBUG_CONFIG}" >>  /etc/php5/mods-available/xdebug.ini
+
+echo "deploying project..."
 
 cd /vagrant
 
-sudo -u vagrant \
-composer install &&\
-bower install &&\
-git config --global url."https://".insteadOf git:// &&\
-php artisan migrate --env=local &&\
-php artisan migrate --package="cartalyst/sentry" --env=local &&\
-php artisan migrate --package="mrjuliuss/syntara" --env=local &&\
-php artisan asset:publish mrjuliuss/syntara &&\
-php artisan db:seed --env=local &&\
-php artisan asset:publish frozennode/administrator --env=local  &&\
-php artisan create:group --env=local &&\
-php artisan create:user filmoteca filmoteca@unam.mx filmoteca Admin --env=local
+git config --global url."https://".insteadOf git://
 
-cd ..
-
-chown -R vagrant /vagrant
+echo "Setting right permissions"
+chown -R vagrant:vagrant /vagrant
 usermod -a -G www-data vagrant
 chmod -R 664 /vagrant/htdocs
 chmod -R 664 /vagrant/app/storage
 
-cd /vagrant
+echo "Installation finished!"

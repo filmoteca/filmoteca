@@ -30,7 +30,7 @@ class HomeController extends BaseController {
 
         $icons = $this->exhibitionsManager->getIcons($exhibitions);
 
-        $news = $this->newsRepository->lastNews(3);
+        $news = $this->newsRepository->lastNews(6);
 
         $advertisements = $this->advertisementRepository->all();
 
