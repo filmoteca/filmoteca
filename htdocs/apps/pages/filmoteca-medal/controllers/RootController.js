@@ -24,7 +24,7 @@
 
 		$scope.loading = false;
 
-		$scope.year = 2000;
+		$scope.year = 2015;
 
 		//Preparing the winners list.
 		$scope.winners = _.map(winners, function(winner){
@@ -74,6 +74,6 @@
 	
 	.config(['SLIDER_PIP_CONFIG', function(SLIDER_PIP_CONFIG){
 		SLIDER_PIP_CONFIG.slider.min = 1987;
-		SLIDER_PIP_CONFIG.pips.step = 10;
+		SLIDER_PIP_CONFIG.pips.step = 5;
 	}]);
 });

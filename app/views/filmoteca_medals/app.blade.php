@@ -56,20 +56,14 @@
 
 @section('content')
 
-<p>Buscar por año</p><br>
-<div class="filmoteca-medal-slider">
-	<div data-slider-pips
-		config="sliderConfig"
-		ng-model="year">
-	</div>
-</div>
-
-<div>
-<p>Buscar por nombre:</p>
-	<span class="glyphicon glyphicon-search pull-left ng-cloak">
-		<div class="search-autocomplete pull-right">
+<h1>Galardonados - Medalla Filmoteca UNAM</h1>
+<br>
+<br>
+<div class="search-autocomplete pull-right">
+		<span class="glyphicon glyphicon-search pull-left ng-cloak">
+		
 			<angucomplete-alt
-				place-holder="SBuscar por nombre"
+				placeholder="Buscar galardonado por nombre..."
 				pause="0"
 				selected-object="selectedAdvice"
 				local-data="winners"
@@ -82,14 +76,31 @@
 				text-no-results="Ninguna ganador encontrado"
 				input-class="form-control form-control-small">
 			</angucomplete-alt>
-		</div>
-	</span>
+		
+		</span>
+	</div>
+<br>
+<br>
+<br>
+
+	<p>Ver galardonado por año:</p><br>
+<div class="filmoteca-medal-slider">
+	<div data-slider-pips
+		config="sliderConfig"
+		ng-model="year">
+	</div>
+</div>
+
+<div>
+
+
 	<div class="clearfix"></div>
 </div>
 <div class="loading" ng-show="loading"></div>
 
-<h1>Medalla Filmoteca UNAM</h1>
-<h2>GALARDONADOS</h2>
+
+
+
 
 <div class="filmoteca-medal-list ng-cloak">
 	<div class="wrapper-items" id="wrapper-items">

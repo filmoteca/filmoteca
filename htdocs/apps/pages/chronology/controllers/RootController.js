@@ -35,7 +35,7 @@
 			return winner;
 		});
 
-		$scope.range = [1959,2000];
+		$scope.range = [1959,2015];
 
 		$scope.$watch('range', function(values){
 
