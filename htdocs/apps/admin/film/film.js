@@ -13,6 +13,7 @@
             'admin/film/factories/filmFactory',
             'admin/film/factories/filmTransformer',
             'admin/film/configs/$route',
+            'admin/film/constants/tinyMCEOptions',
 
             'ngTagsInput',
             'angular.filter',
@@ -31,7 +32,8 @@
     filmService,
     filmFactory,
     filmTransformer,
-    $routeConfig
+    $routeConfig,
+    tinyMCEOptions
 ) {
 
     'use strict';
@@ -51,4 +53,5 @@
         .service('filmTransformer', filmTransformer)
         .factory('filmFactory', filmFactory)
         .config($routeConfig)
+        .constant('tinyMCEOptions', tinyMCEOptions)
 });
