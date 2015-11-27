@@ -18,7 +18,9 @@
             'angular.filter',
             'ngRoute',
             'ngSanitize',
-            'file-model'
+            'file-model',
+            'tinyMCE',
+            'uiTinyMCE'
         ],
         factory);
 })(function (
@@ -39,7 +41,8 @@
         'angular.filter',
         'ngRoute',
         'ngSanitize',
-        'FileModel'
+        'FileModel',
+        'ui.tinymce'
     ])
         .controller('admin.film.controllers.indexController', indexController)
         .controller('admin.film.controllers.createController', createController)

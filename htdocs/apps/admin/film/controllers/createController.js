@@ -23,6 +23,15 @@
         $scope.genres       = genres;
         $scope.film         = filmFactory.make();
         $scope.saving       = false;
+        $scope.rawText      = "empty";
+
+        $scope.tinymceOptions = {
+            selector: "div",
+            inline: false,
+            plugins : 'advlist autolink image lists charmap preview media',
+            skin: 'lightgray',
+            theme : 'modern'
+        };
 
         $scope.searchYear = function ($query) {
 
@@ -75,6 +84,7 @@
                 .then(function (rawFilm) {
 
                     angular.extend($scope.film, rawFilm);
+                    $scope.rawText = 'filled';
                 });
         });
     };
