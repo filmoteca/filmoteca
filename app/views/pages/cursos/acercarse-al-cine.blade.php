@@ -21,6 +21,8 @@ Acercarse al cine: Introducción a la historia del cine y apreciación cinematog
 @stop
 
 
+
+
 @section('content')
 
     {{ $page->body }}

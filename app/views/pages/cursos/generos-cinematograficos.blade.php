@@ -21,6 +21,8 @@ Géneros Cinematográficos
 @stop
 
 
+
+
 @section('content')
 
     {{ $page->body }}

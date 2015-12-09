@@ -20,6 +20,8 @@ Taller de guión cinematográfico; trama y construcción de personajes
 @stop
 
 
+
+
 @section('content')
 
     {{ $page->body }}
