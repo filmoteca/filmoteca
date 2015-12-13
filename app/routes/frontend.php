@@ -88,11 +88,3 @@ Route::get('/courses/verification', [
     'uses' => 'Api\Courses\StudentController@verify']);
 
 Route::get('/auditorim/show/{id}', 'AuditoriumController@show');
-
-/*
-|----------------------------------------------------------------------------
-| PÁGINAS ESTATICAS
-|----------------------------------------------------------------------------
- */
-
-Route::get('/pages/{dir_or_name}/{name?}', 'PageController@show');
