@@ -7,9 +7,10 @@ return [
      | to the named route.
      */
     'admin-url-prefix'      => 'admin/static-pages',
-    'pages-url-prefix'     => 'pages',
+    'pages-url-prefix'      => 'pages',
     'auth-filter'           => 'validate_admin',
     'pages-layout'  => 'layouts/default',
+    'admin-layout'  => 'layouts.dashboard.master',
     'sections'      => [
         'title'     => 'title',
         'sidebar'   => 'sidebar',
