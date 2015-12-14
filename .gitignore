@@ -1,5 +1,5 @@
-/bootstrap/compiled.php
-/vendor
+bootstrap/compiled.php
+vendor
 composer.phar
 .env.*.php
 .env.php
@@ -17,32 +17,32 @@ Thumbs.db
 *.vagrant/
 .sass-cache
 
-/others
+others
+app/storage/debugbar/
 
-/htdocs/*
-/workbench
+htdocs/*
+workbench
 
-!/htdocs/assets
-!/htdocs/assets/js
-!/htdocs/assets/imgs
-!/htdocs/assets/css/imgs
-!/htdocs/assets/sass
+!htdocs/assets
+!htdocs/assets/js
+!htdocs/assets/imgs
+!htdocs/assets/css/imgs
+!htdocs/assets/sass
 
-!/htdocs/bower.json
-!/htdocs/apps
-!/htdocs/index.php
-!/htdocs/.htaccess
-!/htdocs/resources/.gitkeep
+!htdocs/bower.json
+!htdocs/apps
+!htdocs/index.php
+!htdocs/.htaccess
+!htdocs/resources/.gitkeep
 
-/app/config/prod/*
-!/app/config/prod/.gitkeep
-/app/config/staging/*
-!/app/config/staging/.gitkeep
+app/config/prod/*
+!app/config/prod/.gitkeep
+app/config/staging/*
+!app/config/staging/.gitkeep
 
 
-/notes.md
-/filmoteca.sublime-project
-/filmoteca.sublime-workspace
-/nbproject/*
-/.fontcustom-manifest.json
-/htdoc/assets/css/filmoteca.css
+notes.md
+filmoteca.sublime-project
+filmoteca.sublime-workspace
+nbproject/*
+.fontcustom-manifest.json
