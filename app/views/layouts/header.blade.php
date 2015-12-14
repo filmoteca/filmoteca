@@ -47,7 +47,7 @@
 <div class="toolbar">
 
 	<div>
-		
+
 		@if( !isset($not_breadcrumbs) )
 			<ul class="breadcrumb">
 				<li><span class="icon-home"></span>{{ HTML::linkRoute('home',' Inicio') }}</li>

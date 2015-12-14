@@ -6754,7 +6754,8 @@ footer {
   z-index: 1;
   display: block; }
 
-.static-pages-menu a.selected {
+.static-pages-menu a.selected,
+.static-pages-menu li.current a {
   background-color: #82076E;
   color: white; }
 

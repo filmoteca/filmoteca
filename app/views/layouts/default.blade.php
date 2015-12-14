@@ -13,7 +13,7 @@
 		{{ HTML::style('/assets/css/filmoteca.css') }}
 
 		@yield('styles')
-		<title>Filmoteca UNAM</title>
+		<title>@yield('title')</title>
 	</head>
 
 	<body>
