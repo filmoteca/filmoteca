@@ -885,12 +885,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/filmoteca/static-pages.git",
-                "reference": "e4a0054105fb07627e269b25125c2895ab3a715e"
+                "reference": "ef475f6885df0be33366de059d0427265024f05b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filmoteca/static-pages/zipball/e4a0054105fb07627e269b25125c2895ab3a715e",
-                "reference": "e4a0054105fb07627e269b25125c2895ab3a715e",
+                "url": "https://api.github.com/repos/filmoteca/static-pages/zipball/ef475f6885df0be33366de059d0427265024f05b",
+                "reference": "ef475f6885df0be33366de059d0427265024f05b",
                 "shasum": ""
             },
             "require": {
@@ -928,7 +928,7 @@
                 "source": "https://github.com/filmoteca/static-pages/tree/master",
                 "issues": "https://github.com/filmoteca/static-pages/issues"
             },
-            "time": "2015-12-14 03:33:08"
+            "time": "2015-12-14 05:04:24"
         },
         {
             "name": "filp/whoops",
