@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="{{ asset('packages/mrjuliuss/syntara/assets/css/base.css') }}" media="all">
         <link rel="stylesheet" href="{{ asset('/bower_components/bootstrap-datepicker/css/datepicker3.css') }}" media="all">
         <link rel="stylesheet" href="{{ asset('/assets/css/filmoteca.css')}}" />
-        
+
         <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
         <script src="{{ asset('bower_components/jqueryui/jquery-ui.min.js') }}"></script>
         <script src="{{ asset('bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
@@ -31,7 +31,7 @@
     <body>
         @include(Config::get('syntara::views.header'))
         {{ isset($breadcrumb) ? Breadcrumbs::create($breadcrumb) : '' }}
-        <div id="content">
+        <div class="container">
             @yield('content')
         </div>
     </body>
