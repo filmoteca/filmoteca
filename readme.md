@@ -17,6 +17,7 @@ composer install &&\
 php artisan migrate --env=local &&\
 php artisan migrate --package="cartalyst/sentry" --env=local &&\
 php artisan migrate --package="mrjuliuss/syntara" --env=local &&\
+php artisan migrate --package="filmoteca/static-pages" --env=local &&\
 php artisan asset:publish mrjuliuss/syntara &&\
 php artisan db:seed --env=local &&\
 php artisan asset:publish frozennode/administrator --env=local  &&\
