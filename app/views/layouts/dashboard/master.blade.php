@@ -3,14 +3,13 @@
     <head>
         <meta name="robots" content="noindex, nofollow">
 
-        <link rel="stylesheet" href="{{ asset('/bower_components/jqueryui/themes/base/jquery-ui.min.css') }}" />
-        <link rel="stylesheet" href="{{ asset('/bower_components/bootstrap/dist/css/bootstrap.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('/bower_components/jqueryui/themes/base/jquery-ui.min.css')}}" />
+        <link rel="stylesheet" href="{{ asset('/bower_components/bootstrap/dist/css/bootstrap.min.css')}}" />
         <link rel="stylesheet" href="{{ asset('packages/mrjuliuss/syntara/assets/css/toggle-switch.css') }}" />
         <link rel="stylesheet" href="{{ asset('packages/mrjuliuss/syntara/assets/css/base.css') }}" media="all">
         <link rel="stylesheet" href="{{ asset('/bower_components/bootstrap-datepicker/css/datepicker3.css') }}" media="all">
-        <link rel="stylesheet" href="{{ asset('/packages/filmoteca/static-pages/stylesheets/menu-creator.css') }}" />
         <link rel="stylesheet" href="{{ asset('/assets/css/filmoteca.css')}}" />
-
+        
         <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
         <script src="{{ asset('bower_components/jqueryui/jquery-ui.min.js') }}"></script>
         <script src="{{ asset('bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
@@ -25,16 +24,15 @@
         <script src="{{ asset('bower_components/ckeditor-youtube-plugin/youtube/plugin.js') }}"></script>
         <script src="{{ asset('bower_components/ckeditor-youtube-plugin/youtube/lang/es.js') }}"></script>
 
+        <script src="{{ asset('assets/js/admin.js') }}"></script>
+
         <title>{{ (!empty($siteName)) ? $siteName : "Syntara"}}</title>
     </head>
     <body>
         @include(Config::get('syntara::views.header'))
         {{ isset($breadcrumb) ? Breadcrumbs::create($breadcrumb) : '' }}
-        <div class="container">
+        <div id="content">
             @yield('content')
         </div>
-
-        <script src="{{ asset('assets/js/admin.js') }}"></script>
-        <script src="{{ asset('/packages/filmoteca/static-pages/scripts/menu-creator.js') }}"></script>
     </body>
 </html>

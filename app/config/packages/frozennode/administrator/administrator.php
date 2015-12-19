@@ -89,7 +89,7 @@ return array(
 	 *
 	 * @type string
 	 */
-	'home_page' => 'advertisements',
+	'home_page' => 'pages',
 
 	/**
 	 * The route to which the user will be taken when they click the "back to site" button
