@@ -1,6 +1,6 @@
 
 <div class="btn-group">
-
+	
 	<div class="btn-group">
 		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 			Programación
@@ -135,36 +135,6 @@
 			</li>
 			<li>
 				{{ HTML::linkRoute('admin.chronology.create', 'Agregar cronología') }}
-			</li>
-		</ul>
-	</div>
-
-	<div class="btn-group">
-		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-			Páginas Estaticas
-			<span class="caret"></span>
-		</button>
-		<ul class="dropdown-menu">
-			<li>
-				{{ HTML::linkAction('Filmoteca\StaticPages\StaticPagesController@index', 'Ver páginas') }}
-			</li>
-			<li>
-				{{ HTML::linkAction('Filmoteca\StaticPages\StaticPagesController@create', 'Agregar página') }}
-			</li>
-		</ul>
-	</div>
-
-	<div class="btn-group">
-		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-			Ménus
-			<span class="caret"></span>
-		</button>
-		<ul class="dropdown-menu">
-			<li>
-				{{ HTML::linkAction('Filmoteca\StaticPages\MenusController@index', 'Ver menus') }}
-			</li>
-			<li>
-				{{ HTML::linkAction('Filmoteca\StaticPages\MenusController@create', 'Agregar menú') }}
 			</li>
 		</ul>
 	</div>
