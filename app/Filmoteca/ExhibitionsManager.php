@@ -90,4 +90,36 @@ class ExhibitionsManager
 
         return Exhibition::findOrFail($exhibition->id);
     }
+
+
+    /**
+     * @param string $humanDate
+     * @param string $delimiter
+     * @return string
+     * @throws InvalidArgumentException
+     */
+    public function convertMonthFromHumanToNumber($humanDate, $delimiter = '-')
+    {
+        $monthsMap = ['enero', 'febrero', 'marzo', 'abril', 'mayo','junio', 'julio', 'agosto', 'septiembre',
+            'noviembre', 'diciembre'];
+        $monthIndex = 1;
+
+        $dateParts  = explode($delimiter, $humanDate);
+
+        if (count($dateParts) !== 3) {
+            throw new InvalidArgumentException(
+                'Invalid format. Required format is ' . self::DATE_FORMAT . '. Date given ' . $humanDate
+            );
+        }
+
+        $monthNumber = array_search($dateParts[$monthIndex], $monthsMap);
+
+        if (is_bool($monthNumber)) {
+            throw new InvalidArgumentException('The month "' . $dateParts[$monthIndex] . '" is not valid.');
+        }
+
+        $dateParts[$monthIndex] = $monthNumber + 1;
+
+        return implode($delimiter, $dateParts);
+    }
 }
