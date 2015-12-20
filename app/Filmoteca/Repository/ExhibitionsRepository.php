@@ -9,13 +9,39 @@ use Filmoteca\Models\Film;
 use Filmoteca\Pagination\Results;
 use Illuminate\Database\Eloquent\Collection;
 
+/**
+ * Class ExhibitionsRepository
+ * @package Filmoteca\Repository
+ */
 class ExhibitionsRepository extends ResourcesRepository implements PageableRepositoryInterface
 {
-    public function __construct(
-        Exhibition $exhibition,
-        ExhibitionFilm $exhibitionFilm,
-        Film $film
-    ) {
+    /**
+     * @var Exhibition
+     */
+    protected $exhibition;
+
+    /**
+     * @var ExhibitionFilm
+     */
+    protected $exhibitionFilm;
+
+    /**
+     * @var Exhibition
+     */
+    protected $resource;
+
+    /**
+     * @var Film
+     */
+    protected $film;
+
+    /**
+     * @param Exhibition $exhibition
+     * @param ExhibitionFilm $exhibitionFilm
+     * @param Film $film
+     */
+    public function __construct(Exhibition $exhibition, ExhibitionFilm $exhibitionFilm, Film $film)
+    {
         $this->exhibition = $exhibition;
         $this->exhibitionFilm = $exhibitionFilm;
         $this->resource = $exhibition;
@@ -89,11 +115,20 @@ class ExhibitionsRepository extends ResourcesRepository implements PageableRepos
     }
 
     /**
-     * Busca todas las exhibiciones que esten entre dos fechas
-     * incluyendo aquellas de la fecha incial y final.
-     * @param  String $from Fecha de inicio.
-     * @param  String $until Fecha de fin.
-     * @return Collection        Colección de exhibiciones.
+     * @param Carbon $date
+     * @return Collection
+     */
+    public function findByDate(Carbon $date)
+    {
+        $dateString = $date->toDateString();
+
+        return $this->searchByDate($dateString, $dateString);
+    }
+
+    /**
+     * @param  String $from
+     * @param  String $until
+     * @return Collection
      */
     public function searchByDate($from, $until)
     {
