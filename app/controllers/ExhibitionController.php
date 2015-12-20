@@ -5,106 +5,129 @@ use Filmoteca\Repository\ExhibitionsRepository;
 use Filmoteca\Models\Exhibitions\Auditorium;
 use Filmoteca\ExhibitionsManager;
 
+/**
+ * Class ExhibitionController
+ */
 class ExhibitionController extends BaseController
 {
-	public function __construct(
-		ExhibitionsRepository $exhibitionRepository,
-		ExhibitionsManager $exhibitionsManager)
-	{
-		$this->repository = $exhibitionRepository;
+    /**
+     * @var ExhibitionsRepository
+     */
+    protected $repository;
 
-		$this->manager = $exhibitionsManager;
-	}
+    /**
+     * @var ExhibitionsManager
+     */
+    protected $manager;
 
-	public function index()
-	{
-		$today = Carbon::now();
+    /**
+     * @param ExhibitionsRepository $exhibitionRepository
+     * @param ExhibitionsManager $exhibitionsManager
+     */
+    public function __construct(ExhibitionsRepository $exhibitionRepository, ExhibitionsManager $exhibitionsManager)
+    {
+        $this->repository   = $exhibitionRepository;
+        $this->manager      = $exhibitionsManager;
+    }
 
-		$interval = array(
-				Carbon::createFromDate(
-					$today->year,
-					$today->month,
-					1)->toDateString(),
-				Carbon::createFromDate(
-					$today->year,
-					$today->month,
-					$today->daysInMonth)->toDateString()
-			);
+    public function index()
+    {
+        $today = Carbon::now();
 
-		$exhibitions = $this
-			->repository
-			->search('date',$interval);
+        $interval = array(
+            Carbon::createFromDate($today->year, $today->month, 1)->toDateString(),
+            Carbon::createFromDate(
+                $today->year,
+                $today->month,
+                $today->daysInMonth
+            )->toDateString()
+        );
 
-		$auditoriums = Auditorium::all(array('id','name'));
+        $exhibitions = $this
+            ->repository
+            ->search('date', $interval);
 
-		$icons = $this->manager->getIcons($exhibitions);
+        $auditoriums = Auditorium::all(array('id', 'name'));
 
-		$weeks = array();
+        $icons = $this->manager->getIcons($exhibitions);
 
-		return View::make(
-			'frontend.exhibitions.app', 
-			compact(
-				'exhibitions',
-				'auditoriums',
-				'icons',
-				'weeks'));
-	}
+        $weeks = array();
 
-	public function search($by)
-	{
-		$exhibitions = $this->repository
-			->search($by, Input::get('value'));
+        return View::make(
+            'frontend.exhibitions.app',
+            compact(
+                'exhibitions',
+                'auditoriums',
+                'icons',
+                'weeks'
+            )
+        );
+    }
 
-		return View::make('exhibitions.search-result', $exhibitions);
-	}
+    /**
+     * @param string $by
+     */
+    public function search($by)
+    {
+        $exhibitions = $this->repository
+            ->search($by, Input::get('value'));
 
-	/**
-	 * Esta acción crea una vista con los detalles de una exhibición,
-	 * estableciendo un layout para peticiones ajax y otro para peticiones
-	 * no-ajax.
-	 * @param  Integer $id Id de un entero
-	 * @return view Una vista que depende de la solicitud (ajax o )
-	 */
-	public function detail($id)
-	{
-		$exhibition = $this->repository->search('id',$id);
+        return View::make('exhibitions.search-result', $exhibitions);
+    }
 
-		//Extend Request;
-		$isJson = stristr(Request::header('Accept'), 'application/json' );
+    /**
+     * Esta acción crea una vista con los detalles de una exhibición,
+     * estableciendo un layout para peticiones ajax y otro para peticiones
+     * no-ajax.
+     * @param  Integer $id Id de un entero
+     * @return view Una vista que depende de la solicitud (ajax o )
+     */
+    public function detail($id)
+    {
+        $exhibition = $this->repository->search('id', $id);
 
-		$layout = ( Request::ajax() || $isJson )? 'layouts.modal': 'layouts.default';
+        //Extend Request;
+        $isJson = stristr(Request::header('Accept'), 'application/json');
 
-		return View::make('frontend.exhibitions.partials.details', compact('exhibition','layout') );
-	}
+        $layout = (Request::ajax() || $isJson) ? 'layouts.modal' : 'layouts.default';
 
-	public function detailHistory($id){
+        return View::make('frontend.exhibitions.partials.details', compact('exhibition', 'layout'));
+    }
 
-		$exhibition = $this->repository->search('id',$id);
+    /**
+     * @param $id
+     * @return mixed
+     */
+    public function detailHistory($id)
+    {
 
-		return View::make('frontend.exhibitions.detail-history', compact('exhibition') );	
-	}
+        $exhibition = $this->repository->search('id', $id);
 
-	public function detailHome($id){
+        return View::make('frontend.exhibitions.detail-history', compact('exhibition'));
+    }
 
-		$exhibition = $this->repository->search('id',$id);
+    public function detailHome($id)
+    {
 
-		return View::make('frontend.exhibitions.partials.details', compact('exhibition') );	
-	}
+        $exhibition = $this->repository->search('id', $id);
 
-	public function history(){
+        return View::make('frontend.exhibitions.partials.details', compact('exhibition'));
+    }
 
-		return View::make('frontend.exhibitions.history');
-	}
+    public function history()
+    {
 
-	public function find(){
+        return View::make('frontend.exhibitions.history');
+    }
 
-        $fields         = [];
-        $fieldsNames    = ['title', 'director'];
+    public function find()
+    {
 
-        foreach($fieldsNames as $name)
-        {
-            if(Input::has($name))
-            {
+        $fields = [];
+        $fieldsNames = ['title', 'director'];
+
+        foreach ($fieldsNames as $name) {
+            if (Input::has($name)) {
                 $fields[$name] = Input::get($name);
             }
         }
@@ -112,6 +135,6 @@ class ExhibitionController extends BaseController
         $resources = $this->repository->findByTitleDirector($fields);
 
         return View::make('frontend.exhibitions.history')->with('resources', $resources);
-		
-	}
+
+    }
 }
