@@ -8,6 +8,11 @@ Route::get('/home', [
 
 Route::get('/', 'HomeController@index');
 
+Route::get('exhibiciones/{date}', [
+    'as' => 'filmoteca_exhibitions_collection',
+    'uses' => 'ExhibitionController@collection'
+]);
+
 Route::group(['prefix' => 'exhibition'], function () {
 
     // app

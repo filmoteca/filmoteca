@@ -10,6 +10,8 @@ use Filmoteca\ExhibitionsManager;
  */
 class ExhibitionController extends BaseController
 {
+    const DATE_FORMAT = 'j-n-Y';
+
     /**
      * @var ExhibitionsRepository
      */
@@ -62,6 +64,28 @@ class ExhibitionController extends BaseController
                 'weeks'
             )
         );
+    }
+
+    public function collection($humanDate)
+    {
+        $englishDate = $this->manager->convertMonthFromHumanToNumber($humanDate);
+
+        try {
+            $date = Carbon::createFromFormat(self::DATE_FORMAT, $englishDate);
+        } catch (InvalidArgumentException $e) {
+            $date = Carbon::now()->format(self::DATE_FORMAT);
+
+            return Redirect::action(get_class($this) . '@collection')
+                ->withInput('humanDate', $date)
+                ->with('warning', Lang::get('exhibitions.errors.invalid-date'));
+        }
+
+        $viewData = [
+            'exhibitions' => $this->repository->findByDate($date),
+            'date' => str_replace('-', ' ', $humanDate)
+        ];
+
+        return View::make('frontend.exhibitions.collection', $viewData);
     }
 
     /**
