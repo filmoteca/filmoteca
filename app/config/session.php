@@ -135,6 +135,6 @@ return array(
 	|
 	*/
 
-	'secure' => false,
-
+	'secure' => true,
+	'http_only' => true,
 );
