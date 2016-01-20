@@ -7,14 +7,16 @@
         <link rel="stylesheet" href="{{ asset('/bower_components/bootstrap/dist/css/bootstrap.min.css')}}" />
         <link rel="stylesheet" href="{{ asset('packages/mrjuliuss/syntara/assets/css/toggle-switch.css') }}" />
         <link rel="stylesheet" href="{{ asset('packages/mrjuliuss/syntara/assets/css/base.css') }}" media="all">
-       
+
         <link rel="stylesheet" href="{{ asset('/assets/css/filmoteca.css')}}" />
-        
+
+        @yield('stylesheets')
+
         <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
         <script src="{{ asset('bower_components/jqueryui/jquery-ui.min.js') }}"></script>
         <script src="{{ asset('bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
         <script src="{{ asset('packages/mrjuliuss/syntara/assets/js/dashboard/base.js') }}"></script>
-       
+
 
         <script src="{{ asset('bower_components/parsleyjs/dist/parsley.min.js') }}"></script>
         <script src="{{ asset('bower_components/parsleyjs/src/i18n/es.js') }}"></script>
@@ -34,5 +36,7 @@
         <div id="content">
             @yield('content')
         </div>
+
+        @yield('scripts')
     </body>
 </html>
