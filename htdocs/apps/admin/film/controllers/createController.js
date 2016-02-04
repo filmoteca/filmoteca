@@ -16,7 +16,7 @@
 
     'use strict';
 
-    var controller = function ($scope, $filter, $location, $routeParams, filmService, filmFactory) {
+    var controller = function ($scope, $filter, $location, $routeParams, filmService, filmFactory, tinyMCEOptions) {
 
         var YEARS_AVAILABLE = _.range(filmService.MIN_YEAR, filmService.MAX_YEAR);
 
@@ -25,13 +25,7 @@
         $scope.saving       = false;
         $scope.rawText      = "empty";
 
-        $scope.tinymceOptions = {
-            selector: "div",
-            inline: false,
-            plugins : 'advlist autolink image lists charmap preview media',
-            skin: 'lightgray',
-            theme : 'modern'
-        };
+        $scope.tinymceOptions = tinyMCEOptions;
 
         $scope.searchYear = function ($query) {
 
@@ -95,7 +89,8 @@
         '$location',
         '$routeParams',
         'filmService',
-        'filmFactory'
+        'filmFactory',
+        'tinyMCEOptions',
     ];
 
     return controller;
