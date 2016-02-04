@@ -74,7 +74,7 @@
 		<div class="flm-section flm-subsection digital-billboard">
             <div class="content">
                 <div class="image pull-left">
-                    <img src="/imgs/home/cartelera/cartelera-home-diciembre2015.jpg">
+                    <img src="/imgs/home/cartelera/cartelera-home-enero2016.jpg">
                 </div>
                 <div class="caption pull-right">
                     <a href="http://issuu.com/filmotecaunam/docs/cartelera.digital.dicene2/1" title="Consulta la cartelera digital" alt="Consulta la cartelera digital"target="_blank">Consulta<span class="icon icon-download pull-right"></span></a>
