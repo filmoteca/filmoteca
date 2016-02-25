@@ -161,7 +161,7 @@
 
                   <!-- <li><a href="http://cine.libros.unam.mx/">Venta en línea</a></li>-->
                   
-                 <!--  <li><a href="#">Catálogo</a></li> -->
+                  <li><a href="/pages/libreria/catalogo">Catálogo</a></li>
                   
                 </ul>
               </li>
