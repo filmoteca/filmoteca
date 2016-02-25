@@ -12,6 +12,9 @@
 		Este template sobre-escribe al template 
 		templates/datepicker/day.html de anguler-ui datepicker  
 	--}}
+
+	{{ HTML::script('/assets/js/facebook.js')}}
+
 	<script id="template/datepicker/day.html" type="text/ng-template">
 		@include('frontend.exhibitions.partials.dayorweekpicker')
 	</script>
@@ -61,19 +64,6 @@
 			<datepicker ng-model="dphone" class="well well-sm ng-cloak"></datepicker>
 		</div>
 
-		<div class="subscribe-box visible-xs-block pull-right">
-            <p>Recibe nuestra cartelera digital</p>
-
-            <div class="input-group input-group-sm">
-                <input type="email"
-                    name="email"
-                    placeholder="Ingresa tu correo electrónico"
-                    class="form-control">
-                <span class="input-group-addon">@</span>
-            </div>
-
-            <button type="button" class="btn btn-success">Enviar</button>
-        </div>
 
 		<div class="static-pages-menu">
 			<ul>
@@ -135,6 +125,19 @@
 
 			<button type="button" class="btn btn-success">Enviar</button>
 		</div>
+
+
+		<br><br>
+		
+        <div class="fb-page" data-href="https://www.facebook.com/Comunidad.Cines.UNAM/?fref=ts" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+        	<div class="fb-xfbml-parse-ignore">
+        		<blockquote cite="https://www.facebook.com/Comunidad.Cines.UNAM/?fref=ts">
+        			<a href="https://www.facebook.com/Comunidad.Cines.UNAM/?fref=ts">Comunidad  Cines UNAM
+        			</a>
+        		</blockquote>
+        	</div>
+        </div>
+
 @stop
 
 @section('content')
