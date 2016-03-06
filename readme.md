@@ -18,13 +18,23 @@ php artisan migrate --env=local &&\
 php artisan migrate --package="cartalyst/sentry" --env=local &&\
 php artisan migrate --package="mrjuliuss/syntara" --env=local &&\
 php artisan migrate --package="filmoteca/static-pages" --env=local &&\
-php artisan asset:publish mrjuliuss/syntara &&\
+php artisan migrate --package="filmoteca/static-pages" --env=local &&\
+php artisan asset:publish &&\
 php artisan db:seed --env=local &&\
 php artisan asset:publish frozennode/administrator --env=local  &&\
 php artisan create:group --env=local &&\
 php artisan create:user filmoteca filmoteca@unam.mx filmoteca Admin --env=local &&\
 sass --update --force /vagrant/htdocs/assets/sass:/vagrant/htdocs/assets/css
 ```
+
+El comando anterior creara un usuario para la zona administrativa con los siguintes datos:
+
+User name: filmoteca
+Email: filmoteca@unam.mx
+Password: filmoteca
+
+Para entra a la zona administrativa usar el email como user y el password
+como contraseña.
 
 * En la máquina `host` (anfitrion en inglés), aquella que no es la máquina virtual, 
 agregar la siguiente entrada al archivo **hosts** del sistema operativo
