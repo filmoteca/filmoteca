@@ -14,7 +14,9 @@
 
         <div class="collapse navbar-collapse navbar-ex1-collapse">
 
-            {{ HTML::menu($mainMenu->getEntries(), 'nav navbar-nav', '','', 'dropdown-menu' ) }}
+            @if ($mainMenu !== null)
+                {{ HTML::menu($mainMenu->getEntries(), 'nav navbar-nav', '','', 'dropdown-menu' ) }}
+            @endif
 
         </div>
     </nav>
