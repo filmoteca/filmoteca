@@ -1,39 +1,99 @@
 <?php namespace Filmoteca\Models\Exhibitions;
 
 use Codesleeve\Stapler\ORM\StaplerableInterface;
-
 use Codesleeve\Stapler\ORM\EloquentTrait;
-
+use Filmoteca\Exhibition\Type\Type as TypeInterface;
+use Filmoteca\Exhibition\Type\ImageAttachment;
 use Eloquent;
 
-class Type extends Eloquent implements StaplerableInterface
+/**
+ * Class Type
+ * @package Filmoteca\Models\Exhibitions
+ */
+class Type extends Eloquent implements StaplerableInterface, TypeInterface
 {
-	use EloquentTrait;
+    use EloquentTrait;
 
-	protected $table = 'exhibition_types';
+    protected $table = 'exhibition_types';
+    protected $guarded = [];
+    protected $fillable = ['name', 'created_at', 'updated_at', 'image', 'image_updated_at'];
+    protected $appends = ['icon'];
 
-	protected $guarded = [];
+    /**
+     * @var Attachment
+     */
+    protected $attachment = null;
 
-	// If I uncomment this part the attachment (the image) will not be stored.
-	// protected $fillable = ['name', 'created_at', 'updated_at', 'image_file_name', 'image_file_size', 'image_content_type', 'image_updated_at'];
+    public function __construct(array $attributes = array())
+    {
+        $this->hasAttachedFile('image', [
+            'styles' => ['thumbnail' => '64x64']]);
 
-	protected $appends = ['icon'];
+        parent::__construct($attributes);
+    }
 
-	public function __construct(array $attributes = array())
-	{
-		$this->hasAttachedFile('image',[
-			'styles' => ['thumbnail' => '64x64']]);
+    public function exhibition()
+    {
+        return $this->hasMany('Filmoteca\Models\Exhibitions\Exhibition');
+    }
 
-		parent::__construct($attributes);
-	}
-	
-	public function exhibition()
-	{
-		return $this->hasMany('Filmoteca\Models\Exhibitions\Exhibition');
-	}
+    public function getIconAttribute()
+    {
+        return $this->image->url('thumbnail');
+    }
 
-	public function getIconAttribute()
-	{
-		return $this->image->url('thumbnail');
-	}
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return ImageAttachment
+     */
+    public function getImage()
+    {
+        if ($this->attachment ==! null) {
+            return $this->attachment;
+        }
+
+        $attachment = new ImageAttachment();
+        $attachment->setSmallImageUrl($this->image->url('thumbnail'));
+        $attachment->setOriginalImageUrl($this->image->url('original'));
+        $attachment->setMediumImageUrl($this->image->url('thumbnail'));
+
+        $this->attachment = $attachment;
+
+        return $attachment;
+    }
+
+    /**
+     * @param ImageAttachment $attachment
+     */
+    public function setImage(ImageAttachment $attachment)
+    {
+        $this->attachment = $attachment;
+    }
 }

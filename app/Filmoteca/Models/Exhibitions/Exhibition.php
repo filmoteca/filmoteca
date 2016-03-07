@@ -3,10 +3,17 @@
 namespace Filmoteca\Models\Exhibitions;
 
 use DB;
+use Filmoteca\Exhibition\Type\Exhibition as ExhibitionInterface;
+use Filmoteca\Exhibition\Type\Film;
+use Filmoteca\Exhibition\Type\Type;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model as Eloquent;
 
-class Exhibition extends Eloquent
+/**
+ * Class Exhibition
+ * @package Filmoteca\Models\Exhibitions
+ */
+class Exhibition extends Eloquent implements ExhibitionInterface
 {
     protected $fillable = ['exhibition_film_id', 'type_id', 'notes'];
 
@@ -33,7 +40,10 @@ class Exhibition extends Eloquent
     public function films()
     {
 
-        return $this->hasManyThrough('Filmoteca\Models\Film', 'Filmoteca\Models\Exhibitions\ExhibitionFilm');
+        return $this->hasManyThrough(
+            'Filmoteca\Models\Exhibitions\Film',
+            'Filmoteca\Models\Exhibitions\ExhibitionFilm'
+        );
     }
 
     public function getTechnicalCard()
@@ -125,5 +135,69 @@ class Exhibition extends Eloquent
     protected function setTypeIdAttribute($value)
     {
         $this->attributes['type_id'] = ($value === 0) ? null : $value;
+    }
+
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId($id)
+    {
+        $this->id = id;
+    }
+
+    /**
+     * @return Film
+     */
+    public function getFilm()
+    {
+        return $this->exhibition_film->film;
+    }
+
+    /**
+     * @param Film $film
+     */
+    public function setFilm(Film $film)
+    {
+        $this->exhibition_film->film = $film;
+    }
+
+    /**
+     * @return \Illuminate\Support\Collection
+     */
+    public function getSchedules()
+    {
+        return $this->schedules;
+    }
+
+    /**
+     * @param \Illuminate\Support\Collection $schedules
+     */
+    public function setSchedules(\Illuminate\Support\Collection $schedules)
+    {
+        $this->schedules = $schedules;
+    }
+
+    /**
+     * @return Type|null
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * @param Type $type
+     */
+    public function setType(Type $type)
+    {
+        $this->type = $type;
     }
 }

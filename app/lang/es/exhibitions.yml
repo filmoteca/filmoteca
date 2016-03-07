@@ -1,2 +1,3 @@
-collection:
-    title: 'Exhibiciones del :date'
+frontend:
+    index:
+        title: 'Programación del :textual_day :numeric_day de :textual_month'

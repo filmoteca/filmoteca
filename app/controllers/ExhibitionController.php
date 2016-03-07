@@ -10,8 +10,6 @@ use Filmoteca\ExhibitionsManager;
  */
 class ExhibitionController extends BaseController
 {
-    const DATE_FORMAT = 'j-n-Y';
-
     /**
      * @var ExhibitionsRepository
      */
@@ -32,60 +30,26 @@ class ExhibitionController extends BaseController
         $this->manager      = $exhibitionsManager;
     }
 
-    public function index()
+    /**
+     * @param $humanDate
+     * @return mixed
+     */
+    public function index($humanDate = '')
     {
-        $today = Carbon::now();
-
-        $interval = array(
-            Carbon::createFromDate($today->year, $today->month, 1)->toDateString(),
-            Carbon::createFromDate(
-                $today->year,
-                $today->month,
-                $today->daysInMonth
-            )->toDateString()
-        );
-
-        $exhibitions = $this
-            ->repository
-            ->search('date', $interval);
-
-        $auditoriums = Auditorium::all(array('id', 'name'));
-
-        $icons = $this->manager->getIcons($exhibitions);
-
-        $weeks = array();
-
-        return View::make(
-            'frontend.exhibitions.app',
-            compact(
-                'exhibitions',
-                'auditoriums',
-                'icons',
-                'weeks'
-            )
-        );
-    }
-
-    public function collection($humanDate)
-    {
-        $englishDate = $this->manager->convertMonthFromHumanToNumber($humanDate);
-
-        try {
-            $date = Carbon::createFromFormat(self::DATE_FORMAT, $englishDate);
-        } catch (InvalidArgumentException $e) {
-            $date = Carbon::now()->format(self::DATE_FORMAT);
-
-            return Redirect::action(get_class($this) . '@collection')
-                ->withInput('humanDate', $date)
-                ->with('warning', Lang::get('exhibitions.errors.invalid-date'));
+        if ($humanDate !== '' && substr($humanDate, 0, 1) === '0') {
+            App::abort(404);
         }
 
-        $viewData = [
-            'exhibitions' => $this->repository->findByDate($date),
-            'date' => str_replace('-', ' ', $humanDate)
-        ];
+        try {
+            $englishDate = $this->manager->convertMonthFromHumanToNumber($humanDate);
+            $date = Carbon::createFromFormat(ExhibitionsManager::DATE_FORMAT, $englishDate);
+        } catch (InvalidArgumentException $e) {
+            $date = Carbon::today();
+        }
 
-        return View::make('frontend.exhibitions.collection', $viewData);
+        $exhibitions = $this->repository->findByDate($date);
+
+        return View::make('frontend.exhibitions.index', compact('exhibitions', 'date'));
     }
 
     /**
@@ -159,6 +123,5 @@ class ExhibitionController extends BaseController
         $resources = $this->repository->findByTitleDirector($fields);
 
         return View::make('frontend.exhibitions.history')->with('resources', $resources);
-
     }
 }

@@ -8,15 +8,10 @@ Route::get('/home', [
 
 Route::get('/', 'HomeController@index');
 
-Route::get('exhibiciones/{date}', [
-    'as' => 'filmoteca_exhibitions_collection',
-    'uses' => 'ExhibitionController@collection'
-]);
-
 Route::group(['prefix' => 'exhibition'], function () {
 
     // app
-    Route::get('', 'ExhibitionController@index');
+    Route::get('{date?}', 'ExhibitionController@index');
     Route::get('history', 'ExhibitionController@history');
     Route::get('find', [
         'as' => 'exhibition.find',

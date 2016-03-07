@@ -1,5 +1,6 @@
 <?php namespace Filmoteca;
 
+use InvalidArgumentException;
 use Illuminate\Database\Eloquent\Collection;
 use Filmoteca\Models\Exhibitions\Exhibition;
 use Filmoteca\Models\Exhibitions\ExhibitionFilm;
@@ -11,6 +12,12 @@ use Filmoteca\Models\Exhibitions\Schedule;
  */
 class ExhibitionsManager
 {
+    const DATE_FORMAT = 'j-n-Y';
+
+    private static $monthsMap = [
+        'enero', 'febrero', 'marzo', 'abril', 'mayo','junio', 'julio', 'agosto', 'septiembre', 'noviembre', 'diciembre'
+    ];
+
     /**
      * Devuelve una lista de los distintos iconos de la colección de
      * exhibiciones dada.
@@ -58,7 +65,12 @@ class ExhibitionsManager
     {
         $exhibition = isset($data['id']) ? Exhibition::find($data['id']) : new Exhibition();
 
-        $exhibitionFilm = isset($data['exhibition_film']['id']) ? ExhibitionFilm::find($data['exhibition_film']['id']) : new ExhibitionFilm();
+        if (isset($data['exhibition_film']['id'])) {
+            $exhibitionFilm = ExhibitionFilm::find($data['exhibition_film']['id']);
+        } else {
+            $exhibitionFilm = new ExhibitionFilm();
+        }
+
         $exhibitionFilm->film_id = $data['exhibition_film']['film']['id'];
         $exhibitionFilm->save();
         $exhibition->exhibitionFilm()->associate($exhibitionFilm);
@@ -100,11 +112,8 @@ class ExhibitionsManager
      */
     public function convertMonthFromHumanToNumber($humanDate, $delimiter = '-')
     {
-        $monthsMap = ['enero', 'febrero', 'marzo', 'abril', 'mayo','junio', 'julio', 'agosto', 'septiembre',
-            'noviembre', 'diciembre'];
-        $monthIndex = 1;
-
-        $dateParts  = explode($delimiter, $humanDate);
+        $monthPosition  = 1;
+        $dateParts      = explode($delimiter, $humanDate);
 
         if (count($dateParts) !== 3) {
             throw new InvalidArgumentException(
@@ -112,13 +121,13 @@ class ExhibitionsManager
             );
         }
 
-        $monthNumber = array_search($dateParts[$monthIndex], $monthsMap);
+        $monthNumber = array_search($dateParts[$monthPosition], self::$monthsMap);
 
         if (is_bool($monthNumber)) {
-            throw new InvalidArgumentException('The month "' . $dateParts[$monthIndex] . '" is not valid.');
+            throw new InvalidArgumentException('The month "' . $dateParts[$monthPosition] . '" is not valid.');
         }
 
-        $dateParts[$monthIndex] = $monthNumber + 1;
+        $dateParts[$monthPosition] = $monthNumber + 1;
 
         return implode($delimiter, $dateParts);
     }

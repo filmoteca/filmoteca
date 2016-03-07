@@ -5,7 +5,7 @@ use Carbon\Carbon;
 use InvalidArgumentException;
 use Filmoteca\Models\Exhibitions\Exhibition;
 use Filmoteca\Models\Exhibitions\ExhibitionFilm;
-use Filmoteca\Models\Film;
+use Filmoteca\Models\Exhibitions\Film;
 use Filmoteca\Pagination\Results;
 use Illuminate\Database\Eloquent\Collection;
 

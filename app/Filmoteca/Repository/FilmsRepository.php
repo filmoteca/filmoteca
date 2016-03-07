@@ -1,6 +1,6 @@
 <?php namespace Filmoteca\Repository;
 
-use Filmoteca\Models\Film;
+use Filmoteca\Models\Exhibitions\Film;
 use Filmoteca\Pagination\Results;
 use Exception;
 use InvalidArgumentException;
