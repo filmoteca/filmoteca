@@ -49,4 +49,9 @@ interface Exhibition
      * @param Type $type
      */
     public function setType(Type $type);
+
+    /**
+     * @return \Illuminate\Support\Collection
+     */
+    public function getSchedulesGroupedByAuditorium();
 }

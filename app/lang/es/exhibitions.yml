@@ -1,3 +1,10 @@
 frontend:
     index:
         title: 'Programación del :textual_day :numeric_day de :textual_month'
+
+
+show:
+    see_more: Ver más
+    see_more_schedules: Ver más horarios
+    see_trailer: Ver trailer
+    is_presented_at: Se presneta en las salas

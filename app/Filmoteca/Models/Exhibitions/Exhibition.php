@@ -200,4 +200,16 @@ class Exhibition extends Eloquent implements ExhibitionInterface
     {
         $this->type = $type;
     }
+
+    /**
+     * @return static
+     */
+    public function getSchedulesGroupedByAuditorium()
+    {
+        $schedules = $this->getSchedules()->groupBy(function (Schedule $schedule) {
+            return $schedule->getAuditorium()->getId();
+        });
+
+        return $schedules->toArray();
+    }
 }

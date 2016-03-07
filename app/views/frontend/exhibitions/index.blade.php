@@ -48,5 +48,25 @@
                 </div>
             </div>
         </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3>@lang('exhibitions.show.is_presented_at')</h3>
+            </div>
+            <div class="panel-body">
+                @foreach ($exhibition->getSchedulesGroupedByAuditorium() as $group)
+                    <div class="row">
+                        <div class="col-md-6">
+                            <span class="auditorium-name">
+                                {{ $group[0]->getAuditorium()->getName() }}
+                            </span>
+                            <a href="#">@lang('exhibitions.show.see_more')</a>
+                        </div>
+                        <div class="col-md-6">
+                            {{ HTML::schedulesTimeAsList($group) }}
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
     @endforeach
 @stop

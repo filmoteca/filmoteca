@@ -30,7 +30,7 @@ HTML::macro('resource', function($type, $list = array())
 		{
 			$html .= HTML::{$type}( $element );
 		}else{
-		
+
 			if (!isset($element[1]))
 			{
 				$element[1] = array();
@@ -46,4 +46,14 @@ HTML::macro('resource', function($type, $list = array())
 HTML::macro('metatags', function( $metas )
 {
 	return '';
+});
+
+HTML::macro('schedulesTimeAsList', function (array $schedules, $format = 'H:i') {
+
+	$times = array_map(function (\Filmoteca\Exhibition\Type\Schedule $schedule) use ($format) {
+
+		return '<span>' . $schedule->getEntry()->format($format) . '</span>';
+	}, $schedules);
+
+	return implode('/', $times);
 });
