@@ -11,7 +11,7 @@ use Illuminate\Support\Collection;
 class ScheduleCollection extends Collection
 {
     /**
-     * @return array
+     * @return ScheduleCollection
      */
     public function groupByAuditorium()
     {
