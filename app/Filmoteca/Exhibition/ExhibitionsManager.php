@@ -1,4 +1,6 @@
-<?php namespace Filmoteca;
+<?php
+
+namespace Filmoteca\Exhibition;
 
 use InvalidArgumentException;
 use Illuminate\Database\Eloquent\Collection;
@@ -14,6 +16,9 @@ class ExhibitionsManager
 {
     const DATE_FORMAT = 'j-n-Y';
 
+    /**
+     * @var array
+     */
     private static $monthsMap = [
         'enero', 'febrero', 'marzo', 'abril', 'mayo','junio', 'julio', 'agosto', 'septiembre', 'noviembre', 'diciembre'
     ];
