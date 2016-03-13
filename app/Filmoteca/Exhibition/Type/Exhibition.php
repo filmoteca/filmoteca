@@ -2,8 +2,6 @@
 
 namespace Filmoteca\Exhibition\Type;
 
-use \Illuminate\Support\Collection;
-
 /**
  * Interface Exhibition
  * @package Filmoteca\Exhibition\Type
@@ -31,14 +29,14 @@ interface Exhibition
     public function setFilm(Film $film);
 
     /**
-     * @return \Illuminate\Support\Collection
+     * @return ScheduleCollection
      */
     public function getSchedules();
 
     /**
-     * @param \Illuminate\Support\Collection $schedules
+     * @param ScheduleCollection $schedules
      */
-    public function setSchedules(Collection $schedules);
+    public function setSchedules(ScheduleCollection $schedules);
 
     /**
      * @return Type
@@ -49,9 +47,4 @@ interface Exhibition
      * @param Type $type
      */
     public function setType(Type $type);
-
-    /**
-     * @return \Illuminate\Support\Collection
-     */
-    public function getSchedulesGroupedByAuditorium();
 }

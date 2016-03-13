@@ -6,6 +6,7 @@ use DB;
 use Filmoteca\Exhibition\Type\Exhibition as ExhibitionInterface;
 use Filmoteca\Exhibition\Type\Film;
 use Filmoteca\Exhibition\Type\Type;
+use Filmoteca\Exhibition\Type\ScheduleCollection;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model as Eloquent;
 
@@ -170,17 +171,17 @@ class Exhibition extends Eloquent implements ExhibitionInterface
     }
 
     /**
-     * @return \Illuminate\Support\Collection
+     * @return ScheduleCollection
      */
     public function getSchedules()
     {
-        return $this->schedules;
+        return new ScheduleCollection($this->schedules->all());
     }
 
     /**
-     * @param \Illuminate\Support\Collection $schedules
+     * @param ScheduleCollection $schedules
      */
-    public function setSchedules(\Illuminate\Support\Collection $schedules)
+    public function setSchedules(ScheduleCollection $schedules)
     {
         $this->schedules = $schedules;
     }
@@ -199,17 +200,5 @@ class Exhibition extends Eloquent implements ExhibitionInterface
     public function setType(Type $type)
     {
         $this->type = $type;
-    }
-
-    /**
-     * @return static
-     */
-    public function getSchedulesGroupedByAuditorium()
-    {
-        $schedules = $this->getSchedules()->groupBy(function (Schedule $schedule) {
-            return $schedule->getAuditorium()->getId();
-        });
-
-        return $schedules->toArray();
     }
 }

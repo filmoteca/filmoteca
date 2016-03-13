@@ -3,7 +3,7 @@
 namespace Filmoteca\Exhibition;
 
 use InvalidArgumentException;
-use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Collection;
 use Filmoteca\Models\Exhibitions\Exhibition;
 use Filmoteca\Models\Exhibitions\ExhibitionFilm;
 use Filmoteca\Models\Exhibitions\Schedule;
