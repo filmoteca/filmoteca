@@ -2,8 +2,7 @@
 
 use Carbon\Carbon;
 use Filmoteca\Repository\ExhibitionsRepository;
-use Filmoteca\Models\Exhibitions\Auditorium;
-use Filmoteca\ExhibitionsManager;
+use Filmoteca\Exhibition\ExhibitionsManager;
 
 /**
  * Class ExhibitionController

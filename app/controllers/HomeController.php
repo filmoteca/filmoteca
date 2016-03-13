@@ -2,29 +2,39 @@
 
 use Filmoteca\Repository\ExhibitionsRepository;
 use Filmoteca\Repository\NewsRepository;
-use Filmoteca\ExhibitionsManager;
+use Filmoteca\Exhibition\ExhibitionsManager;
 use Filmoteca\Repository\AdvertisementRepository;
 use Filmoteca\Repository\CarouselsRepository;
 
-class HomeController extends BaseController {
-
-	public function __construct(
+/**
+ * Class HomeController
+ */
+class HomeController extends BaseController
+{
+    /**
+     * @param ExhibitionsRepository $exhibitionRepository
+     * @param NewsRepository $newsRepository
+     * @param ExhibitionsManager $exhibitionsManager
+     * @param AdvertisementRepository $advertisementRepository
+     * @param CarouselsRepository $carouselRepository
+     */
+    public function __construct(
         ExhibitionsRepository $exhibitionRepository,
         NewsRepository $newsRepository,
         ExhibitionsManager $exhibitionsManager,
         AdvertisementRepository $advertisementRepository,
         CarouselsRepository $carouselRepository
     ) {
-        $this->newsRepository           = $newsRepository;
-		$this->exhibitionRepository     = $exhibitionRepository;
-        $this->exhibitionsManager       = $exhibitionsManager;
-        $this->advertisementRepository  = $advertisementRepository;
-        $this->carouselRepository       = $carouselRepository;
-	}
+        $this->newsRepository = $newsRepository;
+        $this->exhibitionRepository = $exhibitionRepository;
+        $this->exhibitionsManager = $exhibitionsManager;
+        $this->advertisementRepository = $advertisementRepository;
+        $this->carouselRepository = $carouselRepository;
+    }
 
-	public function index()
-	{
-		$exhibitions = $this->exhibitionRepository->search('today');
+    public function index()
+    {
+        $exhibitions = $this->exhibitionRepository->search('today');
 
         $auditoriums = $this->exhibitionsManager->getAuditoriums($exhibitions);
 
@@ -38,6 +48,6 @@ class HomeController extends BaseController {
 
         $viewData = compact('exhibitions', 'news', 'icons', 'auditoriums', 'advertisements', 'carousels');
 
-		return View::make('pages.home.index', $viewData);
-	}
+        return View::make('pages.home.index', $viewData);
+    }
 }
