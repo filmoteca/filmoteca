@@ -3,6 +3,7 @@
 namespace Filmoteca\Exhibition\Type\Calendar;
 
 use Carbon\Carbon;
+use Filmoteca\Exhibition\ExhibitionsManager;
 
 /**
  * Class Day
@@ -46,7 +47,10 @@ class Day
      */
     public function getDateInFormatToUrl()
     {
-        return $this->date->format('j M');
+        $monthsMap = ExhibitionsManager::getMonthsMap();
+        $date = $this->date->day . '-' . $monthsMap[$this->date->month] . '-' . $this->date->year;
+
+        return $date;
     }
 
     /**
