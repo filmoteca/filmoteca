@@ -7,6 +7,7 @@ use Illuminate\Support\Collection;
 use Filmoteca\Models\Exhibitions\Exhibition;
 use Filmoteca\Models\Exhibitions\ExhibitionFilm;
 use Filmoteca\Models\Exhibitions\Schedule;
+use Carbon\Carbon;
 
 /**
  * Class ExhibitionsManager
@@ -15,6 +16,19 @@ use Filmoteca\Models\Exhibitions\Schedule;
 class ExhibitionsManager
 {
     const DATE_FORMAT = 'j-n-Y';
+
+    /**
+     * @var CalendarGenerator
+     */
+    protected $calendarGenerator;
+
+    /**
+     * @param CalendarGenerator $calendarGenerator
+     */
+    public function __construct(CalendarGenerator $calendarGenerator)
+    {
+        $this->calendarGenerator = $calendarGenerator;
+    }
 
     /**
      * @var array
@@ -135,5 +149,16 @@ class ExhibitionsManager
         $dateParts[$monthPosition] = $monthNumber + 1;
 
         return implode($delimiter, $dateParts);
+    }
+
+    /**
+     * @param Carbon $date
+     * @return array
+     */
+    public function getCalendar(Carbon $date)
+    {
+        $calendar = $this->calendarGenerator->generate($date);
+
+        return $calendar;
     }
 }
