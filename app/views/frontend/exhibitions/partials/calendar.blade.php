@@ -26,14 +26,14 @@
         <tr>
             @foreach($week->getDays() as $day)
                 <td>
-                    @if ($day->isActive())
+                    @if ($day->getDate()->month === $date->month)
                         @if ($day->hasExhibitions())
-                            <a class="active" href="{{ $day->getDateInFormatToUrl() }}">{{ $day->getDateInFormatToUrl() }}</a>
+                            <a class="active" href="{{ $day->getDateInFormatToUrl() }}">{{ $day->getNumber() }}</a>
                         @else
                             <a class="active">{{ $day->getNumber() }}</a>
                         @endif
                     @else
-                        <a class="disabled">{{ $day->getNumber() }}</a>
+                        <span class="disabled">{{ $day->getNumber() }}</span>
                     @endif
                 </td>
             @endforeach
