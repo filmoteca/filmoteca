@@ -9,7 +9,7 @@
 @stop
 
 @section('sidebar')
-    @include('frontend.exhibitions.partials.calendar', ['dates' => $calendar])
+    @include('frontend.exhibitions.partials.calendar', ['dates' => $calendar, 'date' => $date])
 @stop
 
 @section('content')

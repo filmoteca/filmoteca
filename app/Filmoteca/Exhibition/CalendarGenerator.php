@@ -13,22 +13,15 @@ use Filmoteca\Exhibition\Type\Calendar\Week;
  */
 class CalendarGenerator
 {
-    const FIRST_DAY = 1;
-    const FORWARD = 1;
-    const BACKWARD = 2;
-
     /**
      * @param Carbon $date
      * @return array
      */
     public function generate(Carbon $date)
     {
-        // Start in Monday then we must subtract one because we want to start in Sunday
-        $firstSundayOfMonth = Carbon::create($date->year, $date->month, $date->day)
-            ->startOfWeek()
-            ->subDay();
+        $firstOfCalendar = $this->getFirstDayOfCalendar($date);
 
-        $weeks = $this->fillCalendar([], $firstSundayOfMonth);
+        $weeks = $this->fillCalendar([], $firstOfCalendar);
 
         $calendar = new Calendar();
         $calendar->setWeeks($weeks);
@@ -82,5 +75,25 @@ class CalendarGenerator
         $newDate = clone $date;
 
         return $this->fillWeek($week, $newDate->addDay());
+    }
+
+    /**
+     * @param Carbon $date
+     * @return Carbon
+     */
+    protected function getFirstDayOfCalendar(Carbon $date)
+    {
+        $firstOfMonth = Carbon::create($date->year, $date->month, $date->day)
+            ->firstOfMonth();
+
+        if ($firstOfMonth->dayOfWeek === Carbon::SUNDAY) {
+            return $firstOfMonth;
+        }
+
+        while ($firstOfMonth->dayOfWeek !== Carbon::SUNDAY) {
+            $firstOfMonth->subDay();
+        }
+
+        return $firstOfMonth;
     }
 }
