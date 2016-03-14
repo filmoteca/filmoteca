@@ -15,7 +15,7 @@ class CalendarGenerator
 {
     /**
      * @param Carbon $date
-     * @return array
+     * @return Calendar
      */
     public function generate(Carbon $date)
     {
@@ -63,7 +63,6 @@ class CalendarGenerator
     {
         $day = new Day();
         $day->setActive(true);
-        $day->setExhibitionsNumber(1);
         $day->setDate($date);
 
         $week[$date->dayOfWeek] = $day;
