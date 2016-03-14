@@ -1,7 +1,9 @@
 frontend:
     index:
         title: 'Programación del :textual_day :numeric_day de :textual_month'
-
+    calendar:
+        title: Cine UNAM
+        subtitle: Consulta programacion
 
 show:
     see_more: Ver más
