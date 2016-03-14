@@ -4,6 +4,7 @@ frontend:
     calendar:
         title: Cine UNAM
         subtitle: Consulta programacion
+        exhibitions-in-the-day: ':number exhibiciones en este día'
 
 show:
     see_more: Ver más
