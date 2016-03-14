@@ -5,7 +5,14 @@
 @stop
 
 @section('title')
-    @lang('exhibitions.collection.title', ['date' => $date])
+    @lang(
+        'exhibitions.frontend.index.title',
+        [
+            'textual_day' => @trans('dates.days.' . $date->format('l')),
+            'numeric_day' => $date->format('j'),
+            'textual_month' => @trans('dates.months.' . $date->format('F'))
+        ]
+    )
 @stop
 
 @section('sidebar')
@@ -14,15 +21,14 @@
 
 @section('content')
     <h1>
-        {{ @trans(
-                'exhibitions.frontend.index.title',
-                [
-                    'textual_day' => @trans('dates.days.' . $date->format('l')),
-                    'numeric_day' => $date->format('j'),
-                    'textual_month' => @trans('dates.months.' . $date->format('F'))
-                ]
-            )
-        }}
+        @lang(
+        'exhibitions.frontend.index.title',
+        [
+            'textual_day' => @trans('dates.days.' . $date->format('l')),
+            'numeric_day' => $date->format('j'),
+            'textual_month' => @trans('dates.months.' . $date->format('F'))
+        ]
+    )
     </h1>
 
     <div class="row">

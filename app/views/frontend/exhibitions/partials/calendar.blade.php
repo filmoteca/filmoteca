@@ -33,7 +33,9 @@
                     <td>
                         @if ($day->getDate()->month === $date->month)
                             @if ($day->hasExhibitions())
-                                <a class="active" href="{{ $day->getDateInFormatToUrl() }}">{{ $day->getNumber() }}</a>
+                                <a class="active"
+                                   title="@lang('exhibitions.frontend.calendar.exhibitions-in-the-day', ['number' => $day->getExhibitionsNumber()]) "
+                                   href="{{ $day->getDateInFormatToUrl() }}">{{ $day->getNumber() }}</a>
                             @else
                                 <a class="active">{{ $day->getNumber() }}</a>
                             @endif
