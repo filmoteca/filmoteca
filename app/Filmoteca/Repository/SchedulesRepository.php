@@ -3,6 +3,7 @@
 namespace Filmoteca\Repository;
 
 use Filmoteca\Models\Exhibitions\Schedule;
+use Carbon\Carbon;
 
 /**
  * Class SchedulesRepository
@@ -10,6 +11,8 @@ use Filmoteca\Models\Exhibitions\Schedule;
  */
 class SchedulesRepository
 {
+    const DATE_FORMAT = 'Y-m-d';
+
     /**
      * @var \Filmoteca\Models\Exhibitions\Schedule
      */
@@ -33,7 +36,7 @@ class SchedulesRepository
     {
         $schedules = $this->findByDateInterval($from, $until, $order);
 
-        $groupedSchedules = $schedules->groupBy(function($schedule) {
+        $groupedSchedules = $schedules->groupBy(function ($schedule) {
             return $schedule->auditorium->id;
         });
 
@@ -62,6 +65,20 @@ class SchedulesRepository
                 'auditorium'
             )
             ->get();
+
+        return $schedules;
+    }
+
+    /**
+     * @param Carbon $date
+     * @return \Illuminate\Support\Collection
+     */
+    public function findOfMonth(Carbon $date)
+    {
+        $startDate = $date->firstOfMonth()->format(self::DATE_FORMAT);
+        $endDate = $date->lastOfMonth()->format(self::DATE_FORMAT);
+
+        $schedules = $this->findByDateInterval($startDate, $endDate);
 
         return $schedules;
     }
