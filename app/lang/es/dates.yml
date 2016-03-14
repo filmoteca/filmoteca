@@ -18,3 +18,11 @@ days:
     Friday: viernes
     Saturday: sábado
     Sunday: domingo
+week-days-abbreviations:
+    Mo: lu
+    Tu: ma
+    We: mi
+    Th: ju
+    Fr: vi
+    Sa: sá
+    Su: do

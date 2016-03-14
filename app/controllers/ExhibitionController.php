@@ -47,8 +47,9 @@ class ExhibitionController extends BaseController
         }
 
         $exhibitions = $this->repository->findByDate($date);
+        $calendar = $this->manager->getCalendar($date);
 
-        return View::make('frontend.exhibitions.index', compact('exhibitions', 'date'));
+        return View::make('frontend.exhibitions.index', compact('exhibitions', 'date', 'calendar'));
     }
 
     /**
