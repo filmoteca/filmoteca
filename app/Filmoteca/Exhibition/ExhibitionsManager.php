@@ -2,6 +2,7 @@
 
 namespace Filmoteca\Exhibition;
 
+use Filmoteca\Repository\SchedulesRepository;
 use InvalidArgumentException;
 use Illuminate\Support\Collection;
 use Filmoteca\Models\Exhibitions\Exhibition;
@@ -23,11 +24,18 @@ class ExhibitionsManager
     protected $calendarGenerator;
 
     /**
-     * @param CalendarGenerator $calendarGenerator
+     * @var SchedulesRepository
      */
-    public function __construct(CalendarGenerator $calendarGenerator)
+    protected $schedulesRepository;
+
+    /**
+     * @param CalendarGenerator $calendarGenerator
+     * @param SchedulesRepository $schedulesRepository
+     */
+    public function __construct(CalendarGenerator $calendarGenerator, SchedulesRepository $schedulesRepository)
     {
         $this->calendarGenerator = $calendarGenerator;
+        $this->schedulesRepository = $schedulesRepository;
     }
 
     /**
@@ -36,6 +44,14 @@ class ExhibitionsManager
     private static $monthsMap = [
         'enero', 'febrero', 'marzo', 'abril', 'mayo','junio', 'julio', 'agosto', 'octubre', 'septiembre', 'noviembre', 'diciembre'
     ];
+
+    /**
+     * @return array
+     */
+    public static function getMonthsMap()
+    {
+        return self::$monthsMap;
+    }
 
     /**
      * Devuelve una lista de los distintos iconos de la colección de
@@ -152,12 +168,25 @@ class ExhibitionsManager
     }
 
     /**
-     * @param Carbon $date
+     * @param Carbon $date The date is cloned internally so it is avoided side-effects
      * @return array
      */
     public function getCalendar(Carbon $date)
     {
+        $date = clone $date;
         $calendar = $this->calendarGenerator->generate($date);
+        $schedules = $this->schedulesRepository->findOfMonth($date)
+            ->groupBy(function (\Filmoteca\Exhibition\Type\Schedule $schedule) {
+                return $schedule->getEntry()->day;
+            })->all();
+
+        /** @var \Filmoteca\Exhibition\Type\Calendar\Day $day */
+        foreach ($calendar->getDays() as $day) {
+            $dayNumber = $day->getNumber();
+            if (array_key_exists($dayNumber, $schedules)) {
+                $day->setExhibitionsNumber(count($schedules[$dayNumber]));
+            }
+        }
 
         return $calendar;
     }
