@@ -15,7 +15,7 @@ class ExhibitionsManager
     const DATE_FORMAT = 'j-n-Y';
 
     private static $monthsMap = [
-        'enero', 'febrero', 'marzo', 'abril', 'mayo','junio', 'julio', 'agosto', 'septiembre', 'noviembre', 'diciembre'
+        'enero', 'febrero', 'marzo', 'abril', 'mayo','junio', 'julio', 'agosto', 'octubre', 'septiembre', 'noviembre', 'diciembre'
     ];
 
     /**

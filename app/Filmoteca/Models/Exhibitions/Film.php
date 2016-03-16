@@ -195,7 +195,7 @@ class Film extends Eloquent implements StaplerableInterface, FilmInterface
      */
     public function setTitle($title)
     {
-        // TODO: Implement setTitle() method.
+        $this->title =$title;
     }
 
     /**
@@ -203,15 +203,15 @@ class Film extends Eloquent implements StaplerableInterface, FilmInterface
      */
     public function getOriginalTile()
     {
-        // TODO: Implement getOriginalTile() method.
+        return $this->original_title;
     }
 
     /**
      * @param String $originalTile
      */
-    public function setOriginalTile($originalTile)
+    public function setOriginalTile($original_title)
     {
-        // TODO: Implement setOriginalTile() method.
+        $this->original_title =$original_title;
     }
 
     /**
@@ -219,7 +219,7 @@ class Film extends Eloquent implements StaplerableInterface, FilmInterface
      */
     public function getDuration()
     {
-        // TODO: Implement getDuration() method.
+        return $this->duration;
     }
 
     /**
@@ -227,7 +227,7 @@ class Film extends Eloquent implements StaplerableInterface, FilmInterface
      */
     public function setDuration($duration)
     {
-        // TODO: Implement setDuration() method.
+        $this->duration =$duration;
     }
 
     /**
@@ -235,7 +235,7 @@ class Film extends Eloquent implements StaplerableInterface, FilmInterface
      */
     public function getYears()
     {
-        // TODO: Implement getYears() method.
+        return $this->years;
     }
 
     /**
@@ -243,7 +243,7 @@ class Film extends Eloquent implements StaplerableInterface, FilmInterface
      */
     public function setYears($years)
     {
-        // TODO: Implement setYears() method.
+        $this->years =$years;
     }
 
     /**
@@ -251,7 +251,7 @@ class Film extends Eloquent implements StaplerableInterface, FilmInterface
      */
     public function getGenre()
     {
-        // TODO: Implement getGenre() method.
+        return $this->genre;
     }
 
     /**
@@ -259,7 +259,7 @@ class Film extends Eloquent implements StaplerableInterface, FilmInterface
      */
     public function setGenre($genre)
     {
-        // TODO: Implement setGenre() method.
+        $this->genre =$genre;
     }
 
     /**
@@ -267,7 +267,7 @@ class Film extends Eloquent implements StaplerableInterface, FilmInterface
      */
     public function getDirector()
     {
-        // TODO: Implement getDirector() method.
+        return $this->director;
     }
 
     /**
@@ -275,7 +275,7 @@ class Film extends Eloquent implements StaplerableInterface, FilmInterface
      */
     public function setDirector($director)
     {
-        // TODO: Implement setDirector() method.
+        $this->director =$director;
     }
 
     /**
@@ -283,7 +283,7 @@ class Film extends Eloquent implements StaplerableInterface, FilmInterface
      */
     public function getScript()
     {
-        // TODO: Implement getScript() method.
+        return $this->script;
     }
 
     /**
@@ -291,7 +291,7 @@ class Film extends Eloquent implements StaplerableInterface, FilmInterface
      */
     public function setScript($script)
     {
-        // TODO: Implement setScript() method.
+        $this->script =$script;
     }
 
     /**
@@ -299,7 +299,7 @@ class Film extends Eloquent implements StaplerableInterface, FilmInterface
      */
     public function getPhotographic()
     {
-        // TODO: Implement getPhotographic() method.
+        return $this->photographic;
     }
 
     /**
@@ -307,7 +307,7 @@ class Film extends Eloquent implements StaplerableInterface, FilmInterface
      */
     public function setPhotographic($photographic)
     {
-        // TODO: Implement setPhotographic() method.
+        $this->photographic =$photographic;
     }
 
     /**
@@ -315,7 +315,7 @@ class Film extends Eloquent implements StaplerableInterface, FilmInterface
      */
     public function getMusic()
     {
-        // TODO: Implement getMusic() method.
+        return $this->music;
     }
 
     /**
@@ -323,7 +323,7 @@ class Film extends Eloquent implements StaplerableInterface, FilmInterface
      */
     public function setMusic($music)
     {
-        // TODO: Implement setMusic() method.
+        $this->music =$music;
     }
 
     /**
@@ -331,7 +331,7 @@ class Film extends Eloquent implements StaplerableInterface, FilmInterface
      */
     public function getEdition()
     {
-        // TODO: Implement getEdition() method.
+        return $this->edition;
     }
 
     /**
@@ -339,7 +339,7 @@ class Film extends Eloquent implements StaplerableInterface, FilmInterface
      */
     public function setEdition($edition)
     {
-        // TODO: Implement setEdition() method.
+        $this->edition =$edition;
     }
 
     /**
@@ -347,7 +347,7 @@ class Film extends Eloquent implements StaplerableInterface, FilmInterface
      */
     public function getProduction()
     {
-        // TODO: Implement getProduction() method.
+        return $this->production;
     }
 
     /**
@@ -355,7 +355,7 @@ class Film extends Eloquent implements StaplerableInterface, FilmInterface
      */
     public function setProduction($production)
     {
-        // TODO: Implement setProduction() method.
+        $this->production =$production;
     }
 
     /**
@@ -363,7 +363,7 @@ class Film extends Eloquent implements StaplerableInterface, FilmInterface
      */
     public function getCast()
     {
-        // TODO: Implement getCast() method.
+        return $this->cast;
     }
 
     /**
@@ -371,7 +371,7 @@ class Film extends Eloquent implements StaplerableInterface, FilmInterface
      */
     public function setCast($cast)
     {
-        // TODO: Implement setCast() method.
+        $this->cast =$cast;
     }
 
     /**
@@ -379,7 +379,7 @@ class Film extends Eloquent implements StaplerableInterface, FilmInterface
      */
     public function getSynopsis()
     {
-        // TODO: Implement getSynopsis() method.
+        return $this->synopsis;
     }
 
     /**
@@ -387,7 +387,7 @@ class Film extends Eloquent implements StaplerableInterface, FilmInterface
      */
     public function setSynopsis($synopsis)
     {
-        // TODO: Implement setSynopsis() method.
+        $this->synopsis =$synopsis;
     }
 
     /**
@@ -395,7 +395,7 @@ class Film extends Eloquent implements StaplerableInterface, FilmInterface
      */
     public function getTrailer()
     {
-        // TODO: Implement getTrailer() method.
+        return $this->trailer;
     }
 
     /**
@@ -403,7 +403,7 @@ class Film extends Eloquent implements StaplerableInterface, FilmInterface
      */
     public function setTrailer($trailer)
     {
-        // TODO: Implement setTrailer() method.
+        $this->trailer =$trailer;
     }
 
     /**
@@ -446,7 +446,7 @@ class Film extends Eloquent implements StaplerableInterface, FilmInterface
      */
     public function setNotes($notes)
     {
-        // TODO: Implement setNotes() method.
+        $this->notes =$notes;
     }
 
 
