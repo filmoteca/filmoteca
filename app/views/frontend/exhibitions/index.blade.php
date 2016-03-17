@@ -76,7 +76,11 @@
                         <h2>{{ $exhibition->getFilm()->getTitle() }}</h2>
 
                         <!-- Texto que mostrará duración, fecha y año -->
-                        <h6 align='center'>{{ $exhibition->getFilm()->getDuration() }}</h6>
+                        <h6 align='center'>
+                            <span class="countries">{{ HTML::implode($exhibition->getFilm()->getCountries(), 'name') }}</span>
+                            <span class="years">{{ implode(',', $exhibition->getFilm()->getYears()) }}</span>
+                            <span class="duration">{{ $exhibition->getFilm()->getDuration() }} min.</span>
+                        </h6>
 
                         <!-- Nav tabs -->
                         <div role="tabpanel">
@@ -91,8 +95,7 @@
 
                             <!-- Tab panes -->
                             <div class="tab-contnet">
-                                <div role="tabpanel" class="tab-pane"
-                                "active" id="tabs-1">
+                                <div role="tabpanel" class="tab-pane" active id="tabs-1">
                                 <p>{{ $exhibition->getFilm()->getSynopsis() }}</p>
                             </div>
 
