@@ -207,11 +207,11 @@ class Film extends Eloquent implements StaplerableInterface, FilmInterface
     }
 
     /**
-     * @param String $originalTile
+     * @param string $originalTitle
      */
-    public function setOriginalTile($original_title)
+    public function setOriginalTile($originalTitle)
     {
-        $this->original_title =$original_title;
+        $this->original_title = $originalTitle;
     }
 
     /**
@@ -449,5 +449,11 @@ class Film extends Eloquent implements StaplerableInterface, FilmInterface
         $this->notes =$notes;
     }
 
-
+    /**
+     * @return Collection
+     */
+    public function getCountries()
+    {
+        return $this->countries;
+    }
 }

@@ -176,4 +176,9 @@ interface Film
      * @param String $notes
      */
     public function setNotes($notes);
+
+    /**
+     * @return array
+     */
+    public function getCountries();
 }

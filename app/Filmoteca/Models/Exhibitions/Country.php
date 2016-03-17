@@ -30,4 +30,9 @@ class Country extends Eloquent
 
         return $this->where('name', $name)->get();
     }
+
+    public function getName()
+    {
+        return $this->name;
+    }
 }
