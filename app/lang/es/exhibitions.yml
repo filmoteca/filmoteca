@@ -3,11 +3,12 @@ frontend:
         title: 'Programación del :textual_day :numeric_day de :textual_month'
     calendar:
         title: Cine UNAM
-        subtitle: Consulta programacion
+        subtitle: Consulta programación
         exhibitions-in-the-day: ':number exhibiciones en este día'
 
 show:
-    see_more: Ver más
-    see_more_schedules: Ver más horarios
+    see_more: Ver más »
+    see_ubication: Ver ubicación
+    see_more_schedules: Ver más horarios »
     see_trailer: Ver trailer
     is_presented_at: Se presenta en las salas
