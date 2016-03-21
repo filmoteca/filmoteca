@@ -58,8 +58,7 @@
 
                         <!-- Texto que mostrará duración, fecha y año -->
                         <h6 align='center'>
-                            <span class="countries">{{ HTML::implode( $exhibition->getFilm()->getCountries(), 'name') }}</span>
-                            <span> / </span>
+                            <span class="countries">{{ $exhibition->getFilm()->getCountries()->implode('name', ', ') }}</span>
                             <span class="years">{{ implode(',', $exhibition->getFilm()->getYears()) }}</span>
                             <span> / </span>
                             <span class="duration">{{ $exhibition->getFilm()->getDuration() }} min.</span>

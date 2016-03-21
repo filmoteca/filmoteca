@@ -57,27 +57,3 @@ HTML::macro('schedulesTimeAsList', function (array $schedules, $format = 'H:i') 
 
 	return implode('/', $times);
 });
-
-/**
- *
- * @param \Illuminate\Support\Collection $collection
- * @param string $property It can be a property name that is public, private or protected. If the property is
- * @param string $glue
- * private or protected then the associated accessor (getter) method is used.
- */
-HTML::macro('implode', function (\Illuminate\Support\Collection $collection, $property, $glue = ', ') {
-
-    if ($collection->isEmpty()) {
-        return '';
-    }
-
-    $method = 'get' . ucfirst($property);
-
-    if (method_exists($collection->first(), $method)) {
-        return $collection->reduce(function ($glued, $item) use ($glue, $method) {
-            return $glued . $item->$method();
-        }, '');
-    }
-
-    return '';
-});
