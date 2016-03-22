@@ -8,7 +8,7 @@ frontend:
 
 show:
     see_more: Ver más »
-    see_ubication: Ver ubicación
+    see_location: Ver ubicación
     see_more_schedules: Ver más horarios »
     see_trailer: Ver trailer
     is_presented_at: Se presenta en las salas
