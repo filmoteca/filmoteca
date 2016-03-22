@@ -33,6 +33,7 @@
 
     <br>
 
+    <div class="exhibitions index">
     @foreach ($exhibitions as $exhibition)
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -126,34 +127,34 @@
                                         <span class="auditorium-name">
                                             {{ $scheduleGroup->getAuditorium()->getName() }}
                                         </span>
-                                    <a href="#">@lang('exhibitions.show.see_ubication')</a>
+                                    <a href="#">@lang('exhibitions.show.see_location')</a>
                                 </div>
                                 <div class="col-md-6">
                                     {{ HTML::schedulesTimeAsList($scheduleGroup->getSchedules()) }}
                                 </div>
                             </div>
-                            @endforeach
-                                    <!-- Botón que desplegará más horarios -->
+                        @endforeach
 
-                            <div align="right">
-                                <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#demo"
-                                        title="Ver más horarios">@lang('exhibitions.show.see_more_schedules')
-                                </button>
-                                <div align="left" id="demo" class="collapse">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                        minim veniam,
-                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat.
-                                    </p>
-                                </div>
+                        <!-- Botón que desplegará más horarios -->
+                        <div align="right">
+                            <button type="button"
+                                    class="btn btn-default more-schedules"
+                                    data-href="{{ URL::route('exhibition.schedule.search',['exhibtionId' => $exhibition->getId()]) }}"
+                                    data-since="{{ $exhibition->getSchedules()->first()->getEntry()->format(MYSQL_DATE_FORMAT)  }}"
+                                    title="@lang('exhibition.see_more_schedules')">
+                                @lang('exhibitions.show.see_more_schedules')
+                            </button>
+                            <div align="left" class="collapse">
+                                {{-- This content is loaded with AJAX and it is located in --}}
+                                {{-- views/frontend/exhibitions/partials/more-schedules    --}}
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
     @endforeach
+    </div>
 @stop
 

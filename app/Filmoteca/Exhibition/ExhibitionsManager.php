@@ -42,7 +42,8 @@ class ExhibitionsManager
      * @var array
      */
     private static $monthsMap = [
-        'enero', 'febrero', 'marzo', 'abril', 'mayo','junio', 'julio', 'agosto', 'octubre', 'septiembre', 'noviembre', 'diciembre'
+        'enero', 'febrero', 'marzo', 'abril', 'mayo','junio', 'julio', 'agosto', 'octubre', 'septiembre', 'noviembre',
+        'diciembre'
     ];
 
     /**

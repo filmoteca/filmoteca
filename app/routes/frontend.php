@@ -32,6 +32,11 @@ Route::group(['prefix' => 'exhibition'], function () {
     ]);
 
     Route::get('/filter/{name?}/{id?}/{title?}', 'ExhibitionController@index');
+
+    Route::get('{id}/schedule', [
+        'as' => 'exhibition.schedule.search',
+        'uses' => 'ScheduleController@search'
+    ]);
 });
 
 Route::get('auditorium/{id}', 'AuditoriumController@show');

@@ -37,7 +37,8 @@
         @yield('default-scripts', HTML::scripts([
             '/bower_components/jquery/dist/jquery.min.js',
             '/bower_components/bootstrap/dist/js/bootstrap.min.js',
-            '/bower_components/slick.js/slick/slick.min.js'
+            '/bower_components/slick.js/slick/slick.min.js',
+            '/assets/js/filmoteca.min.js'
             ]))
 
         @yield('scripts')
