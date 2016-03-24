@@ -31,8 +31,6 @@
     )
     </h1>
 
-    <br>
-
     <div class="exhibitions index">
     @foreach ($exhibitions as $exhibition)
         <div class="panel panel-default">
@@ -51,22 +49,29 @@
             <div class="panel-body">
                 <div class="row">
                     <div class="col-md-4">
-                        <br><br><br>
+                        <div class="fb-like"
+                             data-href="{{ URL::action('ExhibitionController@detail', array('id' => $exhibition->id ))}}"
+                             data-layout="button"
+                             data-action="like"
+                             data-show-faces="true"
+                             data-share="true">
+                        </div>
+                        
                         <img src="{{ $exhibition->getFilm()->getCover()->getMediumImageUrl() }}">
                     </div>
                     <div class="col-md-8">
-                        <span style="color:#810069"><h2
-                                    align='center'>{{ $exhibition->getFilm()->getTitle() }}</h2></span>
+                        <h2 class="text-center">{{ $exhibition->getFilm()->getTitle() }}</h2>
 
                         <!-- Texto que mostrará duración, fecha y año -->
-                        <h6 align='center'>
+                        <h6 class="text-center">
                             <span class="countries">{{ $exhibition->getFilm()->getCountries()->implode('name', ', ') }}</span>
+                            <span> / </span>
                             <span class="years">{{ implode(',', $exhibition->getFilm()->getYears()) }}</span>
                             <span> / </span>
                             <span class="duration">{{ $exhibition->getFilm()->getDuration() }} min.</span>
                         </h6>
 
-                        <!-- Pestañas de sinopsis y trailer-->
+                        <!-- Pestañas de sinopsis, fiche técnica, trailer y notas-->
                         <div class="content">
                             <!-- Nav tabs -->
                             <div role="tabpanel">
@@ -75,7 +80,13 @@
                                         <a data-toggle="tab" role="tab" href="#tab-1">Sinopsis</a>
                                     </li>
                                     <li class="" role="presentation">
-                                        <a data-toggle="tab" role="tab" href="#tab-2">Trailer</a>
+                                        <a data-toggle="tab" role="tab" href="#tab-2">Ficha Técnica</a>
+                                    </li>
+                                    <li class="" role="presentation">
+                                        <a data-toggle="tab" role="tab" href="#tab-3">Trailer</a>
+                                    </li>
+                                    <li class="" role="presentation">
+                                        <a data-toggle="tab" role="tab" href="#tab-4">Notas</a>
                                     </li>
                                 </ul>
 
@@ -84,27 +95,27 @@
                                     <div id="tab-1" class="tab-pane active" role="tabpanel">
                                         <li class="list-group-item">
                                             <p>{{ $exhibition->getFilm()->getSynopsis() }}</p>
-
-                                            <!-- Botón que desplegará más información (sinopsis completa y ficha tecnica) -->
-                                            <div align="right">
-                                                <button id="boton1" type="button" class="btn btn-default"
-                                                        data-toggle="collapse" data-target="#demo1"
-                                                        title="Ver más">@lang('exhibitions.show.see_more')
-                                                </button>
-                                                <div align="left" id="demo1" class="collapse">
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                                        sed do eiusmod tempor incididunt ut labore et dolore magna
-                                                        aliqua. Ut enim ad
-                                                        minim veniam</p>
-                                                </div>
-                                            </div>
                                         </li>
                                     </div>
 
-                                    <!-- Video que se muestra en la pestaña Trailer(tab-2) /4by3-->
+                                    <!-- Ficha técnica que se muestra en la pestaña Ficha técnica(tab-2) -->
                                     <div class="tab-pane" role="tabpanel" id="tab-2">
                                         <li class="list-group-item embed-responsive embed-responsive-16by9">
                                             <p>{{ $exhibition->getFilm()->getTrailer() }}</p>
+                                        </li>
+                                    </div>
+
+                                    <!-- Video que se muestra en la pestaña Trailer(tab-3) /4by3-->
+                                    <div class="tab-pane" role="tabpanel" id="tab-3">
+                                        <li class="list-group-item embed-responsive embed-responsive-16by9">
+                                            <p>{{ $exhibition->getFilm()->getTrailer() }}</p>
+                                        </li>
+                                    </div>
+
+                                    <!-- Notas que se muestran en la pestaña Notas(tab-4) -->
+                                    <div class="tab-pane" role="tabpanel" id="tab-4">
+                                        <li class="list-group-item embed-responsive embed-responsive-16by9">
+                                            <p>{{ $exhibition->getFilm()->getNotes() }}</p>
                                         </li>
                                     </div>
                                 </div>
@@ -117,19 +128,21 @@
 
 
                 <div class="panel panel-default">
-                    <div class="panel-heading">
+                    <div class="panel-heading-hora">
                         <h3>@lang('exhibitions.show.is_presented_at')</h3>
                     </div>
                     <div class="panel-body">
                         @foreach ($exhibition->getSchedules()->groupByAuditorium() as $scheduleGroup)
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-5">
                                         <span class="auditorium-name">
                                             {{ $scheduleGroup->getAuditorium()->getName() }}
                                         </span>
-                                    <a href="#">@lang('exhibitions.show.see_location')</a>
+
+                                            <a href="#">@lang('exhibitions.show.see_location')
+                                            </a>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-7">
                                     {{ HTML::schedulesTimeAsList($scheduleGroup->getSchedules()) }}
                                 </div>
                             </div>
