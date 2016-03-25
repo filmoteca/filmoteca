@@ -48,7 +48,7 @@ class Day
     public function getDateInFormatToUrl()
     {
         $monthsMap = ExhibitionsManager::getMonthsMap();
-        $date = $this->date->day . '-' . $monthsMap[$this->date->month] . '-' . $this->date->year;
+        $date = $this->date->day . '-' . $monthsMap[$this->date->month -1] . '-' . $this->date->year;
 
         return $date;
     }

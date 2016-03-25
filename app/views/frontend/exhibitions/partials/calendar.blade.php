@@ -1,6 +1,6 @@
 
 @section('sidebar')
-    
+
     <span class="glyphicon glyphicon-search pull-left"></span>
 
         <div class="search-autocomplete pull-right">
@@ -58,7 +58,7 @@
                                                        title="@lang('exhibitions.frontend.calendar.exhibitions-in-the-day', ['number' => $day->getExhibitionsNumber()]) "
                                                        href="{{ $day->getDateInFormatToUrl() }}">{{ $day->getNumber() }}</a>
                                                 @else
-                                                    <a class="active">{{ $day->getNumber() }}</a>
+                                                    <a class="active none-exhibition">{{ $day->getNumber() }}</a>
                                                 @endif
                                             @else
                                                 <span class="disabled">{{ $day->getNumber() }}</span>
@@ -71,12 +71,12 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
     </div>
 
     <div class="subscribe-box hidden-xs">
-   
+
         <p>Recibe nuestra cartelera digital</p>
 
          <div class="input-group input-group-sm">
@@ -88,7 +88,7 @@
     </div>
 
     <br><br>
-            
+
     <div class="fb-page" data-href="https://www.facebook.com/Comunidad.Cines.UNAM/?fref=ts" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
         <div class="fb-xfbml-parse-ignore">
             <blockquote cite="https://www.facebook.com/Comunidad.Cines.UNAM/?fref=ts">
