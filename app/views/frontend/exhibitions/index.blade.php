@@ -16,7 +16,47 @@
 @stop
 
 @section('sidebar')
-    @include('frontend.exhibitions.partials.calendar', ['dates' => $calendar, 'date' => $date])
+    <span class="glyphicon glyphicon-search pull-left"></span>
+
+    <div class="flm-section programming">
+        <div class="content">
+            <div class="well-sm">
+                <div class="flm-section flm-subsection carrousel">
+                    @include('frontend.exhibitions.partials.calendar', ['dates' => $calendar, 'date' => $date])
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="subscribe-box hidden-xs">
+
+        <p>@lang('exhibitions.show.receive_our_digital_billboard')</p>
+
+        <div class="input-group input-group-sm">
+            <input type="email" name="email" placeholder="@lang('exhibitions.show.enter_your_email')" class="form-control">
+            <span class="input-group-addon">@</span>
+        </div>
+
+        <button type="button" class="btn btn-success">@lang('exhibitions.show.send')</button>
+    </div>
+
+    <br><br>
+
+    <div class="fb-page"
+         data-href="https://www.facebook.com/Comunidad.Cines.UNAM/?fref=ts"
+         data-tabs="timeline"
+         data-small-header="true"
+         data-adapt-container-width="true"
+         data-hide-cover="false"
+         data-show-facepile="true">
+        <div class="fb-xfbml-parse-ignore">
+            <blockquote cite="https://www.facebook.com/Comunidad.Cines.UNAM/?fref=ts">
+                <a href="https://www.facebook.com/Comunidad.Cines.UNAM/?fref=ts">
+                    @lang('exhibitions.show.unam_cinemas_community')
+                </a>
+            </blockquote>
+        </div>
+    </div>
 @stop
 
 @section('content')
@@ -56,7 +96,7 @@
                              data-show-faces="true"
                              data-share="true">
                         </div>
-                        
+
                         <img src="{{ $exhibition->getFilm()->getCover()->getMediumImageUrl() }}">
                     </div>
                     <div class="col-md-8">
@@ -77,16 +117,16 @@
                             <div role="tabpanel">
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li class="active" role="presentation">
-                                        <a data-toggle="tab" role="tab" href="#tab-1">Sinopsis</a>
+                                        <a data-toggle="tab" role="tab" href="#tab-1">@lang('exhibitions.show.fields.synopsis')</a>
                                     </li>
                                     <li class="" role="presentation">
-                                        <a data-toggle="tab" role="tab" href="#tab-2">Ficha Técnica</a>
+                                        <a data-toggle="tab" role="tab" href="#tab-2">@lang('exhibitions.show.fields.technical_card')</a>
                                     </li>
                                     <li class="" role="presentation">
-                                        <a data-toggle="tab" role="tab" href="#tab-3">Trailer</a>
+                                        <a data-toggle="tab" role="tab" href="#tab-3">@lang('exhibitions.show.fields.trailer')</a>
                                     </li>
                                     <li class="" role="presentation">
-                                        <a data-toggle="tab" role="tab" href="#tab-4">Notas</a>
+                                        <a data-toggle="tab" role="tab" href="#tab-4">@lang('exhibitions.show.fields.notes')</a>
                                     </li>
                                 </ul>
 
