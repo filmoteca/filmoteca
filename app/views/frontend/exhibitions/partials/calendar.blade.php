@@ -1,11 +1,10 @@
-
 <div class="calendar">
     <div class="header">
         <h2 class="text-center">@lang('exhibitions.frontend.calendar.title')</h2>
         <h5 class="text-center">@lang('exhibitions.frontend.calendar.subtitle')</h5>
     </div>
     <table class="text-center">
-    <caption>@lang('dates.months.' . $date->format('F') )</caption>
+    <caption>@lang('dates.months.' . $calendar->getToday()->format('F') )</caption>
         <tr>
             <th>
                 @lang('dates.week-days-abbreviations.Su')
@@ -37,7 +36,7 @@
                             @if ($day->hasExhibitions())
                                 <a class="active {{ $day->isToday() ? 'today': '' }}"
                                    title="@lang('exhibitions.frontend.calendar.exhibitions-in-the-day', ['number' => $day->getExhibitionsNumber()]) "
-                                   href="{{ $day->getDateInFormatToUrl() }}">
+                                   href="{{ URL::route('exhibition.by_date', $day->getDateInFormatToUrl()) }}">
                                     {{ $day->getNumber() }}
                                 </a>
                             @else
