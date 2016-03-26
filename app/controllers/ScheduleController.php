@@ -30,12 +30,12 @@ class ScheduleController extends BaseController
 
         if (Input::has('since')) {
             try {
-                $since = Carbon::createFromFormat(MYSQL_DATE_FORMAT, Input::get('since'));
+                $since = Carbon::createFromFormat(MYSQL_DATE_FORMAT, Input::get('since'))->setTime(0, 0, 0);
             } catch (InvalidArgumentException $e) {
                 return '';
             }
         } else {
-            $since = Carbon::now();
+            $since = Carbon::now()->setTime(0, 0, 0);
         }
 
         if (Input::has('until')) {

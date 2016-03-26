@@ -21,9 +21,25 @@ class ScheduleCollection extends Collection
 
         $schedulesGrouped = $schedules->map(function ($group) {
 
-            return new ScheduleGroup($group);
+            return new ScheduleGroup(new ScheduleCollection($group));
         });
 
         return $schedulesGrouped;
+    }
+
+    /**
+     * @return static
+     */
+    public function groupByDate()
+    {
+        $schedulesGrouped = $this->groupBy(function (Schedule $schedule) {
+            return $schedule->getEntry()->format(MYSQL_DATE_FORMAT);
+        });
+
+        $schedules = $schedulesGrouped->map(function (array $collection) {
+            return new ScheduleCollection($collection);
+        });
+
+        return $schedules;
     }
 }

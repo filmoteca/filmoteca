@@ -16,8 +16,6 @@
 @stop
 
 @section('sidebar')
-    <span class="glyphicon glyphicon-search pull-left"></span>
-
     <div class="flm-section programming">
         <div class="content">
             <div class="well-sm">
@@ -192,8 +190,8 @@
                         <div align="right">
                             <button type="button"
                                     class="btn btn-default more-schedules"
-                                    data-href="{{ URL::route('exhibition.schedule.search',['exhibtionId' => $exhibition->getId()]) }}"
-                                    data-since="{{ $exhibition->getSchedules()->first()->getEntry()->format(MYSQL_DATE_FORMAT)  }}"
+                                    data-href="{{ URL::route('exhibition.schedule.search',['exhibitionId' => $exhibition->getId()]) }}"
+                                    data-since="{{ $date->format(MYSQL_DATE_FORMAT)  }}"
                                     title="@lang('exhibition.see_more_schedules')">
                                 @lang('exhibitions.show.see_more_schedules')
                             </button>

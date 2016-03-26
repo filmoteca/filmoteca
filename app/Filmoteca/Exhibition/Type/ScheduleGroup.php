@@ -9,14 +9,14 @@ namespace Filmoteca\Exhibition\Type;
 class ScheduleGroup
 {
     /**
-     * @var array|Schedule[]
+     * @var ScheduleCollection
      */
     protected $schedules;
 
     /**
-     * @param array|Schedule[] $schedules
+     * @param ScheduleCollection $schedules
      */
-    public function __construct(array $schedules)
+    public function __construct(ScheduleCollection $schedules)
     {
         $this->schedules = $schedules;
     }
@@ -32,7 +32,7 @@ class ScheduleGroup
     }
 
     /**
-     * @return array|Schedule[]
+     * @return ScheduleCollection
      */
     public function getSchedules()
     {
@@ -40,9 +40,9 @@ class ScheduleGroup
     }
 
     /**
-     * @param array|Schedule[] $schedules
+     * @param ScheduleCollection $schedules
      */
-    public function setSchedules($schedules)
+    public function setSchedules(ScheduleCollection $schedules)
     {
         $this->schedules = $schedules;
     }

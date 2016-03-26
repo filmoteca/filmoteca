@@ -16,8 +16,11 @@ show:
     enter_your_email: Ingresa tu correo electrónico
     send: Enviar
     unam_cinemas_community: Comunidad Cines UNAM
+    day: Día
+    schedules: Horarios
     fields:
         synopsis: Sinopsis
         technical_card: Ficha técnica
         trailer: Trailer
         notes: Notas
+        auditorium: Sala

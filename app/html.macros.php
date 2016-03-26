@@ -48,12 +48,15 @@ HTML::macro('metatags', function( $metas )
 	return '';
 });
 
-HTML::macro('schedulesTimeAsList', function (array $schedules, $format = 'H:i') {
+HTML::macro(
+	'schedulesTimeAsList',
+	function (\Filmoteca\Exhibition\Type\ScheduleCollection $schedules, $format = 'H:i') {
 
-	$times = array_map(function (\Filmoteca\Exhibition\Type\Schedule $schedule) use ($format) {
+		$times = array_map(function (\Filmoteca\Exhibition\Type\Schedule $schedule) use ($format) {
 
-		return '<span>' . $schedule->getEntry()->format($format) . '</span>';
-	}, $schedules);
+			return '<span>' . $schedule->getEntry()->format($format) . '</span>';
+		}, $schedules->all());
 
-	return implode('/', $times);
-});
+		return implode('/', $times);
+	}
+);
