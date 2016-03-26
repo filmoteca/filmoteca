@@ -97,4 +97,9 @@ class Day
     {
         return $this->date->day;
     }
+
+    public function isToday()
+    {
+        return Carbon::today()->day === $this->getNumber();
+    }
 }

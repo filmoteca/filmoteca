@@ -35,11 +35,15 @@
                     <td>
                         @if ($day->getDate()->month === $date->month)
                             @if ($day->hasExhibitions())
-                                <a class="active"
+                                <a class="active {{ $day->isToday() ? 'today': '' }}"
                                    title="@lang('exhibitions.frontend.calendar.exhibitions-in-the-day', ['number' => $day->getExhibitionsNumber()]) "
-                                   href="{{ $day->getDateInFormatToUrl() }}">{{ $day->getNumber() }}</a>
+                                   href="{{ $day->getDateInFormatToUrl() }}">
+                                    {{ $day->getNumber() }}
+                                </a>
                             @else
-                                <a class="active none-exhibition">{{ $day->getNumber() }}</a>
+                                <a class="active none-exhibition {{ $day->isToday() ? 'today': '' }}">
+                                    {{ $day->getNumber() }}
+                                </a>
                             @endif
                         @else
                             <span class="disabled">{{ $day->getNumber() }}</span>
