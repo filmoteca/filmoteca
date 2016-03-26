@@ -16,15 +16,8 @@
 @stop
 
 @section('sidebar')
-    <div class="flm-section programming">
-        <div class="content">
-            <div class="well-sm">
-                <div class="flm-section flm-subsection carrousel">
-                    @include('frontend.exhibitions.partials.calendar', ['dates' => $calendar, 'date' => $date])
-                </div>
-            </div>
-        </div>
-    </div>
+
+    @include('pages.home.partials.programming')
 
     <div class="subscribe-box hidden-xs">
 
