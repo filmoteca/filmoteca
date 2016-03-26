@@ -18,7 +18,7 @@
                         @if ($index == 0 && $dayIndex == 0)
                             <td rowspan="{{ $scheduleGroup->getSchedules()->count() }}">
                                 <span class="auditorium-name">
-                                    {{ $scheduleGroup->getAuditorium()->getName() }}
+                                    {{ $schedule->getAuditorium()->getName() }}
                                 </span>
                                 <a href="#">
                                     @lang('exhibitions.show.see_location')

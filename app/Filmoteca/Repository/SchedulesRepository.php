@@ -103,7 +103,7 @@ class SchedulesRepository
         }
 
         $schedules = $query
-            ->orderBy('created_at', $order)
+            ->orderBy('entry', $order)
             ->with(
                 'exhibition',
                 'exhibition.exhibitionFilm',
@@ -114,7 +114,13 @@ class SchedulesRepository
             )
             ->get();
 
-        return new ScheduleCollection($schedules->all());
+        $schedulesCollection = new ScheduleCollection($schedules->all());
+        // orderBy of eloquent does not work.
+        $schedulesCollection->sortBy(function (\Filmoteca\Exhibition\Type\Schedule $schedule) {
+                return $schedule->getEntry();
+        });
+
+        return $schedulesCollection;
     }
 
     /**

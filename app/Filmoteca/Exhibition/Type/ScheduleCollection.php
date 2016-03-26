@@ -34,6 +34,8 @@ class ScheduleCollection extends Collection
     {
         $schedulesGrouped = $this->groupBy(function (Schedule $schedule) {
             return $schedule->getEntry()->format(MYSQL_DATE_FORMAT);
+        })->sortBy(function (array $schedules) {
+            return $schedules[0]->getEntry();
         });
 
         $schedules = $schedulesGrouped->map(function (array $collection) {
