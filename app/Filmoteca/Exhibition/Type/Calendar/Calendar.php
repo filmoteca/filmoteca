@@ -2,6 +2,8 @@
 
 namespace Filmoteca\Exhibition\Type\Calendar;
 
+use Carbon\Carbon;
+
 /**
  * Class Calendar
  * @package Filmoteca\Exhibition\Type\Calendar
@@ -41,5 +43,10 @@ class Calendar
         }, []);
 
         return $days;
+    }
+
+    public function getToday()
+    {
+        return Carbon::today();
     }
 }
