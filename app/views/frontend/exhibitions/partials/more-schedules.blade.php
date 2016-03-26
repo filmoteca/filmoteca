@@ -11,12 +11,12 @@
                 @lang('exhibitions.show.schedules')
             </th>
         </tr>
-        @foreach ($schedules->groupByAuditorium() as $scheduleGroup)
-            @foreach ($scheduleGroup->getSchedules()->groupByDate() as $index => $dateSchedules)
+        @foreach ($schedules->groupByAuditorium() as $auditoriumSchedules)
+            @foreach ($auditoriumSchedules->groupByDate() as $index => $dateSchedules)
                 @foreach ($dateSchedules as $dayIndex => $schedule)
                     <tr>
                         @if ($index == 0 && $dayIndex == 0)
-                            <td rowspan="{{ $scheduleGroup->getSchedules()->count() }}">
+                            <td rowspan="{{ $auditoriumSchedules->count() }}">
                                 <span class="auditorium-name">
                                     {{ $schedule->getAuditorium()->getName() }}
                                 </span>

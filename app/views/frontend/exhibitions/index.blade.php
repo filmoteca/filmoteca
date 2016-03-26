@@ -163,18 +163,19 @@
                         <h3>@lang('exhibitions.show.is_presented_at')</h3>
                     </div>
                     <div class="panel-body">
-                        @foreach ($exhibition->getSchedules()->groupByAuditorium() as $scheduleGroup)
+                        @foreach ($exhibition->getSchedules()->groupByAuditorium() as $schedules)
                             <div class="row">
                                 <div class="col-md-5">
-                                        <span class="auditorium-name">
-                                            {{ $scheduleGroup->getAuditorium()->getName() }}
-                                        </span>
+                                    <span class="auditorium-name">
+                                        {{ $schedules->first()->getAuditorium()->getName() }}
+                                    </span>
 
-                                            <a href="#">@lang('exhibitions.show.see_location')
-                                            </a>
+                                    <a href="#">
+                                        @lang('exhibitions.show.see_location')
+                                    </a>
                                 </div>
                                 <div class="col-md-7">
-                                    {{ HTML::schedulesTimeAsList($scheduleGroup->getSchedules()) }}
+                                    {{ HTML::schedulesTimeAsList($schedules) }}
                                 </div>
                             </div>
                         @endforeach

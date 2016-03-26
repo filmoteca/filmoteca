@@ -15,16 +15,15 @@ class ScheduleCollection extends Collection
      */
     public function groupByAuditorium()
     {
-        $schedules = $this->groupBy(function (Schedule $schedule) {
-            return $schedule->getAuditorium()->getId();
-        });
+        $schedules = $this
+            ->groupBy(function (Schedule $schedule) {
+                return $schedule->getAuditorium()->getId();
+            })
+            ->map(function ($group) {
+                return new ScheduleCollection($group);
+            });
 
-        $schedulesGrouped = $schedules->map(function ($group) {
-
-            return new ScheduleGroup(new ScheduleCollection($group));
-        });
-
-        return $schedulesGrouped;
+        return $schedules;
     }
 
     /**
@@ -32,15 +31,13 @@ class ScheduleCollection extends Collection
      */
     public function groupByDate()
     {
-        $schedulesGrouped = $this->groupBy(function (Schedule $schedule) {
-            return $schedule->getEntry()->format(MYSQL_DATE_FORMAT);
-        })->sortBy(function (array $schedules) {
-            return $schedules[0]->getEntry();
-        });
-
-        $schedules = $schedulesGrouped->map(function (array $collection) {
-            return new ScheduleCollection($collection);
-        });
+        $schedules = $this
+            ->groupBy(function (Schedule $schedule) {
+                return $schedule->getEntry()->format(MYSQL_DATE_FORMAT);
+            })
+            ->map(function (array $collection) {
+                return new ScheduleCollection($collection);
+            });
 
         return $schedules;
     }
