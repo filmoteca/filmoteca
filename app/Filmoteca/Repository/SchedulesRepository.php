@@ -52,7 +52,7 @@ class SchedulesRepository
     {
         $since = Carbon::createFromFormat(MYSQL_DATE_FORMAT, $since);
         $until = Carbon::createFromFormat(MYSQL_DATE_FORMAT, $until);
-        $until->setTime('23', '59', '59');
+        $until->endOfDay();
 
         $schedules = $this->find($since, $until, null, $order);
 

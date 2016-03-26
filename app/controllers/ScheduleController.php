@@ -35,7 +35,7 @@ class ScheduleController extends BaseController
                 return '';
             }
         } else {
-            $since = Carbon::now()->setTime(0, 0, 0);
+            $since = Carbon::today();
         }
 
         if (Input::has('until')) {
