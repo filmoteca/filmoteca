@@ -9,7 +9,7 @@ use Filmoteca\Exhibition\Type\Calendar\Week;
 
 /**
  * Class ExhibitionCalendar
- * @package Filmoteca\Exhibition
+ * @package Filmoteca\Exhibitions
  */
 class CalendarGenerator
 {

@@ -3,8 +3,8 @@
 namespace Filmoteca\Exhibition\Type;
 
 /**
- * Interface Exhibition
- * @package Filmoteca\Exhibition\Type
+ * Interface Exhibitions
+ * @package Filmoteca\Exhibitions\Type
  */
 interface Exhibition
 {

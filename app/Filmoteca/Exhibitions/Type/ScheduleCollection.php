@@ -6,7 +6,7 @@ use Illuminate\Support\Collection;
 
 /**
  * Class ScheduleCollection
- * @package Filmoteca\Exhibition\Type
+ * @package Filmoteca\Exhibitions\Type
  */
 class ScheduleCollection extends Collection
 {

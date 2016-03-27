@@ -1,12 +1,17 @@
 <?php
 
-use Filmoteca\Repository\SchedulesRepository;
+namespace Filmoteca\Exhibitions\Controllers\Frontend;
+
 use Carbon\Carbon;
+use Filmoteca\Repository\SchedulesRepository;
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\View;
 
 /**
  * Class ScheduleController
  */
-class ScheduleController extends BaseController
+class ScheduleController extends Controller
 {
     /**
      * @var SchedulesRepository

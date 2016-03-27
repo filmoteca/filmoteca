@@ -4,7 +4,7 @@ namespace Filmoteca\Exhibition\Type;
 
 /**
  * Interface Auditorium
- * @package Filmoteca\Exhibition\Type
+ * @package Filmoteca\Exhibitions\Type
  */
 interface Auditorium
 {

@@ -4,7 +4,7 @@ namespace Filmoteca\Exhibition\Type;
 
 /**
  * Class ImageAttachment
- * @package Filmoteca\Exhibition\Type
+ * @package Filmoteca\Exhibitions\Type
  */
 class ImageAttachment extends Attachment
 {

@@ -7,7 +7,7 @@ use Filmoteca\Exhibition\ExhibitionsManager;
 
 /**
  * Class Day
- * @package Filmoteca\Exhibition\Type\Calendar
+ * @package Filmoteca\Exhibitions\Type\Calendar
  */
 class Day
 {

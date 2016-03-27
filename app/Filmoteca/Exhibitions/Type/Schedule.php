@@ -6,7 +6,7 @@ use DateTime;
 
 /**
  * Interface Schedule
- * @package Filmoteca\Exhibition\Type
+ * @package Filmoteca\Exhibitions\Type
  */
 interface Schedule
 {

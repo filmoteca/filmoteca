@@ -4,7 +4,7 @@ namespace Filmoteca\Exhibition\Type\Calendar;
 
 /**
  * Class Week
- * @package Filmoteca\Exhibition\Type\Calendar
+ * @package Filmoteca\Exhibitions\Type\Calendar
  */
 class Week
 {

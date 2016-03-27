@@ -1,13 +1,19 @@
 <?php
 
+namespace Filmoteca\Exhibitions\Controllers;
+
 use Carbon\Carbon;
 use Filmoteca\Repository\ExhibitionsRepository;
 use Filmoteca\Exhibition\ExhibitionsManager;
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\App;
+use InvalidArgumentException;
 
 /**
  * Class ExhibitionController
  */
-class ExhibitionController extends BaseController
+class ExhibitionController extends Controller
 {
     /**
      * @var ExhibitionsRepository
@@ -94,23 +100,13 @@ class ExhibitionController extends BaseController
         return View::make('frontend.exhibitions.detail-history', compact('exhibition'));
     }
 
-    public function detailHome($id)
-    {
-
-        $exhibition = $this->repository->search('id', $id);
-
-        return View::make('frontend.exhibitions.partials.details', compact('exhibition'));
-    }
-
     public function history()
     {
-
         return View::make('frontend.exhibitions.history');
     }
 
     public function find()
     {
-
         $fields = [];
         $fieldsNames = ['title', 'director'];
 

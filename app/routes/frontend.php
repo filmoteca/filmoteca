@@ -8,41 +8,6 @@ Route::get('/home', [
 
 Route::get('/', 'HomeController@index');
 
-Route::group(['prefix' => 'exhibition'], function () {
-
-    // app
-    Route::get('{date?}', [
-        'as' => 'exhibition.by_date',
-        'uses' => 'ExhibitionController@index'
-    ]);
-
-    Route::get('history', 'ExhibitionController@history');
-    Route::get('find', [
-        'as' => 'exhibition.find',
-        'uses' => 'ExhibitionController@find'
-    ]);
-
-    Route::get('{id}/show', [
-        'as' => 'exhibition.show',
-        'uses' => 'ExhibitionController@detail'
-    ]);
-    Route::get('{id}/detail-history', [
-        'as' => 'exhibition.detail-history',
-        'uses' => 'ExhibitionController@detailHistory'
-    ]);
-    Route::get('{id}/detail-home', [
-        'as' => 'exhibition.detail-home',
-        'uses' => 'ExhibitionController@detailHome'
-    ]);
-
-    Route::get('/filter/{name?}/{id?}/{title?}', 'ExhibitionController@index');
-
-    Route::get('{id}/schedule', [
-        'as' => 'exhibition.schedule.search',
-        'uses' => 'ScheduleController@search'
-    ]);
-});
-
 Route::get('auditorium/{id}', 'AuditoriumController@show');
 
 Route::get('/news/show/{id}', 'NewsController@show');

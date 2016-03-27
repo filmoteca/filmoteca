@@ -4,7 +4,7 @@ namespace Filmoteca\Exhibition\Type;
 
 /**
  * Interface Film
- * @package Filmoteca\Exhibition\Type
+ * @package Filmoteca\Exhibitions\Type
  */
 interface Film
 {

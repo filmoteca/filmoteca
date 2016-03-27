@@ -6,7 +6,7 @@ use Carbon\Carbon;
 
 /**
  * Class Calendar
- * @package Filmoteca\Exhibition\Type\Calendar
+ * @package Filmoteca\Exhibitions\Type\Calendar
  */
 class Calendar
 {
