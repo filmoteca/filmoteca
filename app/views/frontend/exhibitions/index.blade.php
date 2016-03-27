@@ -23,7 +23,7 @@
 
     @include('pages.home.partials.programming')
 
-    @include('frontend.exhibitions.partials.billboard-subscriton-form')
+    @include('frontend.exhibitions.partials.billboard-subscription-form')
 
     <br><br>
 

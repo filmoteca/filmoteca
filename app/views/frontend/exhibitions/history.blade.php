@@ -11,7 +11,7 @@
 
 <div class="subscribe-box">
 
-	@include('frontend.exhibitions.partials.billboard-subscriton-form')
+	@include('frontend.exhibitions.partials.billboard-subscription-form')
 </div>
 
 @stop
@@ -20,7 +20,7 @@
 @section('content')
 
 <div class="content">
-	<h2>Histórico de programación</h2>
+	<h2>@lang('exhibitions.frontend.history.title')</h2>
 
 	<div class="well">
 		{{ Form::open(['route' => 'exhibition.find', 'method' => 'GET', 'class' => 'form-horizontal']) }}
