@@ -23,6 +23,8 @@ app/storage/debugbar/
 htdocs/*
 workbench
 
+htdocs/assets/css/filmoteca.css
+
 !htdocs/assets
 !htdocs/assets/js
 !htdocs/assets/imgs
