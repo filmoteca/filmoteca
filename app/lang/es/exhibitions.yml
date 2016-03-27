@@ -1,6 +1,9 @@
 frontend:
     index:
         title: 'Programación del :textual_day :numeric_day de :textual_month'
+        breadcrumbs_title: Programación
+    history:
+        title: Historico de programación
     calendar:
         title: Cine UNAM
         subtitle: Consulta programación

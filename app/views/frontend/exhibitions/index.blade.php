@@ -4,6 +4,10 @@
 
 @stop
 
+@section('breadcrumbs')
+    <li class="active">@lang('exhibitions.frontend.index.breadcrumbs_title')</li>
+@stop
+
 @section('title')
     @lang(
         'exhibitions.frontend.index.title',
