@@ -263,12 +263,14 @@ class ExhibitionsRepository extends ResourcesRepository implements PageableRepos
                 $q->whereHas('film', function ($q) use ($filmsIds) {
                     $q->whereIn('films.id', $filmsIds);
                 });
-            })->with('schedules',
-                'schedules.auditorium',
-                'exhibitionFilm',
-                'exhibitionFilm.film',
-                'type'
-            )
+            })
+                ->with(
+                    'schedules',
+                    'schedules.auditorium',
+                    'exhibitionFilm',
+                    'exhibitionFilm.film',
+                    'type'
+                )
                 ->paginate($limit);
         }
 

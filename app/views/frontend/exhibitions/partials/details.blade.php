@@ -1,104 +1,134 @@
-{{--
-Vista parcial
---}}
-<div class="details">
-	<div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-		
-        <div class="panel-footer">
-		@if( !is_null($exhibition->type) )
-			<p>{{ HTML::image(
-				$exhibition->type->image->url('thumbnail'), 
-				$exhibition->type->name,
-				['class' => 'image-size-icon']
-				) }}
-					{{ $exhibition->type->name }}
-			</p>
-		@endif
-	</div>
-		
-		<h1>{{ $exhibition->exhibition_film->film->title }}</h1>
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<div class="icon">
+			@if ($exhibition->getType() !== null)
+				<span>
+                            <img src="{{ $exhibition->getType()->getImage()->getSmallImageUrl() }}">
+                        </span>
+				<span>{{ $exhibition->getType()->getName() }}</span>
+			@endif
+		</div>
 	</div>
 
-	<div class="modal-body">
+
+	<div class="panel-body">
 		<div class="row">
-			<div class="col-sm-6 cover">
-				<div>
-
-					<img src="{{ $exhibition->exhibition_film->film->image->url('medium') }}"
-					alt="{{ $exhibition->exhibition_film->film->title }}" >
-
-				</div>
-
+			<div class="col-md-4">
 				<div class="fb-like"
-					 data-href="{{ URL::action('ExhibitionController@detail', array('id' => $exhibition->id ))}}"
-					 data-layout="standard"
+					 data-href="{{ URL::route('exhibition.show', array('id' => $exhibition->id ))}}"
+					 data-layout="button"
 					 data-action="like"
 					 data-show-faces="true"
 					 data-share="true">
 				</div>
 
-				<div class="col-sm-12 cover">
-				<div class="panel panel-default">
-					<div class="panel-heading">Se presenta en las Salas: </div>
-					<div class="panel-body">
-						@foreach( $exhibition->auditoriums as $auditorium)
-							<div class="panel panel-default">
-								<div class="panel-heading">
-								    {{ $auditorium->name }}
-								    {{ HTML::linkAction('AuditoriumController@show', 'Ver ubicación', ['id' => $auditorium->id]) }}
-								</div>
-								<div class="panel-body">
-									<ul class="list-group">						
-									@foreach( $exhibition->schedulesByAuditorium($auditorium->id) as $date => $hours)
-										<li class="list-group-item">
-											{{ ucfirst(trans('dates.days.' . date('l', strtotime($date)) )) }}
-											{{ date(' j \d\e ', strtotime($date)) }}
-											{{ trans('dates.months.' . date('F', strtotime($date)) ) }}
-											<br>
+				<img src="{{ $exhibition->getFilm()->getCover()->getMediumImageUrl() }}">
+			</div>
+			<div class="col-md-8">
+				<h2 class="text-center">{{ $exhibition->getFilm()->getTitle() }}</h2>
 
-											@foreach($hours as $hour)
-												<span class="label label-default">{{ date('G:i \h\r\s', strtotime($hour)) }}</span>
-											@endforeach
-										</li>
-									@endforeach
-									</ul>
-								</div>
+				<!-- Texto que mostrará duración, fecha y año -->
+				<h6 class="text-center">
+					<span class="countries">{{ $exhibition->getFilm()->getCountries()->implode('name', ', ') }}</span>
+					<span> / </span>
+					<span class="years">{{ implode(',', $exhibition->getFilm()->getYears()) }}</span>
+					<span> / </span>
+					<span class="duration">{{ $exhibition->getFilm()->getDuration() }} min.</span>
+				</h6>
+
+				<!-- Pestañas de sinopsis, fiche técnica, trailer y notas-->
+				<div class="content">
+					<!-- Nav tabs -->
+					<div role="tabpanel">
+						<ul class="nav nav-tabs" role="tablist">
+							<li class="active" role="presentation">
+								<a data-toggle="tab" role="tab" href="#tab-1">@lang('exhibitions.show.fields.synopsis')</a>
+							</li>
+							<li class="" role="presentation">
+								<a data-toggle="tab" role="tab" href="#tab-2">@lang('exhibitions.show.fields.technical_card')</a>
+							</li>
+							<li class="" role="presentation">
+								<a data-toggle="tab" role="tab" href="#tab-3">@lang('exhibitions.show.fields.trailer')</a>
+							</li>
+							<li class="" role="presentation">
+								<a data-toggle="tab" role="tab" href="#tab-4">@lang('exhibitions.show.fields.notes')</a>
+							</li>
+						</ul>
+
+						<!-- Tab panes -->
+						<div class="tab-content">
+							<div id="tab-1" class="tab-pane active" role="tabpanel">
+								<li class="list-group-item">
+									<p>{{ $exhibition->getFilm()->getSynopsis() }}</p>
+								</li>
 							</div>
-						@endforeach
+
+							<!-- Ficha técnica que se muestra en la pestaña Ficha técnica(tab-2) -->
+							<div class="tab-pane" role="tabpanel" id="tab-2">
+								<li class="list-group-item embed-responsive embed-responsive-16by9">
+									<p>{{ $exhibition->getFilm()->getTrailer() }}</p>
+								</li>
+							</div>
+
+							<!-- Video que se muestra en la pestaña Trailer(tab-3) /4by3-->
+							<div class="tab-pane" role="tabpanel" id="tab-3">
+								<li class="list-group-item embed-responsive embed-responsive-16by9">
+									<p>{{ $exhibition->getFilm()->getTrailer() }}</p>
+								</li>
+							</div>
+
+							<!-- Notas que se muestran en la pestaña Notas(tab-4) -->
+							<div class="tab-pane" role="tabpanel" id="tab-4">
+								<li class="list-group-item embed-responsive embed-responsive-16by9">
+									<p>{{ $exhibition->getFilm()->getNotes() }}</p>
+								</li>
+							</div>
+						</div>
 					</div>
+				</div>
 
-				</div>	
-			</div>
-			</div>
 
-			<div class="col-sm-6">
-			    <div class="tecnical-card">
-                    @foreach($exhibition->getTechnicalCard() as $title => $value)
-                        <p>
-                            <b>{{mb_strtoupper($title)}}: </b>
-                            {{ $value }}
-                        </p>
-                    @endforeach
-                </div>
-
-                <div>
-                    <p>
-                        <b>Notas de la Exhibition: </b>{{ $exhibition->notes }}
-                    </p>
-                </div>
 			</div>
 		</div>
 
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="embed-responsive embed-responsive-16by9">
-				 	{{ $exhibition->exhibition_film->film->trailer }}
-			 	</div>
+
+		<div class="panel panel-default">
+			<div class="panel-heading-hora">
+				<h3>@lang('exhibitions.show.is_presented_at')</h3>
+			</div>
+			<div class="panel-body">
+				@foreach ($exhibition->getSchedules()->groupByAuditorium() as $schedules)
+					<div class="row">
+						<div class="col-md-5">
+                                    <span class="auditorium-name">
+                                        {{ $schedules->first()->getAuditorium()->getName() }}
+                                    </span>
+
+							<a href="#">
+								@lang('exhibitions.show.see_location')
+							</a>
+						</div>
+						<div class="col-md-7">
+							{{ HTML::schedulesTimeAsList($schedules) }}
+						</div>
+					</div>
+					@endforeach
+
+							<!-- Botón que desplegará más horarios -->
+					<div align="right">
+						<button type="button"
+								class="btn btn-default more-schedules"
+								data-href="{{ URL::route('exhibition.schedule.search', ['exhibitionId' => $exhibition->getId()]) }}"
+								data-since="{{ isset($date) ? $date->format(MYSQL_DATE_FORMAT) : ''  }}"
+								title="@lang('exhibition.see_more_schedules')">
+							@lang('exhibitions.show.see_more_schedules')
+						</button>
+						<div align="left" class="collapse">
+							{{-- This content is loaded with AJAX and it is located in --}}
+							{{-- views/frontend/exhibitions/partials/more-schedules    --}}
+						</div>
+					</div>
 			</div>
 		</div>
-		
 	</div>
 </div>

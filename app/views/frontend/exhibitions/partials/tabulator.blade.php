@@ -1,4 +1,4 @@
-{{ $resources->links() }}
+{{ $results->links() }}
 
 <table class="table table-striped table-bordered table-responsive">
 	<thead>
@@ -10,13 +10,13 @@
 			<th>Acciones</th>
 		</tr>
 	</thead>
-	
+
 	<tbody>
-		@foreach($resources as $exhibition )
+		@foreach($results as $exhibition )
 			<tr>
 				<td>{{ $exhibition->exhibition_film->film->title }}</td>
 				<td>{{ $exhibition->exhibition_film->film->director }}</td>
-				
+
 				<td>
 				@foreach( $exhibition->auditoriums as $auditorium)
 					<div class="panel panel-default">
@@ -52,7 +52,7 @@
 							<button class="btn btn-danger" type="submit">Borrar</button>
 						{{ Form::close()}}
 					@else
-						{{ HTML::linkRoute('exhibition.detail-history', 'Ver',
+						{{ HTML::linkRoute('exhibition.show', 'Ver',
 							array($exhibition->id),
 							array('class'=> 'btn btn-success')) }}
 					@endif

@@ -4,6 +4,9 @@ frontend:
         breadcrumbs_title: Programación
     history:
         title: Historico de programación
+        search: Buscar
+        results: 'Se encontrarón <b>:number</b> películas'
+        none_results: Ningúna película encontrada.
     calendar:
         title: Cine UNAM
         subtitle: Consulta programación
@@ -27,3 +30,5 @@ show:
         trailer: Trailer
         notes: Notas
         auditorium: Sala
+        director: Director
+        title: Título

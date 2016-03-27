@@ -27,6 +27,7 @@ class ScheduleController extends Controller
     }
 
     /**
+     * It returns a chuck of HTML
      * @param $exhibitionId
      * @return \Symfony\Component\HttpFoundation\Response|static
      */
@@ -40,7 +41,7 @@ class ScheduleController extends Controller
                 return '';
             }
         } else {
-            $since = Carbon::today();
+            $since = null;
         }
 
         if (Input::has('until')) {
@@ -54,6 +55,10 @@ class ScheduleController extends Controller
         }
 
         $schedules = $this->schedulesRepository->findByExhibitionAndDateInterval($exhibitionId, $since, $until);
+
+        if ($schedules->isEmpty()) {
+            return '';
+        }
 
         return View::make('frontend.exhibitions.partials.more-schedules', compact('schedules'));
     }

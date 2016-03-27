@@ -1,6 +1,6 @@
 <?php
 
-namespace Filmoteca\Exhibitions\Controllers;
+namespace Filmoteca\Exhibitions\Controllers\Frontend;
 
 use Carbon\Carbon;
 use Filmoteca\Repository\ExhibitionsRepository;
@@ -8,6 +8,7 @@ use Filmoteca\Exhibition\ExhibitionsManager;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Input;
 use InvalidArgumentException;
 
 /**
@@ -58,55 +59,12 @@ class ExhibitionController extends Controller
         return View::make('frontend.exhibitions.index', compact('exhibitions', 'date', 'calendar'));
     }
 
-    /**
-     * @param string $by
-     */
-    public function search($by)
-    {
-        $exhibitions = $this->repository
-            ->search($by, Input::get('value'));
-
-        return View::make('exhibitions.search-result', $exhibitions);
-    }
-
-    /**
-     * Esta acción crea una vista con los detalles de una exhibición,
-     * estableciendo un layout para peticiones ajax y otro para peticiones
-     * no-ajax.
-     * @param  Integer $id Id de un entero
-     * @return view Una vista que depende de la solicitud (ajax o )
-     */
-    public function detail($id)
-    {
-        $exhibition = $this->repository->search('id', $id);
-
-        //Extend Request;
-        $isJson = stristr(Request::header('Accept'), 'application/json');
-
-        $layout = (Request::ajax() || $isJson) ? 'layouts.modal' : 'layouts.default';
-
-        return View::make('frontend.exhibitions.partials.details', compact('exhibition', 'layout'));
-    }
-
-    /**
-     * @param $id
-     * @return mixed
-     */
-    public function detailHistory($id)
-    {
-
-        $exhibition = $this->repository->search('id', $id);
-
-        return View::make('frontend.exhibitions.detail-history', compact('exhibition'));
-    }
-
     public function history()
     {
-        return View::make('frontend.exhibitions.history');
-    }
+        if (empty(Input::all())) {
+            return View::make('frontend.exhibitions.history');
+        }
 
-    public function find()
-    {
         $fields = [];
         $fieldsNames = ['title', 'director'];
 
@@ -116,8 +74,31 @@ class ExhibitionController extends Controller
             }
         }
 
-        $resources = $this->repository->findByTitleDirector($fields);
+        $fields = array_reduce($fieldsNames, function ($fields, $name) {
+            if (Input::has($name)) {
+                $fields[$name] = Input::get($name);
+            }
 
-        return View::make('frontend.exhibitions.history')->with('resources', $resources);
+            return $fields;
+        }, []);
+
+        if (empty($fields)) {
+            return View::make('frontend.exhibitions.history');
+        }
+
+        $results = $this->repository->findByTitleDirector($fields);
+
+        return View::make('frontend.exhibitions.history')->with('results', $results);
+    }
+
+    /**
+     * @param $id
+     * @return mixed
+     */
+    public function show($id)
+    {
+        $exhibition = $this->repository->search('id', $id);
+
+        return View::make('frontend.exhibitions.show', compact('exhibition'));
     }
 }

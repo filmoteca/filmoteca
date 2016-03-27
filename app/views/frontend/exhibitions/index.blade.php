@@ -75,7 +75,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="fb-like"
-                             data-href="{{ URL::action('ExhibitionController@detail', array('id' => $exhibition->id ))}}"
+                             data-href="{{ URL::route('exhibition.show', array('id' => $exhibition->id ))}}"
                              data-layout="button"
                              data-action="like"
                              data-show-faces="true"
@@ -179,7 +179,7 @@
                             <button type="button"
                                     class="btn btn-default more-schedules"
                                     data-href="{{ URL::route('exhibition.schedule.search',['exhibitionId' => $exhibition->getId()]) }}"
-                                    data-since="{{ $date->format(MYSQL_DATE_FORMAT)  }}"
+                                    data-since="{{ isset($date) ? $date->format(MYSQL_DATE_FORMAT) : ''  }}"
                                     title="@lang('exhibition.see_more_schedules')">
                                 @lang('exhibitions.show.see_more_schedules')
                             </button>
