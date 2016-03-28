@@ -18,7 +18,6 @@ return array(
     'providers' => append_config(array(
 
         'Way\Generators\GeneratorsServiceProvider',
-        'Maatwebsite\Excel\ExcelServiceProvider',
         'Barryvdh\Debugbar\ServiceProvider',
     )),
 );
