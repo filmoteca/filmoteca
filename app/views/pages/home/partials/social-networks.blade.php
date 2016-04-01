@@ -11,8 +11,7 @@
 							<h3 class="h4">Facebook</h3>
 						</div>
 						<div class="fb-wrap">
-							<div class="fb-like-box" data-href="https://www.facebook.com/FilmotecaUNAM?ref=ts&amp;fref=ts" data-width="100%" data-height="300" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="true" data-show-border="true"></div>
-						</div>
+							<div class="fb-page" data-href="https://www.facebook.com/FilmotecaUNAM?ref=ts&amp;amp;fref=ts" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/FilmotecaUNAM?ref=ts&amp;amp%3Bfref=ts"><a href="https://www.facebook.com/FilmotecaUNAM?ref=ts&amp;amp%3Bfref=ts">Butaca Unam</a></blockquote></div></div></div>
 					</div>
 				</div>
 			</div>
@@ -24,7 +23,7 @@
 								<h3 class="h4">Twitter</h3></div>
 
 						<div>
-						<a class="twitter-timeline" data-dnt="true" width="100%" height="300" href="https://twitter.com/ButacaUNAM"  data-widget-id="444330226755977216">Tweets por @ButacaUNAM</a>
+							<a class="twitter-timeline" data-dnt="true" width="100%" height="300" href="https://twitter.com/ButacaUNAM"  data-widget-id="444330226755977216">Tweets por @ButacaUNAM</a>
 						</div>
 					</div>
 				</div>
