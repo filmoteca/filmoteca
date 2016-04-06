@@ -104,7 +104,7 @@
                                         {{ $schedules->first()->getAuditorium()->getName() }}
                                     </span>
 
-							<a href="#">
+							<a href="{{  URL::route('exhibition.auditorium.show', ['slug' =>  $schedules->first()->getAuditorium()->getSlug()])}}">
 								@lang('exhibitions.show.see_location')
 							</a>
 						</div>

@@ -2,7 +2,7 @@
 
 @section('breadcrumbs')
     <li>
-        {{ HTML::link(URL::route('exhibition'),Lang::trans('exhibitions.frontend.index.breadcrumbs_title')) }}
+        {{ HTML::link(URL::route('exhibition'), Lang::trans('exhibitions.frontend.index.breadcrumbs_title')) }}
     </li>
     <li>
         {{ HTML::link(URL::route('exhibition.history'), Lang::trans('exhibitions.frontend.history.title')) }}
