@@ -27,4 +27,14 @@ Route::group(['prefix' => 'exhibition'], function () {
         'as' => 'exhibition.schedule.search',
         'uses' => 'Filmoteca\Exhibitions\Controllers\Frontend\ScheduleController@search'
     ]);
+
+    Route::get('auditorium', [
+        'as' => 'exhibition.auditorium.index',
+        'uses' => 'Filmoteca\Exhibitions\Controllers\Frontend\AuditoriumController@index'
+    ]);
+
+    Route::get('auditorium/{slug}', [
+        'as' => 'exhibition.auditorium.show',
+        'uses' => 'Filmoteca\Exhibitions\Controllers\Frontend\AuditoriumController@show'
+    ]);
 });

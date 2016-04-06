@@ -76,11 +76,27 @@ class Auditorium extends Eloquent implements StaplerableInterface, \Filmoteca\Ex
     }
 
     /**
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * @param string $slug
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+    }
+
+    /**
      * @param string $address
      */
     public function setAddress($address)
     {
-        // TODO: Implement setAddress() method.
+        $this->address = $address;
     }
 
     /**
@@ -88,7 +104,7 @@ class Auditorium extends Eloquent implements StaplerableInterface, \Filmoteca\Ex
      */
     public function getAddress()
     {
-        // TODO: Implement getAddress() method.
+        return $this->address;
     }
 
     /**
@@ -177,7 +193,7 @@ class Auditorium extends Eloquent implements StaplerableInterface, \Filmoteca\Ex
      */
     public function setImage(ImageAttachment $image)
     {
-        // TODO: Implement setImage() method.
+        $this->attachment = $image;
     }
 
     /**
@@ -185,7 +201,34 @@ class Auditorium extends Eloquent implements StaplerableInterface, \Filmoteca\Ex
      */
     public function getImage()
     {
-        // TODO: Implement getImage() method.
+        if ($this->attachment ==! null) {
+            return $this->attachment;
+        }
+
+        $attachment = new ImageAttachment();
+        $attachment->setSmallImageUrl($this->image->url('thumbnail'));
+        $attachment->setOriginalImageUrl($this->image->url('original'));
+        $attachment->setMediumImageUrl($this->image->url('medium'));
+
+        $this->attachment = $attachment;
+
+        return $attachment;
+    }
+
+    /**
+     * @return \Filmoteca\Exhibition\Type\Auditorium
+     */
+    public function getVenue()
+    {
+        return $this->venue;
+    }
+
+    /**
+     * @param \Filmoteca\Exhibition\Type\Auditorium $venue
+     */
+    public function setVenue(\Filmoteca\Exhibition\Type\Auditorium $venue)
+    {
+        $this->venue = venue;
     }
 
 

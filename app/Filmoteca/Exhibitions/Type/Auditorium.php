@@ -30,6 +30,16 @@ interface Auditorium
     public function getName();
 
     /**
+     * @return string
+     */
+    public function getSlug();
+
+    /**
+     * @param string $slug
+     */
+    public function setSlug($slug);
+
+    /**
      * @param string $address
      */
     public function setAddress($address);
@@ -98,4 +108,14 @@ interface Auditorium
      * @return ImageAttachment
      */
     public function getImage();
+
+    /**
+     * @return Auditorium
+     */
+    public function getVenue();
+
+    /**
+     * @param Auditorium $venue
+     */
+    public function setVenue(Auditorium $venue);
 }

@@ -8,8 +8,6 @@ Route::get('/home', [
 
 Route::get('/', 'HomeController@index');
 
-Route::get('auditorium/{id}', 'AuditoriumController@show');
-
 Route::get('/news/show/{id}', 'NewsController@show');
 
 Route::get('/news/index', 'NewsController@index');
@@ -60,5 +58,3 @@ Route::get('/courses/app', function () {
 Route::get('/courses/verification', [
     'as' => 'courses.verification',
     'uses' => 'Api\Courses\StudentController@verify']);
-
-Route::get('/auditorim/show/{id}', 'AuditoriumController@show');
