@@ -67,6 +67,7 @@
     "require-dev": {
         "way/generators": "~2.0",
         "barryvdh/laravel-debugbar": "1.8.x",
+        "fzaninotto/faker": "1.5.0",
         "filmoteca/deployment": "dev-master"
     }
 }
