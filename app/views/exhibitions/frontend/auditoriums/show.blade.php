@@ -10,6 +10,10 @@
     <li class="active">{{ $auditorium->getName() }}</li>
 @stop
 
+@section('title')
+    @Lang('exhibitions.frontend.auditorium.index.title') - {{ $auditorium->getName() }}
+@stop
+
 @section('content')
     @include('exhibitions.frontend.auditoriums.partials.details')
 @stop

@@ -7,6 +7,10 @@
 	<li class="active">@lang('exhibitions.frontend.history.title')</li>
 @stop
 
+@section('title')
+	@lang('exhibitions.frontend.history.title')
+@stop
+
 @section('content')
 
 <div class="content">
@@ -15,9 +19,9 @@
 	<div class="well">
 		{{ Form::open(['route' => 'exhibition.history', 'method' => 'GET', 'class' => 'form-horizontal']) }}
 
-		{{ Form::formGroup('text', 'title', Lang::trans('exhibitions.show.fields.title'), 'exhibition_finder')}}
+		{{ Form::formGroup('text', 'title', Lang::trans('exhibitions.frontend.exhibition.show.fields.title'), 'exhibition_finder')}}
 
-		{{ Form::formGroup('text', 'director', Lang::trans('exhibitions.show.fields.director'), 'exhibition_finder') }}
+		{{ Form::formGroup('text', 'director', Lang::trans('exhibitions.frontend.exhibition.show.fields.director'), 'exhibition_finder') }}
 
 		{{ Form::submit(Lang::trans('exhibitions.frontend.history.search'), ['class' => 'btn btn-success pull-right']) }}
 

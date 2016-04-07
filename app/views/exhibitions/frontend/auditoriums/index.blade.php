@@ -7,6 +7,10 @@
     <li class="active">@Lang('exhibitions.frontend.auditorium.index.title')</li>
 @stop
 
+@section('title')
+    @Lang('exhibitions.frontend.auditorium.index.title')
+@stop
+
 @section('content')
     <h1>
         @Lang('exhibitions.frontend.auditorium.index.title')

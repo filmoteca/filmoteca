@@ -10,7 +10,7 @@
 
 @section('title')
     @lang(
-        'exhibitions.frontend.exhibition.index.title',
+        'exhibitions.frontend.exhibition.index.breadcrumbs_title',
         [
             'textual_day' => @trans('dates.days.' . $date->format('l')),
             'numeric_day' => $date->format('j'),

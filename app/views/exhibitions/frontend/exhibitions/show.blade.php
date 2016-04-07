@@ -10,6 +10,8 @@
     <li class="active">{{ $exhibition->getFilm()->getTitle() }}</li>
 @stop
 
+@lang('exhibitions.frontend.exhibition.index.title')<
+
 @section('content')
 	<div class="exhibitions index">
 		@include('exhibitions.frontend.partials.details')
