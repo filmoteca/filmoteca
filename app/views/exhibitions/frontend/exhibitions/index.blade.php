@@ -20,6 +20,11 @@
 @stop
 
 @section('content')
+
+    <span class="result-number">
+        @lang('exhibitions.frontend.exhibition.index.results_number', ['number' => $exhibitions->count()])
+    </span>
+
     <h1>
         @lang(
         'exhibitions.frontend.exhibition.index.title',
@@ -37,4 +42,3 @@
     @endforeach
     </div>
 @stop
-

@@ -20,6 +20,7 @@ frontend:
         index:
             title: 'Programación del :textual_day :numeric_day de :textual_month'
             breadcrumbs_title: Programación
+            results_number: 'Películas encontradas: :number'
         show:
             see_more: Ver más »
             see_location: Ver ubicación
