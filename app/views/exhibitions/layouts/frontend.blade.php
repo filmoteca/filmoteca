@@ -18,7 +18,7 @@
         <div class="fb-xfbml-parse-ignore">
             <blockquote cite="https://www.facebook.com/Comunidad.Cines.UNAM/?fref=ts">
                 <a href="https://www.facebook.com/Comunidad.Cines.UNAM/?fref=ts">
-                    @lang('exhibitions.show.unam_cinemas_community')
+                    @lang('exhibitions.frontend.exhibition.show.unam_cinemas_community')
                 </a>
             </blockquote>
         </div>

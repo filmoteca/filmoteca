@@ -1,7 +1,4 @@
 frontend:
-    index:
-        title: 'Programación del :textual_day :numeric_day de :textual_month'
-        breadcrumbs_title: Programación
     history:
         title: Histórico de programación
         search: Buscar
@@ -19,25 +16,28 @@ frontend:
     billboard:
         index:
             title: Cartelera digital
-
-
-show:
-    see_more: Ver más »
-    see_location: Ver ubicación
-    see_more_schedules: Ver más horarios »
-    see_trailer: Ver trailer
-    is_presented_at: Se presenta en las salas
-    receive_our_digital_billboard: Recibe nuestra cartelera digital
-    enter_your_email: Ingresa tu correo electrónico
-    send: Enviar
-    unam_cinemas_community: Comunidad Cines UNAM
-    day: Día
-    schedules: Horarios
-    fields:
-        synopsis: Sinopsis
-        technical_card: Ficha técnica
-        trailer: Trailer
-        notes: Notas
-        auditorium: Sala
-        director: Director
-        title: Título
+    exhibition:
+        index:
+            title: 'Programación del :textual_day :numeric_day de :textual_month'
+            breadcrumbs_title: Programación
+        show:
+            see_more: Ver más »
+            see_location: Ver ubicación
+            see_more_schedules: Ver más horarios »
+            see_auditoriums_location: Ver ubicación de salas
+            see_trailer: Ver trailer
+            is_presented_at: Se presenta en las salas
+            receive_our_digital_billboard: Recibe nuestra cartelera digital
+            enter_your_email: Ingresa tu correo electrónico
+            send: Enviar
+            unam_cinemas_community: Comunidad Cines UNAM
+            day: Día
+            schedules: Horarios
+            fields:
+                synopsis: Sinopsis
+                technical_card: Ficha técnica
+                trailer: Trailer
+                notes: Notas
+                auditorium: Sala
+                director: Director
+                title: Título

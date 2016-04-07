@@ -3,8 +3,8 @@
 		<div class="icon">
 			@if ($exhibition->getType() !== null)
 				<span>
-                            <img src="{{ $exhibition->getType()->getImage()->getSmallImageUrl() }}">
-                        </span>
+					<img src="{{ $exhibition->getType()->getImage()->getSmallImageUrl() }}">
+				</span>
 				<span>{{ $exhibition->getType()->getName() }}</span>
 			@endif
 		</div>
@@ -42,16 +42,16 @@
 					<div role="tabpanel">
 						<ul class="nav nav-tabs" role="tablist">
 							<li class="active" role="presentation">
-								<a data-toggle="tab" role="tab" href="#tab-1">@lang('exhibitions.show.fields.synopsis')</a>
+								<a data-toggle="tab" role="tab" href="#tab-1">@lang('exhibitions.frontend.exhibition.show.fields.synopsis')</a>
 							</li>
 							<li class="" role="presentation">
-								<a data-toggle="tab" role="tab" href="#tab-2">@lang('exhibitions.show.fields.technical_card')</a>
+								<a data-toggle="tab" role="tab" href="#tab-2">@lang('exhibitions.frontend.exhibition.show.fields.technical_card')</a>
 							</li>
 							<li class="" role="presentation">
-								<a data-toggle="tab" role="tab" href="#tab-3">@lang('exhibitions.show.fields.trailer')</a>
+								<a data-toggle="tab" role="tab" href="#tab-3">@lang('exhibitions.frontend.exhibition.show.fields.trailer')</a>
 							</li>
 							<li class="" role="presentation">
-								<a data-toggle="tab" role="tab" href="#tab-4">@lang('exhibitions.show.fields.notes')</a>
+								<a data-toggle="tab" role="tab" href="#tab-4">@lang('exhibitions.frontend.exhibition.show.fields.notes')</a>
 							</li>
 						</ul>
 
@@ -94,7 +94,12 @@
 
 		<div class="panel panel-default">
 			<div class="panel-heading-hora">
-				<h3>@lang('exhibitions.show.is_presented_at')</h3>
+				<h3>@lang('exhibitions.frontend.exhibition.show.is_presented_at')</h3>
+				<span>
+					<a href="{{ URL::route('exhibition.auditorium.index') }}">
+						@lang('exhibitions.frontend.exhibition.show.see_auditoriums_location')
+					</a>
+				</span>
 			</div>
 			<div class="panel-body">
 				@foreach ($exhibition->getSchedules()->groupByAuditorium() as $schedules)
@@ -105,7 +110,7 @@
                                     </span>
 
 							<a href="{{  URL::route('exhibition.auditorium.show', ['slug' =>  $schedules->first()->getAuditorium()->getSlug()])}}">
-								@lang('exhibitions.show.see_location')
+								@lang('exhibitions.frontend.exhibition.show.see_location')
 							</a>
 						</div>
 						<div class="col-md-7">
@@ -121,7 +126,7 @@
 								data-href="{{ URL::route('exhibition.schedule.search', ['exhibitionId' => $exhibition->getId()]) }}"
 								data-since="{{ isset($date) ? $date->format(MYSQL_DATE_FORMAT) : ''  }}"
 								title="@lang('exhibition.see_more_schedules')">
-							@lang('exhibitions.show.see_more_schedules')
+							@lang('exhibitions.frontend.exhibition.show.see_more_schedules')
 						</button>
 						<div align="left" class="collapse">
 							{{-- This content is loaded with AJAX and it is located in --}}

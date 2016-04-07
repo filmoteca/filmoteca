@@ -2,13 +2,13 @@
     <table class="table table-bordered">
         <tr>
             <th>
-                @lang('exhibitions.show.fields.auditorium')
+                @lang('exhibitions.frontend.exhibition.show.fields.auditorium')
             </th>
             <th>
-                @lang('exhibitions.show.day')
+                @lang('exhibitions.frontend.exhibition.show.day')
             </th>
             <th>
-                @lang('exhibitions.show.schedules')
+                @lang('exhibitions.frontend.exhibition.show.schedules')
             </th>
         </tr>
         @foreach ($schedules->groupByAuditorium() as $auditoriumSchedules)
@@ -21,7 +21,7 @@
                                     {{ $schedule->getAuditorium()->getName() }}
                                 </span>
                                 <a href="#">
-                                    @lang('exhibitions.show.see_location')
+                                    @lang('exhibitions.frontend.exhibition.show.see_location')
                                 </a>
                             </td>
                         @endif

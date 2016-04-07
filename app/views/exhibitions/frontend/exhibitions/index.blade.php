@@ -5,12 +5,12 @@
 @stop
 
 @section('breadcrumbs')
-    <li class="active">@lang('exhibitions.frontend.index.breadcrumbs_title')</li>
+    <li class="active">@lang('exhibitions.frontend.exhibition.index.breadcrumbs_title')</li>
 @stop
 
 @section('title')
     @lang(
-        'exhibitions.frontend.index.title',
+        'exhibitions.frontend.exhibition.index.title',
         [
             'textual_day' => @trans('dates.days.' . $date->format('l')),
             'numeric_day' => $date->format('j'),
@@ -22,7 +22,7 @@
 @section('content')
     <h1>
         @lang(
-        'exhibitions.frontend.index.title',
+        'exhibitions.frontend.exhibition.index.title',
         [
             'textual_day' => @trans('dates.days.' . $date->format('l')),
             'numeric_day' => $date->format('j'),
