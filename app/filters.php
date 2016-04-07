@@ -84,7 +84,7 @@ View::composer('*', function ($view) {
     $view->with('siteName', 'Filmoteca UNAM');
 });
 
-View::composer('*', 'Filmoteca\Exhibitions\Composer\ExhibitionComposer');
+View::composer('exhibitions.*', 'Filmoteca\Exhibitions\Composer\ExhibitionComposer');
 
 View::composer(['layouts.dashboard.master', 'layouts.dashboard.master-app'], function ($view) {
 
