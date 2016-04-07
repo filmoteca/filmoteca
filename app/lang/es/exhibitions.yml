@@ -16,6 +16,9 @@ frontend:
             title: Salas de cine
         show:
             direction: Dirección
+    billboard:
+        index:
+            title: Cartelera digital
 
 
 show:

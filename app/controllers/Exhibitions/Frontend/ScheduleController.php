@@ -60,6 +60,6 @@ class ScheduleController extends Controller
             return '';
         }
 
-        return View::make('frontend.exhibitions.partials.more-schedules', compact('schedules'));
+        return View::make('exhibitions.frontend.exhibitions.partials.more-schedules', compact('schedules'));
     }
 }

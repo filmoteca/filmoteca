@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('exhibitions.layouts.frontend')
 
 @section('breadcrumbs')
 	<li>
@@ -6,15 +6,6 @@
 	</li>
 	<li class="active">@lang('exhibitions.frontend.history.title')</li>
 @stop
-
-@section('sidebar')
-
-<div class="subscribe-box">
-	@include('frontend.exhibitions.partials.billboard-subscription-form')
-</div>
-
-@stop
-
 
 @section('content')
 

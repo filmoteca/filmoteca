@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('exhibitions.layouts.frontend')
 
 @section('breadcrumbs')
     <li>
@@ -8,10 +8,6 @@
         {{ HTML::link(URL::route('exhibition.auditorium.index'), Lang::trans('exhibitions.frontend.auditorium.index.title')) }}
     </li>
     <li class="active">{{ $auditorium->getName() }}</li>
-@stop
-
-@section('sidebar')
-    @include('frontend.exhibitions.partials.billboard-subscription-form')
 @stop
 
 @section('content')

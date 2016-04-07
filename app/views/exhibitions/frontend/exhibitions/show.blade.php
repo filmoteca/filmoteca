@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('exhibitions.layouts.frontend')
 
 @section('breadcrumbs')
     <li>
@@ -10,12 +10,8 @@
     <li class="active">{{ $exhibition->getFilm()->getTitle() }}</li>
 @stop
 
-@section('sidebar')
-	@include('frontend.exhibitions.partials.billboard-subscription-form')
-@stop
-
 @section('content')
 	<div class="exhibitions index">
-		@include('frontend.exhibitions.partials.details')
+		@include('exhibitions.frontend.partials.details')
 	</div>
 @stop

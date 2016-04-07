@@ -1,14 +1,10 @@
-@extends('layouts.default')
+@extends('exhibitions.layouts.frontend')
 
 @section('breadcrumbs')
     <li>
         {{ HTML::link(URL::route('exhibition'), Lang::trans('exhibitions.frontend.index.breadcrumbs_title')) }}
     </li>
     <li class="active">@Lang('exhibitions.frontend.auditorium.index.title')</li>
-@stop
-
-@section('sidebar')
-    @include('frontend.exhibitions.partials.billboard-subscription-form')
 @stop
 
 @section('content')

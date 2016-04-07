@@ -56,13 +56,13 @@ class ExhibitionController extends Controller
         $exhibitions = $this->repository->findByDate($date);
         $calendar = $this->manager->getCalendar($date);
 
-        return View::make('frontend.exhibitions.index', compact('exhibitions', 'date', 'calendar'));
+        return View::make('exhibitions.frontend.exhibitions.index', compact('exhibitions', 'date', 'calendar'));
     }
 
     public function history()
     {
         if (empty(Input::all())) {
-            return View::make('frontend.exhibitions.history');
+            return View::make('exhibitions.frontend.exhibitions.history');
         }
 
         $fields = [];
@@ -83,12 +83,12 @@ class ExhibitionController extends Controller
         }, []);
 
         if (empty($fields)) {
-            return View::make('frontend.exhibitions.history');
+            return View::make('exhibitions.frontend.exhibitions.history');
         }
 
         $results = $this->repository->findByTitleDirector($fields);
 
-        return View::make('frontend.exhibitions.history')->with('results', $results);
+        return View::make('exhibitions.frontend.exhibitions.history')->with('results', $results);
     }
 
     /**
@@ -99,6 +99,6 @@ class ExhibitionController extends Controller
     {
         $exhibition = $this->repository->search('id', $id);
 
-        return View::make('frontend.exhibitions.show', compact('exhibition'));
+        return View::make('exhibitions.frontend.exhibitions.show', compact('exhibition'));
     }
 }
