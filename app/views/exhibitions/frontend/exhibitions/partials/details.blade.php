@@ -94,12 +94,16 @@
 
 		<div class="panel panel-default">
 			<div class="panel-heading-hora">
-				<h3>@lang('exhibitions.frontend.exhibition.show.is_presented_at')</h3>
-				<span>
-					<a href="{{ URL::route('exhibition.auditorium.index') }}">
+				<div class="row">
+					<div class="col-md-5">
+						<h3>@lang('exhibitions.frontend.exhibition.show.is_presented_at')</h3>
+					</div>
+					<div class="col-md-5">	
+						<a href="{{ URL::route('exhibition.auditorium.index') }}">
 						@lang('exhibitions.frontend.exhibition.show.see_auditoriums_location')
 					</a>
-				</span>
+					</div>
+				</div>
 			</div>
 			<div class="panel-body">
 				@foreach ($exhibition->getSchedules()->groupByAuditorium() as $schedules)

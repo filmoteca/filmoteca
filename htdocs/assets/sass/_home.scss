@@ -84,6 +84,26 @@ $h4: 18px;
 
 }
 
+.flm-section.banner-programacion{
+
+	.link{
+			padding: 0;
+			background-color: #e5e5e5;
+
+		.link img:hover{
+			padding: 2px 0;
+			opacity: 0.6;
+		}
+
+	}
+
+	.link a img{
+			padding: 2px 0;
+			background-color: #e5e5e5;
+			margin: 0 !important;
+	}
+}
+
 .flm-section.programming{
 	
 	.content {
