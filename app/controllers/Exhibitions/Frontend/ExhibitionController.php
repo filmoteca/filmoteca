@@ -5,6 +5,8 @@ namespace Filmoteca\Exhibitions\Controllers\Frontend;
 use Carbon\Carbon;
 use Filmoteca\Repository\ExhibitionsRepository;
 use Filmoteca\Exhibition\ExhibitionsManager;
+use Filmoteca\Exhibition\Type\Exhibition;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\App;
@@ -100,5 +102,16 @@ class ExhibitionController extends Controller
         $exhibition = $this->repository->search('id', $id);
 
         return View::make('exhibitions.frontend.exhibitions.show', compact('exhibition'));
+    }
+
+    public function searchFilms()
+    {
+        $title = Input::get('title', '');
+
+        $exhibitions = $this->repository->findByFilmTitle($title);
+
+        $filmsNames = $this->manager->getFilmsTitles($exhibitions);
+
+        return JsonResponse::create($filmsNames->toArray());
     }
 }

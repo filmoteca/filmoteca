@@ -80,13 +80,10 @@ Route::filter('csrf', function () {
     }
 });
 
-View::composer('*', function ($view) {
-    $view->with('siteName', 'Filmoteca UNAM');
-});
-
-View::composer('exhibitions.*', 'Filmoteca\Exhibitions\Composer\ExhibitionComposer');
-
 View::composer(['layouts.dashboard.master', 'layouts.dashboard.master-app'], function ($view) {
 
     $view->with('currentUser', Sentry::getUser());
 });
+
+
+include_once 'filters/exhibitions.php';

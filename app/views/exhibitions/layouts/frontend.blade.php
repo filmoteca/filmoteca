@@ -2,6 +2,17 @@
 
 @section('sidebar')
 
+    <div class="input-group">
+        <div class="input-group-addon">
+            <span class="glyphicon glyphicon-search"></span>
+        </div>
+        <input type="text"
+               class="form-control"
+               id="films-searcher"
+               placeholder="@lang('exhibitions.frontend.exhibition.index.search')">
+        <div class="input-group-addon">&gt;</div>
+    </div>
+
     @include('exhibitions.frontend.exhibitions.partials.programming')
 
     @include('exhibitions.frontend.exhibitions.partials.billboard-subscription-form')

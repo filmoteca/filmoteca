@@ -177,7 +177,7 @@ class ExhibitionsManager
         $date = clone $date;
         $calendar = $this->calendarGenerator->generate($date);
         $schedules = $this->schedulesRepository->findOfMonth($date)
-            ->groupBy(function (\Filmoteca\Exhibition\Type\Schedule $schedule) {
+            ->groupBy(function (Type\Schedule $schedule) {
                 return $schedule->getEntry()->day;
             })->all();
 
@@ -190,5 +190,18 @@ class ExhibitionsManager
         }
 
         return $calendar;
+    }
+
+    /**
+     * @param Collection $exhibitions
+     * @return Collection
+     */
+    public function getFilmsTitles(Collection $exhibitions)
+    {
+        $titles = $exhibitions->map(function (Exhibition $exhibition) {
+            return $exhibition->getFilm()->getTitle();
+        });
+
+        return $titles;
     }
 }

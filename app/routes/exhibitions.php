@@ -3,7 +3,7 @@
 Route::group(['prefix' => 'exhibition'], function () {
 
     Route::get('/', [
-        'as' => 'exhibition',
+        'as' => 'exhibitions.frontend.exhibitions.index',
         'uses' => 'Filmoteca\Exhibitions\Controllers\Frontend\ExhibitionController@index'
     ]);
 
@@ -16,6 +16,11 @@ Route::group(['prefix' => 'exhibition'], function () {
     Route::get('history', [
         'as' => 'exhibition.history',
         'uses' => 'Filmoteca\Exhibitions\Controllers\Frontend\ExhibitionController@history'
+    ]);
+
+    Route::get('films-searcher', [
+        'as' => 'exhibitions.frontend.exhibitions.filmssearcher',
+        'uses' => 'Filmoteca\Exhibitions\Controllers\Frontend\ExhibitionController@searchFilms'
     ]);
 
     Route::get('{id}/show', [

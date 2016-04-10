@@ -329,6 +329,51 @@ class ExhibitionsRepository extends ResourcesRepository implements PageableRepos
         return $this->searchByDate($from, $until);
     }
 
+    /**
+     * @param string $title
+     * @return Collection
+     */
+    public function findByFilmTitle($title = '')
+    {
+        $builder = Film::getQuery();
+        $limit = 10;
+        
+        $results = $builder
+            ->where('title', 'like', '%' . $title . '%')
+            ->limit($limit)
+            ->get(['id']);
+
+        $filmsIds = array_map(function ($dummyObject) {
+            return $dummyObject->id; //The query builder returns an array and does not a collection. I do not know why.
+        }, $results);
+        
+        if (empty($filmsIds)) {
+            return Collection::make([]);
+        }
+        
+        $exhibitions = Exhibition::whereHas('exhibitionFilm', function ($queryBuilder) use ($filmsIds) {
+
+            $queryBuilder->whereHas('film', function ($queryBuilder) use ($filmsIds) {
+                $queryBuilder->whereIn('films.id', $filmsIds);
+            });
+        })
+            ->with(
+                'schedules',
+                'schedules.auditorium',
+                'exhibitionFilm',
+                'exhibitionFilm.film',
+                'type'
+            )
+            ->limit($limit)
+            ->get();
+        
+        return $exhibitions;
+    }
+
+    /**
+     * @param array|null $schedules
+     * @return mixed
+     */
     protected function makeSchedules(array $schedules = null)
     {
         return array_map(function ($a_schedule) {
