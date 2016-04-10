@@ -28,7 +28,7 @@ class ExhibitionComposer
     {
         $viewData = $view->getData();
 
-        $date = isset($viewDate['date'])? $viewData['date']: Carbon::today();
+        $date = array_has($viewData, 'date') && $viewData['date'] ? $viewData['date']: Carbon::today();
         $calendar = $this->manager->getCalendar(Carbon::today());
 
         $view->with('calendar', $calendar);
