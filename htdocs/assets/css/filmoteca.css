@@ -6492,7 +6492,7 @@ footer {
   right: 0px;
   position: fixed;
   text-transform: uppercase;
-  color: #2d2d2d;
+  color: #2D2D2D;
   padding: 1px 12px 5px 12px;
   font-size: 11px; }
   .ceil-toolbar .icon-arrow-above {
@@ -6501,7 +6501,7 @@ footer {
     color: #810069;
     text-decoration: none; }
   .ceil-toolbar a:hover {
-    color: #2d2d2d; }
+    color: #2D2D2D; }
 
 .slick-slide {
   position: relative; }
@@ -6579,40 +6579,6 @@ footer {
   display: block;
   word-wrap: break-word;
   text-align: center; }
-
-.exhibition-datepicker table {
-  border: none; }
-  .exhibition-datepicker table td, .exhibition-datepicker table th {
-    border: none;
-    padding: 0px; }
-  .exhibition-datepicker table .form-control {
-    height: 10px;
-    padding: 11px; }
-  .exhibition-datepicker table .btn {
-    padding: 1px 2px; }
-
-.exhibition-datepicker-week-row:hover {
-  background-color: #f5f5f5; }
-  .exhibition-datepicker-week-row:hover button {
-    background-color: #810069; }
-.exhibition-datepicker-week-row button.active {
-  background-color: #810069; }
-.exhibition-datepicker-week-row:hover button:hover {
-  background-color: #f4f5f5; }
-
-.btn-info {
-  background-color: #810069;
-  border-color: #5f0247;
-  color: #fff; }
-  .btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active {
-    background-color: #810069;
-    border-color: #5f0247;
-    color: #fff; }
-
-.open > .btn-info.dropdown-toggle {
-  background-color: #810069;
-  border-color: #5f0247;
-  color: #fff; }
 
 .exhibition-schedules .label {
   margin-right: 5px; }
@@ -7038,6 +7004,31 @@ footer {
     text-transform: uppercase;
     font-size: 13px; }
 
+.calendar .disabled {
+  background-color: #CCCCCC; }
+.calendar .day {
+  background-color: white; }
+.calendar .day.today {
+  background-color: green;
+  color: white; }
+.calendar .day.active {
+  background-color: #810069;
+  color: white; }
+.calendar .day.none-exhibition {
+  background-color: gray;
+  border: solid thin #810069;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-top-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-top-right-radius: 50%;
+  text-decoration: none;
+  cursor: not-allowed;
+  position: relative; }
+
 .calendar table {
   background-color: #FFFFFF;
   width: 100%;
@@ -7072,7 +7063,8 @@ table th {
 .calendar table tr td:hover, .calendar table tr th .active:hover {
   background-color: #810069; }
   .calendar table tr td:hover a, .calendar table tr th .active:hover a {
-    color: #fff !important; }
+    color: #fff !important;
+    background-color: #810069; }
   .calendar table tr td:hover button, .calendar table tr th .active:hover button {
     background-color: #f5f5f5; }
   .calendar table tr td:hover button.active, .calendar table tr th .active:hover button.active {

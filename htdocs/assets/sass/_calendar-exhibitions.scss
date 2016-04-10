@@ -27,8 +27,46 @@
     }
 }
 
+.calendar {
+    .disabled {
+        background-color: $disabled-calendar-day;
+    }
 
-.calendar table { 
+    .with-exhibitions {
+
+    }
+
+    .day {
+        background-color: white;
+    }
+
+    .day.today {
+        background-color: green;
+        color: white;
+    }
+
+    // The active day can be the today day and the active day must have most precedence than today day then
+    // this rule must be defined after of .day.today
+    .day.active {
+        background-color: $primary-color;
+        color: white;
+    }
+
+    .day.none-exhibition {
+        background-color: gray;
+        border: solid thin $primary-color;
+        @include border-bottom-radius(50%);
+        @include border-top-radius(50%);
+        @include border-left-radius(50%);
+        @include border-right-radius(50%);
+        text-decoration: none;
+        cursor: not-allowed;
+        position: relative;
+    }
+}
+
+
+.calendar table {
     background-color: #FFFFFF;
     width: 100%;
     font-size: 12px;
@@ -52,7 +90,7 @@
         border-color: #e5e5e5;
         color: #8a8a8a;
     }
-        
+
     td, th {
         caption-side: bottom;
         padding: 0;
@@ -60,22 +98,23 @@
         border: thin solid #a5a5a0;
         height: 20px;
         width: 20px;
-        }   
-    
+        }
+
 
 }
 
 table th {
-    background-color: #e5e5e5; 
+    background-color: #e5e5e5;
     }
 
 .calendar table tr {
-        
+
     td, th .active{
         &:hover {
         background-color: #810069;
             a {
                 color: #fff !important;
+                background-color: $primary-color;
             }
         button {
             background-color: #f5f5f5;
@@ -87,7 +126,7 @@ table th {
     &:hover button:hover {
         background-color: #810069;
     }
-        }   
+        }
 
      }
 

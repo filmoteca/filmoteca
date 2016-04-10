@@ -44,6 +44,12 @@ class ExhibitionController extends Controller
      */
     public function index($humanDate = '')
     {
+        if ($humanDate === '' && Input::has('title')) {
+            $exhibitions = $this->repository->findByFilmTitle(Input::get('title'));
+
+            return View::make('exhibitions.frontend.exhibitions.index', compact('exhibitions'));
+        }
+
         if ($humanDate !== '' && substr($humanDate, 0, 1) === '0') {
             App::abort(404);
         }

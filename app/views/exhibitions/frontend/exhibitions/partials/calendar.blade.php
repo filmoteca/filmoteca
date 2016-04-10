@@ -29,23 +29,24 @@
             </th>
         </tr>
         @foreach ($calendar->getWeeks() as $week)
+
             <tr>
                 @foreach($week->getDays() as $day)
                     <td>
                         @if ($day->getDate()->month === $date->month)
                             @if ($day->hasExhibitions())
-                                <a class="active {{ $day->isToday() ? 'today': '' }}"
+                                <a class="with-exhibitions day {{ $day->isToday() ? 'today': '' }} {{ $date->day === $day->getNumber() ? 'active': '' }}"
                                    title="@lang('exhibitions.frontend.calendar.exhibitions-in-the-day', ['number' => $day->getExhibitionsNumber()]) "
                                    href="{{ URL::route('exhibition.by_date', $day->getDateInFormatToUrl()) }}">
                                     {{ $day->getNumber() }}
                                 </a>
                             @else
-                                <a class="active none-exhibition {{ $day->isToday() ? 'today': '' }}">
+                                <a class="none-exhibition day {{ $day->isToday() ? 'today': '' }} {{ $date->day === $day->getNumber() ? 'active': '' }}">
                                     {{ $day->getNumber() }}
                                 </a>
                             @endif
                         @else
-                            <span class="disabled">{{ $day->getNumber() }}</span>
+                            <span class="disabled day">{{ $day->getNumber() }}</span>
                         @endif
                     </td>
                 @endforeach

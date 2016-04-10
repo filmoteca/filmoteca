@@ -13,7 +13,7 @@
         <div class="input-group-addon">&gt;</div>
     </div>
 
-    @include('exhibitions.frontend.exhibitions.partials.programming')
+    @include('exhibitions.frontend.exhibitions.partials.programming', ['date' => $date])
 
     @include('exhibitions.frontend.exhibitions.partials.billboard-subscription-form')
 
