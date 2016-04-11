@@ -2,6 +2,7 @@
 
 namespace Filmoteca\Exhibition;
 
+use Filmoteca\Repository\ExhibitionsRepository;
 use Filmoteca\Repository\SchedulesRepository;
 use InvalidArgumentException;
 use Illuminate\Support\Collection;
@@ -29,13 +30,23 @@ class ExhibitionsManager
     protected $schedulesRepository;
 
     /**
+     * @var ExhibitionsRepository
+     */
+    protected $exhibitionsRepository;
+
+    /**
      * @param CalendarGenerator $calendarGenerator
      * @param SchedulesRepository $schedulesRepository
+     * @param ExhibitionsRepository $exhibitionsRepository
      */
-    public function __construct(CalendarGenerator $calendarGenerator, SchedulesRepository $schedulesRepository)
-    {
+    public function __construct(
+        CalendarGenerator $calendarGenerator,
+        SchedulesRepository $schedulesRepository,
+        ExhibitionsRepository $exhibitionsRepository
+    ) {
         $this->calendarGenerator = $calendarGenerator;
         $this->schedulesRepository = $schedulesRepository;
+        $this->exhibitionsRepository = $exhibitionsRepository;
     }
 
     /**
@@ -203,5 +214,17 @@ class ExhibitionsManager
         });
 
         return $titles;
+    }
+
+    /**
+     * @param string $title
+     * @return \Illuminate\Pagination\Paginator
+     */
+    public function findByTitleSinceToday($title)
+    {
+        $until = Carbon::today()->addMonths(2);
+        $exhibitions = $this->exhibitionsRepository->findBy(compact('title'), Carbon::today(), $until);
+
+        return $exhibitions;
     }
 }

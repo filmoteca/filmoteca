@@ -44,8 +44,9 @@ class ExhibitionController extends Controller
      */
     public function index($humanDate = '')
     {
+        // Search by title
         if ($humanDate === '' && Input::has('title')) {
-            $exhibitions = $this->repository->findByFilmTitle(Input::get('title'));
+            $exhibitions = $this->manager->findByTitleSinceToday(Input::get('title'));
 
             return View::make('exhibitions.frontend.exhibitions.index', compact('exhibitions'));
         }
@@ -112,14 +113,8 @@ class ExhibitionController extends Controller
 
     public function searchFilms()
     {
-        $fields = [
-            'title' => Input::get('title', '')
-        ];
+        $exhibitions = $this->manager->findByTitleSinceToday(Input::get('titlte', ''));
 
-        $until = Carbon::today()->addMonths(2);
-
-        $exhibitions = $this->repository->findBy($fields, Carbon::today(), $until);
-        
         $filmsNames = $this->manager->getFilmsTitles($exhibitions->getCollection());
 
         return JsonResponse::create($filmsNames->toArray());
