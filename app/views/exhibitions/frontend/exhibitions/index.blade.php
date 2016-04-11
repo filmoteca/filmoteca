@@ -41,7 +41,7 @@
             @include('exhibitions.frontend.exhibitions.partials.details')
         @endforeach
 
-        <div class="center-block">
+        <div class="text-center">
             {{ $exhibitions->links() }}
         </div>
     </div>
