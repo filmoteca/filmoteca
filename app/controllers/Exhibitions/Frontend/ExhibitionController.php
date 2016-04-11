@@ -5,9 +5,9 @@ namespace Filmoteca\Exhibitions\Controllers\Frontend;
 use Carbon\Carbon;
 use Filmoteca\Repository\ExhibitionsRepository;
 use Filmoteca\Exhibition\ExhibitionsManager;
-use Filmoteca\Exhibition\Type\Exhibition;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Input;
@@ -94,7 +94,7 @@ class ExhibitionController extends Controller
             return View::make('exhibitions.frontend.exhibitions.history');
         }
 
-        $results = $this->repository->findByTitleDirector($fields);
+        $results = $this->repository->findBy($fields, Carbon::minValue(), Carbon::maxValue());
 
         return View::make('exhibitions.frontend.exhibitions.history')->with('results', $results);
     }
@@ -105,18 +105,22 @@ class ExhibitionController extends Controller
      */
     public function show($id)
     {
-        $exhibition = $this->repository->search('id', $id);
+        $exhibition = $this->repository->find($id);
 
         return View::make('exhibitions.frontend.exhibitions.show', compact('exhibition'));
     }
 
     public function searchFilms()
     {
-        $title = Input::get('title', '');
+        $fields = [
+            'title' => Input::get('title', '')
+        ];
 
-        $exhibitions = $this->repository->findByFilmTitle($title);
+        $until = Carbon::today()->addMonths(2);
 
-        $filmsNames = $this->manager->getFilmsTitles($exhibitions);
+        $exhibitions = $this->repository->findBy($fields, Carbon::today(), $until);
+        
+        $filmsNames = $this->manager->getFilmsTitles($exhibitions->getCollection());
 
         return JsonResponse::create($filmsNames->toArray());
     }

@@ -22,7 +22,7 @@
 @section('content')
 
     <span class="result-number">
-        @lang('exhibitions.frontend.exhibition.index.results_number', ['number' => $exhibitions->count()])
+        @lang('exhibitions.frontend.exhibition.index.results_number', ['number' => $exhibitions->getTotal()])
     </span>
 
     <h1>
@@ -37,8 +37,12 @@
     </h1>
 
     <div class="exhibitions index">
-    @foreach ($exhibitions as $exhibition)
-        @include('exhibitions.frontend.exhibitions.partials.details')
-    @endforeach
+        @foreach ($exhibitions as $exhibition)
+            @include('exhibitions.frontend.exhibitions.partials.details')
+        @endforeach
+
+        <div class="center-block">
+            {{ $exhibitions->links() }}
+        </div>
     </div>
 @stop

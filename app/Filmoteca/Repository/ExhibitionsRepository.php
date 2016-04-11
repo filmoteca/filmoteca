@@ -2,7 +2,7 @@
 
 use App;
 use Carbon\Carbon;
-use InvalidArgumentException;
+use Illuminate\Database\Eloquent\Builder;
 use Filmoteca\Models\Exhibitions\Exhibition;
 use Filmoteca\Models\Exhibitions\ExhibitionFilm;
 use Filmoteca\Models\Exhibitions\Film;
@@ -15,6 +15,8 @@ use Illuminate\Database\Eloquent\Collection;
  */
 class ExhibitionsRepository extends ResourcesRepository implements PageableRepositoryInterface
 {
+    const EXHIBITIONS_FOR_PAGE = 3;
+
     /**
      * @var Exhibition
      */
@@ -37,102 +39,34 @@ class ExhibitionsRepository extends ResourcesRepository implements PageableRepos
 
     /**
      * @param Exhibition $exhibition
-     * @param ExhibitionFilm $exhibitionFilm
-     * @param Film $film
      */
-    public function __construct(Exhibition $exhibition, ExhibitionFilm $exhibitionFilm, Film $film)
+    public function __construct(Exhibition $exhibition)
     {
         $this->exhibition = $exhibition;
-        $this->exhibitionFilm = $exhibitionFilm;
         $this->resource = $exhibition;
-        $this->film = $film;
-    }
-
-    /**
-     * Realiza una búsqueda de exhibiciones dependiendo
-     * del primer parámetro.
-     * @param  String $by Esta cadena indica el tipo de búsqueda que se realizara.
-     * @param  Mixed $value El valor con el cual se  quiere que coincida la búsqueda
-     * y depende el tipo de búsqueda.
-     * @return Collection    Collección de exhibiciones
-     * @throws NotFoundException Si la exhibición no existe al realizar una búsquda por id.
-     */
-    public function search($by, $value = null)
-    {
-        switch ($by) {
-            case ('id'):
-                $exhibitions = $this->exhibition->findOrFail($value);
-                break;
-            case ('title'):
-                $exhibitions = $this->searchByTitle($value);
-                break;
-            case ('date'):
-                $exhibitions = $this->searchByDate($value[0], $value[1]);
-                break;
-            case ('today'):
-                $today = Carbon::now()->toDateString();
-                $exhibitions = $this->searchByDate($today, $today . ' 23:59:59');
-                break;
-            default:
-                throw new InvalidArgumentException('Parámetro de búsqueda invalido: ' . $by);
-        }
-
-        return $exhibitions;
-    }
-
-    /**
-     * Realiza una búsquda de aquellas exhibiciones que
-     * exhiban una película con el título dado.
-     * @param  [type] $title [description]
-     * @return [type]        [description]
-     */
-    public function searchByTitle($title)
-    {
-        $films = $this->film
-            ->where('title', 'like', '%' . $value . '%')
-            ->get(array('id'));
-
-        /**
-         * El id de ExhibitionFilm es igual (o tendría que serlo) al
-         * de Films ya que la relación es uno a uno.
-         */
-
-        $exhibitions = $this->exhibition
-            ->whereIn('id', $films->lists('id'), 'or')
-            ->with('exhibitionFilm', 'exhibitionFilm.film')
-            ->get();
-
-        /**
-         * Cargamos la programación de las exhibiciones encontradas.
-         * La sentencia dentro del foreach lo que hace es inicializar
-         * el atributo schedules de una exhibición.
-         */
-        foreach ($exhibitions as $exhibition) {
-            $exhibition->schedules;
-        }
-
-        return $exhibitions;
     }
 
     /**
      * @param Carbon $date
-     * @return Collection
+     * @return \Illuminate\Pagination\Paginator
      */
     public function findByDate(Carbon $date)
     {
-        $dateString = $date->toDateString();
+        $until = clone $date;
+        $until->addDay()->subSecond();
 
-        return $this->searchByDate($dateString, $dateString);
+        return $this->findByDateInterval($date, $until);
     }
 
     /**
-     * @param  String $from
-     * @param  String $until
-     * @return Collection
+     * @param Carbon $since
+     * @param Carbon $until
+     * @param int $limit
+     * @return \Illuminate\Pagination\Paginator
      */
-    public function searchByDate($from, $until)
+    public function findByDateInterval(Carbon $since, Carbon $until, $limit = self::EXHIBITIONS_FOR_PAGE)
     {
-        $interval = array($from, $until . ' 23:59:59');
+        $interval = array($since, $until . ' 23:59:59');
 
         $exhibitions = $this->exhibition
             ->whereHas('schedules', function ($query) use ($interval) {
@@ -145,7 +79,7 @@ class ExhibitionsRepository extends ResourcesRepository implements PageableRepos
                 'exhibitionFilm.film.genre',
                 'exhibitionFilm.film.countries',
                 'type'
-            )->get();
+            )->paginate($limit);
 
         return $exhibitions;
     }
@@ -241,11 +175,21 @@ class ExhibitionsRepository extends ResourcesRepository implements PageableRepos
         return true;
     }
 
-    public function findByTitleDirector($fields)
+    /**
+     * @param $fields
+     * @param Carbon $since
+     * @param Carbon $until
+     * @param int $limit
+     * @return \Illuminate\Pagination\Paginator
+     */
+    public function findBy($fields, Carbon $since, Carbon $until, $limit = self::EXHIBITIONS_FOR_PAGE)
     {
+        if (empty($fields)) {
+            return Collection::make([]);
+        }
+
         $builder = Film::getQuery();
-        $resources = Collection::make([]);
-        $limit = 15;
+        $dateInterval = [$since->format(MYSQL_DATE_TIME_FORMAT), $until->format(MYSQL_DATE_TIME_FORMAT)];
 
         foreach ($fields as $name => $value) {
             $builder->where($name, 'like', '%' . $value . '%');
@@ -253,26 +197,27 @@ class ExhibitionsRepository extends ResourcesRepository implements PageableRepos
 
         $results = $builder->get(['id']);
 
-        $filmsIds = array_map(function ($dummyObject) {
-            return $dummyObject->id; //The query builder returns an array and does not a collection. I do not know why.
-        }, $results);
+        $filmsIds = Collection::make($results)->map(function (\stdClass $dummyObject) {
+            return $dummyObject->id;
+        })->toArray();
 
-        if (!empty($filmsIds)) {
-            $resources = Exhibition::whereHas('exhibitionFilm', function ($q) use ($filmsIds) {
-
-                $q->whereHas('film', function ($q) use ($filmsIds) {
-                    $q->whereIn('films.id', $filmsIds);
-                });
-            })
-                ->with(
-                    'schedules',
-                    'schedules.auditorium',
-                    'exhibitionFilm',
-                    'exhibitionFilm.film',
-                    'type'
-                )
-                ->paginate($limit);
+        if (empty($filmsIds)) {
+            return Collection::make([]);
         }
+
+        $resources = Exhibition::whereHas('exhibitionFilm', function ($builder) use ($filmsIds) {
+            $builder->whereHas('film', function (Builder $builder) use ($filmsIds) {
+                $builder->whereIn('films.id', $filmsIds);
+            });
+        })->whereHas('schedules', function (Builder $query) use ($dateInterval) {
+            $query->whereBetween('entry', $dateInterval);
+        })->with(
+            'schedules',
+            'schedules.auditorium',
+            'exhibitionFilm',
+            'exhibitionFilm.film',
+            'type'
+        )->paginate($limit);
 
         return $resources;
     }
@@ -327,47 +272,6 @@ class ExhibitionsRepository extends ResourcesRepository implements PageableRepos
         )->toDateString();
 
         return $this->searchByDate($from, $until);
-    }
-
-    /**
-     * @param string $title
-     * @return Collection
-     */
-    public function findByFilmTitle($title = '')
-    {
-        $builder = Film::getQuery();
-        $limit = 10;
-        
-        $results = $builder
-            ->where('title', 'like', '%' . $title . '%')
-            ->limit($limit)
-            ->get(['id']);
-
-        $filmsIds = array_map(function ($dummyObject) {
-            return $dummyObject->id; //The query builder returns an array and does not a collection. I do not know why.
-        }, $results);
-        
-        if (empty($filmsIds)) {
-            return Collection::make([]);
-        }
-        
-        $exhibitions = Exhibition::whereHas('exhibitionFilm', function ($queryBuilder) use ($filmsIds) {
-
-            $queryBuilder->whereHas('film', function ($queryBuilder) use ($filmsIds) {
-                $queryBuilder->whereIn('films.id', $filmsIds);
-            });
-        })
-            ->with(
-                'schedules',
-                'schedules.auditorium',
-                'exhibitionFilm',
-                'exhibitionFilm.film',
-                'type'
-            )
-            ->limit($limit)
-            ->get();
-        
-        return $exhibitions;
     }
 
     /**

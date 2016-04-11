@@ -85,5 +85,10 @@ View::composer(['layouts.dashboard.master', 'layouts.dashboard.master-app'], fun
     $view->with('currentUser', Sentry::getUser());
 });
 
+View::composer(Paginator::getViewName(), function (Illuminate\View\View $view) {
+    $queryString = array_except(Input::query(), Paginator::getPageName());
+    $view->paginator->appends($queryString);
+});
+
 
 include_once 'filters/exhibitions.php';

@@ -43,7 +43,7 @@
 				@lang('exhibitions.frontend.history.results', ['number' => $results->count()])
 			</div>
 
-			@include('frontend.exhibitions.partials.tabulator', ['editable' => false])
+			@include('exhibitions.frontend.exhibitions.partials.tabulator', ['editable' => false])
 		@endif
 	@endif
 </div>
