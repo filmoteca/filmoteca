@@ -18,6 +18,7 @@ $h4: 18px;
 
 	.header{
 		padding: 3px 10px 5px 10px;
+		background-color: $section-color;
 
 		.small{
 			margin-left: 10px;
@@ -87,20 +88,20 @@ $h4: 18px;
 .flm-section.banner-programacion{
 
 	.link{
-			padding: 0;
-			background-color: #e5e5e5;
+		padding: 0 !important;
+		background-color: #e5e5e5;
 
 		.link img:hover{
-			padding: 2px 0;
-			opacity: 0.6;
+		padding: 0 !important;
+		opacity: 0.6;
 		}
 
 	}
 
 	.link a img{
-			padding: 2px 0;
-			background-color: #e5e5e5;
-			margin: 0 !important;
+		padding: 0px 0;
+		background-color: #e5e5e5;
+		margin: 0 !important;
 	}
 }
 
@@ -155,7 +156,7 @@ $h4: 18px;
 
 			span{
 				font-size: 20px;
-				padding: 10px
+				padding: 1px
 			}
 		}
 

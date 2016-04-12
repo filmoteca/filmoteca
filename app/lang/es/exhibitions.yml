@@ -2,15 +2,15 @@ frontend:
     history:
         title: Histórico de programación
         search: Buscar
-        results: 'Se encontrarón <b>:number</b> películas'
-        none_results: Ningúna película encontrada.
+        results: 'Se encontraron <b>:number</b> películas'
+        none_results: Ninguna película encontrada.
     calendar:
         title: Cine UNAM
         subtitle: Consulta programación
         exhibitions-in-the-day: ':number exhibiciones en este día'
     auditorium:
         index:
-            title: Salas de cine
+            title: Ubicación Salas de cine
         show:
             direction: Dirección
     billboard:
@@ -21,7 +21,6 @@ frontend:
             title: 'Programación del :textual_day :numeric_day de :textual_month'
             breadcrumbs_title: Programación
             results_number: 'Películas encontradas: :number'
-            search: Buscar películas
         show:
             see_more: Ver más »
             see_location: Ver ubicación
@@ -43,3 +42,6 @@ frontend:
                 auditorium: Sala
                 director: Director
                 title: Título
+    details:
+        fechas:
+            fecha: ':numeric_day de :textual_month de ' 

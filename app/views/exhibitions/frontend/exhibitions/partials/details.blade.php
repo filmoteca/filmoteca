@@ -4,8 +4,8 @@
 			@if ($exhibition->getType() !== null)
 				<span>
 					<img src="{{ $exhibition->getType()->getImage()->getSmallImageUrl() }}">
+					{{ $exhibition->getType()->getName() }}
 				</span>
-				<span>{{ $exhibition->getType()->getName() }}</span>
 			@endif
 		</div>
 	</div>
@@ -100,28 +100,33 @@
 					</div>
 					<div class="col-md-5">	
 						<a href="{{ URL::route('exhibition.auditorium.index') }}">
-						@lang('exhibitions.frontend.exhibition.show.see_auditoriums_location')
-					</a>
+							@lang('exhibitions.frontend.exhibition.show.see_auditoriums_location')
+						</a>
 					</div>
 				</div>
 			</div>
 			<div class="panel-body">
 				@foreach ($exhibition->getSchedules()->groupByAuditorium() as $schedules)
 					<div class="row">
-						<div class="col-md-5">
-                                    <span class="auditorium-name">
-                                        {{ $schedules->first()->getAuditorium()->getName() }}
-                                    </span>
-
-							<a href="{{  URL::route('exhibition.auditorium.show', ['slug' =>  $schedules->first()->getAuditorium()->getSlug()])}}">
-								@lang('exhibitions.frontend.exhibition.show.see_location')
+						<div class="col-md-4 bold">
+                            <a href="{{  URL::route('exhibition.auditorium.show', ['slug' =>  $schedules->first()->getAuditorium()->getSlug()])}}">
+                               {{ $schedules->first()->getAuditorium()->getName() }}
 							</a>
 						</div>
-						<div class="col-md-7">
-							{{ HTML::schedulesTimeAsList($schedules) }}
+						<div class="col-md-4 highlight">
+							@lang('exhibitions.frontend.details.fechas.fecha',
+				               	['numeric_day' => $date->format('j'),
+								'textual_month' => @trans('dates.months.' . $date->format('F'))
+								])
+								<?php
+								    echo date("Y");
+								?>
+						</div>
+						<div class="col-md-4">
+							{{ HTML::schedulesTimeAsList($schedules) }} hrs.
 						</div>
 					</div>
-					@endforeach
+				@endforeach
 
 							<!-- Botón que desplegará más horarios -->
 					<div align="right">

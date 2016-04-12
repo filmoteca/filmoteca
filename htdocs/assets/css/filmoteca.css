@@ -6317,7 +6317,8 @@ footer {
     text-transform: uppercase;
     font-weight: 600; }
   .flm-section .header {
-    padding: 3px 10px 5px 10px; }
+    padding: 3px 10px 5px 10px;
+    background-color: #E5E5E5; }
     .flm-section .header .small {
       margin-left: 10px; }
 
@@ -6349,13 +6350,13 @@ footer {
   height: auto; }
 
 .flm-section.banner-programacion .link {
-  padding: 0;
+  padding: 0 !important;
   background-color: #e5e5e5; }
   .flm-section.banner-programacion .link .link img:hover {
-    padding: 2px 0;
+    padding: 0 !important;
     opacity: 0.6; }
 .flm-section.banner-programacion .link a img {
-  padding: 2px 0;
+  padding: 0px 0;
   background-color: #e5e5e5;
   margin: 0 !important; }
 
@@ -6385,7 +6386,7 @@ footer {
   display: block; }
   .flm-section.programming .queries a span {
     font-size: 20px;
-    padding: 10px; }
+    padding: 1px; }
 .flm-section.programming .queries a:hover {
   color: #f9d932; }
 .flm-section.programming .queries .link {
@@ -7015,108 +7016,107 @@ td .col-md-4 bold {
 .loading-lg {
   background-size: 144px 144px; }
 
+.calendar.well {
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+  margin-bottom: 20px;
+  min-height: 20px;
+  padding: 0 !important;
+  background-repeat: repeat-x;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset; }
+
+.flm-section {
+  background-color: #fff;
+  margin-bottom: 25px; }
+
 .flm-section.programming .content {
   margin: 50px 0 30px; }
 
-.well-sm {
-  padding: 4px; }
-
-.flm-section .header {
+.flm-section .header-programming {
   background-color: #2d2d2d;
   padding: 3px;
   width: 100%; }
-  .flm-section .header h2 {
+  .flm-section .header-programming h2 {
     color: #f9d932;
     margin-top: 5px;
     text-transform: uppercase; }
-  .flm-section .header h5 {
+  .flm-section .header-programming h5 {
     color: #fff !important;
     font-weight: 400;
     text-transform: uppercase;
     font-size: 13px; }
 
-.calendar .disabled {
-  background-color: #CCCCCC; }
-.calendar .day {
-  background-color: white; }
-.calendar .day.today {
-  background-color: green;
-  color: white; }
-.calendar .day.active {
-  background-color: #810069;
-  color: white; }
-.calendar .day.none-exhibition {
-  background-color: gray;
-  border: solid thin #810069;
-  border-bottom-right-radius: 50%;
-  border-bottom-left-radius: 50%;
-  border-top-right-radius: 50%;
-  border-top-left-radius: 50%;
-  border-bottom-left-radius: 50%;
-  border-top-left-radius: 50%;
-  border-bottom-right-radius: 50%;
-  border-top-right-radius: 50%;
-  text-decoration: none;
-  cursor: not-allowed;
-  position: relative; }
-
 .calendar table {
-  background-color: #FFFFFF;
   width: 100%;
   font-size: 12px;
-  border-collapse: collapse;
-  border-spacing: 0;
+  border-collapse: separate;
+  border-spacing: 6px;
   margin: 0 auto; }
   .calendar table caption {
     padding: 3px;
-    color: #2d2d2d;
+    color: #810069;
+    font-size: 15px;
     text-align: center;
     text-transform: capitalize;
     font-weight: 600;
     border: thin solid #a5a5a0;
     background-color: #FFFFFF; }
   .calendar table tr {
-    font-size: 1em;
     text-transform: capitalize;
-    border-color: #e5e5e5;
-    color: #8a8a8a; }
-  .calendar table td, .calendar table th {
+    text-align: center; }
+  .calendar table td .dayactive {
+    background-color: #FFFFFF;
+    border: thin solid #a5a5a0;
+    border-radius: 3px;
+    caption-side: bottom;
+    color: #ffffff;
+    padding: 0;
+    text-align: center;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset; }
+  .calendar table tr, .calendar table th, .calendar table td {
+    height: 20px;
+    width: 20px; }
+  .calendar table td .none-exhibition {
+    border: thin solid #a5a5a0;
     caption-side: bottom;
     padding: 0;
     text-align: center;
-    border: thin solid #a5a5a0;
-    height: 20px;
-    width: 20px; }
-
-table th {
-  background-color: #e5e5e5; }
-
-.calendar table tr td:hover, .calendar table tr th .active:hover {
-  background-color: #810069; }
-  .calendar table tr td:hover a, .calendar table tr th .active:hover a {
-    color: #fff !important;
+    border-radius: 15px;
+    cursor: not-allowed; }
+    .calendar table td .none-exhibition a {
+      border: none !important;
+      color: #a5a5a0; }
+  .calendar table td .disabled {
+    caption-side: bottom;
+    cursor: not-allowed;
+    color: #b0b0b0;
+    background-color: #d2d2d2;
+    border-radius: 3px; }
+  .calendar table .dayactive:hover, .calendar table .dayactive:focus {
     background-color: #810069; }
-  .calendar table tr td:hover button, .calendar table tr th .active:hover button {
-    background-color: #f5f5f5; }
-  .calendar table tr td:hover button.active, .calendar table tr th .active:hover button.active {
-    background-color: #f4f5f5; }
-  .calendar table tr td:hover:hover button:hover, .calendar table tr th .active:hover:hover button:hover {
-    background-color: #810069; }
-.calendar table tr .btn-info {
-  background-color: #810069;
-  border-color: #5f0247;
-  color: #fff; }
-  .calendar table tr .btn-info:hover, .calendar table tr .btn-info:focus, .calendar table tr .btn-info:active, .calendar table tr .btn-info.active {
-    background-color: #810069;
-    border-color: #5f0247;
-    color: #fff; }
-.calendar table tr .open > .btn-info.dropdown-toggle {
-  background-color: #810069;
-  border-color: #5f0247;
-  color: #fff; }
+  .calendar table .dayactive a:hover, .calendar table .dayactive a:focus {
+    color: #FFFFFF !important; }
 
 .search-autocomplete {
   width: 200px;
   height: 35px; }
+
+.flm-section.programming .link {
+  margin-bottom: 5px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset; }
+
+.link {
+  cursor: pointer;
+  padding: 5px; }
+
+.flm-section.programming .link:hover, .flm-section.programming .link:focus {
+  background-color: #810069; }
+.flm-section.programming .link a:hover, .flm-section.programming .link a:focus {
+  color: #FFFFFF !important; }
 
 /*# sourceMappingURL=filmoteca.css.map */

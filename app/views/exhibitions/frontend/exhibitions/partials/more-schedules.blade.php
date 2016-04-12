@@ -1,36 +1,24 @@
 <div class="extra-schedules">
     <table class="table table-bordered">
-        <tr>
-            <th>
-                @lang('exhibitions.frontend.exhibition.show.fields.auditorium')
-            </th>
-            <th>
-                @lang('exhibitions.frontend.exhibition.show.day')
-            </th>
-            <th>
-                @lang('exhibitions.frontend.exhibition.show.schedules')
-            </th>
-        </tr>
         @foreach ($schedules->groupByAuditorium() as $auditoriumSchedules)
             @foreach ($auditoriumSchedules->groupByDate() as $index => $dateSchedules)
                 @foreach ($dateSchedules as $dayIndex => $schedule)
                     <tr>
                         @if ($index == 0 && $dayIndex == 0)
-                            <td rowspan="{{ $auditoriumSchedules->count() }}">
+                            <td class="col-md-4 bold" rowspan="{{ $auditoriumSchedules->count() }}">
                                 <span class="auditorium-name">
-                                    {{ $schedule->getAuditorium()->getName() }}
+                                    <a href="#">
+                                        {{ $schedule->getAuditorium()->getName() }}
+                                    </a>
                                 </span>
-                                <a href="#">
-                                    @lang('exhibitions.frontend.exhibition.show.see_location')
-                                </a>
                             </td>
                         @endif
                         @if ($dayIndex == 0)
-                            <td rowspan="{{ $dateSchedules->count() }}">
+                            <td class="col-md-4 highlight" rowspan="{{ $dateSchedules->count() }}">
                                 {{ $schedule->getEntry()->format('d/m/Y') }}
                             </td>
                         @endif
-                        <td>
+                        <td class="col-md-4">
                             {{ $schedule->getEntry()->format('H:i') }} hrs.
                         </td>
                     </tr>
