@@ -30,9 +30,7 @@
 				<!-- Texto que mostrará duración, fecha y año -->
 				<h6 class="text-center">
 					<span class="countries">{{ $exhibition->getFilm()->getCountries()->implode('name', ', ') }}</span>
-					<span> / </span>
 					<span class="years">{{ implode(',', $exhibition->getFilm()->getYears()) }}</span>
-					<span> / </span>
 					<span class="duration">{{ $exhibition->getFilm()->getDuration() }} min.</span>
 				</h6>
 
@@ -58,29 +56,147 @@
 						<!-- Tab panes -->
 						<div class="tab-content">
 							<div id="tab-1" class="tab-pane active" role="tabpanel">
-								<li class="list-group-item">
+								<li class="list-group-item margin scroll-over">
 									<p>{{ $exhibition->getFilm()->getSynopsis() }}</p>
 								</li>
 							</div>
 
 							<!-- Ficha técnica que se muestra en la pestaña Ficha técnica(tab-2) -->
-							<div class="tab-pane" role="tabpanel" id="tab-2">
-								<li class="list-group-item embed-responsive embed-responsive-16by9">
-									<p>{{ $exhibition->getFilm()->getTrailer() }}</p>
+							<div id="tab-2" class="tab-pane" role="tabpanel" >
+								<li class="list-group-item margin scroll-over embed-responsive embed-responsive-16by9">
+									<table class="table table-bordered">
+
+									<?php
+										$var = "{$exhibition->getFilm()->getTitle()}";
+
+										if (empty($var)) 
+										{
+										   echo $var;
+										}
+										else{
+										echo '<p class= "margin">'.'<strong>'.Lang::get('exhibitions.frontend.exhibition.show.fields.title').'</strong>'.': '.$var.'</p>';
+										}
+									?>
+									<?php
+										$var = "{$exhibition->getFilm()->getOriginalTile()}";
+
+										if (empty($var)) 
+										{
+										   echo $var;
+										}
+										else{
+										echo '<p class= "margin">'.'<strong>'. Lang::get('exhibitions.frontend.exhibition.show.fields.original_title') .'</strong>'. ': ' . $var.'<p>';
+										}
+									?>
+
+									<?php
+										$var = "{$exhibition->getFilm()->getDuration()}";
+
+										if (empty($var)) 
+										{
+										   echo $var;
+										}
+										else{
+										echo '<p class= "margin">'.'<strong>'. Lang::get('exhibitions.frontend.exhibition.show.fields.duration') .'</strong>'. ': ' . $var . ' min.'.'</p>';
+										}
+									?>
+
+
+									<?php
+										$var = "{$exhibition->getFilm()->getDirector()}";
+
+										if (empty($var)) 
+										{
+										   echo $var;
+										}
+										else{
+										echo '<p class= "margin">'.'<strong>'. Lang::get('exhibitions.frontend.exhibition.show.fields.director') .'</strong>'. ': ' . $var.'</p>';
+										}
+									?>
+									<?php
+										$var = "{$exhibition->getFilm()->getScript()}";
+
+										if (empty($var)) 
+										{
+										   echo $var;
+										}
+										else{
+										echo '<p class= "margin">'.'<strong>'. Lang::get('exhibitions.frontend.exhibition.show.fields.script') .'</strong>'. ': ' . $var.'</p>';
+										}
+									?>
+									<?php
+										$var = "{$exhibition->getFilm()->getPhotographic()}";
+
+										if (empty($var)) 
+										{
+										   echo $var;
+										}
+										else{
+										echo '<p class= "margin">'.'<strong>'. Lang::get('exhibitions.frontend.exhibition.show.fields.photographic') .'</strong>'. ': ' . $var.'</p>';
+										}
+									?>
+									<?php
+										$var = "{$exhibition->getFilm()->getMusic()}";
+
+										if (empty($var)) 
+										{
+										   echo $var;
+										}
+										else{
+										echo '<p class= "margin">'.'<strong>'. Lang::get('exhibitions.frontend.exhibition.show.fields.music') .'</strong>'. ': ' . $var.'</p>';
+										}
+									?>
+									<?php
+										$var = "{$exhibition->getFilm()->getEdition()}";
+
+										if (empty($var)) 
+										{
+										   echo $var;
+										}
+										else{
+										echo '<p class= "margin">'.'<strong>'. Lang::get('exhibitions.frontend.exhibition.show.fields.edition') .'</strong>'. ': ' . $var.'<p>';
+										}
+									?>
+									<?php
+										$var = "{$exhibition->getFilm()->getProduction()}";
+
+										if (empty($var)) 
+										{
+										   echo $var;
+										}
+										else{
+										echo '<p class= "margin">'.'<strong>'. Lang::get('exhibitions.frontend.exhibition.show.fields.production') .'</strong>'. ': ' . $var.'</p';
+										}
+									?>
+									<?php
+										$var = "{$exhibition->getFilm()->getCast()}";
+
+										if (empty($var)) 
+										{
+										   echo $var;
+										}
+										else{
+										echo '<p class= "margin">'.'<strong>'. Lang::get('exhibitions.frontend.exhibition.show.fields.cast') .'</strong>'. ': ' . $var.'</p>';
+										}
+									?>
+
+			                        </table>
 								</li>
 							</div>
 
 							<!-- Video que se muestra en la pestaña Trailer(tab-3) /4by3-->
-							<div class="tab-pane" role="tabpanel" id="tab-3">
+							<div id="tab-3" class="tab-pane" role="tabpanel" >
 								<li class="list-group-item embed-responsive embed-responsive-16by9">
 									<p>{{ $exhibition->getFilm()->getTrailer() }}</p>
 								</li>
 							</div>
 
 							<!-- Notas que se muestran en la pestaña Notas(tab-4) -->
-							<div class="tab-pane" role="tabpanel" id="tab-4">
-								<li class="list-group-item embed-responsive embed-responsive-16by9">
-									<p>{{ $exhibition->getFilm()->getNotes() }}</p>
+							<div id="tab-4" class="tab-pane" role="tabpanel" >
+								<li class="list-group-item margin scroll-over embed-responsive embed-responsive-16by9">
+									<p><strong>@lang('exhibitions.frontend.exhibition.show.fields.notes') de la Pelicula</strong>: 
+									{{ $exhibition->getFilm()->getNotes() }}</p>
+									<p><strong>@lang('exhibitions.frontend.exhibition.show.fields.notes') de la Exhibición</strong>: {{ $exhibition->getFilm()->getNotes() }}</p>
 								</li>
 							</div>
 						</div>

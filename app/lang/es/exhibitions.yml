@@ -21,6 +21,7 @@ frontend:
             title: 'Programación del :textual_day :numeric_day de :textual_month'
             breadcrumbs_title: Programación
             results_number: 'Películas encontradas: :number'
+            search: 'Buscar película'
         show:
             see_more: Ver más »
             see_location: Ver ubicación
@@ -40,8 +41,19 @@ frontend:
                 trailer: Trailer
                 notes: Notas
                 auditorium: Sala
-                director: Director
                 title: Título
+                original_title: Título original
+                years: Año
+                countries: Pais
+                duration: Duración
+                genre: Género
+                director: Director
+                script: Guión
+                photographic: Fotografía
+                music: Música
+                edition: Edición 
+                production: Producción
+                cast: Reparto
     details:
         fechas:
             fecha: ':numeric_day de :textual_month de ' 
