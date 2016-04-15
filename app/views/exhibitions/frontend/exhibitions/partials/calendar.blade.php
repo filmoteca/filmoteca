@@ -1,10 +1,10 @@
-<div class="calendar well">
+<div class="calendar">
     <div class="header-programming">
         <h2 class="text-center">@lang('exhibitions.frontend.calendar.title')</h2>
         <h5 class="text-center">@lang('exhibitions.frontend.calendar.subtitle')</h5>
     </div>
     <table class="text-center">
-    <caption>@lang('dates.months.' . $calendar->getToday()->format('F') )  
+    <caption>@lang('dates.months.' . $calendar->getToday()->format('F') )
                 <?php
                     echo date("Y");
                 ?></caption>
@@ -32,28 +32,24 @@
             </th>
         </tr>
         @foreach ($calendar->getWeeks() as $week)
+
             <tr>
                 @foreach($week->getDays() as $day)
-                    <td class="days">
+                    <td>
                         @if ($day->getDate()->month === $date->month)
                             @if ($day->hasExhibitions())
-                                <div class="dayactive">
-                                <a class="active {{ $day->isToday() ? 'today': '' }}"
+                                <a class="with-exhibitions day {{ $day->isToday() ? 'today': '' }} {{ $date->day === $day->getNumber() ? 'active': '' }}"
                                    title="@lang('exhibitions.frontend.calendar.exhibitions-in-the-day', ['number' => $day->getExhibitionsNumber()]) "
                                    href="{{ URL::route('exhibition.by_date', $day->getDateInFormatToUrl()) }}">
                                     {{ $day->getNumber() }}
                                 </a>
-                                </div>
                             @else
-                                <div class="none-exhibition">
-                                <a class="active none-exhibition {{ $day->isToday() ? 'today': '' }}"
-                                    title="  No hay función en este día">
+                                <div class="none-exhibition day"><a  {{ $day->isToday() ? 'today': '' }} {{ $date->day === $day->getNumber() ? 'active': '' }}">
                                     {{ $day->getNumber() }}
-                                </a>
-                                </div>
+                                </a></div>
                             @endif
                         @else
-                            <div class="disabled"><span class="disabled">{{ $day->getNumber() }}</span></div>
+                            <div class="disabled day"><span>{{ $day->getNumber() }}</span></div>
                         @endif
                     </td>
                 @endforeach
