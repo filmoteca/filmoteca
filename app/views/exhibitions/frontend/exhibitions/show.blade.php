@@ -7,7 +7,7 @@
             Lang::trans('exhibitions.frontend.exhibition.index.breadcrumbs_title')) }}
     </li>
     <li>
-        {{ html::linkRoute(URL::route('exhibition.history'), Lang::trans('exhibitions.frontend.history.title')) }}
+        {{ html::linkRoute('exhibition.history', Lang::trans('exhibitions.frontend.history.title')) }}
     </li>
     <li class="active">{{ $exhibition->getFilm()->getTitle() }}</li>
 @stop
@@ -16,6 +16,6 @@
 
 @section('content')
 	<div class="exhibitions index">
-		@include('exhibitions.frontend.partials.details')
+		@include('exhibitions.frontend.exhibitions.partials.details')
 	</div>
 @stop

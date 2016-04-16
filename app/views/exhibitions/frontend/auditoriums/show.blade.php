@@ -7,7 +7,7 @@
             Lang::trans('exhibitions.frontend.exhibition.index.breadcrumbs_title')) }}
     </li>
     <li>
-        {{ html::linkRoute(URL::route('exhibition.auditorium.index'), Lang::trans('exhibitions.frontend.auditorium.index.title')) }}
+        {{ html::linkRoute('exhibition.auditorium.index', Lang::trans('exhibitions.frontend.auditorium.index.title')) }}
     </li>
     <li class="active">{{ $auditorium->getName() }}</li>
 @stop
