@@ -95,7 +95,7 @@ class ExhibitionController extends Controller
             return View::make('exhibitions.frontend.exhibitions.history');
         }
 
-        $results = $this->repository->findBy($fields, Carbon::minValue(), Carbon::maxValue());
+        $results = $this->repository->findBy($fields, Carbon::minValue(), Carbon::today()->addYears(2));
 
         return View::make('exhibitions.frontend.exhibitions.history')->with('results', $results);
     }

@@ -9,7 +9,7 @@
 		<a href="{{ URL::route('exhibition.history') }}">
 			@lang('exhibitions.frontend.history.title')
 		</a>
-		<a href="{{ URL::route('exhibition.cycle.index') }}">
+		<a href="{{ URL::route('exhibitions.frontend.cycle.index') }}">
 			@lang('exhibitions.frontend.cycle.index.title')
 		</a>
 	</div>

@@ -2,6 +2,7 @@
 
 use App;
 use Carbon\Carbon;
+use Filmoteca\Exhibition\Type\Type;
 use Illuminate\Database\Eloquent\Builder;
 use Filmoteca\Models\Exhibitions\Exhibition;
 use Filmoteca\Models\Exhibitions\ExhibitionFilm;
@@ -15,7 +16,7 @@ use Illuminate\Database\Eloquent\Collection;
  */
 class ExhibitionsRepository extends ResourcesRepository implements PageableRepositoryInterface
 {
-    const EXHIBITIONS_FOR_PAGE = 3;
+    const EXHIBITIONS_FOR_PAGE = 10;
 
     /**
      * @var Exhibition
@@ -66,7 +67,7 @@ class ExhibitionsRepository extends ResourcesRepository implements PageableRepos
      */
     public function findByDateInterval(Carbon $since, Carbon $until, $limit = self::EXHIBITIONS_FOR_PAGE)
     {
-        $interval = array($since, $until . ' 23:59:59');
+        $interval = [$since, $until];
 
         $exhibitions = $this->exhibition
             ->whereHas('schedules', function ($query) use ($interval) {
@@ -235,15 +236,15 @@ class ExhibitionsRepository extends ResourcesRepository implements PageableRepos
             $today->year,
             $today->month,
             1
-        )->toDateString();
+        );
 
         $until = Carbon::createFromDate(
             $today->year,
             $today->month,
             $today->daysInMonth
-        )->toDateString();
+        );
 
-        return $this->searchByDate($from, $until);
+        return $this->findByDateInterval($from, $until);
     }
 
     /**
@@ -271,7 +272,25 @@ class ExhibitionsRepository extends ResourcesRepository implements PageableRepos
             $currentDate->daysInMonth
         )->toDateString();
 
-        return $this->searchByDate($from, $until);
+        return $this->findByDateInterval($from, $until);
+    }
+
+    public function findByCycle(Type $cycle, Carbon $since, Carbon $until, $limit = self::EXHIBITIONS_FOR_PAGE)
+    {
+        $dateInterval = [$since, $until];
+
+        $exhibitions = Exhibition::where('type_id', $cycle->getId())
+            ->whereHas('schedules', function (Builder $query) use ($dateInterval) {
+                $query->whereBetween('entry', $dateInterval);
+            })->with(
+                'schedules',
+                'schedules.auditorium',
+                'exhibitionFilm',
+                'exhibitionFilm.film',
+                'type'
+            )->paginate($limit);
+
+        return $exhibitions;
     }
 
     /**

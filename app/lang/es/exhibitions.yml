@@ -48,3 +48,5 @@ frontend:
             title: Ciclos y funciones especiales
             period: Se presenta del :since_day de :since_month al :until_day de :until_month de :until_year
             see-exhibitions: Ver programación de este ciclo
+        show:
+            title: Pogramación del ciclo :cycle_name

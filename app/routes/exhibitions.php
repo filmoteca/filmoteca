@@ -44,12 +44,12 @@ Route::group(['prefix' => 'exhibition'], function () {
     ]);
 
     Route::get('cycles', [
-        'as' => 'exhibition.cycle.index',
+        'as' => 'exhibitions.frontend.cycle.index',
         'uses' => 'Filmoteca\Exhibitions\Controllers\Frontend\CycleController@index'
     ]);
 
     Route::get('cycles/{slug}', [
         'as' => 'exhibitions.frontend.cycle.show',
-        'uses' => 'Filmoteca\Exhibitions\Controllers\Frontend\CycleController@index'
+        'uses' => 'Filmoteca\Exhibitions\Controllers\Frontend\CycleController@show'
     ]);
 });

@@ -6,7 +6,7 @@
 
 @section('breadcrumbs')
     <li>
-        {{ HTML::link(
+        {{ html::linkRoute(
             'exhibitions.frontend.exhibitions.index',
             Lang::trans('exhibitions.frontend.exhibition.index.breadcrumbs_title')) }}
     </li>

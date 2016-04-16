@@ -2,7 +2,9 @@
 
 namespace Filmoteca\Exhibitions\Controllers\Frontend;
 
+use Carbon\Carbon;
 use Filmoteca\Repository\CyclesRepository;
+use Filmoteca\Repository\ExhibitionsRepository;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\View;
 
@@ -15,12 +17,19 @@ class CycleController extends Controller
     protected $cyclesRepository;
 
     /**
-     * CycleController constructor.
-     * @param \Filmoteca\Repository\CyclesRepository $cyclesRepository
+     * @var ExhibitionsRepository
      */
-    public function __construct(CyclesRepository $cyclesRepository)
+    protected $exhibitionsRepository;
+
+    /**
+     * CycleController constructor.
+     * @param CyclesRepository $cyclesRepository
+     * @param ExhibitionsRepository $exhibitionsRepository
+     */
+    public function __construct(CyclesRepository $cyclesRepository, ExhibitionsRepository $exhibitionsRepository)
     {
         $this->cyclesRepository = $cyclesRepository;
+        $this->exhibitionsRepository = $exhibitionsRepository;
     }
 
     public function index()
@@ -36,11 +45,12 @@ class CycleController extends Controller
     public function show($slug)
     {
         $cycle = $this->cyclesRepository->findBySlug($slug);
+        $exhibitions = $this->exhibitionsRepository->findByCycle($cycle, Carbon::today(), Carbon::today()->addMonth(2));
 
         if ($cycle === null) {
             App::abort(404);
         }
 
-        return View::make('exhibitions.frontend.cycles.show', compact('cycle'));
+        return View::make('exhibitions.frontend.cycles.show', compact('cycle', 'exhibitions'));
     }
 }
