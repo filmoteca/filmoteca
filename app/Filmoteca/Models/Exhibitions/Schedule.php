@@ -14,8 +14,6 @@ use Filmoteca\Exhibition\Type\Exhibition;
  */
 class Schedule extends Eloquent implements \Filmoteca\Exhibition\Type\Schedule
 {
-    const DATE_FORMAT = 'Y-m-d H:i:s';
-
     protected $fillable = ['entry', 'auditorium_id', 'exhibition_id'];
 
     /**
@@ -63,7 +61,7 @@ class Schedule extends Eloquent implements \Filmoteca\Exhibition\Type\Schedule
      */
     public function getEntry()
     {
-        return Carbon::createFromFormat(self::DATE_FORMAT, $this->entry);
+        return Carbon::createFromFormat(MYSQL_DATE_TIME_FORMAT, $this->entry);
     }
 
     /**

@@ -42,4 +42,14 @@ Route::group(['prefix' => 'exhibition'], function () {
         'as' => 'exhibition.auditorium.show',
         'uses' => 'Filmoteca\Exhibitions\Controllers\Frontend\AuditoriumController@show'
     ]);
+
+    Route::get('cycles', [
+        'as' => 'exhibition.cycle.index',
+        'uses' => 'Filmoteca\Exhibitions\Controllers\Frontend\CycleController@index'
+    ]);
+
+    Route::get('cycles/{slug}', [
+        'as' => 'exhibitions.frontend.cycle.show',
+        'uses' => 'Filmoteca\Exhibitions\Controllers\Frontend\CycleController@index'
+    ]);
 });

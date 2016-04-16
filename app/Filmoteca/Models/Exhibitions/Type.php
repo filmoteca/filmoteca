@@ -1,5 +1,6 @@
 <?php namespace Filmoteca\Models\Exhibitions;
 
+use Carbon\Carbon;
 use Codesleeve\Stapler\ORM\StaplerableInterface;
 use Codesleeve\Stapler\ORM\EloquentTrait;
 use Filmoteca\Exhibition\Type\Type as TypeInterface;
@@ -16,7 +17,9 @@ class Type extends Eloquent implements StaplerableInterface, TypeInterface
 
     protected $table = 'exhibition_types';
     protected $guarded = [];
-    protected $fillable = ['name', 'created_at', 'updated_at', 'image', 'image_updated_at'];
+    protected $fillable = [
+        'name', 'slug', 'description', 'since', 'until', 'created_at', 'updated_at', 'image', 'image_updated_at'
+    ];
     protected $appends = ['icon'];
 
     /**
@@ -96,4 +99,70 @@ class Type extends Eloquent implements StaplerableInterface, TypeInterface
     {
         $this->attachment = $attachment;
     }
+
+    /**
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @return Carbon
+     */
+    public function getSince()
+    {
+        return Carbon::createFromFormat(MYSQL_DATE_TIME_FORMAT, $this->since);
+    }
+
+    /**
+     * @param Carbon $since
+     */
+    public function setSince(Carbon $since)
+    {
+        $this->since = $since;
+    }
+
+    /**
+     * @return Carbon
+     */
+    public function getUntil()
+    {
+        return Carbon::createFromFormat(MYSQL_DATE_TIME_FORMAT, $this->until);
+    }
+
+    /**
+     * @param Carbon $until
+     */
+    public function setUntil(Carbon $until)
+    {
+        $this->until = $until;
+    }
+
+    /**
+     * @param $description
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * @param string $slug
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+    }
+
+
 }
