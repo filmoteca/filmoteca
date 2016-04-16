@@ -15,13 +15,12 @@ class DatabaseSeeder extends Seeder
 
         $this->call('FilmsTableSeeder');
         $this->call('TypesTableSeeder');
-        $this->call('ExhibitionFilmsTableSeeder');
         $this->call('ExhibitionsTableSeeder');
         $this->call('SchedulesTableSeeder');
         $this->call('AuditoriumsTableSeeder');
         $this->call('GenresTableSeeder');
         $this->call('CountriesTableSeeder');
-        
+
         DB::statement('SET foreign_key_checks = 1');
 
     }
