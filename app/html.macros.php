@@ -60,3 +60,37 @@ HTML::macro(
 		return implode('/', $times);
 	}
 );
+
+HTML::macro('technicalCard', function (\Filmoteca\Exhibition\Type\Exhibition $exhibition) {
+
+	$film = $exhibition->getFilm();
+	$tc = [];
+	$technicalCard = '';
+
+	$tc['original_title'] = $film->getOriginalTile();
+	$tc['years'] = implode(', ', $film->getYears());
+	$tc['countries'] = $film->getCountries()->implode('name', ', ');
+	$tc['duration'] = $film->getDuration() . ' min';
+	$tc['genre'] = isset($film->genre)? $film->genre->name: '';
+	$tc['director'] = $film->getDirector();
+	$tc['script'] = $film->getScript();
+	$tc['photographic'] = $film->getPhotographic();
+	$tc['music'] = $film->getMusic();
+	$tc['edition'] = $film->getEdition();
+	$tc['production'] = $film->getProduction();
+	$tc['cast'] = $film->getCast();
+	$tc['synopsis'] = $film->getSynopsis();
+	$tc['notes'] = $film->getNotes();
+
+	foreach ($tc as $fieldName => $value) {
+		if (!empty($value)) {
+			$technicalCard .=
+				'<p class= "margin">'.
+					'<strong>'. Lang::get('exhibitions.frontend.film.show.fields.' . $fieldName) .
+					'</strong>: ' . $value .
+				' </p>';
+		}
+	}
+
+	return $technicalCard;
+});

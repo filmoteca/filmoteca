@@ -2,15 +2,15 @@ frontend:
     history:
         title: Histórico de programación
         search: Buscar
-        results: 'Se encontrarón <b>:number</b> películas'
-        none_results: Ningúna película encontrada.
+        results: 'Se encontraron <b>:number</b> películas'
+        none_results: Ninguna película encontrada.
     calendar:
         title: Cine UNAM
         subtitle: Consulta programación
         exhibitions-in-the-day: ':number exhibiciones en este día'
     auditorium:
         index:
-            title: Salas de cine
+            title: Ubicación Salas de cine
         show:
             direction: Dirección
     billboard:
@@ -21,7 +21,7 @@ frontend:
             title: 'Programación del :textual_day :numeric_day de :textual_month'
             breadcrumbs_title: Programación
             results_number: 'Películas encontradas: :number'
-            search: Buscar películas
+            search: Buscar película
         show:
             see_more: Ver más »
             see_location: Ver ubicación
@@ -35,6 +35,11 @@ frontend:
             unam_cinemas_community: Comunidad Cines UNAM
             day: Día
             schedules: Horarios
+            film_notes: Notas de la pelicula
+            exhibition_notes: Notas de la exhibición
+            date: ':numeric_day de :textual_month de :year'
+    film:
+        show:
             fields:
                 synopsis: Sinopsis
                 technical_card: Ficha técnica
@@ -43,6 +48,18 @@ frontend:
                 auditorium: Sala
                 director: Director
                 title: Título
+                original_title: Título original
+                years: Año
+                countries: Pais
+                duration: Duración
+                genre: Género
+                director: Director
+                script: Guión
+                photographic: Fotografía
+                music: Música
+                edition: Edición
+                production: Producción
+                cast: Reparto
     cycle:
         index:
             title: Ciclos y funciones especiales

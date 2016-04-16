@@ -7,7 +7,8 @@ class ExhibitionsTableSeeder extends Seeder
 
     public function run()
     {
-        $exhibitionFilms = array();
+        $exhibitionFilms = [];
+        $faker = Faker\Factory::create('es_MX');
 
         for ($i = 0; $i < FilmsTableSeeder::AMOUNT; $i++) {
             $exhibitionFilm = array(
@@ -27,6 +28,7 @@ class ExhibitionsTableSeeder extends Seeder
             $exhibition = array(
                 'exhibition_film_id' => rand(1, FilmsTableSeeder::AMOUNT),
                 'type_id' => rand(1, TypesTableSeeder::AMOUNT),
+                'notes' => $faker->paragraphs(rand(0, 6), true),
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
             );

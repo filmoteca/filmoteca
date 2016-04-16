@@ -25,6 +25,7 @@ class FilmsTableSeeder extends Seeder
             $film['production'] = self::getListOfNames($faker);
             $film['cast'] = self::getListOfNames($faker);
             $film['synopsis'] = $faker->paragraphs(rand(1, 5), true);
+            $film['notes'] = $faker->paragraphs(rand(0, 6), true);
             $film['trailer'] = '<iframe width="560" height="315" src="https://www.youtube.com/embed/Gjg_Mi0zLlg" frameborder="0" allowfullscreen></iframe>';
             $film['created_at'] = new DateTime();
             $film['updated_at'] = new DateTime();

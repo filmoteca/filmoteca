@@ -47,4 +47,14 @@ interface Exhibition
      * @param Type $type
      */
     public function setType(Type $type);
+
+    /**
+     * @return string
+     */
+    public function getNotes();
+
+    /**
+     * @param string $notes
+     */
+    public function setNotes($notes);
 }

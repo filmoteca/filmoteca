@@ -47,7 +47,7 @@
 .extra-schedules table{
 		border-collapse: separate;
 		border-spacing: 2px;
-		border: none;
+		border: none !important;
 	}
 
 	td{
@@ -59,7 +59,20 @@
 	.col-md-4 bold{
 		font-weight: bold;
 	}
-
 	
 }   
 
+.scroll-over{
+    border-style: ridge;
+    overflow-y: scroll;
+    height: 231px;
+    padding-left: 5px;
+}
+
+li.margin {
+  padding: 10px 20px;
+ }
+
+p.margin {
+  margin: 0;
+ }

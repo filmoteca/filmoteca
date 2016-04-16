@@ -47,51 +47,6 @@ class Exhibition extends Eloquent implements ExhibitionInterface
         );
     }
 
-    public function getTechnicalCard()
-    {
-        $tc = array(); //tecnicalCard.
-
-        $film = $this->exhibition_film->film;
-
-        $tc['título original'] = $film->original_title;
-
-        $tc['año'] = implode(', ', $film->years);
-
-        $tc['pais'] = $film->countries->implode('name', ', ');
-
-        $tc['duración'] = $film->duration . ' min';
-
-        $tc['género'] = isset($film->genre)? $film->genre->name: '';
-
-        $tc['director'] = $film->director;
-
-        $tc['guión'] = $film->script;
-
-        $tc['fotografía'] = $film->photographic;
-
-        $tc['música'] = $film->music;
-
-        $tc['edición'] = $film->edition;
-
-        $tc['producción'] = $film->production;
-
-        $tc['reparto'] = $film->cast;
-
-        $tc['sinopsis'] = $film->synopsis;
-
-        $tc['notas'] = $film->notes;
-
-        $technicalCard = array();
-
-        foreach ($tc as $key => $value) {
-            if (!empty($value)) {
-                $technicalCard[$key] = $value;
-            }
-        }
-
-        return $technicalCard;
-    }
-
     public function getAuditoriumsAttribute($value)
     {
         return $this->schedules->map(function ($schedule) {
@@ -200,5 +155,21 @@ class Exhibition extends Eloquent implements ExhibitionInterface
     public function setType(Type $type)
     {
         $this->type = $type;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNotes()
+    {
+        return $this->notes;
+    }
+
+    /**
+     * @param string $notes
+     */
+    public function setNotes($notes)
+    {
+        $this->notes= $notes;
     }
 }

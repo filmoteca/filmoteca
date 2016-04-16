@@ -6317,7 +6317,8 @@ footer {
     text-transform: uppercase;
     font-weight: 600; }
   .flm-section .header {
-    padding: 3px 10px 5px 10px; }
+    padding: 3px 10px 5px 10px;
+    background-color: #E5E5E5; }
     .flm-section .header .small {
       margin-left: 10px; }
 
@@ -6349,13 +6350,13 @@ footer {
   height: auto; }
 
 .flm-section.banner-programacion .link {
-  padding: 0;
+  padding: 0 !important;
   background-color: #e5e5e5; }
   .flm-section.banner-programacion .link .link img:hover {
-    padding: 2px 0;
+    padding: 0 !important;
     opacity: 0.6; }
 .flm-section.banner-programacion .link a img {
-  padding: 2px 0;
+  padding: 0px 0;
   background-color: #e5e5e5;
   margin: 0 !important; }
 
@@ -6385,7 +6386,7 @@ footer {
   display: block; }
   .flm-section.programming .queries a span {
     font-size: 20px;
-    padding: 10px; }
+    padding: 1px; }
 .flm-section.programming .queries a:hover {
   color: #f9d932; }
 .flm-section.programming .queries .link {
@@ -6613,12 +6614,24 @@ footer {
 .extra-schedules table {
   border-collapse: separate;
   border-spacing: 2px;
-  border: none; }
+  border: none !important; }
 
 td .col-md-4.highlight {
   background-color: #ccc; }
 td .col-md-4 bold {
   font-weight: bold; }
+
+.scroll-over {
+  border-style: ridge;
+  overflow-y: scroll;
+  height: 231px;
+  padding-left: 5px; }
+
+li.margin {
+  padding: 10px 20px; }
+
+p.margin {
+  margin: 0; }
 
 .static-pages-menu {
   margin-bottom: 25px; }
@@ -7015,39 +7028,97 @@ td .col-md-4 bold {
 .loading-lg {
   background-size: 144px 144px; }
 
-.flm-section.programming .content {
-  margin: 50px 0 30px; }
+.input-group {
+  padding-bottom: 20px; }
 
-.well-sm {
-  padding: 4px; }
+.search-autocomplete {
+  width: 200px;
+  height: 35px; }
 
-.flm-section .header {
+.flm-section .header-programming {
   background-color: #2d2d2d;
   padding: 3px;
   width: 100%; }
-  .flm-section .header h2 {
+  .flm-section .header-programming h2 {
     color: #f9d932;
     margin-top: 5px;
     text-transform: uppercase; }
-  .flm-section .header h5 {
+  .flm-section .header-programming h5 {
     color: #fff !important;
     font-weight: 400;
     text-transform: uppercase;
     font-size: 13px; }
 
+.flm-section {
+  background-color: #fff;
+  margin-bottom: 25px; }
+
+.calendar {
+  background-color: #f5f5f5;
+  border: 1px solid #d2d2d2;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+  margin-bottom: 20px;
+  min-height: 20px;
+  padding: 0 !important;
+  background-repeat: repeat-x;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset; }
+
+.calendar table {
+  width: 100%;
+  font-size: 12px;
+  border-collapse: separate;
+  border-spacing: 6px;
+  margin: 0 auto; }
+  .calendar table caption {
+    padding: 3px;
+    color: #810069;
+    font-size: 15px;
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: 600;
+    border-bottom: thin solid #2d2d2d;
+    background-color: #FFFFFF; }
+  .calendar table tr {
+    font-size: 1em;
+    text-transform: capitalize;
+    border-color: #e5e5e5;
+    color: #8a8a8a; }
+  .calendar table td .dayactive {
+    background-color: #FFFFFF;
+    border: thin solid #a5a5a0;
+    border-radius: 3px;
+    caption-side: bottom;
+    color: #ffffff;
+    padding: 0;
+    text-align: center;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset; }
+  .calendar table tr, .calendar table th, .calendar table td {
+    height: 20px;
+    width: 20px; }
+
 .calendar .disabled {
-  background-color: #CCCCCC; }
+  cursor: not-allowed;
+  color: #fefefe;
+  background-color: #dfdfdf !important;
+  border-radius: 3px; }
+.calendar .with-exhibitions {
+  border: thin solid #a5a5a0;
+  border-radius: 3px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset; }
 .calendar .day {
   background-color: white; }
 .calendar .day.today {
-  background-color: green;
-  color: white; }
-.calendar .day.active {
-  background-color: #810069;
-  color: white; }
+  background-color: #f9d932;
+  color: #810069;
+  border: thin solid #810069; }
+.calendar .day.active:hover, .calendar .day.active:focus {
+  background-color: #810069; }
+.calendar .day.active a:hover, .calendar .day.active a:focus {
+  color: #FFFFFF !important; }
 .calendar .day.none-exhibition {
-  background-color: gray;
-  border: solid thin #810069;
+  background-color: #efefef;
+  border: solid thin #d2d2d2;
   border-bottom-right-radius: 50%;
   border-bottom-left-radius: 50%;
   border-top-right-radius: 50%;
@@ -7059,64 +7130,24 @@ td .col-md-4 bold {
   text-decoration: none;
   cursor: not-allowed;
   position: relative; }
+  .calendar .day.none-exhibition a {
+    border: none !important;
+    color: #a5a5a0 !important; }
 
-.calendar table {
-  background-color: #FFFFFF;
-  width: 100%;
-  font-size: 12px;
-  border-collapse: collapse;
-  border-spacing: 0;
-  margin: 0 auto; }
-  .calendar table caption {
-    padding: 3px;
-    color: #2d2d2d;
-    text-align: center;
-    text-transform: capitalize;
-    font-weight: 600;
-    border: thin solid #a5a5a0;
-    background-color: #FFFFFF; }
-  .calendar table tr {
-    font-size: 1em;
-    text-transform: capitalize;
-    border-color: #e5e5e5;
-    color: #8a8a8a; }
-  .calendar table td, .calendar table th {
-    caption-side: bottom;
-    padding: 0;
-    text-align: center;
-    border: thin solid #a5a5a0;
-    height: 20px;
-    width: 20px; }
+.flm-section.programming .link {
+  margin-bottom: 5px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset; }
 
-table th {
-  background-color: #e5e5e5; }
+.link {
+  cursor: pointer;
+  padding: 5px; }
 
-.calendar table tr td:hover, .calendar table tr th .active:hover {
+.flm-section.programming .link:hover, .flm-section.programming .link:focus {
   background-color: #810069; }
-  .calendar table tr td:hover a, .calendar table tr th .active:hover a {
-    color: #fff !important;
-    background-color: #810069; }
-  .calendar table tr td:hover button, .calendar table tr th .active:hover button {
-    background-color: #f5f5f5; }
-  .calendar table tr td:hover button.active, .calendar table tr th .active:hover button.active {
-    background-color: #f4f5f5; }
-  .calendar table tr td:hover:hover button:hover, .calendar table tr th .active:hover:hover button:hover {
-    background-color: #810069; }
-.calendar table tr .btn-info {
-  background-color: #810069;
-  border-color: #5f0247;
-  color: #fff; }
-  .calendar table tr .btn-info:hover, .calendar table tr .btn-info:focus, .calendar table tr .btn-info:active, .calendar table tr .btn-info.active {
-    background-color: #810069;
-    border-color: #5f0247;
-    color: #fff; }
-.calendar table tr .open > .btn-info.dropdown-toggle {
-  background-color: #810069;
-  border-color: #5f0247;
-  color: #fff; }
-
-.search-autocomplete {
-  width: 200px;
-  height: 35px; }
+.flm-section.programming .link a:hover, .flm-section.programming .link a:focus {
+  color: #FFFFFF !important; }
 
 /*# sourceMappingURL=filmoteca.css.map */

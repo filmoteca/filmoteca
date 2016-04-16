@@ -1,10 +1,13 @@
 <div class="calendar">
-    <div class="header">
+    <div class="header-programming">
         <h2 class="text-center">@lang('exhibitions.frontend.calendar.title')</h2>
         <h5 class="text-center">@lang('exhibitions.frontend.calendar.subtitle')</h5>
     </div>
     <table class="text-center">
-    <caption>@lang('dates.months.' . $calendar->getToday()->format('F') )</caption>
+    <caption>@lang('dates.months.' . $calendar->getToday()->format('F') )
+                <?php
+                    echo date("Y");
+                ?></caption>
         <tr>
             <th>
                 @lang('dates.week-days-abbreviations.Su')
@@ -41,12 +44,12 @@
                                     {{ $day->getNumber() }}
                                 </a>
                             @else
-                                <a class="none-exhibition day {{ $day->isToday() ? 'today': '' }} {{ $date->day === $day->getNumber() ? 'active': '' }}">
+                                <div class="none-exhibition day"><a  {{ $day->isToday() ? 'today': '' }} {{ $date->day === $day->getNumber() ? 'active': '' }}">
                                     {{ $day->getNumber() }}
-                                </a>
+                                </a></div>
                             @endif
                         @else
-                            <span class="disabled day">{{ $day->getNumber() }}</span>
+                            <div class="disabled day"><span>{{ $day->getNumber() }}</span></div>
                         @endif
                     </td>
                 @endforeach

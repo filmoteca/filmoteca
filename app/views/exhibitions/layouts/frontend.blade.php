@@ -2,6 +2,7 @@
 
 @section('sidebar')
 
+
     {{ Form::open(['route' => 'exhibitions.frontend.exhibitions.index', 'method' => 'GET']) }}
         <div class="input-group">
             <div class="input-group-addon">
