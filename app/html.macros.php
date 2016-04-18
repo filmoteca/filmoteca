@@ -79,8 +79,6 @@ HTML::macro('technicalCard', function (\Filmoteca\Exhibition\Type\Exhibition $ex
 	$tc['edition'] = $film->getEdition();
 	$tc['production'] = $film->getProduction();
 	$tc['cast'] = $film->getCast();
-	$tc['synopsis'] = $film->getSynopsis();
-	$tc['notes'] = $film->getNotes();
 
 	foreach ($tc as $fieldName => $value) {
 		if (!empty($value)) {

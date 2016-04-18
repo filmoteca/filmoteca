@@ -1,5 +1,5 @@
 <div class="extra-schedules">
-    <table class="table table-bordered">
+    <table class="table table-responsive table-bordered">
         @foreach ($schedules->groupByAuditorium() as $auditoriumSchedules)
             @foreach ($auditoriumSchedules->groupByDate() as $index => $dateSchedules)
                 @foreach ($dateSchedules as $dayIndex => $schedule)

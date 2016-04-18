@@ -20,8 +20,9 @@
         </div>
     {{ Form::close() }}
 
-    @include('exhibitions.frontend.exhibitions.partials.programming')
-
+    <div class="flm-section programming">
+        @include('exhibitions.frontend.exhibitions.partials.programming')
+    </div>
     @include('exhibitions.frontend.exhibitions.partials.billboard-subscription-form')
 
     <br><br>

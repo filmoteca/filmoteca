@@ -109,27 +109,26 @@
 			</div>
 			<div class="panel-body">
 				@foreach ($exhibition->getSchedules()->groupByAuditorium() as $schedules)
-					<div class="row">
-						<div class="col-md-4 bold">
+				<table class="table table-responsive table-bordered">
+					<tr>
+						<td class="col-md-4 bold">
                             <a href="{{  URL::route('exhibition.auditorium.show', ['slug' =>  $schedules->first()->getAuditorium()->getSlug()])}}">
                                {{ $schedules->first()->getAuditorium()->getName() }}
 							</a>
-						</div>
-						<div class="col-md-7">
-							{{ HTML::schedulesTimeAsList($schedules) }}
-						</div>
-						<div class="col-md-4 highlight">
+						</td>
+						<td class="col-md-4 highlight">
 							@lang('exhibitions.frontend.exhibition.show.date',
 				               	[
 				               		'numeric_day' => $schedules->first()->getEntry()->day,
 									'textual_month' => trans('dates.months.' . $schedules->first()->getEntry()->format('F')),
 									'year' => $schedules->first()->getEntry()->year
 								])
-						</div>
-						<div class="col-md-4">
+						</td>
+						<td class="col-md-4">
 							{{ HTML::schedulesTimeAsList($schedules) }} hrs.
-						</div>
-					</div>
+						</td>
+					</tr>
+				</table>
 				@endforeach
 
 							<!-- Botón que desplegará más horarios -->

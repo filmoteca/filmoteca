@@ -25,8 +25,10 @@
 
 	<div class="col-xs-12 col-sm-12 col-md-4">
 		<div class="row">
-			<div class="col-sm-6 col-md-12">
-				@include('exhibitions.frontend.exhibitions.partials.programming')
+			<div class="col-sm-6 col-md-12 flm-section programming">
+				<div class="queries">
+					@include('exhibitions.frontend.exhibitions.partials.programming')
+				</div>
 			</div>
 			<div class="col-sm-6 visible-sm">
 				@include('pages.home.partials.other-news')
