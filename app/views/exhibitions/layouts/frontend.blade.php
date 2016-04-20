@@ -21,7 +21,9 @@
     {{ Form::close() }}
 
     <div class="flm-section programming">
-        @include('exhibitions.frontend.exhibitions.partials.programming')
+        <div class="margin-top link-group">
+            @include('exhibitions.frontend.exhibitions.partials.programming')
+        </div>
     </div>
     @include('exhibitions.frontend.exhibitions.partials.billboard-subscription-form')
 

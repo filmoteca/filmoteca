@@ -90,6 +90,7 @@ $h4: 18px;
 	.link{
 		padding: 0 !important;
 		background-color: #e5e5e5 !important;
+		margin: 0 !important;
 
 
 		.link img:hover{
@@ -102,7 +103,7 @@ $h4: 18px;
 		padding: 0 !important;
 		background-color: #e5e5e5 !important;
 		margin: 0 !important;
-
+		border-bottom-width: 0 !important;
 	}
 }
 
@@ -141,6 +142,7 @@ $h4: 18px;
     	}
 	}
 
+
 	.film-subsection{
         
 	    a{
@@ -152,7 +154,48 @@ $h4: 18px;
 	        margin-bottom: 5px;
 	        background-color: $primary-color;
 	    }
+
+
 	}	
+
+	.margin-top.link-group{
+		
+		.link-group{
+			margin-top: 20px !important;
+		}
+	}
+
+	.btn-home.color-home{
+		
+		.color-home{
+			
+			a{
+			color: #ffffff;	
+			display: block;
+
+				span{
+					font-size: 20px;
+					padding: 1px
+				}
+			}
+
+			a:hover{
+
+				color: $tertiary-color !important;
+				background-color: #620A52;
+				
+
+			}
+
+			.link{
+				margin-bottom: 1px;
+				background-color: $primary-color;
+				padding: 2px;
+				font-size: 13px;
+			}
+		}
+	}
+	
 
 	.queries{
 
