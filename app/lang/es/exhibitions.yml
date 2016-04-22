@@ -13,6 +13,11 @@ frontend:
             title: Ubicación Salas de cine
         show:
             direction: Dirección
+            telephone: Teléfono
+            schedule: Horario
+            general_cost: Costo general
+            special_cost: Costo especial
+            venue: Sede
     billboard:
         index:
             title: Cartelera digital
@@ -35,7 +40,7 @@ frontend:
             unam_cinemas_community: Comunidad Cines UNAM
             day: Día
             schedules: Horarios
-            film_notes: Notas de la pelicula
+            film_notes: Notas de la película
             exhibition_notes: Notas de la exhibición
             date: ':numeric_day de :textual_month de :year'
     film:
@@ -66,4 +71,4 @@ frontend:
             period: Se presenta del :since_day de :since_month al :until_day de :until_month de :until_year
             see-exhibitions: Ver programación de este ciclo
         show:
-            title: Pogramación del ciclo :cycle_name
+            title: Programación del ciclo :cycle_name

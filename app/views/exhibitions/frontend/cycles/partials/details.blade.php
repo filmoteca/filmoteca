@@ -1,8 +1,8 @@
 <div class="panel panel-default">
     <div class="panel-heading text-center">
-        <a href="{{ URL::route('exhibitions.frontend.cycle.show', ['slug' => $cycle->getSlug()]) }}">
+        <h3><a href="{{ URL::route('exhibitions.frontend.cycle.show', ['slug' => $cycle->getSlug()]) }}">
             {{ $cycle->getName() }}
-        </a>
+        </a></h3>
     </div>
 
     <div class="panel-body">
@@ -36,6 +36,8 @@
                 </div>
             </div>
         </div>
+
+        
         <div class="row">
             <div class="col-md-12">
                 <div class="see-more">
