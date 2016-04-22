@@ -41,11 +41,12 @@
                                 <a class="with-exhibitions day {{ $day->isToday() ? 'today': '' }} {{ $date->day === $day->getNumber() ? 'active': '' }}"
                                    title="@lang('exhibitions.frontend.calendar.exhibitions-in-the-day', ['number' => $day->getExhibitionsNumber()]) "
                                    href="{{ URL::route('exhibition.by_date', $day->getDateInFormatToUrl()) }}">
-                                    {{ $day->getNumber() }}
+                                    <span>{{ $day->getNumber() }}</span>
                                 </a>
                             @else
-                                <div class="none-exhibition day"><a  {{ $day->isToday() ? 'today': '' }} {{ $date->day === $day->getNumber() ? 'active': '' }}">
-                                    {{ $day->getNumber() }}
+                                <div class="none-exhibition day"><a  {{ $day->isToday() ? 'today': '' }} {{ $date->day === $day->getNumber() ? 'active': '' }}"
+                                title="No hay exhibiciones en este día">
+                                    <span>{{ $day->getNumber() }}</span>
                                 </a></div>
                             @endif
                         @else
