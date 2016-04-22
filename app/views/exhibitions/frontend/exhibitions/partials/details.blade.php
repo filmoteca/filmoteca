@@ -14,13 +14,8 @@
 	<div class="panel-body">
 		<div class="row">
 			<div class="col-md-4">
-				<div class="fb-like"
-					 data-href="{{ URL::route('exhibition.show', array('id' => $exhibition->id ))}}"
-					 data-layout="button"
-					 data-action="like"
-					 data-show-faces="true"
-					 data-share="true">
-				</div>
+
+				<div class="fb-like" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
 
 				<img src="{{ $exhibition->getFilm()->getCover()->getMediumImageUrl() }}">
 			</div>
@@ -29,9 +24,9 @@
 
 				<!-- Texto que mostrará duración, fecha y año -->
 				<h6 class="text-center">
-					<span class="countries">{{ $exhibition->getFilm()->getCountries()->implode('name', ', ') }}</span>
-					<span class="years">{{ implode(',', $exhibition->getFilm()->getYears()) }}</span>
-					<span class="duration">{{ $exhibition->getFilm()->getDuration() }} min.</span>
+					<p class= "margin"><strong>
+						{{ HTML::summarytechnicalCard($exhibition) }}
+					</strong></p>
 				</h6>
 
 				<!-- Pestañas de sinopsis, fiche técnica, trailer y notas-->

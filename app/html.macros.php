@@ -92,3 +92,43 @@ HTML::macro('technicalCard', function (\Filmoteca\Exhibition\Type\Exhibition $ex
 
 	return $technicalCard;
 });
+
+HTML::macro('summarytechnicalCard', function (\Filmoteca\Exhibition\Type\Exhibition $exhibition) {
+
+	$summarytechnicalCard =
+		
+		$pais = $exhibition->getFilm()->getCountries()->implode('name', ', ');
+		$año = implode(', ', $exhibition->getFilm()->getYears());
+		$duracion = $exhibition->getFilm()->getDuration();
+		$paisaño = "$pais" . "$año"; 
+
+		{if (empty($año))
+			{
+				echo $pais;
+			}
+			else
+			{
+				echo $pais;
+			}}
+		{if (empty($pais))
+			{
+				echo $año;
+			}
+			elseif (empty($año))
+			{
+				echo $año;
+			}
+			else
+			{
+				echo ' / '.$año;
+			}}
+		{if (empty($paisaño))
+			{
+				echo $duracion.' min.';
+			}
+			else
+			{
+				echo ' / '.$duracion.' min.';
+			}}
+
+});
