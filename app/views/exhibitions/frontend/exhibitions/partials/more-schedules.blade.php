@@ -14,13 +14,18 @@
                             </td>
                         @endif
                         @if ($dayIndex == 0)
-                            <td class="col-md-4 highlight" rowspan="{{ $dateSchedules->count() }}">
-                                {{ $schedule->getEntry()->format('d/m/Y') }}
+                            <td class="col-md-4 highlight">
+                                @lang('exhibitions.frontend.exhibition.show.date',
+                                [
+                                    'numeric_day' => $schedule->getEntry()->day,
+                                    'textual_month' => trans('dates.months.' . $schedule->getEntry()->format('F')),
+                                    'year' => $schedule->getEntry()->year
+                                ])
+                            </td>
+                            <td class="col-md-4">
+                                {{ HTML::schedulesTimeAsList($schedules) }} hrs.
                             </td>
                         @endif
-                        <td class="col-md-4">
-                            {{ $schedule->getEntry()->format('H:i') }} hrs.
-                        </td>
                     </tr>
                 @endforeach
             @endforeach
