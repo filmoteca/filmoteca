@@ -31,29 +31,37 @@
             <div role="tabpanel">
                 <ul class="nav nav-tabs" role="tablist">
                     <li class="active" role="presentation">
-                        <a data-toggle="tab" role="tab" href="#tab-1">@lang('exhibitions.frontend.film.show.fields.synopsis')</a>
+                        <a data-toggle="tab" role="tab" href="{{ '#tab-synopsis-' . $film->getId() }}">
+                            @lang('exhibitions.frontend.film.show.fields.synopsis')
+                        </a>
                     </li>
                     <li class="" role="presentation">
-                        <a data-toggle="tab" role="tab" href="#tab-2">@lang('exhibitions.frontend.film.show.fields.technical_card')</a>
+                        <a data-toggle="tab" role="tab" href="{{ '#tab-technical-card-' . $film->getId() }}">
+                            @lang('exhibitions.frontend.film.show.fields.technical_card')
+                        </a>
                     </li>
                     <li class="" role="presentation">
-                        <a data-toggle="tab" role="tab" href="#tab-3">@lang('exhibitions.frontend.film.show.fields.trailer')</a>
+                        <a data-toggle="tab" role="tab" href="{{ '#tab-trailer-' . $film->getId() }}">
+                            @lang('exhibitions.frontend.film.show.fields.trailer')
+                        </a>
                     </li>
                     <li class="" role="presentation">
-                        <a data-toggle="tab" role="tab" href="#tab-4">@lang('exhibitions.frontend.film.show.fields.notes')</a>
+                        <a data-toggle="tab" role="tab" href="{{ '#tab-notes-' . $film->getId() }}">
+                            @lang('exhibitions.frontend.film.show.fields.notes')
+                        </a>
                     </li>
                 </ul>
 
                 <!-- Tab panes -->
                 <div class="tab-content">
-                    <div id="tab-1" class="tab-pane active" role="tabpanel">
+                    <div id="{{ 'tab-synopsis-' . $film->getId() }}" class="tab-pane active" role="tabpanel">
                         <li class="list-group-item margin scroll-over">
                             <p>{{ $film->getSynopsis() }}</p>
                         </li>
                     </div>
 
                     <!-- Ficha técnica que se muestra en la pestaña Ficha técnica(tab-2) -->
-                    <div id="tab-2" class="tab-pane" role="tabpanel" >
+                    <div id="{{ 'tab-technical-card-' . $film->getId() }}" class="tab-pane" role="tabpanel" >
                         <li class="list-group-item margin scroll-over embed-responsive embed-responsive-16by9">
                             <table class="table table-bordered">
                                 {{ HTML::technicalCard($film) }}
@@ -62,14 +70,14 @@
                     </div>
 
                     <!-- Video que se muestra en la pestaña Trailer(tab-3) /4by3-->
-                    <div id="tab-3" class="tab-pane" role="tabpanel" >
+                    <div id="{{ 'tab-trailer-' . $film->getId() }}" class="tab-pane" role="tabpanel" >
                         <li class="list-group-item embed-responsive embed-responsive-16by9">
                             <p>{{ $film->getTrailer() }}</p>
                         </li>
                     </div>
 
                     <!-- Notas que se muestran en la pestaña Notas(tab-4) -->
-                    <div id="tab-4" class="tab-pane" role="tabpanel" >
+                    <div id="{{ 'tab-notes-' . $film->getId() }}" class="tab-pane" role="tabpanel" >
                         <li class="list-group-item margin scroll-over embed-responsive embed-responsive-16by9">
                             <p><strong>@lang('exhibitions.frontend.exhibition.show.film_notes')</strong>:
                                 {{ $film->getNotes() }}</p>
