@@ -45,7 +45,7 @@ class ExhibitionsRepository extends ResourcesRepository implements PageableRepos
     public function findByDate(Carbon $date)
     {
         $until = clone $date;
-        $until->addDay()->subSecond();
+        $until->endOfDay();
 
         return $this->findByDateInterval($date, $until);
     }

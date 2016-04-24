@@ -2,6 +2,7 @@
 
 namespace Filmoteca\Exhibition\Type;
 
+use Carbon\Carbon;
 use Illuminate\Support\Collection;
 
 /**
@@ -10,6 +11,9 @@ use Illuminate\Support\Collection;
  */
 class ScheduleCollection extends Collection
 {
+    const DATE_FORMAT = 'Ymd';
+    const DATE_TIME_FORMAT = 'YmdHis';
+
     /**
      * @return ScheduleCollection
      */
@@ -38,6 +42,40 @@ class ScheduleCollection extends Collection
             ->map(function (array $collection) {
                 return new ScheduleCollection($collection);
             });
+
+        return $schedules;
+    }
+
+    public function onlyToday()
+    {
+        return $this->only(Carbon::today());
+    }
+
+    public function only(Carbon $date)
+    {
+        $schedules = $this
+            ->filter(function (Schedule $schedule) use ($date) {
+                $entryValue = intval($schedule->getEntry()->format(self::DATE_FORMAT));
+                $dateValue = intval($date->format(self::DATE_FORMAT));
+
+                return $entryValue - $dateValue === 0;
+            })->orderByEntry();
+
+        return $schedules;
+    }
+
+    public function orderByEntry()
+    {
+        $schedules = $this->sort(function (Schedule $a, Schedule $b) {
+            $aValue = intval($a->getEntry()->format(self::DATE_TIME_FORMAT));
+            $bValue = intval($b->getEntry()->format(self::DATE_TIME_FORMAT));
+
+            if ($aValue === $bValue) {
+                return 0;
+            }
+
+            return $aValue < $bValue? -1: 1;
+        });
 
         return $schedules;
     }

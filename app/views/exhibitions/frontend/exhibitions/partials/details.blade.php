@@ -32,7 +32,7 @@
 				</div>
 			</div>
 			<div class="panel-body">
-				@foreach ($exhibition->getSchedules()->groupByAuditorium() as $schedules)
+				@foreach ($exhibition->getSchedules()->only($date)->groupByAuditorium() as $schedules)
 				<table class="table table-responsive table-bordered">
 					<tr>
 						<td class="col-md-4 bold">

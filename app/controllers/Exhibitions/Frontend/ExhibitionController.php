@@ -19,7 +19,7 @@ use InvalidArgumentException;
 class ExhibitionController extends Controller
 {
     const MAX_YEARS = 2;
-    
+
     /**
      * @var ExhibitionsRepository
      */
@@ -66,6 +66,7 @@ class ExhibitionController extends Controller
         try {
             $englishDate = $this->manager->convertMonthFromHumanToNumber($humanDate);
             $date = Carbon::createFromFormat(ExhibitionsManager::DATE_FORMAT, $englishDate);
+            $date->startOfDay();
         } catch (InvalidArgumentException $e) {
             $date = Carbon::today();
         }

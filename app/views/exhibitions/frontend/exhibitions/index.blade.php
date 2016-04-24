@@ -38,7 +38,7 @@
 
     <div class="exhibitions index">
         @foreach ($exhibitions as $exhibition)
-            @include('exhibitions.frontend.exhibitions.partials.details')
+            @include('exhibitions.frontend.exhibitions.partials.details', ['exhibition' => $exhibition])
         @endforeach
 
         <div class="text-center">
