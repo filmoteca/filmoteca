@@ -463,7 +463,7 @@ class Film extends Eloquent implements StaplerableInterface, FilmInterface
      */
     public function getSlug()
     {
-        return Str::slug($this->getTitle());
+        return $this->slug;
     }
 
     /**
@@ -471,6 +471,6 @@ class Film extends Eloquent implements StaplerableInterface, FilmInterface
      */
     public function setSlug($slug)
     {
-        // empty
+        $this->slug = $slug;
     }
 }

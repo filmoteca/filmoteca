@@ -138,7 +138,7 @@ class FilmsRepository extends ResourcesRepository implements PageableRepositoryI
      */
     public function findBySlug($slug)
     {
-        $film = Film::where('slug', $slug)->firstOrFail();
+        $film = Film::where('slug', $slug)->first();
 
         return $film;
     }

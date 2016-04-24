@@ -1,5 +1,25 @@
 @extends('exhibitions.layouts.frontend')
 
+@section('metas')
+
+    <meta property="og:url"             content="{{ Request::url() }}" />
+    <meta property="og:type"            content="video.movie" />
+    <meta property="og:title"         content="{{ Config::get('parameters.institution.title') }}" />
+    <meta property="og:description"   content="{{ Str::limit($film->getSynopsis()) }}" />
+    <meta property="og:image"         content="{{ $film->getCover()->getSmallImageUrl() }}" />
+
+    @foreach(explode(',', $film->getCast()) as $actor)
+        <meta property="video:actor:first_name" content="{{ $actor }}" />
+    @endforeach
+
+    @foreach(explode(',', $film->getScript()) as $writer)
+        <meta property="video:writer:first_name" content="{{ $writer }}" />
+    @endforeach
+
+    <meta property="video:duration" content="{{ $film->getDuration() }}" />
+
+@stop
+
 @section('breadcrumbs')
     <li>
         {{ html::linkRoute(

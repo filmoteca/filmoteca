@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-md-4">
 
-        <div class="fb-like" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+        @include('elements.facebook.like-button', ['url' => 'http://filmoteca.dev/exhibition/film/est-vitae-nobis-vero'])
 
         <img src="{{ $film->getCover()->getMediumImageUrl() }}">
     </div>
