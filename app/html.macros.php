@@ -61,9 +61,8 @@ HTML::macro(
 	}
 );
 
-HTML::macro('technicalCard', function (\Filmoteca\Exhibition\Type\Exhibition $exhibition) {
-
-	$film = $exhibition->getFilm();
+HTML::macro('technicalCard', function (\Filmoteca\Exhibition\Type\Film $film) {
+	
 	$tc = [];
 	$technicalCard = '';
 
@@ -93,13 +92,13 @@ HTML::macro('technicalCard', function (\Filmoteca\Exhibition\Type\Exhibition $ex
 	return $technicalCard;
 });
 
-HTML::macro('summarytechnicalCard', function (\Filmoteca\Exhibition\Type\Exhibition $exhibition) {
+HTML::macro('summaryTechnicalCard', function (\Filmoteca\Exhibition\Type\Film $film) {
 
-	$summarytechnicalCard =
+	$summaryTechnicalCard =
 		
-		$pais = $exhibition->getFilm()->getCountries()->implode('name', ', ');
-		$año = implode(', ', $exhibition->getFilm()->getYears());
-		$duracion = $exhibition->getFilm()->getDuration();
+		$pais = $film->getCountries()->implode('name', ', ');
+		$año = implode(', ', $film->getYears());
+		$duracion = $film->getDuration();
 		$paisaño = "$pais" . "$año"; 
 
 		{if (empty($año))

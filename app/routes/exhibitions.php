@@ -43,13 +43,18 @@ Route::group(['prefix' => 'exhibition'], function () {
         'uses' => 'Filmoteca\Exhibitions\Controllers\Frontend\AuditoriumController@show'
     ]);
 
-    Route::get('cycles', [
+    Route::get('cycle', [
         'as' => 'exhibitions.frontend.cycle.index',
         'uses' => 'Filmoteca\Exhibitions\Controllers\Frontend\CycleController@index'
     ]);
 
-    Route::get('cycles/{slug}', [
+    Route::get('cycle/{slug}', [
         'as' => 'exhibitions.frontend.cycle.show',
         'uses' => 'Filmoteca\Exhibitions\Controllers\Frontend\CycleController@show'
+    ]);
+
+    Route::get('film/{slug}', [
+        'as' => 'exhibitions.frontend.film.show',
+        'uses' => 'Filmoteca\Exhibitions\Controllers\Frontend\FilmController@show'
     ]);
 });

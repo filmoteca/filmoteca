@@ -181,4 +181,14 @@ interface Film
      * @return array
      */
     public function getCountries();
+
+    /**
+     * @return string
+     */
+    public function getSlug();
+
+    /**
+     * @param $slug
+     */
+    public function setSlug($slug);
 }

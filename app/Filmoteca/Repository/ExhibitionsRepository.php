@@ -19,11 +19,6 @@ class ExhibitionsRepository extends ResourcesRepository implements PageableRepos
     const EXHIBITIONS_FOR_PAGE = 10;
 
     /**
-     * @var Exhibition
-     */
-    protected $exhibition;
-
-    /**
      * @var ExhibitionFilm
      */
     protected $exhibitionFilm;
@@ -38,13 +33,9 @@ class ExhibitionsRepository extends ResourcesRepository implements PageableRepos
      */
     protected $film;
 
-    /**
-     * @param Exhibition $exhibition
-     */
-    public function __construct(Exhibition $exhibition)
+    public function __construct()
     {
-        $this->exhibition = $exhibition;
-        $this->resource = $exhibition;
+        $this->resource = new Exhibition;
     }
 
     /**
@@ -69,18 +60,12 @@ class ExhibitionsRepository extends ResourcesRepository implements PageableRepos
     {
         $interval = [$since, $until];
 
-        $exhibitions = $this->exhibition
-            ->whereHas('schedules', function ($query) use ($interval) {
+        $builder = Exhibition::
+            whereHas('schedules', function ($query) use ($interval) {
                 $query->whereBetween('entry', $interval);
-            })->with(
-                'schedules',
-                'schedules.auditorium',
-                'exhibitionFilm',
-                'exhibitionFilm.film',
-                'exhibitionFilm.film.genre',
-                'exhibitionFilm.film.countries',
-                'type'
-            )->paginate($limit);
+            });
+
+        $exhibitions = $this->addRelationships($builder, $limit);
 
         return $exhibitions;
     }
@@ -114,7 +99,7 @@ class ExhibitionsRepository extends ResourcesRepository implements PageableRepos
 
     public function find($id)
     {
-        return $this->resource->where('id', $id)
+        return Exhibition::where('id', $id)
             ->with(
                 'schedules',
                 'schedules.auditorium',
@@ -206,19 +191,15 @@ class ExhibitionsRepository extends ResourcesRepository implements PageableRepos
             return Collection::make([]);
         }
 
-        $resources = Exhibition::whereHas('exhibitionFilm', function ($builder) use ($filmsIds) {
+         $resourcesBuilder = Exhibition::whereHas('exhibitionFilm', function ($builder) use ($filmsIds) {
             $builder->whereHas('film', function (Builder $builder) use ($filmsIds) {
                 $builder->whereIn('films.id', $filmsIds);
             });
         })->whereHas('schedules', function (Builder $query) use ($dateInterval) {
             $query->whereBetween('entry', $dateInterval);
-        })->with(
-            'schedules',
-            'schedules.auditorium',
-            'exhibitionFilm',
-            'exhibitionFilm.film',
-            'type'
-        )->paginate($limit);
+        });
+
+        $resources = $this->addRelationships($resourcesBuilder, $limit);
 
         return $resources;
     }
@@ -279,16 +260,44 @@ class ExhibitionsRepository extends ResourcesRepository implements PageableRepos
     {
         $dateInterval = [$since, $until];
 
-        $exhibitions = Exhibition::where('type_id', $cycle->getId())
+        $builder = Exhibition::where('type_id', $cycle->getId())
             ->whereHas('schedules', function (Builder $query) use ($dateInterval) {
                 $query->whereBetween('entry', $dateInterval);
-            })->with(
-                'schedules',
-                'schedules.auditorium',
-                'exhibitionFilm',
-                'exhibitionFilm.film',
-                'type'
-            )->paginate($limit);
+            });
+
+        $exhibitions = $this->addRelationships($builder, $limit);
+
+        return $exhibitions;
+    }
+
+    /**
+     * @param $slug
+     * @param Carbon $since
+     * @param Carbon $until
+     * @param int $limit
+     * @return \Illuminate\Pagination\Paginator
+     */
+    public function findByFilmSlug($slug, Carbon $since, Carbon $until, $limit = self::EXHIBITIONS_FOR_PAGE)
+    {
+        return $this->findBy(['slug' => $slug], $since, $until, $limit);
+    }
+
+    /**
+     * @param Builder $builder
+     * @param $limit
+     * @return \Illuminate\Pagination\Paginator
+     */
+    public function addRelationships(Builder $builder, $limit)
+    {
+        $exhibitions = $builder->with(
+            'schedules',
+            'schedules.auditorium',
+            'exhibitionFilm',
+            'exhibitionFilm.film',
+            'exhibitionFilm.film.genre',
+            'exhibitionFilm.film.countries',
+            'type'
+        )->paginate($limit);
 
         return $exhibitions;
     }

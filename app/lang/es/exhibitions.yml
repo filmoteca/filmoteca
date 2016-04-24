@@ -44,7 +44,10 @@ frontend:
             exhibition_notes: Notas de la exhibición
             date: ':numeric_day de :textual_month de :year'
     film:
+        index:
+            title: Películas
         show:
+            search_exhibitions: Mirar exhibitiones de esta película
             fields:
                 synopsis: Sinopsis
                 technical_card: Ficha técnica

@@ -8,6 +8,7 @@ use Codesleeve\Stapler\ORM\StaplerableInterface;
 use Illuminate\Database\Eloquent\Model as Eloquent;
 use Filmoteca\Exhibition\Type\Film as FilmInterface;
 use Filmoteca\Exhibition\Type\ImageAttachment;
+use Illuminate\Support\Str;
 
 /**
  * Class Film
@@ -455,5 +456,21 @@ class Film extends Eloquent implements StaplerableInterface, FilmInterface
     public function getCountries()
     {
         return $this->countries;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSlug()
+    {
+        return Str::slug($this->getTitle());
+    }
+
+    /**
+     * @param $slug
+     */
+    public function setSlug($slug)
+    {
+        // empty
     }
 }

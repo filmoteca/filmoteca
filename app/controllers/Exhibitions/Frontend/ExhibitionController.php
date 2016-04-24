@@ -18,6 +18,8 @@ use InvalidArgumentException;
  */
 class ExhibitionController extends Controller
 {
+    const MAX_YEARS = 2;
+    
     /**
      * @var ExhibitionsRepository
      */
@@ -29,6 +31,11 @@ class ExhibitionController extends Controller
     protected $manager;
 
     /**
+     * @var Carbon
+     */
+    protected $maxDate;
+
+    /**
      * @param ExhibitionsRepository $exhibitionRepository
      * @param ExhibitionsManager $exhibitionsManager
      */
@@ -36,6 +43,7 @@ class ExhibitionController extends Controller
     {
         $this->repository   = $exhibitionRepository;
         $this->manager      = $exhibitionsManager;
+        $this->maxDate      = Carbon::today()->addYears(self::MAX_YEARS);
     }
 
     /**
@@ -95,7 +103,7 @@ class ExhibitionController extends Controller
             return View::make('exhibitions.frontend.exhibitions.history');
         }
 
-        $results = $this->repository->findBy($fields, Carbon::minValue(), Carbon::today()->addYears(2));
+        $results = $this->repository->findBy($fields, Carbon::minValue(), $this->maxDate);
 
         return View::make('exhibitions.frontend.exhibitions.history')->with('results', $results);
     }

@@ -131,4 +131,15 @@ class FilmsRepository extends ResourcesRepository implements PageableRepositoryI
 
         return $results;
     }
+
+    /**
+     * @param string $slug
+     * @return \Filmoteca\Exhibition\Type\Film
+     */
+    public function findBySlug($slug)
+    {
+        $film = Film::where('slug', $slug)->firstOrFail();
+
+        return $film;
+    }
 }
