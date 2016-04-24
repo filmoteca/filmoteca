@@ -1,7 +1,11 @@
 <div class="row">
     <div class="col-md-4">
 
-        @include('elements.facebook.like-button', ['url' => 'http://filmoteca.dev/exhibition/film/est-vitae-nobis-vero'])
+        @include(
+            'elements.facebook.like-button', [
+                'url' => Url::route('exhibitions.frontend.film.show', ['slug', $film->getSlug()])
+            ]
+        )
 
         <img src="{{ $film->getCover()->getMediumImageUrl() }}">
     </div>
