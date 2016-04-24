@@ -13,6 +13,7 @@ class FilmsTableSeeder extends Seeder
             $film = array();
 
             $film['title'] = implode(' ', $faker->words(rand(3, 6)));
+            $film['slug'] = \Illuminate\Support\Str::slug($film['title']) . '-' . rand(0, 4);
             $film['original_title'] = 'Original' . $film['title'];
             $film['years'] = self::getListOfYears();
             $film['duration'] = $faker->time();
