@@ -51,7 +51,17 @@ class BillboardsRepository extends ResourcesRepository
         $billboards = Billboard::whereRaw('YEAR(created_at) = ?', [$year])
             ->orderBy('created_at', 'desc')
             ->get();
-        
+
         return $billboards;
+    }
+
+    /**
+     * @return Billboard
+     */
+    public function findNewer()
+    {
+        $billboard = Billboard::orderBy('created_at', 'asc')->limit(1)->first();
+
+        return $billboard;
     }
 }
