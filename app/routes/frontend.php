@@ -33,11 +33,6 @@ Route::get('/chronology/', [
         'uses' => 'ChronologyController@index'
 ]);
 
-Route::get('/billboard', [
-    'as' => 'billboard',
-    'uses' => 'BillboardController@index'
-]);
-
 Route::get('/pages/quienes-somos/cronologia', function () {
 
     return Redirect::route('chronology');

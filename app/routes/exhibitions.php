@@ -57,4 +57,14 @@ Route::group(['prefix' => 'exhibition'], function () {
         'as' => 'exhibitions.frontend.film.show',
         'uses' => 'Filmoteca\Exhibitions\Controllers\Frontend\FilmController@show'
     ]);
+
+    Route::get('billboard/subscribe', [
+        'as' => 'exhibitions.frontend.billboard.subscribe',
+        'uses' => 'Filmoteca\Exhibitions\Controllers\Frontend\BillboardController@subscribe'
+    ]);
+
+    Route::get('billboard', [
+        'as' => 'exhibitions.frontend.billboard.index',
+        'uses' => 'Filmoteca\Exhibitions\Controllers\Frontend\BillboardController@index'
+    ]);
 });
