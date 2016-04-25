@@ -10,6 +10,14 @@
     display: inline-block;
 }
 
+.exhibitions {
+
+    .more-schedules .loading {
+        padding-left: 36px;
+        background-size: 32px 32px;
+    }
+}
+
 .panel .panel-default .panel-heading-hora {
     border-top-left-radius: 10px;
     border-top-right-radius: 3px;
@@ -56,11 +64,11 @@
     	background-color: #ccc;
     }
 
-	.col-md-4 bold{
+	.col-md-4 .bold{
 		font-weight: bold;
 	}
-	
-}   
+
+}
 
 .scroll-over{
     border-style: ridge;
@@ -86,7 +94,7 @@ p.margin {
             margin-top: 0;
         }
 
-        a { 
+        a {
             font-size: 20px;
             text-transform: capitalize;
             color: $text-color;
@@ -113,13 +121,13 @@ p.margin {
             margin-bottom: 0;
             margin-top: 0;
             text-align: center;
-       
-            a span { 
+
+            a span {
                 font-size: 20px;
                 text-transform: capitalize;
                 color: $text-color;
                 font-weight: 400;
-                
+
             }
         }
  }

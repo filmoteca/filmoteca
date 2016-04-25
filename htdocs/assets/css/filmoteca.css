@@ -6615,6 +6615,10 @@ footer {
 .exhibition-schedules .label {
   display: inline-block; }
 
+.exhibitions .more-schedules .loading {
+  padding-left: 36px;
+  background-size: 32px 32px; }
+
 .panel .panel-default .panel-heading-hora {
   border-top-left-radius: 10px;
   border-top-right-radius: 3px;
@@ -6644,7 +6648,7 @@ footer {
 
 td .col-md-4.highlight {
   background-color: #ccc; }
-td .col-md-4 bold {
+td .col-md-4 .bold {
   font-weight: bold; }
 
 .scroll-over {
