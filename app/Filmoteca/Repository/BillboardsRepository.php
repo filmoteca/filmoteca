@@ -60,7 +60,7 @@ class BillboardsRepository extends ResourcesRepository
      */
     public function findNewer()
     {
-        $billboard = Billboard::orderBy('created_at', 'asc')->limit(1)->first();
+        $billboard = Billboard::orderBy('created_at', 'DESC')->limit(1)->first();
 
         return $billboard;
     }

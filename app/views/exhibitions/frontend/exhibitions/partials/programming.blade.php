@@ -26,9 +26,9 @@
 					@lang('exhibitions.frontend.history.title')
 				</a>
 			</div>
-
+			
 			@if (isset($lastBillboard))
-				<div class="billboard-banner" style="background-image: url({{ $lastBillboard->background->url() }})">
+				<div class="billboard-banner" style="background-image: url({{ $lastBillboard->background->url('standard') }})">
 					<div class="text-right">
 						<a href="{{ $lastBillboard->pdf->url() }}">
 							@lang('exhibitions.general.download')
