@@ -116,9 +116,7 @@ class SchedulesRepository
 
         $schedulesCollection = new ScheduleCollection($schedules->all());
         // orderBy of eloquent does not work.
-        $schedulesCollection->sortBy(function (\Filmoteca\Exhibition\Type\Schedule $schedule) {
-                return $schedule->getEntry();
-        });
+        $schedulesCollection->orderByEntry();
 
         return $schedulesCollection;
     }

@@ -23,7 +23,7 @@
                                 ])
                             </td>
                             <td class="col-md-4">
-                                {{ HTML::schedulesTimeAsList($schedules) }} hrs.
+                                {{ HTML::schedulesTimeAsList($dateSchedules) }} hrs.
                             </td>
                         @endif
                     </tr>

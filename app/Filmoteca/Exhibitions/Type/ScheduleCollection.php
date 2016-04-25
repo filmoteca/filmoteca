@@ -46,11 +46,18 @@ class ScheduleCollection extends Collection
         return $schedules;
     }
 
+    /**
+     * @return ScheduleCollection
+     */
     public function onlyToday()
     {
         return $this->only(Carbon::today());
     }
 
+    /**
+     * @param Carbon $date
+     * @return $this
+     */
     public function only(Carbon $date)
     {
         $schedules = $this
@@ -64,6 +71,9 @@ class ScheduleCollection extends Collection
         return $schedules;
     }
 
+    /**
+     * @return $this
+     */
     public function orderByEntry()
     {
         $schedules = $this->sort(function (Schedule $a, Schedule $b) {

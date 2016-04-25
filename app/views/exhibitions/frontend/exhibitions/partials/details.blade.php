@@ -60,7 +60,7 @@
 						<button type="button"
 								class="btn btn-default more-schedules"
 								data-href="{{ URL::route('exhibition.schedule.search', ['exhibitionId' => $exhibition->getId()]) }}"
-								data-since="{{ isset($date) ? $date->format(MYSQL_DATE_FORMAT) : ''  }}"
+								data-since="{{ isset($date) ? $date->copy()->addDay()->format(MYSQL_DATE_FORMAT) : ''  }}"
 								title="@lang('exhibition.see_more_schedules')">
 							@lang('exhibitions.frontend.exhibition.show.see_more_schedules')
 						</button>

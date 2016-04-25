@@ -36,7 +36,7 @@ class ScheduleController extends Controller
 
         if (Input::has('since')) {
             try {
-                $since = Carbon::createFromFormat(MYSQL_DATE_FORMAT, Input::get('since'))->setTime(0, 0, 0);
+                $since = Carbon::createFromFormat(MYSQL_DATE_FORMAT, Input::get('since'))->startOfDay();
             } catch (InvalidArgumentException $e) {
                 return '';
             }
@@ -57,7 +57,7 @@ class ScheduleController extends Controller
         $schedules = $this->schedulesRepository->findByExhibitionAndDateInterval($exhibitionId, $since, $until);
 
         if ($schedules->isEmpty()) {
-            return '';
+            return View::make('exhibitions.frontend.exhibitions.partials.none-extra-schedule');
         }
 
         return View::make('exhibitions.frontend.exhibitions.partials.more-schedules', compact('schedules'));

@@ -27,6 +27,7 @@ frontend:
             breadcrumbs_title: Programación
             results_number: 'Películas encontradas: :number'
             search: Buscar película
+            none_extra_schedule: No hay más horarios para ésta película
         show:
             see_more: Ver más »
             see_location: Ver ubicación
