@@ -57,7 +57,7 @@ HTML::macro(
 			return '<span>' . $schedule->getEntry()->format($format) . '</span>';
 		}, $schedules->all());
 
-		return implode('/', $times);
+		return implode(' / ', $times);
 	}
 );
 
@@ -69,7 +69,7 @@ HTML::macro('technicalCard', function (\Filmoteca\Exhibition\Type\Film $film) {
 	$tc['original_title'] = $film->getOriginalTile();
 	$tc['years'] = implode(', ', $film->getYears());
 	$tc['countries'] = $film->getCountries()->implode('name', ', ');
-	$tc['duration'] = $film->getDuration() . ' min';
+	$tc['duration'] = $film->getDuration() . ' min.';
 	$tc['genre'] = isset($film->genre)? $film->genre->name: '';
 	$tc['director'] = $film->getDirector();
 	$tc['script'] = $film->getScript();

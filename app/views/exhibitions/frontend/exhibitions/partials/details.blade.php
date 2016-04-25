@@ -2,10 +2,14 @@
 	<div class="panel-heading">
 		<div class="icon">
 			@if ($exhibition->getType() !== null)
-				<span>
-					<img src="{{ $exhibition->getType()->getImage()->getSmallImageUrl() }}" class="image-size-thumbnail">
-				</span>
-				<span>{{ $exhibition->getType()->getName() }}</span>
+				<div class="row">
+					<div class="col-md-2">
+						<img src="{{ $exhibition->getType()->getImage()->getSmallImageUrl() }}" class="image-size-thumbnail">
+					</div>
+					<div class="col-md-10">
+						<h3>{{ $exhibition->getType()->getName() }}</h3>
+					</div>
+				</div>
 			@endif
 		</div>
 	</div>
@@ -17,6 +21,8 @@
 			'exhibitions.frontend.films.partials.details',
 			['film' => $exhibition->getFilm(), ['exhibitionNotes' => $exhibition->getNotes() ]]
 		)
+
+		<!-- Se presenta en las salas y horarios -->
 
 		<div class="panel panel-default">
 			<div class="panel-heading-hora">
@@ -32,15 +38,15 @@
 				</div>
 			</div>
 			<div class="panel-body">
-				@foreach ($exhibition->getSchedules()->only($date)->groupByAuditorium() as $schedules)
 				<table class="table table-responsive table-bordered">
+				@foreach ($exhibition->getSchedules()->only($date)->groupByAuditorium() as $schedules)				
 					<tr>
 						<td class="col-md-4 bold">
                             <a href="{{  URL::route('exhibition.auditorium.show', ['slug' =>  $schedules->first()->getAuditorium()->getSlug()])}}">
                                {{ $schedules->first()->getAuditorium()->getName() }}
 							</a>
 						</td>
-						<td class="col-md-4 highlight">
+						<td class="col-md-3 highlight text-center">
 							@lang('exhibitions.frontend.exhibition.show.date',
 				               	[
 				               		'numeric_day' => $schedules->first()->getEntry()->day,
@@ -48,13 +54,12 @@
 									'year' => $schedules->first()->getEntry()->year
 								])
 						</td>
-						<td class="col-md-4">
+						<td class="col-md-5">
 							{{ HTML::schedulesTimeAsList($schedules) }} hrs.
 						</td>
-					</tr>
+					</tr>		
+					@endforeach
 				</table>
-				@endforeach
-
 							<!-- Botón que desplegará más horarios -->
 					<div align="right">
 						<button type="button"

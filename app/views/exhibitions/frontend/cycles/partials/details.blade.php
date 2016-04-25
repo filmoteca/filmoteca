@@ -1,13 +1,13 @@
 <div class="panel panel-default">
     <div class="panel-heading text-center">
-        <h3><a href="{{ URL::route('exhibitions.frontend.cycle.show', ['slug' => $cycle->getSlug()]) }}">
+        <h3>
             {{ $cycle->getName() }}
-        </a></h3>
+        </h3>
     </div>
 
     <div class="panel-body">
         <div class="row">
-            <div class="col-sm-3">
+            <div class="col-sm-2">
                 <div class="facebook-badges">
 
                 </div>
@@ -20,7 +20,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-sm-9">
+            <div class="col-sm-10">
                 <div class="period">
                     @lang('exhibitions.frontend.cycle.index.period', [
                         'since_day' => $cycle->getSince()->day,

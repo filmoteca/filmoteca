@@ -14,7 +14,7 @@
                             </td>
                         @endif
                         @if ($dayIndex == 0)
-                            <td class="col-md-4 highlight">
+                            <td class="col-md-3 highlight text-center">
                                 @lang('exhibitions.frontend.exhibition.show.date',
                                 [
                                     'numeric_day' => $schedule->getEntry()->day,
@@ -22,7 +22,7 @@
                                     'year' => $schedule->getEntry()->year
                                 ])
                             </td>
-                            <td class="col-md-4">
+                            <td class="col-md-5">
                                 {{ HTML::schedulesTimeAsList($dateSchedules) }} hrs.
                             </td>
                         @endif
