@@ -1,6 +1,6 @@
 <?php namespace Filmoteca\Repository;
 
-use Filmoteca\Models\Billboard;
+use Filmoteca\Models\Exhibitions\Billboard;
 
 /**
  * Class BillboardsRepository

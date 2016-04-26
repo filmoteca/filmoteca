@@ -1,4 +1,4 @@
-<?php namespace Filmoteca\Models;
+<?php namespace Filmoteca\Models\Exhibitions;
 
 use Codesleeve\Stapler\ORM\StaplerableInterface;
 
