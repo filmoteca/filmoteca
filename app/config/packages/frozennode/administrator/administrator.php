@@ -95,7 +95,7 @@ return array(
      *
      * @type string
      */
-    'back_to_site_path' => '/',
+    'back_to_site_path' => '/admin/dashboard',
 
     /**
      * The login path is the path where Administrator will send the user if they fail a permission check
