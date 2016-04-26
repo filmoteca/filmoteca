@@ -3,7 +3,7 @@
 View::composer('*', function ($view) {
     $view->with('siteName', 'Filmoteca UNAM');
 
-    $config = [
+    $exhibitionsConfig = [
         'routes' => [
             'exhibitions_frontend_exhibitions_filmssearcher' =>
                 URL::route('exhibitions.frontend.exhibitions.filmssearcher'),
@@ -11,7 +11,7 @@ View::composer('*', function ($view) {
         ]
     ];
 
-    $view->with('config', $config);
+    $view->with('exhibitionsConfig', $exhibitionsConfig);
 });
 
 View::composer('exhibitions.*', 'Filmoteca\Exhibitions\Composer\ExhibitionComposer');

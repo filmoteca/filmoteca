@@ -35,7 +35,7 @@
         @include('elements.google-tag-manager')
 
 		<script>
-			var Config = {{ json_encode($config, JSON_UNESCAPED_SLASHES) }};
+			var Config = {{ json_encode($exhibitionsConfig, JSON_UNESCAPED_SLASHES) }};
 		</script>
 
         @yield('default-scripts', HTML::scripts([
