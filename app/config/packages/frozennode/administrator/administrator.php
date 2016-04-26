@@ -54,7 +54,7 @@ return array(
     'menu' => array(
         'Home' => ['advertisements'],
         'Carousels' => ['carousels', 'carousel_images'],
-        'Exhibitions' => ['countries', 'genres', 'banners'],
+        'Exhibitions' => ['countries', 'genres'],
         'System' => ['redirects']
     ),
 
