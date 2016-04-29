@@ -1,5 +1,4 @@
 @section('scripts')
-	{{ HTML::script('/assets/js/home.js')}}
 	{{ HTML::script('/assets/js/facebook.js')}}
 @stop
 
@@ -7,7 +6,7 @@
 
 <div class="film-subsection">
 	<div class="content">
-		<div class="link-group color-home">
+		<div class="link-group margin-home">
 			<div class="link">
 				<a href="{{ URL::route('exhibitions.frontend.cycle.index') }}">
 					<span class="icon icon-ciclos"></span>
@@ -27,20 +26,7 @@
 				</a>
 			</div>
 			
-			@if (isset($lastBillboard))
-				<div class="billboard-banner" style="background-image: url({{ $lastBillboard->background->url('standard') }})">
-					<div class="text-right">
-						<a href="{{ $lastBillboard->pdf->url() }}">
-							@lang('exhibitions.general.download')
-						</a>
-					</div>
-					<div class="text-right">
-						<a href="{{ $lastBillboard->online_version_url }}">
-							@lang('exhibitions.frontend.billboard.index.consult')
-						</a>
-					</div>
-				</div>
-			@endif
+
 		</div>
 
 		@include('pages.home.partials.banner-programacion')

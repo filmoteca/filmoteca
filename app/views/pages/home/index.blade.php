@@ -26,7 +26,7 @@
 	<div class="col-xs-12 col-sm-12 col-md-4">
 		<div class="row">
 			<div class="col-sm-6 col-md-12 flm-section programming">
-				<div class="btn-home color-home">
+				<div class="btn-home margin-home">
 					@include('exhibitions.frontend.exhibitions.partials.programming')
 				</div>
 			</div>

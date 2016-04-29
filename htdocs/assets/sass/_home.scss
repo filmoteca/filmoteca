@@ -8,7 +8,7 @@ $h4: 18px;
 
 .flm-section{
 
-	margin-bottom: 25px;
+	margin-bottom: 15px !important;
 	background-color: $section-color;
 
 	h3, h4, h5, h6{
@@ -90,9 +90,13 @@ $h4: 18px;
 	.link{
 		padding: 0 !important;
 		background-color: #e5e5e5 !important;
-		margin: 0 !important;
-
-
+		margin: 0 auto !important;
+		-webkit-background-size: cover; 
+		-moz-background-size: cover; 
+		-o-background-size: cover; 
+		height: 40px; 
+		width: 100%; 
+		
 		.link img:hover{
 		padding: 0 !important;
 		opacity: 0.6;
@@ -100,10 +104,9 @@ $h4: 18px;
 	}
 
 	.link a img{
-		padding: 0 !important;
-		background-color: #e5e5e5 !important;
 		margin: 0 !important;
-		border-bottom-width: 0 !important;
+		width: 100%;
+		height: 100%;
 	}
 }
 
@@ -154,8 +157,6 @@ $h4: 18px;
 	        margin-bottom: 5px;
 	        background-color: $primary-color;
 	    }
-
-
 	}	
 
 	.margin-top.link-group{
@@ -165,33 +166,20 @@ $h4: 18px;
 		}
 	}
 
-	.btn-home.color-home{
+	.btn-home.margin-home{
 		
-		.color-home{
+		.margin-home{
 			
 			a{
-			color: #ffffff;	
-			display: block;
-
 				span{
 					font-size: 20px;
 					padding: 1px
 				}
 			}
 
-			a:hover{
-
-				color: $tertiary-color !important;
-				background-color: #620A52;
-				
-
-			}
-
 			.link{
-				margin-bottom: 1px;
-				background-color: $primary-color;
-				padding: 2px;
-				font-size: 13px;
+				margin-bottom: 2px;
+				padding: 1px;
 			}
 		}
 	}
@@ -309,8 +297,6 @@ $h4: 18px;
 	.visit-carousel img:hover{
 	   opacity: 0.6;
 	}
-
-
 }
 
 .friend-sites{
@@ -430,7 +416,6 @@ $h4: 18px;
         max-width: 75px;
         float: left;
         margin-right: 10px;
-
     }
 
     font-size: 12px;
@@ -440,8 +425,6 @@ $h4: 18px;
     h6 {
     color: #98157f;
     }
-
-
 }
 
 .more-news {
