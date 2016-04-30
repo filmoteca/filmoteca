@@ -21,16 +21,9 @@
                 </div>
             </div>
             <div class="col-sm-10">
-                <div class="period">
-                    @lang('exhibitions.frontend.cycle.index.period', [
-                        'since_day' => $cycle->getSince()->day,
-                        'since_month' => trans('dates.months.' . $cycle->getSince()->format('F')),
-                        'until_day' => $cycle->getUntil()->day,
-                        'until_month' => trans('dates.months.' . $cycle->getUntil()->format('F')),
-                        'until_year' => $cycle->getUntil()->year
-                        ]
-                    )
-                </div>
+
+            <!-- Aquí iba "Se presenta del 30 de noviembre al 30 de noviembre de -1 "-->
+
                 <div class="description">
                     {{ $cycle->getDescription() }}
                 </div>
