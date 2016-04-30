@@ -7,7 +7,9 @@
 						<img src="{{ $exhibition->getType()->getImage()->getSmallImageUrl() }}" class="image-size-thumbnail">
 					</div>
 					<div class="col-md-10">
-						<h3>{{ $exhibition->getType()->getName() }}</h3>
+						<a href="{{ URL::route('exhibitions.frontend.cycle.index') }}">
+							<h3>{{ $exhibition->getType()->getName() }}</h3>
+						</a>
 					</div>
 				</div>
 			@endif
