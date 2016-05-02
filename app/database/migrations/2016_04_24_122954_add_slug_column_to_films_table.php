@@ -28,13 +28,17 @@ class AddSlugColumnToFilmsTable extends Migration
                 if ($field != 'title') {
                     $separator = '-';
                 }
-                
+
                 $slug .= $separator . \Illuminate\Support\Str::slug($row->$field);
                 $duplicate = DB::table('films')->where('slug', $slug)->limit(1)->get(['id']);
 
                 if (!$duplicate) {
                     DB::table('films')->where('id', $id)->update(['slug' => $slug]);
                     break;
+                }
+
+                if ($field == 'director') { // It's the last
+                    DB::table('films')->where('id', $id)->update(['slug' => $slug . rand(1, 1000)]);
                 }
             }
         }
