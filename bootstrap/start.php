@@ -24,9 +24,13 @@ $app = new Illuminate\Foundation\Application;
 |
 */
 
-$app['env'] = file_exists(__DIR__.'/../app/config/staging/app.php') ? 'staging' : 'local';
-$app['env'] = file_exists(__DIR__.'/../app/config/prod/app.php') ? 'prod' : $app['env'];
-$env = $app['env'];
+$env = $app->detectEnvironment([
+    'prod' => file_exists(__DIR__.'/../app/config/prod/app.php'),
+    'staging' =>
+        !file_exists(__DIR__.'/../app/config/prod/app.php') && file_exists(__DIR__.'/../app/config/prod/staging.php'),
+    'local' =>
+        !file_exists(__DIR__.'/../app/config/prod/app.php') && !file_exists(__DIR__.'/../app/config/prod/staging.php'),
+]);
 /*
 |--------------------------------------------------------------------------
 | Bind Paths
