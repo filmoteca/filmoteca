@@ -21,10 +21,22 @@ class AddDescriptionSinceAndUntilColumnsToTypesTable extends Migration
             $table->index('until');
         });
 
-        DB::statement("
-            update exhibition_types 
-            set slug = replace(replace(lower(trim(name)), ' ', '-'), '.', '');
-        ");
+        $rows = DB::table('exhibition_types')->get(['id', 'name']);
+        foreach ($rows as $row) {
+            $id = $row->id;
+
+            for ($i = 0; $i < 100; $i++) {
+                $name = $i == 0 ? $row->name: $row->name . $i;
+                $slug = \Illuminate\Support\Str::slug($name);
+                $duplicate = DB::table('exhibition_types')->where('slug', $slug)->limit(1)->get(['id']);
+
+                if (!$duplicate) {
+                    DB::table('exhibition_types')->where('id', $id)->update(['slug' => $slug]);
+                    break;
+                }
+            }
+
+        }
 
         Schema::table('exhibition_types', function (Blueprint $table) {
             $table->unique('slug');
