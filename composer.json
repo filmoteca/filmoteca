@@ -58,6 +58,12 @@
         ],
         "post-create-project-cmd": [
             "php artisan key:generate"
+        ],
+        "migrate": [
+            "php artisan migrate --env=$LARAVEL_ENV",
+            "php artisan migrate --package=\"cartalyst/sentry\" --env=$LARAVEL_ENV",
+            "php artisan migrate --package=\"mrjuliuss/syntara\" --env=$LARAVEL_ENV",
+            "php artisan migrate --package=\"filmoteca/static-pages\" --env=$LARAVEL_ENV"
         ]
     },
     "config": {
