@@ -16,6 +16,7 @@ Thumbs.db
 
 *.vagrant/
 .sass-cache
+composer.lock
 
 others
 app/storage/debugbar/
