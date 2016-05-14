@@ -66,9 +66,9 @@
             "php artisan migrate --package=\"filmoteca/static-pages\" --env=$LARAVEL_ENV"
         ],
         "publish-assets": [
-            "php artisan asset:publish mrjuliuss/syntara",
-            "php artisan asset:publish frozennode/administrator",
-            "php artisan asset:publish filmoteca/static-pages"
+            "php artisan asset:publish mrjuliuss/syntara --env=$LARAVEL_ENV",
+            "php artisan asset:publish frozennode/administrator --env=$LARAVEL_ENV",
+            "php artisan asset:publish filmoteca/static-pages --env=$LARAVEL_ENV"
         ]
     },
     "config": {
