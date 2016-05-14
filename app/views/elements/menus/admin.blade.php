@@ -1,6 +1,6 @@
 
 <div class="btn-group">
-	
+
 	<div class="btn-group">
 		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 			Programación
@@ -13,21 +13,34 @@
 			<li>
 				{{ HTML::link('/admin/exhibition/app#/exhibitions/create', 'Agregar exhibiciones') }}
 			</li>
+			<li role="separator" class="divider"></li>
 			<li>
 				{{ HTML::link('/admin/exhibition/app#/films', 'Ver todas las películas') }}
 			</li>
 			<li>
 				{{ HTML::link('/admin/exhibition/app#/films/create', 'Agregar película') }}
 			</li>
+			<li role="separator" class="divider"></li>
 			<li>
 				{{ HTML::linkRoute('admin.auditorium.index', 'Ver todas las salas') }}
 			</li>
 			<li>
 				{{ HTML::linkRoute('admin.auditorium.create', 'Agregar salas') }}
 			</li>
+			<li role="separator" class="divider"></li>
             <li>
                 {{ HTML::link('/admin/exhibition/app#/iconographics', 'Iconos') }}
             </li>
+			<li role="separator" class="divider"></li>
+			<li>
+				{{ HTML::linkRoute('admin.billboard.index', 'Ver todas las carteleras') }}
+			</li>
+			<li>
+				{{ HTML::linkRoute('admin.billboard.create', 'Agregar cartelera') }}
+			</li>
+			<li>
+				{{ HTML::linkRoute('admin.billboard.send', 'Enviar ultima cartelera') }}
+			</li>
 		</ul>
 	</div>
 
@@ -57,24 +70,6 @@
 			</li>
 			<li>
 				{{ HTML::linkRoute('admin.news.create', 'Agregar noticia') }}
-			</li>
-		</ul>
-	</div>
-
-	<div class="btn-group">
-		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-			Cartelera Digital
-			<span class="caret"></span>
-		</button>
-		<ul class="dropdown-menu">
-			<li>
-				{{ HTML::linkRoute('admin.billboard.index', 'Ver todas las carteleras') }}
-			</li>
-			<li>
-				{{ HTML::linkRoute('admin.billboard.create', 'Agregar cartelera') }}
-			</li>
-			<li>
-				{{ HTML::linkRoute('admin.billboard.send', 'Enviar ultima cartelera') }}
 			</li>
 		</ul>
 	</div>
