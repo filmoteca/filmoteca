@@ -26,6 +26,11 @@
         text-align: left;
         color: #333333 !important;
     }
+
+    .image-size-thumbnail {
+        max-width: 60px;
+        max-height: 70px;
+    }
 }
 
 .panel .panel-default .panel-heading-hora {
@@ -109,8 +114,8 @@ p.margin {
     .panel-body{
         .row.margin{
             margin-bottom: 200px;
-   
-        }    
+
+        }
     }
 }
 
