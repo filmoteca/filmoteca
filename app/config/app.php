@@ -128,7 +128,7 @@ return array(
         'Fbf\LaravelContactForm\LaravelContactFormServiceProvider',
         'Monarobase\CountryList\CountryListServiceProvider',
         'Maatwebsite\Excel\ExcelServiceProvider',
-        'Filmoteca\StaticPages\StaticPagesServiceProvider',
+//        'Filmoteca\StaticPages\StaticPagesServiceProvider',
         'Frozennode\Administrator\AdministratorServiceProvider',
 	),
 

@@ -1,6 +1,6 @@
 
 <div class="btn-group">
-
+	
 	<div class="btn-group">
 		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 			Programación
@@ -13,34 +13,21 @@
 			<li>
 				{{ HTML::link('/admin/exhibition/app#/exhibitions/create', 'Agregar exhibiciones') }}
 			</li>
-			<li role="separator" class="divider"></li>
 			<li>
 				{{ HTML::link('/admin/exhibition/app#/films', 'Ver todas las películas') }}
 			</li>
 			<li>
 				{{ HTML::link('/admin/exhibition/app#/films/create', 'Agregar película') }}
 			</li>
-			<li role="separator" class="divider"></li>
 			<li>
 				{{ HTML::linkRoute('admin.auditorium.index', 'Ver todas las salas') }}
 			</li>
 			<li>
 				{{ HTML::linkRoute('admin.auditorium.create', 'Agregar salas') }}
 			</li>
-			<li role="separator" class="divider"></li>
             <li>
                 {{ HTML::link('/admin/exhibition/app#/iconographics', 'Iconos') }}
             </li>
-			<li role="separator" class="divider"></li>
-			<li>
-				{{ HTML::linkRoute('admin.billboard.index', 'Ver todas las carteleras') }}
-			</li>
-			<li>
-				{{ HTML::linkRoute('admin.billboard.create', 'Agregar cartelera') }}
-			</li>
-			<li>
-				{{ HTML::linkRoute('admin.billboard.send', 'Enviar ultima cartelera') }}
-			</li>
 		</ul>
 	</div>
 
@@ -70,6 +57,24 @@
 			</li>
 			<li>
 				{{ HTML::linkRoute('admin.news.create', 'Agregar noticia') }}
+			</li>
+		</ul>
+	</div>
+
+	<div class="btn-group">
+		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			Cartelera Digital
+			<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu">
+			<li>
+				{{ HTML::linkRoute('admin.billboard.index', 'Ver todas las carteleras') }}
+			</li>
+			<li>
+				{{ HTML::linkRoute('admin.billboard.create', 'Agregar cartelera') }}
+			</li>
+			<li>
+				{{ HTML::linkRoute('admin.billboard.send', 'Enviar ultima cartelera') }}
 			</li>
 		</ul>
 	</div>
@@ -163,36 +168,6 @@
 			</li>
 			<li>
 				<a href="/admin/course">Lista de cursos</a>
-			</li>
-		</ul>
-	</div>
-
-	<div class="btn-group">
-		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-			Páginas Estáticas
-			<span class="caret"></span>
-		</button>
-		<ul class="dropdown-menu">
-			<li>
-				{{ HTML::linkAction('Filmoteca\StaticPages\StaticPagesController@index', 'Ver páginas') }}
-			</li>
-			<li>
-				{{ HTML::linkAction('Filmoteca\StaticPages\StaticPagesController@create', 'Agregar página') }}
-			</li>
-		</ul>
-	</div>
-
-	<div class="btn-group">
-		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-			Menús
-			<span class="caret"></span>
-		</button>
-		<ul class="dropdown-menu">
-			<li>
-				{{ HTML::linkAction('Filmoteca\StaticPages\MenusController@index', 'Ver menús') }}
-			</li>
-			<li>
-				{{ HTML::linkAction('Filmoteca\StaticPages\MenusController@create', 'Agregar menú') }}
 			</li>
 		</ul>
 	</div>

@@ -53,3 +53,11 @@ Route::get('/courses/app', function () {
 Route::get('/courses/verification', [
     'as' => 'courses.verification',
     'uses' => 'Api\Courses\StudentController@verify']);
+
+/*
+|----------------------------------------------------------------------------
+| PÁGINAS ESTATICAS
+|----------------------------------------------------------------------------
+ */
+
+Route::get('/pages/{dir_or_name}/{name?}', 'PageController@show');
