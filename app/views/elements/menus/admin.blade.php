@@ -167,5 +167,35 @@
 		</ul>
 	</div>
 
+	<div class="btn-group">
+		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			Páginas Estáticas
+			<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu">
+			<li>
+				{{ HTML::linkAction('Filmoteca\StaticPages\StaticPagesController@index', 'Ver páginas') }}
+			</li>
+			<li>
+				{{ HTML::linkAction('Filmoteca\StaticPages\StaticPagesController@create', 'Agregar página') }}
+			</li>
+		</ul>
+	</div>
+
+	<div class="btn-group">
+		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			Menús
+			<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu">
+			<li>
+				{{ HTML::linkAction('Filmoteca\StaticPages\MenusController@index', 'Ver menús') }}
+			</li>
+			<li>
+				{{ HTML::linkAction('Filmoteca\StaticPages\MenusController@create', 'Agregar menú') }}
+			</li>
+		</ul>
+	</div>
+
     <a href="/admin/cms" class="btn btn-default">CMS</a>
 </div>
