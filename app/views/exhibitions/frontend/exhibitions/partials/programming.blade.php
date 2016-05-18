@@ -19,7 +19,7 @@
 					@lang('exhibitions.frontend.auditorium.index.title')
 				</a>
 			</div>
-			<div class="link">
+			<div class="link hidden-button">
 				<a href="{{ URL::route('exhibition.history') }}">
 					<span class="icon icon-ciclos"></span>
 					@lang('exhibitions.frontend.history.title')

@@ -1,15 +1,15 @@
 <div class="row">
-    <div class="col-md-4">
-
+    <!-- Imagen de película y me gusta -->
+    <div class="col-xs-5 col-sm-4 col-md-3 col-lg-3">
+        <img src="{{ $film->getCover()->getMediumImageUrl() }}">
         @include(
             'elements.facebook.like-button', [
                 'url' => Url::route('exhibitions.frontend.film.show', ['slug', $film->getSlug()])
             ]
         )
-
-        <img src="{{ $film->getCover()->getMediumImageUrl() }}">
-    </div>
-    <div class="col-md-8">
+    </div>   
+    <!-- Panel pestañas -->
+    <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
         <a href="{{ URL::route('exhibitions.frontend.film.show', ['slug' => $film->getSlug()]) }}">
             <h2 class="text-center">
                 {{ $film->getTitle() }}
@@ -18,34 +18,39 @@
 
         <!-- Texto que mostrará duración, fecha y año -->
         <h6 class="text-center">
-            <p class= "margin">
+            <p class="margin">
                 <strong>
                     {{ HTML::summaryTechnicalCard($film) }}
                 </strong>
             </p>
         </h6>
 
-        <!-- Pestañas de sinopsis, fiche técnica, trailer y notas-->
+        <!-- Pestañas de horarios, sinopsis, fiche técnica, trailer y notas -->
         <div class="content">
             <!-- Nav tabs -->
             <div role="tabpanel">
                 <ul class="nav nav-tabs" role="tablist">
-                    <li class="active" role="presentation">
+                    <li class="active border" role="presentation">
+                        <a data-toggle="tab" role="tab" href="{{ '#tab-schedules-' . $film->getId() }}">
+                            @lang('exhibitions.frontend.exhibition.show.schedules')
+                        </a>
+                    </li>
+                    <li class="border" role="presentation">
                         <a data-toggle="tab" role="tab" href="{{ '#tab-synopsis-' . $film->getId() }}">
                             @lang('exhibitions.frontend.film.show.fields.synopsis')
                         </a>
                     </li>
-                    <li class="" role="presentation">
+                    <li class="border" role="presentation">
                         <a data-toggle="tab" role="tab" href="{{ '#tab-technical-card-' . $film->getId() }}">
                             @lang('exhibitions.frontend.film.show.fields.technical_card')
                         </a>
                     </li>
-                    <li class="" role="presentation">
+                    <li class="border" role="presentation">
                         <a data-toggle="tab" role="tab" href="{{ '#tab-trailer-' . $film->getId() }}">
                             @lang('exhibitions.frontend.film.show.fields.trailer')
                         </a>
                     </li>
-                    <li class="" role="presentation">
+                    <li class="border" role="presentation">
                         <a data-toggle="tab" role="tab" href="{{ '#tab-notes-' . $film->getId() }}">
                             @lang('exhibitions.frontend.film.show.fields.notes')
                         </a>
@@ -54,33 +59,103 @@
 
                 <!-- Tab panes -->
                 <div class="tab-content">
-                    <div id="{{ 'tab-synopsis-' . $film->getId() }}" class="tab-pane active" role="tabpanel">
+
+                    <!-- Pestaña Horarios -->    
+                    <div id="{{ 'tab-schedules-' . $film->getId() }}" class="tab-pane active" role="tabpanel">
+                        <li class="list-group-item margin scroll-over">
+                            
+                            <div class="panel panel-default no-line">
+                                <table class="table table-responsive">
+                                    
+                                    <!-- Encabezado se presenta en: fechas: horarios: -->
+                                    <tr>
+                                        <th class="col-md-4 text-center">
+                                            <h5>@lang('exhibitions.frontend.exhibition.show.is_presented_at'):</h5>  
+                                        </th>
+                                        <th class="col-md-3 text-center">
+                                            <h5>@lang('exhibitions.frontend.exhibition.show.dates'):</h5>
+                                        </th>
+                                        <th class="col-md-5 text-center">
+                                            <h5>@lang('exhibitions.frontend.auditorium.show.schedule')(s):</h5>
+                                        </th>
+                                    </tr>            
+
+                                    <!-- Se presenta en las salas, fechas y horarios -->
+                                    @foreach ($exhibition->getSchedules()->only($date)->groupByAuditorium() as $schedules) 
+        
+                                        <tr>
+                                            <td class="col-md-4 bold">
+                                                <a href="{{ URL::route('exhibition.auditorium.index') }}">
+                                                   {{ $schedules->first()->getAuditorium()->getName() }}
+                                                </a>
+                                            </td>
+                                            <td class="col-md-3">
+                                                @lang('exhibitions.frontend.exhibition.show.date',
+                                                    [
+                                                        'numeric_day' => $schedules->first()->getEntry()->day,
+                                                        'textual_month' => trans('dates.months.' . $schedules->first()->getEntry()->format('F')),
+                                                        'year' => $schedules->first()->getEntry()->year
+                                                    ])
+                                            </td>
+                                            <td class="col-md-5">
+                                                {{ HTML::schedulesTimeAsList($schedules) }} hrs.
+                                            </td>
+                                        </tr>       
+                                    @endforeach
+                                </table>
+                                        
+                                <!-- Botón que desplegará más horarios -->
+                                <div class="row">
+                                    <button type="button"
+                                            class="btn btn-default more-schedules"
+                                            data-href="{{ URL::route('exhibition.schedule.search', ['exhibitionId' => $exhibition->getId()]) }}"
+                                            data-since="{{ isset($date) ? $date->copy()->addDay()->format(MYSQL_DATE_FORMAT) : ''  }}"
+                                            title="@lang('exhibition.see_more_schedules')">
+                                        @lang('exhibitions.frontend.exhibition.show.see_more_schedules')
+                                    </button>
+                                    <div align="left" class="collapse">
+                                        {{-- This content is loaded with AJAX and it is located in --}}
+                                        {{-- views/frontend/exhibitions/partials/more-schedules    --}}
+                                    </div>
+                                </div>
+                          
+                            </div>  
+                        </li>
+                    </div>
+
+                    <!-- Pestaña Sinopsis --> 
+                    <div id="{{ 'tab-synopsis-' . $film->getId() }}" class="tab-pane" role="tabpanel">
                         <li class="list-group-item margin scroll-over">
                             <p>{{ $film->getSynopsis() }}</p>
                         </li>
                     </div>
 
-                    <!-- Ficha técnica que se muestra en la pestaña Ficha técnica(tab-2) -->
+                    <!-- Pestaña Ficha técnica -->
                     <div id="{{ 'tab-technical-card-' . $film->getId() }}" class="tab-pane" role="tabpanel" >
-                        <li class="list-group-item margin scroll-over embed-responsive embed-responsive-16by9">
+                        <li class="list-group-item margin scroll-over">
                             <table class="table table-bordered">
                                 {{ HTML::technicalCard($film) }}
                             </table>
                         </li>
                     </div>
 
-                    <!-- Video que se muestra en la pestaña Trailer(tab-3) /4by3-->
+                    <!-- Pestaña Trailer /4by3 -->
                     <div id="{{ 'tab-trailer-' . $film->getId() }}" class="tab-pane" role="tabpanel" >
                         <li class="list-group-item embed-responsive embed-responsive-16by9">
                             <p>{{ $film->getTrailer() }}</p>
                         </li>
                     </div>
 
-                    <!-- Notas que se muestran en la pestaña Notas(tab-4) -->
+                    <!-- Pestaña Notas -->
                     <div id="{{ 'tab-notes-' . $film->getId() }}" class="tab-pane" role="tabpanel" >
-                        <li class="list-group-item margin scroll-over embed-responsive embed-responsive-16by9">
-                            <p><strong>@lang('exhibitions.frontend.exhibition.show.film_notes')</strong>:
-                                {{ $film->getNotes() }}</p>
+                        <li class="list-group-item margin scroll-over">
+                            <p>
+                                <strong>
+                                    @lang('exhibitions.frontend.exhibition.show.film_notes')
+                                </strong>
+                                :
+                                {{ $film->getNotes() }}
+                            </p>
                             @if (isset($exhibitionNotes))
                                 <p>
                                     <strong>
@@ -91,8 +166,10 @@
                             @endif
                         </li>
                     </div>
-                </div>
-            </div>
+
+                </div><!-- End Tab panes -->
+
+            </div><!--End Nav tabs -->
         </div>
     </div>
 </div>

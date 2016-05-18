@@ -1,5 +1,5 @@
 <div class="extra-schedules">
-    <table class="table table-responsive table-bordered">
+    <table class="table table-responsive">
         @foreach ($schedules->groupByAuditorium() as $auditoriumSchedules)
             @foreach ($auditoriumSchedules->groupByDate() as $index => $dateSchedules)
                 @foreach ($dateSchedules as $dayIndex => $schedule)
@@ -14,7 +14,7 @@
                             </td>
                         @endif
                         @if ($dayIndex == 0)
-                            <td class="col-md-3 highlight text-center">
+                            <td class="col-md-3">
                                 @lang('exhibitions.frontend.exhibition.show.date',
                                 [
                                     'numeric_day' => $schedule->getEntry()->day,
