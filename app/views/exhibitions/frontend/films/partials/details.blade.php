@@ -1,6 +1,6 @@
 <div class="row">
     <!-- Imagen de película y me gusta -->
-    <div class="col-xs-5 col-sm-4 col-md-3 col-lg-3">
+    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
         <img src="{{ $film->getCover()->getMediumImageUrl() }}">
         @include(
             'elements.facebook.like-button', [
@@ -106,12 +106,12 @@
                                         
                                 <!-- Botón que desplegará más horarios -->
                                 <div class="row">
-                                    <button type="button"
-                                            class="btn btn-default more-schedules"
+                                    <button type="button "
+                                            class="btn btn-default loading-xsm more-schedules"
                                             data-href="{{ URL::route('exhibition.schedule.search', ['exhibitionId' => $exhibition->getId()]) }}"
                                             data-since="{{ isset($date) ? $date->copy()->addDay()->format(MYSQL_DATE_FORMAT) : ''  }}"
-                                            title="@lang('exhibition.see_more_schedules')">
-                                        @lang('exhibitions.frontend.exhibition.show.see_more_schedules')
+                                            title="@lang('exhibitions.frontend.exhibition.show.see_more_schedules')">
+                                            @lang('exhibitions.frontend.exhibition.show.see_more_schedules')
                                     </button>
                                     <div align="left" class="collapse">
                                         {{-- This content is loaded with AJAX and it is located in --}}

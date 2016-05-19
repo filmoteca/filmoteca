@@ -22,7 +22,7 @@
 .row .col-md-3.col-lg-3 img {
     margin: 25px 4px 10px !important;
     padding-top: 15px !important;
-    width: 180px !important;
+    width: 130%;
 }
 
 //Se presenta en las salas y horarios
@@ -82,7 +82,8 @@
         font-size: 11px !important;
         border-color: #ddd !important;
         width: 100% !important;
-        padding: 4px 20px !important;
+        padding: 4px 25px !important;
+        background-position: 0 0 !important;
     }       
 }
 

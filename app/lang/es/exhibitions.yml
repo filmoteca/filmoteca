@@ -28,7 +28,7 @@ frontend:
         index:
             title: ':textual_day :numeric_day de :textual_month'
             breadcrumbs_title: Programación
-            results_number: ':number películas programadas para esta fecha:'
+            results_number: ':number película(s) programada(s) para esta fecha:'
             search: Buscar película
             none_extra_schedule: No hay más horarios para ésta película
         show:
