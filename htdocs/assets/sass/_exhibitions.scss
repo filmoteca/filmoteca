@@ -16,78 +16,96 @@
     height: 58px;
 }
 
+
+//Imagen de película y me gusta 
+
+.row .col-md-3.col-lg-3 img {
+    margin: 25px 4px 10px !important;
+    padding-top: 15px !important;
+    width: 180px !important;
+}
+
 //Se presenta en las salas y horarios
 
-.icon{
-    .col-md-10 h3{
-        max-width: auto !important;
-        padding-top: 15px !important;
-        text-transform: capitalize;
-        text-align: left;
-        color: #333333 !important;
+.col-md-9.col-lg-9{
+    padding-left: 45px !important;
+    padding-right: 28px !important;
+}
+
+.nav.nav-tabs{
+    .border{
+        border: 1px solid #f5f5f5 !important;
+        border-radius: 4px 4px 0 0 !important;
     }
 
-    .image-size-thumbnail {
-        max-width: 60px;
-        max-height: 70px;
+    li.active > a, .nav-tabs > li.active > a:hover, .border > li.active > a:focus {
+      background-color: #eee !important;
+      border: 1px solid #ddd;
+    }
+
+}      
+
+.panel.panel-default.no-line{ 
+    border-color: #fff !important;
+
+    table{
+        border-spacing: 2px;
+        margin-bottom: 0 !important;
+
+                
+        .bold{
+            font-weight: bold !important;
+        }
+
+        th {     
+            padding: 0 !important;     
+
+            h5 {
+                color: #646464 !important;
+                font-size: 14px !important;
+            }
+        }
+
+        td {     
+            border-top: 1px solid #ddd !important;
+        }
     }
 }
 
-.panel .panel-default .panel-heading-hora {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 3px;
-    padding: 0 13px;
-    background-color: #f5f5f5;
-    border-color: #ddd;
-    color: #333333;
+.row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
 
- 	.col-md-5 h3{
-    	margin-bottom: 5px;
-    	margin-top: 5px;
-    	font-size: 20px;
-    }
 
-    .col-md-5 a{
-    	color: #9d9d9d;
-    	font-size: 15px;
-    	text-decoration: underline;
-    	vertical-align: -8px;
+    .btn.btn-default.more-schedules{
+        text-align: left !important;
+        font-size: 11px !important;
+        border-color: #ddd !important;
+        width: 100% !important;
+        padding: 4px 20px !important;
+    }       
+}
+
+.more-schedules{ 
+    border-color: #fff !important;
+
+    .extra-schedules table{
+        color: #646464 !important;
+        font-size: 14px !important;
+        font-family: "Helvetica Neue" !important;
+
+        .bold{
+            font-weight: bold !important;
+
+            a:hover, a:focus {
+            color: #23527c !important;
+            }
+        }
     }
 }
 
-.panel-body table{
-    border-collapse: separate;
-    border-spacing: 2px;
-    border: none !important;
-    margin-bottom: 0 !important;
-
-    .col-md-3.highlight{
-    	background-color: #f5f5f5;
-    }
-    .col-md-5.bold{
-        font-weight: bold;
-    }
-}
-
-.extra-schedules table{
-	border-collapse: separate;
-	border-spacing: 2px;
-	border: none !important;
-
-    .col-md-3.highlight{
-    	background-color: #f5f5f5;
-    }
-
-    .col-md-5.bold{
-    	font-weight: bold;
-    }
-}
-
-.scroll-over{
-    border-style: ridge;
-    overflow-y: scroll;
-    height: 231px;
-    padding-left: 5px;
+.result-number{
+   font-size: 16px !important;   
 }
 
 li.margin {
@@ -98,15 +116,62 @@ p.margin {
   margin: 0;
 }
 
+.scroll-over{
+    border-style: ridge;
+    overflow-y: scroll;
+    height: 231px;
+    padding-left: 5px;
+}
 
 //Ciclos y funciones especiales
 
-.panel-heading.text-center {
-        h3 {
-            margin-bottom: 0;
-            margin-top: 0;
-            font-size: 20px;
+.panel-heading.small-heading{
+    padding: 0 15px !important;
+    
+}
+
+.icon{
+
+    .col-xs-2.col-sm-1.ciclo-icon{
+
+        .link{
+            -webkit-background-size: cover; 
+            -moz-background-size: cover; 
+            -o-background-size: cover; 
+            height: 50px; 
+            background-color: transparent !important; 
         }
+
+        .link img{
+            min-height: 80%; 
+            max-width: 36px;
+            display: flex;
+            position: relative;
+        }
+    }
+
+    .col-xs-9.col-sm-11{ 
+
+        h3 {
+            padding-top: 15px !important;
+            text-align: left;
+            color: #333333 !important;
+            font-size: 18px;
+        }
+
+        .fixed {
+            display: flex;
+            position: relative;
+        }
+    }
+}
+
+.panel-heading.text-center {    
+    h3 {
+        margin-bottom: 0;
+        margin-top: 0;
+        font-size: 20px;
+    }
 }
 
 .panel.panel-default{
@@ -117,8 +182,11 @@ p.margin {
 
         }
     }
-}
 
+    .panel-body.exhibition {
+        padding: 0 !important;
+    }
+}
 
 .period {
     background-color: #f5f5f5;
@@ -135,19 +203,17 @@ p.margin {
 // Salas de cine
 
 .panel-heading {
-        h3 {
-            margin-bottom: 0;
-            margin-top: 0;
-            text-align: center;
+    h3 {
+        margin-bottom: 0;
+        margin-top: 0;
+        text-align: center;
 
-            a span {
-                font-size: 20px;
-                text-transform: capitalize;
-                color: $text-color;
-                font-weight: 400;
-
-            }
+        a span {
+            font-size: 19px;
+            color: $text-color;
+            font-weight: 400;
         }
+    }
  }
 
 .col-sm-4 {
@@ -170,4 +236,5 @@ p.margin {
 .fb-like.fb_iframe_widget {
     display: flex;
     position: relative;
+    padding-left: 20px !important;
 }

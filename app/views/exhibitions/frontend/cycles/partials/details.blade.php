@@ -8,9 +8,6 @@
     <div class="panel-body">
         <div class="row">
             <div class="col-sm-2">
-                <div class="facebook-badges">
-
-                </div>
                 <div class="image">
                     <a href="{{ URL::route('exhibitions.frontend.cycle.show', ['slug' => $cycle->getSlug()]) }}">
                         <img src="{{ $cycle->getImage()->getMediumImageUrl()}}"

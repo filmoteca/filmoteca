@@ -26,9 +26,9 @@ frontend:
             earlier_billboard: Carteleras anteriores (:year)
     exhibition:
         index:
-            title: 'Programación del :textual_day :numeric_day de :textual_month'
+            title: ':textual_day :numeric_day de :textual_month'
             breadcrumbs_title: Programación
-            results_number: 'Películas encontradas: :number'
+            results_number: ':number películas programadas para esta fecha:'
             search: Buscar película
             none_extra_schedule: No hay más horarios para ésta película
         show:
@@ -37,13 +37,14 @@ frontend:
             see_more_schedules: Ver más horarios »
             see_auditoriums_location: Ver ubicación de salas
             see_trailer: Ver trailer
-            is_presented_at: Se presenta en las salas
+            is_presented_at: Se presenta en
             receive_our_digital_billboard: Recibe nuestra cartelera digital
             enter_your_email: Ingresa tu correo electrónico
             send: Enviar
             unam_cinemas_community: Comunidad Cines UNAM
             day: Día
             schedules: Horarios
+            dates: Fechas
             film_notes: Notas de la película
             exhibition_notes: Notas de la exhibición
             date: ':numeric_day-:textual_month-:year'
@@ -51,7 +52,7 @@ frontend:
         index:
             title: Películas
         show:
-            search_exhibitions: Mirar exhibitiones de esta película
+            search_exhibitions: Ver exhibiciones de esta película
             fields:
                 synopsis: Sinopsis
                 technical_card: Ficha técnica
