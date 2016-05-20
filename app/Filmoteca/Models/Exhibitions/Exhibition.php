@@ -4,8 +4,7 @@ namespace Filmoteca\Models\Exhibitions;
 
 use DB;
 use Filmoteca\Exhibition\Type\Exhibition as ExhibitionInterface;
-use Filmoteca\Exhibition\Type\Film;
-use Filmoteca\Exhibition\Type\Type;
+use Filmoteca\Exhibition\Type as Type;
 use Filmoteca\Exhibition\Type\ScheduleCollection;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model as Eloquent;
@@ -110,7 +109,7 @@ class Exhibition extends Eloquent implements ExhibitionInterface
     }
 
     /**
-     * @return Film
+     * @return Type\Film
      */
     public function getFilm()
     {
@@ -118,9 +117,9 @@ class Exhibition extends Eloquent implements ExhibitionInterface
     }
 
     /**
-     * @param Film $film
+     * @param Type\Film $film
      */
-    public function setFilm(Film $film)
+    public function setFilm(Type\Film $film)
     {
         $this->exhibition_film->film = $film;
     }
@@ -142,7 +141,7 @@ class Exhibition extends Eloquent implements ExhibitionInterface
     }
 
     /**
-     * @return Type|null
+     * @return Type\Film|null
      */
     public function getType()
     {
@@ -150,9 +149,9 @@ class Exhibition extends Eloquent implements ExhibitionInterface
     }
 
     /**
-     * @param Type $type
+     * @param Type\Film $type
      */
-    public function setType(Type $type)
+    public function setType(Type\Film $type)
     {
         $this->type = $type;
     }
