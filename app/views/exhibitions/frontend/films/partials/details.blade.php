@@ -7,7 +7,7 @@
                 'url' => Url::route('exhibitions.frontend.film.show', ['slug', $film->getSlug()])
             ]
         )
-    </div>   
+    </div>
     <!-- Panel pestañas -->
     <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
         <a href="{{ URL::route('exhibitions.frontend.film.show', ['slug' => $film->getSlug()]) }}">
@@ -60,17 +60,18 @@
                 <!-- Tab panes -->
                 <div class="tab-content">
 
-                    <!-- Pestaña Horarios -->    
+                    @if (isset($exhibition))
+                    <!-- Pestaña Horarios -->
                     <div id="{{ 'tab-schedules-' . $film->getId() }}" class="tab-pane active" role="tabpanel">
                         <li class="list-group-item margin scroll-over">
-                            
+
                             <div class="panel panel-default no-line">
                                 <table class="table table-responsive">
-                                    
+
                                     <!-- Encabezado se presenta en: fechas: horarios: -->
                                     <tr>
                                         <th class="col-md-4 text-center">
-                                            <h5>@lang('exhibitions.frontend.exhibition.show.is_presented_at'):</h5>  
+                                            <h5>@lang('exhibitions.frontend.exhibition.show.is_presented_at'):</h5>
                                         </th>
                                         <th class="col-md-3 text-center">
                                             <h5>@lang('exhibitions.frontend.exhibition.show.dates'):</h5>
@@ -78,11 +79,11 @@
                                         <th class="col-md-5 text-center">
                                             <h5>@lang('exhibitions.frontend.auditorium.show.schedule')(s):</h5>
                                         </th>
-                                    </tr>            
+                                    </tr>
 
                                     <!-- Se presenta en las salas, fechas y horarios -->
-                                    @foreach ($exhibition->getSchedules()->only($date)->groupByAuditorium() as $schedules) 
-        
+                                    @foreach ($exhibition->getSchedules()->only($date)->groupByAuditorium() as $schedules)
+
                                         <tr>
                                             <td class="col-md-4 bold">
                                                 <a href="{{ URL::route('exhibition.auditorium.index') }}">
@@ -100,10 +101,10 @@
                                             <td class="col-md-5">
                                                 {{ HTML::schedulesTimeAsList($schedules) }} hrs.
                                             </td>
-                                        </tr>       
+                                        </tr>
                                     @endforeach
                                 </table>
-                                        
+
                                 <!-- Botón que desplegará más horarios -->
                                 <div class="row">
                                     <button type="button "
@@ -118,12 +119,13 @@
                                         {{-- views/frontend/exhibitions/partials/more-schedules    --}}
                                     </div>
                                 </div>
-                          
-                            </div>  
+
+                            </div>
                         </li>
                     </div>
+                    @endif
 
-                    <!-- Pestaña Sinopsis --> 
+                    <!-- Pestaña Sinopsis -->
                     <div id="{{ 'tab-synopsis-' . $film->getId() }}" class="tab-pane" role="tabpanel">
                         <li class="list-group-item margin scroll-over">
                             <p>{{ $film->getSynopsis() }}</p>
@@ -156,12 +158,12 @@
                                 :
                                 {{ $film->getNotes() }}
                             </p>
-                            @if (isset($exhibitionNotes))
+                            @if (isset($exhibition) && !empty($exhibition->getNotes()))
                                 <p>
                                     <strong>
                                         @lang('exhibitions.frontend.exhibition.show.exhibition_notes')
                                     </strong>
-                                    : {{ $exhibitionNotes }}
+                                    : {{ $exhibition->getNotes() }}
                                 </p>
                             @endif
                         </li>
