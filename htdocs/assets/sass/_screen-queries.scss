@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+//Prueba de imagen de película y me gusta con un maximo de 480px de ancho
+@media screen and (max-width: 480px) {   
+	
+	.row .col-md-3.col-lg-3 img {
+	    margin: 20px 4px 10px;
+	    padding-top: 15px;
+	    width: 130%;
+	    //Para probar el cambio en el querie (background-color: lightgreen;)
+	}
+}
+

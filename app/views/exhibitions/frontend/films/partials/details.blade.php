@@ -1,6 +1,6 @@
 <div class="row">
     <!-- Imagen de película y me gusta -->
-    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <img src="{{ $film->getCover()->getMediumImageUrl() }}">
         @include(
             'elements.facebook.like-button', [
@@ -67,19 +67,6 @@
 
                             <div class="panel panel-default no-line">
                                 <table class="table table-responsive">
-
-                                    <!-- Encabezado se presenta en: fechas: horarios: -->
-                                    <tr>
-                                        <th class="col-md-4 text-center">
-                                            <h5>@lang('exhibitions.frontend.exhibition.show.is_presented_at'):</h5>
-                                        </th>
-                                        <th class="col-md-3 text-center">
-                                            <h5>@lang('exhibitions.frontend.exhibition.show.dates'):</h5>
-                                        </th>
-                                        <th class="col-md-5 text-center">
-                                            <h5>@lang('exhibitions.frontend.auditorium.show.schedule')(s):</h5>
-                                        </th>
-                                    </tr>
 
                                     <!-- Se presenta en las salas, fechas y horarios -->
                                     @foreach ($exhibition->getSchedules()->only($date)->groupByAuditorium() as $schedules)

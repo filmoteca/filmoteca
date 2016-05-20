@@ -45,11 +45,6 @@
             <div class="panel-body">
                 @include('exhibitions.frontend.films.partials.details', ['film' => $film])
             </div>
-            <div class="panel-footer">
-                <a href="{{ Url::route('exhibitions.frontend.exhibitions.index') . '?title=' . urlencode($film->getTitle())}}">
-                    @lang('exhibitions.frontend.film.show.search_exhibitions')
-                </a>
-            </div>
         </div>
     </div>
 @stop
