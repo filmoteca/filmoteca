@@ -141,7 +141,7 @@ class Exhibition extends Eloquent implements ExhibitionInterface
     }
 
     /**
-     * @return Type\Film|null
+     * @return Type\Type|null
      */
     public function getType()
     {
@@ -149,9 +149,9 @@ class Exhibition extends Eloquent implements ExhibitionInterface
     }
 
     /**
-     * @param Type\Film $type
+     * @param Type\Type $type
      */
-    public function setType(Type\Film $type)
+    public function setType(Type\Type $type)
     {
         $this->type = $type;
     }
