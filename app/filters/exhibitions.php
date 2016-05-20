@@ -12,6 +12,7 @@ View::composer('*', function ($view) {
     ];
 
     $view->with('exhibitionsConfig', $exhibitionsConfig);
+    $view->with('domain', '//' . $_SERVER['SERVER_NAME']);
 });
 
 View::composer('exhibitions.*', 'Filmoteca\Exhibitions\Composer\ExhibitionComposer');
