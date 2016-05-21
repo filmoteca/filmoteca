@@ -35,7 +35,7 @@ class FilmController extends Controller
      */
     public function show($slug)
     {
-        $film = $this->filmRepository->findBySlug($slug);
+        $film = $this->filmRepository->findOneBySlug($slug);
 
         return View::make('exhibitions.frontend.films.show', compact('film'));
     }

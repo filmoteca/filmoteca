@@ -27,6 +27,7 @@ class Film extends Eloquent implements StaplerableInterface, FilmInterface
         'title',
         'original_title',
         'duration',
+        'slug',
         'genre_id',
         'director',
         'script',

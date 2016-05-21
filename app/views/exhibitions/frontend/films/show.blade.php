@@ -4,9 +4,9 @@
 
     <meta property="og:url"             content="{{ Request::url() }}" />
     <meta property="og:type"            content="video.movie" />
-    <meta property="og:title"         content="{{ Config::get('parameters.institution.title') }}" />
-    <meta property="og:description"   content="{{ Str::limit($film->getSynopsis()) }}" />
-    <meta property="og:image"         content="{{ $domain . $film->getCover()->getSmallImageUrl() }}" />
+    <meta property="og:title"         content="{{ Config::get('parameters.institution.name') }}" />
+    <meta property="og:description"   content="{{ strip_tags(Str::limit($film->getSynopsis())) }}" />
+    <meta property="og:image"         content="{{{ 'http:' . $domain . str_replace(' ', '%20', $film->getCover()->getSmallImageUrl()) }}}" />
 
     @foreach(explode(',', $film->getCast()) as $actor)
         <meta property="video:actor:first_name" content="{{ $actor }}" />
