@@ -4,7 +4,7 @@
         <img src="{{ $film->getCover()->getMediumImageUrl() }}">
         @include(
             'elements.facebook.like-button', [
-                'url' => Url::route('exhibitions.frontend.film.show', ['slug', $film->getSlug()])
+                'url' => URL::route('exhibitions.frontend.film.show', ['slug' => $film->getSlug()])
             ]
         )
     </div>
