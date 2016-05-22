@@ -6,7 +6,7 @@
     <meta property="og:type"          content="video.movie" />
     <meta property="og:title"         content="{{ Config::get('parameters.institution.name') }}" />
     <meta property="og:description"   content="{{ strip_tags(Str::limit($film->getSynopsis())) }}" />
-    <meta property="og:image"         content="{{{ 'http:' . $domain . str_replace(' ', '%20', $film->getCover()->getMediumImageUrl()) }}}" />
+    <meta property="og:image"         content="{{{ 'http:' . $domain . str_replace(' ', '%20', $film->getCover()->getOriginalImageUrl()) }}}" />
 @stop
 
 @section('breadcrumbs')
