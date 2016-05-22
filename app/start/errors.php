@@ -1,5 +1,29 @@
 <?php
 
+/**
+ * If I define a route that match any thing that code is not execute and a HttpNotFoundException is thrown.
+ * So I need to catch that exception and try the redirect.
+ */
+App::missing(function () {
+    $redirects = App::make('Filmoteca\Repository\RedirectsRepository')->all();
+
+    $redirect = $redirects->first(function ($index, $redirect) {
+        return $redirect->old == '/' . Request::path();
+    });
+
+    if ($redirect !== null) {
+        return Redirect::to($redirect->new, 301);
+    }
+
+    $viewData = [
+        'title'     => 'errors.page_not_found',
+        'message'   => 'errors.page_not_found',
+        'code'      => '404'
+    ];
+
+    return Response::view('syntara::dashboard.error', $viewData);
+});
+
 /*
 |--------------------------------------------------------------------------
 | Application Error Handler
