@@ -2,6 +2,7 @@
 
 namespace Filmoteca\Handlers;
 
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Request;
 use Response;
 use Redirect;
@@ -44,13 +45,7 @@ class ErrorHandler
         });
 
         if ($redirect === null) {
-            $viewData = [
-                'title'     => 'Página no encontrada',
-                'message'   => 'Página no encontrada.',
-                'code'      => '404'
-            ];
-
-            return Response::view('syntara::dashboard.error', $viewData, 404);
+            throw new ModelNotFoundException();
         }
 
         return Redirect::to($redirect->new, 301);

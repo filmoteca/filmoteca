@@ -4,6 +4,7 @@ namespace Filmoteca\Exhibitions\Controllers\Frontend;
 
 use Carbon\Carbon;
 use Filmoteca\Repository\FilmsRepository;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Config;
@@ -36,7 +37,7 @@ class FilmController extends Controller
     public function show($slug)
     {
         $film = $this->filmRepository->findOneBySlug($slug);
-
+        
         return View::make('exhibitions.frontend.films.show', compact('film'));
     }
 }
