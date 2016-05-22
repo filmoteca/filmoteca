@@ -2,22 +2,11 @@
 
 @section('metas')
 
-    <meta property="og:url"             content="{{ Request::url() }}" />
-    <meta property="og:type"            content="video.movie" />
+    <meta property="og:url"           content="{{ Request::url() }}" />
+    <meta property="og:type"          content="video.movie" />
     <meta property="og:title"         content="{{ Config::get('parameters.institution.name') }}" />
     <meta property="og:description"   content="{{ strip_tags(Str::limit($film->getSynopsis())) }}" />
-    <meta property="og:image"         content="{{{ 'http:' . $domain . str_replace(' ', '%20', $film->getCover()->getSmallImageUrl()) }}}" />
-
-    @foreach(explode(',', $film->getCast()) as $actor)
-        <meta property="video:actor:first_name" content="{{ $actor }}" />
-    @endforeach
-
-    @foreach(explode(',', $film->getScript()) as $writer)
-        <meta property="video:writer:first_name" content="{{ $writer }}" />
-    @endforeach
-
-    <meta property="video:duration" content="{{ $film->getDuration() }}" />
-
+    <meta property="og:image"         content="{{{ 'http:' . $domain . str_replace(' ', '%20', $film->getCover()->getMediumImageUrl()) }}}" />
 @stop
 
 @section('breadcrumbs')
