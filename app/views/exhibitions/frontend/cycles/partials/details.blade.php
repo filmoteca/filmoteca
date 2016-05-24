@@ -27,15 +27,15 @@
             </div>
         </div>
 
-        
+
         <!-- Botón ver programación del ciclo-->
         <div class="row">
             <div class="col-md-12">
                 <div align="right">
-                    <a href="{{ URL::route('exhibitions.frontend.cycle.show', ['slug' => $cycle->getSlug()])}}"> 
+                    <a href="{{ URL::route('exhibitions.frontend.cycle.show', ['slug' => $cycle->getSlug()])}}">
                         <button type="button"
                                 class="btn btn-default">
-                                @lang('exhibitions.frontend.cycle.index.see-exhibitions')
+                                @lang('exhibitions.frontend.cycle.index.see_exhibitions')
                         </button>
                     </a>
                 </div>

@@ -7,7 +7,7 @@ frontend:
     calendar:
         title: Cine UNAM
         subtitle: Consulta programación
-        exhibitions-in-the-day: ':number exhibiciones en este día'
+        exhibitions_in_the_day: ':number exhibiciones en este día'
     auditorium:
         index:
             title: Ubicación Salas de cine
@@ -49,6 +49,7 @@ frontend:
     film:
         index:
             title: Películas
+            none_film_found: Ninguna película encontrada con el título <b>:film_title<b>
         show:
             fields:
                 synopsis: Sinopsis
@@ -74,7 +75,7 @@ frontend:
         index:
             title: Ciclos y funciones especiales
             period: Se presenta del :since_day de :since_month al :until_day de :until_month de :until_year
-            see-exhibitions: Ver programación de este ciclo
+            see_exhibitions: Ver programación de este ciclo
         show:
             title: Programación del ciclo :cycle_name
 general:

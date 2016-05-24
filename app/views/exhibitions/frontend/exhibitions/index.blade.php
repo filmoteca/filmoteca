@@ -36,6 +36,10 @@
     )
     </h1>
 
+    @if ($exhibitions->isEmpty())
+        @lang('exhibitions.frontend.film.index.none_film_found', ['film_title' => \Input::get('title')])
+    @endif
+
     <div class="exhibitions index">
         @foreach ($exhibitions as $exhibition)
             @include('exhibitions.frontend.exhibitions.partials.details', ['exhibition' => $exhibition])

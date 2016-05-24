@@ -9,6 +9,7 @@ use Filmoteca\Models\Exhibitions\ExhibitionFilm;
 use Filmoteca\Models\Exhibitions\Film;
 use Filmoteca\Pagination\Results;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Pagination\Paginator;
 
 /**
  * Class ExhibitionsRepository
@@ -180,15 +181,15 @@ class ExhibitionsRepository extends ResourcesRepository implements PageableRepos
 
         $results = $builder->get(['id']);
 
+        if (empty($results)) {
+            return \Paginator::make([], 0, 1);
+        }
+
         $filmsIds = Collection::make($results)->map(function (\stdClass $dummyObject) {
             return $dummyObject->id;
         })->toArray();
 
-        if (empty($filmsIds)) {
-            return Collection::make([]);
-        }
-
-         $resourcesBuilder = Exhibition::whereHas('exhibitionFilm', function ($builder) use ($filmsIds) {
+        $resourcesBuilder = Exhibition::whereHas('exhibitionFilm', function ($builder) use ($filmsIds) {
             $builder->whereHas('film', function (Builder $builder) use ($filmsIds) {
                 $builder->whereIn('films.id', $filmsIds);
             });
