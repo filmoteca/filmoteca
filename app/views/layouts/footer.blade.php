@@ -45,7 +45,7 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				Hecho en México. Derechos Reservados, (C) 2015 UNAM/DGAC. Ésta página puede ser reproducida con fines no lucrativos, siempre y cuando no se mutile, se cite la fuente completa y su dirección electrónica. De otra forma requiere permiso previo por escrito de la institución.
+				Hecho en México. Derechos Reservados, (C) 2015 UNAM/DGAC. Esta página puede ser reproducida con fines no lucrativos, siempre y cuando no se mutile, se cite la fuente completa y su dirección electrónica. De otra forma requiere permiso previo por escrito de la institución.
 			</div>
 		</div>
 	</div>
