@@ -52,10 +52,11 @@ return array(
      *    )
      */
     'menu' => array(
-        'Home' => ['advertisements'],
-        'Carousels' => ['carousels', 'carousel_images'],
-        'Exhibitions' => ['countries', 'genres'],
-        'System' => ['redirects']
+    	'pages',
+        'Home' 			=> ['advertisements'],
+        'Carousels' 	=> ['carousels', 'carousel_images'],
+        'Exhibitions' 	=> ['countries', 'genres'],
+        'System' 		=> ['redirects']
     ),
 
     /**
@@ -108,6 +109,7 @@ return array(
      * The logout path is the path where Administrator will send the user when they click the logout link
      *
      * @type string
+
      */
     'logout_path' => false,
 
