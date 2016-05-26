@@ -13,7 +13,7 @@
 
 	<div class="strip">
 		<div>
-			<div class="pull-left">
+			<div class="pull-left sm-logo-unam">
 				<div class="pull-left">
 					<a href="http://www.unam.mx/" title="Universidad Nacional Autónoma de México, UNAM" target="blank">
 						<img src="/assets/imgs/unam.png" alt="logo UNAM">
@@ -24,7 +24,7 @@
 					<span>Autónoma de México</span>
 				</div>
 			</div>
-			<div class="pull-right">
+			<div class="pull-right sm-logo-filmo">
 				<div class="filmoteca-text pull-left text-right hidden-xs">
 					<span>Dirección General de</span><br>
 					<span>Actividades Cinematográficas</span>

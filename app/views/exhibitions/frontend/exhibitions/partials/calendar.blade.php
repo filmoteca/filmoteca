@@ -39,7 +39,7 @@
                         @if ($day->getDate()->month === $date->month)
                             @if ($day->hasExhibitions())
                                 <a class="with-exhibitions day {{ $day->isToday() ? 'today': '' }} {{ $date->day === $day->getNumber() ? 'active': '' }}"
-                                   title="@lang('exhibitions.frontend.calendar.exhibitions-in-the-day', ['number' => $day->getExhibitionsNumber()]) "
+                                   title="@lang('exhibitions.frontend.calendar.exhibitions_in_the_day', ['number' => $day->getExhibitionsNumber()]) "
                                    href="{{ URL::route('exhibition.by_date', $day->getDateInFormatToUrl()) }}">
                                     <span>{{ $day->getNumber() }}</span>
                                 </a>

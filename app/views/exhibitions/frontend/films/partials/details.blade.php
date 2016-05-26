@@ -10,7 +10,7 @@
     </div>
     <!-- Panel pestañas -->
     <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
-        <a href="{{ URL::route('exhibitions.frontend.film.show', ['slug' => $film->getSlug()]) }}">
+        <a class="hidden-title" href="{{ URL::route('exhibitions.frontend.film.show', ['slug' => $film->getSlug()]) }}">
             <h2 class="text-center">
                 {{ $film->getTitle() }}
             </h2>
@@ -26,7 +26,7 @@
         </h6>
 
         <!-- Pestañas de horarios, sinopsis, fiche técnica, trailer y notas -->
-        <div class="content">
+        <div class="content size-tab-show">
             <!-- Nav tabs -->
             <div role="tabpanel">
                 <ul class="nav nav-tabs" role="tablist">
@@ -94,7 +94,7 @@
 
                                 <!-- Botón que desplegará más horarios -->
                                 <div class="row">
-                                    <button type="button "
+                                    <button type="button"
                                             class="btn btn-default loading-xsm more-schedules"
                                             data-href="{{ URL::route('exhibition.schedule.search', ['exhibitionId' => $exhibition->getId()]) }}"
                                             data-since="{{ isset($date) ? $date->copy()->addDay()->format(MYSQL_DATE_FORMAT) : ''  }}"

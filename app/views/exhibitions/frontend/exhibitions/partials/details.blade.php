@@ -20,7 +20,7 @@
 
 
 	<div class="panel-body exhibition">
-		<!-- Exhibición (Imformación completa de la película) -->
+		<!-- Exhibición (Información completa de la película) -->
 		@include(
 			'exhibitions.frontend.films.partials.details',
 			['film' => $exhibition->getFilm(), ['exhibitionNotes' => $exhibition->getNotes() ]]

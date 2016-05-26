@@ -31,8 +31,9 @@
             </div>
 
 
-            <div class="panel-body">
-                @include('exhibitions.frontend.films.partials.details', ['film' => $film])
+            <div class="panel-body for-show">
+                @include('exhibitions.frontend.films.partials.details', ['film' => $film]
+                )
             </div>
         </div>
     </div>
