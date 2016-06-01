@@ -60,15 +60,15 @@
             "php artisan key:generate"
         ],
         "migrate": [
-            "php artisan migrate --env=$LARAVEL_ENV",
-            "php artisan migrate --package=\"cartalyst/sentry\" --env=$LARAVEL_ENV",
-            "php artisan migrate --package=\"mrjuliuss/syntara\" --env=$LARAVEL_ENV",
-            "php artisan migrate --package=\"filmoteca/static-pages\" --env=$LARAVEL_ENV"
+            "/usr/local/php/bin/php artisan migrate --env=$LARAVEL_ENV",
+            "/usr/local/php/bin/php artisan migrate --package=\"cartalyst/sentry\" --env=$LARAVEL_ENV",
+            "/usr/local/php/bin/php artisan migrate --package=\"mrjuliuss/syntara\" --env=$LARAVEL_ENV",
+            "/usr/local/php/bin/php artisan migrate --package=\"filmoteca/static-pages\" --env=$LARAVEL_ENV"
         ],
         "publish-assets": [
-            "php artisan asset:publish mrjuliuss/syntara --env=$LARAVEL_ENV",
-            "php artisan asset:publish frozennode/administrator --env=$LARAVEL_ENV",
-            "php artisan asset:publish filmoteca/static-pages --env=$LARAVEL_ENV"
+            "/usr/local/php/bin/php artisan asset:publish mrjuliuss/syntara --env=$LARAVEL_ENV",
+            "/usr/local/php/bin/php artisan asset:publish frozennode/administrator --env=$LARAVEL_ENV",
+            "/usr/local/php/bin/php artisan asset:publish filmoteca/static-pages --env=$LARAVEL_ENV"
         ]
     },
     "config": {
