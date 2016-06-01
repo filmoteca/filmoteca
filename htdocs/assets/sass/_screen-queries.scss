@@ -1,13 +1,288 @@
 @charset "UTF-8";
 
 //Prueba de imagen de película y me gusta con un maximo de 480px de ancho
+
 @media screen and (max-width: 480px) {   
-	
-	.row .col-md-3.col-lg-3 img {
-	    margin: 20px 4px 10px;
-	    padding-top: 15px;
-	    width: 130%;
-	    //Para probar el cambio en el querie (background-color: lightgreen;)
+
+
+	.main-header{
+		 .upper-navbar{
+
+		 	a {
+    			padding: 6px;
+    		}
+    	}
 	}
+
+	//Imagen de película y me gusta 
+
+	.row .col-xs-4.col-sm-4.col-md-4.col-lg-3{ 
+		margin-left: 17px;
+
+		img {
+		    margin: 20px 55px 10px !important;
+		    padding-top: 0 !important;
+		    width: 110px;		    
+		}
+
+		.fb-like.fb_iframe_widget {
+		    padding-left: 40px !important;
+		}
+	}
+
+	//Panel pestañas
+
+	.col-xs-12.col-sm-8.col-md-8.col-lg-9{
+	    width: 250px !important;
+	    padding-left: 0; 
+	    padding-right: 0; 
+
+	    a h2{
+	        padding-left: 11px;
+	    }
+
+	    h6 p{
+	        padding-left: 10px;
+	    }
+	}
+
+	.content.size-tab-show {
+	    width: 100% !important;
+	}
+
+	
+	.nav.nav-tabs {
+	    width: 100% !important;
+		padding-left: 6px !important;
+
+	    li.active > a, .nav-tabs > li.active > a:hover, .border > li.active > a:focus {
+	        margin: -1px !important;
+	    }
+
+	    li.border {
+		  	height: 34px;
+		}
+	} 
+
+	.nav.nav-tabs .border {
+	    width: 17% !important;
+	}
+
+	.tab-content{
+		padding-left: 5px;
+	}
+
+	li.margin {
+	  width: 248px;
+	  padding: 10px !important;
+	}
+
+	li.size-content{
+	  width: 249px !important;
+	}
+
+	.row.tab-icon {
+	    margin: -15px !important;
+
+		.col-md-5 {
+			width: 39px !important;
+			
+			.link img{
+				padding-top: 3px !important;
+				left: 4px !important;
+				padding-right: 0 !important;
+				max-width: 25px !important;
+			}
+		}
+
+	    .col-md-7{ 
+	        display: none;
+	        visibility: hidden;
+	    }
+	}
+
+	.panel.panel-default.no-line{ 
+    	border-style: hidden !important;
+
+	    table{
+
+	        .bold{
+ 				font-size: 11px;	            
+	        }
+	    }
+	}
+
+	li.margin {
+	    padding: 0 !important;
+	}
+
+	//facebook sidebar
+
+    .hidde-when-small{
+        display: none;
+        visibility: hidden;
+    }
+
+    .hidde-when-normal{
+        display: flex;
+        visibility: visible;
+    }
+
+
+	//Ciclos y funciones especiales
+
+	.icon{
+	    .col-xs-10.col-sm-11 { 
+	        h3 {
+	            padding-top: 5px !important;
+	        }
+	    }
+	}
+}
+
+
+//Prueba de imagen de película y me gusta con un maximo de 640px de ancho
+
+@media (min-width: 336px) and (max-width: 640px) {   
+
+	.main-header{
+		 .upper-navbar{
+
+		 	a {
+    			padding: 6px;
+    		}
+    	}
+	}
+
+	//Imagen de película y me gusta 
+
+	.row .col-xs-4.col-sm-4.col-md-4.col-lg-3{ 
+		margin-left: 17px;
+
+		img {
+		    margin: 20px 55px 10px !important;
+		    padding-top: 0 !important;
+		    width: 110px;		    
+		}
+
+		.fb-like.fb_iframe_widget {
+		    padding-left: 40px !important;
+		}
+	}
+
+	//Panel pestañas
+
+	.col-xs-12.col-sm-8.col-md-8.col-lg-9{
+	    width: 250px !important;
+	    padding-left: 0; 
+	    padding-right: 0; 
+
+	    a h2{
+	        padding-left: 11px;
+	    }
+
+	    h6 p{
+	        padding-left: 10px;
+	    }
+	}
+
+	.content.size-tab-show {
+	    width: 100% !important;
+	}
+
+	
+	.nav.nav-tabs {
+	    width: 100% !important;
+		padding-left: 6px !important;
+
+	    li.active > a, .nav-tabs > li.active > a:hover, .border > li.active > a:focus {
+	        margin: -1px !important;
+	    }
+
+	    li.border {
+		  	height: 34px;
+		}
+	} 
+
+	.nav.nav-tabs .border {
+	    width: 17% !important;
+	}
+
+	.tab-content{
+		padding-left: 5px;
+	}
+
+	li.margin {
+	  width: 248px;
+	  padding: 10px !important;
+	}
+
+	li.size-content{
+	  width: 249px !important;
+	}
+
+	.row.tab-icon {
+	    margin: -15px !important;
+
+		.col-md-5 {
+			width: 39px !important;
+			
+			.link img{
+				padding-top: 3px !important;
+				left: 4px !important;
+				padding-right: 0 !important;
+				max-width: 25px !important;
+			}
+		}
+
+	    .col-md-7{ 
+	        display: none;
+	        visibility: hidden;
+	    }
+	}
+
+	.panel.panel-default.no-line{ 
+    	border-style: hidden !important;
+
+	    table{
+
+	        .bold{
+ 				font-size: 11px;	            
+	        }
+	    }
+	}
+
+	li.margin {
+	    padding: 0 !important;
+	}
+
+	//facebook sidebar
+
+    .hidde-when-small{
+        display: none;
+        visibility: hidden;
+    }
+
+    .hidde-when-normal{
+        display: flex;
+        visibility: visible;
+    }
+
+
+	//Ciclos y funciones especiales
+
+	.icon{
+	    .col-xs-10.col-sm-11 { 
+	        h3 {
+	            padding-top: 5px !important;
+	        }
+	    }
+	}
+}
+
+//Prueba de imagen de película y me gusta con un maximo de 1280px de ancho
+
+@media (min-width: 641px) and (max-width: 1280px) {   
+
 }
 

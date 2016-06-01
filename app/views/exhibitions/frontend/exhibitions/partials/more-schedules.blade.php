@@ -5,9 +5,10 @@
                 @foreach ($dateSchedules as $dayIndex => $schedule)
                     <tr>
                         @if ($index == 0 && $dayIndex == 0)
-                            <td class="col-md-4 bold" rowspan="{{ $auditoriumSchedules->count() }}">
+                            <td class="col-md-4 underline color-underline bold" rowspan="{{ $auditoriumSchedules->count() }}">
                                 <span class="auditorium-name">
                                     <a href="#">
+                                        <span class="icon icon-location">
                                         {{ $schedule->getAuditorium()->getName() }}
                                     </a>
                                 </span>

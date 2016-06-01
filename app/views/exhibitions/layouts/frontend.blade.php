@@ -29,19 +29,31 @@
 
     <br><br>
 
-    <div class="fb-page" 
-        data-href="https://www.facebook.com/Comunidad.Cines.UNAM/?fref=ts" 
-        data-tabs="timeline" 
-        data-small-header="true" 
-        data-adapt-container-width="true" 
-        data-hide-cover="false" 
-        data-show-facepile="true">
-        <div class="fb-xfbml-parse-ignore">
-            <blockquote cite="https://www.facebook.com/Comunidad.Cines.UNAM/?fref=ts">
-                <a href="https://www.facebook.com/Comunidad.Cines.UNAM/?fref=ts">
-                    @lang('exhibitions.frontend.exhibition.show.unam_cinemas_community')
-                </a>
-            </blockquote>
+    <div class="hidde-when-small">
+        <div class="fb-page" 
+            data-href="https://www.facebook.com/Comunidad.Cines.UNAM/?fref=ts" 
+            data-tabs="timeline" 
+            data-small-header="true" 
+            data-adapt-container-width="true" 
+            data-hide-cover="false" 
+            data-show-facepile="true">
+            <div class="fb-xfbml-parse-ignore">
+                <blockquote cite="https://www.facebook.com/Comunidad.Cines.UNAM/?fref=ts">
+                    <a href="https://www.facebook.com/Comunidad.Cines.UNAM/?fref=ts">
+                        @lang('exhibitions.frontend.exhibition.show.unam_cinemas_community')
+                    </a>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+    <div class="hidde-when-normal">
+        <div class="fb-page" 
+            data-href="https://www.facebook.com/Comunidad.Cines.UNAM/"data-tabs="timeline" data-height="230" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+            <div class="fb-xfbml-parse-ignore">
+                <blockquote cite="https://www.facebook.com/Comunidad.Cines.UNAM/">
+                    <a href="https://www.facebook.com/Comunidad.Cines.UNAM/">Comunidad  Cines UNAM</a>
+                </blockquote>
+            </div>
         </div>
     </div>
 @stop

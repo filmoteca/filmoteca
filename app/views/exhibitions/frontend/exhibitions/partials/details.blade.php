@@ -8,9 +8,9 @@
 							<img src="{{ $exhibition->getType()->getImage()->getSmallImageUrl() }}" class="image-size-thumbnail">
 					    </div> 
 					</div>
-					<div class="col-xs-9 col-sm-11 col-md-11 col-lg-11">
+					<div class="col-xs-10 col-sm-11 col-md-11 col-lg-11">
 						<a href="{{ URL::route('exhibitions.frontend.cycle.index') }}">
-							<h3 class="fixed">{{ $exhibition->getType()->getName() }}</h3>
+							<h3 class="fixed underline">{{ $exhibition->getType()->getName() }}</h3>
 						</a>
 					</div>
 				</div>

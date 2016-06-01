@@ -1,6 +1,6 @@
 <div class="row">
     <!-- Imagen de película y me gusta -->
-    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3">
         <img src="{{ $film->getCover()->getMediumImageUrl() }}">
         @include(
             'elements.facebook.like-button', [
@@ -9,8 +9,8 @@
         )
     </div>
     <!-- Panel pestañas -->
-    <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
-        <a class="hidden-title" href="{{ URL::route('exhibitions.frontend.film.show', ['slug' => $film->getSlug()]) }}">
+    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9">
+        <a class="underline hidden-title" href="{{ URL::route('exhibitions.frontend.film.show', ['slug' => $film->getSlug()]) }}">
             <h2 class="text-center">
                 {{ $film->getTitle() }}
             </h2>
@@ -30,29 +30,100 @@
             <!-- Nav tabs -->
             <div role="tabpanel">
                 <ul class="nav nav-tabs" role="tablist">
-                    <li class="active border" role="presentation">
+
+                <!-- Pestaña Horarios -->
+                    <li class="active border" role="presentation">                          
                         <a data-toggle="tab" role="tab" href="{{ '#tab-schedules-' . $film->getId() }}">
-                            @lang('exhibitions.frontend.exhibition.show.schedules')
+                          <div class="row tab-icon">
+                                <div class="col-md-5">
+                                    <div class="link">
+                                        <img  src="/imgs/programacion/iconos/schedules.png"
+                                         title="@lang('exhibitions.frontend.exhibition.show.schedules')"
+                                         alt="@lang('exhibitions.frontend.exhibition.show.schedules')"> 
+                                    </div> 
+                                </div>
+                                <div class="col-md-7">
+                                    <p>
+                                        @lang('exhibitions.frontend.exhibition.show.schedules')
+                                    </p>
+                                </div>
+                            </div>
                         </a>
                     </li>
+                     <!-- Pestaña Sinopsis -->
                     <li class="border" role="presentation">
                         <a data-toggle="tab" role="tab" href="{{ '#tab-synopsis-' . $film->getId() }}">
-                            @lang('exhibitions.frontend.film.show.fields.synopsis')
+                            <div class="row tab-icon">
+                                <div class="col-md-5">
+                                    <div class="link">
+                                        <img src="/imgs/programacion/iconos/synopsis.png"
+                                         title="@lang('exhibitions.frontend.film.show.fields.synopsis')"
+                                         alt="@lang('exhibitions.frontend.film.show.fields.synopsis')"> 
+                                    </div>
+                                </div>
+                                <div class="col-md-7">
+                                    <p>
+                                        @lang('exhibitions.frontend.film.show.fields.synopsis')
+                                    </p>
+                                </div>
+                            </div>
                         </a>
                     </li>
+                    <!-- Pestaña Ficha técnica -->
                     <li class="border" role="presentation">
                         <a data-toggle="tab" role="tab" href="{{ '#tab-technical-card-' . $film->getId() }}">
-                            @lang('exhibitions.frontend.film.show.fields.technical_card')
+                           <div class="row tab-icon">
+                                <div class="col-md-5 tab-tech-card">
+                                  <div class="link">
+                                        <img src="/imgs/programacion/iconos/technical-card.png"
+                                         title="@lang('exhibitions.frontend.film.show.fields.technical_card')"
+                                         alt="@lang('exhibitions.frontend.film.show.fields.technical_card')"> 
+                                    </div> 
+                                </div>
+                                <div class="col-md-7 tab-tech-card">
+                                    <p>
+                                        @lang('exhibitions.frontend.film.show.fields.technical_card')
+                                    </p>
+                                </div>
+                            </div>
                         </a>
                     </li>
+                    <!-- Pestaña Trailer /4by3 -->
                     <li class="border" role="presentation">
                         <a data-toggle="tab" role="tab" href="{{ '#tab-trailer-' . $film->getId() }}">
-                            @lang('exhibitions.frontend.film.show.fields.trailer')
+                           <div class="row tab-icon">
+                                <div class="col-md-5 tab-trailer-notes">
+                                     <div class="link">
+                                        <img src="/imgs/programacion/iconos/trailer.png"
+                                         title="@lang('exhibitions.frontend.film.show.fields.trailer')"
+                                         alt="@lang('exhibitions.frontend.film.show.fields.trailer')"> 
+                                    </div> 
+                                </div>
+                                <div class="col-md-7 tab-trailer-notes">
+                                    <p>
+                                        @lang('exhibitions.frontend.film.show.fields.trailer')
+                                    </p>
+                                </div>
+                            </div>
                         </a>
                     </li>
+                    <!-- Pestaña Notas -->
                     <li class="border" role="presentation">
                         <a data-toggle="tab" role="tab" href="{{ '#tab-notes-' . $film->getId() }}">
-                            @lang('exhibitions.frontend.film.show.fields.notes')
+                           <div class="row tab-icon">
+                                <div class="col-md-5 tab-trailer-notes">
+                                    <div class="link">
+                                        <img src="/imgs/programacion/iconos/notes.png"
+                                         title="@lang('exhibitions.frontend.film.show.fields.notes')"
+                                         alt="@lang('exhibitions.frontend.film.show.fields.notes')"> 
+                                    </div> 
+                                </div>
+                                <div class="col-md-7 tab-trailer-notes">
+                                    <p> 
+                                        @lang('exhibitions.frontend.film.show.fields.notes')
+                                    </p>
+                                </div>
+                            </div>
                         </a>
                     </li>
                 </ul>
@@ -61,7 +132,7 @@
                 <div class="tab-content">
 
                     @if (isset($exhibition))
-                    <!-- Pestaña Horarios -->
+                    <!-- Contenedor de la pestaña Horarios -->
                     <div id="{{ 'tab-schedules-' . $film->getId() }}" class="tab-pane active" role="tabpanel">
                         <li class="list-group-item margin scroll-over">
 
@@ -72,8 +143,9 @@
                                     @foreach ($exhibition->getSchedules()->only($date)->groupByAuditorium() as $schedules)
 
                                         <tr>
-                                            <td class="col-md-4 bold">
+                                            <td class="col-md-4 underline color-underline bold">
                                                 <a href="{{ URL::route('exhibition.auditorium.index') }}">
+                                                    <span class="icon icon-location">
                                                    {{ $schedules->first()->getAuditorium()->getName() }}
                                                 </a>
                                             </td>
@@ -101,7 +173,7 @@
                                             title="@lang('exhibitions.frontend.exhibition.show.see_more_schedules')">
                                             @lang('exhibitions.frontend.exhibition.show.see_more_schedules')
                                     </button>
-                                    <div align="left" class="collapse">
+                                    <div class="collapse">
                                         {{-- This content is loaded with AJAX and it is located in --}}
                                         {{-- views/frontend/exhibitions/partials/more-schedules    --}}
                                     </div>
@@ -112,14 +184,14 @@
                     </div>
                     @endif
 
-                    <!-- Pestaña Sinopsis -->
+                    <!-- Contenedor de la pestaña Sinopsis -->
                     <div id="{{ 'tab-synopsis-' . $film->getId() }}" class="tab-pane" role="tabpanel">
                         <li class="list-group-item margin scroll-over">
                             <p>{{ $film->getSynopsis() }}</p>
                         </li>
                     </div>
 
-                    <!-- Pestaña Ficha técnica -->
+                    <!-- Contenedor de la pestaña Ficha técnica -->
                     <div id="{{ 'tab-technical-card-' . $film->getId() }}" class="tab-pane" role="tabpanel" >
                         <li class="list-group-item margin scroll-over">
                             <table class="table table-bordered">
@@ -128,14 +200,14 @@
                         </li>
                     </div>
 
-                    <!-- Pestaña Trailer /4by3 -->
+                    <!-- Contenedor de la pestaña Trailer /4by3 -->
                     <div id="{{ 'tab-trailer-' . $film->getId() }}" class="tab-pane" role="tabpanel" >
-                        <li class="list-group-item embed-responsive embed-responsive-16by9">
+                        <li class="list-group-item size-content embed-responsive embed-responsive-16by9">
                             <p>{{ $film->getTrailer() }}</p>
                         </li>
                     </div>
 
-                    <!-- Pestaña Notas -->
+                    <!-- Contenedor de la pestaña Notas -->
                     <div id="{{ 'tab-notes-' . $film->getId() }}" class="tab-pane" role="tabpanel" >
                         <li class="list-group-item margin scroll-over">
                             <p>
