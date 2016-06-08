@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-.exhibition-schedules .label{
+.exhibition-schedules .label {
     margin-right: 5px;
 }
 
@@ -16,73 +16,79 @@
     height: 58px;
 }
 
-.underline{
+.underline {
     text-decoration: underline !important;
-
 }
-    .color-underline{
-        color: #810069 !important;
-    }
 
-//Imagen de película y me gusta 
+.color-underline {       
+    color: #810069 !important;
+}
+ 
+.row.film {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
 
-.row .col-xs-4.col-sm-4.col-md-4.col-lg-3 {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    margin-left: 8px;
+    //Imagen de película y me gusta
     
-    img {
-        margin: 34px 17px 10px !important;
-        width: 178px;
+    .col-xs-4.col-sm-6.col-md-5.col-lg-3 {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-left: 2px;
+        
+        img {
+            margin: 45px 17px 10px !important;
+            max-width: 185px;
+        }
+
+        .fb-like.fb_iframe_widget {
+            display: flex;
+            position: relative;
+            padding-left: 35px !important;
+        }
     }
 
-    .fb-like.fb_iframe_widget {
-        display: flex;
-        position: relative;
-        padding-left: 35px !important;
+    //Panel pestañas
+
+    .col-xs-12.col-sm-6.col-md-7.col-lg-9 {
+        max-width: 509px !important;
+        width: 509px;
+        padding-left: 43px; 
+        padding-right: 0; 
+
+        .content.size-tab-show {
+            width: 470px;
+        }
+
+        .col-md-4.underline.bold {
+            margin: 10px 0 10px!important;
+        }
     }
 }
 
-//Panel pestañas
-
-.col-xs-12.col-sm-8.col-md-8.col-lg-9{
-    width: 446px !important;
-    padding-left: 43px; 
-    padding-right: 15px; 
-
-    .content.size-tab-show{
-        width: 118% !important;
-    }
-
-    .col-md-4.underline.bold{
-        margin: 10px 0 10px!important;
-    }
-
-    a h2{
-        padding-left: 70px;
-    }
-
-    h6 p{
-        padding-left: 70px;
-    }
-}
-
-.nav.nav-tabs {
-    width: 97% !important;
+.nav.nav-tabs.film-tabs {
+    max-width: 100%;
     border-bottom: 0 !important;
-    background-color: #eee !important; 
-    margin-right: -1px !important;
-    margin-left: -1px !important;
+    background-color: #eee !important;
+    height: 53px; 
+    width: 470px; 
 
-    li.active > a, .nav-tabs > li.active > a:hover, .border > li.active > a:focus {
+    li > a:hover, li > a:focus {
+        color: #555 !important;
+        background-color: #fff !important;
+        margin: 0 !important;
+    }
+
+    li.active > a, .nav-tabs.film-tabs > li.active > a:hover, .border > li.active > a:focus {
         background: #fff !important;
-        margin: -1px !important;
+        margin: 0 !important;
+        max-width: 100% !important;
     }
 
     .border {
         border: 1px solid #ddd !important;
         border-radius: 4px 4px 0 0 !important;
-        width: 20% !important;
+        max-width: 20% !important;
+        width: 95px;
     }
 } 
 
@@ -92,16 +98,16 @@
     
     .col-md-5 {    
         padding: 0;
-        width: 33%;
+        max-width: 33%;
 
-        .link{
+        .link {
             -webkit-background-size: cover; 
             -moz-background-size: cover; 
             -o-background-size: cover; 
             background-color: transparent !important; 
         }
 
-        .link img{
+        .link img {
             padding-top: 10px !important;
             max-width: 20px !important;
             display: flex;
@@ -115,36 +121,36 @@
 
         p {
             margin: 9px 0 14px;
-            width: 48px;
+            max-width: 48px;
             padding-top: 5px !important;
         }
     }
     
     .tab-tech-card { 
         padding: 0 !important;
-        width: 35%;
+        max-width: 35%;
 
-        .link img{
+        .link img {
             margin-right: 15px !important;
         }
 
         p {
             margin: 1px 0 3px !important;
-            width: 30px;
+            max-width: 30px;
         }
     }
 
     .tab-trailer-notes { 
         padding: 0 !important;
-        width: 38%;
+        max-width: 38%;
 
-        .link img{
+        .link img {
             margin-right: 15px !important;
         }
 
         p {
             margin: 9px 0 16px !important;
-            width: 25px;
+            max-width: 25px;
             padding-top: 3px !important;
         }
     }
@@ -153,36 +159,35 @@
 
 .for-show{
 
-    .content.size-tab-show{
+    .content.size-tab-show {
         padding-right: 0 !important; 
-        width: 445px !important;
+        max-width: 445px !important;
     }
 
     .col-md-3.col-lg-3 img {
         margin: 10px -11px !important;
         padding-top: 0 !important;
-        width: 140% !important;
+        max-width: 140% !important;
     }
     
     .fb-like.fb_iframe_widget {
         padding-left: 10px !important;
     }
 
-    .hidden-title h2{
+    .hidden-title h2 {
         display: none;
         visibility: hidden;
     } 
 }
 
-.panel.panel-default.no-line{ 
+.panel.panel-default.no-line { 
     border-style: hidden !important;
 
-    table{
+    table {
         border-spacing: 2px;
         margin-bottom: 0 !important;
-
                 
-        .bold{
+        .bold {
             font-weight: bold !important;
         }
 
@@ -193,34 +198,34 @@
     }
 }
 
-.row {
+.row.film-tabs {
     margin-left: 0 !important;
     margin-right: 0 !important;
 
-    .btn.btn-default.more-schedules{
+    .btn.btn-default.more-schedules {
         text-align: left !important;
         font-size: 11px !important;
         border-color: #ddd !important;
-        width: 100% !important;
+        max-width: 100% !important;
         padding: 4px 25px !important;
         background-position: 0 0 !important;
     }    
 }
 
-.more-schedules{ 
+.more-schedules { 
     border-color: #fff !important;
 
-    .extra-schedules table{
+    .extra-schedules table {
         color: #646464 !important;
         font-size: 14px !important;
         font-family: "Helvetica Neue" !important;
         border-style: hidden !important;
 
         .table-responsive {
-            border: 0 solid #ddd !important;
+            border: 0 none !important;
         }
         
-        .bold{
+        .bold {
             font-weight: bold !important;
 
             a:hover, a:focus {
@@ -234,41 +239,45 @@
     }
 }
 
-.result-number{
+.result-number {
    font-size: 16px !important;   
 }
 
 li.margin {
     padding: 10px 20px;
-    height: 190px;
-    width: 444px;
+    height: 240px;
+    max-width: 470px;
 }
 
-li.size-content{
-    width: 444px !important;
+li.margin.synopsis-margin {
+    padding: 10px 20px;
+}
+
+li.margin.schedules-margin {
+    padding: 10px 20px;
 }
 
 p.margin {
-  margin: 0;
+    margin: 0;
 }
 
-.scroll-over{
+.scroll-over {
     border-style: ridge;
     overflow-y: scroll;
     height: 231px;
     padding-left: 5px;
 }
 
+
 //Ciclos y funciones especiales
 
-.panel-heading.small-heading{
-    padding: 0 15px !important;
-    
+.panel-heading.small-heading {
+    padding: 0 15px !important; 
 }
 
 .icon{
 
-    .col-xs-2.col-sm-1.ciclo-icon{
+    .col-xs-2.col-sm-1.ciclo-icon {
         padding-left: 0;
 
         .link{
@@ -280,7 +289,7 @@ p.margin {
 
         }
 
-        .link img{
+        .link img {
             min-height: 80%; 
             max-width: 36px;
             display: flex;
@@ -288,7 +297,7 @@ p.margin {
         }
     }
 
-    .col-xs-10.col-sm-11{ 
+    .col-xs-10.col-sm-11 { 
 
         h3 {
             padding-top: 15px !important;
@@ -312,7 +321,7 @@ p.margin {
     }
 }
 
-.panel.panel-default{
+.panel.panel-default {
 
     .panel-body{
         .row.margin{
@@ -329,7 +338,6 @@ p.margin {
 .period {
     background-color: #f5f5f5;
     padding-left: 10px;
-
 }
 
 .description {
@@ -352,31 +360,32 @@ p.margin {
             font-weight: 400;
         }
     }
- }
+}
 
 .col-sm-4 {
-    .img-responsive{
-    padding-top: 20px;
+    .img-responsive {
+        padding-top: 20px;
     }
 }
 
 
 //histórico de programación
 
-.form-horizontal .col-sm-10{
+.form-horizontal .col-sm-10 {
     input {
-        width: 100%
+        max-width: 100%
     }
 }
 
+
 //facebook sidebar
 
-.hidde-when-small{
-        display: flex;
-        visibility: visible;
+.hidde-when-small {
+    display: flex;
+    visibility: visible;
 }
 
-.hidde-when-normal{
+.hidde-when-normal {
     display: none;
     visibility: hidden;
 }

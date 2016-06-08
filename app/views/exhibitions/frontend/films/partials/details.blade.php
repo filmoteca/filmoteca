@@ -1,6 +1,6 @@
-<div class="row">
+<div class="row film">
     <!-- Imagen de película y me gusta -->
-    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3">
+    <div class="col-xs-4 col-sm-6 col-md-5 col-lg-3">
         <img src="{{ $film->getCover()->getMediumImageUrl() }}">
         @include(
             'elements.facebook.like-button', [
@@ -9,7 +9,7 @@
         )
     </div>
     <!-- Panel pestañas -->
-    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9">
+    <div class="col-xs-12 col-sm-6 col-md-7 col-lg-9">
         <a class="underline hidden-title" href="{{ URL::route('exhibitions.frontend.film.show', ['slug' => $film->getSlug()]) }}">
             <h2 class="text-center">
                 {{ $film->getTitle() }}
@@ -29,7 +29,7 @@
         <div class="content size-tab-show">
             <!-- Nav tabs -->
             <div role="tabpanel">
-                <ul class="nav nav-tabs" role="tablist">
+                <ul class="nav nav-tabs film-tabs" role="tablist">
 
                 <!-- Pestaña Horarios -->
                     <li class="active border" role="presentation">                          
@@ -92,7 +92,7 @@
                     <li class="border" role="presentation">
                         <a data-toggle="tab" role="tab" href="{{ '#tab-trailer-' . $film->getId() }}">
                            <div class="row tab-icon">
-                                <div class="col-md-5 tab-trailer-notes">
+                                <div class="col-md-5 trailer-img tab-trailer-notes">
                                      <div class="link">
                                         <img src="/imgs/programacion/iconos/trailer.png"
                                          title="@lang('exhibitions.frontend.film.show.fields.trailer')"
@@ -134,7 +134,7 @@
                     @if (isset($exhibition))
                     <!-- Contenedor de la pestaña Horarios -->
                     <div id="{{ 'tab-schedules-' . $film->getId() }}" class="tab-pane active" role="tabpanel">
-                        <li class="list-group-item margin scroll-over">
+                        <li class="list-group-item margin schedules-margin scroll-over">
 
                             <div class="panel panel-default no-line">
                                 <table class="table table-responsive">
@@ -165,7 +165,7 @@
                                 </table>
 
                                 <!-- Botón que desplegará más horarios -->
-                                <div class="row">
+                                <div class="row film-tabs">
                                     <button type="button"
                                             class="btn btn-default loading-xsm more-schedules"
                                             data-href="{{ URL::route('exhibition.schedule.search', ['exhibitionId' => $exhibition->getId()]) }}"
@@ -186,7 +186,7 @@
 
                     <!-- Contenedor de la pestaña Sinopsis -->
                     <div id="{{ 'tab-synopsis-' . $film->getId() }}" class="tab-pane" role="tabpanel">
-                        <li class="list-group-item margin scroll-over">
+                        <li class="list-group-item margin synopsis-margin scroll-over">
                             <p>{{ $film->getSynopsis() }}</p>
                         </li>
                     </div>
@@ -202,7 +202,7 @@
 
                     <!-- Contenedor de la pestaña Trailer /4by3 -->
                     <div id="{{ 'tab-trailer-' . $film->getId() }}" class="tab-pane" role="tabpanel" >
-                        <li class="list-group-item size-content embed-responsive embed-responsive-16by9">
+                        <li class="list-group-item margin embed-responsive embed-responsive-16by9">
                             <p>{{ $film->getTrailer() }}</p>
                         </li>
                     </div>

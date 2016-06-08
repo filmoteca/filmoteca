@@ -48,10 +48,17 @@
     </div>
     <div class="hidde-when-normal">
         <div class="fb-page" 
-            data-href="https://www.facebook.com/Comunidad.Cines.UNAM/"data-tabs="timeline" data-height="230" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+            data-href="https://www.facebook.com/Comunidad.Cines.UNAM/" data-tabs="timeline" 
+            data-height="190" 
+            data-small-header="true" 
+            data-adapt-container-width="true" 
+            data-hide-cover="false" 
+            data-show-facepile="true">
             <div class="fb-xfbml-parse-ignore">
                 <blockquote cite="https://www.facebook.com/Comunidad.Cines.UNAM/">
-                    <a href="https://www.facebook.com/Comunidad.Cines.UNAM/">Comunidad  Cines UNAM</a>
+                    <a href="https://www.facebook.com/Comunidad.Cines.UNAM/">
+                        Comunidad  Cines UNAM
+                    </a>
                 </blockquote>
             </div>
         </div>
