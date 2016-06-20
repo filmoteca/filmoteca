@@ -24,6 +24,11 @@ frontend:
             billboard_of: Cartelera de :month
             consult: Consultar
             earlier_billboard: Carteleras anteriores (:year)
+    invitations:
+        index:
+            title: Invitaciones
+            old: 
+                title: Invitaciones Anteriores
     exhibition:
         index:
             title: ':textual_day :numeric_day de :textual_month'
