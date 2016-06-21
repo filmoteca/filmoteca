@@ -47,6 +47,7 @@
             '/bower_components/jqueryui/ui/minified/position.min.js',
             '/bower_components/jqueryui/ui/minified/menu.min.js',
             '/bower_components/jqueryui/ui/minified/autocomplete.min.js',
+            '/bower_components/jqueryui/ui/minified/accordion.min.js',
             '/assets/js/filmoteca.min.js'
             ]))
 
