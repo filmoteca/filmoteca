@@ -92,7 +92,7 @@
                   PROGRAMACIÓN<b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a href="{{ URL::route('exhibitions.frontend.exhibitions.index') }}">Programación del mes</a></li>
+                  <li><a href="{{ URL::route('exhibitions.frontend.exhibitions.index') }}">Programación de hoy</a></li>
 
                   <li><a href="{{ URL::route('exhibitions.frontend.billboard.index') }}">Cartelera digital</a></li>
 
