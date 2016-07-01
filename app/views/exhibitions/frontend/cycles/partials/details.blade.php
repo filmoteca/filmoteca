@@ -1,7 +1,9 @@
 <div class="panel panel-default">
     <div class="panel-heading text-center">
         <h3>
-            {{ $cycle->getName() }}
+            @if ($cycle->getName()!== null)
+                {{ $cycle->getName() }}
+            @endif
         </h3>
     </div>
 
@@ -18,10 +20,18 @@
                 </div>
             </div>
             <div class="col-sm-10">
+                <div class="period" aling="right">
+                        @lang('exhibitions.frontend.cycle.index.period', [
+                            'since_day' => $cycle->getSince()->day,
+                            'since_month' => trans('dates.months.' . $cycle->getSince()->format('F')),
+                            'until_day' => $cycle->getUntil()->day,
+                            'until_month' => trans('dates.months.' . $cycle->getUntil()->format('F')),
+                            'until_year' => $cycle->getUntil()->year
+                            ]
+                        )
+                </div>
 
-            <!-- Aquí iba "Se presenta del 30 de noviembre al 30 de noviembre de -1 "-->
-
-                <div class="description">
+                <div class="description cycle-scroll-over">
                     {{ $cycle->getDescription() }}
                 </div>
             </div>

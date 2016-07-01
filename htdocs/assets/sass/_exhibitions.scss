@@ -275,6 +275,36 @@ p.margin {
     padding: 0 15px !important; 
 }
 
+.content h1 {
+    text-align: left !important;
+}
+
+.small-cycle-heading{
+    .program-ciclo{
+        
+        margin-right: -25px; 
+        right: -5px;
+
+        .link{
+            height: 30px !important; 
+        }
+
+        .link img {
+            max-width: 25px !important;
+            margin-top: -2px;
+        }
+        
+        .underline {
+            text-decoration: none !important;
+        }
+
+        h3 {
+            font-size: 10px !important;
+            margin-top: -5px;
+        }
+    }
+}
+
 .icon{
 
     .col-xs-2.col-sm-1.ciclo-icon {
@@ -286,7 +316,6 @@ p.margin {
             -o-background-size: cover; 
             height: 50px; 
             background-color: transparent !important;
-
         }
 
         .link img {
@@ -326,7 +355,6 @@ p.margin {
     .panel-body{
         .row.margin{
             margin-bottom: 200px;
-
         }
     }
 
@@ -336,15 +364,22 @@ p.margin {
 }
 
 .period {
+    text-align: center;
     background-color: #f5f5f5;
-    padding-left: 10px;
+    width: 400px;
+    margin-left: 140px;
 }
 
-.description {
+.description.cycle-scroll-over {
     padding: 10px;
-    border-color: #f5f5f5 1px solid;
+    border: 1px dashed #ddd !important;
+    overflow-y: scroll;
+    height: 100px;
+    padding-left: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
-
+    
 
 // Salas de cine
 

@@ -82,6 +82,6 @@ frontend:
             period: Se presenta del :since_day de :since_month al :until_day de :until_month de :until_year
             see_exhibitions: Ver programación de este ciclo
         show:
-            title: Programación del ciclo :cycle_name
+            title: Programación de
 general:
     download: Descargar

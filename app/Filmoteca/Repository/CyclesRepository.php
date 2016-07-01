@@ -13,7 +13,7 @@ class CyclesRepository
     public function findSinceToday()
     {
         $today = Carbon::today()->format(MYSQL_DATE_TIME_FORMAT);
-        $cycles = Type::where('since', '<', $today)->paginate();
+        $cycles = Type::where('until', '>', $today)->paginate();
 
         return $cycles;
     }
