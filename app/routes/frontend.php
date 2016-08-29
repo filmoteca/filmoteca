@@ -25,7 +25,7 @@ Route::post('/press_register/store', [
 
 Route::get('/filmoteca-medal/', [
         'as' => 'filmoteca-medal/',
-        'uses' => 'FilmotecaMedalController@index'
+        'uses' => 'Filmoteca\Frontend\Controllers\FilmotecaMedalController@index'
 ]);
 
 Route::get('/chronology/', [
