@@ -20,6 +20,7 @@
   ],
   "dependencies": {
     "jquery": "1.11.*",
+    "jqueryui": "1.11.4",
     "bootstrap": "3.2.*",
     "jquery-form": "3.*",
     "jquery-validate": "1.12.*",

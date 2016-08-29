@@ -36,6 +36,9 @@
 
 		<script>
 			var Config = {{ json_encode($exhibitionsConfig, JSON_UNESCAPED_SLASHES) }};
+			@if (isset($filmotecaConfig))
+				var filmotecaConfig = {{ $filmotecaConfig->toJson(); }};
+			@endif
 		</script>
 
         @yield('default-scripts', HTML::scripts([
@@ -48,6 +51,9 @@
             '/bower_components/jqueryui/ui/minified/menu.min.js',
             '/bower_components/jqueryui/ui/minified/autocomplete.min.js',
             '/bower_components/jqueryui/ui/minified/accordion.min.js',
+            '/bower_components/jqueryui/ui/minified/mouse.min.js',
+            '/bower_components/jqueryui/ui/minified/slider.min.js',
+            '/bower_components/jquery-ui-slider-pips/dist/jquery-ui-slider-pips.min.js',
             '/assets/js/filmoteca.min.js'
             ]))
 
