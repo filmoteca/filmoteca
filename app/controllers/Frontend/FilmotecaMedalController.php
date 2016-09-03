@@ -3,6 +3,7 @@
 namespace Filmoteca\Frontend\Controllers;
 
 use Carbon\Carbon;
+use Filmoteca\Models\FilmotecaMedal;
 use Filmoteca\Repository\FilmotecaMedalsRepository;
 use Filmoteca\Utils\FilmotecaConfig;
 use Illuminate\Routing\Controller;
@@ -35,6 +36,10 @@ class FilmotecaMedalController extends Controller
      */
     public function index()
     {
+        if (\Input::has('term')) {
+            return $this->search();
+        }
+
         $winners = $this->repository->all();
         $minYear = Config::get('parameters.filmoteca-medals.minYear');
         $maxYear = Carbon::today()->year;
@@ -65,5 +70,22 @@ class FilmotecaMedalController extends Controller
         $winner = $this->repository->find($id);
 
         return View::make('frontend.filmoteca_medals.show', compact('winner'));
+    }
+
+    public function search()
+    {
+        $term = \Input::get('term', '');
+        $winners = $this->repository->findByName($term);
+
+        $results = $winners->map(function (FilmotecaMedal $item) {
+            return [
+                'id' => $item->id,
+                'name' => $item->name,
+                'award_date' => $item->award_date->format('d m Y'),
+                'url_image' => $item->image->url('thumbnail')
+            ];
+        });
+
+        return \Response::json($results);
     }
 }

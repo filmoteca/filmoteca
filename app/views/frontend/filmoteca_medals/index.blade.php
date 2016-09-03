@@ -34,10 +34,9 @@
 
 @include('elements.bootstrap-modal')
 
-<div class="search-autocomplete pull-right">
-	<span class="glyphicon glyphicon-search pull-left">
-
-	</span>
+<div class="winner-searcher-wrapper pull-right">
+	<span class="glyphicon glyphicon-search pull-left"></span>
+	<input id="winner-searcher">
 </div>
 
 <div class="year-selector-wrapper">
