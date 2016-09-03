@@ -32,6 +32,8 @@
 
 <h1>@lang('filmoteca.frontend.filmoteca_medals.title')</h1>
 
+@include('elements.bootstrap-modal')
+
 <div class="search-autocomplete pull-right">
 	<span class="glyphicon glyphicon-search pull-left">
 
@@ -55,7 +57,10 @@
 				HTML::link(
 				'filmoteca-medal/' . $winner->id . '/detail',
 				str_limit($winner->name, 20),
-				['title' => trans('filmoteca.general.see_details')]
+				[
+					'title' => trans('filmoteca.general.see_details'),
+					'data-id' => $winner->id
+				]
 				)
 			}}
 		</li>

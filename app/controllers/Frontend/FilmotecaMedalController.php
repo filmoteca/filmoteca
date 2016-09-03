@@ -56,4 +56,14 @@ class FilmotecaMedalController extends Controller
 
         return View::make('frontend.filmoteca_medals.index', compact('winners', 'filmotecaConfig'));
     }
+
+    /**
+     * @param int $id
+     */
+    public function show($id)
+    {
+        $winner = $this->repository->find($id);
+
+        return View::make('frontend.filmoteca_medals.show', compact('winner'));
+    }
 }
