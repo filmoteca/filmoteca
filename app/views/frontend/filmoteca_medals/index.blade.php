@@ -46,7 +46,7 @@
 
 <div class="wrapper-items" id="wrapper-items">
 	<div id="results" class="results">
-		<span>@lang('filmoteca.general.results')</span><span class="number"></span>
+		<span>@lang('filmoteca.general.results'): </span><span class="number"></span>
 	</div>
 	<ul class="items" id="winners">
 		@foreach( $winners as $index => $winner )

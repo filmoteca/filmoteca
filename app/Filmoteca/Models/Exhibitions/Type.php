@@ -109,6 +109,14 @@ class Type extends Eloquent implements StaplerableInterface, TypeInterface
     }
 
     /**
+     * @param $description
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
+
+    /**
      * @return Carbon
      */
     public function getSince()
@@ -138,14 +146,6 @@ class Type extends Eloquent implements StaplerableInterface, TypeInterface
     public function setUntil(Carbon $until)
     {
         $this->until = $until;
-    }
-
-    /**
-     * @param $description
-     */
-    public function setDescription($description)
-    {
-        $this->description = $description;
     }
 
     /**

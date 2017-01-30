@@ -8,10 +8,13 @@
         <link rel="stylesheet" href="{{ asset('packages/mrjuliuss/syntara/assets/css/toggle-switch.css') }}" />
         <link rel="stylesheet" href="{{ asset('packages/mrjuliuss/syntara/assets/css/base.css') }}" media="all">
         <link rel="stylesheet" href="{{ asset('/assets/css/filmoteca.css')}}" />
+        <link rel="stylesheet" href="{{ asset('/bower_components/bootstrap-datepicker/css/datepicker3.css')}}" />
 
         <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
+        <script src="{{ asset('assets/js/admin.js') }}"></script>
         <script src="{{ asset('bower_components/jqueryui/jquery-ui.min.js') }}"></script>
         <script src="{{ asset('bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('/bower_components/bootstrap-datepicker/js/bootstrap-datepicker.js') }}"></script>
         <script src="{{ asset('packages/mrjuliuss/syntara/assets/js/dashboard/base.js') }}"></script>
         <script src="{{ asset('bower_components/parsleyjs/dist/parsley.min.js') }}"></script>
         <script src="{{ asset('bower_components/parsleyjs/src/i18n/es.js') }}"></script>
@@ -21,7 +24,6 @@
         <script src="{{ asset('bower_components/ckeditor-youtube-plugin/youtube/plugin.js') }}"></script>
         <script src="{{ asset('bower_components/ckeditor-youtube-plugin/youtube/lang/es.js') }}"></script>
 
-        <script src="{{ asset('assets/js/admin.js') }}"></script>
 
         <title>{{ (!empty($siteName)) ? $siteName : "Syntara"}}</title>
     </head>
