@@ -83,5 +83,9 @@ frontend:
             see_exhibitions: Ver programación de este ciclo
         show:
             title: Programación de
+    medal:
+        index:
+            entrega: 'Fecha de entrega'
+            fecha: ' :numeric_day de :textual_month de :numeric_year'
 general:
     download: Descargar

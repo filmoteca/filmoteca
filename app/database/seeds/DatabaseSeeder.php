@@ -21,9 +21,9 @@ class DatabaseSeeder extends Seeder
         $this->call('AuditoriumsTableSeeder');
         $this->call('GenresTableSeeder');
         $this->call('CountriesTableSeeder');
+        $this->call('FilmotecaMedalsTableSeeder');
 
         DB::statement('SET foreign_key_checks = 1');
 
     }
-
 }
