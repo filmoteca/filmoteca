@@ -18,6 +18,7 @@
         }
     ],
     "require": {
+        "php": "5.5.*",
         "mailgun/mailgun-php": "1.8",
         "laravel/framework": "4.2.17",
         "codesleeve/laravel-stapler": "1.0.01",
@@ -71,6 +72,7 @@
             "php artisan migrate --package=\"filmoteca/static-pages\" --env=$LARAVEL_ENV"
         ],
         "publish-assets": [
+            "php artisan asset:publish --env=$LARAVEL_ENV",
             "php artisan asset:publish mrjuliuss/syntara --env=$LARAVEL_ENV",
             "php artisan asset:publish frozennode/administrator --env=$LARAVEL_ENV",
             "php artisan asset:publish filmoteca/static-pages --env=$LARAVEL_ENV"
@@ -83,7 +85,6 @@
     "require-dev": {
         "way/generators": "~2.0",
         "barryvdh/laravel-debugbar": "1.8.x",
-        "fzaninotto/faker": "1.5.0",
-        "filmoteca/deployment": "dev-master"
+        "fzaninotto/faker": "1.5.0"
     }
 }
