@@ -5,13 +5,14 @@
 		</a>
 	</li>
 	<li class="active">
-		Convocatorias
+		Capturando el deporte y el juego en mi plantel
 	</li>
 @stop
 
 @section('sidebar')
-	@include('elements.menus.concursos', array('selected' => 5))
+	@include('elements.menus.concursos', array('selected' => 4))
 @stop
+
 
 @section('content')
 

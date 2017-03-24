@@ -35,9 +35,12 @@
 
                   <li><a href="/pages/quienes-somos/libro-filmoteca50">Libro Filmoteca: 50 años</a></li>
 
+                  <li><a href="/pages/aniversario55/index">55 Aniversario</a></li>
+
+                  <li><a href="/pages/quienes-somos/ficunam">FICUNAM</a></li>
+
                   <li><a href="/pages/quienes-somos/directorio">Directorio</a></li>
 
-                  <li><a href="/pages/aniversario55/index">55 Aniversario</a></li>
                 </ul>
               </li>
 
@@ -132,7 +135,10 @@
 
                   <li><a href="/pages/extension-academica/becarios">Becarios</a></li>
 
+                  <li><a href="/pages/extension-academica/programa-leer-cine">Programa leer cine</a></li>
+
                   <li><a href="/pages/extension-academica/visitas-guiadas">Visitas guiadas</a></li>
+
                 </ul>
               </li>
 
@@ -147,7 +153,12 @@
 
                   <li><a href="/pages/concursos/corto-movil">Corto Móvil</a></li>
 
+                  <li ><a href="/pages/concursos/bienal-tesis">Bienal de Tesis</a></li>
+
+                  <li ><a href="/pages/concursos/capturando-deporte">Capturando el deporte</a></li>
+
                   <li ><a href="/pages/concursos/convocatorias">Convocatorias</a></li>
+
                 </ul>
               </li>
 
