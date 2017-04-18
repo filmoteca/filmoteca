@@ -89,10 +89,10 @@
 
 <div class="toolbar-fixed social-networks-toolbar visible-lg">
 	<a href="https://twitter.com/ButacaUNAM" title="Twitter ButacaUNAM"><span class="icon-twitter"></span></a>
-	<a href="https://www.facebook.com/FilmotecaUNAM" title="Facebook FilmotecaUNAM" target="blank"><span class="icon-facebook"></span></a>
-	<a href="https://www.youtube.com/user/FilmotecaUNAM" title="Youtube FilmotecaUNAM" target="blank"><span class="icon-youtube"></span></a>
-	<a href="http://vimeo.com/filmotecaunam/videos" title="Vimeo FilmotecaUNAM" target="blank"><span class="icon-vimeo"></span></a>
-	<a href="https://plus.google.com/117296642645060485198/posts" title="Google FilmotecaUNAM" target="blank"><span class="icon-google-plus"></span></a>
+	<a href="https://www.facebook.com/FilmotecaUNAM" title="Facebook Filmoteca UNAM" target="blank"><span class="icon-facebook"></span></a>
+	<a href="https://www.youtube.com/user/FilmotecaUNAM" title="Youtube Filmoteca UNAM" target="blank"><span class="icon-youtube"></span></a>
+	<a href="http://vimeo.com/filmotecaunam/videos" title="Vimeo Filmoteca UNAM" target="blank"><span class="icon-vimeo"></span></a>
+	<a href="https://www.facebook.com/Comunidad.Cines.UNAM/" title="Facebook Comunidad Cines UNAM" target="blank"><span class="icon-facebook"></span></a>
 </div>
 
 <div title="Arriba" class="ceil-toolbar toolbar-fixed visible-lg">
