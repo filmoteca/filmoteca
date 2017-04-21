@@ -20,11 +20,6 @@
 @stop
 
 @section('content')
-
-    <span class="result-number">
-        @lang('exhibitions.frontend.exhibition.index.results_number', ['number' => $exhibitions->getTotal()])
-    </span>
-
     <h1>
         @lang(
         'exhibitions.frontend.exhibition.index.title',
@@ -35,6 +30,10 @@
         ]
     )
     </h1>
+
+    <span class="result-number">
+        @choice('exhibitions.frontend.exhibition.index.results_number', $exhibitions->getTotal(), ['number' => $exhibitions->getTotal()])
+    </span>
 
     @if ($exhibitions->isEmpty())
         @lang('exhibitions.frontend.film.index.none_film_found', ['film_title' => \Input::get('title')])
