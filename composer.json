@@ -11,10 +11,6 @@
         {
             "type": "vcs",
             "url": "git@github.com:filmoteca/deployment.git"
-        },
-        {
-            "type": "vcs",
-            "url": "git@github.com:filmoteca/infrastructure.git"
         }
     ],
     "require": {
@@ -31,7 +27,6 @@
         "frozennode/administrator": "4.16.7",
         "devitek/yaml-translation": "0.1.2",
         "filmoteca/static-pages": "dev-master",
-        "filmoteca/infrastructure": "dev-master",
         "monarobase/country-list": "1.2.*",
         "maatwebsite/excel": "1.3.0"
     },
