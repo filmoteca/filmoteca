@@ -8,6 +8,7 @@ frontend:
         title: Cine UNAM
         subtitle: Consulta programación
         exhibitions_in_the_day: ':number exhibiciones en este día'
+        show_calendar: Mostrar calendario
     auditorium:
         index:
             title: Ubicación Salas de cine
@@ -27,7 +28,7 @@ frontend:
     invitations:
         index:
             title: Invitaciones
-            old: 
+            old:
                 title: Invitaciones Anteriores
     exhibition:
         index:

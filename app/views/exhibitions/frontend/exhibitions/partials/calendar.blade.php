@@ -1,5 +1,5 @@
 <div class="calendar">
-    <div class="header-programming">
+    <div class="header-programming hidden-xs">
         <h2 class="text-center">@lang('exhibitions.frontend.calendar.title')</h2>
         <h5 class="text-center">@lang('exhibitions.frontend.calendar.subtitle')</h5>
     </div>
