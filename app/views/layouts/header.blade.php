@@ -15,13 +15,9 @@
 		<div>
 			<div class="pull-left sm-logo-unam">
 				<div class="pull-left">
-					<a href="http://www.unam.mx/" title="Universidad Nacional Autónoma de México, UNAM" target="blank">
-						<img src="/assets/imgs/unam.png" alt="logo UNAM">
+					<a href="http://www.cultura.unam.mx/index.aspx" title="Cultura UNAM" target="blank">
+						<img src="/assets/imgs/imagotipo_culturaUNAM.png" alt="Cultura UNAM">
 					</a>
-				</div>
-				<div class="unam-text pull-left hidden-xs">
-					<span>Universidad Nacional</span><br>
-					<span>Autónoma de México</span>
 				</div>
 			</div>
 			<div class="pull-right sm-logo-filmo">
