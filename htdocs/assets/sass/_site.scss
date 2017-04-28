@@ -72,10 +72,6 @@ a{
 			span{
 				font-size: 12px !important;
 			}
-
-			img{
-				width: 70px !important;
-			}
 		}
 		
 		.sm-logo-filmo{
@@ -98,7 +94,7 @@ a{
 }
 
 .container-fluid{
-	max-width: $screen-md;
+	max-width: 1024px !important;
 
 	.content{
 		margin-bottom: 25px;
