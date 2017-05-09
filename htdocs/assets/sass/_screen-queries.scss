@@ -333,6 +333,194 @@
 
 
 
+//Prueba de imagen de película y me gusta con un maximo de 735px de ancho
+
+@media (min-width: 320px) and (max-width: 735px) {  
+
+
+	.upper-navbar{
+		padding-bottom: 33px;
+		
+		.text-right.col-xs-12.col-sm-10.col-md-4.col-lg-3{
+		    margin-top: 14px;
+		}
+
+	}
+}
+
+
+
+
+
+
+
+//Prueba de imagen de película y me gusta con un maximo de 1024x768 de ancho
+
+@media (min-width: 641px) and (max-width: 768px) {   
+
+	.main-header{
+		 .upper-navbar{
+
+		 	a {
+    			padding: 6px;
+    		}
+    	}
+	}
+
+	.row.film {
+	    margin-left: 0 !important;
+	    margin-right: 0 !important;
+
+	    //Imagen de película y me gusta
+	   
+	   .col-xs-4.col-sm-6.col-md-5.col-lg-3 { 
+			margin-left: 40px;
+			width: 233px !important;
+
+			img {
+			    margin: 20px 60px 10px !important;
+			    width: 130px;
+			}
+
+			.fb-like.fb_iframe_widget {
+			    padding-left: 35px !important;
+			}
+		}
+
+		//Panel pestañas
+
+		.col-xs-12.col-sm-6.col-md-7.col-lg-9 { 
+		    width: 427px !important; 
+		    padding-left: 0px !important;
+		    padding-left: 0; 
+		    padding-right: 0; 
+
+		    a h2{
+		        padding-left: 50px;
+		    }
+
+		    h6 p{
+		        padding-left: 35px;
+		    }
+		}
+	}
+
+	.content.size-tab-show {
+	    width: 100% !important;
+	}
+	
+	.nav.nav-tabs.film-tabs {
+		max-width: 114% !important;
+		width: 114% !important;
+		margin-left: 5px !important;
+		height: 36px;
+		
+
+		li > a:hover, li > a:focus {
+	        margin: 0 !important;
+	    }
+
+	    li.active > a, .nav-tabs.film-tabs > li.active > a:hover, .border > li.active > a:focus {
+	        margin: 0 !important;
+	    }
+	} 
+
+	.tab-content{
+		padding-left: 5px;
+	}
+
+	.row.tab-icon {
+	    margin: 0 !important;
+
+	    .col-md-5.trailer-img{
+	    	margin-top: -1px !important;
+	    }
+
+		.col-md-5 {
+			width: 39px !important;
+
+			.link img{
+				padding-top: 3px !important;
+				left: 4px !important;
+				padding-right: 0 !important;
+				max-width: 31px !important;
+				height: 30px;
+				border-left-width: 0px;
+				margin-left: -10px;
+				margin-top: -15px;
+			}
+		}
+
+	    .col-md-7{ 
+	        display: none;
+	        visibility: hidden;
+	    }
+	}
+
+	.panel.panel-default.no-line{ 
+    	border-style: hidden !important;
+
+	    table{
+	        .bold{
+ 				font-size: 11px;	            
+	        }
+	    }
+	}
+
+	.more-schedules{ 
+	    .extra-schedules table{
+	        .table-responsive {
+	            border: 0 none !important;
+	        }
+	    }
+	}   
+
+	li.margin {
+		width: 318px;
+		padding: 10px !important;
+	}
+
+	li.margin.synopsis-margin {
+	    padding: 0 10px !important;
+	}
+
+	li.margin.schedules-margin {
+	    padding: 10px 5px !important;
+	}	
+
+	//facebook sidebar
+
+    .hidde-when-small{
+        display: none;
+        visibility: hidden;
+    }
+
+    .hidde-when-normal{
+        display: flex;
+        visibility: visible;
+        padding-left: 10px;
+        padding-bottom: 10px;
+    }
+
+	//Ciclos y funciones especiales
+
+	.icon{
+	    .col-xs-10.col-sm-11 { 
+	        h3 {
+	            padding-top: 13px !important;
+	        }
+	    }
+	}
+}
+
+
+
+
+
+
+
+
+
 
 
 //Prueba de imagen de película y me gusta con un maximo de 1280px de ancho

@@ -6,6 +6,52 @@ $h2: 24px;
 $h3: 22px;
 $h4: 18px;
 
+
+.col-xs-12.col-sm-10.col-md-8.col-lg-9{
+    background-color: #e5e5e5 !important;
+    margin-top: -27px; 
+    height: 20px; 
+    margin-bottom: 8px;
+
+}
+
+.text-right.col-xs-12.col-sm-10.col-md-4.col-lg-3{
+    background-color: #e5e5e5 !important;
+    margin-top: -13px;
+}
+
+.home-search{
+	height: 13px !important;
+	width: 250px !important; 
+	padding-bottom: 13px !important; 
+	padding-top: 25px !important; 
+	padding-left: 0px !important; 
+	border-left-width: 0px !important; 
+	margin-left: 1000px !important; 
+	margin-top: -24px !important;
+	float: right !important;
+	background-color: #e5e5e5;
+}
+
+.input-group.home-search{
+	height: 30px !important;
+	width: 250px !important;
+	padding-bottom: 0px !important;
+	margin-top: -22px !important;	
+	left: 995px !important;
+}
+
+
+
+
+
+.form-control.ui-autocomplete-input{
+	size: 31px;
+	maxlength: 255px; 
+	width: 116px; 
+	height: 29px;	
+}
+
 .flm-section{
 
 	margin-bottom: 15px !important;
@@ -368,7 +414,7 @@ $h4: 18px;
 }
 
 .social-networks-toolbar{
-	top: 30%;
+	top: 37%;
 	right: 0px;
 	font-size: 36px;
 
@@ -387,7 +433,7 @@ $h4: 18px;
 }
 
 .ceil-toolbar{
-	bottom: 5%;
+	bottom: -1%;
 	right: 0px;
 	position: fixed;
 	text-transform: uppercase;

@@ -1,14 +1,37 @@
 <header class="main-header" id="main-header">
 	<div class="upper-navbar">
-		<div class="text-right">
+		<div class="text-right col-xs-12 col-sm-10 col-md-8 col-lg-9">
 			<a href="/" title="Inicio">
 				<span class="icon-home"></span>Inicio
 			</a>
 			<a href="/pages/quienes-somos/directorio" title="Directorio">Directorio</a>
 			<a href="/pages/home/mapa-del-sitio" title="Mapa del sitio">Mapa del sitio</a>
 			<a href="{{ URL::to('contact') }}" title="Contacto">Contacto</a>
-			<!--<a href="#"><span class="icon-accessibility"></span></a>-->
+			<!-- SiteSearch Google -->
 		</div>
+		<div class="col-xs-12 col-sm-10 col-md-4 col-lg-3">
+			<form class="home-search" method=GET action="http://www.google.com/search">
+				<a href="http://www.google.com/"></a>
+			        <div class="input-group home-search">
+			            <div class="input-group-addon">
+			                <span class="glyphicon glyphicon-search"></span>
+			            </div>
+			            <input type="text"
+			                   class="form-control"
+			                   id="films-searcher"
+			                   name="q"
+			                   size=31 
+			                   maxlength=255 
+			                   value=""
+			                   placeholder="Buscar en sitio">
+			        </div>
+				<input type=hidden name=domains value="http://www.filmoteca.unam.mx">
+				<input type=hidden name=sitesearch value="http://www.filmoteca.unam.mx" checked>
+			</form>
+		</div>
+			<!-- SiteSearch Google -->
+
+			<!--<a href="#"><span class="icon-accessibility"></span></a>-->
 	</div>
 
 	<div class="strip">
