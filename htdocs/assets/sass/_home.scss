@@ -22,33 +22,17 @@ $h4: 18px;
 
 .home-search{
 	height: 13px !important;
-	width: 250px !important; 
-	padding-bottom: 13px !important; 
-	padding-top: 25px !important; 
-	padding-left: 0px !important; 
-	border-left-width: 0px !important; 
-	margin-left: 1000px !important; 
 	margin-top: -24px !important;
-	float: right !important;
-	background-color: #e5e5e5;
 }
 
-.input-group.home-search{
-	height: 30px !important;
-	width: 250px !important;
-	padding-bottom: 0px !important;
-	margin-top: -22px !important;	
-	left: 995px !important;
+.input-group home-search{
+	margin-top: -27px !important;
 }
-
-
-
-
 
 .form-control.ui-autocomplete-input{
 	size: 31px;
 	maxlength: 255px; 
-	width: 116px; 
+	width: 170px;
 	height: 29px;	
 }
 
