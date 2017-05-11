@@ -18,6 +18,7 @@ $h4: 18px;
 .text-right.col-xs-12.col-sm-10.col-md-4.col-lg-3{
     background-color: #e5e5e5 !important;
     margin-top: -13px;
+    width: 290px !important;
 }
 
 .home-search{
@@ -27,6 +28,7 @@ $h4: 18px;
 
 .input-group home-search{
 	margin-top: -27px !important;
+	top: -5px !important;
 }
 
 .form-control.ui-autocomplete-input{
