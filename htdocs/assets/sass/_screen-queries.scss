@@ -384,17 +384,19 @@
 	
 	.nav.nav-tabs.film-tabs {
 		max-width: 114% !important;
-		width: 114% !important;
+		width: 111% !important;
 		margin-left: 5px !important;
 		height: 36px;
 		
 
 		li > a:hover, li > a:focus {
 	        margin: 0 !important;
+	        height: 37px;
 	    }
 
 	    li.active > a, .nav-tabs.film-tabs > li.active > a:hover, .border > li.active > a:focus {
 	        margin: 0 !important;
+	        height: 37px;
 	    }
 	} 
 
@@ -449,16 +451,18 @@
 	}   
 
 	li.margin {
-		width: 318px;
+		width: 470px;
 		padding: 10px !important;
 	}
 
 	li.margin.synopsis-margin {
 	    padding: 0 10px !important;
+	    width: 470px;
 	}
 
 	li.margin.schedules-margin {
 	    padding: 10px 5px !important;
+	    width: 470px;
 	}	
 
 	//facebook sidebar
@@ -485,8 +489,6 @@
 	    }
 	}
 }
-
-
 
 
 
@@ -705,7 +707,7 @@
 			top: 30px !important;
 			padding-top: 0px; 
 			border-top-width: 0px; 
-			margin-top: 0px; 
+			margin-top: 28px;
 		}
 	}
 }
