@@ -34,6 +34,8 @@ a{
 	.upper-navbar{
 		width: 100%;
 		background-color: $tertiary-color;
+		padding-top: 32px;
+		padding-bottom: 0px;
 		
 		> div{
 			max-width: $screen-md;
