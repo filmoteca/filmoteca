@@ -9,8 +9,13 @@
     Cursos y talleres
   </a>
 </li>
+<li>
+  <a href="/pages/cursos/cursos-anteriores">
+    Cursos Anteriores
+  </a>
+</li>
 <li class="active">
-Curso: Movimientos Cinematográficos, segunda mitad del siglo XX
+	Curso: Movimientos Cinematográficos, segunda mitad del siglo XX
 </li>
 @stop
 

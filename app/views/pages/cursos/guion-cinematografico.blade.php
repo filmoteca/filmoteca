@@ -9,8 +9,13 @@
     Cursos y talleres
   </a>
 </li>
+<li>
+  <a href="/pages/cursos/cursos-anteriores">
+    Cursos Anteriores
+  </a>
+</li>
 <li class="active">
-Taller de guión cinematográfico; trama y construcción de personajes
+	Taller de guión cinematográfico; trama y construcción de personajes
 </li>
 @stop
 

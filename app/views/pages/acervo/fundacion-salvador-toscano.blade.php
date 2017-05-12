@@ -6,23 +6,23 @@
 		</a>
 	</li>
 	<li>
-		<a href="/pages/acervo/restauracion">
-			Restauración
+		<a href="/pages/acervo/biblioteca">
+			Biblioteca
 		</a>
 	</li>
 	<li>
-		<a href="/pages/acervo/historias-recuperadas">
-			Historias recuperadas
+		<a href="/pages/acervo/colecciones">
+			Colecciones
 		</a>
 	</li>
 	<li class="active">
-		Límite
+		Fundación Salvador Toscano
 	</li>
 @stop
 
 
 @section('sidebar')
-	@include('elements.menus.acervo', array('selected' => 3))
+	@include('elements.menus.acervo', array('selected' => 2))
 @stop
 
 

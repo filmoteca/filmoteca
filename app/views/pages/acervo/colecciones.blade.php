@@ -6,17 +6,12 @@
 		</a>
 	</li>
 	<li>
-		<a href="/pages/acervo/restauracion">
-			Restauración
+		<a href="/pages/acervo/biblioteca">
+			Biblioteca
 		</a>
-	</li>
-	<li>
-		<a href="/pages/acervo/historias-recuperadas">
-			Historias recuperadas
-		</a>
-	</li>
+	</li>	
 	<li class="active">
-		Límite
+		Colecciones
 	</li>
 @stop
 
