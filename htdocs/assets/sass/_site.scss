@@ -44,6 +44,27 @@ a{
 		a{			
 			padding: 15px;
 		}
+
+		.text-right.col-xs-12.col-sm-10.col-md-8.col-lg-9{
+		    margin-top: -27px; 
+		    margin-bottom: 8px;
+		}
+
+		.col-xs-12.col-sm-5.col-md-4.col-lg-3{
+		    background-color: #e5e5e5 !important;
+		    width: 290px !important;
+		    margin-top: -5px !important;
+		}
+
+		.home-search{
+			height: 13px !important;
+			margin-top: -29px !important;
+			width: 290px !important;
+		}
+
+		.input-group.home-search{
+			width: 290px !important;
+		}
 	}
 
 	.strip{

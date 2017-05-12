@@ -9,8 +9,13 @@
     Cursos y talleres
   </a>
 </li>
+<li>
+  <a href="/pages/cursos/cursos-anteriores">
+    Cursos Anteriores
+  </a>
+</li>
 <li class="active">
-Seminario Android Cinema: cine expandido, cine 3D, cine científico
+	Seminario Android Cinema: cine expandido, cine 3D, cine científico
 </li>
 @stop
 
