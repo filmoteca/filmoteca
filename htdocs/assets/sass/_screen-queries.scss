@@ -688,20 +688,32 @@
 
 
 
-//Prueba de buscador con un maximo de 735px de ancho
+//Prueba de buscador con un maximo de 700px de ancho
 
-@media (min-width: 320px) and (max-width: 576px) {  
+@media (min-width: 320px) and (max-width: 700px) {  
 
 
 	.upper-navbar{
 		padding-bottom: 31px !important;
 
-		.col-xs-12.col-sm-5.col-md-4.col-lg-3{
-		    margin-top: 23px !important;
+		.searchmenucontent{
+			padding-bottom: 16px !important;
+		}
+			
+		.text-right.col-xs-6.col-sm-6.col-md-8.col-lg-10{
+		    width: 317px !important;
+		}
+
+		.text-right.col-xs-3.col-sm-3.col-md-4.col-lg-2{
+		    margin-top: 36px !important;
 		}
 	}
 
 }
+
+
+
+
 
 
 
