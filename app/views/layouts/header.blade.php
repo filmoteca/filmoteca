@@ -1,7 +1,7 @@
 <header class="main-header" id="main-header">
 	<div class="upper-navbar">
-		<div>
-			<div class="text-right col-xs-12 col-sm-10 col-md-8 col-lg-9">
+		<div class="searchmenucontent">
+			<div class="text-right col-xs-6 col-sm-6 col-md-8 col-lg-10">
 				<a href="/" title="Inicio">
 					<span class="icon-home"></span>Inicio
 				</a>
@@ -10,7 +10,7 @@
 				<a href="{{ URL::to('contact') }}" title="Contacto">Contacto</a>
 				<!-- SiteSearch Google -->
 			</div>
-			<div class="col-xs-12 col-sm-5 col-md-4 col-lg-3">
+			<div class="text-right col-xs-3 col-sm-3 col-md-4 col-lg-2">
 				<form class="home-search" method=GET action="http://www.google.com/search">
 					<a href="http://www.google.com/"></a>
 				        <div class="input-group home-search">
