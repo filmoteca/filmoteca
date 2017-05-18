@@ -34,8 +34,8 @@ a{
 	.upper-navbar{
 		width: 100%;
 		background-color: $tertiary-color;
-		padding-top: 25px !important; 
-		padding-bottom: 10px !important;
+		padding-top: 25px; 
+		padding-bottom: 10px;
 		
 		> div{
 			max-width: $screen-md;
@@ -50,7 +50,7 @@ a{
 		    padding-left: 0px;
 		}
 
-		.col-xs-5.col-sm-3.col-md-4.col-lg-2{
+		.col-xs-4.col-sm-3.col-md-4.col-lg-2{
 		    background-color: #e5e5e5 !important;
 		    margin-top: -5px;
 		    padding-top: 10px;

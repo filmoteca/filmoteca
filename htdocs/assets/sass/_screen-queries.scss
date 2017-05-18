@@ -495,9 +495,6 @@
 
 
 
-
-
-
 //Prueba de imagen de película y me gusta con un maximo de 1024px de ancho
 
 @media (min-width: 768px) and (max-width: 1024px) {  
@@ -665,7 +662,6 @@
 
 
 
-
 //Prueba de imagen de película y me gusta con un maximo de 2000px de ancho
 
 @media (min-width: 1025px) and (max-width: 2000px) { 
@@ -723,7 +719,8 @@
 		    width: 62% !important; 
 		}
 
-		.col-xs-5.col-sm-3.col-md-4.col-lg-2{
+		.col-xs-4.col-sm-3.col-md-4.col-lg-2{
+			float: right !important;
 
 		    .form-control{
 		    	width: 55% !important;
@@ -736,9 +733,10 @@
 
 
 
+
 //Prueba de buscador con un maximo de 519px de ancho
 
-@media (min-width: 320px) and (max-width: 519px) {  
+@media (min-width: 382px) and (max-width: 519px) {  
 
 
 	.upper-navbar{
@@ -748,13 +746,14 @@
 		    width: 99% !important; 
 		}
 
-		.col-xs-5.col-sm-3.col-md-4.col-lg-2{
-		    margin-top: 28px !important;
+		.col-xs-4.col-sm-3.col-md-4.col-lg-2{
+		    margin-top: 20px !important;
 		    float: right !important;
     		padding-left: 0 !important;
+    		left: -33% !important;
 
 		    .form-control{
-		    	width: 100% !important;
+		    	width: 67% !important;
 		    }
 		    
 		}
@@ -764,12 +763,30 @@
 
 
 
+//Prueba de buscador con un maximo de 381px de ancho
+
+@media (min-width: 320px) and (max-width: 381px) {  
 
 
+	.upper-navbar{
+		padding-bottom: 45px !important;
+			
+		.text-right.col-xs-6.col-sm-6.col-md-8.col-lg-10{
+		    width: 103% !important; 
+		}
 
+		.col-xs-4.col-sm-3.col-md-4.col-lg-2{
+		    margin-top: 20px !important;
+		    float: right !important;
+    		padding-left: 0 !important;
+    		left: -66% !important;
 
+		    .form-control{
+		    	width: 100% !important;
+		    }
+		    
+		}
+	}
 
-
-
-
+}
 

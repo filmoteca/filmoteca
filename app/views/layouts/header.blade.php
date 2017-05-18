@@ -10,7 +10,7 @@
 			<!--<a href="#"><span class="icon-accessibility"></span></a>-->			
 		</div>
 		<!-- SiteSearch Google -->
-		<div class="col-xs-5 col-sm-3 col-md-4 col-lg-2">
+		<div class="col-xs-4 col-sm-3 col-md-4 col-lg-2">
 			<form class="home-search" method=GET action="http://www.google.com/search">
 				<a href="http://www.google.com/"></a>
 			        <div class="input-group home-search">
