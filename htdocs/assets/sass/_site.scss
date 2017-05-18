@@ -45,27 +45,23 @@ a{
 			padding: 15px;
 		}
 
-		.searchmenucontent{
-			padding-bottom: 0px !important;
-		}
-
 		.text-right.col-xs-6.col-sm-6.col-md-8.col-lg-10{
-		    margin-top: -19px !important; 
-		    margin-bottom: 8px;
-		    padding-left: 0px !important;
+		    margin-top: -19px; 
+		    padding-left: 0px;
 		}
 
-		.text-right.col-xs-3.col-sm-3.col-md-4.col-lg-2{
+		.col-xs-5.col-sm-3.col-md-4.col-lg-2{
 		    background-color: #e5e5e5 !important;
-		    width: 290px !important;
-		    margin-top: -5px !important;
+		    margin-top: -5px;
+		    padding-top: 10px;
+		    padding-right: 0px;
 		}
 
 		.home-search{
-			height: 13px !important;
-			margin-top: -29px !important;
-			width: 290px !important;
-			padding-top: 4px !important;
+			height: 13px;
+			margin-top: -29px;
+			width: 290px;
+			padding-top: 4px;
 		}
 
 		.input-group.home-search{
