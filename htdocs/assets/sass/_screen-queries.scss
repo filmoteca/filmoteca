@@ -745,14 +745,15 @@
 
 //Prueba de buscador con un maximo de 519px de ancho
 
-@media (min-width: 382px) and (max-width: 519px) {  
+@media (min-width: 320px) and (max-width: 519px) {  
 
 
 	.upper-navbar{
 		padding-bottom: 45px !important;
 			
 		.text-right.col-xs-6.col-sm-7.col-md-8.col-lg-9{
-		    width: 99% !important; 
+		    width: 99% !important;
+		    padding-right: 0px !important; 
 		}
 
 		.col-xs-6.col-sm-5.col-md-4.col-lg-3{
