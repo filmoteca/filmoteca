@@ -694,14 +694,21 @@
 
 //Prueba de buscador con un maximo de 671px de ancho
 
-@media (min-width: 642px) and (max-width: 671px) {  
+@media (min-width: 618px) and (max-width: 671px) {  
 
 
 	.upper-navbar{
 		
-		.text-right.col-xs-6.col-sm-6.col-md-8.col-lg-10{
-		    width: 53% !important;
+		.text-right.col-xs-6.col-sm-7.col-md-8.col-lg-9{
+		    width: 52% !important;
+		    padding-right: 0px !important;
 		}
+
+		.col-xs-6.col-sm-5.col-md-4.col-lg-3{
+			width: 48% !important; 
+			padding-left: 0px !important;		    
+		}
+		
 	}
 }
 
@@ -710,17 +717,19 @@
 
 //Prueba de buscador con un maximo de 641px de ancho
 
-@media (min-width: 520px) and (max-width: 641px) {  
+@media (min-width: 520px) and (max-width: 617px) {  
 
 
 	.upper-navbar{
 			
-		.text-right.col-xs-6.col-sm-6.col-md-8.col-lg-10{
-		    width: 66% !important; 
+		.text-right.col-xs-6.col-sm-7.col-md-8.col-lg-9{
+		    width: 62% !important; 
+		    padding-right: 0px !important;
 		}
 
-		.col-xs-4.col-sm-3.col-md-4.col-lg-2{
-			float: right !important;
+		.col-xs-6.col-sm-5.col-md-4.col-lg-3{
+			width: 37% !important;
+			padding-left: 9px !important;
 
 		    .form-control{
 		    	width: 55% !important;
@@ -742,44 +751,15 @@
 	.upper-navbar{
 		padding-bottom: 45px !important;
 			
-		.text-right.col-xs-6.col-sm-6.col-md-8.col-lg-10{
+		.text-right.col-xs-6.col-sm-7.col-md-8.col-lg-9{
 		    width: 99% !important; 
 		}
 
-		.col-xs-4.col-sm-3.col-md-4.col-lg-2{
+		.col-xs-6.col-sm-5.col-md-4.col-lg-3{
+		    width: auto !important; 
 		    margin-top: 26px !important;
-		    float: right !important;
     		padding-left: 0 !important;
-    		left: -33% !important;
-
-		    .form-control{
-		    	width: 67% !important;
-		    }
-		    
-		}
-	}
-
-}
-
-
-
-//Prueba de buscador con un maximo de 381px de ancho
-
-@media (min-width: 320px) and (max-width: 381px) {  
-
-
-	.upper-navbar{
-		padding-bottom: 45px !important;
-			
-		.text-right.col-xs-6.col-sm-6.col-md-8.col-lg-10{
-		    width: 103% !important; 
-		}
-
-		.col-xs-4.col-sm-3.col-md-4.col-lg-2{
-		    margin-top: 26px !important;
-		    float: right !important;
-    		padding-left: 0 !important;
-    		left: -60% !important;
+    		float: right !important;
 
 		    .form-control{
 		    	width: 100% !important;

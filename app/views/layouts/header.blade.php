@@ -1,6 +1,6 @@
 <header class="main-header" id="main-header">
 	<div class="upper-navbar">
-		<div class="text-right col-xs-6 col-sm-6 col-md-8 col-lg-10">
+		<div class="text-right col-xs-6 col-sm-7 col-md-8 col-lg-9">
 			<a href="/" title="Inicio">
 					<span class="icon-home"></span>Inicio
 			</a>
@@ -10,7 +10,7 @@
 			<!--<a href="#"><span class="icon-accessibility"></span></a>-->			
 		</div>
 		<!-- SiteSearch Google -->
-		<div class="col-xs-4 col-sm-3 col-md-4 col-lg-2">
+		<div class="col-xs-6 col-sm-5 col-md-4 col-lg-3">
 			<form class="home-search" method=GET action="http://www.google.com/search">
 				<a href="http://www.google.com/"></a>
 			        <div class="input-group home-search">
