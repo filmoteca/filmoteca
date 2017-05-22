@@ -18,7 +18,7 @@
 				<div class="pull-left sm-logo-unam">
 					<div class="pull-left">
 						<a href="http://www.unam.mx/" title="Universidad Nacional Autónoma de México, UNAM" target="blank">
-							<img src="/assets/imgs/escudo_firma_UNAM_culturaUNAM.png" alt="Universidad Nacional Autónoma de México, UNAM">
+							<img class="logounam" src="/assets/imgs/escudo_firma_UNAM_culturaUNAM.png" alt="Universidad Nacional Autónoma de México, UNAM">
 						</a>
 					</div>
 				</div>
@@ -38,13 +38,13 @@
 
 			<div class="col-md-4">
 				<div>
-					<a href="https://twitter.com/ButacaUNAM" title="Twitter ButacaUNAM" target="blank"><span class="icon icon-twitter"></span></a>
+					<a href="https://twitter.com/filmotecaunam" title="Twitter Filmoteca UNAM" target="blank"><span class="icon icon-twitter"></span></a>
 					<a href="https://www.facebook.com/FilmotecaUNAM" title="Facebook FilmotecaUNAM" target="blank"><span class="icon icon-facebook"></span></a>
 					<a href="{{ URL::to('contact') }}" title="Contacto"><span class="icon icon-mail"></span></a>
 				</div>
 				<div>
 					<a href="http://www.fiafnet.org/es/" title="Federación Internacional de Archivos Fílmicos, FIAF" target="blank"><!-- <span class="icon icon-fiaf"></span> -->
-					    <img src="/assets/imgs/fiaf.png">
+					    <img class="fiaflogo" src="/assets/imgs/fiaf.png">
 						<span>MIEMBRO DE LA FIAF</span>
 					</a>
 				</div>
