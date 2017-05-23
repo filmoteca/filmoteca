@@ -92,8 +92,13 @@ a{
 
 		.gsc-input{
 			height: 28px !important;
+			width: 190px;
+			padding-left: 3px;
+			padding-right: 0;
+			border-style: none;
+			margin: 0 0 19px;
 			border-width: 0 0 2px 1px !important;
-			background: rgb(255, 255, 255) url() no-repeat scroll left center !important;
+			background: rgba(0, 0, 0, 0) url("") no-repeat scroll left center !important;
 		}
 
 		.gsst_b{
@@ -108,6 +113,11 @@ a{
 		    min-width: 52px !important;
 		    padding: 5px 17px !important;
 		    width: 0 !important;
+		}
+
+		.gsst_a{
+			margin-top: -10px;
+			padding-left: 0;
 		}
 
 		.input-group.home-search{

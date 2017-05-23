@@ -23,7 +23,6 @@
 				    s.parentNode.insertBefore(gcse, s);
 
 				    var x = document.getElementById('gsc-i-id1');
-				    x.removeAttribute('placeholder');
 				    x.setAttribute('placeholder', 'Buscar en Sitio');
 				  })();
 				</script>
