@@ -64,9 +64,6 @@ a{
 			padding-top: 4px;
 		}
 
-		#___gcse_0{
-		}
-
 		.gsc-control-cse.gsc-control-cse-es{
 			padding-top: 0px !important; 
 			padding-bottom: 0px !important;
@@ -92,12 +89,11 @@ a{
 
 		.gsc-input{
 			height: 28px !important;
-			width: 190px;
-			padding-left: 3px;
-			padding-right: 0;
-			border-style: none;
-			margin: 0 0 19px;
+			width: 190px !important;
+			border-style: none !important;
 			border-width: 0 0 2px 1px !important;
+			margin: 0 0 0 -5px !important;
+		    padding: 0 0 0 6px !important;
 			background: rgba(0, 0, 0, 0) url("") no-repeat scroll left center !important;
 		}
 
@@ -116,8 +112,9 @@ a{
 		}
 
 		.gsst_a{
-			margin-top: -10px;
-			padding-left: 0;
+			margin-top: -10px !important;
+			padding-left: 0 !important;
+			margin-left: -7px !important;
 		}
 
 		.input-group.home-search{
