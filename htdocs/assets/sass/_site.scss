@@ -64,6 +64,60 @@ a{
 			padding-top: 4px;
 		}
 
+		.gsc-control-cse.gsc-control-cse-es{
+			padding-top: 0px !important; 
+			padding-bottom: 0px !important;
+			border-top-width: 0px !important; 
+			border-bottom-width: 0px !important;
+		}
+
+		.gsc-control-wrapper-cse{
+			height: 0px !important;
+			margin-top: -7px !important;
+		}
+		
+		.gsc-input-box{
+			width: 215px !important;
+			height: 30px !important;
+		} 
+
+		.gsib_a{
+			padding-top: 0 !important;
+			padding-left: 0 !important;
+		    padding-right: 0 !important;
+		    padding-bottom: 14px !important;
+		}
+
+		.gsc-input{
+			height: 28px !important;
+			width: 190px !important;
+			border-style: none !important;
+			border-width: 0 0 2px 1px !important;
+			margin: 0 0 0 -5px !important;
+		    padding: 0 0 0 6px !important;
+			background: rgba(0, 0, 0, 0) url("") no-repeat scroll left center !important;
+		}
+
+		.gsst_b{
+			padding-right: 0px !important; 
+			padding-left: 0px !important;
+		}
+
+		.gsc-search-button.gsc-search-button-v2{
+			height: 29px !important;
+		    margin-left: -13px !important;
+		    margin-top: 5px !important;
+		    min-width: 52px !important;
+		    padding: 5px 17px !important;
+		    width: 0 !important;
+		}
+
+		.gsst_a{
+			margin-top: -10px !important;
+			padding-left: 0 !important;
+			margin-left: -7px !important;
+		}
+
 		.input-group.home-search{
 			width: 290px !important;
 		}
@@ -249,3 +303,14 @@ h5{
     border-top: 1px solid #ddd;
     padding: 4px 15px;
 }
+
+.fiaflogo{
+	width: 60px; 
+	height: 60px;
+}
+
+.logounam{
+	width: 250px; 
+	height: 94px;
+}
+	

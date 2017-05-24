@@ -88,7 +88,7 @@
 
 
 <div class="toolbar-fixed social-networks-toolbar visible-lg">
-	<a href="https://twitter.com/ButacaUNAM" title="Twitter ButacaUNAM"><span class="icon-twitter"></span></a>
+	<a href="https://twitter.com/filmotecaunam" title="Twitter Filmoteca UNAM"><span class="icon-twitter"></span></a>
 	<a href="https://www.facebook.com/FilmotecaUNAM" title="Facebook Filmoteca UNAM" target="blank"><span class="icon-facebook"></span></a>
 	<a href="https://www.youtube.com/user/FilmotecaUNAM" title="Youtube Filmoteca UNAM" target="blank"><span class="icon-youtube"></span></a>
 	<a href="http://vimeo.com/filmotecaunam/videos" title="Vimeo Filmoteca UNAM" target="blank"><span class="icon-vimeo"></span></a>

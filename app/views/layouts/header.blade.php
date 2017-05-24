@@ -12,22 +12,18 @@
 		<!-- SiteSearch Google -->
 		<div class="col-xs-6 col-sm-5 col-md-4 col-lg-3">
 			<form class="home-search" method=GET action="http://www.google.com/search">
-				<a href="http://www.google.com/"></a>
-			        <div class="input-group home-search">
-				        <div class="input-group-addon">
-				            <span class="glyphicon glyphicon-search"></span>
-				        </div>
-				    <input type="text"
-				            class="form-control"
-				            id="films-searcher"
-				            name="q"
-				            size=31 
-				            maxlength=255 
-				            value=""
-				            placeholder="Buscar en sitio">
-				    </div>
-					<input type=hidden name=domains value="http://www.filmoteca.unam.mx">
-					<input type=hidden name=sitesearch value="http://www.filmoteca.unam.mx" checked>
+				<script>
+				  (function() {
+				    var cx = '007799231493450711263:agf3pwh1gqu';
+				    var gcse = document.createElement('script');
+				    gcse.type = 'text/javascript';
+				    gcse.async = true;
+				    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+				    var s = document.getElementsByTagName('script')[0];
+				    s.parentNode.insertBefore(gcse, s);
+				  })();
+				</script>
+				<gcse:search></gcse:search>
 			</form>
 		</div>
 		<!-- SiteSearch Google -->
