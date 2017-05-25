@@ -5,13 +5,13 @@ namespace Filmoteca\Models\Exhibitions;
 use Carbon\Carbon;
 use DateTime;
 use Eloquent;
-use Filmoteca\Exhibition\Type as Type;
+use Filmoteca\Exhibition\Type as ExhibitionType;
 
 /**
  * Class Schedule
  * @package Filmoteca\Models\Exhibitions
  */
-class Schedule extends Eloquent implements Type\Schedule
+class Schedule extends Eloquent implements ExhibitionType\Schedule
 {
     protected $fillable = ['entry', 'auditorium_id', 'exhibition_id'];
 
@@ -64,15 +64,15 @@ class Schedule extends Eloquent implements Type\Schedule
     }
 
     /**
-     * @param Type\Auditorium $auditorium
+     * @param ExhibitionType\Auditorium $auditorium
      */
-    public function setAuditorium(Type\Auditorium $auditorium)
+    public function setAuditorium(ExhibitionType\Auditorium $auditorium)
     {
         $this->auditorium = $auditorium;
     }
 
     /**
-     * @return Type\Auditorium
+     * @return ExhibitionType\Auditorium
      */
     public function getAuditorium()
     {
@@ -80,15 +80,15 @@ class Schedule extends Eloquent implements Type\Schedule
     }
 
     /**
-     * @param Type\Exhibition $exhibition
+     * @param ExhibitionType\Exhibition $exhibition
      */
-    public function setExhibition(Type\Exhibition $exhibition)
+    public function setExhibition(ExhibitionType\Exhibition $exhibition)
     {
         // TODO: Implement setExhibition() method.
     }
 
     /**
-     * @return Type\Exhibition
+     * @return ExhibitionType\Exhibition
      */
     public function getExhibition()
     {

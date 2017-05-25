@@ -771,3 +771,12 @@
 
 }
 
+
+//Prueba de buscador con un maximo de 1050px de ancho
+
+@media (min-width: 768px) and (max-width: 1050px) {  
+
+	.form-control.ui-autocomplete-input{
+		width: 122px !important;
+	}
+}
