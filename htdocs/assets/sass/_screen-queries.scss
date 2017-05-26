@@ -2,7 +2,7 @@
 
 //Prueba de imagen de película y me gusta con un maximo de 480px de ancho
 
-@media screen and (max-width: 480px) {   
+@media (min-width: 320px) and (max-width: 374px) {   
 
 	.main-header{
 		 .upper-navbar{
@@ -39,6 +39,14 @@
 		    padding-left: 7px; 
 		    padding-right: 0; 
 		    width: 286px;
+
+		    h2.text-center{
+		    	width: 277px !important;
+		    }
+
+		    h6.text-center{
+		    	width: 280px !important;
+		    }
 		}
 	}
 
@@ -47,7 +55,7 @@
 	}
 	
 	.nav.nav-tabs.film-tabs {
-	    width: 99% !important;
+	    width: 55% !important;
 		background-color: #eee !important;
 		height: 36px;
 	} 
@@ -157,15 +165,9 @@
 
 
 
-
-
-
-
-
-
 //Prueba de imagen de película y me gusta con un maximo de 640px de ancho
 
-@media (min-width: 336px) and (max-width: 640px) {   
+@media (min-width: 375px) and (max-width: 640px) {   
 
 	.main-header{
 		 .upper-navbar{
@@ -227,13 +229,22 @@
 	        margin: 0 !important;
 	    }
 
+	    li.border{
+	    	height: 37px !important;
+	    }
+
 	    li.active > a, .nav-tabs.film-tabs > li.active > a:hover, .border > li.active > a:focus {
 	        margin: 0 !important;
+	        height: 37px !important;
 	    }
 	} 
 
 	.tab-content{
 		padding-left: 5px;
+	}
+
+	.list-group-item.margin{
+		width: 318px !important;
 	}
 
 	.row.tab-icon {
@@ -327,7 +338,7 @@
 
 
 
-//Prueba de imagen de película y me gusta con un maximo de 1024x768 de ancho
+//Prueba de imagen de película y me gusta con un maximo de 768 de ancho
 
 @media (min-width: 641px) and (max-width: 768px) {   
 
@@ -384,7 +395,7 @@
 	
 	.nav.nav-tabs.film-tabs {
 		max-width: 114% !important;
-		width: 111% !important;
+		width: 100% !important;
 		margin-left: 5px !important;
 		height: 36px;
 		
@@ -394,14 +405,22 @@
 	        height: 37px;
 	    }
 
+	    li.border{
+	    	height: 37px !important;
+	    }
+
 	    li.active > a, .nav-tabs.film-tabs > li.active > a:hover, .border > li.active > a:focus {
 	        margin: 0 !important;
-	        height: 37px;
+	        height: 37px !important;
 	    }
 	} 
 
 	.tab-content{
 		padding-left: 5px;
+	}
+
+	.list-group-item.margin{
+		width: 427px !important;
 	}
 
 	.row.tab-icon {
@@ -497,7 +516,7 @@
 
 //Prueba de imagen de película y me gusta con un maximo de 1024px de ancho
 
-@media (min-width: 768px) and (max-width: 1024px) {  
+@media (min-width: 769px) and (max-width: 1024px) {  
 
 	.main-header{
 		 .upper-navbar{
