@@ -16,7 +16,7 @@
                    id="films-searcher"
                    name="title"
                    placeholder="@lang('exhibitions.frontend.exhibition.index.search')">
-            <div class="input-group-addon">&gt;</div>
+            <div class="input-group-addon search-film">&gt;</div>
         </div>
     {{ Form::close() }}
 
