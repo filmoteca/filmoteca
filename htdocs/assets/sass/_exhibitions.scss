@@ -186,7 +186,10 @@
     .hidden-title h2 {
         display: none;
         visibility: hidden;
-    } 
+    }
+    a.sin-hover:hover{
+        text-decoration: none !important;
+    }
 }
 
 .panel.panel-default.no-line { 
@@ -223,6 +226,8 @@
 
 .more-schedules { 
     border-color: #fff !important;
+    margin-top: 6px !important;
+    padding-bottom: 8px !important;
 
     .extra-schedules table {
         color: #646464 !important;

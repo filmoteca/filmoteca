@@ -1,5 +1,4 @@
 <div class="row film">
-    <!-- Imagen de película y me gusta -->
     <div class="col-xs-4 col-sm-6 col-md-5 col-lg-3">
         <img src="{{ $film->getCover()->getMediumImageUrl() }}">
         @include(
@@ -10,7 +9,7 @@
     </div>
     <!-- Panel pestañas -->
     <div class="col-xs-12 col-sm-6 col-md-7 col-lg-9">
-        <a class="underline hidden-title" href="{{ URL::route('exhibitions.frontend.film.show', ['slug' => $film->getSlug()]) }}">
+        <a class="hidden-title sin-hover"> <!-- underline y href="{{ URL::route('exhibitions.frontend.film.show', ['slug' => $film->getSlug()]) }}"-->
             <h2 class="text-center">
                 {{ $film->getTitle() }}
             </h2>
@@ -165,14 +164,15 @@
                                 </table>
 
                                 <!-- Botón que desplegará más horarios -->
+                                <!-- Se cambió la etiqueta button por div y se quito la clase btn para que solo apresca el texto-->
                                 <div class="row film-tabs">
-                                    <button type="button"
-                                            class="btn btn-default loading-xsm more-schedules"
+                                    <div 
+                                            class="more-schedules loading-xsm"
                                             data-href="{{ URL::route('exhibition.schedule.search', ['exhibitionId' => $exhibition->getId()]) }}"
                                             data-since="{{ isset($date) ? $date->copy()->addDay()->format(MYSQL_DATE_FORMAT) : ''  }}"
                                             title="@lang('exhibitions.frontend.exhibition.show.see_more_schedules')">
                                             @lang('exhibitions.frontend.exhibition.show.see_more_schedules')
-                                    </button>
+                                    </div>
                                     <div class="collapse">
                                         {{-- This content is loaded with AJAX and it is located in --}}
                                         {{-- views/frontend/exhibitions/partials/more-schedules    --}}

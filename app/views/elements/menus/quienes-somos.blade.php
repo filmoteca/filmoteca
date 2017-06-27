@@ -5,7 +5,7 @@ $menu = array(
 
 	array('Objetivos y Funciones', '/pages/quienes-somos/objetivos-y-funciones'),
 
-	array('Consejo Asesor', '/pages/quienes-somos/consejo-asesor'),
+	array('Cuerpos colegiados', '/pages/quienes-somos/cuerpos-colegiados'),
 
 	array('Memoria Filmoteca', '/pages/quienes-somos/memoria-filmoteca'), 
 

@@ -39,7 +39,7 @@ frontend:
         show:
             see_more: Ver más »
             see_location: Ver ubicación
-            see_more_schedules: Ver más fechas »
+            see_more_schedules: Más fechas »
             see_auditoriums_location: Ver ubicación de salas
             see_trailer: Ver trailer
             receive_our_digital_billboard: Recibe nuestra cartelera digital

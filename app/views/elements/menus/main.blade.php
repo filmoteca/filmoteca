@@ -24,7 +24,7 @@
 
                   <li><a href="/pages/quienes-somos/objetivos-y-funciones">Objetivos y Funciones</a></li>
 
-                  <li><a href="/pages/quienes-somos/consejo-asesor">Consejo Asesor</a></li>
+                  <li><a href="/pages/quienes-somos/cuerpos-colegiados">Cuerpos colegiados</a></li>
 
                   <li><a href="/pages/quienes-somos/memoria-filmoteca">Memoria Filmoteca</a></li>
 
@@ -156,6 +156,8 @@
                   <li ><a href="/pages/concursos/bienal-tesis">Bienal de Tesis</a></li>
 
                   <li ><a href="/pages/concursos/capturando-deporte">Capturando el deporte</a></li>
+
+                  <li ><a href="/pages/concursos/capturando-me">Capturando-me</a></li>
 
                   <li ><a href="/pages/concursos/convocatorias">Convocatorias</a></li>
 

@@ -21,8 +21,7 @@
 				    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
 				    var s = document.getElementsByTagName('script')[0];
 				    s.parentNode.insertBefore(gcse, s);
-				    var p = document.getElementById('gsc-i-id1');
-				    p.setAttribute('placeholder', 'Buscar en Sitio');
+				    document.getElementsByTagName("input")[0].setAttribute('placeholder', 'Buscar en Sitio');
 
 				  })();
 				</script>

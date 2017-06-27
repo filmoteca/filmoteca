@@ -5,23 +5,21 @@
 		</a>
 	</li>
 	<li>
-		<a href="/pages/concursos/jose-rovirosa">
-			Concurso José Rovirosa
+		<a href="/pages/concursos/capturando-me">
+			Capturando-me
 		</a>
 	</li>
 	<li class="active">
-		Convocatoria Premio José Rovirosa
+		Concurso Capturando-me
 	</li>
 @stop
 
 @section('sidebar')
-	@include('elements.menus.concursos', array('selected' => 0))
+	@include('elements.menus.concursos', array('selected' => 5))
 @stop
-
-
 
 @section('content')
 
-    {{ $page->body }}
-
+ {{ $page->body }}
+ 
 @stop
