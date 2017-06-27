@@ -5,7 +5,7 @@
 		</a>
 	</li>
 	<li class="active">
-		Consejo Asesor
+		Cuerpos colegiados
 	</li>
 @stop
 

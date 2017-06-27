@@ -23,6 +23,8 @@ $menu = array(
 
 	array('Capturando el deporte', '/pages/concursos/capturando-deporte'),
 
+	array('Capturando-me', '/pages/concursos/capturando-me'),
+
 	array('Convocatorias', '/pages/concursos/convocatorias'));
 
 ?>
