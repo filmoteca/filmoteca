@@ -5,7 +5,7 @@
   </a>
 </li>
 <li>
-<a href="/pages/programa-leer-cine/programa-leer-cine">
+<a href="/pages/extension-academica/programa-leer-cine">
     Programa leer cine
   </a>
 </li>
