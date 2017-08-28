@@ -25,6 +25,8 @@ $menu = array(
 
 	array('Capturando-me', '/pages/concursos/capturando-me'),
 
+	array('Visiones del arte', '/pages/concursos/visiones-del-arte'),
+
 	array('Convocatorias', '/pages/concursos/convocatorias'));
 
 ?>

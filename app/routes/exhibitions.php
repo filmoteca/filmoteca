@@ -60,7 +60,7 @@ Route::group(['prefix' => 'programacion'], function () {
 
     // Urls used by the system and do not used for SEO. Then the translation is unnecessary
 
-    Route::get('billboard/subscribe', [
+    Route::post('billboard/subscribe', [
         'as' => 'exhibitions.frontend.billboard.subscribe',
         'uses' => 'Filmoteca\Exhibitions\Controllers\Frontend\BillboardController@subscribe'
     ]);

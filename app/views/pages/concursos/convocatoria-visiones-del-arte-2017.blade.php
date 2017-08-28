@@ -5,16 +5,16 @@
 		</a>
 	</li>
 	<li class="active">
-		Convocatorias
+		Convocatoria visiones del arte 2017
 	</li>
 @stop
 
 @section('sidebar')
-	@include('elements.menus.concursos', array('selected' => 7))
+	@include('elements.menus.concursos', array('selected' => 6))
 @stop
 
 @section('content')
 
-    {{ $page->body }}
-
+ {{ $page->body }}
+ 
 @stop

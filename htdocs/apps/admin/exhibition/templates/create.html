@@ -46,7 +46,7 @@
             <div class="form-group">
                 <label class="control-label col-sm-2" for="icon">Icono</label>
                 <div class="col-sm-6">
-                    <select data-ng-options="icon.name for icon in icons" ng-model="exhibition.icon" class="form-control">
+                    <select data-ng-options="icon.name for icon in icons | orderBy:'name' track by icon.id" ng-model="exhibition.icon" class="form-control">
                         <option value="">Ninguno</option>
                     </select>
                 </div>
