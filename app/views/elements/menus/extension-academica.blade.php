@@ -26,7 +26,7 @@ $menu = array(
 		array('Convocatoria', '/pages/extension-academica/convocatoria-becarios')
 		)),
 
-	array('Programa leer cine', '/pages/programa-leer-cine/programa-leer-cine'),
+	array('Programa leer cine', '/pages/extension-academica/programa-leer-cine'),
 
 	array('Visitas guiadas', '/pages/extension-academica/visitas-guiadas'));
 ?>
