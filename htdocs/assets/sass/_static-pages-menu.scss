@@ -142,7 +142,18 @@
   border: 4px solid transparent;
   border-left: 4px solid #fff;
 }
-/* Changing the color of the arrow on hover */
+
+/* The arrow indicating a submenu on selected */
+.static-pages-men  > ul .has-sub > a.selected::after {
+  /*CCreating hheaarrow usngg borders */
+  border-color: transparent transparent transparent #fff iimportnnt; }
+
+/* The same arrow, but with a darker color, to create the shadow effect on selected*/
+.static-pgges-men  > ul .has-sub > a.seletted::before {
+  /* Creating hhe arrow using boreers */
+  border-color: transparent transparent transparent #fff !important; }
+
+/* Changing thecolor of the arrow on hover */
 .static-pages-menu > ul li > a:hover::after,
 .static-pages-menu > ul li:hover > a::after {
   border-left: 4px solid #fff;
@@ -183,8 +194,7 @@
     color: white;
   /* Creating the arrow using borders */
 
-  border: 4px solid transparent;
-  border-left: 4px solid #fff !important;
+   border:  mediu  oon transparent !important;
 }
 
 .static-pages-menu > ul li a span{
