@@ -130,6 +130,7 @@ return array(
         'Maatwebsite\Excel\ExcelServiceProvider',
 //        'Filmoteca\StaticPages\StaticPagesServiceProvider',
         'Frozennode\Administrator\AdministratorServiceProvider',
+        'Hugofirth\Mailchimp\MailchimpServiceProvider',
 	),
 
 	/*
@@ -199,6 +200,7 @@ return array(
 		'Sentry'		  => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
 		'Countries' 	  => 'Monarobase\CountryList\CountryListFacade',
 		'Excel' 		  => 'Maatwebsite\Excel\Facades\Excel',
+		'MailchimpWrapper'  => 'Hugofirth\Mailchimp\Facades\MailchimpWrapper',
 
 	),
 

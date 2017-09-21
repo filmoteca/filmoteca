@@ -28,7 +28,8 @@
         "devitek/yaml-translation": "0.1.2",
         "filmoteca/static-pages": "dev-master",
         "monarobase/country-list": "1.2.*",
-        "maatwebsite/excel": "1.3.0"
+        "maatwebsite/excel": "1.3.0",
+        "hugofirth/mailchimp": "2.0.*"
     },
     "autoload": {
         "classmap": [

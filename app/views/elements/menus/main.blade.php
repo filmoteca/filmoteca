@@ -159,6 +159,8 @@
 
                   <li ><a href="/pages/concursos/capturando-me">Capturando-me</a></li>
 
+                  <li ><a href="/pages/concursos/visiones-del-arte">Visiones del arte</a></li>
+
                   <li ><a href="/pages/concursos/convocatorias">Convocatorias</a></li>
 
                 </ul>

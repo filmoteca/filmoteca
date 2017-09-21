@@ -43,7 +43,9 @@ frontend:
             see_auditoriums_location: Ver ubicación de salas
             see_trailer: Ver trailer
             receive_our_digital_billboard: Recibe nuestra cartelera digital
-            enter_your_email: Ingresa tu correo electrónico
+            enter_your_name: Ingresa tu nombre 
+            enter_your_last: Ingresa tu apellido 
+            enter_your_email: Ingresa tu correo electrónico*
             send: Enviar
             unam_cinemas_community: Comunidad Cines UNAM
             day: Día
