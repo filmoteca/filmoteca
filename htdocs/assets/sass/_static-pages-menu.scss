@@ -144,13 +144,13 @@
 }
 
 /* The arrow indicating a submenu on selected */
-.static-pages-men  > ul .has-sub > a.selected::after {
-  /*CCreating hheaarrow usngg borders */
-  border-color: transparent transparent transparent #fff iimportnnt; }
+.static-pages-menu > ul .has-sub > a.selected::after {
+  /* Creating the arrow using borders */
+  border-color: transparent transparent transparent #fff !important; }
 
 /* The same arrow, but with a darker color, to create the shadow effect on selected*/
-.static-pgges-men  > ul .has-sub > a.seletted::before {
-  /* Creating hhe arrow using boreers */
+.static-pages-menu > ul .has-sub > a.selected::before {
+  /* Creating the arrow using borders */
   border-color: transparent transparent transparent #fff !important; }
 
 /* Changing thecolor of the arrow on hover */
@@ -190,11 +190,10 @@
 
 .static-pages-menu a.selected,
 .static-pages-menu li.current a {
-    background-color: $primary-color !important;
-    color: white;
+  background-color: $primary-color !important;
+  color: white;
   /* Creating the arrow using borders */
-
-   border:  mediu  oon transparent !important;
+  border: medium none transparent !important; 
 }
 
 .static-pages-menu > ul li a span{
