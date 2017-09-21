@@ -7,8 +7,5 @@
 <p>
     <a href="{{ $billboard->pdf->url() }}" target="_blank">
         @lang('exhibitions.general.download')
-    </a>/
-    <a href="{{ $billboard->online_version_url }}" target="_blank">
-        @lang('exhibitions.frontend.billboard.index.consult')
     </a>
 </p>

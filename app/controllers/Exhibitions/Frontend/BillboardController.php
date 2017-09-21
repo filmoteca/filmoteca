@@ -96,7 +96,8 @@ class BillboardController extends Controller
                     
                     // store the status message based on response code
                     if ($httpCode == 200) {
-                        $_SESSION['msg'] = '<p style="color: #34A853">Tu subscripción a la cartelera está lista.</p>';
+                        $_SESSION['msg'] = '<div class="alert alert-success alert-dismissable">
+                                            <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>Tu subscripción a la cartelera está lista.</div>';
                     } else {
                         switch ($httpCode) {
                             case 214:
@@ -106,10 +107,12 @@ class BillboardController extends Controller
                                 $msg = 'Ocurrio un problema, intentalo de nuevo.';
                                 break;
                         }
-                        $_SESSION['msg'] = '<p style="color: #EA4335">'.$msg.'</p>';
+                        $_SESSION['msg'] = '<div class="alert alert-danger alert-dismissable">
+                                            <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>'.$msg.'</div>';
                     }
                 }else{
-                    $_SESSION['msg'] = '<p style="color: #EA4335">Por favor ingresa un correo electrónico valido.</p>';
+                    $_SESSION['msg'] = '<div class="alert alert-danger alert-dismissable">
+                                            <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>Por favor ingresa un correo electrónico valido.</div>';
                 }
             }
             // redirect to homepage
