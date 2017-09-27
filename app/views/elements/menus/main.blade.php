@@ -28,7 +28,7 @@
 
                   <li><a href="/pages/quienes-somos/memoria-filmoteca">Memoria Filmoteca</a></li>
 
-                  <li><a href="/pages/quienes-somos/cronologia">Cronología</a></li>
+                  <li><a href="/chronology">Cronología</a></li>
 
                   <li><a href="/pages/quienes-somos/medalla-filmoteca">Medalla Filmoteca</a>
                   </li>

@@ -33,15 +33,15 @@ Route::get('/filmoteca-medal/{id}', [
     'uses' => 'Filmoteca\Frontend\Controllers\FilmotecaMedalController@show'
 ]);
 
-Route::get('/chronology/', [
-        'as' => 'chronology',
-        'uses' => 'ChronologyController@index'
+Route::get('/chronology', [
+    'as' => 'chronology',
+    'uses' => 'Filmoteca\Frontend\Controllers\ChronologyController@index'
 ]);
 
-Route::get('/pages/quienes-somos/cronologia', function () {
-
-    return Redirect::route('chronology');
-});
+Route::get('/chronology/{id}', [
+    'as' => 'chronology_show',
+    'uses' => 'Filmoteca\Frontend\Controllers\ChronologyController@show'
+]);
 
 /*
 |------------------------------------------------------------------------------

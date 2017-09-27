@@ -1,19 +1,29 @@
-<?php namespace Filmoteca\Models;
+<?php
 
-use Eloquent;
+namespace Filmoteca\Models;
 
+use Codesleeve\Stapler\ORM\StaplerableInterface;
+use Codesleeve\Stapler\ORM\EloquentTrait;
+use Illuminate\Database\Eloquent\Model as Eloquent;
 use Carbon\Carbon;
 
-class Chronology extends Eloquent
+class Chronology extends Eloquent implements StaplerableInterface
 {
-	protected $guarded = [];
+    use EloquentTrait;
 
-	public function getYearAttribute($value)
-	{
-		return Carbon::createFromFormat('Y-m-d', $value)->format('Y');
-	}
+    protected $guarded = [];
 
-	public function setYearAttribute($value)
+    public function __construct(array $attributes = array())
+    {
+        parent::__construct($attributes);
+    }
+
+    public function getYearAttribute($value)
+    {
+        return Carbon::createFromFormat('Y-m-d', $value)->format('Y');
+    }
+
+    public function setYearAttribute($value)
 	{
 		$this->attributes['year'] = Carbon::createFromFormat('Y', $value)->format('Y-m-d');
 	}

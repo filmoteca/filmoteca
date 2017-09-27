@@ -19,5 +19,8 @@ return [
     ],
     'filmoteca-medals' => [
         'minYear' => 1985
+    ],
+    'chronology' => [
+        'minYear' => 1985
     ]
 ];

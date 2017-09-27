@@ -9,7 +9,7 @@ $menu = array(
 
 	array('Memoria Filmoteca', '/pages/quienes-somos/memoria-filmoteca'), 
 
-	array('Cronología', '/pages/quienes-somos/cronologia'),
+	array('Cronología', '/chronology'),
 
 	array('Medalla Filmoteca', '/pages/quienes-somos/medalla-filmoteca', array(
 		array('Galardonados', '/filmoteca-medal'))),
