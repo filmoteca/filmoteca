@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Config;
 
 class ChronologyController extends Controller{
 
-    const INTERVALS = 7;
+    const INTERVALS = 9;
     /**
      * @var ChronologiesRepository
      */
@@ -44,7 +44,7 @@ class ChronologyController extends Controller{
         $events = $this->repository->all();
         $minYear = Config::get('parameters.chronologies.minYear');
         $maxYear = Carbon::today()->year;
-        $startMinYear = $maxYear - 3;
+        $startMinYear = $maxYear - 5;
         $sliderConfig = [
             'chronology' =>
             [

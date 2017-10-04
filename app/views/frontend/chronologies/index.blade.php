@@ -47,8 +47,10 @@
 		</div>
 		<ul class="items" id="events">
 			@foreach( $events as $index => $event )
-			<li class="" data-year="{{ $event->year }}">
-				<span class="year">{{$event->year}}</span>
+			<li class="item" data-year="{{ $event->year }}">
+				<span class="year" data-id="{{ $event->id }}">
+					{{ $event->year }}
+				</span>
 				<span class="description">
 					{{$event->description}}
 				</span>

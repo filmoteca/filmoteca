@@ -209,6 +209,15 @@ a{
 	padding: 0px;
 
 	.item{
+		border: 0px solid #ddd;
+
+		.year{
+			font-weight: bold;
+			font-size: 17px;
+		}
+	}
+	
+	.boxwinner{
 		float: left;
 		width: 23%;
 		margin-left: 14px;
