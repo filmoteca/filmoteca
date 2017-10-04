@@ -25,13 +25,6 @@ var require = {
         "pages.exhibition.directives":  "/apps/pages/exhibition/directives",
         "pages.exhibition.controllers": "/apps/pages/exhibition/controllers",
 
-        "pages.filmoteca-medal.App":         "/apps/pages/filmoteca-medal/App",
-        "pages.filmoteca-medal.controllers": "/apps/pages/filmoteca-medal/controllers",
-        "pages.filmoteca-medal.directives":  "/apps/pages/filmoteca-medal/directives",
-
-        "pages.chronology.App":         "/apps/pages/chronology/App",
-        "pages.chronology.controllers": "/apps/pages/chronology/controllers",
-
         "pages.courses.App":         "/apps/pages/courses/App",
         "pages.courses.controllers": "/apps/pages/courses/controllers",
         "pages.courses.services":    "/apps/pages/courses/services",

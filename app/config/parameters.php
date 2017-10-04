@@ -21,6 +21,6 @@ return [
         'minYear' => 1985
     ],
     'chronology' => [
-        'minYear' => 1985
+        'minYear' => 1960
     ]
 ];

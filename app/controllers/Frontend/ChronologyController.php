@@ -63,6 +63,16 @@ class ChronologyController extends Controller{
         return View::make('frontend.chronologies.index', compact('events', 'filmotecaConfig'));
     }
 
+    /**
+     * @param int $id
+     */
+    public function show($id)
+    {
+        $event = $this->repository->find($id);
+
+        return View::make('frontend.chronologies.show', compact('event'));
+    }
+
     public function search()
     {
         $term = \Input::get('term', '');
@@ -71,7 +81,6 @@ class ChronologyController extends Controller{
         $results = $events->map(function (Chronology $item) {
             return [
                 'id' => $item->id,
-                'tag' => $item->tag,
                 'year' => $item->year->format('Y'),
                 'description' => $item->description
             ];

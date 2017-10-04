@@ -38,7 +38,7 @@
 
 <div class="yearevent-selector-wrapper">
 	<p>@lang('filmoteca.frontend.filmoteca_medals.see_winner_by_year'):</p>
-	<div id="year-selector"></div>
+	<div id="yearevent-selector"></div>
 </div>
 
 	<div class="wrapper-items" id="wrapper-items">
@@ -47,7 +47,7 @@
 		</div>
 		<ul class="items" id="events">
 			@foreach( $events as $index => $event )
-			<li class="" ng-show="events[{{ $index }}].visible">
+			<li class="" data-year="{{ $event->year }}">
 				<span class="year">{{$event->year}}</span>
 				<span class="description">
 					{{$event->description}}
@@ -57,4 +57,3 @@
 		</ul>
 	</div>
 @stop
-
