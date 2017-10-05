@@ -31,10 +31,10 @@
 
 @include('elements.bootstrap-modal')
 
-<div class="event-searcher-wrapper pull-right">
+{{--<div class="event-searcher-wrapper pull-right">
 	<span class="glyphicon glyphicon-search pull-left"></span>
 	<input id="event-searcher">
-</div>
+</div>--}}
 
 <div class="yearevent-selector-wrapper">
 	<p>@lang('filmoteca.frontend.chronologies.see_event_by_year'):</p>
