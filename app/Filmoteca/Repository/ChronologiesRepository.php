@@ -14,8 +14,8 @@ class ChronologiesRepository extends ResourcesRepository
      * @param $tag
      * @return Collection
      */
-    public function findByTag($tag)
+    public function findByTag($description)
     {
-        return $this->resource->where('tag', 'like', '%' . $tag . '%')->get();
+        return $this->resource->where('description', 'like', '%' . $description . '%')->get();
     }
 }

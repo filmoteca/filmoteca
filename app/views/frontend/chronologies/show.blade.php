@@ -7,7 +7,7 @@
         @lang(
         'exhibitions.frontend.medal.index.fecha',
         	[            
-            'numeric_year' => $winner->award_date->format('Y'),
+            'numeric_year' => $event->year->format('Y'),
         	]
     	)</p>
 
