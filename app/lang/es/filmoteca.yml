@@ -5,3 +5,6 @@ frontend:
     filmoteca_medals:
         see_winner_by_year: Ver galardonado por año
         title: Galardonados - Medalla Filmoteca UNAM
+    chronologies:
+        see_event_by_year: Ver acontecimiento por año
+        title: Acontecimientos - Cronología

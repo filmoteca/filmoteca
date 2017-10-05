@@ -27,7 +27,7 @@
 
 @section('content')
 
-<h1>Cronología</h1>
+<h1>@lang('filmoteca.frontend.chronologies.title')</h1>
 
 @include('elements.bootstrap-modal')
 
@@ -37,7 +37,7 @@
 </div>
 
 <div class="yearevent-selector-wrapper">
-	<p>@lang('filmoteca.frontend.filmoteca_medals.see_winner_by_year'):</p>
+	<p>@lang('filmoteca.frontend.chronologies.see_event_by_year'):</p>
 	<div id="yearevent-selector"></div>
 </div>
 
