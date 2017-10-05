@@ -54,7 +54,8 @@
             '/bower_components/jqueryui/ui/minified/mouse.min.js',
             '/bower_components/jqueryui/ui/minified/slider.min.js',
             '/bower_components/jquery-ui-slider-pips/dist/jquery-ui-slider-pips.min.js',
-            '/assets/js/filmoteca.min.js'
+            '/assets/js/filmoteca.min.js',
+            '/assets/js/chronology.min.js'
             ]))
 
         @yield('scripts')
