@@ -51,9 +51,8 @@ class ConsultaLibroController extends Controller
                 'slider' => [
                     'minValue' => $minValue,
                     'maxValue' => $maxValue,
-                    'value' => $startMinValue,
-                    'label' => $alphabet
-                ]
+                    'step' => 1,
+                    'value' => $startMinValue                ]
             ]
         ];
 
@@ -76,7 +75,7 @@ class ConsultaLibroController extends Controller
     public function search()
     {
         $term = \Input::get('term', '');
-        $books = $this->repository->findByName($term);
+        $books = $this->repository->findByTitle($term);
 
         $results = $books->map(function (ConsultaLibro $item) {
             return [

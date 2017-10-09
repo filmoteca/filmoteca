@@ -46,6 +46,7 @@
 
 <div class="letter-selector-wrapper">
 	<p>@lang('filmoteca.frontend.consulta_libros.seek_book_by_title'):</p>
+	<div class="emoji-slider-question"></div>
 	<div id="letter-selector"></div>
 </div>
 
@@ -55,11 +56,11 @@
 	</div>
 	<ul class="items" id="books">
 		@foreach( $books as $index => $book )
-		<li class="thumbnail item boxwinner" data-award-year="{{ $book->award_date->year }}">
-			<img src="{{ $book->image->url('thumbnail') }}" alt="{{ $book->name }}">
+		<li class="thumbnail item boxwinner" data-title-first="{{ mb_substr($book->title, 0,1) }}" data-award-year="{{ $book->award_date->year }}">
+			<img src="{{ $book->image->url('thumbnail') }}" alt="{{ $book->title }}">
 			{{
 				HTML::link(
-				'consulta_libro/' . $book->id . '/detail',
+				'consulta-libro/' . $book->id . '/detail',
 				str_limit($book->title, 20),
 				[
 					'title' => trans('filmoteca.general.see_details'),

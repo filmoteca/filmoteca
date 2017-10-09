@@ -54,7 +54,7 @@ Route::group(['prefix' => 'admin', 'before' => 'validate_admin'], function () {
 
     $resources = ['film', 'filmotecaMedal', 'billboard',
         'professor', 'subject','venue','course', 'student',
-        'auditorium','news', 'catalog', 'interview', 'chronology'];
+        'auditorium','news', 'catalog', 'interview', 'chronology', 'consultaLibro',];
 
     /**
      * El nombre de las rutas tienen el prefijo admin. (incluyendo el punto)

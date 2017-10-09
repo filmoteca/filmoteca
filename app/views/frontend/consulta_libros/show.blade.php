@@ -2,8 +2,8 @@
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     <h4 class="modal-title" id="myModalLabel">
-        <span class="name">{{ $book->name }} </span>
-        <p class="name">@lang('exhibitions.frontend.medal.index.entrega'):
+        <span class="title">{{ $book->title }} </span>
+        <p class="title">@lang('exhibitions.frontend.medal.index.entrega'):
         @lang(
         'exhibitions.frontend.medal.index.fecha',
         	[
@@ -17,6 +17,6 @@
 </div>
 <div class="modal-body">
     <div><img src="{{ $book->image->url('thumbnail') }}" class="img-responsive center-block thumbnail"></div>
-    <div class="bibliography">{{ $book->biography }}</div>
+    <div class="indice">{{ $book->indice }}</div>
 </div>
 <div class="modal-footer"></div>
