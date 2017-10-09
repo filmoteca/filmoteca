@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
         $this->call('CountriesTableSeeder');
         $this->call('FilmotecaMedalsTableSeeder');
         $this->call('ChronologiesTableSeeder');
+        $this->call('ConsultaLibrosTableSeeder');
 
         DB::statement('SET foreign_key_checks = 1');
 

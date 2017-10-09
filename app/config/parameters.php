@@ -22,5 +22,8 @@ return [
     ],
     'chronologies' => [
         'minYear' => 1960
+    ],
+    'consulta-libros' => [
+        'minValue' => 0
     ]
 ];

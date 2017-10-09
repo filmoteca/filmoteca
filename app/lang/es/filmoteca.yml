@@ -8,3 +8,7 @@ frontend:
     chronologies:
         see_event_by_year: Ver acontecimientos por año
         title: Acontecimientos - Cronología
+    consulta_libros:
+        seek_book_by_title: Ver libros por título
+        title: Consulta Libros
+        description: Estos libros están a tu disposición para su consulta en el Centro de Documentación de la Filmoteca de la UNAM.
