@@ -31,7 +31,7 @@
 		</tr>
 		<tr>
 			<th>Fecha del libro</th>
-			<td>{{$resource->award_date }}</td>
+			<td>{{$resource->book_date }}</td>
 		</tr>
 		<tr>
 			<th>Indice</th>

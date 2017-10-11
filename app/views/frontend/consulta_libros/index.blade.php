@@ -34,14 +34,15 @@
 
 @section('content')
 
-<h1>@lang('filmoteca.frontend.consulta_libros.title')</h1>
+<h1 style="text-align: center;">@lang('filmoteca.frontend.consulta_libros.title')</h1>
+<br><br>
 <p>@lang('filmoteca.frontend.consulta_libros.description')</p>
-
+<br><br>
 @include('elements.bootstrap-modal')
 
 <div class="book-searcher-wrapper pull-right">
 	<span class="glyphicon glyphicon-search pull-left"></span>
-	<input id="book-searcher">
+	<input id="book-searcher" placeholder="Buscar libro">
 </div>
 
 <div class="letter-selector-wrapper">
@@ -56,7 +57,7 @@
 	</div>
 	<ul class="items" id="books">
 		@foreach( $books as $index => $book )
-		<li class="thumbnail item boxwinner" data-title-first="{{ mb_substr($book->title, 0,1) }}" data-award-year="{{ $book->award_date->year }}">
+		<li class="thumbnail item boxwinner" data-title-first="{{ mb_substr($book->title, 0,1) }}">
 			<img src="{{ $book->image->url('thumbnail') }}" alt="{{ $book->title }}">
 			{{
 				HTML::link(

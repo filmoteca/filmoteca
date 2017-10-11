@@ -16,13 +16,13 @@
 			<th>Acciones</th>
 		</tr>
 	</thead>
-	
+
 	<tbody>
 		@foreach($resources as $consulta_libro )
 			<tr>
 				<td>{{ $consulta_libro->id }}</td>
 				<td>{{ $consulta_libro->title }}</td>
-				<td>{{ $consulta_libro->award_date }}</td>
+				<td>{{ $consulta_libro->book_date }}</td>
 				<td>{{ str_limit($consulta_libro->indice, 100, '...')}}</td>
 				<td>{{ str_limit($consulta_libro->sinopsis, 100, '...')}}</td>
 

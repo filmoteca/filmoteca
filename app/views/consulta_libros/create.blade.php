@@ -1,8 +1,8 @@
 @section('content')
 
-{{ Form::open( 
+{{ Form::open(
 	[
-		'route' => 'admin.consultaLibro.store', 
+		'route' => 'admin.consultaLibro.store',
 		'files' => true,
 		'method'=> 'POST',
 		'class' => 'form-horizontal panel panel-default'
@@ -11,12 +11,12 @@
 	<div class="panel-heading">
 		<h2>Agregar Libro</h2>
 	</div>
-	
+
 	<div class="panel-body">
 
 	{{ Form::formGroup('text','title','Título', 'consulta_libro_form', ['required' => true]) }}
 
-	{{ Form::formGroup('date','award_date','Fecha del libro', 'consulta_libro_form', ['required' => true]) }}
+	{{ Form::formGroup('date','book_date','Fecha del libro', 'consulta_libro_form', ['required' => true]) }}
 
 	{{ Form::formGroup('textarea','indice','Indice', 'consulta_libro_form', ['required' => true]) }}
 

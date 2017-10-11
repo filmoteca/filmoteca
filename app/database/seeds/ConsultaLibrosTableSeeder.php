@@ -16,10 +16,10 @@ class ConsultaLibrosTableSeeder extends Seeder
             $type = [
                 'title' => $name,
                 'indice' => $faker->text(600),
-                'award_date' => $faker->dateTimeBetween('-30 years'),
+                'sinopsis' => $faker->text(600),
+                'book_date' => $faker->dateTimeBetween('-30 years'),
                 'created_at' => new DateTime(),
-                'updated_at' => new DateTime(),
-                'sinopsis' => $faker->text(600)
+                'updated_at' => new DateTime()
             ];
 
             $types[] = $type;

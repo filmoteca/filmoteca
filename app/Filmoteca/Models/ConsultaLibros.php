@@ -27,7 +27,7 @@ class ConsultaLibro extends Eloquent implements StaplerableInterface
         return array_merge(parent::toArray(), ['photo' => $this->image->url('thumbnail')]);
     }
 
-    public function getAwardDateAttribute($value)
+    public function getBookDateAttribute($value)
     {
         return Carbon::createFromFormat('Y-m-d', $value);
     }
