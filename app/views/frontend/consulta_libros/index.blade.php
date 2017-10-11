@@ -46,12 +46,11 @@
 </div>
 
 <div class="letter-selector-wrapper">
-	<p>@lang('filmoteca.frontend.consulta_libros.seek_book_by_title'):</p>
+	<p>@lang('filmoteca.frontend.consulta_libros.seek_book_by_title')</p>
 	<div id="letter-selector"></div>
 </div>
 
 <div class="wrapper-items" id="wrapper-items">
-	<div id="labels-letters-output"></div>
 	<div id="results" class="results">
 		<span>@lang('filmoteca.general.results'): </span><span class="number"></span>
 	</div>
