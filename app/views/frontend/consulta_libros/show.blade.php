@@ -68,9 +68,10 @@
                             <p><strong>@lang('exhibitions.frontend.book.index.edition'):</strong> @lang(
                             'exhibitions.frontend.book.index.fecha',
                             	[
-                                'numeric_year' => $book->$book_date->format('Y'),
+                                'numeric_year' => $book->book_date->format('Y'),
                             	])
                             </p>
+                            <p><strong>@lang('exhibitions.frontend.book.index.pages'):</strong> {{ $book->pages }} págs.</p>
                           <p class="normal">{{ $book->sinopsis }}</p>
                         </li>
                     </div>

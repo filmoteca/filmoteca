@@ -23,6 +23,8 @@
 
 	{{ Form::formGroup('textarea','sinopsis','Sinopsis', 'consulta_libro_form', ['required' => true]) }}
 
+	{{ Form::input('number','pages','Páginas', 'consulta_libro_form') }}
+
 	{{ Form::formGroup('file','image', 'Portada', 'consulta_libro_form')}}
 
 	<p>Portada actual (miníatura) <img src="{{ $resource->image->url('thumbnail') }}" class="image thumbnail"></p>

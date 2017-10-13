@@ -4,7 +4,7 @@ Form::macro('formGroup',
 	function($type, $name, $title, $formname,array $attr = array())
 {
 	$CUSTOM_INPUTS = ['year', 'country', 'multiCountry', 'multiYear','genre',
-	'textarea', 'auditorium', 'theMedia', 'professor', 'subject', 'venue',
+	'textarea','number', 'auditorium', 'theMedia', 'professor', 'subject', 'venue',
 	'date'];
 
 	$attr['placeholder'] = $title;
@@ -168,6 +168,17 @@ Form::macro('textareaFormGroup', function($name, $title, $formname, $attr)
 	}
 	
 	return Form::wrapperInput($name, $title, Form::textarea($name, null, $attr));
+});
+
+Form::macro('numberInput', function($name, $title, $input)
+{
+	return "\n" .
+	'<div class="form-group">' . "\n" .
+	'	<label for="' . $name . '" class="col-sm-2 control-label text-right">' . $title . '</label>' . "\n" .
+	'	<div class="col-sm-10">' . "\n" .
+	'	' . $input . "\n" .
+	'	</div>' . "\n" .
+	'</div>'  . "\n";
 });
 
 Form::macro('wrapperInput', function($name, $title, $input)

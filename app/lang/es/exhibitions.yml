@@ -92,7 +92,8 @@ frontend:
     book:
         index:
             edition: 'Año de edición'
-            fecha: ':numeric_year'
+            fecha: ' :numeric_year'
+            pages: ' Número de páginas'
             title: 'Titulo'
             indice: 'Indice'
 general:

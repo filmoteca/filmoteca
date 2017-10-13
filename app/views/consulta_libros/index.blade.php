@@ -12,6 +12,7 @@
 			<th>Fecha del libro</th>
 			<th>Indice</th>
 			<th>Sinopsis</th>
+			<th>Número de páginas</th>
 			<th>Portada</th>
 			<th>Acciones</th>
 		</tr>
@@ -25,7 +26,7 @@
 				<td>{{ $consulta_libro->book_date }}</td>
 				<td>{{ str_limit($consulta_libro->indice, 100, '...')}}</td>
 				<td>{{ str_limit($consulta_libro->sinopsis, 100, '...')}}</td>
-
+				<td>{{ $consulta_libro->pages }}</td>
 				<td><img src="{{ $consulta_libro->image->url('thumbnail') }}" alt="{{ $consulta_libro->title }}" class="image thumbnail"></td>
 				<td>
 					{{ HTML::linkRoute('admin.consultaLibro.show', 'Ver',

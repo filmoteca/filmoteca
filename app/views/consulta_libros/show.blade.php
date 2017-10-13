@@ -41,6 +41,10 @@
 			<th>Sinopsis</th>
 			<td>{{$resource->sinopsis }}</td>
 		</tr>
+		<tr>
+			<th>Número de páginas</th>
+			<td>{{$resource->pages }}</td>
+		</tr>
 	</tbody>
 </table>
 

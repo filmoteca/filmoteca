@@ -18,6 +18,7 @@ class ConsultaLibrosTableSeeder extends Seeder
                 'indice' => $faker->text(600),
                 'sinopsis' => $faker->text(600),
                 'book_date' => $faker->dateTimeBetween('-30 years'),
+                'pages' => $faker->randomNumber(10),
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
             ];
