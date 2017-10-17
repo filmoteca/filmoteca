@@ -12,3 +12,4 @@ frontend:
         seek_book_by_title: Mostrar libros en orden alfabético
         title: Consulta Libros
         description: Estos libros están a tu disposición para su consulta en el Centro de Documentación de la Filmoteca de la UNAM.
+        noresults: Lo sentimos, no existen libros con la letra seleccionada.

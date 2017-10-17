@@ -17,13 +17,13 @@
 
 	{{ Form::formGroup('text','title','Título', 'consulta_libro_form', ['required' => true]) }}
 
-	{{ Form::formGroup('date','book_date','Fecha del libro', 'consulta_libro_form') }}
+	{{ Form::formGroup('date','book_date','Año', 'consulta_libro_form') }}
 
 	{{ Form::formGroup('textarea','indice','Indice', 'consulta_libro_form', ['required' => true]) }}
 
 	{{ Form::formGroup('textarea','sinopsis','Sinopsis', 'consulta_libro_form', ['required' => true]) }}
 
-	{{ Form::input('number','pages','Páginas', 'consulta_libro_form') }}
+	{{ Form::formGroup('date','pages','Páginas', 'consulta_libro_form') }}
 
 	{{ Form::formGroup('file','image', 'Portada', 'consulta_libro_form')}}
 

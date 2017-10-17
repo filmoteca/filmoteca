@@ -1,10 +1,10 @@
 <?php
 
-Form::macro('formGroup', 
+Form::macro('formGroup',
 	function($type, $name, $title, $formname,array $attr = array())
 {
 	$CUSTOM_INPUTS = ['year', 'country', 'multiCountry', 'multiYear','genre',
-	'textarea','number', 'auditorium', 'theMedia', 'professor', 'subject', 'venue',
+	'textarea', 'auditorium', 'theMedia', 'professor', 'subject', 'venue',
 	'date'];
 
 	$attr['placeholder'] = $title;
@@ -13,7 +13,7 @@ Form::macro('formGroup',
 
 	if(array_search($type, $CUSTOM_INPUTS)){
 		$type .= 'FormGroup';
-		return Form::{$type}($name, $title, $formname, $attr);		
+		return Form::{$type}($name, $title, $formname, $attr);
 	}
 
 	return "\n" .
@@ -143,7 +143,7 @@ Form::macro('selectFormGroup', function($name, $options, $title, $formname, $att
 		'	ng-class="{\'has-error\' : film_form.' . $name . '.$invalid }">' . "\n" .
 		'	<label for="' . $name . '" class="col-sm-2 control-label text-right">' . $title . '</label>' . "\n" .
 		'	<div class="col-sm-10">' . "\n" .
-		
+
 		Form::select($name, $options, null, $attr) .
 
 		'	</div>' ."\n".
@@ -157,7 +157,7 @@ Form::macro('selectFormGroup', function($name, $options, $title, $formname, $att
  */
 Form::macro('textareaFormGroup', function($name, $title, $formname, $attr)
 {
-	$attr['class'] = isset($attr['class']) ? $attr['class']  : ''; 
+	$attr['class'] = isset($attr['class']) ? $attr['class']  : '';
 
 	/**
 	 * If it does not has a ckeditor class then we add a full editor.
@@ -166,19 +166,8 @@ Form::macro('textareaFormGroup', function($name, $title, $formname, $attr)
 
 		$attr['class'] .= ' ckeditor-full';
 	}
-	
-	return Form::wrapperInput($name, $title, Form::textarea($name, null, $attr));
-});
 
-Form::macro('numberInput', function($name, $title, $input)
-{
-	return "\n" .
-	'<div class="form-group">' . "\n" .
-	'	<label for="' . $name . '" class="col-sm-2 control-label text-right">' . $title . '</label>' . "\n" .
-	'	<div class="col-sm-10">' . "\n" .
-	'	' . $input . "\n" .
-	'	</div>' . "\n" .
-	'</div>'  . "\n";
+	return Form::wrapperInput($name, $title, Form::textarea($name, null, $attr));
 });
 
 Form::macro('wrapperInput', function($name, $title, $input)
@@ -191,4 +180,3 @@ Form::macro('wrapperInput', function($name, $title, $input)
 	'	</div>' . "\n" .
 	'</div>'  . "\n";
 });
-

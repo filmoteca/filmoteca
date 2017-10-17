@@ -30,8 +30,8 @@
 			<td>{{$resource->title }}</td>
 		</tr>
 		<tr>
-			<th>Fecha del libro</th>
-			<td>{{$resource->book_date }}</td>
+			<th>Año</th>
+			<td>{{$resource->book_date->format('Y') }}</td>
 		</tr>
 		<tr>
 			<th>Indice</th>
@@ -42,7 +42,7 @@
 			<td>{{$resource->sinopsis }}</td>
 		</tr>
 		<tr>
-			<th>Número de páginas</th>
+			<th>Páginas</th>
 			<td>{{$resource->pages }}</td>
 		</tr>
 	</tbody>

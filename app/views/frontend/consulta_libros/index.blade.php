@@ -53,6 +53,9 @@
 <div class="wrapper-items" id="wrapper-items">
 	<div id="results" class="results">
 		<span>@lang('filmoteca.general.results'): </span><span class="number"></span>
+		<br>
+		<br>
+		<span class="noresults">@lang('filmoteca.frontend.consulta_libros.noresults')</span>
 	</div>
 	<ul class="items" id="books">
 		@foreach( $books as $index => $book )
