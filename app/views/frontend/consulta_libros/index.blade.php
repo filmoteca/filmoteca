@@ -53,12 +53,15 @@
 <div class="wrapper-items" id="wrapper-items">
 	<div id="results" class="results">
 		<span>@lang('filmoteca.general.results'): </span><span class="number"></span>
-		<br>
-		<br>
-		<span class="noresults">@lang('filmoteca.frontend.consulta_libros.noresults')</span>
+		<div class="alert noresults">
+           @lang('filmoteca.frontend.consulta_libros.noresults')
+        </div>
 	</div>
 	<ul class="items" id="books">
 		@foreach( $books as $index => $book )
+
+		{{-- comment: mb_substr obtiene parte de una cadena de caracteres (en este caso la primer letra)--}}
+
 		<li class="thumbnail item boxwinner" data-title-first="{{ mb_substr($book->title, 0,1) }}">
 			<img src="{{ $book->image->url('thumbnail') }}" alt="{{ $book->title }}">
 			{{

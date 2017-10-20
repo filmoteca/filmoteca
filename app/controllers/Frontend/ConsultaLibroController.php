@@ -44,15 +44,15 @@ class ConsultaLibroController extends Controller
         $books = $this->repository->all();
         $minValue = Config::get('parameters.consulta-libros.minValue');
         $maxValue = count($alphabet)-1;
-        $startMinValue = $alphabet[0];
+        $startValue = $alphabet[0];
         $sliderConfig = [
             'consultaLibro' =>
             [
                 'slider' => [
                     'minValue' => $minValue,
                     'maxValue' => $maxValue,
-                    'step' => 1,
-                    'value' => $startMinValue                ]
+                    'value' => $startValue               
+                ]
             ]
         ];
 

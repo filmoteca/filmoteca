@@ -70,23 +70,13 @@
                             		$pages = $book->pages;
                             		$pagesaño = "$pages" . "$año";
 
-                            		{if (empty($año)){echo $pages;}
-                            			else
-                            			{echo $pages;}}
-                            		{if (empty($pages)){echo $año;}
-                            			elseif (empty($año)){echo $año;}
-                            			else{echo $año;}}
-                            		{if (empty($pagesaño)){echo $titulo ;}
-                            			else{echo $titulo;}}
+                            		{if (empty($pagesaño)){echo " <p><strong>". Lang::get('exhibitions.frontend.book.index.title') . ': '. "</strong>". $titulo."</p>";}
+                                  else{echo " <p><strong>". Lang::get('exhibitions.frontend.book.index.title') . ': '. "</strong>". $titulo."</p>";}}
+                                {if (empty($año)){echo $año;}
+                                  else{echo " <p><strong>". Lang::get('exhibitions.frontend.book.index.edition') . ': '. "</strong>". $año."</p>";}}
+                            		{if (empty($pages)){echo $pages;}
+                            			else{echo " <p><strong>". Lang::get('exhibitions.frontend.book.index.pages') . ': '. "</strong>". $pages."</p>";}}                           		
                             ?>
-                            <p><strong>@lang('exhibitions.frontend.book.index.title'):</strong> {{ $book->title }}</p>
-                            <p><strong>@lang('exhibitions.frontend.book.index.edition'):</strong> @lang(
-                            'exhibitions.frontend.book.index.fecha',
-                            	[
-                                'numeric_year' => $book->book_date->format('Y'),
-                            	])
-                            </p>
-                            <p><strong>@lang('exhibitions.frontend.book.index.pages'):</strong> {{ $book->pages }} págs.</p>
                           <p class="normal">{{ $book->sinopsis }}</p>
                         </li>
                     </div>

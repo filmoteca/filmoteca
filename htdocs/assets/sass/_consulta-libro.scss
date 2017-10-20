@@ -41,7 +41,10 @@
 	font-weight: normal;
 }
 .noresults{
-	font-size: 22px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#e5e5e5), to(#dbdbdb));
+  background-color: #e5e5e5;
+  border-color: #dbdbdb;
+  margin-top: 20px;
 }
 
 .consulta-libro-list{
@@ -145,4 +148,8 @@
 
 .control-label{
 	margin-bottom: 0px;
+}
+
+.tiny-searchresults{
+	width: 10% !important;
 }
