@@ -3,7 +3,7 @@
 Form::macro('formGroup',
 	function($type, $name, $title, $formname,array $attr = array())
 {
-	$CUSTOM_INPUTS = ['year', 'country', 'multiCountry', 'multiYear','genre',
+	$CUSTOM_INPUTS = ['year', 'country', 'multiCountry', 'multiYear', 'multiBookYear','genre',
 	'textarea', 'auditorium', 'theMedia', 'professor', 'subject', 'venue',
 	'date'];
 
@@ -51,6 +51,17 @@ Form::macro('multiYear', function($name, $title, $selected)
 	$attr = ['class' => 'multiyear', 'multiple' => 'multiple'];
 
 	$input = Form::select($name, array_combine($options, $options), $selected, $attr);
+
+	return Form::wrapperInput($name, $title, $input);
+});
+
+Form::macro('multiBookYear', function($name, $title, $options)
+{
+	$minYear = Config::get('parameters.admin.consulta-libro.book.min_year');
+
+	$options = range($minYear, intval(date('Y')));
+
+	$input = Form::select($name, $options);
 
 	return Form::wrapperInput($name, $title, $input);
 });
