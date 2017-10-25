@@ -10,9 +10,9 @@
 			<th>ID</th>
 			<th>Título</th>
 			<th>Año</th>
-			<th>Indice</th>
-			<th>Sinopsis</th>
 			<th>Páginas</th>
+			<th>Sinopsis</th>
+			<th>Indice</th>
 			<th>Portada</th>
 			<th>Acciones</th>
 		</tr>
@@ -23,10 +23,11 @@
 			<tr>
 				<td>{{ $consulta_libro->id }}</td>
 				<td>{{ $consulta_libro->title }}</td>
-				<td>{{ $consulta_libro->book_date->format('Y') }}</td>
-				<td>{{ str_limit($consulta_libro->indice, 100, '...')}}</td>
-				<td>{{ str_limit($consulta_libro->sinopsis, 100, '...')}}</td>
 				<td>{{ $consulta_libro->pages }}</td>
+				<td>{{ $consulta_libro->year}}</td>
+				<td>{{ str_limit($consulta_libro->sinopsis, 100, '...')}}</td>
+				<td>{{ str_limit($consulta_libro->indice, 100, '...')}}</td>
+
 				<td><img src="{{ $consulta_libro->image->url('thumbnail') }}" alt="{{ $consulta_libro->title }}" class="image thumbnail"></td>
 				<td>
 					{{ HTML::linkRoute('admin.consultaLibro.show', 'Ver',

@@ -83,7 +83,7 @@ class ConsultaLibroController extends Controller
                 'title' => $item->title,
                 'indice' => $item->indice,
                 'sinopsis' => $item->sinopsis,
-                'book_date' => $item->book_date->format('d m Y'),
+                'year' => $item->year,
                 'pages' => $item->pages,
                 'url_image' => $item->image->url('thumbnail')
             ];

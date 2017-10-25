@@ -66,7 +66,7 @@
                         <li class="list-group-item margin synopsis-margin scroll-over">
                         		<?php
                                 $titulo = $book->title;
-                            		$año = $book->book_date->format('Y');
+                            		$año = $book->year;
                             		$pages = $book->pages;
                             		$pagesaño = "$pages" . "$año";
 

@@ -17,15 +17,15 @@
 
 	{{ Form::formGroup('text','title','Título', 'consulta_libro_form', ['required' => true]) }}
 
-	{{ Form::formGroup('date','book_date','Año', 'consulta_libro_form') }}
+	{{ Form::formGroup('year','year','Año', 'consulta_libro_form') }}
 
-	{{ Form::formGroup('textarea','indice','Indice', 'consulta_libro_form', ['required' => true]) }}
+	{{ Form::formGroup('text','pages','Páginas', 'consulta_libro_form') }}
 
 	{{ Form::formGroup('textarea','sinopsis','Sinopsis', 'consulta_libro_form', ['required' => true]) }}
+	
+	{{ Form::formGroup('textarea','indice','Indice', 'consulta_libro_form', ['required' => true]) }}
 
-	{{ Form::formGroup('date','pages','Páginas', 'consulta_libro_form') }}
-
-	{{ Form::formGroup('file','image', 'Portada', 'consulta_libro_form')}}
+	{{ Form::formGroup('file','image', 'Portada', 'consulta_libro_form') }}
 
 	<p>Portada actual (miníatura) <img src="{{ $resource->image->url('thumbnail') }}" class="image thumbnail"></p>
 

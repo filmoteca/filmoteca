@@ -12,6 +12,11 @@ return [
             'film' => [
                 'min_year' => 1890
             ]
+        ],
+        'consulta-libro' => [
+            'book' => [
+                'min_year' => 1900
+            ]
         ]
     ],
     'gtm'=> [

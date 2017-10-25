@@ -53,7 +53,7 @@
 <div class="wrapper-items" id="wrapper-items">
 	<div id="results" class="results">
 		<span>@lang('filmoteca.general.results'): </span><span class="number"></span>
-		<div class="alert noresults">
+		<div class="alert noresults" style="display: none;">
            @lang('filmoteca.frontend.consulta_libros.noresults')
         </div>
 	</div>
@@ -62,7 +62,7 @@
 
 		{{-- comment: mb_substr obtiene parte de una cadena de caracteres (en este caso la primer letra)--}}
 
-		<li class="thumbnail item boxwinner" data-title-first="{{ mb_substr($book->title, 0,1) }}">
+		<li class="thumbnail item boxwinner" data-title-first="{{ mb_substr($book->title, 0,1) }}" data-title-second="{{ mb_substr($book->title, 1,1) }}">
 			<img src="{{ $book->image->url('thumbnail') }}" alt="{{ $book->title }}">
 			{{
 				HTML::link(

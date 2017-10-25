@@ -31,19 +31,19 @@
 		</tr>
 		<tr>
 			<th>Año</th>
-			<td>{{$resource->book_date->format('Y') }}</td>
+			<td>{{$resource->year }}</td>
 		</tr>
 		<tr>
-			<th>Indice</th>
-			<td>{{$resource->indice }}</td>
+			<th>Páginas</th>
+			<td>{{$resource->pages }}</td>
 		</tr>
 		<tr>
 			<th>Sinopsis</th>
 			<td>{{$resource->sinopsis }}</td>
 		</tr>
 		<tr>
-			<th>Páginas</th>
-			<td>{{$resource->pages }}</td>
+			<th>Indice</th>
+			<td>{{$resource->indice }}</td>
 		</tr>
 	</tbody>
 </table>
