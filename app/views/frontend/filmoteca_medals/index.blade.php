@@ -50,7 +50,7 @@
 	</div>
 	<ul class="items" id="winners">
 		@foreach( $winners as $index => $winner )
-		<li class="thumbnail item boxwinner" data-award-year="{{ $winner->award_date->year }}">
+		<li class="thumbnail item boxwinner hover" data-award-year="{{ $winner->award_date->year }}">
 			<img src="{{ $winner->image->url('thumbnail') }}" alt="{{ $winner->name }}">
 			{{
 				HTML::link(

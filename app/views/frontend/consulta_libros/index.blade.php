@@ -53,7 +53,7 @@
 <div class="wrapper-items" id="wrapper-items">
 	<div id="results" class="results">
 		<span>@lang('filmoteca.general.results'): </span><span class="number"></span>
-		<div class="alert noresults" style="display: none;">
+		<div class="alert noresults">
            @lang('filmoteca.frontend.consulta_libros.noresults')
         </div>
 	</div>

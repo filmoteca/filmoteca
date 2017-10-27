@@ -8,7 +8,7 @@
           <img src="{{ $book->image->url('thumbnail') }}" class="img-responsive thumbnail">
       </div>
       <div class="col-xs-12 col-sm-6 col-md-7 col-lg-9">
-        <a class="hidden-title sin-hover"> <!-- -->
+        <a class="libro-title"> <!-- -->
             <h2 class="text-center">
                 {{ $book->title }}
             </h2>
@@ -46,7 +46,7 @@
                                   <div class="link">
                                         <img src="/imgs/programacion/iconos/technical-card.png"
                                          title="@lang('exhibitions.frontend.book.index.indice')"
-                                         alt="exhibitions.frontend.book.index.indice')">
+                                         alt="@lang('exhibitions.frontend.book.index.indice')">
                                     </div>
                                 </div>
                                 <div class="col-md-7">

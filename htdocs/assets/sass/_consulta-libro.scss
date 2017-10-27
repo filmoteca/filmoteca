@@ -10,6 +10,11 @@
 	display: none;
 }
 
+.thumbnail.item:hover .img {
+  opacity: 0.6;
+}
+
+
 .row.consultaLibro {
   margin-left: 0 !important;
   margin-right: 0 !important;
@@ -21,15 +26,24 @@
 	margin-top: 40px;
 }
 
-.row.consultaLibro .col-xs-12.col-sm-6.col-md-7.col-lg-9 .content.size-tab-show {
+.row.consultaLibro .col-xs-12.col-sm-6.col-md-7.col-lg-9{
+	
+} 
+
+.content.size-tab-show {
   width: 470px;
   margin-bottom: 20px;
   margin-top: 25px;
 }
 
-.modal-header .consultaLibro-header{
-  padding: 25px;
+.modal-header.consultaLibro-header{
+  padding: 25px !important;
   background-color: #eee;
+  border-radius: 6px 6px 0px 0px;
+}
+
+.libro-title{
+	
 }
 
 .nav-tabs > li {
