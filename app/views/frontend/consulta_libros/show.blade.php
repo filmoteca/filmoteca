@@ -64,7 +64,7 @@
                     <!-- Contenedor de la pestaña Sinopsis -->
                     <div id="{{ 'tab-synopsis-' . $book->id }}" class="tab-pane active" role="tabpanel">
                         <li class="list-group-item margin synopsis-margin scroll-over">
-                        		<?php
+                        		<p><?php
                                 $titulo = $book->title;
                             		$año = $book->year;
                             		$pages = $book->pages;
@@ -76,7 +76,8 @@
                                   else{echo " <p><strong>". Lang::get('exhibitions.frontend.book.index.edition') . ': '. "</strong>". $año."</p>";}}
                             		{if (empty($pages)){echo $pages;}
                             			else{echo " <p><strong>". Lang::get('exhibitions.frontend.book.index.pages') . ': '. "</strong>". $pages."</p>";}}                           		
-                            ?>
+                                ?>
+                            </p>
                           <p class="normal">{{ $book->sinopsis }}</p>
                         </li>
                     </div>
