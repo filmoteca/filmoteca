@@ -7,8 +7,8 @@
       <div class="col-xs-4 col-sm-6 col-md-5 col-lg-3">
           <img src="{{ $book->image->url('thumbnail') }}" class="img-responsive thumbnail">
       </div>
-      <div class="col-xs-12 col-sm-6 col-md-7 col-lg-9">
-        <a class="libro-title"> <!-- -->
+      <div class="col-xs-12 col-sm-6 col-md-7 col-lg-8">
+        <a class="libro-title">
             <h2 class="text-center">
                 {{ $book->title }}
             </h2>
@@ -17,7 +17,7 @@
         <div class="content size-tab-show">
             <!-- Nav tabs -->
             <div role="tabpanel">
-                <ul class="nav nav-tabs" role="tablist">
+                <ul class="nav nav-tabs consulta-libro" role="tablist">
 
                    <!-- Pestaña Sinopsis -->
                     <li class="active border" role="presentation">
@@ -63,7 +63,7 @@
                 <div class="tab-content">
                     <!-- Contenedor de la pestaña Sinopsis -->
                     <div id="{{ 'tab-synopsis-' . $book->id }}" class="tab-pane active" role="tabpanel">
-                        <li class="list-group-item margin synopsis-margin scroll-over">
+                        <li class="list-group-item margin consulta-libro synopsis-margin scroll-over">
                         		<p><?php
                                 $titulo = $book->title;
                             		$año = $book->year;
@@ -75,7 +75,7 @@
                                 {if (empty($año)){echo $año;}
                                   else{echo " <p><strong>". Lang::get('exhibitions.frontend.book.index.edition') . ': '. "</strong>". $año."</p>";}}
                             		{if (empty($pages)){echo $pages;}
-                            			else{echo " <p><strong>". Lang::get('exhibitions.frontend.book.index.pages') . ': '. "</strong>". $pages."</p>";}}                           		
+                            			else{echo " <p><strong>". Lang::get('exhibitions.frontend.book.index.pages') . ': '. "</strong>". $pages."</p>";}}
                                 ?>
                             </p>
                           <p class="normal">{{ $book->sinopsis }}</p>
@@ -84,7 +84,7 @@
 
                     <!-- Contenedor de la pestaña Indice -->
                     <div id="{{ 'tab-indice-' . $book->id }}" class="tab-pane" role="tabpanel" >
-                        <li class="list-group-item margin scroll-over">
+                        <li class="list-group-item margin consulta-libro scroll-over">
                             <p class="normal">
                                 {{ $book->indice }}
                             </p>
