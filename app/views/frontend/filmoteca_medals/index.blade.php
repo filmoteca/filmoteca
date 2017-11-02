@@ -51,7 +51,7 @@
 	<ul class="items" id="winners">
 		@foreach( $winners as $index => $winner )
 		<li class="thumbnail item boxwinner hover" data-award-year="{{ $winner->award_date->year }}">
-			<img src="{{ $winner->image->url('thumbnail') }}" alt="{{ $winner->name }}">
+			<a href="{{'filmoteca-medal/' . $winner->id . '/detail'}}" title="@lang('filmoteca.general.see_details')" data-id="{{ $winner->id }}">{{ HTML::image($winner->image->url('thumbnail'), $winner->name ) }}</a>
 			{{
 				HTML::link(
 				'filmoteca-medal/' . $winner->id . '/detail',

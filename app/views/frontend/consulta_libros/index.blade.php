@@ -63,16 +63,7 @@
 		{{-- comment: mb_substr obtiene parte de una cadena de caracteres (en este caso la primer letra)--}}
 
 		<li class="thumbnail item boxwinner" data-title-first="{{ mb_substr($book->title, 0,1) }}" data-title-second="{{ mb_substr($book->title, 1,1) }}">
-			{{
-				HTML::link(
-				'consulta-libro/' . $book->id . '/detail',
-				{{ HTML::image($book->image->url('thumbnail'), $book->title) }},
-				[
-					'title' => trans('filmoteca.general.see_details'),
-					'data-id' => $book->id
-				]
-				)
-			}}
+			<a href="{{'consulta-libro/' . $book->id . '/detail'}}" title="@lang('filmoteca.general.see_details')" data-id="{{ $book->id }}">{{ HTML::image($book->image->url('thumbnail'), $book->title ) }}</a>
 			{{
 				HTML::link(
 				'consulta-libro/' . $book->id . '/detail',
