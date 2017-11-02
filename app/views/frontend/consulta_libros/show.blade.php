@@ -93,7 +93,6 @@
                 </div><!-- End Tab panes -->
 
             </div><!--End Nav tabs -->
-          </div>
         </div>
       </div>
   </div>
