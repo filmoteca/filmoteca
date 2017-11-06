@@ -19,13 +19,14 @@
   margin-right: 0 !important;
 }
 
-.row.consulta-libro .col-xs-12.col-sm-5.col-md-5.col-lg-3 {
+.row.consulta-libro > .col-xs-12.col-sm-5.col-md-5.col-lg-3 {
 	top: 100px;
-	img{
-		margin: 10px 10px 100px 10px !important;
-		max-width: 80% !important;
-		min-width: 200px !important;
-	}
+}
+
+.row.consulta-libro  > .col-xs-12.col-sm-5.col-md-5.col-lg-3 > img{
+	margin: 0px 10px 100px 10px !important;
+	max-width: 90% !important;
+	min-width: 200px !important;
 }
 
 .content.size-tab-show {
@@ -60,7 +61,7 @@
 }
 
 .nav-tabs.consulta-libro > li > a {
-  margin-right: 0px !important;
+    margin-right: 0px !important;
 }
 
 .nav-tabs.consulta-libro > li > a > row.tab-icon > .col-md-5 > .link > img {
@@ -85,6 +86,7 @@ li.margin-consulta-libro {
 .normal{
 	font-weight: normal;
 }
+
 .noresults{
   background-image: -webkit-gradient(linear, left top, left bottom, from(#e5e5e5), to(#dbdbdb));
   background-color: #e5e5e5;
