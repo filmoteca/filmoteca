@@ -2,7 +2,7 @@
 
 //Prueba de imagen de película y me gusta con un maximo de 480px de ancho
 
-@media (min-width: 320px) and (max-width: 374px) {   
+@media (min-width: 320px) and (max-width: 374px) {
 
 	.main-header{
 		 .upper-navbar{
@@ -12,20 +12,20 @@
     		}
     	}
 	}
-	
+
 	.row.film {
 	    margin-left: 0 !important;
 	    margin-right: 0 !important;
 
 	    //Imagen de película y me gusta
-	   
-	   .col-xs-4.col-sm-6.col-md-5.col-lg-3 { 
+
+	   .col-xs-4.col-sm-6.col-md-5.col-lg-3 {
 			margin-left: 19px;
 
 			img {
 			    margin: 20px 65px 10px !important;
 			    padding-top: 20 !important;
-			    width: 120px !important;		    
+			    width: 120px !important;
 			}
 
 			.fb-like.fb_iframe_widget {
@@ -35,9 +35,9 @@
 
 		//Panel pestañas
 
-		.col-xs-12.col-sm-6.col-md-7.col-lg-9 { 
-		    padding-left: 7px; 
-		    padding-right: 0; 
+		.col-xs-12.col-sm-6.col-md-7.col-lg-9 {
+		    padding-left: 7px;
+		    padding-right: 0;
 		    width: 286px;
 
 		    h2.text-center{
@@ -53,12 +53,12 @@
 	.content.size-tab-show {
 	    width: 100% !important;
 	}
-	
+
 	.nav.nav-tabs.film-tabs {
 	    width: 55% !important;
 		background-color: #eee !important;
 		height: 36px;
-	} 
+	}
 
 	.tab-content{
 		padding-right: 8px;
@@ -87,29 +87,29 @@
 			}
 		}
 
-	    .col-md-7{ 
+	    .col-md-7{
 	        display: none;
 	        visibility: hidden;
 	    }
 	}
 
-	.panel.panel-default.no-line{ 
+	.panel.panel-default.no-line{
     	border-style: hidden !important;
 
 	    table{
 	        .bold{
- 				font-size: 11px;	            
+ 				font-size: 11px;
 	        }
 	    }
 	}
 
-	.more-schedules{ 
+	.more-schedules{
 	    .extra-schedules table{
 	        .table-responsive {
 	            border: 0 none !important;
 	        }
 	    }
-	}   
+	}
 
 	.table-responsive {
 	    border: 0 none !important;
@@ -126,7 +126,7 @@
 
 	li.margin.schedules-margin {
 	    padding: 10px 5px !important;
-	}	
+	}
 
 	li.trailer-size-content{
 	  width: 249px !important;
@@ -149,7 +149,7 @@
 	//Ciclos y funciones especiales
 
 	.icon{
-	    .col-xs-10.col-sm-11 { 
+	    .col-xs-10.col-sm-11 {
 	        h3 {
 	            padding-top: 5px !important;
 	        }
@@ -167,7 +167,7 @@
 
 //Prueba de imagen de película y me gusta con un maximo de 640px de ancho
 
-@media (min-width: 375px) and (max-width: 640px) {   
+@media (min-width: 375px) and (max-width: 640px) {
 
 	.main-header{
 		 .upper-navbar{
@@ -183,8 +183,8 @@
 	    margin-right: 0 !important;
 
 	    //Imagen de película y me gusta
-	   
-	   .col-xs-4.col-sm-6.col-md-5.col-lg-3 { 
+
+	   .col-xs-4.col-sm-6.col-md-5.col-lg-3 {
 			margin-left: 40px;
 
 			img {
@@ -199,10 +199,10 @@
 
 		//Panel pestañas
 
-		.col-xs-12.col-sm-6.col-md-7.col-lg-9 { 
+		.col-xs-12.col-sm-6.col-md-7.col-lg-9 {
 		    width: 279px !important;
-		    padding-left: 0; 
-		    padding-right: 0; 
+		    padding-left: 0;
+		    padding-right: 0;
 
 		    a h2{
 		        padding-left: 50px;
@@ -217,13 +217,13 @@
 	.content.size-tab-show {
 	    width: 100% !important;
 	}
-	
+
 	.nav.nav-tabs.film-tabs {
 		max-width: 114% !important;
 		width: 114% !important;
 		margin-left: 5px !important;
 		height: 36px;
-		
+
 
 		li > a:hover, li > a:focus {
 	        margin: 0 !important;
@@ -237,7 +237,7 @@
 	        margin: 0 !important;
 	        height: 37px !important;
 	    }
-	} 
+	}
 
 	.tab-content{
 		padding-left: 5px;
@@ -269,29 +269,29 @@
 			}
 		}
 
-	    .col-md-7{ 
+	    .col-md-7{
 	        display: none;
 	        visibility: hidden;
 	    }
 	}
 
-	.panel.panel-default.no-line{ 
+	.panel.panel-default.no-line{
     	border-style: hidden !important;
 
 	    table{
 	        .bold{
- 				font-size: 11px;	            
+ 				font-size: 11px;
 	        }
 	    }
 	}
 
-	.more-schedules{ 
+	.more-schedules{
 	    .extra-schedules table{
 	        .table-responsive {
 	            border: 0 none !important;
 	        }
 	    }
-	}   
+	}
 
 	li.margin {
 		width: 318px;
@@ -304,7 +304,7 @@
 
 	li.margin.schedules-margin {
 	    padding: 10px 5px !important;
-	}	
+	}
 
 	//facebook sidebar
 
@@ -323,7 +323,7 @@
 	//Ciclos y funciones especiales
 
 	.icon{
-	    .col-xs-10.col-sm-11 { 
+	    .col-xs-10.col-sm-11 {
 	        h3 {
 	            padding-top: 13px !important;
 	        }
@@ -340,7 +340,7 @@
 
 //Prueba de imagen de película y me gusta con un maximo de 768 de ancho
 
-@media (min-width: 641px) and (max-width: 768px) {   
+@media (min-width: 641px) and (max-width: 768px) {
 
 	.main-header{
 		 .upper-navbar{
@@ -356,8 +356,8 @@
 	    margin-right: 0 !important;
 
 	    //Imagen de película y me gusta
-	   
-	   .col-xs-4.col-sm-6.col-md-5.col-lg-3 { 
+
+	   .col-xs-4.col-sm-6.col-md-5.col-lg-3 {
 			margin-left: 40px;
 			width: 233px !important;
 
@@ -373,11 +373,11 @@
 
 		//Panel pestañas
 
-		.col-xs-12.col-sm-6.col-md-7.col-lg-9 { 
-		    width: 427px !important; 
+		.col-xs-12.col-sm-6.col-md-7.col-lg-9 {
+		    width: 427px !important;
 		    padding-left: 0px !important;
-		    padding-left: 0; 
-		    padding-right: 0; 
+		    padding-left: 0;
+		    padding-right: 0;
 
 		    a h2{
 		        padding-left: 50px;
@@ -392,13 +392,13 @@
 	.content.size-tab-show {
 	    width: 100% !important;
 	}
-	
+
 	.nav.nav-tabs.film-tabs {
 		max-width: 114% !important;
 		width: 100% !important;
 		margin-left: 5px !important;
 		height: 36px;
-		
+
 
 		li > a:hover, li > a:focus {
 	        margin: 0 !important;
@@ -413,7 +413,7 @@
 	        margin: 0 !important;
 	        height: 37px !important;
 	    }
-	} 
+	}
 
 	.tab-content{
 		padding-left: 5px;
@@ -445,29 +445,29 @@
 			}
 		}
 
-	    .col-md-7{ 
+	    .col-md-7{
 	        display: none;
 	        visibility: hidden;
 	    }
 	}
 
-	.panel.panel-default.no-line{ 
+	.panel.panel-default.no-line{
     	border-style: hidden !important;
 
 	    table{
 	        .bold{
- 				font-size: 11px;	            
+ 				font-size: 11px;
 	        }
 	    }
 	}
 
-	.more-schedules{ 
+	.more-schedules{
 	    .extra-schedules table{
 	        .table-responsive {
 	            border: 0 none !important;
 	        }
 	    }
-	}   
+	}
 
 	li.margin {
 		width: 470px;
@@ -482,7 +482,7 @@
 	li.margin.schedules-margin {
 	    padding: 10px 5px !important;
 	    width: 470px;
-	}	
+	}
 
 	//facebook sidebar
 
@@ -501,7 +501,7 @@
 	//Ciclos y funciones especiales
 
 	.icon{
-	    .col-xs-10.col-sm-11 { 
+	    .col-xs-10.col-sm-11 {
 	        h3 {
 	            padding-top: 13px !important;
 	        }
@@ -516,7 +516,7 @@
 
 //Prueba de imagen de película y me gusta con un maximo de 989px de ancho
 
-@media (min-width: 769px) and (max-width: 989px) {  
+@media (min-width: 769px) and (max-width: 989px) {
 
 	.main-header{
 		 .upper-navbar{
@@ -532,8 +532,8 @@
 	    margin-right: 0 !important;
 
 	    //Imagen de película y me gusta
-	   
-	   .col-xs-4.col-sm-6.col-md-5.col-lg-3 { 
+
+	   .col-xs-4.col-sm-6.col-md-5.col-lg-3 {
 			margin-left: 0;
 			width: 174px;
 
@@ -549,9 +549,9 @@
 
 		//Panel pestañas
 
-		.col-xs-12.col-sm-6.col-md-7.col-lg-9 { 
+		.col-xs-12.col-sm-6.col-md-7.col-lg-9 {
 		    width: 309px !important;
-		    padding-left: 0; 
+		    padding-left: 0;
 		    padding-right: 0;
 
 		    a h2{
@@ -567,13 +567,13 @@
 	.content.size-tab-show {
 	    width: 100% !important;
 	}
-	
+
 	.nav.nav-tabs.film-tabs {
 		max-width: 114% !important;
 		width: 114% !important;
 		margin-left: 5px !important;
 		height: 36px;
-		
+
 
 		li > a:hover, li > a:focus {
 	        margin: 0 !important;
@@ -587,7 +587,7 @@
 	    .border {
 	    	height: 36px;
 	    }
-	} 
+	}
 
 	.tab-content{
 		padding-left: 5px;
@@ -615,29 +615,29 @@
 			}
 		}
 
-	    .col-md-7{ 
+	    .col-md-7{
 	        display: none;
 	        visibility: hidden;
 	    }
 	}
 
-	.panel.panel-default.no-line{ 
+	.panel.panel-default.no-line{
     	border-style: hidden !important;
 
 	    table{
 	        .bold{
- 				font-size: 11px;	            
+ 				font-size: 11px;
 	        }
 	    }
 	}
 
-	.more-schedules{ 
+	.more-schedules{
 	    .extra-schedules table{
 	        .table-responsive {
 	            border: 0 none !important;
 	        }
 	    }
-	}   
+	}
 
 	li.margin {
 		width: 352px;
@@ -651,7 +651,7 @@
 
 	li.margin.schedules-margin {
 	    padding: 10px 5px !important;
-	}	
+	}
 
 	//facebook sidebar
 
@@ -668,7 +668,7 @@
 	//Ciclos y funciones especiales
 
 	.icon{
-	    .col-xs-10.col-sm-11 { 
+	    .col-xs-10.col-sm-11 {
 	        h3 {
 	            padding-top: 13px !important;
 	        }
@@ -683,18 +683,18 @@
 
 //Prueba de imagen de película y me gusta con un maximo de 2000px de ancho
 
-@media (min-width: 990px) and (max-width: 2000px) { 
+@media (min-width: 990px) and (max-width: 2000px) {
 
 	.row.film {
 
 	    //Imagen de película y me gusta
-	    
+
 	    .col-xs-4.col-sm-6.col-md-5.col-lg-3 {
 	        padding-left: 0 !important;
 	        padding-right: 0 !important;
 	        margin-left: 2px;
 			width: 192px !important;
-		} 
+		}
 	}
 }
 
@@ -713,21 +713,21 @@
 
 //Prueba de buscador con un maximo de 671px de ancho
 
-@media (min-width: 618px) and (max-width: 671px) {  
+@media (min-width: 618px) and (max-width: 671px) {
 
 
 	.upper-navbar{
-		
+
 		.text-right.col-xs-6.col-sm-7.col-md-8.col-lg-9{
 		    width: 52% !important;
 		    padding-right: 0px !important;
 		}
 
 		.col-xs-6.col-sm-5.col-md-4.col-lg-3{
-			width: 48% !important; 
-			padding-left: 0px !important;		    
+			width: 48% !important;
+			padding-left: 0px !important;
 		}
-		
+
 	}
 }
 
@@ -736,13 +736,13 @@
 
 //Prueba de buscador con un maximo de 641px de ancho
 
-@media (min-width: 520px) and (max-width: 617px) {  
+@media (min-width: 520px) and (max-width: 617px) {
 
 
 	.upper-navbar{
-			
+
 		.text-right.col-xs-6.col-sm-7.col-md-8.col-lg-9{
-		    width: 62% !important; 
+		    width: 62% !important;
 		    padding-right: 0px !important;
 		}
 
@@ -753,7 +753,7 @@
 		    .form-control{
 		    	width: 55% !important;
 		    }
-		    
+
 		}
 	}
 
@@ -764,19 +764,19 @@
 
 //Prueba de buscador con un maximo de 519px de ancho
 
-@media (min-width: 320px) and (max-width: 519px) {  
+@media (min-width: 320px) and (max-width: 519px) {
 
 
 	.upper-navbar{
 		padding-bottom: 45px !important;
-			
+
 		.text-right.col-xs-6.col-sm-7.col-md-8.col-lg-9{
 		    width: 99% !important;
-		    padding-right: 0px !important; 
+		    padding-right: 0px !important;
 		}
 
 		.col-xs-6.col-sm-5.col-md-4.col-lg-3{
-		    width: auto !important; 
+		    width: auto !important;
 		    margin-top: 26px !important;
     		padding-left: 0 !important;
     		float: right !important;
@@ -784,7 +784,7 @@
 		    .form-control{
 		    	width: 100% !important;
 		    }
-		    
+
 		}
 	}
 
@@ -793,7 +793,7 @@
 
 //Prueba de buscador con un maximo de 1050px de ancho
 
-@media (min-width: 768px) and (max-width: 1050px) {  
+@media (min-width: 768px) and (max-width: 1050px) {
 
 	.form-control.ui-autocomplete-input{
 		width: 122px !important;
