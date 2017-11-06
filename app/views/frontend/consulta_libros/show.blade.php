@@ -4,7 +4,7 @@
 </div>
 <div class="modal-body">
   <div class="row consulta-libro">
-      <div class="col-xs-5 col-sm-5 col-md-5 col-lg-3">
+      <div class="col-xs-12 col-sm-5 col-md-5 col-lg-3">
           <img src="{{ $book->image->url('thumbnail') }}" class="img-responsive thumbnail">
       </div>
       <div class="col-xs-12 col-sm-7 col-md-7 col-lg-8">

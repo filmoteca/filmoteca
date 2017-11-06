@@ -36,7 +36,7 @@
 
 <h1 style="text-align: center !important;">@lang('filmoteca.frontend.consulta_libros.title')</h1>
 <br><br>
-<p>@lang('filmoteca.frontend.consulta_libros.description')</p>
+<p style="font-size: 20px !important;text-align: center !important;">@lang('filmoteca.frontend.consulta_libros.description')</p>
 <br><br>
 @include('elements.bootstrap-modal')
 
