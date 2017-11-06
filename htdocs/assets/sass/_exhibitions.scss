@@ -28,22 +28,22 @@
     text-decoration: underline !important;
 }
 
-.color-underline {       
+.color-underline {
     color: $primary-color !important;
 }
- 
+
 .row.film {
     margin-left: 0 !important;
     margin-right: 0 !important;
 
     //Imagen de película y me gusta
-    
+
     .col-xs-4.col-sm-6.col-md-5.col-lg-3 {
         padding-left: 0 !important;
         padding-right: 0 !important;
         margin-left: 2px;
         width: 192px !important;
-        
+
         img {
             margin: 45px 17px 10px !important;
             max-width: 185px;
@@ -61,8 +61,8 @@
     .col-xs-12.col-sm-6.col-md-7.col-lg-9 {
         max-width: 509px !important;
         width: 509px !important;
-        padding-left: 43px; 
-        padding-right: 0; 
+        padding-left: 43px;
+        padding-right: 0;
 
         .content.size-tab-show {
             width: 470px;
@@ -78,8 +78,8 @@
     max-width: 100%;
     border-bottom: 0 !important;
     background-color: #eee !important;
-    height: 53px; 
-    width: 470px; 
+    height: 53px;
+    width: 470px;
 
     li > a:hover, li > a:focus {
         color: #555 !important;
@@ -99,21 +99,20 @@
         max-width: 20% !important;
         width: 95px;
     }
-} 
+}
 
 .row.tab-icon {
     margin: -11px !important;
-    height: 52px;
-    
-    .col-md-5 {    
+
+    .col-md-5 {
         padding: 0;
         max-width: 33%;
 
         .link {
-            -webkit-background-size: cover; 
-            -moz-background-size: cover; 
-            -o-background-size: cover; 
-            background-color: transparent !important; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-color: transparent !important;
         }
 
         .link img {
@@ -124,8 +123,8 @@
             padding-right: 4px;
         }
     }
-    
-    .col-md-7 { 
+
+    .col-md-7 {
         padding: 0 !important;
 
         p {
@@ -134,8 +133,8 @@
             padding-top: 5px !important;
         }
     }
-    
-    .tab-tech-card { 
+
+    .tab-tech-card {
         padding: 0 !important;
         max-width: 35%;
 
@@ -149,7 +148,7 @@
         }
     }
 
-    .tab-trailer-notes { 
+    .tab-trailer-notes {
         padding: 0 !important;
         max-width: 38%;
 
@@ -163,13 +162,13 @@
             padding-top: 3px !important;
         }
     }
-    
+
 }
 
 .for-show{
 
     .content.size-tab-show {
-        padding-right: 0 !important; 
+        padding-right: 0 !important;
         max-width: 445px !important;
     }
 
@@ -178,7 +177,7 @@
         padding-top: 0 !important;
         max-width: 140% !important;
     }
-    
+
     .fb-like.fb_iframe_widget {
         padding-left: 10px !important;
     }
@@ -192,18 +191,18 @@
     }
 }
 
-.panel.panel-default.no-line { 
+.panel.panel-default.no-line {
     border-style: hidden !important;
 
     table {
         border-spacing: 2px;
         margin-bottom: 0 !important;
-                
+
         .bold {
             font-weight: bold !important;
         }
 
-        td {     
+        td {
             border-top: 1px solid #ddd !important;
             vertical-align: middle !important;
         }
@@ -221,10 +220,10 @@
         max-width: 100% !important;
         padding: 4px 25px !important;
         background-position: 0 0 !important;
-    }    
+    }
 }
 
-.more-schedules { 
+.more-schedules {
     border-color: #fff !important;
     margin-top: 6px !important;
     padding-bottom: 8px !important;
@@ -238,7 +237,7 @@
         .table-responsive {
             border: 0 none !important;
         }
-        
+
         .bold {
             font-weight: bold !important;
 
@@ -254,7 +253,7 @@
 }
 
 .result-number {
-   font-size: 16px !important;   
+   font-size: 16px !important;
 }
 
 li.margin {
@@ -286,7 +285,7 @@ p.margin {
 //Ciclos y funciones especiales
 
 .panel-heading.small-heading {
-    padding: 0 15px !important; 
+    padding: 0 15px !important;
 }
 
 .content h1 {
@@ -295,19 +294,19 @@ p.margin {
 
 .small-cycle-heading{
     .program-ciclo{
-        
-        margin-right: -25px; 
+
+        margin-right: -25px;
         right: -5px;
 
         .link{
-            height: 30px !important; 
+            height: 30px !important;
         }
 
         .link img {
             max-width: 25px !important;
             margin-top: -2px;
         }
-        
+
         .underline {
             text-decoration: none !important;
         }
@@ -325,22 +324,22 @@ p.margin {
         padding-left: 0;
 
         .link{
-            -webkit-background-size: cover; 
-            -moz-background-size: cover; 
-            -o-background-size: cover; 
-            height: 50px; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            height: 50px;
             background-color: transparent !important;
         }
 
         .link img {
-            min-height: 80%; 
+            min-height: 80%;
             max-width: 36px;
             display: flex;
             position: relative;
         }
     }
 
-    .col-xs-10.col-sm-11 { 
+    .col-xs-10.col-sm-11 {
 
         h3 {
             padding-top: 15px !important;
@@ -356,7 +355,7 @@ p.margin {
     }
 }
 
-.panel-heading.text-center {    
+.panel-heading.text-center {
     h3 {
         margin-bottom: 0;
         margin-top: 0;
@@ -393,7 +392,7 @@ p.margin {
     margin-top: 10px;
     margin-bottom: 10px;
 }
-    
+
 
 // Salas de cine
 
@@ -438,5 +437,3 @@ p.margin {
     display: none;
     visibility: hidden;
 }
-
-

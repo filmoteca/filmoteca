@@ -14,15 +14,16 @@
   opacity: 0.6 !important;
 }
 
-.row.consultaLibro {
+.row.consulta-libro {
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
 
-.row.consultaLibro .col-xs-4.col-sm-6.col-md-5.col-lg-3 {
-	margin-left: 40px;
-	width: 230px !important;
-	margin-top: 40px;
+.row.consulta-libro .col-xs-5.col-sm-5.col-md-5.col-lg-3 {
+	top: 100px;
+	img{
+		margin-bottom: 100px;
+	}
 }
 
 .content.size-tab-show {
@@ -31,7 +32,7 @@
   margin-top: 25px;
 }
 
-.modal-header.consultaLibro-header{
+.modal-header.consulta-libro-header{
   padding: 25px !important;
   background-color: #eee;
   border-radius: 6px 6px 0px 0px;
@@ -42,14 +43,18 @@
 }
 
 .nav-tabs.consulta-libro > li {
-    float: left;
-    margin-bottom: -1px;
-    background-color: #eee !important;
+	margin-top: 20px !important;
+  background-color: #eee !important;
+	border-bottom: 0px #DDD !important;
+	padding-left: 5px !important;
 }
 
-li.margin.consulta-libro {
-  max-width: 548px !important;
+li.margin-consulta-libro {
+	height: 400px;
+	overflow-y: scroll;
+	padding: 25px;
 }
+
 .normal{
 	font-weight: normal;
 }
@@ -62,9 +67,6 @@ li.margin.consulta-libro {
 
 .consulta-libro-list{
 	margin-top: 25px;
-}
-
-.consulta-libro-slider{
 }
 
 .consulta-libro-slider {

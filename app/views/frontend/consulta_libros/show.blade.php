@@ -1,20 +1,20 @@
 {{-- Modal Content --}}
-<div class="modal-header consultaLibro-header">
+<div class="modal-header consulta-libro-header">
     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 </div>
 <div class="modal-body">
-  <div class="row consultaLibro">
-      <div class="col-xs-4 col-sm-6 col-md-5 col-lg-3">
+  <div class="row consulta-libro">
+      <div class="col-xs-5 col-sm-5 col-md-5 col-lg-3">
           <img src="{{ $book->image->url('thumbnail') }}" class="img-responsive thumbnail">
       </div>
-      <div class="col-xs-12 col-sm-6 col-md-7 col-lg-8">
+      <div class="col-xs-12 col-sm-7 col-md-7 col-lg-8">
         <a class="libro-title">
             <h2 class="text-center">
                 {{ $book->title }}
             </h2>
         </a>
         <!-- Pestañas de sinopsis e indice -->
-        <div class="content size-tab-show">
+        <div class="content">
             <!-- Nav tabs -->
             <div role="tabpanel">
                 <ul class="nav nav-tabs consulta-libro" role="tablist">
@@ -63,7 +63,7 @@
                 <div class="tab-content">
                     <!-- Contenedor de la pestaña Sinopsis -->
                     <div id="{{ 'tab-synopsis-' . $book->id }}" class="tab-pane active" role="tabpanel">
-                        <li class="list-group-item margin consulta-libro synopsis-margin scroll-over">
+                        <li class="list-group-item synopsis-margin margin-consulta-libro">
                         		<p><?php
                                 $titulo = $book->title;
                             		$año = $book->year;
@@ -84,7 +84,7 @@
 
                     <!-- Contenedor de la pestaña Indice -->
                     <div id="{{ 'tab-indice-' . $book->id }}" class="tab-pane" role="tabpanel" >
-                        <li class="list-group-item margin consulta-libro scroll-over">
+                        <li class="list-group-item margin-consulta-libro">
                             <p class="normal">
                                 {{ $book->indice }}
                             </p>
