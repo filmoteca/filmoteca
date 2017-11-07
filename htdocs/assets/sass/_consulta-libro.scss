@@ -10,23 +10,24 @@
 	display: none;
 }
 
-.thumbnail:hover a img {
-  opacity: 0.6 !important;
-}
 
 .row.consulta-libro {
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
 
-.row.consulta-libro > .col-xs-12.col-sm-5.col-md-5.col-lg-3 {
-	top: 100px;
+.row.consulta-libro > .col-xs-12.col-sm-5.col-md-4.col-lg-4 {
+	top: 80px;
 }
 
-.row.consulta-libro  > .col-xs-12.col-sm-5.col-md-5.col-lg-3 > img{
-	margin: 0px 10px 100px 10px !important;
+.row.consulta-libro > .col-xs-12.col-sm-5.col-md-4.col-lg-4 > img{
 	max-width: 90% !important;
 	min-width: 200px !important;
+	margin-bottom: 100px;
+}
+
+.thumbnail:hover a img {
+  opacity: 0.6 !important;
 }
 
 .content.size-tab-show {
@@ -52,10 +53,10 @@
 .nav-tabs.consulta-libro {
 	border-bottom: 0px #DDD !important;
 	border-radius: 4px 4px 0 0;
+	margin-top: 35px;
 }
 
 .nav-tabs.consulta-libro > li {
-	margin-top: 20px !important;
     background-color: #eee !important;
     width: 150px !important;
 }
@@ -64,23 +65,46 @@
     margin-right: 0px !important;
 }
 
-.nav-tabs.consulta-libro > li > a > row.tab-icon > .col-md-5 > .link > img {
-    margin-top: 0px !important;
-}
+.row.tab-libro-icon {
+    margin: -11px !important;
 
-.nav-tabs.consulta-libro > li > a > row.tab-icon > .col-md-7{
-	display: block !important;
-	visibility: visible !important;
-	margin-top: -40px !important;
-	margin-left: 10px !important;
-	padding-left: 15px !important;
-    padding-right: 15px !important;
+    .col-md-5 {
+        padding: 0;
+        max-width: 33%;
+
+        .link {
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-color: transparent !important;
+        }
+
+        .link img {
+		    padding-top: 0px !important;
+		    max-width: 35px;
+		    display: flex;
+		    position: relative;
+		    padding-right: 0px;
+		    margin-top: 0px !important;
+        }
+    }
+
+    .col-md-7 {
+        padding: 0 !important;
+
+        p {
+            margin: 9px 0 14px;
+            max-width: 48px;
+            padding-top: 5px !important;
+        }
+    }
 }
 
 li.margin-consulta-libro {
-	height: 500px;
-	overflow-y: scroll;
-	padding: 25px;
+	height: auto;
+    overflow-y: scroll;
+    padding: 25px;
+    max-height: 500px;
 }
 
 .normal{

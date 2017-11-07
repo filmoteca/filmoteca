@@ -4,10 +4,10 @@
 </div>
 <div class="modal-body">
   <div class="row consulta-libro">
-      <div class="col-xs-12 col-sm-5 col-md-5 col-lg-3">
+      <div class="col-xs-12 col-sm-5 col-md-4 col-lg-4">
           <img src="{{ $book->image->url('thumbnail') }}" class="img-responsive thumbnail">
       </div>
-      <div class="col-xs-12 col-sm-7 col-md-7 col-lg-8">
+      <div class="col-xs-12 col-sm-7 col-md-8 col-lg-8">
         <a class="libro-title">
             <h2 class="text-center">
                 {{ $book->title }}
@@ -22,7 +22,7 @@
                    <!-- Pestaña Sinopsis -->
                     <li class="active border" role="presentation">
                         <a data-toggle="tab" role="tab" href="{{ '#tab-synopsis-' . $book->id }}">
-                            <div class="row tab-icon">
+                            <div class="row tab-libro-icon">
                                 <div class="col-md-5">
                                     <div class="link">
                                         <img src="/imgs/programacion/iconos/synopsis.png"
@@ -41,7 +41,7 @@
                     <!-- Pestaña Indice -->
                     <li class="border" role="presentation">
                         <a data-toggle="tab" role="tab" href="{{ '#tab-indice-' . $book->id }}">
-                           <div class="row tab-icon">
+                           <div class="row tab-libro-icon">
                                 <div class="col-md-5">
                                   <div class="link">
                                         <img src="/imgs/programacion/iconos/technical-card.png"
