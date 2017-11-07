@@ -562,15 +562,12 @@
 	    }
 	}
 
-
-
-	.row.consulta-libro > .col-xs-12.col-sm-5.col-md-5.col-lg-4 {
-		top: 15px !important;
+	.row.consulta-libro > .col-xs-12.col-sm-5.col-md-4.col-lg-4 {
+		top: 25px !important;
 	}
 
-	.row.consulta-libro > .col-xs-12.col-sm-5.col-md-4.col-lg-4 > img{
-    	margin: 0% 0% 10% 25% !important;
-        margin-bottom: 40px !important;
+	.row.consulta-libro > .col-xs-12.col-sm-5.col-md-4.col-lg-4 > img {
+	    margin: 0% 0% 15% 25% !important;
 	}
 
 	.row.tab-libro-icon > .col-md-5 {
@@ -757,7 +754,13 @@
 	    }
 	}
 
-	
+	.row.consulta-libro > .col-xs-12.col-sm-5.col-md-4.col-lg-4 {
+	   top: 130px !important;
+	}
+
+	.libro-title h2 {
+	  height: 90px !important;
+	}
 
 	.row.tab-libro-icon > .col-md-5 {
 		height: 23px;

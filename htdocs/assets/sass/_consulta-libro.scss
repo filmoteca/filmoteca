@@ -10,6 +10,11 @@
 	display: none;
 }
 
+.modal-header.consulta-libro-header{
+  padding: 25px !important;
+  background-color: #eee;
+  border-radius: 6px 6px 0px 0px;
+}
 
 .row.consulta-libro {
   margin-left: 0 !important;
@@ -17,7 +22,7 @@
 }
 
 .row.consulta-libro > .col-xs-12.col-sm-5.col-md-4.col-lg-4 {
-	top: 80px;
+	top: 90px;
 }
 
 .row.consulta-libro > .col-xs-12.col-sm-5.col-md-4.col-lg-4 > img{
@@ -30,20 +35,11 @@
   opacity: 0.6 !important;
 }
 
-.content.size-tab-show {
-  width: 470px;
-  margin-bottom: 20px;
-  margin-top: 25px;
-}
-
-.modal-header.consulta-libro-header{
-  padding: 25px !important;
-  background-color: #eee;
-  border-radius: 6px 6px 0px 0px;
-}
-
 .libro-title{
 	text-decoration: none !important;
+	h2 {
+		height: 55px;
+	}
 }
 
 .tab-content.tab-consulta-libro{
