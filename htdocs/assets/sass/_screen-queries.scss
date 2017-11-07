@@ -187,6 +187,27 @@
 
 
 
+//Prueba de imagen de libro con un maximo de 300px de ancho
+
+@media (min-width: 200px) and (max-width: 300px) {
+
+	.libro-title h2 {
+	    height: 90px;
+	}
+}
+
+
+
+//Prueba de imagen de libro con un maximo de 425px de ancho
+
+@media (min-width: 300px) and (max-width: 425px) {
+
+	.libro-title h2 {
+	    height: 90px;
+	}
+}
+
+
 
 
 
