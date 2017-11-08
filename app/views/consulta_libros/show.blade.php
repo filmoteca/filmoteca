@@ -31,11 +31,11 @@
 		</tr>
 		<tr>
 			<th>Autor</th>
-			<td>{{$resource->year }}</td>
+			<td>{{$resource->autor }}</td>
 		</tr>
 		<tr>
 			<th>Editorial</th>
-			<td>{{$resource->pages }}</td>
+			<td>{{$resource->editorial }}</td>
 		</tr>
 		<tr>
 			<th>Sinopsis</th>
