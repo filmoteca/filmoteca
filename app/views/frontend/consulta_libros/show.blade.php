@@ -73,9 +73,9 @@
                             		{if (empty($autoreditorial)){echo " <p><strong>". Lang::get('exhibitions.frontend.book.index.title') . ': '. "</strong>". $titulo."</p>";}
                                   else{echo " <p><strong>". Lang::get('exhibitions.frontend.book.index.title') . ': '. "</strong>". $titulo."</p>";}}
                                 {if (empty($autor)){echo $autor;}
-                                  else{echo " <p><strong>". Lang::get('exhibitions.frontend.book.index.edition') . ': '. "</strong>". $autor."</p>";}}
+                                  else{echo " <p><strong>". Lang::get('exhibitions.frontend.book.index.autor') . ': '. "</strong>". $autor."</p>";}}
                             		{if (empty($editorial)){echo $editorial;}
-                            			else{echo " <p><strong>". Lang::get('exhibitions.frontend.book.index.pages') . ': '. "</strong>". $editorial."</p>";}}
+                            			else{echo " <p><strong>". Lang::get('exhibitions.frontend.book.index.editorial') . ': '. "</strong>". $editorial."</p>";}}
                                 ?>
                             </p>
                           <p class="normal">{{ $book->sinopsis }}</p>

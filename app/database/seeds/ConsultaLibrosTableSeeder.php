@@ -17,8 +17,8 @@ class ConsultaLibrosTableSeeder extends Seeder
                 'title' => $name,
                 'indice' => $faker->text(600),
                 'sinopsis' => $faker->text(600),
-                'autor' => $autor,
-                'editorial' => $editorial,
+                'autor' => $name,
+                'editorial' => $name,
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
             ];

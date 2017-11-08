@@ -91,7 +91,6 @@ frontend:
             fecha: ' :numeric_day de :textual_month de :numeric_year'
     book:
         index:
-            edition: 'Año de edición'
             autor: 'Autor'
             editorial: 'Editorial'
             title: 'Título'
