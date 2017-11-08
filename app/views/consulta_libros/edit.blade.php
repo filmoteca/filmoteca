@@ -17,9 +17,9 @@
 
 	{{ Form::formGroup('text','title','Título', 'consulta_libro_form', ['required' => true]) }}
 
-	{{ Form::formGroup('year','year','Año', 'consulta_libro_form') }}
+	{{ Form::formGroup('autor','autor','Autor', 'consulta_libro_form') }}
 
-	{{ Form::formGroup('text','pages','Páginas', 'consulta_libro_form') }}
+	{{ Form::formGroup('editorial','editorial','Editorial', 'consulta_libro_form') }}
 
 	{{ Form::formGroup('textarea','sinopsis','Sinopsis', 'consulta_libro_form', ['required' => true]) }}
 	

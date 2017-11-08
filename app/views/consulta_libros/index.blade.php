@@ -9,8 +9,8 @@
 		<tr>
 			<th>ID</th>
 			<th>Título</th>
-			<th>Año</th>
-			<th>Páginas</th>
+			<th>Autor</th>
+			<th>Editorial</th>
 			<th>Sinopsis</th>
 			<th>Indice</th>
 			<th>Portada</th>
@@ -23,8 +23,8 @@
 			<tr>
 				<td>{{ $consulta_libro->id }}</td>
 				<td>{{ $consulta_libro->title }}</td>
-				<td>{{ $consulta_libro->pages }}</td>
-				<td>{{ $consulta_libro->year}}</td>
+				<td>{{ $consulta_libro->autor }}</td>
+				<td>{{ $consulta_libro->editorial}}</td>
 				<td>{{ str_limit($consulta_libro->sinopsis, 100, '...')}}</td>
 				<td>{{ str_limit($consulta_libro->indice, 100, '...')}}</td>
 

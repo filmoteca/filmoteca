@@ -92,8 +92,8 @@ frontend:
     book:
         index:
             edition: 'Año de edición'
-            fecha: ' :numeric_year'
-            pages: ' Páginas'
+            autor: 'Autor'
+            editorial: 'Editorial'
             title: 'Título'
             indice: 'Índice'
 general:

@@ -66,16 +66,16 @@
                         <li class="list-group-item synopsis-margin margin-consulta-libro">
                         		<p><?php
                                 $titulo = $book->title;
-                            		$año = $book->year;
-                            		$pages = $book->pages;
-                            		$pagesaño = "$pages" . "$año";
+                            		$autor = $book->autor;
+                            		$editorial = $book->editorial;
+                            		$autoreditorial = "$editorial" . "$autor";
 
-                            		{if (empty($pagesaño)){echo " <p><strong>". Lang::get('exhibitions.frontend.book.index.title') . ': '. "</strong>". $titulo."</p>";}
+                            		{if (empty($autoreditorial)){echo " <p><strong>". Lang::get('exhibitions.frontend.book.index.title') . ': '. "</strong>". $titulo."</p>";}
                                   else{echo " <p><strong>". Lang::get('exhibitions.frontend.book.index.title') . ': '. "</strong>". $titulo."</p>";}}
-                                {if (empty($año)){echo $año;}
-                                  else{echo " <p><strong>". Lang::get('exhibitions.frontend.book.index.edition') . ': '. "</strong>". $año."</p>";}}
-                            		{if (empty($pages)){echo $pages;}
-                            			else{echo " <p><strong>". Lang::get('exhibitions.frontend.book.index.pages') . ': '. "</strong>". $pages."</p>";}}
+                                {if (empty($autor)){echo $autor;}
+                                  else{echo " <p><strong>". Lang::get('exhibitions.frontend.book.index.edition') . ': '. "</strong>". $autor."</p>";}}
+                            		{if (empty($editorial)){echo $editorial;}
+                            			else{echo " <p><strong>". Lang::get('exhibitions.frontend.book.index.pages') . ': '. "</strong>". $editorial."</p>";}}
                                 ?>
                             </p>
                           <p class="normal">{{ $book->sinopsis }}</p>

@@ -30,11 +30,11 @@
 			<td>{{$resource->title }}</td>
 		</tr>
 		<tr>
-			<th>Año</th>
+			<th>Autor</th>
 			<td>{{$resource->year }}</td>
 		</tr>
 		<tr>
-			<th>Páginas</th>
+			<th>Editorial</th>
 			<td>{{$resource->pages }}</td>
 		</tr>
 		<tr>
