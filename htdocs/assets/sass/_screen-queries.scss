@@ -1,6 +1,207 @@
 @charset "UTF-8";
 
 
+//Prueba de imagen de película y me gusta con un maximo de 640px de ancho
+
+@media (min-width: 300px) and (max-width: 380px) {
+
+	.main-header{
+		 .upper-navbar{
+
+		 	a {
+    			padding: 6px;
+    		}
+    	}
+	}
+
+	.row.film {
+	    margin-left: 0 !important;
+	    margin-right: 0 !important;
+
+	    //Imagen de película y me gusta
+
+	   .col-xs-4.col-sm-5.col-md-5.col-lg-3 {
+			margin-left: 40px;
+
+			img {
+			    margin: 20px 60px 10px !important;
+			    width: 130px;
+			}
+
+			.fb-like.fb_iframe_widget {
+			    padding-left: 35px !important;
+			}
+		}
+
+		//Panel pestañas
+
+		.col-xs-8.col-sm-8.col-md-7.col-lg-9 {
+		    width: 279px !important;
+		    padding-left: 0;
+		    padding-right: 0;
+
+		    a h2{
+		        padding-left: 50px;
+		    }
+
+		    h6 p{
+		        padding-left: 35px;
+		    }
+		}
+	}
+
+	.content.size-tab-show {
+	    width: 87% !important;
+	}
+
+	.nav.nav-tabs.film-tabs {
+		max-width: 114% !important;
+		width: 114% !important;
+		margin-left: 5px !important;
+		height: 36px;
+
+
+		li > a:hover, li > a:focus {
+	        margin: 0 !important;
+	    }
+
+	    li.border{
+	    	height: 37px !important;
+	    }
+
+	    li.active > a, .nav-tabs.film-tabs > li.active > a:hover, .border > li.active > a:focus {
+	        margin: 0 !important;
+	        height: 37px !important;
+	    }
+	}
+
+	.tab-content{
+		padding-left: 5px;
+	}
+
+	.list-group-item.margin{
+		width: 117% !important;
+	}
+
+	.row.tab-icon {
+	    margin: 0 !important;
+
+	    .col-md-5.trailer-img{
+	    	margin-top: -1px !important;
+	    }
+
+		.col-md-5 {
+			width: 39px !important;
+
+			.link img{
+				padding-top: 3px !important;
+				left: 4px !important;
+				padding-right: 0 !important;
+				max-width: 31px !important;
+				height: 30px;
+				border-left-width: 0px;
+				margin-left: -10px;
+				margin-top: -15px;
+			}
+		}
+
+	    .col-md-7{
+	        display: none;
+	        visibility: hidden;
+	    }
+	}
+
+	.panel.panel-default.no-line{
+    	border-style: hidden !important;
+
+	    table{
+	        .bold{
+ 				font-size: 11px;
+	        }
+	    }
+	}
+
+	.more-schedules{
+	    .extra-schedules table{
+	        .table-responsive {
+	            border: 0 none !important;
+	        }
+	    }
+	}
+
+	li.margin {
+		width: 318px;
+		padding: 10px !important;
+	}
+
+	li.margin.synopsis-margin {
+	    padding: 0 10px !important;
+	}
+
+	li.margin.schedules-margin {
+	    padding: 10px 5px !important;
+	}
+
+	//facebook sidebar
+
+    .hidde-when-small{
+        display: none;
+        visibility: hidden;
+    }
+
+    .hidde-when-normal{
+        display: flex;
+        visibility: visible;
+        padding-left: 10px;
+        padding-bottom: 10px;
+    }
+
+	//Ciclos y funciones especiales
+
+	.icon{
+	    .col-xs-10.col-sm-11 {
+	        h3 {
+	            padding-top: 13px !important;
+	        }
+	    }
+	}
+
+	//Queries consulta-libros
+
+	.row.consulta-libro > .col-xs-12.col-sm-5.col-md-4.col-lg-4 {
+		top: 15px !important;
+	}
+
+	.row.consulta-libro > .col-xs-12.col-sm-5.col-md-4.col-lg-4 > img{
+    	margin: 0px 0px 20px 20px !important;
+    	margin-bottom: 40px !important;
+	}
+
+	.row.tab-libro-icon > .col-md-5 {
+		height: 23px;
+	}
+
+	.row.tab-libro-icon > .col-md-5 > .link > img {
+	    padding-top: 5px !important;
+	    max-width: 25px !important;
+	}
+
+	.row.tab-libro-icon > .col-md-7 {
+	    top: -23px;
+	    right: 10px;
+	    height: 25px;
+ 	    float: right;
+	}
+}
+
+
+
+
+
+
+
+//Queries consulta-libros
+
 //Prueba de imagen de libro con un maximo de 300px de ancho
 
 @media (min-width: 200px) and (max-width: 300px) {
@@ -28,7 +229,7 @@
 
 //Prueba de imagen de película y me gusta con un maximo de 640px de ancho
 
-@media (min-width: 320px) and (max-width: 640px) {
+@media (min-width: 381px) and (max-width: 640px) {
 
 	.main-header{
 		 .upper-navbar{
@@ -45,11 +246,11 @@
 
 	    //Imagen de película y me gusta
 
-	   .col-xs-4.col-sm-6.col-md-5.col-lg-3 {
+	   .col-xs-4.col-sm-5.col-md-5.col-lg-3 {
 			margin-left: 40px;
 
 			img {
-			    margin: 20px 60px 10px !important;
+			    margin: 70px 8% 10px !important;
 			    width: 130px;
 			}
 
@@ -60,7 +261,7 @@
 
 		//Panel pestañas
 
-		.col-xs-12.col-sm-6.col-md-7.col-lg-9 {
+		.col-xs-8.col-sm-8.col-md-7.col-lg-9 {
 		    width: 279px !important;
 		    padding-left: 0;
 		    padding-right: 0;
@@ -191,7 +392,7 @@
 	    }
 	}
 
-
+	//Queries consulta-libros
 
 	.row.consulta-libro > .col-xs-12.col-sm-5.col-md-4.col-lg-4 {
 		top: 15px !important;
@@ -245,14 +446,14 @@
 
 	    //Imagen de película y me gusta
 
-	   .col-xs-4.col-sm-6.col-md-5.col-lg-3 {
+	   .col-xs-4.col-sm-5.col-md-5.col-lg-3 {
 			margin-left: 40px;
 			width: 233px !important;
+		
+		img {
+		    width: 160px;
+		}
 
-			img {
-			    margin: 20px 60px 10px !important;
-			    width: 130px;
-			}
 
 			.fb-like.fb_iframe_widget {
 			    padding-left: 35px !important;
@@ -261,7 +462,7 @@
 
 		//Panel pestañas
 
-		.col-xs-12.col-sm-6.col-md-7.col-lg-9 {
+		.col-xs-8.col-sm-8.col-md-7.col-lg-9 {
 		    width: 427px !important;
 		    padding-left: 0px !important;
 		    padding-left: 0;
@@ -396,6 +597,8 @@
 	    }
 	}
 
+	//Queries consulta-libros
+
 	.row.consulta-libro > .col-xs-12.col-sm-5.col-md-4.col-lg-4 {
 		top: 25px !important;
 	}
@@ -427,186 +630,206 @@
 
 
 
+
+
+
+
 //Prueba de imagen de película y me gusta con un maximo de 989px de ancho
 
 @media (min-width: 769px) and (max-width: 989px) {
 
 	.main-header{
-		 .upper-navbar{
+	.upper-navbar{
 
-		 	a {
-    			padding: 6px;
-    		}
-    	}
+	a {
+	    padding: 6px;
+	    }
+	    }
 	}
 
 	.row.film {
-	    margin-left: 0 !important;
-	    margin-right: 0 !important;
+	   margin-left: 0 !important;
+	   margin-right: 0 !important;
 
-	    //Imagen de película y me gusta
+	   //Imagen de película y me gusta
 
-	   .col-xs-4.col-sm-6.col-md-5.col-lg-3 {
-			margin-left: 0;
-			width: 174px;
+	  .col-xs-4.col-sm-5.col-md-5.col-lg-3 {
+	margin-left: 0;
+	width: 174px;
 
-			img {
-			    margin: 50px 15px 10px !important;
-			    width: 150px;
-			}
+	img {
+	   margin: 50px 15px 10px !important;
+	   width: 150px;
+	}
 
-			.fb-like.fb_iframe_widget {
-			    padding-left: 19px !important;
-			}
-		}
+	.fb-like.fb_iframe_widget {
+	   padding-left: 19px !important;
+	}
+	}
 
-		//Panel pestañas
+	//Panel pestañas
 
-		.col-xs-12.col-sm-6.col-md-7.col-lg-9 {
-		    width: 309px !important;
-		    padding-left: 0;
-		    padding-right: 0;
+	.col-xs-8.col-sm-8.col-md-7.col-lg-9 {
+	   width: 309px !important;
+	   padding-left: 0;
+	   padding-right: 0;
 
-		    a h2{
-		        padding-left: 50px;
-		    }
+	   a h2{
+	       padding-left: 50px;
+	   }
 
-		    h6 p{
-		        padding-left: 35px;
-		    }
-		}
+	   h6 p{
+	       padding-left: 35px;
+	   }
+	}
 	}
 
 	.content.size-tab-show {
-	    width: 100% !important;
+	   width: 100% !important;
 	}
 
 	.nav.nav-tabs.film-tabs {
-		max-width: 114% !important;
-		width: 114% !important;
-		margin-left: 5px !important;
-		height: 36px;
+	max-width: 114% !important;
+	width: 114% !important;
+	margin-left: 5px !important;
+	height: 36px;
 
 
-		li > a:hover, li > a:focus {
-	        margin: 0 !important;
-	    }
+	li > a:hover, li > a:focus {
+	       margin: 0 !important;
+	   }
 
-	    li.active > a, .nav-tabs.film-tabs > li.active > a:hover, .border > li.active > a:focus {
-	    	height: 36px;
-	        margin: 0 !important;
-	    }
+	   li.active > a, .nav-tabs.film-tabs > li.active > a:hover, .border > li.active > a:focus {
+	   	height: 36px;
+	       margin: 0 !important;
+	   }
 
-	    .border {
-	    	height: 36px;
-	    }
+	   .border {
+	   	height: 36px;
+	   }
 	}
 
 	.tab-content{
-		padding-left: 5px;
+	padding-left: 5px;
 	}
 
 	.row.tab-icon {
-	    margin: 0 !important;
+	   margin: 0 !important;
 
-	    .col-md-5.trailer-img{
-	    	margin-top: -1px !important;
-	    }
+	   .col-md-5.trailer-img{
+	   	margin-top: -1px !important;
+	   }
 
-		.col-md-5 {
-			width: 39px !important;
+	.col-md-5 {
+	width: 39px !important;
 
-			.link img{
-				padding-top: 3px !important;
-				left: 4px !important;
-				padding-right: 0 !important;
-				max-width: 31px !important;
-				height: 30px;
-				border-left-width: 0px;
-				margin-left: -10px;
-				margin-top: -15px;
-			}
-		}
+	.link img{
+	padding-top: 3px !important;
+	left: 4px !important;
+	padding-right: 0 !important;
+	max-width: 31px !important;
+	height: 30px;
+	border-left-width: 0px;
+	margin-left: -10px;
+	margin-top: -15px;
+	}
+	}
 
-	    .col-md-7{
-	        display: none;
-	        visibility: hidden;
-	    }
+	   .col-md-7{
+	       display: none;
+	       visibility: hidden;
+	   }
 	}
 
 	.panel.panel-default.no-line{
-    	border-style: hidden !important;
+	    border-style: hidden !important;
 
-	    table{
-	        .bold{
- 				font-size: 11px;
-	        }
-	    }
+	   table{
+	       .bold{
+	 	 font-size: 11px;
+	       }
+	   }
 	}
 
 	.more-schedules{
-	    .extra-schedules table{
-	        .table-responsive {
-	            border: 0 none !important;
-	        }
-	    }
+	   .extra-schedules table{
+	       .table-responsive {
+	           border: 0 none !important;
+	       }
+	   }
 	}
 
 	li.margin {
-		width: 352px;
-		padding: 10px !important;
-		height: 200px;
+	width: 352px;
+	padding: 10px !important;
+	height: 200px;
 	}
 
 	li.margin.synopsis-margin {
-	    padding: 0 10px !important;
+	   padding: 0 10px !important;
 	}
 
 	li.margin.schedules-margin {
-	    padding: 10px 5px !important;
+	   padding: 10px 5px !important;
 	}
 
 	//facebook sidebar
 
-    .hidde-when-small {
-        display: flex;
-        visibility: visible;
-    }
+	    .hidde-when-small {
+	        display: flex;
+	        visibility: visible;
+	    }
 
-    .hidde-when-normal{
-        display: none;
-        visibility: hidden;
-    }
+	    .hidde-when-normal{
+	        display: none;
+	        visibility: hidden;
+	    }
 
 	//Ciclos y funciones especiales
 
 	.icon{
-	    .col-xs-10.col-sm-11 {
-	        h3 {
-	            padding-top: 13px !important;
-	        }
-	    }
+	   .col-xs-10.col-sm-11 {
+	       h3 {
+	           padding-top: 13px !important;
+	       }
+	   }
 	}
 
+	//Queries consulta-libros
+
 	.row.consulta-libro > .col-xs-12.col-sm-5.col-md-4.col-lg-4 {
-	   top: 130px !important;
+	  top: 130px !important;
 	}
 
 	.libro-title h2 {
-	  height: 90px !important;
+	 height: 90px !important;
 	}
 
 	.row.tab-libro-icon > .col-md-5 {
-		height: 23px;
+	height: 23px;
 	}
 
 	.row.tab-libro-icon > .col-md-7 {
-	    top: -23px;
-	    right: 10px;
-	    height: 25px;
- 	    float: right;
+	   top: -23px;
+	   right: 10px;
+	   height: 25px;
+	 	    float: right;
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -621,7 +844,7 @@
 
 	    //Imagen de película y me gusta
 
-	    .col-xs-4.col-sm-6.col-md-5.col-lg-3 {
+	    .col-xs-4.col-sm-5.col-md-5.col-lg-3 {
 	        padding-left: 0 !important;
 	        padding-right: 0 !important;
 	        margin-left: 2px;
@@ -629,11 +852,6 @@
 		}
 	}
 }
-
-
-
-
-
 
 
 
