@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 
-//Prueba de imagen de película y me gusta con un maximo de 640px de ancho
+//Prueba de imagen de película y me gusta con un maximo de 380px de ancho
 
 @media (min-width: 300px) and (max-width: 380px) {
 
@@ -202,25 +202,20 @@
 
 //Queries consulta-libros
 
-//Prueba de imagen de libro con un maximo de 300px de ancho
+//Prueba de imagen de libro con un maximo de 380px de ancho
 
-@media (min-width: 200px) and (max-width: 300px) {
+@media (min-width: 200px) and (max-width: 380px) {
 
 	.libro-title h2 {
-	    height: 90px;
+	    height: 90px !important;
+	}
+
+	.items .item {
+	    width: 45% !important;
 	}
 }
 
 
-
-//Prueba de imagen de libro con un maximo de 425px de ancho
-
-@media (min-width: 300px) and (max-width: 425px) {
-
-	.libro-title h2 {
-	    height: 90px;
-	}
-}
 
 
 
