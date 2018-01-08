@@ -17,7 +17,7 @@
 
 
 @section('sidebar')
-	@include('elements.menus.acervo', array('selected' => 3))
+	@include('elements.menus.acervo', array('selected' => 2))
 @stop
 
 

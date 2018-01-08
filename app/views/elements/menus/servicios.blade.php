@@ -16,8 +16,6 @@ $menu = array(
 
 	array('Préstamo y alquiler de películas', '/pages/servicios/prestamo-y-alquiler-de-peliculas'),
 
-	array('Producción', '/pages/servicios/departamento-de-produccion'),
-
 	array('Taller de restauración', '/pages/servicios/taller-de-restauracion'),
 
 	array('Requisitos para solicitar un servicio', '/pages/servicios/requisitos-para-solicitar-un-servicio')

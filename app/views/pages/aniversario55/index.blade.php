@@ -8,7 +8,9 @@
 @stop
 
 
-
+@section('sidebar')
+	@include('elements.menus.quienes-somos', array('selected' => 7))
+@stop
 
 
 @section('content')
