@@ -1,5 +1,5 @@
 <div class="row film">
-    <div class="col-xs-4 col-sm-6 col-md-5 col-lg-3">
+    <div class="col-xs-4 col-sm-5 col-md-5 col-lg-3">
         <img src="{{ $film->getCover()->getMediumImageUrl() }}">
         @include(
             'elements.facebook.like-button', [
@@ -8,7 +8,7 @@
         )
     </div>
     <!-- Panel pestañas -->
-    <div class="col-xs-12 col-sm-6 col-md-7 col-lg-9">
+    <div class="col-xs-8 col-sm-8 col-md-7 col-lg-9">
         <a class="hidden-title sin-hover"> <!-- underline y href="{{ URL::route('exhibitions.frontend.film.show', ['slug' => $film->getSlug()]) }}"-->
             <h2 class="text-center">
                 {{ $film->getTitle() }}

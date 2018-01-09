@@ -126,6 +126,21 @@
 
 	<div class="btn-group">
 		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			Consulta libro
+			<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu">
+			<li>
+				{{ HTML::linkRoute('admin.consultaLibro.index', 'Ver libros') }}
+			</li>
+			<li>
+				{{ HTML::linkRoute('admin.consultaLibro.create', 'Agregar libro') }}
+			</li>
+		</ul>
+	</div>
+
+	<div class="btn-group">
+		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 			Cronología
 			<span class="caret"></span>
 		</button>

@@ -43,6 +43,15 @@ Route::get('/chronology/{id}', [
     'uses' => 'Filmoteca\Frontend\Controllers\ChronologyController@show'
 ]);
 
+Route::get('/consulta-libro/', [
+        'as' => 'consulta-libro',
+        'uses' =>'Filmoteca\Frontend\Controllers\ConsultaLibroController@index'
+]);
+
+Route::get('/consulta-libro/{id}', [
+    'as' => 'consulta_libro_show',
+    'uses' => 'Filmoteca\Frontend\Controllers\ConsultaLibroController@show'
+]);
 /*
 |------------------------------------------------------------------------------
 | APP de cursos.

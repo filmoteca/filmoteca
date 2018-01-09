@@ -8,3 +8,8 @@ frontend:
     chronologies:
         see_event_by_year: Ver acontecimientos por año
         title: Acontecimientos - Cronología
+    consulta_libros:
+        seek_book_by_title: Mostrar libros en orden alfabético
+        title: Libros - Nuevas Adquisiciones
+        description: Estos libros están a tu disposición <strong>para su consulta en el Centro de Documentación </strong> de la Filmoteca de la UNAM.
+        noresults: Lo sentimos, no existen libros con la letra seleccionada.

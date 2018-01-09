@@ -6,6 +6,7 @@ $menu = array(
 	array('Aparatos antiguos', '/pages/acervo/aparatos-antiguos'),
 
 	array('Biblioteca', '/pages/acervo/biblioteca', array(
+		array('Libros - Nuevas Adquisiciones', '/consulta-libro'),
 		array('Colecciones', '/pages/acervo/colecciones'))),
 
 	array('Restauración', '/pages/acervo/restauracion', array(
