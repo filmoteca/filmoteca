@@ -23,7 +23,8 @@
                        data-ng-max-length="255"
                        name="title"
                        type="text"
-                       class="form-control">
+                       class="form-control"
+                       autofocus="autofocus">
             </div>
         </div>
 
@@ -233,7 +234,7 @@
             </label>
 
             <div class="col-sm-10">
-                <div data-ui-tinymce="tinymceOptions" data-ng-model="film.trailer"></div>
+                <div id="trailermedia" data-ui-tinymce="tinymceOptions" data-ng-model="film.trailer"></div>
             </div>
         </div>
 

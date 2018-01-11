@@ -9,21 +9,21 @@ Este pedaso de vista es utilizaco por otras vistas.
 {{ Form::formGroup('text', 'original_title', 'Título Original', 'film')}}
 
 @if( isset($resource) )
-    {{ 
+    {{
         Form::multiYear('years[]', 'Año', $resource->years)
     }}
 @else
-    {{ 
+    {{
         Form::multiYear('years[]', 'Año', []);
     }}
 @endif
 
 @if( isset($resource) )
-    {{ 
+    {{
         Form::multiCountry('countries[]', 'Países', $resource->countries->lists('id'))
     }}
 @else
-    {{ 
+    {{
         Form::multiCountry('countries[]', 'Países', []);
     }}
 @endif

@@ -1,8 +1,8 @@
 @section('content')
 
-{{ Form::open( 
+{{ Form::open(
 	[
-		'route' => 'admin.film.store', 
+		'route' => 'admin.film.store',
 		'files' => true,
 		'method'=> 'POST',
 		'class' => 'form-horizontal panel panel-default'
@@ -11,7 +11,7 @@
 	<div class="panel-heading">
 		<h2>Agregar película</h2>
 	</div>
-	
+
 	<div class="panel-body">
 
 	@include('films.fields')
