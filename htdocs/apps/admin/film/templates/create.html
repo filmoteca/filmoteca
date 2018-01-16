@@ -1,6 +1,31 @@
 <form class="form-horizontal" name="film_form">
     <div class="col-sm-12">
         <div class="row">
+            <div class="btn-group">
+                <ul class="programming-menu">
+                  <li>
+                    <a href="/admin/exhibition/app#/exhibitions">Ver toda la programación</a>
+                  </li>
+                  <li>
+                    <a href="/admin/exhibition/app#/exhibitions/create">Agregar exhibiciones</a>
+                  </li>
+                  <li>
+                    <a href="/admin/exhibition/app#/films">Ver todas las películas</a>
+                  </li>
+                  <li>
+                    <a href="/admin/exhibition/app#/films/create">Agregar película</a>
+                  </li>
+                  <li>
+                    <a href="/admin/auditorium/">Ver todas las salas</a>
+                  </li>
+                  <li>
+                    <a href="/admin/auditorium/create">Agregar salas</a>
+                  </li>
+                  <li>
+                    <a href="/admin/exhibition/app#/iconographics">Iconos</a>
+                  </li>
+                </ul>
+            </div>
             <div class="col-sm-12">
                 <h1 class="text-center">
                     <span data-ng-show="film.id" class="ng-cloak">Editar película</span>
@@ -234,7 +259,7 @@
             </label>
 
             <div class="col-sm-10">
-                <div id="trailermedia" data-ui-tinymce="tinymceOptions" data-ng-model="film.trailer"></div>
+                <div data-ui-tinymce="tinymceTrailerOptions" data-ng-model="film.trailer"></div>
             </div>
         </div>
 

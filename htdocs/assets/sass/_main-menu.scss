@@ -54,4 +54,19 @@
         border-bottom: 3px solid $primary-color;
     }
 
+    .programming-menu li a{
+        float: left;
+    }    
+
+    .programming-menu li a{
+        padding-bottom: 8px;   
+        border-bottom: 2px solid $tertiary-color;
+    }
+
+    .programming-menu li a:hover{
+        color: $primary-color;
+        background-color: white;
+        border-bottom: 3px solid $primary-color;
+    }
+
 }

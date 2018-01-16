@@ -248,6 +248,21 @@ $h4: 18px;
 			}
 		}
 
+		.programming-menu {
+			background-color: $primary-color;
+			padding: 12px 20px;
+			margin: 2px 0px 0px;
+			list-style: none;
+			font-size: 15px;
+			text-align: left;
+    		border: 1px solid #ccc;
+		    border: 1px solid rgba(0, 0, 0, 0.15);
+		    border-radius: 4px;
+		    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+		    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+		    background-clip: padding-box;
+		}
+
 	}
 
 	.digital-billboard{

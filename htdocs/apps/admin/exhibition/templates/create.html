@@ -1,3 +1,28 @@
+            <div class="btn-group">
+                <ul class="programming-menu">
+                  <li>
+                    <a href="/admin/exhibition/app#/exhibitions">Ver toda la programación</a>
+                  </li>
+                  <li>
+                    <a href="/admin/exhibition/app#/exhibitions/create">Agregar exhibiciones</a>
+                  </li>
+                  <li>
+                    <a href="/admin/exhibition/app#/films">Ver todas las películas</a>
+                  </li>
+                  <li>
+                    <a href="/admin/exhibition/app#/films/create">Agregar película</a>
+                  </li>
+                  <li>
+                    <a href="/admin/auditorium/">Ver todas las salas</a>
+                  </li>
+                  <li>
+                    <a href="/admin/auditorium/create">Agregar salas</a>
+                  </li>
+                  <li>
+                    <a href="/admin/exhibition/app#/iconographics">Iconos</a>
+                  </li>
+                </ul>
+            </div>
 <h1 ng-hide="exhibition.id" class="text-center">Agregar exhibición</h1>
 <h1 ng-show="exhibition.id" class="text-center">Editar exhibición</h1>
 
@@ -18,7 +43,8 @@
                            data-typeahead-min-length="3"
                            data-typeahead-no-results="Ninguna película encontrada"
                            data-typeahead-editable="false"
-                           class="form-control">
+                           class="form-control"
+                           autofocus="autofocus">
                 </div>
             </div>
 

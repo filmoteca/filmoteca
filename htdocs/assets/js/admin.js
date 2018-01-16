@@ -4,21 +4,6 @@
 	'use strict';
 	$(document).ready(function(){
 
-		$('#trailermedia').tinymce({
-			selector: '#trailermedia',
-			height: 500,
-			menubar: false,
-			plugins: [
-				'media code'
-			],
-			toolbar: 'media code',
-			media_live_embeds: true,
-			media_poster: false,
-			media_alt_source: false,
-			content_css: [
-				'//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
-				'//www.tinymce.com/css/codepen.min.css']
-		});
 		
 		$('.input-group.date').datepicker({
 			format: 'yyyy-mm-dd',
