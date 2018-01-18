@@ -54,19 +54,22 @@
         border-bottom: 3px solid $primary-color;
     }
 
-    .programming-menu li a{
+    .programming-menu li{
         float: left;
     }    
 
     .programming-menu li a{
-        padding-bottom: 8px;   
-        border-bottom: 2px solid $tertiary-color;
+        color: #fff;
+        background-color: #b94a48;
+        padding: 10px;
+        font-size: 15px;
+        list-style: none;
+        border-radius: 4px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
     }
 
     .programming-menu li a:hover{
-        color: $primary-color;
-        background-color: white;
-        border-bottom: 3px solid $primary-color;
+        background-color: #b93a48;
     }
 
 }
