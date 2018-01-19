@@ -1,30 +1,7 @@
 @section('content')
 
-	    <div class="btn-group">
-          <ul class="programming-menu">
-			<li>
-				{{ HTML::link('/admin/exhibition/app#/exhibitions', 'Ver toda la programación') }}
-			</li>
-			<li>
-				{{ HTML::link('/admin/exhibition/app#/exhibitions/create', 'Agregar exhibiciones') }}
-			</li>
-			<li>
-				{{ HTML::link('/admin/exhibition/app#/films', 'Ver todas las películas') }}
-			</li>
-			<li>
-				{{ HTML::link('/admin/exhibition/app#/films/create', 'Agregar película') }}
-			</li>
-			<li>
-				{{ HTML::linkRoute('admin.auditorium.index', 'Ver todas las salas') }}
-			</li>
-			<li>
-				{{ HTML::linkRoute('admin.auditorium.create', 'Agregar salas') }}
-			</li>
-            <li>
-                {{ HTML::link('/admin/exhibition/app#/iconographics', 'Iconos') }}
-            </li>
-          </ul>
-        </div>
+@include('elements.menus.programmation-admin-menu')
+
 <h2>Lista de Salas</h2>
 
 {{ $resources->links() }}

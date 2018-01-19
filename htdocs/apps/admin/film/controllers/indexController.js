@@ -26,6 +26,13 @@
 
         $scope.query = '';
 
+        $scope.programmationMenu = function () {
+            $scope.templates = [{
+                name: 'Menu de programación',
+                url: '/apps/admin/exhibition/templates/programmation-menu.html'}];
+            $scope.template = $scope.templates[0];
+        }
+
         $scope.pageChanged = function () {
 
             filmService

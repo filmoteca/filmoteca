@@ -18,6 +18,13 @@
         $scope.searching    = false;
         $scope.saving       = false;
 
+        $scope.programmationMenu = function () {
+            $scope.templates = [{
+                name: 'Menu de programación',
+                url: '/apps/admin/exhibition/templates/programmation-menu.html'}];
+            $scope.template = $scope.templates[0];
+        }
+
         $scope.search = function (query) {
 
             return filmService.paginate(query).then(function (paginate) {

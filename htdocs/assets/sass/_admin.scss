@@ -20,6 +20,27 @@
   position:relative;
 }
 
+  .programmation-menu li{
+    float: left;
+    margin: 0px 0px 20px 0px;
+    list-style: none;
+  }    
+
+  .programmation-menu li a{
+    color: #fff;
+    background-color: #b94a48;
+    padding: 10px;
+    margin: 1px;
+    font-size: 15px;
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  }
+
+  .programmation-menu li a:hover{
+    background-color: #a62d14 !important;
+    text-decoration: none;
+  }
+
 .messages-stack{
   position: fixed;
   z-index: 90;

@@ -23,6 +23,13 @@
 
         $scope.searchUrl = '/admin/api/exhibition';
 
+        $scope.programmationMenu = function () {
+            $scope.templates = [{
+                name: 'Menu de programación',
+                url: '/apps/admin/exhibition/templates/programmation-menu.html'}];
+            $scope.template = $scope.templates[0];
+        }
+
         $scope.pageChanged = function () {
 
             exhibitionService.paginate($scope.query, $scope.pagination.current_page)

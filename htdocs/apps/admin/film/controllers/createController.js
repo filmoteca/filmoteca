@@ -27,6 +27,13 @@
 
         $scope.tinymceOptions = tinyMCEOptions;
 
+        $scope.programmationMenu = function () {
+            $scope.templates = [{
+                name: 'Menu de programación',
+                url: '/apps/admin/exhibition/templates/programmation-menu.html'}];
+            $scope.template = $scope.templates[0];
+        }
+
         $scope.searchYear = function ($query) {
 
             return _.filter(YEARS_AVAILABLE, function (year) {
