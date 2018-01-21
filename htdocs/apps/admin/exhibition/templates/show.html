@@ -1,6 +1,9 @@
 <div class="details">
     <div class="modal-header">
-        <h1>{{ exhibition.exhibition_film.film.title }}</h1>
+      <div ng-controller="programmationMenu">
+          <div ng-include src="template.url"></div>
+      </div>
+      <h1>{{ exhibition.exhibition_film.film.title }}</h1>
     </div>
 
     <div class="modal-body">
@@ -32,7 +35,7 @@
                         </div>
                         <div class="panel-body">
                             <ul class="list-group">
-                                
+
                             </ul>
                         </div>
                     </div>
@@ -44,7 +47,7 @@
                             {{ HTML::linkAction('AuditoriumController@show', 'Ver ubicación', ['id' => $auditorium->id]) }}
                         </div>
                         <div class="panel-body">
-                            <ul class="list-group">                     
+                            <ul class="list-group">
                             @foreach( $exhibition->schedulesByAuditorium($auditorium->id) as $schedule)
                                 <li class="list-group-item">
                                 {{ ucfirst(trans('dates.days.' . date('l', strtotime($schedule->entry)) )) }}
@@ -64,7 +67,7 @@
                 <p>
                     <span>
                         {{ HTML::image(
-                            $exhibition->type->image->url('thumbnail'), 
+                            $exhibition->type->image->url('thumbnail'),
                             $exhibition->type->name) }}
                     </span>
                     {{ $exhibition->type->name }}

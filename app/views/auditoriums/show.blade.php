@@ -1,5 +1,7 @@
 @section('content')
 
+@include('elements.menus.programmation-admin-menu')
+
 <h2>Detalles de la sala</h2>
 
 <div class="text-right">

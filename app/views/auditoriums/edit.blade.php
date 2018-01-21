@@ -1,18 +1,20 @@
 @section('content')
 
-{{ Form::model( 
+{{ Form::model(
 	$resource,
 	[
-		'route' => ['admin.auditorium.update', $resource->id], 
+		'route' => ['admin.auditorium.update', $resource->id],
 		'files' => true,
 		'method'=> 'PUT',
 		'class' => 'form-horizontal panel panel-default'
 	])}}
 
+	@include('elements.menus.programmation-admin-menu')
+
 	<div class="panel-heading">
 		<h2>Editar sala</h2>
 	</div>
-	
+
 	<div class="panel-body">
 
 	{{ Form::formGroup('text','name','Nombre', 'auditorium_form') }}
@@ -34,7 +36,7 @@
 	{{ Form::formGroup('file','image', 'Portada', 'auditorium_form')}}
 
 	<p>Portada actual (miníatura) <img src="{{ $resource->image->url('thumbnail') }}" class="image thumbnail"></p>
-	
+
 	</div>
 
 	<div class="panel-footer">
