@@ -16,7 +16,7 @@
 	
 	<div class="panel-body">
 
-	{{ Form::formGroup('text','name','Nombre', 'auditorium_form') }}
+	{{ Form::formGroup('text','name','Nombre', 'auditorium_form', ['autofocus' => 'true']) }}
 
 	{{ Form::formGroup('text','address','Dirección', 'auditorium_form') }}
 
