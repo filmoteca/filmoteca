@@ -41,7 +41,7 @@
 					<a href="{{ URL::to('contact') }}" title="Contacto"><span class="icon icon-mail"></span></a>
 				</div>
 				<div>
-					<a href="http://www.fiafnet.org/es/" title="Federación Internacional de Archivos Fílmicos, FIAF" target="blank"><!-- <span class="icon icon-fiaf"></span> -->
+					<a href="https://www.fiafnet.org/es/" title="Federación Internacional de Archivos Fílmicos, FIAF" target="blank"><!-- <span class="icon icon-fiaf"></span> -->
 					    <img class="fiaflogo" src="/assets/imgs/fiaf.png">
 						<span>MIEMBRO DE LA FIAF</span>
 					</a>
@@ -57,7 +57,7 @@
 
 		<div class = "footerwrapper">
 			<div class ="footercontent">				
-				<a href="http://www.unam.mx/" title="Universidad Nacional Autónoma de México, UNAM" target="blank">
+				<a href="https://www.unam.mx/" title="Universidad Nacional Autónoma de México, UNAM" target="blank">
 					<img class="logounam" src="/assets/imgs/escudo_firma_UNAM_culturaUNAM2.jpg" alt="Universidad Nacional Autónoma de México, UNAM">
 				</a>
 			</div>

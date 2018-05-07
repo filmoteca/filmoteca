@@ -51,7 +51,7 @@
 						<h5> Festivales de cine </h5>
 						<ul class="footer_links list-unstyled">
 							<li>
-								<a class="footer_link" href="http://ambulante.com.mx/es" title="Ambulante Gira de Documentales">
+								<a class="footer_link" href="https://ambulante.com.mx/es" title="Ambulante Gira de Documentales">
 								Ambulante Gira de Documentales
 								</a>
 							</li>
@@ -65,7 +65,7 @@
 								</a>
 							</li>
 							<li>
-								<a class="footer_link" href="http://www.ficunam.unam.mx/" title="Festival Internacional de Cine de la UNAM">
+								<a class="footer_link" href="https://www.ficunam.unam.mx/" title="Festival Internacional de Cine de la UNAM">
 									Festival Internacional de Cine de la UNAM
 								</a>
 							</li>
@@ -85,7 +85,7 @@
 								</a>
 							</li>
 							<li>
-								<a class="footer_link" href="https://www.ficg.mx/29/index.php/es/" title="Festival Internacional de Cine de Guadalajara">
+								<a class="footer_link" href="http://www.ficg.mx/33/index.php/es/" title="Festival Internacional de Cine de Guadalajara">
 									Festival Internacional de Cine de Guadalajara
 								</a>
 							</li>
@@ -105,22 +105,22 @@
 								</a>
 							</li>
 							<li>
-								<a class="footer_link" href="	http://www.macabro.mx/" title="Macabro: Festival Internacional de Cine de Horror de la Ciudad de México">
+								<a class="footer_link" href="http://www.macabro.mx/" title="Macabro: Festival Internacional de Cine de Horror de la Ciudad de México">
 									Macabro: Festival Internacional de Cine de Horror de la Ciudad de México
 								</a>
 							</li>
 							<li>
-								<a class="footer_link" href="	http://www.lamatatena.org/es/noticias.html" title="Festival Internacional de Cine para Niños (...y no tan niños)">
+								<a class="footer_link" href="https://www.lamatatena.org/es/noticias.html" title="Festival Internacional de Cine para Niños (...y no tan niños)">
 									Festival Internacional de Cine para Niños (...y no tan niños)
 								</a>
 							</li>
 							<li>
-								<a class="footer_link" href="	http://www.mujerescineytv.org/" title="Mujeres en el cine y la televisión">
+								<a class="footer_link" href="http://www.mujerescineytv.org/" title="Mujeres en el cine y la televisión">
 									Mujeres en el cine y la televisión 
 								</a>
 							</li>
 							<li>
-								<a class="footer_link" href="	http://shortshortsfilmfestivalmexico.com/" title="Short Short Film Festival México">
+								<a class="footer_link" href="http://shortshortsfilmfestivalmexico.com/" title="Short Short Film Festival México">
 									Short Short Film Festival México
 								</a>
 							</li>
